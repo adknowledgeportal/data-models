@@ -1,2 +1,6 @@
 # schematic service accounts
 schematic_service_account_creds.json
+
+# synapse creds
+.synapseConfig
+.synapseCache/
