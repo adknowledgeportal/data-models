@@ -3,5 +3,13 @@
     "features": {
         "ghcr.io/devcontainers/features/git:1": {},
         "ghcr.io/devcontainers/features/common-utils:2": {}
-    }
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"mechatroner.rainbow-csv"
+			]
+		}
+	},
+	"postStartCommand": "echo \"[authentication] \nauthtoken = $SYNAPSE_PAT\" > .synapseConfig"
 }
