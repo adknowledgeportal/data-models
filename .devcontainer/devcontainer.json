@@ -1,8 +1,7 @@
 {   "name": "schematic",
-    "image":"sagebionetworks/schematic:latest",
+    "image":"sagebionetworks/schematic:commit-45c8827",
     "features": {
         "ghcr.io/devcontainers/features/git:1": {},
         "ghcr.io/devcontainers/features/common-utils:2": {}
-    },
-    "postCreateCommand": "poetry shell && poetry install"
+    }
 }
