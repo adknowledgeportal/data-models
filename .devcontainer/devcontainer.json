@@ -11,5 +11,5 @@
 			]
 		}
 	},
-	"postStartCommand": "echo \"[authentication] \nauthtoken = $SYNAPSE_PAT\" > .synapseConfig"
+	"postStartCommand": "bash ./.devcontainer/post-start.sh"
 }
