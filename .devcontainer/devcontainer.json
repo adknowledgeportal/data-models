@@ -1,9 +1,13 @@
-{   "name": "schematic",
-    "image":"sagebionetworks/schematic:commit-45c8827",
-    "features": {
-        "ghcr.io/devcontainers/features/git:1": {},
-        "ghcr.io/devcontainers/features/common-utils:2": {}
-	},
+{
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+  	"hostRequirements": {
+    	"cpus": 4,
+    	"memory": "4gb",
+   		"storage": "16gb"
+  	},
+  	"features": {
+  	},
+  	"postCreateCommand": "bash ./.devcontainer/post-create.sh",
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -11,6 +15,5 @@
 				"GrapeCity.gc-excelviewer"
 			]
 		}
-	},
-	"postStartCommand": "bash ./.devcontainer/post-start.sh"
+	}
 }
