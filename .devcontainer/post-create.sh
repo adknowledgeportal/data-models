@@ -1,3 +1,3 @@
 #!/bin/bash
 
-pip3 install schematicpy==23.1.1
+pip install schematicpy==23.8.1
