@@ -40,7 +40,7 @@ schema_id = some_json['$id']
 description = some_json['description']
 properties = some_json['properties']
 dependsOn = ', '.join(list(properties))
-required = some_json['required'] if some_json['required'] is not None else None
+required = some_json['required'] if 'required' in some_json else None
 attribute = os.path.basename(file_paths[1]).replace('.json', '')
 
 
@@ -60,7 +60,7 @@ column_attribute = list(properties)
 column_source = list(pd.DataFrame.from_dict(properties.values())['$ref'])
 column_required = list()
 for item in column_attribute:
-    if item in required:
+    if required is not None and item in required:
         column_required.append('TRUE')
     else:
         column_required.append('FALSE')
