@@ -2,6 +2,7 @@ import os
 import json
 import synapseclient
 import pandas as pd
+import numpy as np
 
 syn = synapseclient.Synapse()
 syn.login(authToken=os.environ.get('SYNAPSE_PAT'))
@@ -10,9 +11,7 @@ syn.login(authToken=os.environ.get('SYNAPSE_PAT'))
 
 # list files in directory
 
-path = 'schema_metadata_templates/'
-
-
+# a function to get file paths from all subdirs in directory
 def getFullPaths(directory):
     full_paths = list()
     for root, dirs, files in os.walk(os.path.abspath(path)):
@@ -20,27 +19,17 @@ def getFullPaths(directory):
             full_paths.append(os.path.join(root, file))
     return full_paths
 
-
+# get file paths for all template schemas
+path = 'schema_metadata_templates/'
 file_paths = getFullPaths(path)
 
-# grab a template schema with no required columns for testing
-no_req_file = open(list(filter(lambda name: '16S' in name, file_paths))[0])
-no_req_json = json.load(no_req_file)
-
-
+# append None type to required column if no columns are required in the template schema
 def append_required(required_list, json_stuff):
-
     if 'required' in json_stuff:
         required_list.append(json_stuff['required'])
     else: 
         required_list.append(None)    
 
-
-# open the file
-a_file = open(file_paths[1])
-
-# read the json
-some_json = json.load(a_file)
 
 # create data frame of attributes representing metadata templates, i.e. Parent = "DataType"
 def createTemplateDataFrame(file_path_list):
@@ -60,13 +49,12 @@ def createTemplateDataFrame(file_path_list):
 
     # loop over the file paths of the metadata template json schemas
     for file_name in file_path_list:
-
         # open the file and read the json
         file = open(file_name)
         json_schema = json.load(file)
-
         # populate lists with values from each template schema
-        attribute.append(os.path.basename(json_schema).replace('.json', ''))
+        attribute_name = os.path.basename(file_name).replace('.json', '')
+        attribute.append(attribute_name)
         schema_id.append(json_schema['$id'])
         description.append(json_schema['description'])
         dependsOn.append(', '.join(json_schema['properties']))
@@ -79,22 +67,65 @@ def createTemplateDataFrame(file_path_list):
         validation_rules.append(None)
 
     # make the data frame
-    df = pd.DataFrame({'Attribute': attribute, 
-                   'Description': description, 
-                   'Valid Values': valid_values, 
-                   'DependsOn': dependsOn, 
-                   'Properties': csv_properties, 
-                   'Required': template_required,
-                   'Parent': parent,
-                   'DependsOn Component': dependsOn_component,
-                   'Source': schema_id,
-                   'Validation Rules': validation_rules,
-                   'Schema Required Columns': schema_required_columns}, 
-                   index=[0])
+    df = pd.DataFrame({'Attribute': attribute,
+                       'Description': description, 
+                       'Valid Values': valid_values,
+                       'DependsOn': dependsOn,
+                       'Properties': csv_properties,
+                       'Required': template_required,
+                       'Parent': parent,
+                       'DependsOn Component': dependsOn_component,
+                       'Source': schema_id,
+                       'Validation Rules': validation_rules,
+                       'Schema Required Columns': schema_required_columns} 
+                       )
     
     return(df)
-    
-    
+
+template_df = createTemplateDataFrame(file_paths)
+
+# get column "mini-schemas" and valid values in table form from synapse annotations project
+annotation_modules_id = 'syn10242922'
+schema_versions_id = 'syn26050066'
+
+query_results = syn.tableQuery("select * from %s" % schema_versions_id)
+schema_versions = query_results.asDataFrame()
+
+query_results = syn.tableQuery("select * from %s" % annotation_modules_id)
+annotation_modules = query_results.asDataFrame()
+
+# filtering a pandas df
+annotation_modules.loc[annotation_modules['key'] == 'alignmentMethod']
+
+# what are the column attributes from all templates?
+dep_column_values = template_df['DependsOn'].tolist()
+dep_list = list()
+for i in dep_column_values:
+    ls = str.split(i.replace(',', ''))
+    dep_list = dep_list + ls
+dep_array = np.array(dep_list)
+unique_deps = np.unique(dep_array).tolist()
+
+# get rows from the schema versions table that match our attribute dependencies
+schema_versions.loc[schema_versions['key'].isin(unique_deps)]
+
+# duplicates for study and grant -- probably from PEC
+schema_versions.loc[schema_versions['key'].isin(unique_deps)].groupby('key').size().sort_values(ascending = False)
+schema_versions.loc[schema_versions['key'] == 'study'] # yep
+
+# get all unique keys from AD
+all_ad_keys = schema_versions.loc[(schema_versions['key'].isin(unique_deps)) 
+                    & (schema_versions['module'] != 'PsychENCODESpecific')][['key', 'schema', 'latestVersion']]
+
+# join key descriptions from the annotation table
+key_definitions = annotation_modules[['key', 'description', 'columnType']].drop_duplicates()
+# this is the row info for column attributes, aka Parent = "DataProperty"
+merged_keys_defs = pd.merge(all_ad_keys, 
+                  key_definitions,
+                  how = 'left',
+                  on = ['key'])
+
+
 # create data frame of attributes representing template columns, i.e. Parent = 'DataProperty'
 column_attribute = list(properties)
 column_source = list(pd.DataFrame.from_dict(properties.values())['$ref'])
@@ -117,3 +148,4 @@ df_also = pd.DataFrame({'Attribute': column_attribute,
                    'Validation Rules': None})
 
 basic_model = pd.concat([df, df_also], ignore_index = True)
+'''
