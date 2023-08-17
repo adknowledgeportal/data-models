@@ -35,7 +35,30 @@ type(some_json)
 dir(some_json)
 some_json.keys()
 
-# create values for schema.org csv format for 'DataType' attributes i.e. templates
+# create data frame of attributes representing metadata templates, i.e. Parent = "DataType"
+def createTemplateDataFrame(json_schema):
+
+    # don't do lists, that's stupid, just create an empty data frame
+    # TO DO: start here
+
+    # populate lists with values from each template schema
+    schema_id.append(json_schema['$id'])
+    description.append(json_schema['description'])
+    properties.append(json_schema['properties'])
+    dependsOn.append(', '.join(json_schema['properties']))
+    attribute.append(os.path.basename(json_schema).replace('.json', '')))
+    if 'required' in json_schema:
+        required.append(json_schema['required'])
+    else:
+        required = required
+
+
+
+foo_att = list()
+
+for json_schema in file_paths:
+    foo_att.append(os.path.basename(json_schema))
+
 schema_id = some_json['$id']
 description = some_json['description']
 properties = some_json['properties']
@@ -56,6 +79,7 @@ df = pd.DataFrame({'Attribute': attribute,
                    'Validation Rules': None}, 
                    index=[0])
 
+# create data frame of attributes representing template columns, i.e. Parent = 'DataProperty'
 column_attribute = list(properties)
 column_source = list(pd.DataFrame.from_dict(properties.values())['$ref'])
 column_required = list()
