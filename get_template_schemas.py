@@ -23,62 +23,78 @@ def getFullPaths(directory):
 
 file_paths = getFullPaths(path)
 
+# grab a template schema with no required columns for testing
+no_req_file = open(list(filter(lambda name: '16S' in name, file_paths))[0])
+no_req_json = json.load(no_req_file)
+
+
+def append_required(required_list, json_stuff):
+
+    if 'required' in json_stuff:
+        required_list.append(json_stuff['required'])
+    else: 
+        required_list.append(None)    
+
+
 # open the file
 a_file = open(file_paths[1])
 
 # read the json
 some_json = json.load(a_file)
 
-# can I index the json? yes because it's a dict
-type(some_json)
-
-dir(some_json)
-some_json.keys()
-
 # create data frame of attributes representing metadata templates, i.e. Parent = "DataType"
-def createTemplateDataFrame(json_schema):
+def createTemplateDataFrame(file_path_list):
 
-    # don't do lists, that's stupid, just create an empty data frame
-    # TO DO: start here
+    # actually do do lists
+    attribute = list()
+    schema_id = list()
+    description = list()
+    dependsOn = list()
+    csv_properties = list() # properties column in csv, not properties defined in json schema
+    schema_required_columns = list() # store as an additional column for later
+    template_required = list()
+    valid_values = list()
+    parent = list()
+    dependsOn_component = list()
+    validation_rules = list()
 
-    # populate lists with values from each template schema
-    schema_id.append(json_schema['$id'])
-    description.append(json_schema['description'])
-    properties.append(json_schema['properties'])
-    dependsOn.append(', '.join(json_schema['properties']))
-    attribute.append(os.path.basename(json_schema).replace('.json', '')))
-    if 'required' in json_schema:
-        required.append(json_schema['required'])
-    else:
-        required = required
+    # loop over the file paths of the metadata template json schemas
+    for file_name in file_path_list:
 
+        # open the file and read the json
+        file = open(file_name)
+        json_schema = json.load(file)
 
+        # populate lists with values from each template schema
+        attribute.append(os.path.basename(json_schema).replace('.json', ''))
+        schema_id.append(json_schema['$id'])
+        description.append(json_schema['description'])
+        dependsOn.append(', '.join(json_schema['properties']))
+        csv_properties.append(None)
+        append_required(schema_required_columns, json_schema)
+        template_required.append('FALSE')
+        valid_values.append(None)
+        parent.append('DataType')
+        dependsOn_component.append(None)
+        validation_rules.append(None)
 
-foo_att = list()
-
-for json_schema in file_paths:
-    foo_att.append(os.path.basename(json_schema))
-
-schema_id = some_json['$id']
-description = some_json['description']
-properties = some_json['properties']
-dependsOn = ', '.join(list(properties))
-required = some_json['required'] if 'required' in some_json else None
-attribute = os.path.basename(file_paths[1]).replace('.json', '')
-
-
-df = pd.DataFrame({'Attribute': attribute, 
+    # make the data frame
+    df = pd.DataFrame({'Attribute': attribute, 
                    'Description': description, 
-                   'Valid Values': None, 
+                   'Valid Values': valid_values, 
                    'DependsOn': dependsOn, 
-                   'Properties': None, 
-                   'Required': 'FALSE', 
-                   'Parent': 'DataType', 
-                   'DependsOn Component': None, 
+                   'Properties': csv_properties, 
+                   'Required': template_required,
+                   'Parent': parent,
+                   'DependsOn Component': dependsOn_component,
                    'Source': schema_id,
-                   'Validation Rules': None}, 
+                   'Validation Rules': validation_rules,
+                   'Schema Required Columns': schema_required_columns}, 
                    index=[0])
-
+    
+    return(df)
+    
+    
 # create data frame of attributes representing template columns, i.e. Parent = 'DataProperty'
 column_attribute = list(properties)
 column_source = list(pd.DataFrame.from_dict(properties.values())['$ref'])
