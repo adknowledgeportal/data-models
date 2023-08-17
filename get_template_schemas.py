@@ -125,6 +125,32 @@ merged_keys_defs = pd.merge(all_ad_keys,
                   how = 'left',
                   on = ['key'])
 
+# get list of all unique required keys
+req_column_values = template_df.loc[template_df['Schema Required Columns'].notna()]['Schema Required Columns'].tolist()
+req_list = list()
+for i in req_column_values:
+    req_list = req_list + i
+req_array = np.array(req_list)
+unique_reqs = np.unique(req_array).tolist()
+
+# combine schema id and version into source column
+merged_keys_defs['Source'] = merged_keys_defs[['schema', 'latestVersion']].agg('-'.join, axis=1)
+
+# get column of valid values for attributes
+def getValidValues(attribute):
+    if any(annotation_modules['key'].str.contains(attribute)):
+        sub_df = annotation_modules.loc[annotation_modules['key'] == attribute]
+        value_list = sub_df['value'].tolist()
+        value_string = ', '.join(value_list)
+    else:
+        value_string = ''
+    return(value_string)
+
+valid_values = list()
+for item in merged_keys_defs['key']:
+    print(getValidValues(item)) # something in here is a float?
+
+merged_keys_defs['Valid Values'] = 
 
 # create data frame of attributes representing template columns, i.e. Parent = 'DataProperty'
 column_attribute = list(properties)
