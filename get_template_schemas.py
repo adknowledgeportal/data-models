@@ -136,7 +136,6 @@ unique_reqs = np.unique(req_array).tolist()
 # combine schema id and version into source column
 merged_keys_defs['Source'] = merged_keys_defs[['schema', 'latestVersion']].agg('-'.join, axis=1)
 
-
 # get column of valid values for attributes
 def getValidValues(attribute):
     if any(annotation_modules['key'].str.contains(attribute)):
@@ -155,33 +154,53 @@ valid_values = list()
 for item in merged_keys_defs['key']:
     valid_values.append(getValidValues(item)) 
 
-'''
-# try with chromosome
-sub_df = annotation_modules.loc[annotation_modules['key'] == 'chromosome']
-value_list = sub_df['value'].tolist()
-value_string = ', '.join(value_list)
-
 
 # create data frame of attributes representing template columns, i.e. Parent = 'DataProperty'
-column_attribute = list(properties)
-column_source = list(pd.DataFrame.from_dict(properties.values())['$ref'])
-column_required = list()
-for item in column_attribute:
-    if required is not None and item in required:
-        column_required.append('TRUE')
+# lists that will be columns
+attribute = list(merged_keys_defs['key'])
+schema_id = list(merged_keys_defs['Source'])
+description = list(merged_keys_defs['description'])
+dependsOn = list()
+csv_properties = list() # properties column in csv, not properties defined in json schema
+schema_required_columns = list() # store as an additional column for later
+attribute_required = list()
+valid_values = list()
+parent = list()
+dependsOn_component = list()
+validation_rules = list()
+needs_boolean_fix = list() # store for later -- boolean is not an available schematic type and T/F values don't have namespaces
+
+
+for a in attribute:
+    dependsOn.append(None)
+    csv_properties.append(None)
+    if a in unique_reqs:
+        attribute_required.append('TRUE')
     else:
-        column_required.append('FALSE')
+        attribute_required.append('FALSE')
+    valid_values.append(getValidValues(a))
+    parent.append('DataProperty')
+    dependsOn_component.append(None)
+    if merged_keys_defs.loc[merged_keys_defs['key'] == a]['columnType'].values[0] != 'boolean':
+        validation_rules.append(merged_keys_defs.loc[merged_keys_defs['key'] == a]['columnType'].values[0][0:3])
+        needs_boolean_fix.append(None)
+    else:
+        validation_rules.append(None)
+        needs_boolean_fix.append('YES')
 
-df_also = pd.DataFrame({'Attribute': column_attribute, 
-                   'Description': None, 
-                   'Valid Values': None, 
-                   'DependsOn': None, 
-                   'Properties': None, 
-                   'Required': column_required, 
-                   'Parent': 'DataProperty', 
-                   'DependsOn Component': None, 
-                   'Source': column_source,
-                   'Validation Rules': None})
+df = pd.DataFrame({'Attribute': attribute,
+                       'Description': description, 
+                       'Valid Values': valid_values,
+                       'DependsOn': dependsOn,
+                       'Properties': csv_properties,
+                       'Required': attribute_required,
+                       'Parent': parent,
+                       'DependsOn Component': dependsOn_component,
+                       'Source': schema_id,
+                       'Validation Rules': validation_rules,
+                       'Adjust Bool': needs_boolean_fix} 
+                       )
 
-basic_model = pd.concat([df, df_also], ignore_index = True)
-'''
+
+
+basic_model = pd.concat([template_df, df], ignore_index = True)
