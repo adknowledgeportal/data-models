@@ -84,6 +84,8 @@ def createTemplateDataFrame(file_path_list):
 
 template_df = createTemplateDataFrame(file_paths)
 
+### Create data frame for template column attributes
+
 # get column "mini-schemas" and valid values in table form from synapse annotations project
 annotation_modules_id = 'syn10242922'
 schema_versions_id = 'syn26050066'
@@ -162,7 +164,6 @@ schema_id = list(merged_keys_defs['Source'])
 description = list(merged_keys_defs['description'])
 dependsOn = list()
 csv_properties = list() # properties column in csv, not properties defined in json schema
-schema_required_columns = list() # store as an additional column for later
 attribute_required = list()
 valid_values = list()
 parent = list()
@@ -188,7 +189,7 @@ for a in attribute:
         validation_rules.append(None)
         needs_boolean_fix.append('YES')
 
-df = pd.DataFrame({'Attribute': attribute,
+column_df = pd.DataFrame({'Attribute': attribute,
                        'Description': description, 
                        'Valid Values': valid_values,
                        'DependsOn': dependsOn,
@@ -201,6 +202,74 @@ df = pd.DataFrame({'Attribute': attribute,
                        'Adjust Bool': needs_boolean_fix} 
                        )
 
+### make attribute rows for valid values with definitions
+
+valid_values
+# remove '' empty valid values
+comp_vals = list(filter(lambda x: x != '', valid_values))
+# join into one string, then split
+join_vals = ', '.join(comp_vals)
+split_vals = join_vals.split(', ')
+
+# return a list of valid values from the column attribute df
+# remove any empty strings and split each value into a list element
+def getValidValueList(column_df):
+    valid = column_df['Valid Values'].tolist()
+    comp_valid = list(filter(lambda x: x != '', valid))
+    list_valid = ', '.join(comp_valid).split(', ')
+    return(list_valid)
+
+# create emtpy lists
+attribute = getValidValueList(column_df)
+description = list()
+dependsOn = list()
+csv_properties = list() # properties column in csv, not properties defined in json schema
+attribute_required = list()
+valid_values = list()
+parent = list()
+dependsOn_component = list()
+source = list()
+validation_rules = list()
+
+# fill lists for valid value attributes
+for a in attribute:
+    description.append(annotation_modules.loc[annotation_modules['value'] == a]['valueDescription'].values[0])
+    dependsOn.append(None)
+    csv_properties.append(None)
+    attribute_required.append(None)
+    valid_values.append(None)
+    parent.append('ValidValue')
+    dependsOn_component.append(None)
+    source.append(annotation_modules.loc[annotation_modules['value'] == a]['source'].values[0])
+    validation_rules.append(None)
+
+# make df for valid value rows
+value_df = pd.DataFrame({'Attribute': attribute,
+                       'Description': description, 
+                       'Valid Values': valid_values,
+                       'DependsOn': dependsOn,
+                       'Properties': csv_properties,
+                       'Required': attribute_required,
+                       'Parent': parent,
+                       'DependsOn Component': dependsOn_component,
+                       'Source': source,
+                       'Validation Rules': validation_rules} 
+                       )
 
 
-basic_model = pd.concat([template_df, df], ignore_index = True)
+full_model = pd.concat([template_df, column_df, value_df], ignore_index = True)
+
+# clean up the final data frame
+# fix add valid values of 'TRUE, FALSE' to boolean keys for now
+full_model['Valid Values'] = np.where(full_model['Adjust Bool'] == 'YES', 'TRUE, FALSE', full_model['Valid Values'])
+
+# remove bool adj column and schema required columns column
+drop_cols = full_model.drop(columns = ['Schema Required Columns', 'Adjust Bool'])
+
+# replace all None and NaN values
+final_model = drop_cols.replace(np.nan, '')
+
+# write final data model as csv -- and maybe subcsvs?
+
+
+
