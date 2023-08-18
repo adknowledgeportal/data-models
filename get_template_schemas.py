@@ -1,16 +1,28 @@
+
+# This is a very janky python script
+# It bashes together a schematic-compliant csv data model for the AD Knowledge Portal like so:
+#   1) attributes with Parent = 'DataType' are the metadata templates represented as json schemas here (minus the PEC folder): 
+#       https://github.com/Sage-Bionetworks/sysbioDCCjsonschemas/tree/master/schema_metadata_templates
+#   2) attributes with Parent = 'DataProperty' are the lastest version of the json 'mini-schemas' from the synapseAnnotations repo, in table form here:
+#       https://www.synapse.org/#!Synapse:syn26050066/tables/
+#   3) attributes with Parent = 'ValidValue' are the valid values for any DataProperty (aka an enumerated term), in table form here:
+#       https://www.synapse.org/#!Synapse:syn10242922/tables/
+
+
 import os
 import json
 import synapseclient
 import pandas as pd
 import numpy as np
 
+# login to synapse
+
 syn = synapseclient.Synapse()
 syn.login(authToken=os.environ.get('SYNAPSE_PAT'))
 
-# read in metadata templates and convert to ... data frame?
+### 1: Create data frame with metaadata template attributes
 
 # list files in directory
-
 # a function to get file paths from all subdirs in directory
 def getFullPaths(directory):
     full_paths = list()
@@ -30,11 +42,10 @@ def append_required(required_list, json_stuff):
     else: 
         required_list.append(None)    
 
-
-# create data frame of attributes representing metadata templates, i.e. Parent = "DataType"
+# function to create data frame of attributes representing metadata templates, i.e. Parent = "DataType"
 def createTemplateDataFrame(file_path_list):
 
-    # actually do do lists
+    # create empty lists to become df columns
     attribute = list()
     schema_id = list()
     description = list()
@@ -82,9 +93,10 @@ def createTemplateDataFrame(file_path_list):
     
     return(df)
 
+# use the function
 template_df = createTemplateDataFrame(file_paths)
 
-### Create data frame for template column attributes
+### 2: Create data frame for template column attributes
 
 # get column "mini-schemas" and valid values in table form from synapse annotations project
 annotation_modules_id = 'syn10242922'
@@ -99,7 +111,7 @@ annotation_modules = query_results.asDataFrame()
 # remove the PEC specific modules from the annotations table to prevent problems w/ grant and study
 annotation_modules = annotation_modules.loc[annotation_modules['module'] != 'PsychENCODESpecific']
 
-# what are the column attributes from all templates?
+# get all column values that are dependencies of the metadata template attributes
 dep_column_values = template_df['DependsOn'].tolist()
 dep_list = list()
 for i in dep_column_values:
@@ -120,8 +132,9 @@ all_ad_keys = schema_versions.loc[(schema_versions['key'].isin(unique_deps))
                     & (schema_versions['module'] != 'PsychENCODESpecific')][['key', 'schema', 'latestVersion']]
 
 # join key descriptions from the annotation table
-key_definitions = annotation_modules[['key', 'description', 'columnType']].drop_duplicates()
 # this is the row info for column attributes, aka Parent = "DataProperty"
+key_definitions = annotation_modules[['key', 'description', 'columnType']].drop_duplicates()
+
 merged_keys_defs = pd.merge(all_ad_keys, 
                   key_definitions,
                   how = 'left',
@@ -151,12 +164,6 @@ def getValidValues(attribute):
         value_string = ''
     return(value_string)
 
-
-valid_values = list()
-for item in merged_keys_defs['key']:
-    valid_values.append(getValidValues(item)) 
-
-
 # create data frame of attributes representing template columns, i.e. Parent = 'DataProperty'
 # lists that will be columns
 attribute = list(merged_keys_defs['key'])
@@ -171,7 +178,7 @@ dependsOn_component = list()
 validation_rules = list()
 needs_boolean_fix = list() # store for later -- boolean is not an available schematic type and T/F values don't have namespaces
 
-
+# loop thorugh all attributes in our templates and populate lists
 for a in attribute:
     dependsOn.append(None)
     csv_properties.append(None)
@@ -189,6 +196,7 @@ for a in attribute:
         validation_rules.append(None)
         needs_boolean_fix.append('YES')
 
+# create dataframe
 column_df = pd.DataFrame({'Attribute': attribute,
                        'Description': description, 
                        'Valid Values': valid_values,
@@ -202,14 +210,7 @@ column_df = pd.DataFrame({'Attribute': attribute,
                        'Adjust Bool': needs_boolean_fix} 
                        )
 
-### make attribute rows for valid values with definitions
-
-valid_values
-# remove '' empty valid values
-comp_vals = list(filter(lambda x: x != '', valid_values))
-# join into one string, then split
-join_vals = ', '.join(comp_vals)
-split_vals = join_vals.split(', ')
+### 3: Create dataframe with attribute rows for valid values with definitions
 
 # return a list of valid values from the column attribute df
 # remove any empty strings and split each value into a list element
@@ -256,7 +257,9 @@ value_df = pd.DataFrame({'Attribute': attribute,
                        'Validation Rules': validation_rules} 
                        )
 
+### 4: join to create full model
 
+# concat dfs
 full_model = pd.concat([template_df, column_df, value_df], ignore_index = True)
 
 # clean up the final data frame
@@ -269,7 +272,10 @@ drop_cols = full_model.drop(columns = ['Schema Required Columns', 'Adjust Bool']
 # replace all None and NaN values
 final_model = drop_cols.replace(np.nan, '')
 
-# write final data model as csv -- and maybe subcsvs?
+# write final data model as csv
+# name with today's date
+from datetime import datetime
 
-
-
+date = datetime.today().strftime('%Y-%m-%d')
+csv_path = './legacy_AD_data_model_%s.csv' % date
+final_model.to_csv(csv_path, index = False)
