@@ -4,3 +4,6 @@ schematic_service_account_creds.json
 # synapse creds
 .synapseConfig
 .synapseCache/
+
+# schema metadata templates from sysbiodccjsonschemas repo
+schema_metadata_templates/
