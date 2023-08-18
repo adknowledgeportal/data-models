@@ -94,8 +94,8 @@ schema_versions = query_results.asDataFrame()
 query_results = syn.tableQuery("select * from %s" % annotation_modules_id)
 annotation_modules = query_results.asDataFrame()
 
-# filtering a pandas df
-annotation_modules.loc[annotation_modules['key'] == 'alignmentMethod']
+# remove the PEC specific modules from the annotations table to prevent problems w/ grant and study
+annotation_modules = annotation_modules.loc[annotation_modules['module'] != 'PsychENCODESpecific']
 
 # what are the column attributes from all templates?
 dep_column_values = template_df['DependsOn'].tolist()
@@ -136,21 +136,31 @@ unique_reqs = np.unique(req_array).tolist()
 # combine schema id and version into source column
 merged_keys_defs['Source'] = merged_keys_defs[['schema', 'latestVersion']].agg('-'.join, axis=1)
 
+
 # get column of valid values for attributes
 def getValidValues(attribute):
     if any(annotation_modules['key'].str.contains(attribute)):
         sub_df = annotation_modules.loc[annotation_modules['key'] == attribute]
-        value_list = sub_df['value'].tolist()
-        value_string = ', '.join(value_list)
+        if sub_df['value'].isna().all():
+            value_string = ''
+        else:
+            value_list = sub_df['value'].tolist()
+            value_string = ', '.join(value_list)
     else:
         value_string = ''
     return(value_string)
 
+
 valid_values = list()
 for item in merged_keys_defs['key']:
-    print(getValidValues(item)) # something in here is a float?
+    valid_values.append(getValidValues(item)) 
 
-merged_keys_defs['Valid Values'] = 
+'''
+# try with chromosome
+sub_df = annotation_modules.loc[annotation_modules['key'] == 'chromosome']
+value_list = sub_df['value'].tolist()
+value_string = ', '.join(value_list)
+
 
 # create data frame of attributes representing template columns, i.e. Parent = 'DataProperty'
 column_attribute = list(properties)
