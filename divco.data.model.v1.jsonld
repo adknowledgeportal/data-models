@@ -5164,7 +5164,7 @@
             "sms:required": "sms:false",
             "sms:requiresComponent": [
                 {
-                    "@id": "bts:BulkRNAseqAssayMetadata"
+                    "@id": "bts:BulkRNASeqAssayMetadata"
                 }
             ],
             "sms:requiresDependency": [
@@ -13338,23 +13338,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:BulkRNAseqAssayMetadata",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "BulkRNAseqAssayMetadata",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "schema:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Bulk_RNAseq_Assay_Metadata",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:R1",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -13453,6 +13436,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "features",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BulkRNAseqAssayMetadata",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "BulkRNAseqAssayMetadata",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "schema:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Bulk_RNAseq_Assay_Metadata",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
