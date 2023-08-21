@@ -276,6 +276,7 @@ final_model = drop_cols.replace(np.nan, '')
 # name with today's date
 from datetime import datetime
 
-date = datetime.today().strftime('%Y-%m-%d')
-csv_path = './legacy_AD_%s.model.csv' % date
+# don't do the date
+# date = datetime.today().strftime('%Y-%m-%d')
+csv_path = 'legacy.AD.model.csv'
 final_model.to_csv(csv_path, index = False)
