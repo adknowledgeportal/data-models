@@ -11,7 +11,7 @@ asset_store:
   # This is when assets are stored in a synapse project
   synapse:
     # Synapse ID of the file view listing all project data assets.
-    master_fileview_id: "syn23643253"
+    master_fileview_id: "syn51324810" #AD Portal backend internal project - DCA Asset View
     # Path to the synapse config file, either absolute or relative to this file
     config: ".synapseConfig"
     # Base name that manifest files will be saved as
@@ -22,7 +22,7 @@ manifest:
   # Location where manifests will saved to
   manifest_folder: "manifests"
   # Title or title prefix given to generated manifest(s)
-  title: "example"
+  title: "AD_"
   # Data types of manifests to be generated or data type (singular) to validate manifest against
   data_type:
     - "Biospecimen"
@@ -31,7 +31,7 @@ manifest:
 # Describes the location of your schema
 model:
   # Location of your schema jsonld, it must be a path relative to this file or absolute
-  location: "tests/data/example.model.jsonld"
+  location: "legacy_AD_2023-08-18.model.jsonld"
 
 # This section is for using google sheets with Schematic
 google_sheets:
