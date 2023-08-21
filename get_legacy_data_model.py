@@ -277,5 +277,5 @@ final_model = drop_cols.replace(np.nan, '')
 from datetime import datetime
 
 date = datetime.today().strftime('%Y-%m-%d')
-csv_path = './legacy_AD_data_model_%s.csv' % date
+csv_path = './legacy_AD_%s.model.csv' % date
 final_model.to_csv(csv_path, index = False)
