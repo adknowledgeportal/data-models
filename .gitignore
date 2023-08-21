@@ -7,3 +7,6 @@ schematic_service_account_creds.json
 
 # schema metadata templates from sysbiodccjsonschemas repo
 schema_metadata_templates/
+
+# ignore local pyenv setup
+local-pyenv-setup.sh
