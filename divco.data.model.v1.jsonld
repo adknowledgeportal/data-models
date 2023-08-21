@@ -5160,7 +5160,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Bulk_RNASeq_Raw_File_Annotations",
+            "sms:displayName": "BulkRNASeqRawFileAnnotations",
             "sms:required": "sms:false",
             "sms:requiresComponent": [
                 {
@@ -5245,7 +5245,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Bulk_RNASeq_Counts_File_Annotations",
+            "sms:displayName": "BulkRNASeqCountsFileAnnotations",
             "sms:required": "sms:false",
             "sms:requiresComponent": [
                 {
