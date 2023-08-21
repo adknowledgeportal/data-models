@@ -5,11 +5,9 @@ name: CI
 
 on:
   pull_request:
-    branches: main
+    # branches: main
     # change * to your data-model.csv name if needed
     paths: '**.model.csv'
-
-  workflow_dispatch:
 
 jobs:
   CI:
