@@ -31,7 +31,7 @@ manifest:
 # Describes the location of your schema
 model:
   # Location of your schema jsonld, it must be a path relative to this file or absolute
-  location: "legacy.AD.model.jsonld"
+  location: "AD.model.jsonld"
 
 # This section is for using google sheets with Schematic
 google_sheets:
