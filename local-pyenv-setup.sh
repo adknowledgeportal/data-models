@@ -4,10 +4,14 @@
 
 # create virtualenv to use develop branch of synapse client
 # still using 3.10.9 for schematic compatability (? maybe not important ?)
-pyenv virtualenv 3.10.9 synapse-pyclient-develop
+# pyenv virtualenv 3.10.9 synapse-pyclient-develop
+# didn't actually need the develop branch for schema services
+# just use a virtualenv for schematic pypi release
+pyenv virtualenv 3.10.9 schematic-23.8.1
 
 # activate
-pyenv activate synapse-pyclient-develop
+#pyenv activate synapse-pyclient-develop
+pyenv activate schematic-23.8.1
 
 # install develop branch
 # pip install git+https://github.com/Sage-Bionetworks/synapsePythonClient.git@develop
@@ -17,9 +21,11 @@ pyenv activate synapse-pyclient-develop
 # instead, fork the python client repo and clone it
 # activate the virtualenv inside the repo
 # then run 
-pip install -e .
+# pip install -e .
 
-# install pandas and numpy and those things
+# install schematic, which includes synapsclient + pandas
+pip install schematic==23.8.1
+
 # install github file fetcher
 
 # actually install node first to get npm
