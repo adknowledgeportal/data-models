@@ -1,0 +1,2 @@
+Filename,fileFormat,consortium,study,resourceType,isModelSystem,species,readType,assay,dataSubtype,dataType,individualID,isMultispecimen,specimenID,specimenIDMappingFile
+spec1.fastq,fastq,AMP-AD,AMP-AD_DiverseCohorts,experimentalData,false - isModelSystem,Human,R1,rnaSeq,raw,geneExpression,ind01,false - isMultispecimen,spec01,
