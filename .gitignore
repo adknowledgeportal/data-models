@@ -10,3 +10,12 @@ schema_metadata_templates/
 
 # ignore local pyenv setup
 local-pyenv-setup.sh
+
+# manifest output csvs
+output_csvs/
+
+# great expectations installs when you run schematic
+great_expectations/
+
+# notes
+notes.txt
