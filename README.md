@@ -1,8 +1,10 @@
 # AD Knowledge Portal data models
 
-- **AD.model.jsonld**: this is the current, "live" version of the AD Portal data model. It is being used by both the staging and production versions of the multitenant Data Curator App. It was initially produced from the legacy.AD.model, with additional changes to make it work better with DCA.
-- **legacy.AD.model.<date>.jsonld**: this is constructed by running the `get_legacy_data_model.py` script. This legacy data model will always represent _just_ the metadata templates from the AD Portal Synapse project, plus the valid values from the latest version of the dictionary schemas in the synapseAnnotations repo.
-- **divco.data.model.v1.jsonld**: this is a pilot data model that was constructed for the Diverse Cohorts project. It is no longer being used by DCA.
+- **AD.model.\* ([csv](https://github.com/adknowledgeportal/data-models/blob/main/AD.model.csv) | [jsonld](https://github.com/adknowledgeportal/data-models/blob/main/AD.model.jsonld))**: this is the current, "live" version of the AD Portal data model. It is being used by both the staging and production versions of the multitenant Data Curator App. It was initially produced from the legacy.AD.model, with additional changes to make it work better with DCA.
+  
+- **legacy.AD.model.\<_date_\>.\* ([csv](https://github.com/adknowledgeportal/data-models/blob/main/legacy.AD.model.2023.08.csv) | [jsonld](https://github.com/adknowledgeportal/data-models/blob/main/legacy.AD.model.2023.08.jsonld))**: this is constructed by running the `get_legacy_data_model.py` script. This legacy data model will always represent _just_ the metadata templates from the AD Portal Synapse project, plus the valid values from the latest version of the dictionary schemas in the synapseAnnotations repo.
+  
+- **divco.data.model.v1.\* ([csv](https://github.com/adknowledgeportal/data-models/blob/main/divco.data.model.v1.csv) | [jsonld](https://github.com/adknowledgeportal/data-models/blob/main/divco.data.model.v1.jsonld))**: this is a pilot data model that was constructed for the Diverse Cohorts project. It is no longer being used by DCA.
 
 ## Editing data models
 If you want to make changes to the live data model, create a new branch, make changes, and open a pull request. The main branch of this repo is protected to avoid conflicts. 
