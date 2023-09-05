@@ -9031,6 +9031,9 @@
                     "@id": "bts:RnaSeqSampleSwap"
                 },
                 {
+                    "@id": "bts:ROSMAP-IA"
+                },
+                {
                     "@id": "bts:RRAPOE4"
                 },
                 {
@@ -31112,6 +31115,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "tool",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ROSMAP-IA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The ROSMAP iPSC-derived Astrocyte Study (ROSMAP-IA)",
+            "rdfs:label": "ROSMAP-IA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ValidValue"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ROSMAP-IA",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
