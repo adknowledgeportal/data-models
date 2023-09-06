@@ -7489,6 +7489,9 @@
                     "@id": "bts:Anteriorcingulatecortex"
                 },
                 {
+                    "@id": "bts:Angulargyrus"
+                },
+                {
                     "@id": "bts:Blood"
                 },
                 {
@@ -7535,6 +7538,9 @@
                 },
                 {
                     "@id": "bts:Embryonictissue"
+                },
+                {
+                    "@id": "bts:Entorhinalcortex"
                 },
                 {
                     "@id": "bts:Fecalmaterial"
@@ -9029,6 +9035,9 @@
                 },
                 {
                     "@id": "bts:RnaSeqSampleSwap"
+                },
+                {
+                    "@id": "bts:ROSMAP-IA"
                 },
                 {
                     "@id": "bts:RRAPOE4"
@@ -31112,6 +31121,57 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "tool",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ROSMAP-IA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The ROSMAP iPSC-derived Astrocyte Study (ROSMAP-IA)",
+            "rdfs:label": "ROSMAP-IA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ValidValue"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ROSMAP-IA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Entorhinalcortex",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Component of the temporal lobe on the mesial surface. The rostral and caudal boundaries of the entorhinal cortex are the rostral end of the collateral sulcus and the caudal end of the amygdala respectively. The medial boundary is the medial aspect of the temporal lobe and the lateral boundary is the collateral sulcus.",
+            "rdfs:label": "Entorhinalcortex",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ValidValue"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "entorhinal cortex",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Angulargyrus",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Part of inferior parietal lobule formed by the cortex surrounding the upturned end of the superior temporal sulcus.",
+            "rdfs:label": "Angulargyrus",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ValidValue"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "angular gyrus",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
