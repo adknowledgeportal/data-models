@@ -1,4 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules
+Component,,,,,TRUE,,,,,
 individual_human_metadata_template,SysBio AD individual human metadata template schema,,"individualID, individualIdSource, species, sex, race, ethnicity, yearsEducation, apoeGenotype, diagnosis, diagnosisCriteria, ageDeath, ageDeathUnits, causeDeath, mannerDeath, PMI, Braak, CERAD, brainWeight, pH",,FALSE,DataType,,sysbio.metadataTemplates-ad.individual.human,
 manifest_metadata_template,AD manifest template schema,,"path, parent, individualID, specimenID, isMultiSpecimen, assay, fileFormat, consortium, study, grant, resourceType, dataType, dataSubtype, metadataType, analysisType, isModelSystem, chromosome",,FALSE,DataType,,sysbio.metadataTemplates-ad.manifest,
 biospecimen_metadata_template,SysBio AD biospecimen metadata template schema,,"individualID, specimenID, specimenIdSource, organ, tissue, isPostMortem, BrodmannArea, nucleicAcidSource, cellType, samplingAge, samplingAgeUnits, sampleStatus, fastingState, visitNumber, assay",,FALSE,DataType,,sysbio.metadataTemplates-ad.biospecimen,
