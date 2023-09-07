@@ -129,7 +129,6 @@ chromatinAmount,Amount in ug of chromatin used for an assay,,,,FALSE,DataPropert
 chromatinAmountUnits,Units of measure for the amount of chromatin used for an assay,,,,FALSE,DataProperty,,sage.annotations-immunoAssays.chromatinAmountUnits-0.0.2,str
 lotNumber,A distinctive alpha-numeric identification code assigned by the manufacturer or distributor to a specific quantity of manufactured material or product within a batch,,,,FALSE,DataProperty,,sage.annotations-immunoAssays.lotNumber-0.0.2,str
 vendor,Commercial or institutional source of a component used in an assay,,,,FALSE,DataProperty,,sage.annotations-immunoAssays.vendor-0.0.2,str
-filename,The name of a file.,,,,FALSE,DataProperty,,sage.annotations-manifestKeys.filename-0.0.2,str
 bedding,Rodent bedding material,"Alpha-dri, aspen, aspen sanichip, corn cob, pine, sanichip",,,FALSE,DataProperty,,sage.annotations-neuro.bedding-0.0.3,str
 birthID,Identifying string linked to a particular animal,,,,FALSE,DataProperty,,sage.annotations-neuro.birthID-0.0.1,str
 BrodmannArea,A segmentation of the cerebral cortex on the basis of cytoarchitecture,,,,FALSE,DataProperty,,sage.annotations-neuro.BrodmannArea-0.0.2,str
