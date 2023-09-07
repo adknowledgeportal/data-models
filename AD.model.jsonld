@@ -1980,6 +1980,23 @@
             }
         },
         {
+            "@id": "bts:Component",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Component",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "schema:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Component",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:IndividualHumanMetadataTemplate",
             "@type": "rdfs:Class",
             "rdfs:comment": "SysBio AD individual human metadata template schema",
@@ -1995,6 +2012,9 @@
             "sms:displayName": "individual_human_metadata_template",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:IndividualID"
                 },
@@ -2056,10 +2076,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:ManifestMetadataTemplate",
+            "@id": "bts:FileAnnotationTemplate",
             "@type": "rdfs:Class",
-            "rdfs:comment": "AD manifest template schema",
-            "rdfs:label": "ManifestMetadataTemplate",
+            "rdfs:comment": "AD file annotation template schema",
+            "rdfs:label": "FileAnnotationTemplate",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:DataType"
@@ -2068,14 +2088,14 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "manifest_metadata_template",
+            "sms:displayName": "file_annotation_template",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
-                    "@id": "bts:Path"
+                    "@id": "bts:Component"
                 },
                 {
-                    "@id": "bts:Parent"
+                    "@id": "bts:Filename"
                 },
                 {
                     "@id": "bts:IndividualID"
@@ -2142,6 +2162,9 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:Component"
+                },
+                {
                     "@id": "bts:IndividualID"
                 },
                 {
@@ -2205,6 +2228,9 @@
             "sms:displayName": "assay_scrnaSeq_metadata_template",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:SpecimenID"
                 },
@@ -2294,6 +2320,9 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:Component"
+                },
+                {
                     "@id": "bts:IndividualID"
                 },
                 {
@@ -2339,6 +2368,9 @@
             "sms:displayName": "assay_STARRSeq_metadata_template",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:SpecimenID"
                 },
@@ -2434,6 +2466,9 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:Component"
+                },
+                {
                     "@id": "bts:IndividualID"
                 },
                 {
@@ -2473,6 +2508,9 @@
             "sms:displayName": "assay_nanostring_metadata_template",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:SpecimenID"
                 },
@@ -2526,6 +2564,9 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:Component"
+                },
+                {
                     "@id": "bts:SpecimenID"
                 },
                 {
@@ -2568,6 +2609,9 @@
             "sms:displayName": "assay_rnaSeq_metadata_template",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:SpecimenID"
                 },
@@ -2645,6 +2689,9 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:Component"
+                },
+                {
                     "@id": "bts:SpecimenID"
                 },
                 {
@@ -2694,6 +2741,9 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:Component"
+                },
+                {
                     "@id": "bts:SpecimenID"
                 },
                 {
@@ -2742,6 +2792,9 @@
             "sms:displayName": "assay_bisulfiteSeq_metadata_template",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:SpecimenID"
                 },
@@ -2822,6 +2875,9 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:Component"
+                },
+                {
                     "@id": "bts:IndividualID"
                 },
                 {
@@ -2858,6 +2914,9 @@
             "sms:displayName": "individual_animal_metadata_template",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:IndividualID"
                 },
@@ -2919,6 +2978,9 @@
             "sms:displayName": "assay_wholeExomeSeq_metadata_template",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:SpecimenID"
                 },
@@ -2983,6 +3045,9 @@
             "sms:displayName": "assay_wholeGenomeSeq_metadata_template",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:SpecimenID"
                 },
@@ -3051,6 +3116,9 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:Component"
+                },
+                {
                     "@id": "bts:SpecimenID"
                 },
                 {
@@ -3103,6 +3171,9 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:Component"
+                },
+                {
                     "@id": "bts:SpecimenID"
                 },
                 {
@@ -3139,6 +3210,9 @@
             "sms:displayName": "assay_methylationArray_metadata_template",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:SpecimenID"
                 },
@@ -3188,6 +3262,9 @@
             "sms:displayName": "biospecimen_invitro_metadata_template",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:IndividualID"
                 },
@@ -3253,6 +3330,9 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:Component"
+                },
+                {
                     "@id": "bts:SpecimenID"
                 },
                 {
@@ -3304,6 +3384,9 @@
             "sms:displayName": "assay_ChIPSeq_metadata_template",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:SpecimenID"
                 },
@@ -3390,6 +3473,9 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:Component"
+                },
+                {
                     "@id": "bts:SpecimenID"
                 },
                 {
@@ -3457,6 +3543,9 @@
             "sms:required": "sms:false",
             "sms:requiresDependency": [
                 {
+                    "@id": "bts:Component"
+                },
+                {
                     "@id": "bts:SpecimenID"
                 },
                 {
@@ -3517,6 +3606,9 @@
             "sms:displayName": "individual_animal_modelad_metadata_template",
             "sms:required": "sms:false",
             "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
                 {
                     "@id": "bts:IndividualID"
                 },
@@ -3599,6 +3691,23 @@
                     "@id": "bts:OfficialName"
                 }
             ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Filename",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Name of a file",
+            "rdfs:label": "Filename",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "schema:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Filename",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -7971,63 +8080,6 @@
             },
             "sms:displayName": "vendor",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "str"
-            ]
-        },
-        {
-            "@id": "bts:Filename",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "The name of a file.",
-            "rdfs:label": "Filename",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataProperty"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "filename",
-            "sms:required": "sms:false",
-            "sms:validationRules": [
-                "str"
-            ]
-        },
-        {
-            "@id": "bts:Parent",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Synapse ID of the folder that data will be uploaded to",
-            "rdfs:label": "Parent",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataProperty"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "parent",
-            "sms:required": "sms:true",
-            "sms:validationRules": [
-                "str"
-            ]
-        },
-        {
-            "@id": "bts:Path",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "File path where data files that will be uploaded are stored",
-            "rdfs:label": "Path",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataProperty"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "path",
-            "sms:required": "sms:true",
             "sms:validationRules": [
                 "str"
             ]
