@@ -19,3 +19,7 @@ great_expectations/
 
 # notes
 notes.txt
+
+# ignore mac files
+.DS_Store
+**./.DS_Store
