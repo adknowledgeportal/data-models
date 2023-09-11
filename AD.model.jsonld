@@ -3700,7 +3700,7 @@
             "rdfs:label": "Filename",
             "rdfs:subClassOf": [
                 {
-                    "@id": "schema:Thing"
+                    "@id": "bts:DataProperty"
                 }
             ],
             "schema:isPartOf": {
