@@ -8551,6 +8551,9 @@
                     "@id": "bts:APOE-TR"
                 },
                 {
+                    "@id": "bts:ATP6V1AKd"
+                },
+                {
                     "@id": "bts:Banner"
                 },
                 {
@@ -25421,6 +25424,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "APOE-TR",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ATP6V1AKd",
+            "@type": "rdfs:Class",
+            "rdfs:comment": " The ATP6V1A knockdown in hIPSC neurons (ATP6V1A_kd) study",
+            "rdfs:label": "ATP6V1AKd",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ATP6V1A_kd",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
