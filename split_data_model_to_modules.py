@@ -72,10 +72,10 @@ def split_data_model(csv_file):
         # Write manifest template attributes to a separate csv under the "template" module
         data_model[data_model['Parent'] == 'DataType'].to_csv("modules/template/templates.csv", index = False)
     
-    if __name__ == "__main__":
+if __name__ == "__main__":
 
-        csv_file = 'AD.model.csv'
-        split_data_model(csv_file)
+    csv_file = 'AD.model.csv'
+    split_data_model(csv_file)
 
 
 
