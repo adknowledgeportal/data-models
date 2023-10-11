@@ -1080,6 +1080,7 @@ Aging-PheWAS,Characterization of gene associations with aging-related traits wit
 APOE4_Myelination,The APOE4 Myelination (APOE4_Myelination) Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn44424170,,string,ADKP
 APOEPSC,The impact of APOE on aging-related conditions in human iPSC models (APOEPSC) study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn25914209,,string,ADKP
 APOE-TR,APOE Targeted Replacement,,,,,study,,https://www.synapse.org/#!Synapse:syn8391648,,string,ADKP
+ATP6V1A_kd, The ATP6V1A knockdown in hIPSC neurons (ATP6V1A_kd) study,,,,,study,,https://www.synapse.org/#!Synapse:syn52201354,,string,neuro
 Banner,Banner Sun Health Research Institute's Brain and Body Donation Program,,,,,study,,https://www.synapse.org/#!Synapse:syn7170616,,string,ADKP
 BCM-DMAS,Baylor Drosophila Model Aging Study (BCM-DMAS),,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn34767207,,string,ADKP
 BipSeq,RNA Sequencing of the limbic system in bipolar disorder,,,,,study,,https://www.synapse.org/#!Synapse:syn5844980,,string,ADKP
