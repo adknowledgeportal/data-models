@@ -1,0 +1,45 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+individualIdSource,Database or repository to which individual ID maps,"ABN, ABR, ADNI, AIBS, BannerSun, BEB_Miller, Clotomics_PAIKEA_MSSM, DongLab, Einstein, Emory, Geschwind, HBSFRC, HBTRC, JAX, LIBD, LivingBrainProject_MSSM, MayoBrainBank, Mayo Clinic, MSSM, NDRI, Newcastle, NICHD, NIMH-HBCC, Novogenix, NYBB, Oxford, Penn, PGP, Pitt, Pritzker, Rush, Sestan, SMRI, StemExpress, TAA, UCI_TMF, UCSF, UM-BTB, UW-CDL, Vaccarino, XCell Science, Yale, IU",,,False,DataProperty,,sage.annotations-experimentalData.individualIdSource-0.0.17,,string,individual
+ABN,Autism Brain Net,,,,,individualIdSource,,https://www.autismbrainnet.org/,,string,individual
+ABR,Advanced Biosciences Resources,,,,,individualIdSource,,,,string,individual
+ADNI,Alzheimer's Disease Neuroimaging Initiative,,,,,individualIdSource,,http://adni.loni.usc.edu/,,string,individual
+AIBS,Allen Institute for Brain Science,,,,,individualIdSource,,https://alleninstitute.org/what-we-do/brain-science/research/allen-institute-brain-science/,,string,individual
+BannerSun,Banner Sun Health Research Institute,,,,,individualIdSource,,https://www.bannerhealth.com/locations/sun-city/banner-sun-health-research-institute-santa-fe,,string,individual
+BEB_Miller,University of Miami Miller School of Medicine Brain Endowment Bank,,,,,individualIdSource,,https://med.miami.edu/programs/brain-endowment-bank,,string,individual
+Clotomics_PAIKEA_MSSM,,,,,,individualIdSource,,https://icahn.mssm.edu/,,string,individual
+DongLab,Laboratory of Translational Neurobiology led by Principal Investigator Dr. Hongxin Dong MD PhD at Northwestern University.,,,,,individualIdSource,,https://sites.northwestern.edu/donglab/,,string,individual
+Einstein,Albert Einstein College of Medicine,,,,,individualIdSource,,https://www.einstein.yu.edu/,,string,individual
+Emory,Emory University,,,,,individualIdSource,,https://www.emory.edu/,,string,individual
+Geschwind,The Geschwind Lab,,,,,individualIdSource,,https://geschwindlab.dgsom.ucla.edu/pages/,,string,individual
+HBSFRC,"Located at UCSF, The Human Brain and Spinal Fluid Resource Center (HBSFRC) is a brain bank for neuroscientists. The Center collects, stores, and distributes the highest quality of pre- and post-mortem tissues, including brain, spinal cord, cerebrospinal fluid (CSF), serum, blood cells and urine, to be use by scientific investigators of neurological and psychiatric diseases.",,,,,individualIdSource,,http://brainbank.ucla.edu/,,string,individual
+HBTRC,Harvard Brain Tissue Resource Center,,,,,individualIdSource,,https://hbtrc.mclean.harvard.edu/,,string,individual
+JAX,The Jackson Laboratory,,,,,individualIdSource,,https://www.jax.org,,string,individual
+LIBD,Lieber Institute for Brain Development,,,,,individualIdSource,,https://www.libd.org,,string,individual
+LivingBrainProject_MSSM,The Living Brain Project at the Icahn School of Medicine,,,,,individualIdSource,,https://labs.icahn.mssm.edu/charneylab/,,string,individual
+MayoBrainBank,Mayo Clinic Brain Bank,,,,,individualIdSource,,https://www.mayo.edu/research/departments-divisions/department-neuroscience-florida/brain-bank,,string,individual
+Mayo Clinic,Mayo Clinic,,,,,individualIdSource,,https://www.mayo.edu/research/departments-divisions/department-neuroscience-florida,,string,individual
+MSSM,Mount Sinai NIH Brain and Tissue Repository,,,,,individualIdSource,,http://icahn.mssm.edu/research/labs/neuropathology-and-brain-banking,,string,individual
+NDRI,National Disease Research Interchange,,,,,individualIdSource,,https://ndriresource.org/,,string,individual
+Newcastle,"Newcastle University, UK",,,,,individualIdSource,,https://www.ncl.ac.uk/,,string,individual
+NICHD,Eunice Kennedy Shriver National Institute of Child Health and Human Development,,,,,individualIdSource,,https://www.nichd.nih.gov/,,string,individual
+NIMH-HBCC,The NIH Human Brain Collection Core,,,,,individualIdSource,,https://www.nimh.nih.gov/labs-at-nimh/research-areas/research-support-services/hbcc/human-brain-collection-core-hbcc.shtml,,string,individual
+Novogenix,Novogenix Laboratories,,,,,individualIdSource,,,,string,individual
+NYBB,New York Brain Bank at Columbia University,,,,,individualIdSource,,http://www.columbianeuroresearch.org/taub/res-investigation.html#NewYork,,string,individual
+Oxford,University of Oxford,,,,,individualIdSource,,https://www.ox.ac.uk/,,string,individual
+Penn,"The University of Pennsylvania Alzheimer's Disease Core Center (ADCC), Penn Udall Center and the Center for Neurodegenerative Disease Research (CNDR)",,,,,individualIdSource,,http://www.med.upenn.edu/cndr/biosamples-brainbank.html,,string,individual
+PGP,Personal Genome Project at Harvard,,,,,individualIdSource,,https://pgp.med.harvard.edu/,,string,individual
+Pitt,The University of Pittsburgh NIH NeuroBioBank Brain and Tissue Repository,,,,,individualIdSource,,https://neurobiobank.nih.gov/,,string,individual
+Pritzker,Pritzker Neuropsychiatric Disorders Research Consortium Brain Bank,,,,,individualIdSource,,https://pritzkerneuropsych.org/www/about-us/scientific-approach/brain-bank/,,string,individual
+Rush,Rush Alzheimer's Disease Center,,,,,individualIdSource,,https://www.radc.rush.edu/,,string,individual
+Sestan,"Sestan Lab, Yale School of Medicine",,,,,individualIdSource,,https://medicine.yale.edu/lab/sestan/,,string,individual
+SMRI,Stanley Medical Research Institute,,,,,individualIdSource,,http://www.stanleyresearch.org/,,string,individual
+StemExpress,StemExpress,,,,,individualIdSource,,https://www.stemexpress.com/,,string,individual
+TAA,Tourette Association of America,,,,,individualIdSource,,https://tourette.org/,,string,individual
+UCI_TMF,"University of California, Irvine Transgenic Mouse Facility",,,,,individualIdSource,,https://www.research.uci.edu/facilities-services/tmf/index.html,,string,individual
+UCSF,University of California - San Francisco,,,,,individualIdSource,,https://www.ucsf.edu/,,string,individual
+UM-BTB,University of Maryland Brain and Tissue Bank,,,,,individualIdSource,,https://www.medschool.umaryland.edu/btbank/,,string,individual
+UW-CDL,University of Washington Congenital Defects Lab,,,,,individualIdSource,,,,string,individual
+Vaccarino,"Vaccarino Lab, Yale School of Medicine",,,,,individualIdSource,,https://medicine.yale.edu/lab/vaccarino/,,string,individual
+XCell Science,XCell Science Inc. (XCell) is a biotechnology company that provides reagents and services to the stem cell community,,,,,individualIdSource,,http://www.xcellscience.com/,,string,individual
+Yale,Yale School of Medicine,,,,,individualIdSource,,https://medicine.yale.edu/,,string,individual
+IU,Indiana University,,,,,individualIdSource,,https://www.indiana.edu/,,string,individual

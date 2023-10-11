@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+antibodyAmountUnits,Units of measure for the amount of antibody used for an assay,,,,False,DataProperty,,sage.annotations-immunoAssays.antibodyAmountUnits-0.0.2,,string,immunoassay

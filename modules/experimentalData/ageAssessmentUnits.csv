@@ -1,0 +1,8 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+ageAssessmentUnits,Age of assessment units.,"days, gestational weeks, months, PCW, weeks, years",,,False,DataProperty,,sage.annotations-experimentalData.ageAssessmentUnits-0.0.2,,string,experimentalData
+days,"Age measured in days, a period of 24 hours.",,,,,ageAssessmentUnits,,http://purl.obolibrary.org/obo/NCIT_C25301,,string,experimentalData
+gestational weeks,"Gestational age (written with both weeks and days, e.g. 39 weeks and 0 days) is calculated using the best obstetrical estimated due date (EDD) based on the following formula: Gestational Age = (280 - (EDD - Reference Date))/ 7. Note: Reference Date is the date on which you are trying to determine gestational age.",,,,,ageAssessmentUnits,,http://purl.obolibrary.org/obo/NCIT_C81253,,string,experimentalData
+months,Age measured in calendar months (approximately 30 days or 4 weeks).,,,,,ageAssessmentUnits,,http://purl.obolibrary.org/obo/NCIT_C29846,,string,experimentalData
+PCW,Post-Conception Weeks,,,,,ageAssessmentUnits,,https://embryology.med.unsw.edu.au/embryology/index.php/Timeline_human_development,,string,experimentalData
+weeks,"Age measured in weeks, a period of 7 consecutive days.",,,,,ageAssessmentUnits,,http://purl.obolibrary.org/obo/NCIT_C29844,,string,experimentalData
+years,Age measured in years (approximately 365 days).,,,,,ageAssessmentUnits,,http://purl.obolibrary.org/obo/NCIT_C29848,,string,experimentalData

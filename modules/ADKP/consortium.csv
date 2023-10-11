@@ -1,0 +1,18 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+consortium,The name of the consortium,"CMC, PEC, AMP-AD, MODEL-AD, M2OVE-AD, Resilience-AD, BSMN, CSBC, PSON, GENIE, Synodos, DHART SPORE, CDCP, Psych-AD, ELITE, Not Applicable",,,True,DataProperty,,sage.annotations-sageCommunity.consortium-0.0.5,,string,ADKP
+CMC,CommonMind Consortium,,,,,consortium,,https://www.synapse.org/cmc,,string,ADKP
+PEC,PsychENCODE Consortium,,,,,consortium,,https://www.synapse.org/pec,,string,ADKP
+AMP-AD,Accelerating Medicines Partnership-Alzheimer's Disease,,,,,consortium,,https://adknowledgeportal.synapse.org/,,string,ADKP
+MODEL-AD,Model Development and Evaluation for Late Onset AD,,,,,consortium,,https://adknowledgeportal.synapse.org/,,string,ADKP
+M2OVE-AD,Molecular Mechanisms of the Vascular Etiology of Alzheimer's Disease ,,,,,consortium,,https://adknowledgeportal.synapse.org/,,string,ADKP
+Resilience-AD,Interdisciplinary Research to Understand the Complex Biology of Resilience to Alzheimer's Disease Risk,,,,,consortium,,https://adknowledgeportal.synapse.org/,,string,ADKP
+BSMN,Brain Somatic Mosaicism Network,,,,,consortium,,https://www.synapse.org/bsmn,,string,ADKP
+CSBC,Cancer Systems Biology Consortium,,,,,consortium,,https://csbconsortium.org/,,string,ADKP
+PSON,Physical Science in Oncology,,,,,consortium,,https://physics.cancer.gov/,,string,ADKP
+GENIE,Genomics Evidence Neoplasia Information Exchange,,,,,consortium,,http://www.aacr.org/Research/Research/Pages/aacr-project-genie.aspx#.WOQS9RIrKF0,,string,ADKP
+Synodos,Data derived from a CTF-Funded Synodos project,,,,,consortium,,https://www.synapse.org/ctf,,string,ADKP
+DHART SPORE,Data from the D-HART SPORE,,,,,consortium,,http://www.synapse.org/dhart,,string,ADKP
+CDCP,Community Data Contribution Program,,,,,consortium,,https://adknowledgeportal.synapse.org/,,string,ADKP
+Psych-AD,Neuropsychiatric Symptoms in Alzheimer's Disease,,,,,consortium,,https://adknowledgeportal.synapse.org/Explore/Programs/DetailsPage?Program=Psych-AD,,string,ADKP
+ELITE,Exceptional Longevity Translational Resources,,,,,consortium,,https://adknowledgeportal.synapse.org/Explore/Programs/DetailsPage?Program=ELITE,,string,ADKP
+Not Applicable,,,,,,consortium,,,,string,ADKP

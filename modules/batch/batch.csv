@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+batch,Batch specimen was processed in,,,,False,DataProperty,,sage.annotations-batch.batch-0.0.2,,string,batch

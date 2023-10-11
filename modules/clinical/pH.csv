@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+pH,A scale used to specify the acidity or basicity of an aqueous or other liquid solution,,,,False,DataProperty,,sage.annotations-neuro.pH-0.0.3,,string,clinical

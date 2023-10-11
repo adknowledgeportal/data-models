@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+GQN,Illumina Genomic Quality Number (gDNA quality score),,,,False,DataProperty,,sage.annotations-qc.GQN-0.0.3,,number,sequencing

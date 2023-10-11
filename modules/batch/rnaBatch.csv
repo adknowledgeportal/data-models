@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+rnaBatch,Batch in which RNA sample was isolated,,,,False,DataProperty,,sage.annotations-batch.rnaBatch-0.0.2,,string,batch

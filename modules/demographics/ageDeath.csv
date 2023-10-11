@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+ageDeath,Age of death,,,,False,DataProperty,,sage.annotations-demographics.ageDeath-0.0.2,,number,demographics

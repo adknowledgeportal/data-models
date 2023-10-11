@@ -1,0 +1,98 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+fileFormat,"Defined format of the data file, typically corresponding to extension, but sometimes indicating more general group of files produced by the same tool or software","7z, ab1, abf, avi, bai, bam, bash script, bcf, bed, bed broadPeak, bed gappedPeak, bed narrowPeak, bedgraph, bgzip, bigwig, bim, bpm, bsc, cel, chp, cram, csv, czi, dat, DICOM, doc, dup, excel, fam, fasta, fastq, fig, flagstat, gct, gff3, gtf, gzip, hdf, hic, html, hyperlink, idat, idx, jpg, json, locs, maf, mat, md, mov, mp4, msf, mtx, nirs, pdf, pdresult, pdstudy, pdview, plink, png, powerpoint, Python script, pzfx, R script, raw, RCC, RLF, RData, recal, rmd, saf, sam, sav, sdf, seg, Sentrix descriptor file, sf3, sif, sqlite, sra, svg, svs, Synapse Table, tab, tagAlign, tar, tbi, tif, tranches, tsv, txt, vcf, wiggle, xml, yaml, zip",,,False,DataProperty,,sage.annotations-sageCommunity.fileFormat-0.0.12,,string,file
+7z,"A compressed archive file format that supports several different data compression, encryption and pre-processing filters.",,,,,fileFormat,,http://purl.obolibrary.org/obo/NCIT_C80224,,string,file
+ab1,TAB1 binary format of raw DNA sequence reads (output of Applied Biosystems' sequencing analysis software). Contains an electropherogram and the DNA base sequence.,,,,,fileFormat,,http://edamontology.org/format_3000,,string,file
+abf,The Axon(TM) Binary File format (ABF) was created for the storage of binary experimental data.,,,,,fileFormat,,https://mdc.custhelp.com/euf/assets/content/ABFHelp.pdf,,string,file
+avi,AVI files can contain both audio and video data in a file container that allows synchronous audio-with-video playback.,,,,,fileFormat,,https://en.wikipedia.org/wiki/Audio_Video_Interleave,,string,file
+bai,BAM indexing format,,,,,fileFormat,,http://edamontology.org/format_3327,,string,file
+bam,"BAM format, the binary, BGZF-formatted compressed version of SAM format for alignment of nucleotide sequences (e.g. sequencing reads) to (a) reference sequence(s)",,,,,fileFormat,,http://edamontology.org/format_2572,,string,file
+bash script,Bash Shell Script,,,,,fileFormat,,https://en.wikipedia.org/wiki/Shell_script,,string,file
+bcf,"BCF, the binary version of Variant Call Format (VCF) for sequence variation (indels, polymorphisms, structural variation)",,,,,fileFormat,,http://edamontology.org/format_3016,,string,file
+bed,"Browser Extensible Data (BED) format of sequence annotation track, typically to be displayed in a genome browser",,,,,fileFormat,,http://edamontology.org/format_3003,,string,file
+bed broadPeak,"This format is used to provide called regions of signal enrichment based on pooled, normalized (interpreted) data. It is a BED 6+3 format.",,,,,fileFormat,,http://genome.ucsc.edu/FAQ/FAQformat.html#format13,,string,file
+bed gappedPeak,"This format is used to provide called regions of signal enrichment based on pooled, normalized (interpreted) data where the regions may be spliced or incorporate gaps in the genomic sequence. It is a BED12+3 format.",,,,,fileFormat,,http://genome.ucsc.edu/FAQ/FAQformat.html#format14,,string,file
+bed narrowPeak,"This format is used to provide called peaks of signal enrichment based on pooled, normalized (interpreted) data. It is a BED6+4 format.",,,,,fileFormat,,http://genome.ucsc.edu/FAQ/FAQformat.html#format12,,string,file
+bedgraph,Holds a tab-delimited chromosome /start /end / datavalue dataset. The bedGraph format allows display of continuous-valued data in track format. This display type is useful for probability scores and transcriptome data,,,,,fileFormat,,http://edamontology.org/format_3583,,string,file
+bgzip,Blocked GNU Zip format,,,,,fileFormat,,http://edamontology.org/format_3615,,string,file
+bigwig,bigWig format for large sequence annotation tracks that consist of a value for each sequence position,,,,,fileFormat,,http://edamontology.org/format_3006,,string,file
+bim,Extended variant information file accompanying a .bed binary genotype table.,,,,,fileFormat,,https://plink.readthedocs.io/en/latest/plink_fmt/#bim,,string,file
+bpm,A beaded pool manifest. Describe the SNP or probe content on a BeadChip or in an assay pool.,,,,,fileFormat,,https://support.illumina.com/datafiles.html,,string,file
+bsc,A project file generated from the Illumina GenomeStudio software suite.,,,,,fileFormat,,https://www.illumina.com/content/dam/illumina-support/documents/documentation/software_documentation/genomestudio/genomestudio-2011-1/genomestudio-gt-module-v1-0-user-guide-11319113-a.pdf,,string,file
+cel,Format of Affymetrix data file of information about (raw) expression levels of the individual probes,,,,,fileFormat,,http://edamontology.org/format_1638,,string,file
+chp,CHP file contains probe set analysis results generated from Affymetrix software,,,,,fileFormat,,,,string,file
+cram,Reference-based compression of alignment format,,,,,fileFormat,,http://edamontology.org/format_3462,,string,file
+csv,Tabular data represented as comma-separated values in a text file,,,,,fileFormat,,http://edamontology.org/format_3752,,string,file
+czi,"microscopy imaging file format that saves multidimensional images such as time lapse, Z-stacks, multiposition experiments and virtual slides, combined with relevant meta information",,,,,fileFormat,,https://www.zeiss.com/microscopy/int/products/microscope-software/zen/czi.html,,string,file
+dat,Format of Affymetrix data file of raw image data.,,,,,fileFormat,,http://edamontology.org/format_1637,,string,file
+DICOM,"A comprehensive set of standards for communications between medical imaging devices, including handling, storing and transmitting information in medical imaging. It includes a file format definition and a network communication protocol.",,,,,fileFormat,,http://purl.obolibrary.org/obo/NCIT_C49059,,string,file
+doc,Microsoft Word document format,,,,,fileFormat,,,,string,file
+dup,output of the Picard MarkDuplicates tool.,,,,,fileFormat,,https://software.broadinstitute.org/gatk/documentation/tooldocs/4.0.4.0/picard_sam_markduplicates_MarkDuplicates.php,,string,file
+excel,Microsoft Excel spreadsheet format,,,,,fileFormat,,,,string,file
+fam,Sample information file accompanying a .bed binary genotype table.,,,,,fileFormat,,https://plink.readthedocs.io/en/latest/plink_fmt/#fam,,string,file
+fasta,"FASTA format is a text-based format for representing either nucleotide sequences or peptide sequences, in which nucleotides or amino acids are represented using single-letter codes",,,,,fileFormat,,https://en.wikipedia.org/wiki/FASTA_format,,string,file
+fastq,FASTQ format is a text-based format for storing both a biological sequence (usually nucleotide sequence) and its corresponding quality scores. Both the sequence letter and quality score are each encoded with a single ASCII character for brevity,,,,,fileFormat,,https://en.wikipedia.org/wiki/FASTQ_format,,string,file
+fig,"Line drawing saved in the Xfig format; stored as a vector image that may include lines, shapes, arcs, splines, arrows, and text objects; may also include images, colors, and patterns.",,,,,fileFormat,,https://fileinfo.com/extension/fig,,string,file
+flagstat,Output of samtools flagstat tool,,,,,fileFormat,,,,string,file
+gct,"Tab-delimited text files of GenePattern that contain a column for each sample, a row for each gene, and an expression value for each gene in each sample",,,,,fileFormat,,http://edamontology.org/format_3709,,string,file
+gff3,Generic Feature Format version 3 (GFF3) of sequence features.,,,,,fileFormat,,http://edamontology.org/format_1975,,string,file
+gtf,Gene transfer format (GTF) is a file format used to hold information about gene structure,,,,,fileFormat,,https://en.wikipedia.org/wiki/Gene_transfer_format,,string,file
+gzip,GZipped format,,,,,fileFormat,,http://purl.obolibrary.org/obo/NCIT_C80220,,string,file
+hdf,"Hierarchical Data Format (HDF) is a set of file formats (HDF4, HDF5) designed to store and organize large amounts of data",,,,,fileFormat,,https://en.wikipedia.org/wiki/Hierarchical_Data_Format,,string,file
+hic,Hi-C contact matrix file,,,,,fileFormat,,https://github.com/theaidenlab/juicer/wiki/Data,,string,file
+html,HTML format,,,,,fileFormat,,http://edamontology.org/format_2331,,string,file
+hyperlink,"A reference (link) from some point in one hypertext document to another document, another place in the same document, or a website.",,,,,fileFormat,,http://purl.obolibrary.org/obo/NCIT_C47919,,string,file
+idat,Proprietary file format for (raw) BeadArray data used by genomewide profiling platforms from Illumina Inc. This format is output directly from the scanner and stores summary intensities for each probe-type on an array.,,,,,fileFormat,,http://edamontology.org/format_3578,,string,file
+idx,,,,,,fileFormat,,,,string,file
+jpg,Joint Picture Group file format for lossy graphics file.,,,,,fileFormat,,http://edamontology.org/format_3579,,string,file
+json,"JavaScript Object Notation format; a lightweight, text-based format to represent tree-structured data using key-value pairs.",,,,,fileFormat,,http://edamontology.org/format_3464,,string,file
+locs,Illumina iScan bead location file.,,,,,fileFormat,,https://support.illumina.com/content/dam/illumina-support/documents/documentation/system_documentation/iscan/iscan-system-guide-11313539-01.pdf,,string,file
+maf,"Multiple Alignment Format (MAF) supporting alignments of whole genomes with rearrangements, directions, multiple pieces to the alignment, and so forth",,,,,fileFormat,,http://edamontology.org/format_3008,,string,file
+mat,Files with the .mat extension are files that are in the binary data container format that the MATLAB program uses.,,,,,fileFormat,,https://www.reviversoft.com/en/file-extensions/mat,,string,file
+md,Markdown (MD) is a lightweight markup language with plain text formatting syntax,,,,,fileFormat,,https://en.wikipedia.org/wiki/Markdown,,string,file
+mov,A video file format with the .mov extension,,,,,fileFormat,,Sage Bioenetworks,,string,file
+mp4,A video file format with the .mp4 extension,,,,,fileFormat,,Sage Bioenetworks,,string,file
+msf,Proprietary mass-spectrometry format of Thermo Scientific's ProteomeDiscoverer software,,,,,fileFormat,,http://edamontology.org/format_3702,,string,file
+mtx,Matrix Market Exchange Format,,,,,fileFormat,,https://math.nist.gov/MatrixMarket/formats.html#MMformat,,string,file
+nirs,"The .nirs file format, popularized by the Homer2 analysis toolbox, is a holistic NIRS data file in that includes time series, trigger and montage information that represent a single fNIRS recording. It is a MATLAB-based file, like a .mat file, a .nirs file can be loaded directly into and have its data accessed from a MATLAB workspace.",,,,,fileFormat,,https://nirx.net/file-formats,,string,file
+pdf,Portable Document Format,,,,,fileFormat,,http://edamontology.org/format_3508,,string,file
+pdresult,Proprietary consensus workflow output file of Thermo Scientific's Proteome Discoverer software,,,,,fileFormat,, https://assets.thermofisher.com/TFS-Assets/CMD/manuals/Man-XCALI-97808-Proteome-Discoverer-User-ManXCALI97808-EN.pdf,,string,file
+pdstudy,Study definition and control file for Thermo Scientific's Proteome Discoverer software,,,,,fileFormat,,https://assets.thermofisher.com/TFS-Assets/CMD/manuals/Man-XCALI-97808-Proteome-Discoverer-User-ManXCALI97808-EN.pdf,,string,file
+pdview,"software that may be viewed in the Proteome Discoverer Viewer, including .pdresultview and .msfview files.",,,,,fileFormat,,https://planetorbitrap.com/demo-download,,string,file
+plink,Any Plink file format (MAP/PED/BED/BIM/FAM),,,,,fileFormat,,https://www.cog-genomics.org/plink2/formats,,string,file
+png,PNG is a file format for image compression,,,,,fileFormat,,http://edamontology.org/format_3603,,string,file
+powerpoint,Microsoft Powerpoint slide format,,,,,fileFormat,,,,string,file
+Python script,"Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.",,,,,fileFormat,,https://www.python.org/doc/essays/blurb/,,string,file
+pzfx,"A PZFX file is a Prism project created by GraphPad Prism, a scientific application used to analyze and graph data. It contains project data including graphs and layouts, notes, and tables.",,,,,fileFormat,,https://fileinfo.com/extension/pzfx,,string,file
+R script,R Script,,,,,fileFormat,,Sage Bionetworks,,string,file
+raw,Proprietary file format for mass spectrometry data from Thermo Scientific,,,,,fileFormat,,http://edamontology.org/format_3712,,string,file
+RCC,Reporter Code Count file generated by the NanoString digital analyzer; contains the data for one flow cell detailing the number of counts for each target.,,,,,fileFormat,, https://www.nanostring.com/wp-content/uploads/2021/01/MAN-C0021-01_nCounter_Digital_Analyzer_GEN2.pdf,,string,file
+RLF,Reporter Library File generated by NanoString that contains the information used during image processing to assign target identities to the barcodes.,,,,,fileFormat,, https://www.nanostring.com/wp-content/uploads/2021/01/MAN-C0021-01_nCounter_Digital_Analyzer_GEN2.pdf,,string,file
+RData,"The RData format (usually with extension .rdata or .rda) is a format designed for use with R, a system for statistical computation and related graphics, for storing a complete R workspace or selected 'objects' from a workspace in a form that can be loaded back by R.",,,,,fileFormat,,https://www.loc.gov/preservation/digital/formats/fdd/fdd000470.shtml,,string,file
+recal,.recal file from GATK VQSR,,,,,fileFormat,,https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_variantrecalibration_VariantRecalibrator.php#--recal_file,,string,file
+rmd,markdown document specific to r analyses,,,,,fileFormat,,http://rmarkdown.rstudio.com/developer_document_templates.html,,string,file
+saf,"A file in Simplified Annotation Format with columns GeneID, Chr, Start, End and Strand",,,,,fileFormat,,https://doi.org/10.1093%2Fnar%2Fgkz114,,string,file
+sam,Sequence Alignment/Map (SAM) format for alignment of nucleotide sequences (e.g. sequencing reads) to (a) reference sequence(s),,,,,fileFormat,,http://edamontology.org/format_2573,,string,file
+sav,"The SPSS Statistics File Format is a proprietary binary format, developed and maintained as the native format for the SPSS statistical software application.",,,,,fileFormat,,https://www.loc.gov/preservation/digital/formats/fdd/fdd000469.shtml,,string,file
+sdf,SDF is one of a family of chemical-data file formats developed by MDL Information Systems; it is intended especially for structural information.,,,,,fileFormat,,http://edamontology.org/format_3814,,string,file
+seg,SEG file (segmented data; .seg or .cbs) is a tab-delimited text file that lists loci and associated numeric values,,,,,fileFormat,,https://software.broadinstitute.org/software/igv/SEG,,string,file
+Sentrix descriptor file,A BeadScan specific file needed to perform scan setting checks for different array formats and assay type.,,,,,fileFormat,,https://support.illumina.com/content/dam/illumina-support/documents/myillumina/dd0aff11-2664-481b-a8ce-26831a907cae/beadscan_3.0_software_addendum.pdf,,string,file
+sf3,"File format generated by Scaffold Proteome software programs Scaffold, Scaffold Q+, and Scaffold Q+S",,,,,fileFormat,,https://support.proteomesoftware.com/hc/en-us/articles/360015816351-Proteome-Software-File-Extensions,,string,file
+sif,SIF (simple interaction file) Format - a network/pathway format used for instance in cytoscape,,,,,fileFormat,,http://edamontology.org/format_3619,,string,file
+sqlite,Data format used by the SQLite database.,,,,,fileFormat,,http://edamontology.org/format_3621,,string,file
+sra,SRA archive format (SRA) is the archive format used for input to the NCBI Sequence Read Archive.,,,,,fileFormat,,http://edamontology.org/format_3698,,string,file
+svg,Scalable Vector Graphics (SVG) is an XML-based vector image format for two-dimensional graphics with support for interactivity and animation.,,,,,fileFormat,,http://edamontology.org/format_3604,,string,file
+svs,"A single-file pyramidal tiled TIFF, with non-standard metadata and compression.",,,,,fileFormat,,https://openslide.org/formats/aperio/,,string,file
+Synapse Table,Table hosted at synapse.org,,,,,fileFormat,,https://docs.synapse.org/articles/tables.html,,string,file
+tab,"Text file that contains a table of data in which columns are separated by tabs; can be imported by most spreadsheet programs, which will format the data into cells.",,,,,fileFormat,,https://fileinfo.com/extension/tab,,string,file
+tagAlign,Tag Alignment provides genomic mapping of short sequence tags.,,,,,fileFormat,,https://genome.ucsc.edu/FAQ/FAQformat.html#format15,,string,file
+tar,tape archive,,,,,fileFormat,,https://en.wikipedia.org/wiki/Tar_(computing),,string,file
+tbi,A tab-delimited file that contains an index for the genome positions in a compressed (zipped) variant call format file (synonym: tabix).,,,,,fileFormat,,http://purl.obolibrary.org/obo/NCIT_C184806,,string,file
+tif,"Tagged Image File Format, abbreviated TIFF or TIF, is a computer file format for storing raster graphics images",,,,,fileFormat,,https://en.wikipedia.org/wiki/TIFF,,string,file
+tranches,.tranches file from GATK VQSR,,,,,fileFormat,,https://software.broadinstitute.org/gatk/documentation/tooldocs/3.8-0/org_broadinstitute_gatk_tools_walkers_variantrecalibration_VariantRecalibrator.php#--tranches_file,,string,file
+tsv,Tabular data represented as tab-separated values in a text file,,,,,fileFormat,,http://edamontology.org/format_3475,,string,file
+txt,Textual format,,,,,fileFormat,,http://edamontology.org/format_2330,,string,file
+vcf,"Variant Call Format (VCF) for sequence variation (indels, polymorphisms, structural variation)",,,,,fileFormat,,http://edamontology.org/format_3016,,string,file
+wiggle,Wiggle format (WIG) of a sequence annotation track that consists of a value for each sequence position,,,,,fileFormat,,http://edamontology.org/format_3005,,string,file
+xml,eXtensible Markup Language (XML) format.,,,,,fileFormat,,http://edamontology.org/format_2332,,string,file
+yaml,YAML (YAML Ain't Markup Language) format.,,,,,fileFormat,,http://edamontology.org/format_3750,,string,file
+zip,zip is a format standard of a digital entity that is conformant with the PKWARE .ZIP file format specification,,,,,fileFormat,,http://purl.obolibrary.org/obo/OBI_0000325,,string,file

@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+geneRLF,Reporter Library File (RLF) used to associate gene names with counts specified by the user in the Cartridge Definition File (https://www.genetics.pitt.edu/sites/default/files/pdfs/nCounter_Gene_Expression_Data_Analysis_Guidelines.pdf),,,,False,DataProperty,,sage.annotations-experimentalData.geneRLF-0.0.2,,string,nanostring

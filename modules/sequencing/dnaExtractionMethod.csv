@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+dnaExtractionMethod,The general strategy by which the DNA was extracted,,,,False,DataProperty,,sage.annotations-ngs.dnaExtractionMethod-0.0.2,,string,sequencing
