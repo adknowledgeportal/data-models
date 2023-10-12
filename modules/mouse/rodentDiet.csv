@@ -5,3 +5,5 @@ rodentDiet,Laboratory rodent diet,"4% standard, 6% standard, 7% standard, 45% hi
 7% standard,Standard chow with 7% fat,,,,,rodentDiet,,https://www.labdiet.com,,string,mouse
 45% high-fat diet,Standard chow with 45% fat,,,,,rodentDiet,,https://www.labdiet.com,,string,mouse
 5W80 western diet,Chow with high fat and fructose content,,,,,rodentDiet,,https://www.labdiet.com,,string,mouse
+5001 - Laboratory Rodent Diet, Rodent chow with 4.5% fat,,,,,rodentDiet,,https://www.labdiet.com/product/detail/5001-laboratory-rodent-diet,,string,mouse
+5008 - Formulab Diet, Rodent chow with 6.5% fat,,,,,rodentDiet,,https://www.labdiet.com/product/detail/5008-formulab-diet-irradiated,,string,mouse
