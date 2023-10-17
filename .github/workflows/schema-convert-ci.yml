@@ -1,4 +1,4 @@
-# This workflow is used to convert changed legacy.AD.model.csv to legacy.AD.model.jsonld
+# This workflow is used to convert changed AD.model.csv to AD.model.jsonld
 # and push the updated jsonld to feature branch
 
 name: CI
