@@ -43,7 +43,7 @@ jobs:
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add AD.model.csv
-          git commit -m "GitHub Action: assemble *.model.csv from modules directory || echo "No changes to commit"
+          git commit -m "GitHub Action: assemble *.model.csv from modules directory" || echo "No changes to commit"
 
       - name: Convert .csv to .jsonld
         shell: bash
