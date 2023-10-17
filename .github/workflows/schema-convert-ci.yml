@@ -7,7 +7,7 @@ on:
   pull_request:
     branches: main
     # runs on changes to data model csv only
-    paths: '**.model.csv'
+    paths: 'modules/**'
 
 jobs:
   CI:
@@ -31,17 +31,27 @@ jobs:
           poetry build
           pip3 install dist/schematicpy-*-py3-none-any.whl
 
+      - name: Assemble csv data model
+        run: python assemble_csv_data_model.py modules AD.model.csv
+
+      - uses: r-lib/actions/pr-fetch@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit csv changes
+        run: |
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git add \*.model.csv
+          git commit -m "GitHub Action: assemble *.model.csv from modules directory || echo "No changes to commit"
+
       - name: Convert .csv to .jsonld
         shell: bash
         run: |
           # change * to your data-model.csv name if needed
           schematic schema convert *.model.csv
 
-      - uses: r-lib/actions/pr-fetch@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Commit the changes
+      - name: Commit JSON-LD changes
         run: |
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
