@@ -1,0 +1,4 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+bodyPart,Named areas of the body.,"brain, head",,,False,DataProperty,,sage.annotations-experimentalData.bodyPart-0.0.3,,string,drosophila
+brain,The portion of the vertebrate central nervous system that constitutes the organ of thought and neural coordination.,,,,,bodyPart,,http://purl.obolibrary.org/obo/BTO_0000142,,string,drosophila
+head,The head is the anterior-most division of the body.,,,,,bodyPart,,http://purl.obolibrary.org/obo/UBERON_0000033,,string,drosophila

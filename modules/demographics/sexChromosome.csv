@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+sexChromosome,"Sex identified by SNP genotype (e.g XX, XY)",,,,False,DataProperty,,sage.annotations-clinical.sexChromosome-0.0.2,,string,demographics

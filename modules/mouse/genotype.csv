@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+genotype,Genotype common name,,,,False,DataProperty,,sage.annotations-clinical.genotype-0.0.2,,string,mouse

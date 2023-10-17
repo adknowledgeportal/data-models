@@ -1,0 +1,8 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+libraryType,"The type of library, in assays where samples are barcoded or hashed for multiplexing or each sample has multiple libraries amplified separately before pooled sequencing.","ADT, cDNA, CMO, HTO, LMO, plasmid DNA",,,False,DataProperty,,sage.annotations-ngs.libraryType-0.0.3,,string,sequencing
+ADT,"Antibody-derived tag; oligonucleotide-labeled antibodies are used to integrate cellular protein and transcriptome measurements into an efficient, single-cell readout.",,,,,libraryType,,https://doi.org/10.1038/nmeth.4380,,string,sequencing
+cDNA,cDNA or complementary DNA is complementary in sequence to a particular messenger RNA (mRNA). It is synthesized from mRNA in a reverse transcription reaction by reverse transcriptase enzyme.,,,,,libraryType,,http://www.ebi.ac.uk/efo/EFO_0008481,,string,sequencing
+CMO,Cholesterol-modified oligonucleotide sample barcode anchor.,,,,,libraryType,,https://doi.org/10.1038/s41592-019-0433-8,,string,sequencing
+HTO,Hashtag oligonucelotide; oligo-tagged antibodies against ubiquitously expressed surface proteins with different barcodes are used to uniquely label cells from distinct samples.,,,,,libraryType,,https://doi.org/10.1186/s13059-018-1603-1,,string,sequencing
+LMO,Lipid-modified oligonucleotide sample barcode anchor.,,,,,libraryType,,https://doi.org/10.1038/s41592-019-0433-8,,string,sequencing
+plasmid DNA,A small cellular inclusion consisting of a ring of DNA that is not in a chromosome but is capable of autonomous replication.,,,,,libraryType,,http://purl.obolibrary.org/obo/NCIT_C754,,string,sequencing

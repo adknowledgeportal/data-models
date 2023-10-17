@@ -1,0 +1,9 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+metadataType,"For files of dataSubtype: metadata, a description of the type of metadata in the file.","analytical covariates, assay, biospecimen, data dictionary, ID mapping, individual, manifest, protocol",,,False,DataProperty,,sage.annotations-experimentalData.metadataType-0.0.4,,string,ADKP
+analytical covariates,A file that contains a combination or subset of individual- or specimen-level covariates used for a particular analysis.,,,,,metadataType,,Sage Bionetworks,,string,ADKP
+biospecimen,Metadata describing properties of specimens collected and/or analyzed in the study.,,,,,metadataType,,Sage Bionetworks,,string,ADKP
+data dictionary,Metadata describing terms or variables that appear in another file.,,,,,metadataType,,Sage Bionetworks,,string,ADKP
+ID mapping,A file or table that maps data identifiers to one another for example to establish a link between two biological databases for the purposes of data integration.,,,,,metadataType,,http://edamontology.org/operation_3282,,string,ADKP
+individual,Metadata describing properties of individuals (human or animal) represented in the study.,,,,,metadataType,,Sage Bionetworks,,string,ADKP
+manifest,Metadata describing a list of files and the annotations terms associated with them.,,,,,metadataType,,Sage Bionetworks,,string,ADKP
+protocol,"A plan specification which has sufficient level of detail and quantitative information to communicate it between investigation agents, so that different investigation agents will reliably be able to independently reproduce the process.",,,,,metadataType,,http://purl.obolibrary.org/obo/OBI_0000272,,string,ADKP

@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+multiconsensusStudyFileID,"F-number assigned by Termo Proteome Discoverer software to different batches (plexes) of RAW (direct Thermo mass spectrometer output) files (F01, F02, etc.)",,,,False,DataProperty,,sage.annotations-experimentalData.multiconsensusStudyFileID-0.0.2,,string,mass spectrometry

@@ -1,0 +1,27 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+chromosome,A structure composed of a very long molecule of DNA and associated proteins (e.g. histones) that carries hereditary information; number or designation of the particular chromosome that the data is associated with.,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, X, Y, mitochondrial",,,False,DataProperty,,sage.annotations-experimentalData.chromosome-0.0.4,,string,sequencing
+1,Chromosome 1,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+2,Chromosome 2,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+3,Chromosome 3,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+4,Chromosome 4,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+5,Chromosome 5,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+6,Chromosome 6,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+7,Chromosome 7,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+8,Chromosome 8,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+9,Chromosome 9,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+10,Chromosome 10,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+11,Chromosome 11,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+12,Chromosome 12,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+13,Chromosome 13,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+14,Chromosome 14,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+15,Chromosome 15,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+16,Chromosome 16,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+17,Chromosome 17,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+18,Chromosome 18,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+19,Chromosome 19,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+20,Chromosome 20,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+21,Chromosome 21,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+22,Chromosome 22,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+X,Chromosome X,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+Y,Chromosome Y,,,,,chromosome,,Sage Bionetworks,,string,sequencing
+mitochondrial,A chromosome found in the mitochondrion of a eukaryotic cell.,,,,,chromosome,,http://purl.obolibrary.org/obo/GO_0000262,,string,sequencing

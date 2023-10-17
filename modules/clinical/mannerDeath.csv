@@ -1,0 +1,7 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+mannerDeath,The determination of how the injury or disease lead to death,"accident, homicide, natural causes, suicide, undetermined",,,False,DataProperty,,sage.annotations-clinical.mannerDeath-0.0.2,,string,clinical
+accident,Cause of death attributable to unforeseen or unplanned circumstances,,,,,mannerDeath,,https://ncim.nci.nih.gov/ncimbrowser/ConceptReport.jsp?dictionary=NCI%20Metathesaurus&code=C0000924,,string,clinical
+homicide,Cause of death attributable to the actions of another person,,,,,mannerDeath,,https://ncim.nci.nih.gov/ncimbrowser/ConceptReport.jsp?dictionary=NCI%20Metathesaurus&code=C3829672,,string,clinical
+natural causes,"Cause of death attributable to the progression of a disease or pre-existing condition, and not attributable to any outside action or force",,,,,mannerDeath,,https://ncim.nci.nih.gov/ncimbrowser/ConceptReport.jsp?dictionary=NCI%20Metathesaurus&code=C0277610,,string,clinical
+suicide,Cause of death attributable to intentionally inflicted self harm,,,,,mannerDeath,,https://ncim.nci.nih.gov/ncimbrowser/ConceptReport.jsp?dictionary=NCI%20Metathesaurus&code=C0038661,,string,clinical
+undetermined,Cause of death cannot be determined,,,,,mannerDeath,,https://ncim.nci.nih.gov/ncimbrowser/ConceptReport.jsp?dictionary=NCI%20Metathesaurus&code=CL502663,,string,clinical

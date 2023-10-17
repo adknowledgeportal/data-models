@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+ligand,"An ion, molecule or molecular group that binds to a substance to form a larger complex.",,,,False,DataProperty,,sage.annotations-experimentalData.ligand-0.0.2,,string,experimentalData

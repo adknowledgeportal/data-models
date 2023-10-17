@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+CERAD,A semiquantitative measure of neuritic plaques,,,,False,DataProperty,,sage.annotations-clinical.CERAD-0.0.2,,integer,clinical

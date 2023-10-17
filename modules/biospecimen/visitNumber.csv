@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+visitNumber,"For clinical trials or longitudinal studies, the visit number when the sample was collected",,,,False,DataProperty,,sage.annotations-experimentalData.visitNumber-0.0.2,,number,biospecimen

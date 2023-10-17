@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+validHiCContacts,Percentage of reads as valid Hi-C interactions (QC metric),,,,False,DataProperty,,sage.annotations-qc.validHiCContacts-0.0.2,,number,sequencing

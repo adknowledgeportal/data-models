@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+fieldStrength,"The intensity of an electric, magnetic, or other field. Value should include unit of measurement.",,,,False,DataProperty,,sage.annotations-experimentalData.fieldStrength-0.0.2,,string,imaging

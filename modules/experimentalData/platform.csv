@@ -1,0 +1,81 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+platform,"The specific version (manufacturer, model, etc.) of a technology that is used to carry out a laboratory or computational experiment.","Affy5.0, Affy6.0, Affymetrix Human Gene 1.0 ST Array, AffymetrixU133AB, AffymetrixU133Plus2, Agilent44Karray, BGISEQ-500, Biocrates p180, Biograph mCT, Bionano Irys, Bruker Avance III, confocalImaging, ddSEQ Single-Cell Isolator, DNBSEQ, GAIIx, HiSeq1000, HiSeq2000, HiSeq2500, HiSeq3000, HiSeq4000, HiSeqX, Illumina_1M, Illumina_h650, Illumina_HumanOmni1-Quadv1.0, llumina Infinium General Screening Array 24-Kit v3.0, Illumina MouseWG-6 v2.0 expression beadchip, Illumina_Omni2.5-8, Illumina_Omni2.5-8_v1.1, Illumina_Omni2.5-8_v1.3, Illumina_Omni2pt5M, Illumina_Omni5M, Illumina_Omni5-Quad, IlluminaHumanHap300, IlluminaHumanHap650Yv3_A, IlluminaHumanHT-12_V3_0_R1, IlluminaHumanMethylation450, IlluminaMethylationEPIC, IlluminaInfiniumGSAMD-24v2-0, Illumina_Infinium-HumanMethylation450-BeadChip, IlluminaMiSeq, Illumina NovaSeq 6000, IlluminaNovaseq6000, IlluminaWholeGenomeDASL, Infinium Global Diversity Array-8, Infinium HumanOmniExpressExome, Infinium Omni2.5Exome-8 v1.1, Infinium Omni2.5Exome-8 v1.3, Infinium Omni2.5Exome-8 v1.4, Infinium Omni2.5Exome-8 v1.5, InfiniumPsychArrayBeadChip, Leco Pegasus IV, LTQOrbitrapXL, MiSeq, NanostringnCounter, NanostringnCounter_MouseADPanel, NextSeq500, NextSeq2000, Olink Target 96, orbitrap, OrbiTrap Fusion, Orbitrap Fusion Lumos, PacBioRSII, PacBio Sequel II, PacBio Sequel IIe, Perlegen300Karray, PsychChip, Q Exactive, Q Exactive HF, Q Exactive HF-X, Q Exactive Plus, quadrupole time-of-flight, Roche Cobas, SequenomMultiplex, Signa Premier AIR 3T, Simoa HD-1 Analyzer, time-of-flight, triple quadrupole, Xevo G2 QTOF, Xevo TQ-S",,,True,DataProperty,,sage.annotations-experimentalData.platform-0.0.26,,string,experimentalData
+Affy5.0,Affymetrix Genome-Wide Human SNP 5.0 Array,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL6804,,string,experimentalData
+Affy6.0,Affymetrix Genome-Wide Human SNP 6.0 Array,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL6801,,string,experimentalData
+Affymetrix Human Gene 1.0 ST Array,Affymetrix Human Gene 1.0 ST Array [transcript (gene) version] in situ oligonucleotide,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL6244,,string,experimentalData
+AffymetrixU133AB,Affymetrix U133 AB,,,,,platform,,Sage Bionetworks,,string,experimentalData
+AffymetrixU133Plus2,Affymetrix Human Genome U133 Plus 2.0 Array,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL570,,string,experimentalData
+Agilent44Karray,Agilent 44k Microarray,,,,,platform,,Sage Bionetworks,,string,experimentalData
+BGISEQ-500,BGISEQ-500 human whole genome sequencing,,,,,platform,,https://www.bgi.com/global/wp-content/uploads/sites/3/2017/04/10.-BGISEQ-500-WGS-Technical-Note-Flyer_20180225-3Mb.pdf,,string,experimentalData
+Biocrates p180,Biocrates AbsoluteIDQ P180 metabolomics kit,,,,,platform,,https://biocrates.com/absoluteidq-p180-kit/,,string,experimentalData
+Biograph mCT,Wide-bore PET/CT scanner from Siemens,,,,,platform,,https://cdn0.scrvt.com/39b415fb07de4d9656c7b516d8e2d907/1800000005821165/f2ace6ce4141/siemens-healthineers_mi_pet-ct_biograph-mct_product_brochure_1800000005821165.pdf,,string,experimentalData
+Bionano Irys,Performs whole genome mapping in a nanoscale fluidic environment enabling the structure of the genome to be imaged and then analyzed at the single molecule level,,,,,platform,,https://bionanogenomics.com/products/irys/,,string,experimentalData
+Bruker Avance III,Nuclear magnetic resonance (NMR) spectrometer manufactured by Bruker,,,,,platform,,http://www2.chem.uic.edu/nmr/downloads/bruker/en-US/pdf/z31839.pdf,,string,experimentalData
+confocalImaging,Confocal Imaging,,,,,platform,,Sage Bionetworks,,string,experimentalData
+ddSEQ Single-Cell Isolator,"The ddSEQ Single-Cell Isolator works with the Illumina Bio-Rad SureCell WTA 3' Library Prep Kit for the ddSEQ System. This technology utilizes disposable microfluidic cartridges to coencapsulate single cells and barcodes into subnanoliter droplets, where cell lysis and barcoding occur. RNA-Seq libraries are subsequently prepared and sequenced. Analysis is conducted via BaseSpace.",,,,,platform,,https://www.bio-rad.com/en-us/product/ddseq-single-cell-isolator?ID=OKNWBSE8Z,,string,experimentalData
+DNBSEQ,BGI DNBseq,,,,,platform,,https://www.bgi.com/us/dnbseq-ngs-technology/,,string,experimentalData
+GAIIx,Illumina GAIIx,,,,,platform,,https://support.illumina.com/content/dam/illumina-marketing/documents/products/datasheets/datasheet_genome_analyzeriix.pdf,,string,experimentalData
+HiSeq1000,Illumina HiSeq 1000,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL15433,,string,experimentalData
+HiSeq2000,Illumina HiSeq 2000,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL11154,,string,experimentalData
+HiSeq2500,Illumina HiSeq 2500,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL16791,,string,experimentalData
+HiSeq3000,Illumina HiSeq 3000,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL21290,,string,experimentalData
+HiSeq4000,Illumina HiSeq 4000,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL20301,,string,experimentalData
+HiSeqX,Illumina HiSeq X Platform for whole-genome sequencing,,,,,platform,,https://www.illumina.com/systems/sequencing-platforms/hiseq-x.html,,string,experimentalData
+Illumina_1M,Illumina 1M,,,,,platform,,Sage Bionetworks,,string,experimentalData
+Illumina_h650,Illumina H650,,,,,platform,,Sage Bionetworks,,string,experimentalData
+Illumina_HumanOmni1-Quadv1.0,Illumina HumanOmni1 Quad v1.0,,,,,platform,,Sage Bionetworks,,string,experimentalData
+llumina Infinium General Screening Array 24-Kit v3.0,Illumina Infinium General Screening Array 24-Kit v3.0,,,,,platform,,https://www.illumina.com/products/by-type/microarray-kits/infinium-global-screening.html,,string,experimentalData
+Illumina MouseWG-6 v2.0 expression beadchip,Whole-genome expression profiling in the mouse,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL6887,,string,experimentalData
+Illumina_Omni2.5-8,"A kit featuring 8-sample arrays with high throughput and optimized tag SNP content, including full support of copy number variation applications, designed to be highly customizable and maximally informative for studying diverse world populations.",,,,,platform,,https://www.illumina.com/products/by-type/microarray-kits/infinium-omni25-8.html,,string,experimentalData
+Illumina_Omni2.5-8_v1.1,Illumina Omni2.5-8_v1.1,,,,,platform,,Sage Bionetworks,,string,experimentalData
+Illumina_Omni2.5-8_v1.3,Illumina Omni2.5-8_v1.3,,,,,platform,,Sage Bionetworks,,string,experimentalData
+Illumina_Omni2pt5M,Illumina Omni2.5,,,,,platform,,Sage Bionetworks,,string,experimentalData
+Illumina_Omni5M,Illumina Omni5,,,,,platform,,Sage Bionetworks,,string,experimentalData
+Illumina_Omni5-Quad,Illumina Omni5-Quad,,,,,platform,,Sage Bionetworks,,string,experimentalData
+IlluminaHumanHap300,Illumina Hap300,,,,,platform,,Sage Bionetworks,,string,experimentalData
+IlluminaHumanHap650Yv3_A,Illumina Hap650Yv3_A,,,,,platform,,Sage Bionetworks,,string,experimentalData
+IlluminaHumanHT-12_V3_0_R1,Illumina HT-12 V3,,,,,platform,,Sage Bionetworks,,string,experimentalData
+IlluminaHumanMethylation450,Illumina HumanMethylation450 BeadChip ,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL13534,,string,experimentalData
+IlluminaMethylationEPIC,"An Illumina methylation BeadChip array that interrogates 850,000 methylation sites per sample at single-nucleotide resolution.",,,,,platform,,http://purl.obolibrary.org/obo/OBI_0002131,,string,experimentalData
+IlluminaInfiniumGSAMD-24v2-0,Illumina Infinium General Screening Array 24-Kit v2.0,,,,,platform,,https://www.illumina.com/products/by-type/microarray-kits/infinium-global-screening.html,,string,experimentalData
+Illumina_Infinium-HumanMethylation450-BeadChip,Illumina Infinium HumanMethylation450 Bead Chip,,,,,platform,,https://www.illumina.com/content/dam/illumina-marketing/documents/products/datasheets/datasheet_humanmethylation450.pdf,,string,experimentalData
+IlluminaMiSeq,"A DNA sequencer which is manufactured by the Illumina corporation. Built upon sequencing by synthesis technology, the machine provides an end-to-end solution (cluster generation, amplification, sequencing, and data analysis) in a single machine.",,,,,platform,,http://purl.obolibrary.org/obo/OBI_0002003,,string,experimentalData
+Illumina NovaSeq 6000,High-throughput sequencing,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL24676,,string,experimentalData
+IlluminaNovaseq6000,"Illumina Novaseq 6000, high-throughput sequencing",,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL27644.,,string,experimentalData
+IlluminaWholeGenomeDASL,Illumina Human Whole-Genome DASL HT,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL13369,,string,experimentalData
+Infinium Global Diversity Array-8,Illumina 8-sample BeadChip microarray kit. built on a high-density single nucleotide polymorphism (SNP) global backbone optimized for cross-population imputation coverage of the genome.,,,,,platform,,https://www.illumina.com/products/by-type/microarray-kits/infinium-global-diversity.html,,string,experimentalData
+Infinium HumanOmniExpressExome,Infinium HumanOmniExpressExome BeadChip,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL18224,,string,experimentalData
+Infinium Omni2.5Exome-8 v1.1,Infinium Omni2.5Exome-8 v1.1,,,,,platform,,Sage Bionetworks,,string,experimentalData
+Infinium Omni2.5Exome-8 v1.3,Infinium Omni2.5Exome-8 v1.3,,,,,platform,,https://support.illumina.com/downloads/infinium-omni25exome-8-v1-3-product-files.html,,string,experimentalData
+Infinium Omni2.5Exome-8 v1.4,Infinium Omni2.5Exome-8 v1.4,,,,,platform,,https://support.illumina.com/downloads/infinium-omni25exome-8-v1-4-product-files.html,,string,experimentalData
+Infinium Omni2.5Exome-8 v1.5,Infinium Omni2.5Exome-8 v1.5,,,,,platform,,https://support.illumina.com/downloads/infinium-omni25exome-8-v1-5-support-files.html,,string,experimentalData
+InfiniumPsychArrayBeadChip,Illumina array developed for large-scale genetic studies focused on psychiatricpredisposition and risk ,,,,,platform,,https://www.illumina.com/content/dam/illumina-marketing/documents/products/datasheets/datasheet-infinium-psych-array.pdf,,string,experimentalData
+Leco Pegasus IV,Gas Chromatography Mass Spectrometers,,,,,platform,,https://www.leco.com/pegasus,,string,experimentalData
+LTQOrbitrapXL,LTQ Orbitrap XL Hybrid Ion Trap-Orbitrap Mass Spectrometer,,,,,platform,,https://www.thermofisher.com/order/catalog/product/IQLAAEGAAPFADBMAOK,,string,experimentalData
+MiSeq,Illumina MiSeq,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL15520,,string,experimentalData
+NanostringnCounter,Nanostring nCounter,,,,,platform,,Sage Bionetworks,,string,experimentalData
+NanostringnCounter_MouseADPanel,770 standardized genes covering 30 clinically derived AD-associated modules discovered in the AMP-AD consortium study of human brain tissue.,,,,,platform,,https://www.nanostring.com/products/gene-expression-panels/gene-expression-panels-overview/ncounter-ad-panels,,string,experimentalData
+NextSeq500,Illumina NextSeq 500,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL18573,,string,experimentalData
+NextSeq2000,Illumina NextSeq 2000,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL30173,,string,experimentalData
+Olink Target 96,Platform used for proximity extension assays,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL27151,,string,experimentalData
+orbitrap,An ion trapping device that consists of an outer barrel-like electrode and a coaxial inner spindle-like electrode that form an electrostatic field with quadro-logarithmic potential distribution. The frequency of harmonic oscillations of the orbitally trapped ions along the axis of the electrostatic field is independent of the ion velocity and is inversely proportional to the square root of m/z so that the trap can be used as a mass analyzer.,,,,,platform,,http://purl.obolibrary.org/obo/CHMO_0000968,,string,experimentalData
+OrbiTrap Fusion,Thermo Scientific Orbitrap Fusion,,,,,platform,,http://purl.obolibrary.org/obo/MS_1002416,,string,experimentalData
+Orbitrap Fusion Lumos,A tribrid mass spectrometer manufactured by ThermoFisher Scientific,,,,,platform,,http://purl.obolibrary.org/obo/MS_1002732,,string,experimentalData
+PacBioRSII,PacBio RS II,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL21311,,string,experimentalData
+PacBio Sequel II,"A DNA sequencer built upon single molecule real-time sequencing technology, optimized for generation of highly accurate long reads, and which is manufactured by the Pacific Biosciences corporation.",,,,,platform,,http://purl.obolibrary.org/obo/OBI_0002633,,string,experimentalData
+PacBio Sequel IIe,Sequel IIe is the latest platform from Pacific Biosciences (PacBio) that generates high throughput and highly accurate long-read sequencing.,,,,,platform,,https://www.pacb.com/technology/hifi-sequencing/sequel-system/latest-system-release/,,string,experimentalData
+Perlegen300Karray,Perlegen 300K array,,,,,platform,,Sage Bionetworks,,string,experimentalData
+PsychChip,PsychChip,,,,,platform,,Sage Bionetworks,,string,experimentalData
+Q Exactive,Thermo Scientific Q Exactive.,,,,,platform,,http://purl.obolibrary.org/obo/MS_1001911,,string,experimentalData
+Q Exactive HF,Thermo Scientific Q Exactive,,,,,platform,,http://purl.obolibrary.org/obo/MS_1002523,,string,experimentalData
+Q Exactive HF-X,Thermo Scientific Q Exactive HF-X,,,,,platform,,http://purl.obolibrary.org/obo/MS_1002877,,string,experimentalData
+Q Exactive Plus,Thermo Scientific Q Exactive Plus,,,,,platform,,http://purl.obolibrary.org/obo/MS_1002634,,string,experimentalData
+quadrupole time-of-flight,Mass spectrometry that uses a system with a quadrupole mass-to-charge analyser connected to a time-of-flight mass-to-charge analyser.,,,,,platform,,http://purl.obolibrary.org/obo/CHMO_0002719,,string,experimentalData
+Roche Cobas,The cobas c 311 analyzer is a stand alone system that offers consolidated testing from a broad menu of clinical chemistry applications.,,,,,platform,,https://diagnostics.roche.com/global/en/products/instruments/cobas-c-311-ins-2043.html,,string,experimentalData
+SequenomMultiplex,Sequenom Multiplex,,,,,platform,,Sage Bionetworks,,string,experimentalData
+Signa Premier AIR 3T,Wide-bore 3T MRI scanner from GE Healthcare,,,,,platform,,https://www.gehealthcare.com/products/magnetic-resonance-imaging/3-0t/signa-premier,,string,experimentalData
+Simoa HD-1 Analyzer,A laboratory instrument that provides full automation of single-molecular array (Simoa) technology for digital immunoassays.,,,,,platform,,https://doi.org/10.1177/2211068215589580,,string,experimentalData
+time-of-flight,Instrument that separates ions by m/z in a field-free region after acceleration to a fixed acceleration energy.,,,,,platform,,http://purl.obolibrary.org/obo/MS_1000084,,string,experimentalData
+triple quadrupole,"A piece of apparatus that consists of an ion source, a mass-to-charge analyser, a detector and a vacuum system and is used to measure mass spectra. The detector is a linear sequence of three quadrupole mass-to-charge analysers, which hold the ions in a stable orbit by an electric field generated by four parallel electrodes.",,,,,platform,,https://support.illumina.com/downloads/infinium-omni25exome-8-v1-3-product-files.html,,string,experimentalData
+Xevo G2 QTOF,Waters oa-ToF based Xevo G2 Q-Tof,,,,,platform,,https://www.waters.com/waters/en_US/Xevo-G2-XS-QTof-Quadrupole-Time-of-Flight-Mass-Spectrometer/nav.htm?locale=en_US&cid=134798222,,string,experimentalData
+Xevo TQ-S,Waters quadrupole based Xevo TQ-S. [database_cross_reference: PSI:MS],,,,,platform,,http://purl.obolibrary.org/obo/MS_1001792,,string,experimentalData

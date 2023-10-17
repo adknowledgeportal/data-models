@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+nIndividuals,Number of individuals in a pooled Drosophila sample,,,,False,DataProperty,,sage.annotations-experimentalData.nIndividuals-0.0.2,,integer,drosophila

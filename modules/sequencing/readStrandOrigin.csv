@@ -1,0 +1,4 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+readStrandOrigin,The strand from which the read originates in a strand-specific protocol,"forward, reverse",,,False,DataProperty,,sage.annotations-ngs.readStrandOrigin-0.0.2,,string,sequencing
+forward,Read 1 (or unpaired read) comes from the forward strand and read 2 (if applicable) comes from the reverse strand; equivalent to Tophat 'fr-secondstrand' type,,,,,readStrandOrigin,,Sage Bionetworks,,string,sequencing
+reverse,read 1 (or unpaired read) comes from the reverse strand and read 2 (if applicable) comes from the forward strand; equivalent to Tophat 'fr-firststrand' type,,,,,readStrandOrigin,,Sage Bionetworks,,string,sequencing

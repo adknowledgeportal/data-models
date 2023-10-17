@@ -2,7 +2,7 @@ title: AD Knowledge Portal Metadata Dictionary
 description: Explore AD Knowledge Portal metadata terms by key, value, or descriptions. 
 theme: just-the-docs
 logo: "ADKP_logo.png"
-url: https://VEOIBD.github.io/data_models
+url: https://adknowledgeportal.github.io/data-models/
 
 aux_links:
   Data Curator App: https://dca.app.sagebionetworks.org/

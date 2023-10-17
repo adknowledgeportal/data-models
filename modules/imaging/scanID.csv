@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+scanID,"The ID of a sample, specimen, or individual in a scan or imaging file.",,,,False,DataProperty,,sage.annotations-experimentalData.scanID-0.0.2,,string,imaging
