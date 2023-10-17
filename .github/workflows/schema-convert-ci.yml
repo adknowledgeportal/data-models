@@ -42,20 +42,18 @@ jobs:
         run: |
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          git add \*.model.csv
-          git commit -m "GitHub Action: assemble *.model.csv from modules directory || echo "No changes to commit"
+          git add AD.model.csv
+          git commit -m "GitHub Action: assemble *.model.csv from modules directory" || echo "No changes to commit"
 
       - name: Convert .csv to .jsonld
         shell: bash
-        run: |
-          # change * to your data-model.csv name if needed
-          schematic schema convert *.model.csv
+        run: schematic schema convert AD.model.csv
 
       - name: Commit JSON-LD changes
         run: |
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          git add \*.model.jsonld
+          git add AD.model.jsonld
           git commit -m "GitHub Action: convert *.model.csv to *.model.jsonld" || echo "No changes to commit"
 
       - uses: r-lib/actions/pr-push@v2
