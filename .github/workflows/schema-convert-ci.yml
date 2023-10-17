@@ -32,7 +32,7 @@ jobs:
           pip3 install dist/schematicpy-*-py3-none-any.whl
 
       - name: Assemble csv data model
-        run: python assemble_csv_data_model.py modules AD.model.csv
+        run: python scripts/assemble_csv_data_model.py modules AD.model.csv
 
       - uses: r-lib/actions/pr-fetch@v2
         with:
