@@ -1,5 +1,16 @@
 # The AD Knowledge Portal data model
 
+- [Production data model:](#production-data-model)
+- [Editing data models](#editing-data-models)
+  * [Github branch procedure:](#github-branch-procedure)
+  * [Editing attributes by module:](#editing-attributes-by-module)
+    + [Adding a new valid value to an existing manifest column:](#adding-a-new-valid-value-to-an-existing-manifest-column)
+    + [Adding a new column to a manifest template:](#adding-a-new-column-to-a-manifest-template)
+  * [Notes on collaboratively editing csvs](#notes-on-collaboratively-editing-csvs)
+- [Automation](#automation)
+- [Developing in a codespace](#developing-in-a-codespace)
+- [Legacy data models:](#legacy-data-models)%            
+
 ## Production data model:
 **AD.model.\* ([csv](https://github.com/adknowledgeportal/data-models/blob/main/AD.model.csv) | [jsonld](https://github.com/adknowledgeportal/data-models/blob/main/AD.model.jsonld))**: this is the current, "live" version of the AD Portal data model. It is being used by both the staging and production versions of the multitenant Data Curator App.
 
