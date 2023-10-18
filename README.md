@@ -9,7 +9,7 @@
   * [Notes on collaboratively editing csvs](#notes-on-collaboratively-editing-csvs)
 - [Automation](#automation)
 - [Developing in a codespace](#developing-in-a-codespace)
-- [Legacy data models:](#legacy-data-models)%            
+- [Legacy data models:](#legacy-data-models)            
 
 ## Production data model:
 **AD.model.\* ([csv](https://github.com/adknowledgeportal/data-models/blob/main/AD.model.csv) | [jsonld](https://github.com/adknowledgeportal/data-models/blob/main/AD.model.jsonld))**: this is the current, "live" version of the AD Portal data model. It is being used by both the staging and production versions of the multitenant Data Curator App.
