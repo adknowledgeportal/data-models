@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-ageAssessment,Age of clinical or behavioral assessment.,,,,False,DataProperty,,sage.annotations-experimentalData.ageAssessment-0.0.2,,number,experimentalData
+ageAssessment,Age of clinical or behavioral assessment.,,,,False,DataProperty,,sage.annotations-experimentalData.ageAssessment-0.0.2,protectAges error,number,experimentalData
