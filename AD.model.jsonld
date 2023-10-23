@@ -11266,7 +11266,7 @@
                 }
             ],
             "sms:displayName": "fileFormat",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -11419,7 +11419,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "grant",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -11711,7 +11711,7 @@
                 }
             ],
             "sms:displayName": "isModelSystem",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -11736,7 +11736,7 @@
                 }
             ],
             "sms:displayName": "isMultiSpecimen",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -12627,7 +12627,7 @@
                 }
             ],
             "sms:displayName": "modelSystemName",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -12817,6 +12817,9 @@
                 },
                 {
                     "@id": "bts:CfDNA"
+                },
+                {
+                    "@id": "bts:Notapplicable"
                 }
             ],
             "sms:displayName": "nucleicAcidSource",
@@ -15094,11 +15097,11 @@
         {
             "@id": "bts:Metadata",
             "@type": "rdfs:Class",
-            "rdfs:comment": "A file of clinical, technical, or other parameters that describe a dataset.",
+            "rdfs:comment": "Any file that contains information about how data was collected, generated, or processed; information that describes another set of data.",
             "rdfs:label": "Metadata",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:DataSubtype"
+                    "@id": "bts:ResourceType"
                 }
             ],
             "schema:isPartOf": {
@@ -15106,6 +15109,11 @@
             },
             "sms:displayName": "metadata",
             "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:MetadataType"
+                }
+            ],
             "sms:validationRules": []
         },
         {
@@ -20903,6 +20911,48 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:FALSE",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Currently applies only to key isMultiSpecimen in order to indicate that individualID and specimenID file annotations are not required",
+            "rdfs:label": "FALSE",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IsMultiSpecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "FALSE",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:TRUE",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Currently applies only to key isMultiSpecimen in order to require individualID and specimenID file annotations",
+            "rdfs:label": "TRUE",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IsMultiSpecimen"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "TRUE",
+            "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:IndividualID"
+                },
+                {
+                    "@id": "bts:SpecimenID"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Amplicon",
             "@type": "rdfs:Class",
             "rdfs:comment": "A region amplified by a PCR reaction",
@@ -23776,6 +23826,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Notapplicable",
+            "@type": "rdfs:Class",
+            "rdfs:comment": " Nucleic acid source doesn't apply to this data (e.g. not a sequencing assay).",
+            "rdfs:label": "Notapplicable",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NucleicAcidSource"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "not applicable",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Singlecell",
             "@type": "rdfs:Class",
             "rdfs:comment": "Single cell",
@@ -25830,6 +25897,11 @@
             },
             "sms:displayName": "analysis",
             "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:AnalysisType"
+                }
+            ],
             "sms:validationRules": []
         },
         {
@@ -25864,6 +25936,20 @@
             },
             "sms:displayName": "experimentalData",
             "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:DataType"
+                },
+                {
+                    "@id": "bts:DataSubtype"
+                },
+                {
+                    "@id": "bts:Assay"
+                },
+                {
+                    "@id": "bts:Species"
+                }
+            ],
             "sms:validationRules": []
         },
         {
@@ -27240,23 +27326,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "eQTLmetaAnalysis",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:FakeStudy",
-            "@type": "rdfs:Class",
-            "rdfs:comment": " a fake study for fake reasons",
-            "rdfs:label": "FakeStudy",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "fakeStudy",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -30980,40 +31049,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "verubecestat",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:TRUE",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "TRUE",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DirectionalBSseqLibrary"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "TRUE",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:FALSE",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "FALSE",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DirectionalBSseqLibrary"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "FALSE",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
