@@ -8685,7 +8685,9 @@
             },
             "sms:displayName": "ageAssessment",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "protectAges error"
+            ]
         },
         {
             "@id": "bts:AgeAssessmentUnits",
@@ -8744,7 +8746,7 @@
         {
             "@id": "bts:AgeDeath",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Age of death",
+            "rdfs:comment": "Age of death (note that ages > 89 must be censored to \"90+\")",
             "rdfs:label": "AgeDeath",
             "rdfs:subClassOf": [
                 {
@@ -8756,7 +8758,9 @@
             },
             "sms:displayName": "ageDeath",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "protectAges error"
+            ]
         },
         {
             "@id": "bts:AgeDeathUnits",
@@ -11522,7 +11526,9 @@
             },
             "sms:displayName": "individualID",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "matchExactlyOne file_annotation_template.individualID value warning"
+            ]
         },
         {
             "@id": "bts:IndividualIdSource",
@@ -13702,7 +13708,9 @@
             },
             "sms:displayName": "samplingAge",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "protectAges error"
+            ]
         },
         {
             "@id": "bts:SamplingAgeUnits",
@@ -13969,7 +13977,9 @@
             },
             "sms:displayName": "specimenID",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "matchExactlyOne file_annotation_template.specimenID value warning"
+            ]
         },
         {
             "@id": "bts:SpecimenIdSource",
