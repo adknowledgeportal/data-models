@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-grant,"Grant number including activity code, institute code, and serial number (e.g. U01MH103392)",,,,False,DataProperty,,sage.annotations-neuro.grant-0.0.2,,string,ADKP
+grant,"Grant number including activity code, institute code, and serial number (e.g. U01MH103392)",,,,True,DataProperty,,sage.annotations-neuro.grant-0.0.2,,string,ADKP
