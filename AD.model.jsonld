@@ -11527,7 +11527,7 @@
             "sms:displayName": "individualID",
             "sms:required": "sms:true",
             "sms:validationRules": [
-                "matchExactlyOne file_annotation_template.individualID value warning"
+                "matchExactlyOne FileAnnotationTemplate.individualID value warning"
             ]
         },
         {
@@ -13978,7 +13978,7 @@
             "sms:displayName": "specimenID",
             "sms:required": "sms:true",
             "sms:validationRules": [
-                "matchExactlyOne file_annotation_template.specimenID value warning"
+                "matchExactlyOne FileAnnotationTemplate.specimenID value warning"
             ]
         },
         {
