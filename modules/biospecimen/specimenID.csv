@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-specimenID,Identifying string linked to a particular sample or specimen,,,,True,DataProperty,,sage.annotations-experimentalData.specimenID-0.0.2,,string,biospecimen
+specimenID,Identifying string linked to a particular sample or specimen,,,,True,DataProperty,,sage.annotations-experimentalData.specimenID-0.0.2,matchExactlyOne BiospecimenMetadataTemplate.specimenID value warning,string,biospecimen
