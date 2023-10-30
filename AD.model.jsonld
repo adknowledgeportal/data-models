@@ -28052,7 +28052,7 @@
         {
             "@id": "bts:MODEL-ADHAbetaKI",
             "@type": "rdfs:Class",
-            "rdfs:comment": "MODEL-AD hAbeta KI Study",
+            "rdfs:comment": "MODEL-AD Humanized Abeta Knock-in Study",
             "rdfs:label": "MODEL-ADHAbetaKI",
             "rdfs:subClassOf": [
                 {
