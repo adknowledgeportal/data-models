@@ -13975,7 +13975,9 @@
             },
             "sms:displayName": "specimenID",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "matchExactlyOne BiospecimenMetadataTemplate.specimenID value warning"
+            ]
         },
         {
             "@id": "bts:SpecimenIdSource",
