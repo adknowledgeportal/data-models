@@ -85,7 +85,7 @@ MODEL-AD_APOE4_KI,MODEL-AD APOE4 KI Study,,,,,study,,https://www.synapse.org/#!S
 MODEL-AD_Abca7_APOE4_Trem2,MODEL-AD Abca7*A1527G/APOE4/Trem2*R47H Study,,,,,study,,https://www.synapse.org/#!Synapse:syn21075750,,string,ADKP
 MODEL-AD_APOE4_Trem2,MODEL-AD APOE4/Trem2*R47H Study,,,,,study,,https://www.synapse.org/#!Synapse:syn17095980,,string,ADKP
 MODEL-AD_Ceacam_KO_APOE4_Trem2,MODEL-AD Ceacam1 KO/APOE4/Trem2*R47H Study,,,,,study,,https://www.synapse.org/#!Synapse:syn21075764,,string,ADKP
-MODEL-AD_hAbeta_KI,MODEL-AD hAbeta KI Study,,,,,study,,https://www.synapse.org/#!Synapse:syn18634479,,string,ADKP
+MODEL-AD_hAbeta_KI,MODEL-AD Humanized Abeta Knock-in Study,,,,,study,,https://www.synapse.org/#!Synapse:syn18634479,,string,ADKP
 MODEL-AD_Harmonization,MODEL-AD Harmonization Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn25882591,,string,ADKP
 MODEL-AD_hCR1_KI_on_APOE4_Trem2,MODEL-AD hCR1 KI on APOE4/Trem2 Study,,,,,study,,https://www.synapse.org/#!Synapse:syn21075863,,string,ADKP
 MODEL-AD_hTau_Trem2,MODEL-AD hTau Trem2 Study,,,,,study,,https://www.synapse.org/#!Synapse:syn18693211,,string,ADKP
