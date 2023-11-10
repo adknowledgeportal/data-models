@@ -13969,9 +13969,7 @@
             },
             "sms:displayName": "specimenID",
             "sms:required": "sms:true",
-            "sms:validationRules": [
-                "matchExactlyOne BiospecimenMetadataTemplate.specimenID value warning"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:SpecimenIdSource",
@@ -20910,48 +20908,6 @@
             },
             "sms:displayName": "Yale",
             "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:FALSE",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Currently applies only to key isMultiSpecimen in order to indicate that individualID and specimenID file annotations are not required",
-            "rdfs:label": "FALSE",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IsMultiSpecimen"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "FALSE",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:TRUE",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Currently applies only to key isMultiSpecimen in order to require individualID and specimenID file annotations",
-            "rdfs:label": "TRUE",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IsMultiSpecimen"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "TRUE",
-            "sms:required": "sms:false",
-            "sms:requiresDependency": [
-                {
-                    "@id": "bts:IndividualID"
-                },
-                {
-                    "@id": "bts:SpecimenID"
-                }
-            ],
             "sms:validationRules": []
         },
         {
@@ -31051,6 +31007,40 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "verubecestat",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:TRUE",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "TRUE",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DirectionalBSseqLibrary"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "TRUE",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:FALSE",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "FALSE",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DirectionalBSseqLibrary"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "FALSE",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
