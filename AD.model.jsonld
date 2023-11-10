@@ -8685,9 +8685,7 @@
             },
             "sms:displayName": "ageAssessment",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "protectAges error"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:AgeAssessmentUnits",
@@ -8758,9 +8756,7 @@
             },
             "sms:displayName": "ageDeath",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "protectAges error"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:AgeDeathUnits",
@@ -13706,9 +13702,7 @@
             },
             "sms:displayName": "samplingAge",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "protectAges error"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:SamplingAgeUnits",
