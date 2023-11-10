@@ -1,4 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
 isMultiSpecimen,Boolean flag indicating whether or not a file has data for multiple specimens,"TRUE, FALSE",,,True,DataProperty,,sage.annotations-experimentalData.isMultiSpecimen-0.0.2,,boolean,ADKP
-TRUE,Currently applies only to key isMultiSpecimen in order to require individualID and specimenID file annotations,,"individualID, specimenID",,,isMultiSpecimen,,,,condition,ADKP
-FALSE,Currently applies only to key isMultiSpecimen in order to indicate that individualID and specimenID file annotations are not required,,,,,isMultiSpecimen,,,,condition,ADKP
