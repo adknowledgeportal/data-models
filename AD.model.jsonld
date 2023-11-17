@@ -26931,6 +26931,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:BEAM",
+            "@type": "rdfs:Class",
+            "rdfs:comment": " Brain Energy for Amyloid transformation In Alzheimer's disease (BEAM) study",
+            "rdfs:label": "BEAM",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "BEAM",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:BipSeq",
             "@type": "rdfs:Class",
             "rdfs:comment": "RNA Sequencing of the limbic system in bipolar disorder",
