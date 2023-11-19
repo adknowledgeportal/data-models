@@ -55,7 +55,7 @@ def split_data_model(csv_file):
         module_data = data_model[data_model['module'] == module]
 
         # For DataProperty, create separate CSVs
-        for attribute in module_data[module_data['Parent'] == 'DataProperty']['Attribute']:
+        for attribute in module_data[module_data['Parent'] == 'ManifestColumn']['Attribute']:
             attribute_csv = os.path.join(module_path, f'{attribute}.csv')
 
             # term attribute
@@ -70,7 +70,7 @@ def split_data_model(csv_file):
             pd.concat([attribute_data, valid_vals]).to_csv(attribute_csv, index = False)
         
         # Write manifest template attributes to a separate csv under the "template" module
-        data_model[data_model['Parent'] == 'DataType'].to_csv("modules/template/templates.csv", index = False)
+        data_model[data_model['Parent'] == 'ManifestTemplate'].to_csv("modules/template/templates.csv", index = False)
     
 if __name__ == "__main__":
 
