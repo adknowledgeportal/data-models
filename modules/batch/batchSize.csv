@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-batchSize,Size of batch,,,,False,DataProperty,,sage.annotations-experimentalData.batchSize-0.0.2,,number,batch
+batchSize,Size of batch,,,,False,ManifestColumn,,sage.annotations-experimentalData.batchSize-0.0.2,,number,batch

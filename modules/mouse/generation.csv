@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-generation,Rodent generation,,,,False,DataProperty,,sage.annotations-neuro.generation-0.0.1,,string,mouse
+generation,Rodent generation,,,,False,ManifestColumn,,sage.annotations-neuro.generation-0.0.1,,string,mouse

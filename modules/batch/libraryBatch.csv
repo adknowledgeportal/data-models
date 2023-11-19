@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-libraryBatch,Batch library was prepared in,,,,False,DataProperty,,sage.annotations-batch.libraryBatch-0.0.2,,string,batch
+libraryBatch,Batch library was prepared in,,,,False,ManifestColumn,,sage.annotations-batch.libraryBatch-0.0.2,,string,batch

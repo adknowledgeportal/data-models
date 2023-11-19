@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-passage,Number of times a cell culture has been subcultured,,,,False,DataProperty,,sage.annotations-experimentalData.passage-0.0.2,,integer,biospecimen
+passage,Number of times a cell culture has been subcultured,,,,False,ManifestColumn,,sage.annotations-experimentalData.passage-0.0.2,,integer,biospecimen

@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-ratio260over230,Ratio of absorbance at 230 nm and 260 nm. Measures protein or other contaminants. Range up to approximately 2.2.,,,,False,DataProperty,,sage.annotations-qc.ratio260over230-0.0.2,,number,sequencing
+ratio260over230,Ratio of absorbance at 230 nm and 260 nm. Measures protein or other contaminants. Range up to approximately 2.2.,,,,False,ManifestColumn,,sage.annotations-qc.ratio260over230-0.0.2,,number,sequencing

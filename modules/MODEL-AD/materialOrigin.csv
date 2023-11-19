@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-materialOrigin,Facility where sample was collected,"IU, JAX, Pitt, UCI_TMF",,,False,DataProperty,,sage.annotations-neuro.materialOrigin-0.0.1,,string,MODEL-AD
+materialOrigin,Facility where sample was collected,"IU, JAX, Pitt, UCI_TMF",,,False,ManifestColumn,,sage.annotations-neuro.materialOrigin-0.0.1,,string,MODEL-AD
 IU,Indiana University,,,,,materialOrigin,,https://www.indiana.edu/,,string,MODEL-AD
 JAX,The Jackson Laboratory,,,,,materialOrigin,,https://www.jax.org,,string,MODEL-AD
 Pitt,The University of Pittsburgh NIH NeuroBioBank Brain and Tissue Repository,,,,,materialOrigin,,https://neurobiobank.nih.gov/,,string,MODEL-AD

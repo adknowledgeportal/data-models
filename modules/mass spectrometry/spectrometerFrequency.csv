@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-spectrometerFrequency,The frequency at which a spectrometer causes hydrogen atoms to resonate (in MHz).,,,,False,DataProperty,,sage.annotations-experimentalData.spectrometerFrequency-0.0.2,,number,mass spectrometry
+spectrometerFrequency,The frequency at which a spectrometer causes hydrogen atoms to resonate (in MHz).,,,,False,ManifestColumn,,sage.annotations-experimentalData.spectrometerFrequency-0.0.2,,number,mass spectrometry

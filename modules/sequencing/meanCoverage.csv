@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-meanCoverage,Total number of bases covered by ATAC-seq reads/size of genome,,,,False,DataProperty,,sage.annotations-qc.meanCoverage-0.0.2,,number,sequencing
+meanCoverage,Total number of bases covered by ATAC-seq reads/size of genome,,,,False,ManifestColumn,,sage.annotations-qc.meanCoverage-0.0.2,,number,sequencing

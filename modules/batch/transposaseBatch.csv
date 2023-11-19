@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-transposaseBatch,Transposition reaction batch,,,,False,DataProperty,,sage.annotations-batch.transposaseBatch-0.0.2,,string,batch
+transposaseBatch,Transposition reaction batch,,,,False,ManifestColumn,,sage.annotations-batch.transposaseBatch-0.0.2,,string,batch

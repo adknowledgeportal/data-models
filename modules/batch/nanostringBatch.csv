@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-nanostringBatch,The batch of samples run on a nanostring panel. Twelve samples can be processed together at once on a machine.,,,,False,DataProperty,,sage.annotations-batch.nanostringBatch-0.0.2,,string,batch
+nanostringBatch,The batch of samples run on a nanostring panel. Twelve samples can be processed together at once on a machine.,,,,False,ManifestColumn,,sage.annotations-batch.nanostringBatch-0.0.2,,string,batch

@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-TMTType,Specifies how TMT reporter ions are quantified,,,,False,DataProperty,,sage.annotations-experimentalData.TMTType-0.0.2,,string,mass spectrometry
+TMTType,Specifies how TMT reporter ions are quantified,,,,False,ManifestColumn,,sage.annotations-experimentalData.TMTType-0.0.2,,string,mass spectrometry

@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-catalogNumber,"The identifier assigned to a product, usually in the list of products published by a reseller or manufacturer",,,,False,DataProperty,,sage.annotations-immunoAssays.catalogNumber-0.0.2,,string,immunoassay
+catalogNumber,"The identifier assigned to a product, usually in the list of products published by a reseller or manufacturer",,,,False,ManifestColumn,,sage.annotations-immunoAssays.catalogNumber-0.0.2,,string,immunoassay

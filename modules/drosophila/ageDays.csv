@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-ageDays,Average age in days of the Drosophila individuals in the sample,,,,False,DataProperty,,sage.annotations-demographics.ageDays-0.0.2,,number,drosophila
+ageDays,Average age in days of the Drosophila individuals in the sample,,,,False,ManifestColumn,,sage.annotations-demographics.ageDays-0.0.2,,number,drosophila

@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-dnaBatch,DNA isolation batch,,,,False,DataProperty,,sage.annotations-batch.dnaBatch-0.0.2,,string,batch
+dnaBatch,DNA isolation batch,,,,False,ManifestColumn,,sage.annotations-batch.dnaBatch-0.0.2,,string,batch

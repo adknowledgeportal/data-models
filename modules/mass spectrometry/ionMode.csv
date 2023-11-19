@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-ionMode,"Ionization polarity (positive, negative, polar)",,,,False,DataProperty,,sage.annotations-experimentalData.ionMode-0.0.2,,string,mass spectrometry
+ionMode,"Ionization polarity (positive, negative, polar)",,,,False,ManifestColumn,,sage.annotations-experimentalData.ionMode-0.0.2,,string,mass spectrometry

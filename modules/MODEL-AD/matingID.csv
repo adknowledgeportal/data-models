@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-matingID,Identifies the animals that were mated to produce the animal in question,,,,False,DataProperty,,sage.annotations-clinical.matingID-0.0.2,,string,MODEL-AD
+matingID,Identifies the animals that were mated to produce the animal in question,,,,False,ManifestColumn,,sage.annotations-clinical.matingID-0.0.2,,string,MODEL-AD

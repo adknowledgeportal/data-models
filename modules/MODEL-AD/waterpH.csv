@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-waterpH,pH of water fed to the animal,,,,False,DataProperty,,sage.annotations-neuro.waterpH-0.0.2,,number,MODEL-AD
+waterpH,pH of water fed to the animal,,,,False,ManifestColumn,,sage.annotations-neuro.waterpH-0.0.2,,number,MODEL-AD

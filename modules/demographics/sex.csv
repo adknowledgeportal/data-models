@@ -1,4 +1,4 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-sex,"Sex assigned at birth, or by sequencing","male, female",,,True,DataProperty,,sage.annotations-experimentalData.sex-0.0.2,,string,demographics
-male,,,,,,sex,,,,string,demographics
+sex,"Sex assigned at birth, or by sequencing","male, female",,,True,ManifestColumn,,sage.annotations-experimentalData.sex-0.0.2,,string,demographics
 female,,,,,,sex,,,,string,demographics
+male,,,,,,sex,,,,string,demographics

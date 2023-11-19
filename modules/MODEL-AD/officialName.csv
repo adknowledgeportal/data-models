@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-officialName,Official JAX Mouse strain nomenclature,,,,False,DataProperty,,sage.annotations-neuro.officialName-0.0.1,,string,MODEL-AD
+officialName,Official JAX Mouse strain nomenclature,,,,False,ManifestColumn,,sage.annotations-neuro.officialName-0.0.1,,string,MODEL-AD
