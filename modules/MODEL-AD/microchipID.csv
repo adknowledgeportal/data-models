@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-microchipID,Identifying string of p-chip implanted in the animal being studied,,,,False,DataProperty,,sage.annotations-neuro.microchipID-0.0.1,,string,MODEL-AD
+microchipID,Identifying string of p-chip implanted in the animal being studied,,,,False,ManifestColumn,,sage.annotations-neuro.microchipID-0.0.1,,string,MODEL-AD

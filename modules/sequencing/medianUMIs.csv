@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-medianUMIs,The median number of total Unique Molecular Identifier (UMI) counts across all cell-associated barcodes,,,,False,DataProperty,,sage.annotations-qc.medianUMIs-0.0.2,,number,sequencing
+medianUMIs,The median number of total Unique Molecular Identifier (UMI) counts across all cell-associated barcodes,,,,False,ManifestColumn,,sage.annotations-qc.medianUMIs-0.0.2,,number,sequencing

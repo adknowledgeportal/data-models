@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-directionalBSseqLibrary,Indicates whether or not the bisulfiteSeq library is directional,"TRUE, FALSE",,,False,DataProperty,,sage.annotations-ngs.directionalBSseqLibrary-0.0.2,,boolean,sequencing
+directionalBSseqLibrary,Indicates whether or not the bisulfiteSeq library is directional,"TRUE, FALSE",,,False,ManifestColumn,,sage.annotations-ngs.directionalBSseqLibrary-0.0.2,,boolean,sequencing

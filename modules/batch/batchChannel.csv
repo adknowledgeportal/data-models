@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-batchChannel,TMT channel the sample is labeled with,,,,False,DataProperty,,sage.annotations-batch.batchChannel-0.0.2,,string,batch
+batchChannel,TMT channel the sample is labeled with,,,,False,ManifestColumn,,sage.annotations-batch.batchChannel-0.0.2,,string,batch

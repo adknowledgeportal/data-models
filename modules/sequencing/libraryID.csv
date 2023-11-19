@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-libraryID,Library ID as provided by the lab,,,,False,DataProperty,,sage.annotations-ngs.libraryID-0.0.2,,string,sequencing
+libraryID,Library ID as provided by the lab,,,,False,ManifestColumn,,sage.annotations-ngs.libraryID-0.0.2,,string,sequencing

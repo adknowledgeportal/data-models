@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-softwareName,,,,,False,DataProperty,,sage.annotations-tool.softwareName-0.0.2,,string,analysis
+softwareName,,,,,False,ManifestColumn,,sage.annotations-tool.softwareName-0.0.2,,string,analysis

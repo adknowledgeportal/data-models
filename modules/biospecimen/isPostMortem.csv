@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-isPostMortem,Was the sample taken after death (true/false),"TRUE, FALSE",,,False,DataProperty,,sage.annotations-experimentalData.isPostMortem-0.0.2,,boolean,biospecimen
+isPostMortem,Was the sample taken after death (true/false),"TRUE, FALSE",,,False,ManifestColumn,,sage.annotations-experimentalData.isPostMortem-0.0.2,,boolean,biospecimen

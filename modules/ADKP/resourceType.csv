@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-resourceType,The type of resource being stored and annotated,"analysis, curatedData, experimentalData, metadata, report, tool",,,True,DataProperty,,sage.annotations-sageCommunity.resourceType-0.0.5,,string,ADKP
+resourceType,The type of resource being stored and annotated,"analysis, curatedData, experimentalData, metadata, report, tool",,,True,ManifestColumn,,sage.annotations-sageCommunity.resourceType-0.0.5,,string,ADKP
 analysis,"Any file derived from analysis such that the analysis annotations might apply, possibly disease-related",,analysisType,,,resourceType,,Sage Bionetworks,,string,ADKP
 curatedData,"Any file derived from or pertaining a manually or programatically curated data resource. Examples include: reference sequences, drug information databases, identifier maps",,,,,resourceType,,Sage Bionetworks,,string,ADKP
 experimentalData,"Any file derived from or pertaining to a scientific experiment. experimentalData annotations should be applied, possibly disease-related",,"dataType, dataSubtype, assay, species",,,resourceType,,Sage Bionetworks,,string,ADKP

@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-resolution,Minimum nominal mass-over-charge (m/z) difference detectable,,,,False,DataProperty,,sage.annotations-experimentalData.resolution-0.0.2,,number,mass spectrometry
+resolution,Minimum nominal mass-over-charge (m/z) difference detectable,,,,False,ManifestColumn,,sage.annotations-experimentalData.resolution-0.0.2,,number,mass spectrometry

@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-apoeGenotype,Apolipoprotein E genotype,"22, 23, 24, 33, 34, 44",,,False,DataProperty,,sage.annotations-clinical.apoeGenotype-0.0.2,,string,clinical
+apoeGenotype,Apolipoprotein E genotype,"22, 23, 24, 33, 34, 44",,,False,ManifestColumn,,sage.annotations-clinical.apoeGenotype-0.0.2,,string,clinical
 22,E2E2,,,,,apoeGenotype,,https://www.genecards.org/cgi-bin/carddisp.pl?gene=APOE,,string,clinical
 23,E2E3,,,,,apoeGenotype,,https://www.genecards.org/cgi-bin/carddisp.pl?gene=APOE,,string,clinical
 24,E2E4,,,,,apoeGenotype,,https://www.genecards.org/cgi-bin/carddisp.pl?gene=APOE,,string,clinical

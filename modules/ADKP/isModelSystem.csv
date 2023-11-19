@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-isModelSystem,,"TRUE, FALSE",,,True,DataProperty,,sage.annotations-neuro.isModelSystem-0.0.2,,boolean,ADKP
+isModelSystem,,"TRUE, FALSE",,,True,ManifestColumn,,sage.annotations-neuro.isModelSystem-0.0.2,,boolean,ADKP

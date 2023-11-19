@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-arrayBatch,The hybridization batch the sample was in,,,,False,DataProperty,,sage.annotations-batch.arrayBatch-0.0.2,,string,batch
+arrayBatch,The hybridization batch the sample was in,,,,False,ManifestColumn,,sage.annotations-batch.arrayBatch-0.0.2,,string,batch

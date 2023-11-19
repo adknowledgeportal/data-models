@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-gDNAconc,gDNA Concentration in ng per mL,,,,False,DataProperty,,sage.annotations-experimentalData.gDNAconc-0.0.3,,number,sequencing
+gDNAconc,gDNA Concentration in ng per mL,,,,False,ManifestColumn,,sage.annotations-experimentalData.gDNAconc-0.0.3,,number,sequencing

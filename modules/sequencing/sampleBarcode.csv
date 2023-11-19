@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-sampleBarcode,The nucleotide sequence of the sample barcode used to identify cells from a single sample in cell hashing or multiplexing assays.,,,,False,DataProperty,,sage.annotations-ngs.sampleBarcode-0.0.2,,string,sequencing
+sampleBarcode,The nucleotide sequence of the sample barcode used to identify cells from a single sample in cell hashing or multiplexing assays.,,,,False,ManifestColumn,,sage.annotations-ngs.sampleBarcode-0.0.2,,string,sequencing

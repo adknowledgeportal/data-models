@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-birthID,Identifying string linked to a particular animal,,,,False,DataProperty,,sage.annotations-neuro.birthID-0.0.1,,string,MODEL-AD
+birthID,Identifying string linked to a particular animal,,,,False,ManifestColumn,,sage.annotations-neuro.birthID-0.0.1,,string,MODEL-AD

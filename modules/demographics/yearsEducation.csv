@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-yearsEducation,Years of education starting with kindergarten,,,,False,DataProperty,,sage.annotations-demographics.yearsEducation-0.0.2,,number,demographics
+yearsEducation,Years of education starting with kindergarten,,,,False,ManifestColumn,,sage.annotations-demographics.yearsEducation-0.0.2,,number,demographics

@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-terminalDifferentiationPoint,The terminal differentiation point (TD) of a cell in days.,,,,False,DataProperty,,sage.annotations-experimentalData.terminalDifferentiationPoint-0.0.2,,string,biospecimen
+terminalDifferentiationPoint,The terminal differentiation point (TD) of a cell in days.,,,,False,ManifestColumn,,sage.annotations-experimentalData.terminalDifferentiationPoint-0.0.2,,string,biospecimen

@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-lotNumber,A distinctive alpha-numeric identification code assigned by the manufacturer or distributor to a specific quantity of manufactured material or product within a batch,,,,False,DataProperty,,sage.annotations-immunoAssays.lotNumber-0.0.2,,string,experimentalData
+lotNumber,A distinctive alpha-numeric identification code assigned by the manufacturer or distributor to a specific quantity of manufactured material or product within a batch,,,,False,ManifestColumn,,sage.annotations-immunoAssays.lotNumber-0.0.2,,string,experimentalData

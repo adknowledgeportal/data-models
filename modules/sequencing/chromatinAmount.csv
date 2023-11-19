@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-chromatinAmount,Amount in ug of chromatin used for an assay,,,,False,DataProperty,,sage.annotations-immunoAssays.chromatinAmount-0.0.2,,number,sequencing
+chromatinAmount,Amount in ug of chromatin used for an assay,,,,False,ManifestColumn,,sage.annotations-immunoAssays.chromatinAmount-0.0.2,,number,sequencing

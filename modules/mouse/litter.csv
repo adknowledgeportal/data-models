@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-litter,Animal litter,,,,False,DataProperty,,sage.annotations-clinical.litter-0.0.2,,string,mouse
+litter,Animal litter,,,,False,ManifestColumn,,sage.annotations-clinical.litter-0.0.2,,string,mouse

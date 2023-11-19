@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-temperature,Temperature in Celsius (C) relevant to specimen or experimental condition,,,,False,DataProperty,,sage.annotations-experimentalData.temperature-0.0.2,,number,drosophila
+temperature,Temperature in Celsius (C) relevant to specimen or experimental condition,,,,False,ManifestColumn,,sage.annotations-experimentalData.temperature-0.0.2,,number,drosophila

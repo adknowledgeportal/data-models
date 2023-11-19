@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-ageDeath,Age of death (note that ages > 89 must be censored to "90+"),,,,False,DataProperty,,sage.annotations-demographics.ageDeath-0.0.2,,number,demographics
+ageDeath,"Age of death (note that ages > 89 must be censored to ""90+"")",,,,False,ManifestColumn,,sage.annotations-demographics.ageDeath-0.0.2,,number,demographics

@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-assayTarget,,"ARID1B, ARID3A, ARNT, ASCL1, ASH1L, ASH2L, ATF7, BCL11A, BHLHE40, BHLHE41, BMI1, BRCA1, BRD4, CC2D1A, CHD4, CLOCK, CREB1, CREM, CTCF, DEAF1, DPF2, EED, EGR1, EHMT2, E2F1, EWSR1, EZH2, FOXK2, FOXP1, GABPB1, GATA4, GATAD2A, GATAD2B, GMEB1, H3K27ac, H3K27me3, H3K36me3, H3K4me1, H3K4me3, H3K9ac, H3K9me2, H3K9me3, HCFC1, HNRNPK, IE_V1-V3, IgG, input, KAT2B, KDM4A, KLF16, KLF5, LaminB, MAZ, MEF2A, MEIS2, MITF, NCOA2, NCOR1, NEUROD1, NFIB, NFIC, NONO, NR2F1, NRF1, NR2F2, NR3C1, OLIG2, PKNOX1, Pol2, R-loops, RAD21, RB1, RELB, REST, SATB2, SIN3A, SIN3B, SIRT1, SIX4, SKIL, SMARCA5, SMC3, SON, SOX8, SP1, SP4, SRF, SREBP2, TAF1, TBR1, TCF12, TCF7L2, TDP43, TRIM28, YBX1, YBX3, YY1, ZBTB7B, ZEB1, ZEB2, ZFP91, ZHX1, ZKSCAN1, ZNF143, ZNF207, ZNF24, ZNF318, ZNF384, ZNF407, ZNF592, ZSCAN29",,,False,DataProperty,,sage.annotations-experimentalData.assayTarget-0.0.6,,string,demographics
+assayTarget,,"ARID1B, ARID3A, ARNT, ASCL1, ASH1L, ASH2L, ATF7, BCL11A, BHLHE40, BHLHE41, BMI1, BRCA1, BRD4, CC2D1A, CHD4, CLOCK, CREB1, CREM, CTCF, DEAF1, DPF2, EED, EGR1, EHMT2, E2F1, EWSR1, EZH2, FOXK2, FOXP1, GABPB1, GATA4, GATAD2A, GATAD2B, GMEB1, H3K27ac, H3K27me3, H3K36me3, H3K4me1, H3K4me3, H3K9ac, H3K9me2, H3K9me3, HCFC1, HNRNPK, IE_V1-V3, IgG, input, KAT2B, KDM4A, KLF16, KLF5, LaminB, MAZ, MEF2A, MEIS2, MITF, NCOA2, NCOR1, NEUROD1, NFIB, NFIC, NONO, NR2F1, NRF1, NR2F2, NR3C1, OLIG2, PKNOX1, Pol2, R-loops, RAD21, RB1, RELB, REST, SATB2, SIN3A, SIN3B, SIRT1, SIX4, SKIL, SMARCA5, SMC3, SON, SOX8, SP1, SP4, SRF, SREBP2, TAF1, TBR1, TCF12, TCF7L2, TDP43, TRIM28, YBX1, YBX3, YY1, ZBTB7B, ZEB1, ZEB2, ZFP91, ZHX1, ZKSCAN1, ZNF143, ZNF207, ZNF24, ZNF318, ZNF384, ZNF407, ZNF592, ZSCAN29",,,False,ManifestColumn,,sage.annotations-experimentalData.assayTarget-0.0.6,,string,demographics
 ARID1B,,,,,,assayTarget,,,,string,demographics
 ARID3A,,,,,,assayTarget,,,,string,demographics
 ARNT,,,,,,assayTarget,,,,string,demographics
@@ -21,10 +21,10 @@ CREM,,,,,,assayTarget,,,,string,demographics
 CTCF,,,,,,assayTarget,,,,string,demographics
 DEAF1,,,,,,assayTarget,,,,string,demographics
 DPF2,,,,,,assayTarget,,,,string,demographics
+E2F1,,,,,,assayTarget,,,,string,demographics
 EED,,,,,,assayTarget,,,,string,demographics
 EGR1,,,,,,assayTarget,,,,string,demographics
 EHMT2,,,,,,assayTarget,,,,string,demographics
-E2F1,,,,,,assayTarget,,,,string,demographics
 EWSR1,,,,,,assayTarget,,,,string,demographics
 EZH2,,,,,,assayTarget,,,,string,demographics
 FOXK2,,,,,,assayTarget,,,,string,demographics
@@ -63,9 +63,9 @@ NFIB,,,,,,assayTarget,,,,string,demographics
 NFIC,,,,,,assayTarget,,,,string,demographics
 NONO,,,,,,assayTarget,,,,string,demographics
 NR2F1,,,,,,assayTarget,,,,string,demographics
-NRF1,,,,,,assayTarget,,,,string,demographics
 NR2F2,,,,,,assayTarget,,,,string,demographics
 NR3C1,,,,,,assayTarget,,,,string,demographics
+NRF1,,,,,,assayTarget,,,,string,demographics
 OLIG2,,,,,,assayTarget,,,,string,demographics
 PKNOX1,,,,,,assayTarget,,,,string,demographics
 Pol2,,,,,,assayTarget,,,,string,demographics
@@ -86,8 +86,8 @@ SON,,,,,,assayTarget,,http://purl.obolibrary.org/obo/OMIT_0035384,,string,demogr
 SOX8,,,,,,assayTarget,,,,string,demographics
 SP1,,,,,,assayTarget,,,,string,demographics
 SP4,,,,,,assayTarget,,,,string,demographics
-SRF,,,,,,assayTarget,,,,string,demographics
 SREBP2,,,,,,assayTarget,,,,string,demographics
+SRF,,,,,,assayTarget,,,,string,demographics
 TAF1,,,,,,assayTarget,,,,string,demographics
 TBR1,,,,,,assayTarget,,,,string,demographics
 TCF12,,,,,,assayTarget,,,,string,demographics

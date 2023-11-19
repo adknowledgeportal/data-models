@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-dataSubtype,"Further qualification of dataType, which may be used to indicate the state of processing of the data, aggregation of the data, or presence of metadata.","dataMatrix, metadata, normalized, processed, raw, residualized",,,False,DataProperty,,sage.annotations-experimentalData.dataSubtype-0.0.3,,string,experimentalData
+dataSubtype,"Further qualification of dataType, which may be used to indicate the state of processing of the data, aggregation of the data, or presence of metadata.","dataMatrix, metadata, normalized, processed, raw, residualized",,,False,ManifestColumn,,sage.annotations-experimentalData.dataSubtype-0.0.3,,string,experimentalData
 dataMatrix,A file of data containing multiple values for multiple samples.,,,,,dataSubtype,,,,string,experimentalData
 metadata,"A file of clinical, technical, or other parameters that describe a dataset.",,,,,dataSubtype,,,,string,experimentalData
 normalized,A data set that is produced as the output of a normalization data transformation.,,,,,dataSubtype,,http://purl.obolibrary.org/obo/OBI_0000451,,string,experimentalData

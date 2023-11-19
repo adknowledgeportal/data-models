@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-bindingDensity,The number of optical features per square micron for each lane. (Definition is from https://www.nanostring.com/wp-content/uploads/2020/12/Gene_Expression_Data_Analysis_Guidelines.pdf),,,,False,DataProperty,,sage.annotations-experimentalData.bindingDensity-0.0.2,,string,nanostring
+bindingDensity,The number of optical features per square micron for each lane. (Definition is from https://www.nanostring.com/wp-content/uploads/2020/12/Gene_Expression_Data_Analysis_Guidelines.pdf),,,,False,ManifestColumn,,sage.annotations-experimentalData.bindingDensity-0.0.2,,string,nanostring

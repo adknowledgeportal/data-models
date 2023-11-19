@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-sampleStatus,Conditions under which sample is kept,"formalin-fixed, fresh, frozen, paxgene",,,False,DataProperty,,sage.annotations-experimentalData.sampleStatus-0.0.2,,string,biospecimen
+sampleStatus,Conditions under which sample is kept,"formalin-fixed, fresh, frozen, paxgene",,,False,ManifestColumn,,sage.annotations-experimentalData.sampleStatus-0.0.2,,string,biospecimen
 formalin-fixed,Sample was formalin-fixed,,,,,sampleStatus,,https://ncim.nci.nih.gov/ncimbrowser/ConceptReport.jsp?dictionary=NCI%20Metathesaurus&code=CL365916,,string,biospecimen
 fresh,Sample was fresh,,,,,sampleStatus,,https://ncim.nci.nih.gov/ncimbrowser/ConceptReport.jsp?dictionary=NCI%20Metathesaurus&code=C2827486,,string,biospecimen
 frozen,Sample was frozen,,,,,sampleStatus,,https://ncim.nci.nih.gov/ncimbrowser/ConceptReport.jsp?dictionary=NCI%20Metathesaurus&code=C1548793,,string,biospecimen

@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-treatmentDose,"Dose of treatment used, including units and timeframe",,,,False,DataProperty,,sage.annotations-neuro.treatmentDose-0.0.2,,string,experimentalData
+treatmentDose,"Dose of treatment used, including units and timeframe",,,,False,ManifestColumn,,sage.annotations-neuro.treatmentDose-0.0.2,,string,experimentalData

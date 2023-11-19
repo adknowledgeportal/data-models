@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-isMultiSpecimen,Boolean flag indicating whether or not a file has data for multiple specimens,"TRUE, FALSE",,,True,DataProperty,,sage.annotations-experimentalData.isMultiSpecimen-0.0.2,,boolean,ADKP
+isMultiSpecimen,Boolean flag indicating whether or not a file has data for multiple specimens,"TRUE, FALSE",,,True,ManifestColumn,,sage.annotations-experimentalData.isMultiSpecimen-0.0.2,,boolean,ADKP
