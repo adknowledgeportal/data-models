@@ -16897,7 +16897,7 @@
         {
             "@id": "bts:IndividualCommonGenotype",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Genotype of animal that includes LOAD1 or LOAD2 terminology LOAD1 = APOE4_HOMOZYGOUS; TREM2R47H_HOMOZYGOUS and LOAD2 = APOE4_HOMOZYGOUS; TREM2R47H_HOMOZYGOUS; ABETA_HOMOZYGOUS. LOAD1 is a mouse strain that has two copies of the APOE4 gene and two copies of the Trem2R47H gene. The APOE4 gene is a risk factor for Alzheimer's disease, and the Trem2R47H gene is a modifier of the risk of Alzheimer's disease. LOAD2 is a mouse strain that has two copies of the APOE4 and Trem2R47H genes, as well as two copies of the Abeta gene. The Abeta gene is a protein that is thought to play a role in the development of Alzheimer's disease. Both LOAD1 and LOAD2 mice are more likely develop Alzheimer's disease at a younger age than mice with other genotypes. This makes the LOAD1 and LOAD2 genotypes valuable tools for studying the development and progression of Alzheimer's disease.",
+            "rdfs:comment": "Genotype of animal that includes LOAD1 or LOAD2 terminology. LOAD1 = APOE4_HOMOZYGOUS; TREM2R47H_HOMOZYGOUS and LOAD2 = APOE4_HOMOZYGOUS; TREM2R47H_HOMOZYGOUS; ABETA_HOMOZYGOUS.",
             "rdfs:label": "IndividualCommonGenotype",
             "rdfs:subClassOf": [
                 {
@@ -20159,6 +20159,9 @@
                     "@id": "bts:Insularcortex"
                 },
                 {
+                    "@id": "bts:Lateralentorhinalcortex"
+                },
+                {
                     "@id": "bts:Leftcerebralhemisphere"
                 },
                 {
@@ -20169,6 +20172,9 @@
                 },
                 {
                     "@id": "bts:Medialdorsalnucleusofthalamus"
+                },
+                {
+                    "@id": "bts:Medialentorhinalcortex"
                 },
                 {
                     "@id": "bts:Medialfrontalcortex"
