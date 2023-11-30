@@ -16993,7 +16993,12 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "individualID",
-            "sms:required": "sms:true",
+            "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:True"
+                }
+            ],
             "sms:validationRules": []
         },
         {
@@ -19440,7 +19445,12 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "specimenID",
-            "sms:required": "sms:true",
+            "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:1.0"
+                }
+            ],
             "sms:validationRules": []
         },
         {
@@ -31723,6 +31733,40 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "FALSE",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:True",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "True",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualID"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "True",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:1.0",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "1.0",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SpecimenID"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "1.0",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
