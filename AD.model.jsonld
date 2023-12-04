@@ -28361,6 +28361,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:MARSWISCONSIN",
+            "@type": "rdfs:Class",
+            "rdfs:comment": " The Microbiome in Alzheimer's Risk Study (MARS WISCONSIN)",
+            "rdfs:label": "MARSWISCONSIN",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "MARS WISCONSIN",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:MayoeGWAS",
             "@type": "rdfs:Class",
             "rdfs:comment": "Gene expression from the Illumina Whole Genome DASL array",
