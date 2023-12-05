@@ -19941,7 +19941,7 @@
                     "@id": "bts:UCI3xTg-AD"
                 },
                 {
-                    "@id": "bts:UCIBIN1"
+                    "@id": "bts:UCIBIN1K358R"
                 },
                 {
                     "@id": "bts:UCIPrimaryScreen"
@@ -29687,10 +29687,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:UCIBIN1",
+            "@id": "bts:UCIBIN1K358R",
             "@type": "rdfs:Class",
-            "rdfs:comment": "The UCI_BIN1 Study",
-            "rdfs:label": "UCIBIN1",
+            "rdfs:comment": "The UCI_BIN1K358R Study",
+            "rdfs:label": "UCIBIN1K358R",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Study"
@@ -29699,7 +29699,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "UCI_BIN1",
+            "sms:displayName": "UCI_BIN1K358R",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
