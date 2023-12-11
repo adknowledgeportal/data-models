@@ -19620,6 +19620,9 @@
                     "@id": "bts:DukeADPTSD"
                 },
                 {
+                    "@id": "bts:DUSP4OEMouse"
+                },
+                {
                     "@id": "bts:ELPSCRNA"
                 },
                 {
@@ -27864,6 +27867,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "DukeAD_PTSD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:DUSP4OEMouse",
+            "@type": "rdfs:Class",
+            "rdfs:comment": " \"The DUSP4 Overexpression in Mouse Model study\"",
+            "rdfs:label": "DUSP4OEMouse",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "DUSP4_OE_mouse",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
