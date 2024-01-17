@@ -1,9 +1,0 @@
-Key,Key Description,Type,Source,Module
-fastq,,STRING,,Other
-count matrix,,STRING,,Other
-bam,,STRING,,Other
-csv,,STRING,,Other
-xlsx,,STRING,,Other
-txt,,STRING,,Other
-pdf,,STRING,,Other
-tsv,,STRING,,Other

@@ -1,3 +1,0 @@
-Key,Key Description,Type,Source,Module
-genomicVariants,"Genomic alterations, including single nucleotide polymorphisms, short indels and structural variants, in a genome sequence.",STRING,https://www.ebi.ac.uk/ols/ontologies/edam/terms?iri=http%3A%2F%2Fedamontology.org%2Foperation_3227,Experimental Data
-geneExpression,The analysis of levels and patterns of synthesis of gene products (proteins and functional RNA) including interpretation in functional terms of gene expression data.,STRING,https://www.ebi.ac.uk/ols/ontologies/edam/terms?iri=http%3A%2F%2Fedamontology.org%2Ftopic_0203,Experimental Data
