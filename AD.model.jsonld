@@ -19707,6 +19707,9 @@
                     "@id": "bts:LncRNAPilot"
                 },
                 {
+                    "@id": "bts:MARSWISCONSIN"
+                },
+                {
                     "@id": "bts:MayoeGWAS"
                 },
                 {
@@ -31723,6 +31726,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "FALSE",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MARSWISCONSIN",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "MARSWISCONSIN",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "MARS WISCONSIN",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
