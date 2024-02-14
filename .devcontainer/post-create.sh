@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # install schematic
-pip install schematicpy==23.11.1
+pip install schematicpy==24.1.1
