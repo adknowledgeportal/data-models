@@ -1,4 +1,4 @@
-alabaster==0.7.13
+alabaster~=0.7.13
 altair==4.2.0
 anyio==4.0.0
 appnope==0.1.3
