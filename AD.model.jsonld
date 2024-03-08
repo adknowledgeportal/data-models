@@ -2487,6 +2487,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:LeidenOxylipins",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "LeidenOxylipins",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Assay"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Leiden Oxylipins",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:LentiMPRA",
             "@type": "rdfs:Class",
             "rdfs:comment": "The Lentivirus-based MPRA (lentiMPRA) produces 'in-genome' readouts and enables the use of this technique in hard-to-transfect cells.",
