@@ -16424,7 +16424,7 @@
         {
             "@id": "bts:Filename",
             "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
+            "rdfs:comment": "Name of a file",
             "rdfs:label": "Filename",
             "rdfs:subClassOf": [
                 {
@@ -16434,8 +16434,8 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "filename",
-            "sms:required": "sms:false",
+            "sms:displayName": "Filename",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -27055,9 +27055,6 @@
                     "@id": "bts:ScanID"
                 },
                 {
-                    "@id": "bts:Filename"
-                },
-                {
                     "@id": "bts:Platform"
                 },
                 {
@@ -27445,9 +27442,6 @@
                     "@id": "bts:FieldStrength"
                 },
                 {
-                    "@id": "bts:Filename"
-                },
-                {
                     "@id": "bts:ContrastAgent"
                 },
                 {
@@ -27541,9 +27535,6 @@
                 },
                 {
                     "@id": "bts:Ligand"
-                },
-                {
-                    "@id": "bts:Filename"
                 },
                 {
                     "@id": "bts:Platform"
