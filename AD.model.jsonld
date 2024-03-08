@@ -17132,6 +17132,9 @@
                     "@id": "bts:Lysophosphatidylcholine"
                 },
                 {
+                    "@id": "bts:Lysophospholipids"
+                },
+                {
                     "@id": "bts:Nucleotides"
                 },
                 {
@@ -17569,6 +17572,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "lysophosphatidylcholine",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Lysophospholipids",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Derivatives of PHOSPHATIDIC ACIDS that lack one of its fatty acyl chains due to its hydrolytic removal.",
+            "rdfs:label": "Lysophospholipids",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:MetaboliteType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "lysophospholipids",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
