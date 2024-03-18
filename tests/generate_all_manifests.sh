@@ -1,14 +1,19 @@
 #!/bin/bash
 # Test generate GoogleSheets templates
+# run with ./generate_all_manifests.sh from tests directory
 
-TEST_CONFIG=../dca-template-config.json
-CREDS=../schematic_service_account_creds.json
+TEST_CONFIG_PATH=../dca-template-config.json
+TEST_CONFIG=dca-template-config.json
+CREDS_PATH=../schematic_service_account_creds.json
+CREDS=schematic_service_account_creds.json
 DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 LOG_DIR=logs
 SLEEP_THROTTLE=17 # API rate-limiting, need to better figure out dynamically based on # of templates
 
 # Setup for creds
+cp $CREDS_PATH $CREDS
+
 # If testing locally, it might already be in folder; 
 # Else, especially if in Actions or Codespace, we need to create it from env var
 # See https://github.com/nf-osi/nf-metadata-dictionary/settings/secrets/codespaces
@@ -22,9 +27,12 @@ else
   exit 1
 fi
 
+# Set up templates config
+cp $TEST_CONFIG_PATH $TEST_CONFIG
+echo "✓ Using copy of $TEST_CONFIG_PATH for test"
 
 TEMPLATES=($(jq '.manifest_schemas[] | .schema_name' $TEST_CONFIG | tr -d '"'))
-TITLES=($(jq '.manifest_schemas[] | .display_name' $TEST_CONFIG | tr -d '"'))
+#TITLES=($(jq '.manifest_schemas[] | .display_name' $TEST_CONFIG | tr -d '"'))
 echo "✓ Using config with ${#TEMPLATES[@]} templates..."
 
 # Setup data model
