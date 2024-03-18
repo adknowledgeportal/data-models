@@ -26,7 +26,7 @@ md_link <- function (url) {
 ## Template Generation
 
 ```{r parse-generation-logs, echo=FALSE}
-gen_logs <- list.files("./logs/", full.names = TRUE)
+gen_logs <- list.files("./logs", full.names = TRUE)
 templates <- gsub("_log", "", basename(gen_logs))
 gen_test_results <- lapply(gen_logs, readLines)
 gen_test_links <- sapply(gen_test_results, md_link)
