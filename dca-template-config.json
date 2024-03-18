@@ -1,0 +1,136 @@
+{
+    "manifest_schemas": [
+      {
+        "display_name": "assay_16SrRNAseq_metadata_template",
+        "schema_name": "Assay16SrRNAseqMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_ATACSeq_metadata_template",
+        "schema_name": "AssayATACSeqMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_autorad_metadata_template",
+        "schema_name": "AssayAutoradMetadataTemplate",
+        "type": "record"
+      },  
+      {
+        "display_name": "assay_bisulfiteSeq_metadata_template",
+        "schema_name": "AssayBisulfiteSeqMetadataTemplate",
+        "type": "record"
+      },      
+      {
+        "display_name": "assay_ChIPSeq_metadata_template",
+        "schema_name": "AssayChIPSeqMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_HIC_metadata_template",
+        "schema_name": "AssayHICMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_metabolomics_metadata_template",
+        "schema_name": "AssayMetabolomicsMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_methylationArray_metadata_template",
+        "schema_name": "AssayMethylationArrayMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_MRI_metadata_template",
+        "schema_name": "AssayMRIMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_nanostring_metadata_template",
+        "schema_name": "AssayNanostringMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_PET_metadata_template",
+        "schema_name": "AssayPETMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_rnaArray_metadata_template",
+        "schema_name": "AssayRnaArrayMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_rnaSeq_metadata_template",
+        "schema_name": "AssayRNASeqMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_scrnaSeq_metadata_template",
+        "schema_name": "AssayScrnaSeqMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_snpArray_metadata_template",
+        "schema_name": "AssaySnpArrayMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_STARRSeq_metadata_template",
+        "schema_name": "AssaySTARRSeqMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_TMTquantitation_metadata_template",
+        "schema_name": "AssayTMTquantitationMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_wholeExomeSeq_metadata_template",
+        "schema_name": "AssayWholeExomeSeqqMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "assay_wholeGenomeSeq_metadata_template",
+        "schema_name": "AssayWholeGenomeSeqMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "biospecimen_drosophila_metadata_template",
+        "schema_name": "BiospecimenDrosophilaMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "biospecimen_invitro_metadata_template",
+        "schema_name": "BiospecimenInvitroMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "biospecimen_metadata_template",
+        "schema_name": "BiospecimenMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "individual_animal_metadata_template",
+        "schema_name": "IndividualAnimalMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "individual_animal_MODEL-AD_metadata_template",
+        "schema_name": "IndividualAnimalModeladMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "individual_human_metadata_template",
+        "schema_name": "IndividualHumanMetadataTemplate",
+        "type": "record"
+      },
+      {
+        "display_name": "file_annotation_template",
+        "schema_name": "FileAnnotationTemplate",
+        "type": "file"
+      }
+    ],
+    "service_version": "v23.1.1",
+    "schema_version": ""
+  }
