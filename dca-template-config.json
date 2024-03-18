@@ -62,7 +62,7 @@
       },
       {
         "display_name": "assay_rnaSeq_metadata_template",
-        "schema_name": "AssayRNASeqMetadataTemplate",
+        "schema_name": "AssayRnaSeqMetadataTemplate",
         "type": "record"
       },
       {
