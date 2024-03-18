@@ -24,6 +24,7 @@ notes.txt
 tests/creds.json
 tests/AD.model.jsonld
 tests/**/logs
+tests/test-suite-report.md
 
 # ignore mac files
 .DS_Store
