@@ -87,7 +87,7 @@
       },
       {
         "display_name": "assay_wholeExomeSeq_metadata_template",
-        "schema_name": "AssayWholeExomeSeqqMetadataTemplate",
+        "schema_name": "AssayWholeExomeSeqMetadataTemplate",
         "type": "record"
       },
       {
