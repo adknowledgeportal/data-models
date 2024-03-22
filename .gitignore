@@ -8,8 +8,12 @@ schematic_service_account_creds.json
 # schema metadata templates from sysbiodccjsonschemas repo
 schema_metadata_templates/
 
-# ignore local pyenv setup
+# ignore local pyenv setup and poetry env
 local-pyenv-setup.sh
+**/.venv/*
+**/poetry.toml
+**/pyproject.toml
+**/poetry.lock
 
 # manifest output csvs
 output_csvs/
