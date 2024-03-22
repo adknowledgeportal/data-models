@@ -12,7 +12,7 @@ test_reaction <- function(pass) {
   if(is.na(pass)) { 
     ":zzz:" # potentially skipped tests
   } else if(pass) {
-    ":smile:" 
+    ":white_check_mark:" 
   } else { 
     ":x:"
   }
@@ -24,6 +24,8 @@ md_link <- function (url) {
 ```
 
 ## Template Generation
+
+The following manifest templates had at least one dependency with changes detected:
 
 ```{r parse-generation-logs, echo=FALSE}
 gen_logs <- list.files("./logs", full.names = TRUE)
@@ -37,7 +39,7 @@ gen_report <- data.frame(template = templates,
 knitr::kable(gen_report)
 ```
 
-## Manifest Validation 
+## :construction: Manifest Validation - COMING SOON
 
 ```{r parse-validation-logs, echo=FALSE, eval = FALSE}
 
