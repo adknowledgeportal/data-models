@@ -2,14 +2,15 @@
 # Test generate GoogleSheets templates
 # run with ./generate_all_manifests.sh from tests directory
 
-TEST_CONFIG_PATH=../dca-template-config.json
-TEST_CONFIG=dca-template-config.json
+# TEST_CONFIG_PATH=../dca-template-config.json
+# TEST_CONFIG=dca-template-config.json
+CHANGED_TEMPLATE_CONFIG=changed-templates.json
 CREDS_PATH=../schematic_service_account_creds.json
 CREDS=schematic_service_account_creds.json
 DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 LOG_DIR=logs
-SLEEP_THROTTLE=17 # API rate-limiting, need to better figure out dynamically based on # of templates
+SLEEP_THROTTLE=10 # API rate-limiting, need to better figure out dynamically based on # of templates
 
 # Setup for creds
 cp $CREDS_PATH $CREDS
@@ -28,12 +29,15 @@ else
 fi
 
 # Set up templates config
-cp $TEST_CONFIG_PATH $TEST_CONFIG
-echo "✓ Using copy of $TEST_CONFIG_PATH for test"
+# cp $TEST_CONFIG_PATH $TEST_CONFIG
+# echo "✓ Using copy of $TEST_CONFIG_PATH for test"
 
-TEMPLATES=($(jq '.manifest_schemas[] | .schema_name' $TEST_CONFIG | tr -d '"'))
-#TITLES=($(jq '.manifest_schemas[] | .display_name' $TEST_CONFIG | tr -d '"'))
-echo "✓ Using config with ${#TEMPLATES[@]} templates..."
+# TEMPLATES=($(jq '.manifest_schemas[] | .schema_name' $TEST_CONFIG | tr -d '"'))
+# #TITLES=($(jq '.manifest_schemas[] | .display_name' $TEST_CONFIG | tr -d '"'))
+# echo "✓ Using config with ${#TEMPLATES[@]} templates..."
+
+CHANGED_TEMPLATES=($(jq '.[] | .schema_name' $CHANGED_TEMPLATE_CONFIG | tr -d '"'))
+echo "✓ Using ${#CHANGED_TEMPLATES[@]} templates from $CHANGED_TEMPLATE_CONFIG..."
 
 # Setup data model
 cp $DATA_MODEL_PATH $DATA_MODEL
@@ -42,10 +46,10 @@ echo "✓ Set up $DATA_MODEL for test"
 # Setup logs
 mkdir -p $LOG_DIR
 
-for i in ${!TEMPLATES[@]}
+for i in ${!CHANGED_TEMPLATES[@]}
 do
-  echo ">>>>>>> Generating ${TEMPLATES[$i]}"
-  schematic manifest --config ../schematic-config.yml get -dt "${TEMPLATES[$i]}" --title "${TEMPLATES[$i]}" -s | tee $LOG_DIR/${TEMPLATES[$i]%.*}_log
+  echo ">>>>>>> Generating ${CHANGED_TEMPLATES[$i]}"
+  schematic manifest --config ../schematic-config.yml get -dt "${CHANGED_TEMPLATES[$i]}" --title "${CHANGED_TEMPLATES[$i]}" -s | tee $LOG_DIR/${CHANGED_TEMPLATES[$i]%.*}_log
   sleep $SLEEP_THROTTLE
 done
 
