@@ -25,10 +25,13 @@ tests/creds.json
 tests/AD.model.jsonld
 tests/**/logs
 tests/test-suite-report.md
+tests/changed-files.txt
+tests/changed-templates.json
 
 # ignore mac files
 .DS_Store
 **/.DS_Store
 
-# ignore scratch jupyter nb for now
+# ignore some scratch files
 scripts/add_cohort_attribute.ipynb
+tests/example-manifest-selection.sh

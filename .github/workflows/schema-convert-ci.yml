@@ -1,13 +1,16 @@
 # This workflow is used to convert changed AD.model.csv to AD.model.jsonld
-# and push the updated jsonld to feature branch
+# and push the updated jsonld to feature branch. It also generates a test report
+# on any changed manifests, with links to manifests.
 
 name: CI
 
 on:
   pull_request:
     branches: main
-    # runs on changes to data model csv only
+    # runs on changes to module csvs
     paths: 'modules/**'
+
+  workflow_dispatch:
 
 jobs:
   CI:
@@ -17,7 +20,9 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with: 
+          fetch-depth: 0
       - uses: actions/setup-python@v4 
         with:
           python-version: '3.10'
@@ -29,10 +34,6 @@ jobs:
 
       - name: Assemble csv data model
         run: python scripts/assemble_csv_data_model.py modules AD.model.csv
-
-      - uses: r-lib/actions/pr-fetch@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit csv changes
         run: |
@@ -52,6 +53,42 @@ jobs:
           git add AD.model.jsonld
           git commit -m "GitHub Action: convert *.model.csv to *.model.jsonld" || echo "No changes to commit"
 
-      - uses: r-lib/actions/pr-push@v2
+      - name: Push model changes
+        uses: r-lib/actions/pr-push@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+    
+      - name: List changed attributes
+        run: git diff --name-only > ./tests/changed-files.txt 
+
+      - name: Identify changed manifests
+        run: python ./scripts/identify_changed_manifests_for_testing.py \
+          --changed_files_path ./tests/changed-files.txt \
+          --current_templates_url https://raw.githubusercontent.com/adknowledgeportal/data-models/main/modules/template/templates.csv \
+          --new_templates_path ./modules/template/templates.csv \
+          --csv_model_path ./AD.model.csv \
+          --template_config_path ./dca-template-config.json \
+          --output_file_path ./tests/changed-templates.json
+
+      - name: Generate test manifests
+        working-directory: tests
+        continue-on-error: true
+        run: ./generate_all_manifests.sh
+
+      - name: Create test suite report
+        working-directory: tests
+        continue-on-error: true
+        run: docker run -v $(pwd):/tests rocker/tidyverse R -e "rmarkdown::render('tests/test-suite-report.Rmd')"
+
+      - name: Report on test suite as PR comment
+        uses: mshick/add-pr-comment@v2
+        with:
+          message-id: test-suite-report
+          message-path: |
+            tests/test-suite-report.md
+
+      - name: Upload test artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-logs
+          path: tests/**/logs
