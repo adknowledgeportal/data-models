@@ -6,8 +6,10 @@ name: CI
 on:
   pull_request:
     branches: main
-    # runs on changes to data model csv only
+    # runs on changes to module csvs
     paths: 'modules/**'
+
+  workflow_dispatch:
 
 jobs:
   CI:
