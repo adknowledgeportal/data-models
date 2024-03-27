@@ -59,7 +59,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
     
       - name: List changed attributes
-        run: git diff --name-only > ./tests/changed-files.txt 
+        run: git diff --name-only > ./tests/changed-files.txt && cat ./tests/changed-files.txt
 
       - name: Identify changed manifests
         run: python ./scripts/identify_changed_manifests_for_testing.py \
