@@ -5,19 +5,22 @@
 # TEST_CONFIG_PATH=../dca-template-config.json
 # TEST_CONFIG=dca-template-config.json
 CHANGED_TEMPLATE_CONFIG=changed-templates.json
-# CREDS_PATH=../schematic_service_account_creds.json
-# CREDS=schematic_service_account_creds.json
+CREDS_PATH=../schematic_service_account_creds.json
+CREDS=schematic_service_account_creds.json
 DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 LOG_DIR=logs
 SLEEP_THROTTLE=10 # API rate-limiting, need to better figure out dynamically based on # of templates
 
 # Setup for creds
+if [ -f "$CREDS_PATH" ]; then
+  cp $CREDS_PATH $CREDS
+fi
+
 # If testing locally, it might already be in folder; 
 # Else, especially if in Actions or Codespace, we need to create it from env var
 # See https://github.com/nf-osi/nf-metadata-dictionary/settings/secrets/codespaces
 if [ -f "$CREDS" ]; then
-  cp $CREDS_PATH $CREDS
   echo "✓ $CREDS -- running tests locally"
 elif [ -n "${SCHEMATIC_SERVICE_ACCT_CREDS}" ]; then
   echo "${SCHEMATIC_SERVICE_ACCT_CREDS}" | base64 -d > $CREDS
