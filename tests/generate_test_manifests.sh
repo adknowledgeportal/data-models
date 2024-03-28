@@ -1,6 +1,6 @@
 #!/bin/bash
-# Test generate GoogleSheets templates
-# run with ./generate_all_manifests.sh from tests directory
+# generate GoogleSheets templates
+# if using locally run with ./generate_all_manifests.sh from tests directory
 
 # TEST_CONFIG_PATH=../dca-template-config.json
 # TEST_CONFIG=dca-template-config.json
