@@ -5,8 +5,8 @@
 # TEST_CONFIG_PATH=../dca-template-config.json
 # TEST_CONFIG=dca-template-config.json
 CHANGED_TEMPLATE_CONFIG=changed-templates.json
-CREDS_PATH=../schematic_service_account_creds.json
-CREDS=schematic_service_account_creds.json
+# CREDS_PATH=../schematic_service_account_creds.json
+# CREDS=schematic_service_account_creds.json
 DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 LOG_DIR=logs
