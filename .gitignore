@@ -12,7 +12,6 @@ schema_metadata_templates/
 local-pyenv-setup.sh
 **/.venv/*
 **/poetry.toml
-**/pyproject.toml
 **/poetry.lock
 
 # manifest output csvs
@@ -36,3 +35,6 @@ tests/test-suite-report.md
 
 # ignore scratch jupyter nb for now
 scripts/add_cohort_attribute.ipynb
+.vscode/launch.json
+scripts/.env
+pyproject.toml

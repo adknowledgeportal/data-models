@@ -2,7 +2,14 @@
 """ 
 identify_changed_manifests_for_testing.py: Gather templates that have changed
 
-USAGE: identify_changed_manifests_for_testing.py ...
+USAGE: 
+    python ./scripts/identify_changed_manifests_for_testing.py \
+    --changed_files_path ./tests/changed-files.txt \
+    --current_templates_url https://raw.githubusercontent.com/adknowledgeportal/data-models/main/modules/template/templates.csv \
+    --new_templates_path ./modules/template/templates.csv \
+    --csv_model_path ./AD.model.csv \
+    --template_config_path ./dca-template-config.json \
+    --output_file_path ./tests/changed-templates.json
 
 """
 
@@ -59,23 +66,16 @@ def write_test_template_json(
         for x in template_config["manifest_schemas"]
         if x["display_name"] in test_templates
     ]
-    with open(
-        output_file_path, "w"
-    ) as f:  # ensures the file is closed after accessing it using a context manager
+
+    # ensures the file is closed after accessing it using a context manager
+    with open(output_file_path, "w") as f:
         json.dump(filtered_templates, f)
 
 
 def main(args):
     """Takes arguments from the user to generate test templates that have been changed."""
 
-    changed_files_path = args.changed_files_path
-    current_templates_url = args.current_templates_url
-    new_templates_path = args.new_templates_path
-    csv_model_path = args.csv_model_path
-    template_config_path = args.template_config_path
-    output_file_path = args.output_file_path
-
-    with open(changed_files_path, "r") as file:
+    with open(args.changed_files_path, "r", encoding="UTF-8") as file:
         changed_files = file
 
     changed_attributes = []
@@ -85,18 +85,20 @@ def main(args):
         value = os.path.splitext(os.path.basename(x))[0]
         if value == "templates":
             changed_template_names = compare_template_module(
-                current_templates_url, new_templates_path
+                args.current_templates_url, args.new_templates_path
             )
-            changed_templates += +changed_template_names
+            changed_templates += changed_template_names
         else:
             changed_attributes.append(value)
 
     test_templates = set(
         changed_templates
-        + get_templates_with_changed_attributes(csv_model_path, changed_attributes)
+        + get_templates_with_changed_attributes(args.csv_model_path, changed_attributes)
     )
 
-    write_test_template_json(template_config_path, test_templates, output_file_path)
+    write_test_template_json(
+        args.template_config_path, test_templates, args.output_file_path
+    )
 
 
 if __name__ == "__main__":
@@ -124,4 +126,5 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
+
     main(args)
