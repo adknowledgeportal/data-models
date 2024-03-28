@@ -68,7 +68,7 @@ jobs:
       - name: Generate test manifests
         working-directory: tests
         continue-on-error: true
-        run: ./generate_tests_manifests.sh
+        run: ./generate_test_manifests.sh
 
       - name: Create test suite report
         working-directory: tests
