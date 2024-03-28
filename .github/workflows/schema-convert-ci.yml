@@ -81,6 +81,7 @@ jobs:
           message-id: test-suite-report
           message-path: |
             tests/test-suite-report.md
+          allow-repeats: true
 
       - name: Upload test artifacts
         uses: actions/upload-artifact@v3
