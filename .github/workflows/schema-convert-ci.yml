@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-      SCHEMATIC_SERVICE_ACCT_CREDS: ${{ secrets.SCHEMATIC_SERVICE_ACCOUNT_CREDS }}
+      SCHEMATIC_SERVICE_ACCOUNT_CREDS: ${{ secrets.SCHEMATIC_SERVICE_ACCOUNT_CREDS }}
 
     steps:
       - uses: actions/checkout@v4
