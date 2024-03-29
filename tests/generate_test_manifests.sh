@@ -13,15 +13,17 @@ LOG_DIR=logs
 SLEEP_THROTTLE=10 # API rate-limiting, need to better figure out dynamically based on # of templates
 
 # Setup for creds
-cp $CREDS_PATH $CREDS
+if [ -f "$CREDS_PATH" ]; then
+  cp $CREDS_PATH $CREDS
+fi
 
 # If testing locally, it might already be in folder; 
 # Else, especially if in Actions or Codespace, we need to create it from env var
 # See https://github.com/nf-osi/nf-metadata-dictionary/settings/secrets/codespaces
 if [ -f "$CREDS" ]; then
   echo "✓ $CREDS -- running tests locally"
-elif [ -n "${SCHEMATIC_SERVICE_ACCT_CREDS}" ]; then
-  echo "${SCHEMATIC_SERVICE_ACCT_CREDS}" | base64 -d > $CREDS
+elif [ -n "${SCHEMATIC_SERVICE_ACCOUNT_CREDS}" ]; then
+  echo "${SCHEMATIC_SERVICE_ACCOUNT_CREDS}" > $CREDS
   echo "✓ Created temp $CREDS for test"
 else
   echo "✗ Failed to access stored creds. Aborting test."
