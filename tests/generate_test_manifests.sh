@@ -23,7 +23,7 @@ fi
 if [ -f "$CREDS" ]; then
   echo "✓ $CREDS -- running tests locally"
 elif [ -n "${SCHEMATIC_SERVICE_ACCOUNT_CREDS}" ]; then
-  echo "${SCHEMATIC_SERVICE_ACCOUNT_CREDS}" > $CREDS
+  echo "${SCHEMATIC_SERVICE_ACCOUNT_CREDS}" | base64 -d > $CREDS
   echo "✓ Created temp $CREDS for test"
 else
   echo "✗ Failed to access stored creds. Aborting test."
@@ -55,7 +55,7 @@ do
   sleep $SLEEP_THROTTLE
 done
 
-echo "Cleaning up test fixtures and intermediates..."
-rm -f $CREDS $TEST_CONFIG $DATA_MODEL *.schema.json *.manifest.csv
+#echo "Cleaning up test fixtures and intermediates..."
+#rm -f $CREDS $TEST_CONFIG $DATA_MODEL *.schema.json *.manifest.csv
 
 echo "✓ Done!"
