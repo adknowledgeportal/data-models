@@ -1,0 +1,25 @@
+# Config for test manifest generation and validation
+
+# This describes where assets such as manifests are stored
+asset_store:
+  synapse:
+    master_fileview_id: "syn51324810" #AD Portal backend internal project - DCA Asset View
+    manifest_basename: "synapse_storage_manifest"
+
+# This describes information about manifests as it relates to generation and validation
+manifest:
+  manifest_folder: "manifests"
+  title: "AD_"
+  data_type:
+    - "FileAnnotationTemplate"
+
+# Describes the location of your schema
+model:
+  # Location of your schema jsonld, it must be a path relative to this file or absolute
+  location: "AD.model.jsonld"
+
+# This section is for using google sheets with Schematic
+google_sheets:
+  # Path to the synapse config file, either absolute or relative to this file
+  service_acct_creds: "sheets_creds.json"
+  strict_validation: true
