@@ -4,6 +4,8 @@
 
 # TEST_CONFIG_PATH=../dca-template-config.json
 # TEST_CONFIG=dca-template-config.json
+SCHEMATIC_CONFIG_PATH=../schemtic-config.yml
+SCHEMATIC_CONFIG=schematic-config.yml
 CHANGED_TEMPLATE_CONFIG=changed-templates.json
 CREDS_PATH=../schematic_service_account_creds.json
 CREDS=schematic_service_account_creds.json
@@ -11,6 +13,10 @@ DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 LOG_DIR=logs
 SLEEP_THROTTLE=10 # API rate-limiting, need to better figure out dynamically based on # of templates
+
+# copy schematic-config.yml into tests/ 
+cp $SCHEMATIC_CONFIG_PATH $SCHEMATIC_CONFIG
+echo "✓ Using schematic configuration settings from $SCHEMATIC_CONFIG"
 
 # Setup for creds
 if [ -f "$CREDS_PATH" ]; then
