@@ -22,8 +22,8 @@ fi
 # See https://github.com/nf-osi/nf-metadata-dictionary/settings/secrets/codespaces
 if [ -f "$CREDS" ]; then
   echo "✓ $CREDS -- running tests locally"
-elif [ -n "${SCHEMATIC_SERVICE_ACCT_CREDS}" ]; then
-  echo "${SCHEMATIC_SERVICE_ACCT_CREDS}" | base64 -d > $CREDS
+elif [ -n "${SCHEMATIC_SERVICE_ACCOUNT_CREDS}" ]; then
+  echo "${SCHEMATIC_SERVICE_ACCOUNT_CREDS}" | base64 -d > $CREDS
   echo "✓ Created temp $CREDS for test"
 else
   echo "✗ Failed to access stored creds. Aborting test."
