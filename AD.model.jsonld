@@ -1776,6 +1776,9 @@
                     "@id": "bts:Orbitrap"
                 },
                 {
+                    "@id": "bts:OrbitrapExploris240"
+                },
+                {
                     "@id": "bts:OrbiTrapFusion"
                 },
                 {
@@ -20786,6 +20789,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "orbitrap",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:OrbitrapExploris240",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Thermo Scientific Orbitrap Exploris 240 Quadrupole Orbitrap mass spectrometer",
+            "rdfs:label": "OrbitrapExploris240",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Platform"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Orbitrap Exploris 240",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
