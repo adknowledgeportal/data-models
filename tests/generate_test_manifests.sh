@@ -12,7 +12,7 @@ CREDS=sheets_creds.json
 DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 LOG_DIR=logs
-SLEEP_THROTTLE=10 # API rate-limiting, need to better figure out dynamically based on # of templates
+SLEEP_THROTTLE=17 # API rate-limiting, need to better figure out dynamically based on # of templates
 
 # copy schematic-config.yml into tests/ 
 cp $SCHEMATIC_CONFIG_PATH $SCHEMATIC_CONFIG
