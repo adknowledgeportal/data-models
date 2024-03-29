@@ -8,7 +8,7 @@ SCHEMATIC_CONFIG_PATH=../schematic-config.yml
 SCHEMATIC_CONFIG=schematic-config.yml
 CHANGED_TEMPLATE_CONFIG=changed-templates.json
 CREDS_PATH=../schematic_service_account_creds.json
-CREDS=schematic_service_account_creds.json
+CREDS=sheets_creds.json
 DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 LOG_DIR=logs
@@ -57,7 +57,7 @@ mkdir -p $LOG_DIR
 for i in ${!CHANGED_TEMPLATES[@]}
 do
   echo ">>>>>>> Generating ${CHANGED_TEMPLATES[$i]}"
-  schematic manifest --config ../schematic-config.yml get -dt "${CHANGED_TEMPLATES[$i]}" --title "${CHANGED_TEMPLATES[$i]}" -s | tee $LOG_DIR/${CHANGED_TEMPLATES[$i]%.*}_log
+  schematic manifest --config schematic-config-test.yml get -dt "${CHANGED_TEMPLATES[$i]}" --title "${CHANGED_TEMPLATES[$i]}" -s | tee $LOG_DIR/${CHANGED_TEMPLATES[$i]%.*}_log
   sleep $SLEEP_THROTTLE
 done
 
