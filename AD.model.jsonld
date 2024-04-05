@@ -8362,7 +8362,7 @@
         {
             "@id": "bts:Cohort",
             "@type": "rdfs:Class",
-            "rdfs:comment": "A study group population or group of indiviuals identified by a common characteristic.",
+            "rdfs:comment": "A study group population where the members are human beings who meet inclusion criteria.",
             "rdfs:label": "Cohort",
             "rdfs:subClassOf": [
                 {
@@ -8389,6 +8389,9 @@
                     "@id": "bts:BEB-Miller"
                 },
                 {
+                    "@id": "bts:BiggsInstituteBrainBank"
+                },
+                {
                     "@id": "bts:BLSA"
                 },
                 {
@@ -8398,7 +8401,13 @@
                     "@id": "bts:CLINCOR"
                 },
                 {
+                    "@id": "bts:ColumbiaADRC"
+                },
+                {
                     "@id": "bts:DiCAD"
+                },
+                {
+                    "@id": "bts:EFIGA"
                 },
                 {
                     "@id": "bts:EHBS"
@@ -8407,7 +8416,13 @@
                     "@id": "bts:EmoryADRC"
                 },
                 {
+                    "@id": "bts:FBS"
+                },
+                {
                     "@id": "bts:Framingham"
+                },
+                {
+                    "@id": "bts:HBCC"
                 },
                 {
                     "@id": "bts:HBTRC"
@@ -8425,7 +8440,7 @@
                     "@id": "bts:MARS"
                 },
                 {
-                    "@id": "bts:MAYO"
+                    "@id": "bts:MayoClinic"
                 },
                 {
                     "@id": "bts:MC"
@@ -8455,6 +8470,9 @@
                     "@id": "bts:SMRI"
                 },
                 {
+                    "@id": "bts:UFL"
+                },
+                {
                     "@id": "bts:UKBiobank"
                 },
                 {
@@ -8465,9 +8483,29 @@
                 },
                 {
                     "@id": "bts:UWADRC"
+                },
+                {
+                    "@id": "bts:WHICAP"
                 }
             ],
             "sms:displayName": "cohort",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BiggsInstituteBrainBank",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "University of Texas Health San Antonio Biggs Institute Brain Bank",
+            "rdfs:label": "BiggsInstituteBrainBank",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Biggs Institute Brain Bank",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -8529,6 +8567,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:ColumbiaADRC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Columbia University Alzheimer's Disease Research Center",
+            "rdfs:label": "ColumbiaADRC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Columbia ADRC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:DiCAD",
             "@type": "rdfs:Class",
             "rdfs:comment": "Interdisciplinary Research to Understand the Interplay of Diabetes, Cerebrovascular disease and Alzheimer's disease",
@@ -8545,6 +8600,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "DiCAD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:EFIGA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Estudio Familiar de Influencia Genetica en Alzheimer (EFIGA) is a study based on a cohort of Caribbean Hispanics with Late-Onset Alzheimer’s Disease recruited from clinics in the Dominican Republic and New York.",
+            "rdfs:label": "EFIGA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "EFIGA",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -8586,6 +8658,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:FBS",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "THe National Institute on Aging Alzheimer's Disease Family Based Study (NIA-AD FBS)",
+            "rdfs:label": "FBS",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "FBS",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Framingham",
             "@type": "rdfs:Class",
             "rdfs:comment": "Framingham Heart Study",
@@ -8603,16 +8692,33 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:HBCC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Human Brain Collection Core (HBCC) within the National Institute of Mental Health",
+            "rdfs:label": "HBCC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "HBCC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:HBTRC",
             "@type": "rdfs:Class",
             "rdfs:comment": "Harvard Brain Tissue Resource Center",
             "rdfs:label": "HBTRC",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Cohort"
+                    "@id": "bts:IndividualIdSource"
                 },
                 {
-                    "@id": "bts:IndividualIdSource"
+                    "@id": "bts:Cohort"
                 },
                 {
                     "@id": "bts:Study"
@@ -8714,6 +8820,26 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:MayoClinic",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Mayo Clinic",
+            "rdfs:label": "MayoClinic",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualIdSource"
+                },
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Mayo Clinic",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:MC",
             "@type": "rdfs:Class",
             "rdfs:comment": "Mayo Clinic (NOT brain bank, living)",
@@ -8791,10 +8917,10 @@
             "rdfs:label": "NYBB",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Cohort"
+                    "@id": "bts:IndividualIdSource"
                 },
                 {
-                    "@id": "bts:IndividualIdSource"
+                    "@id": "bts:Cohort"
                 }
             ],
             "schema:isPartOf": {
@@ -8879,6 +9005,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:UFL",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "University of Florida Neuromedicine Human Brain and Tissue Bank (UF HBTB)",
+            "rdfs:label": "UFL",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "UFL",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:UKBiobank",
             "@type": "rdfs:Class",
             "rdfs:comment": "UK Biobank",
@@ -8946,6 +9089,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "UW ADRC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:WHICAP",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Washington-Heights/Inwood Columbia Aging Project (WHICAP) is a community-based longitudinal study, recruiting elderly subjects from Northern Manhattan. Cohorts were established in 1992, 1999, and 2009. Subjects are evaluated every two years.",
+            "rdfs:label": "WHICAP",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "WHICAP",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -14528,23 +14688,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "LivingBrainProject_MSSM",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:MayoClinic",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Mayo Clinic",
-            "rdfs:label": "MayoClinic",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualIdSource"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Mayo Clinic",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -21180,6 +21323,65 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "PMI",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PmiUnits",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Time units used to record the post-mortem interval",
+            "rdfs:label": "PmiUnits",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Hours"
+                },
+                {
+                    "@id": "bts:Minutes"
+                }
+            ],
+            "sms:displayName": "pmiUnits",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Hours",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Hours",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PmiUnits"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "hours",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Minutes",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Minutes",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PmiUnits"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "minutes",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -28633,6 +28835,9 @@
                 },
                 {
                     "@id": "bts:PMI"
+                },
+                {
+                    "@id": "bts:PmiUnits"
                 },
                 {
                     "@id": "bts:Braak"
