@@ -57,7 +57,7 @@ def compare_template_module(
 def write_test_template_json(
     template_config_path: str, test_templates: set, output_file_path: str
 ):
-    """Creates JSON-LD of test templates"""
+    """Creates JSON of test templates"""
     with open(template_config_path, "r") as f:
         template_config = json.load(f)
 
