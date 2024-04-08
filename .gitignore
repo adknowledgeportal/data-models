@@ -8,8 +8,11 @@ schematic_service_account_creds.json
 # schema metadata templates from sysbiodccjsonschemas repo
 schema_metadata_templates/
 
-# ignore local pyenv setup
+# ignore local pyenv setup and poetry env
 local-pyenv-setup.sh
+**/.venv/*
+**/poetry.toml
+**/poetry.lock
 
 # manifest output csvs
 output_csvs/
@@ -35,3 +38,6 @@ tests/changed-templates.json
 # ignore some scratch files
 scripts/add_cohort_attribute.ipynb
 tests/example-manifest-selection.sh
+.vscode/launch.json
+scripts/.env
+pyproject.toml
