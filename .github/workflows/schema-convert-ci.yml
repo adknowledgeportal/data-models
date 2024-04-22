@@ -60,7 +60,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
     
       - name: List changed attributes
-        run: git diff --name-only --merge-base origin/main ${{ github.ref_name }} > ./tests/changed-files.txt
+        run: git diff --name-only --merge-base origin/main ${{ github.ref }} > ./tests/changed-files.txt
 
       - name: Identify changed manifests
         working-directory: tests
