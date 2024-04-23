@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: 
-          fetch-depth: 0
+          fetch-depth: 1
       - uses: actions/setup-python@v4 
         with:
           python-version: '3.10'
@@ -53,6 +53,11 @@ jobs:
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add AD.model.jsonld
           git commit -m "GitHub Action: convert *.model.csv to *.model.jsonld" || echo "No changes to commit"
+
+      - name: Fetch the current head of PR
+        uses: r-lib/actions/pr-fetch@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push model changes
         uses: r-lib/actions/pr-push@v2
