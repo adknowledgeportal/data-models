@@ -54,10 +54,10 @@ jobs:
           git add AD.model.jsonld
           git commit -m "GitHub Action: convert *.model.csv to *.model.jsonld" || echo "No changes to commit"
 
-     # - name: Push model changes
-      #  uses: r-lib/actions/pr-push@v2
-       # with:
-       #   repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Push model changes
+        uses: r-lib/actions/pr-push@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
     
       - name: List changed attributes
         run: git diff --name-only origin/main HEAD > ./tests/changed-files.txt
