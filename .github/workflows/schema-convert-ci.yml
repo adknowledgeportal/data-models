@@ -32,6 +32,9 @@ jobs:
       - name: Install Libraries
         shell: bash
         run: pip install -r requirements.txt
+      
+      - name: List changed attributes for manifest testing
+        run: git diff --name-only origin/main HEAD > ./tests/changed-files.txt
 
       - name: Assemble csv data model
         run: python scripts/assemble_csv_data_model.py modules AD.model.csv
@@ -54,14 +57,11 @@ jobs:
           git add AD.model.jsonld
           git commit -m "GitHub Action: convert *.model.csv to *.model.jsonld" || echo "No changes to commit"
 
-      - name: Push model changes
+      - name: Push csv and json-ld model changes
         uses: r-lib/actions/pr-push@v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
     
-      - name: List changed attributes
-        run: git diff --name-only origin/main HEAD > ./tests/changed-files.txt
-
       - name: Identify changed manifests
         working-directory: tests
         run: ./changed_manifest_selection.sh
