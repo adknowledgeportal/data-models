@@ -28887,6 +28887,23 @@
             "sms:displayName": "BEAM",
             "sms:required": "sms:false",
             "sms:validationRules": []
+        },
+        {
+            "@id": "bts:TestStudyName",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "fake study do not use",
+            "rdfs:label": "TestStudyName",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Test_study_name",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
         }
     ],
     "@id": "http://schema.biothings.io/#0.1"
