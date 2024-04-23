@@ -1417,18 +1417,371 @@
         {
             "@id": "bts:Assay",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Metadata describing properites of an assay conducted in the study.",
+            "rdfs:comment": "The technology used to generate the data in this file",
             "rdfs:label": "Assay",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:MetadataType"
+                    "@id": "bts:ManifestColumn"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:10xmultiome"
+                },
+                {
+                    "@id": "bts:16SrRNAseq"
+                },
+                {
+                    "@id": "bts:Activeavoidancelearningbehavior"
+                },
+                {
+                    "@id": "bts:Anxiety-relatedbehavior"
+                },
+                {
+                    "@id": "bts:ATACSeq"
+                },
+                {
+                    "@id": "bts:AtomicForceMicroscopy"
+                },
+                {
+                    "@id": "bts:Autoradiography"
+                },
+                {
+                    "@id": "bts:BakerLipidomics"
+                },
+                {
+                    "@id": "bts:BiocratesBileAcids"
+                },
+                {
+                    "@id": "bts:Biocratesp180"
+                },
+                {
+                    "@id": "bts:BiocratesQ500"
+                },
+                {
+                    "@id": "bts:BisulfiteSeq"
+                },
+                {
+                    "@id": "bts:BloodChemistryMeasurement"
+                },
+                {
+                    "@id": "bts:BrightfieldMicroscopy"
+                },
+                {
+                    "@id": "bts:CellViabilityAssay"
+                },
+                {
+                    "@id": "bts:ChIPSeq"
+                },
+                {
+                    "@id": "bts:CITESeq"
+                },
+                {
+                    "@id": "bts:Contextualconditioningbehavior"
+                },
+                {
+                    "@id": "bts:CUT&Tag"
+                },
+                {
+                    "@id": "bts:DIA"
+                },
+                {
+                    "@id": "bts:DNAopticalmapping"
+                },
+                {
+                    "@id": "bts:Electrochemiluminescence"
+                },
+                {
+                    "@id": "bts:Elevatedplusmazetest"
+                },
+                {
+                    "@id": "bts:ElevatedTmazeapparatusmethod"
+                },
+                {
+                    "@id": "bts:ELISA"
+                },
+                {
+                    "@id": "bts:ErrBisulfiteSeq"
+                },
+                {
+                    "@id": "bts:ExomeSeq"
+                },
+                {
+                    "@id": "bts:FIA-MSMS"
+                },
+                {
+                    "@id": "bts:FitBark"
+                },
+                {
+                    "@id": "bts:Frailtyassessment"
+                },
+                {
+                    "@id": "bts:Genotyping"
+                },
+                {
+                    "@id": "bts:HI-C"
+                },
+                {
+                    "@id": "bts:HiChIPseq"
+                },
+                {
+                    "@id": "bts:Highcontentscreen"
+                },
+                {
+                    "@id": "bts:HPLC"
+                },
+                {
+                    "@id": "bts:HPLC-MSMS"
+                },
+                {
+                    "@id": "bts:Immunocytochemistry"
+                },
+                {
+                    "@id": "bts:Immunofluorescence"
+                },
+                {
+                    "@id": "bts:Immunohistochemistry"
+                },
+                {
+                    "@id": "bts:Invivobioluminescence"
+                },
+                {
+                    "@id": "bts:ISOSeq"
+                },
+                {
+                    "@id": "bts:JumpingLibrary"
+                },
+                {
+                    "@id": "bts:Kinestheticbehavior"
+                },
+                {
+                    "@id": "bts:Labelfreemassspectrometry"
+                },
+                {
+                    "@id": "bts:LaserSpeckleImaging"
+                },
+                {
+                    "@id": "bts:LC-MS"
+                },
+                {
+                    "@id": "bts:LC-MSMS"
+                },
+                {
+                    "@id": "bts:LC-SRM"
+                },
+                {
+                    "@id": "bts:LeidenOxylipins"
+                },
+                {
+                    "@id": "bts:LentiMPRA"
+                },
+                {
+                    "@id": "bts:LFP"
+                },
+                {
+                    "@id": "bts:Liquidchromatography-electrochemicaldetection"
+                },
+                {
+                    "@id": "bts:LncrnaSeq"
+                },
+                {
+                    "@id": "bts:Locomotoractivationbehavior"
+                },
+                {
+                    "@id": "bts:Long-readrnaSeq"
+                },
+                {
+                    "@id": "bts:LTP"
+                },
+                {
+                    "@id": "bts:MDMS-SL"
+                },
+                {
+                    "@id": "bts:Memorybehavior"
+                },
+                {
+                    "@id": "bts:Metabolon"
+                },
+                {
+                    "@id": "bts:MethylationArray"
+                },
+                {
+                    "@id": "bts:MIB/MS"
+                },
+                {
+                    "@id": "bts:MicroRNAcounts"
+                },
+                {
+                    "@id": "bts:MirnaArray"
+                },
+                {
+                    "@id": "bts:MirnaSeq"
+                },
+                {
+                    "@id": "bts:MRI"
+                },
+                {
+                    "@id": "bts:MRNAcounts"
+                },
+                {
+                    "@id": "bts:MudPIT"
+                },
+                {
+                    "@id": "bts:M6A-rnaSeq"
+                },
+                {
+                    "@id": "bts:NextGenerationTargetedSequencing"
+                },
+                {
+                    "@id": "bts:NightingaleNMR"
+                },
+                {
+                    "@id": "bts:NOMe-Seq"
+                },
+                {
+                    "@id": "bts:Noveltyresponsebehavior"
+                },
+                {
+                    "@id": "bts:Openfieldtest"
+                },
+                {
+                    "@id": "bts:OxBS-Seq"
+                },
+                {
+                    "@id": "bts:Pharmacodynamics"
+                },
+                {
+                    "@id": "bts:Pharmacokinetics"
+                },
+                {
+                    "@id": "bts:Photograph"
+                },
+                {
+                    "@id": "bts:PolymeraseChainReaction"
+                },
+                {
+                    "@id": "bts:PositronEmissionTomography"
+                },
+                {
+                    "@id": "bts:Proximityextensionassay"
+                },
+                {
+                    "@id": "bts:Questionnaire"
+                },
+                {
+                    "@id": "bts:RaderLipidomics"
+                },
+                {
+                    "@id": "bts:RealTimePCR"
+                },
+                {
+                    "@id": "bts:Ribo-Seq"
+                },
+                {
+                    "@id": "bts:Rotarodperformancetest"
+                },
+                {
+                    "@id": "bts:RnaArray"
+                },
+                {
+                    "@id": "bts:RnaSeq"
+                },
+                {
+                    "@id": "bts:RPPA"
+                },
+                {
+                    "@id": "bts:SandwichELISA"
+                },
+                {
+                    "@id": "bts:Sangersequencing"
+                },
+                {
+                    "@id": "bts:Scale"
+                },
+                {
+                    "@id": "bts:ScATACSeq"
+                },
+                {
+                    "@id": "bts:ScCGIseq"
+                },
+                {
+                    "@id": "bts:ScirnaSeq"
+                },
+                {
+                    "@id": "bts:ScrnaSeq"
+                },
+                {
+                    "@id": "bts:ScwholeGenomeSeq"
+                },
+                {
+                    "@id": "bts:SiMoA"
+                },
+                {
+                    "@id": "bts:SnpArray"
+                },
+                {
+                    "@id": "bts:SnATACSeq"
+                },
+                {
+                    "@id": "bts:SnrnaSeq"
+                },
+                {
+                    "@id": "bts:Spontaneousalternation"
+                },
+                {
+                    "@id": "bts:STARRSeq"
+                },
+                {
+                    "@id": "bts:TMTquantitation"
+                },
+                {
+                    "@id": "bts:TractionForceMicroscopy"
+                },
+                {
+                    "@id": "bts:UPLC-MSMS"
+                },
+                {
+                    "@id": "bts:UPLC-ESI-QTOF-MS"
+                },
+                {
+                    "@id": "bts:UCDavisGCTOF"
+                },
+                {
+                    "@id": "bts:UCSDUntargetedMetabolomics"
+                },
+                {
+                    "@id": "bts:VernierCaliper"
+                },
+                {
+                    "@id": "bts:VonFreytest"
+                },
+                {
+                    "@id": "bts:WesternBlot"
+                },
+                {
+                    "@id": "bts:Wheelrunning"
+                },
+                {
+                    "@id": "bts:Whole-cellpatchclamp"
+                },
+                {
+                    "@id": "bts:WholeGenomeSeq"
+                },
+                {
+                    "@id": "bts:WishartCatecholamines"
+                },
+                {
+                    "@id": "bts:WishartHighValueMetabolites"
+                },
+                {
+                    "@id": "bts:ZenoElectronicWalkway"
+                }
+            ],
             "sms:displayName": "assay",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -1575,6 +1928,9 @@
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Platform"
+                },
+                {
+                    "@id": "bts:Assay"
                 }
             ],
             "schema:isPartOf": {
@@ -3398,6 +3754,9 @@
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:LibraryPrep"
+                },
+                {
+                    "@id": "bts:Assay"
                 }
             ],
             "schema:isPartOf": {
@@ -10059,7 +10418,7 @@
                     "@id": "bts:Analyticalcovariates"
                 },
                 {
-                    "@id": "bts:Assay"
+                    "@id": "bts:Assaymetadata"
                 },
                 {
                     "@id": "bts:Biospecimen"
@@ -18007,6 +18366,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "analytical covariates",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Assaymetadata",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Metadata describing properites of an assay conducted in the study. NOTE: annotation key for files is \"metadataType = assay\"; valid value for key \"metadataType\" is written \"assay metadata\" in the data model to avoid conflicts with the \"assay\" key",
+            "rdfs:label": "Assaymetadata",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:MetadataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "assay metadata",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
