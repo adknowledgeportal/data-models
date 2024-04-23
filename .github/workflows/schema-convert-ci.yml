@@ -54,6 +54,11 @@ jobs:
           git add AD.model.jsonld
           git commit -m "GitHub Action: convert *.model.csv to *.model.jsonld" || echo "No changes to commit"
 
+      - name: Fetch the current head of PR
+        uses: r-lib/actions/pr-fetch@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Push model changes
         uses: r-lib/actions/pr-push@v2
         with:
