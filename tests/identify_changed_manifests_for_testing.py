@@ -78,18 +78,18 @@ def main(args):
     with open(args.changed_files_path, "r", encoding="UTF-8") as file:
         changed_files = file
 
-    changed_attributes = []
-    changed_templates = []
+        changed_attributes = []
+        changed_templates = []
 
-    for x in changed_files:
-        value = os.path.splitext(os.path.basename(x))[0]
-        if value == "templates":
-            changed_template_names = compare_template_module(
-                args.current_templates_url, args.new_templates_path
-            )
-            changed_templates += changed_template_names
-        else:
-            changed_attributes.append(value)
+        for x in changed_files:
+            value = os.path.splitext(os.path.basename(x))[0]
+            if value == "templates":
+                changed_template_names = compare_template_module(
+                    args.current_templates_url, args.new_templates_path
+                )
+                changed_templates += changed_template_names
+            else:
+                changed_attributes.append(value)
 
     test_templates = set(
         changed_templates
