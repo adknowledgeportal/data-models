@@ -35,10 +35,8 @@ def get_templates_with_changed_attributes(
         list: name of templates with changes
     """
     csv_model = pd.read_csv(csv_model_path)
-    # changed_attributes_regex = '|'.join(changed_attributes)
-    templates_with_changed_attributes = csv_model[
-        csv_model["DependsOn"].isin(changed_attributes)
-    ]["Attribute"].to_list()
+    changed_attributes_regex = '|'.join(changed_attributes)
+    templates_with_changed_attributes = csv_model[csv_model['DependsOn'].str.contains(changed_attributes_regex, na = False)]['Attribute'].to_list()
     return templates_with_changed_attributes
 
 
@@ -61,11 +59,11 @@ def write_test_template_json(
     with open(template_config_path, "r") as f:
         template_config = json.load(f)
 
-    filtered_templates = [
-        x
-        for x in template_config["manifest_schemas"]
-        if x["display_name"] in test_templates
-    ]
+        filtered_templates = [
+            x
+            for x in template_config["manifest_schemas"]
+            if x["display_name"] in test_templates
+        ]
 
     # ensures the file is closed after accessing it using a context manager
     with open(output_file_path, "w") as f:
