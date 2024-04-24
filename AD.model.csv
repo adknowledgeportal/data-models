@@ -1359,7 +1359,6 @@ SY5Y_REST,LiCl treated SH-SY5Y cells,,,,,study,,https://www.synapse.org/#!Synaps
 TASTPM,A double transgenic mouse model,,,,,study,,https://www.synapse.org/#!Synapse:syn5714307,,string,ADKP
 TAUAPPms,Tau and APP mouse model,,,,,study,,https://www.synapse.org/#!Synapse:syn3157182,,string,ADKP
 TauD35,Mouse tauopathy model,,,,,study,,https://www.synapse.org/#!Synapse:syn5714308,,string,ADKP
-Test_study_name,fake study do not use,,,,,study,,,,string,ADKP
 TS-RNAseq,Transcriptional Analysis of the Human Striatum in Tourette Syndrome,,,,,study,,https://www.synapse.org/#!Synapse:syn3158906,,string,ADKP
 TWAS,Transcriptome-Wide Association Study (TWAS) in Alzheimer's Disease,,,,,study,,https://www.synapse.org/#!Synapse:syn22313785,,string,ADKP
 TyrobpKO,Mouse Tyrobp KO model,,,,,study,,https://www.synapse.org/#!Synapse:syn7123287,,string,ADKP
