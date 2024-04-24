@@ -29231,6 +29231,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:DummyModelValue",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "DummyModelValue",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ModelSystemName"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "dummy_model_value",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:ATP6V1AKd",
             "@type": "rdfs:Class",
             "rdfs:comment": "The ATP6V1A knockdown in hIPSC neurons (ATP6V1A_kd) study",
