@@ -60,4 +60,3 @@ TYROBP,,,,,,modelSystemName,,,,string,mouse
 TYROBP_KO.KO,,,,,,modelSystemName,,,,string,mouse
 TYROBP_WT,,,,,,modelSystemName,,,,string,mouse
 TYROBP_WT.KO,,,,,,modelSystemName,,,,string,mouse
-fake_mouse_model,do not use,,,,,modelSystemName,,,,string,mouse

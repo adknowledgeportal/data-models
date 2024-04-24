@@ -166,4 +166,3 @@ WallOfTargets,,,,,,study,,,,string,ADKP
 WGBS Pilot,Whole Genome Bisulfite Sequencing pilot,,,,,study,,https://www.synapse.org/#!Synapse:syn4586517,,string,ADKP
 WGS_Harmonization,The Whole Genome Sequence Harmonization Study (WGS_Harmonization),,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn22264775,,string,ADKP
 Yale-ASD,Transcriptional and Epigenetic Signatures of Human Brain Development and Autism-,,,,,study,,https://www.synapse.org/#!Synapse:syn4566141,,string,ADKP
-rename_test_study_name,fake study do not use,,,,,study,,,,string,ADKP
