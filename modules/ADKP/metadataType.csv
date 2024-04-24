@@ -1,7 +1,7 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-metadataType,"For files of dataSubtype: metadata, a description of the type of metadata in the file.","analytical covariates, assay, biospecimen, data dictionary, ID mapping, individual, manifest, protocol",,,False,ManifestColumn,,sage.annotations-experimentalData.metadataType-0.0.4,,string,ADKP
+metadataType,"For files of dataSubtype: metadata, a description of the type of metadata in the file.","analytical covariates, assay metadata, biospecimen, data dictionary, ID mapping, individual, manifest, protocol",,,False,ManifestColumn,,sage.annotations-experimentalData.metadataType-0.0.4,,string,ADKP
 analytical covariates,A file that contains a combination or subset of individual- or specimen-level covariates used for a particular analysis.,,,,,metadataType,,Sage Bionetworks,,string,ADKP
-assay,Metadata describing properites of an assay conducted in the study.,,,,,metadataType,,Sage Bionetworks,,string,ADKP
+assay metadata,Metadata describing properites of an assay conducted in the study. NOTE: annotation key for files is "metadataType = assay"; valid value for key "metadataType" is written "assay metadata" in the data model to avoid conflicts with the "assay" key,,,,,metadataType,,Sage Bionetworks,,string,ADKP
 biospecimen,Metadata describing properties of specimens collected and/or analyzed in the study.,,,,,metadataType,,Sage Bionetworks,,string,ADKP
 data dictionary,Metadata describing terms or variables that appear in another file.,,,,,metadataType,,Sage Bionetworks,,string,ADKP
 ID mapping,A file or table that maps data identifiers to one another for example to establish a link between two biological databases for the purposes of data integration.,,,,,metadataType,,http://edamontology.org/operation_3282,,string,ADKP

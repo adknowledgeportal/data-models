@@ -1417,18 +1417,371 @@
         {
             "@id": "bts:Assay",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Metadata describing properites of an assay conducted in the study.",
+            "rdfs:comment": "The technology used to generate the data in this file",
             "rdfs:label": "Assay",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:MetadataType"
+                    "@id": "bts:ManifestColumn"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:10xmultiome"
+                },
+                {
+                    "@id": "bts:16SrRNAseq"
+                },
+                {
+                    "@id": "bts:Activeavoidancelearningbehavior"
+                },
+                {
+                    "@id": "bts:Anxiety-relatedbehavior"
+                },
+                {
+                    "@id": "bts:ATACSeq"
+                },
+                {
+                    "@id": "bts:AtomicForceMicroscopy"
+                },
+                {
+                    "@id": "bts:Autoradiography"
+                },
+                {
+                    "@id": "bts:BakerLipidomics"
+                },
+                {
+                    "@id": "bts:BiocratesBileAcids"
+                },
+                {
+                    "@id": "bts:Biocratesp180"
+                },
+                {
+                    "@id": "bts:BiocratesQ500"
+                },
+                {
+                    "@id": "bts:BisulfiteSeq"
+                },
+                {
+                    "@id": "bts:BloodChemistryMeasurement"
+                },
+                {
+                    "@id": "bts:BrightfieldMicroscopy"
+                },
+                {
+                    "@id": "bts:CellViabilityAssay"
+                },
+                {
+                    "@id": "bts:ChIPSeq"
+                },
+                {
+                    "@id": "bts:CITESeq"
+                },
+                {
+                    "@id": "bts:Contextualconditioningbehavior"
+                },
+                {
+                    "@id": "bts:CUT&Tag"
+                },
+                {
+                    "@id": "bts:DIA"
+                },
+                {
+                    "@id": "bts:DNAopticalmapping"
+                },
+                {
+                    "@id": "bts:Electrochemiluminescence"
+                },
+                {
+                    "@id": "bts:Elevatedplusmazetest"
+                },
+                {
+                    "@id": "bts:ElevatedTmazeapparatusmethod"
+                },
+                {
+                    "@id": "bts:ELISA"
+                },
+                {
+                    "@id": "bts:ErrBisulfiteSeq"
+                },
+                {
+                    "@id": "bts:ExomeSeq"
+                },
+                {
+                    "@id": "bts:FIA-MSMS"
+                },
+                {
+                    "@id": "bts:FitBark"
+                },
+                {
+                    "@id": "bts:Frailtyassessment"
+                },
+                {
+                    "@id": "bts:Genotyping"
+                },
+                {
+                    "@id": "bts:HI-C"
+                },
+                {
+                    "@id": "bts:HiChIPseq"
+                },
+                {
+                    "@id": "bts:Highcontentscreen"
+                },
+                {
+                    "@id": "bts:HPLC"
+                },
+                {
+                    "@id": "bts:HPLC-MSMS"
+                },
+                {
+                    "@id": "bts:Immunocytochemistry"
+                },
+                {
+                    "@id": "bts:Immunofluorescence"
+                },
+                {
+                    "@id": "bts:Immunohistochemistry"
+                },
+                {
+                    "@id": "bts:Invivobioluminescence"
+                },
+                {
+                    "@id": "bts:ISOSeq"
+                },
+                {
+                    "@id": "bts:JumpingLibrary"
+                },
+                {
+                    "@id": "bts:Kinestheticbehavior"
+                },
+                {
+                    "@id": "bts:Labelfreemassspectrometry"
+                },
+                {
+                    "@id": "bts:LaserSpeckleImaging"
+                },
+                {
+                    "@id": "bts:LC-MS"
+                },
+                {
+                    "@id": "bts:LC-MSMS"
+                },
+                {
+                    "@id": "bts:LC-SRM"
+                },
+                {
+                    "@id": "bts:LeidenOxylipins"
+                },
+                {
+                    "@id": "bts:LentiMPRA"
+                },
+                {
+                    "@id": "bts:LFP"
+                },
+                {
+                    "@id": "bts:Liquidchromatography-electrochemicaldetection"
+                },
+                {
+                    "@id": "bts:LncrnaSeq"
+                },
+                {
+                    "@id": "bts:Locomotoractivationbehavior"
+                },
+                {
+                    "@id": "bts:Long-readrnaSeq"
+                },
+                {
+                    "@id": "bts:LTP"
+                },
+                {
+                    "@id": "bts:MDMS-SL"
+                },
+                {
+                    "@id": "bts:Memorybehavior"
+                },
+                {
+                    "@id": "bts:Metabolon"
+                },
+                {
+                    "@id": "bts:MethylationArray"
+                },
+                {
+                    "@id": "bts:MIB/MS"
+                },
+                {
+                    "@id": "bts:MicroRNAcounts"
+                },
+                {
+                    "@id": "bts:MirnaArray"
+                },
+                {
+                    "@id": "bts:MirnaSeq"
+                },
+                {
+                    "@id": "bts:MRI"
+                },
+                {
+                    "@id": "bts:MRNAcounts"
+                },
+                {
+                    "@id": "bts:MudPIT"
+                },
+                {
+                    "@id": "bts:M6A-rnaSeq"
+                },
+                {
+                    "@id": "bts:NextGenerationTargetedSequencing"
+                },
+                {
+                    "@id": "bts:NightingaleNMR"
+                },
+                {
+                    "@id": "bts:NOMe-Seq"
+                },
+                {
+                    "@id": "bts:Noveltyresponsebehavior"
+                },
+                {
+                    "@id": "bts:Openfieldtest"
+                },
+                {
+                    "@id": "bts:OxBS-Seq"
+                },
+                {
+                    "@id": "bts:Pharmacodynamics"
+                },
+                {
+                    "@id": "bts:Pharmacokinetics"
+                },
+                {
+                    "@id": "bts:Photograph"
+                },
+                {
+                    "@id": "bts:PolymeraseChainReaction"
+                },
+                {
+                    "@id": "bts:PositronEmissionTomography"
+                },
+                {
+                    "@id": "bts:Proximityextensionassay"
+                },
+                {
+                    "@id": "bts:Questionnaire"
+                },
+                {
+                    "@id": "bts:RaderLipidomics"
+                },
+                {
+                    "@id": "bts:RealTimePCR"
+                },
+                {
+                    "@id": "bts:Ribo-Seq"
+                },
+                {
+                    "@id": "bts:Rotarodperformancetest"
+                },
+                {
+                    "@id": "bts:RnaArray"
+                },
+                {
+                    "@id": "bts:RnaSeq"
+                },
+                {
+                    "@id": "bts:RPPA"
+                },
+                {
+                    "@id": "bts:SandwichELISA"
+                },
+                {
+                    "@id": "bts:Sangersequencing"
+                },
+                {
+                    "@id": "bts:Scale"
+                },
+                {
+                    "@id": "bts:ScATACSeq"
+                },
+                {
+                    "@id": "bts:ScCGIseq"
+                },
+                {
+                    "@id": "bts:ScirnaSeq"
+                },
+                {
+                    "@id": "bts:ScrnaSeq"
+                },
+                {
+                    "@id": "bts:ScwholeGenomeSeq"
+                },
+                {
+                    "@id": "bts:SiMoA"
+                },
+                {
+                    "@id": "bts:SnpArray"
+                },
+                {
+                    "@id": "bts:SnATACSeq"
+                },
+                {
+                    "@id": "bts:SnrnaSeq"
+                },
+                {
+                    "@id": "bts:Spontaneousalternation"
+                },
+                {
+                    "@id": "bts:STARRSeq"
+                },
+                {
+                    "@id": "bts:TMTquantitation"
+                },
+                {
+                    "@id": "bts:TractionForceMicroscopy"
+                },
+                {
+                    "@id": "bts:UPLC-MSMS"
+                },
+                {
+                    "@id": "bts:UPLC-ESI-QTOF-MS"
+                },
+                {
+                    "@id": "bts:UCDavisGCTOF"
+                },
+                {
+                    "@id": "bts:UCSDUntargetedMetabolomics"
+                },
+                {
+                    "@id": "bts:VernierCaliper"
+                },
+                {
+                    "@id": "bts:VonFreytest"
+                },
+                {
+                    "@id": "bts:WesternBlot"
+                },
+                {
+                    "@id": "bts:Wheelrunning"
+                },
+                {
+                    "@id": "bts:Whole-cellpatchclamp"
+                },
+                {
+                    "@id": "bts:WholeGenomeSeq"
+                },
+                {
+                    "@id": "bts:WishartCatecholamines"
+                },
+                {
+                    "@id": "bts:WishartHighValueMetabolites"
+                },
+                {
+                    "@id": "bts:ZenoElectronicWalkway"
+                }
+            ],
             "sms:displayName": "assay",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -1575,6 +1928,9 @@
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Platform"
+                },
+                {
+                    "@id": "bts:Assay"
                 }
             ],
             "schema:isPartOf": {
@@ -1774,6 +2130,9 @@
                 },
                 {
                     "@id": "bts:Orbitrap"
+                },
+                {
+                    "@id": "bts:OrbitrapExploris240"
                 },
                 {
                     "@id": "bts:OrbiTrapFusion"
@@ -3395,6 +3754,9 @@
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:LibraryPrep"
+                },
+                {
+                    "@id": "bts:Assay"
                 }
             ],
             "schema:isPartOf": {
@@ -8359,7 +8721,7 @@
         {
             "@id": "bts:Cohort",
             "@type": "rdfs:Class",
-            "rdfs:comment": "A study group population or group of indiviuals identified by a common characteristic.",
+            "rdfs:comment": "A study group population where the members are human beings who meet inclusion criteria.",
             "rdfs:label": "Cohort",
             "rdfs:subClassOf": [
                 {
@@ -8386,6 +8748,9 @@
                     "@id": "bts:BEB-Miller"
                 },
                 {
+                    "@id": "bts:BiggsInstituteBrainBank"
+                },
+                {
                     "@id": "bts:BLSA"
                 },
                 {
@@ -8395,7 +8760,13 @@
                     "@id": "bts:CLINCOR"
                 },
                 {
+                    "@id": "bts:ColumbiaADRC"
+                },
+                {
                     "@id": "bts:DiCAD"
+                },
+                {
+                    "@id": "bts:EFIGA"
                 },
                 {
                     "@id": "bts:EHBS"
@@ -8404,7 +8775,13 @@
                     "@id": "bts:EmoryADRC"
                 },
                 {
+                    "@id": "bts:FBS"
+                },
+                {
                     "@id": "bts:Framingham"
+                },
+                {
+                    "@id": "bts:HBCC"
                 },
                 {
                     "@id": "bts:HBTRC"
@@ -8422,7 +8799,7 @@
                     "@id": "bts:MARS"
                 },
                 {
-                    "@id": "bts:MAYO"
+                    "@id": "bts:MayoClinic"
                 },
                 {
                     "@id": "bts:MC"
@@ -8452,6 +8829,9 @@
                     "@id": "bts:SMRI"
                 },
                 {
+                    "@id": "bts:UFL"
+                },
+                {
                     "@id": "bts:UKBiobank"
                 },
                 {
@@ -8462,9 +8842,29 @@
                 },
                 {
                     "@id": "bts:UWADRC"
+                },
+                {
+                    "@id": "bts:WHICAP"
                 }
             ],
             "sms:displayName": "cohort",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BiggsInstituteBrainBank",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "University of Texas Health San Antonio Biggs Institute Brain Bank",
+            "rdfs:label": "BiggsInstituteBrainBank",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Biggs Institute Brain Bank",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -8526,6 +8926,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:ColumbiaADRC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Columbia University Alzheimer's Disease Research Center",
+            "rdfs:label": "ColumbiaADRC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Columbia ADRC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:DiCAD",
             "@type": "rdfs:Class",
             "rdfs:comment": "Interdisciplinary Research to Understand the Interplay of Diabetes, Cerebrovascular disease and Alzheimer's disease",
@@ -8542,6 +8959,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "DiCAD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:EFIGA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Estudio Familiar de Influencia Genetica en Alzheimer (EFIGA) is a study based on a cohort of Caribbean Hispanics with Late-Onset Alzheimer’s Disease recruited from clinics in the Dominican Republic and New York.",
+            "rdfs:label": "EFIGA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "EFIGA",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -8583,6 +9017,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:FBS",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "THe National Institute on Aging Alzheimer's Disease Family Based Study (NIA-AD FBS)",
+            "rdfs:label": "FBS",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "FBS",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Framingham",
             "@type": "rdfs:Class",
             "rdfs:comment": "Framingham Heart Study",
@@ -8600,16 +9051,33 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:HBCC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Human Brain Collection Core (HBCC) within the National Institute of Mental Health",
+            "rdfs:label": "HBCC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "HBCC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:HBTRC",
             "@type": "rdfs:Class",
             "rdfs:comment": "Harvard Brain Tissue Resource Center",
             "rdfs:label": "HBTRC",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Cohort"
+                    "@id": "bts:IndividualIdSource"
                 },
                 {
-                    "@id": "bts:IndividualIdSource"
+                    "@id": "bts:Cohort"
                 },
                 {
                     "@id": "bts:Study"
@@ -8711,6 +9179,26 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:MayoClinic",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Mayo Clinic",
+            "rdfs:label": "MayoClinic",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualIdSource"
+                },
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Mayo Clinic",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:MC",
             "@type": "rdfs:Class",
             "rdfs:comment": "Mayo Clinic (NOT brain bank, living)",
@@ -8788,10 +9276,10 @@
             "rdfs:label": "NYBB",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Cohort"
+                    "@id": "bts:IndividualIdSource"
                 },
                 {
-                    "@id": "bts:IndividualIdSource"
+                    "@id": "bts:Cohort"
                 }
             ],
             "schema:isPartOf": {
@@ -8876,6 +9364,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:UFL",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "University of Florida Neuromedicine Human Brain and Tissue Bank (UF HBTB)",
+            "rdfs:label": "UFL",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "UFL",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:UKBiobank",
             "@type": "rdfs:Class",
             "rdfs:comment": "UK Biobank",
@@ -8943,6 +9448,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "UW ADRC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:WHICAP",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Washington-Heights/Inwood Columbia Aging Project (WHICAP) is a community-based longitudinal study, recruiting elderly subjects from Northern Manhattan. Cohorts were established in 1992, 1999, and 2009. Subjects are evaluated every two years.",
+            "rdfs:label": "WHICAP",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "WHICAP",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -9896,7 +10418,7 @@
                     "@id": "bts:Analyticalcovariates"
                 },
                 {
-                    "@id": "bts:Assay"
+                    "@id": "bts:Assaymetadata"
                 },
                 {
                     "@id": "bts:Biospecimen"
@@ -14529,23 +15051,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:MayoClinic",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Mayo Clinic",
-            "rdfs:label": "MayoClinic",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualIdSource"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Mayo Clinic",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:MayoBrainBank",
             "@type": "rdfs:Class",
             "rdfs:comment": "Mayo Clinic Brain Bank",
@@ -17865,6 +18370,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Assaymetadata",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Metadata describing properites of an assay conducted in the study. NOTE: annotation key for files is \"metadataType = assay\"; valid value for key \"metadataType\" is written \"assay metadata\" in the data model to avoid conflicts with the \"assay\" key",
+            "rdfs:label": "Assaymetadata",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:MetadataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "assay metadata",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Biospecimen",
             "@type": "rdfs:Class",
             "rdfs:comment": "Metadata describing properties of specimens collected and/or analyzed in the study.",
@@ -20790,6 +21312,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:OrbitrapExploris240",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Thermo Scientific Orbitrap Exploris 240 Quadrupole Orbitrap mass spectrometer",
+            "rdfs:label": "OrbitrapExploris240",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Platform"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Orbitrap Exploris 240",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:OrbiTrapFusion",
             "@type": "rdfs:Class",
             "rdfs:comment": "Thermo Scientific Orbitrap Fusion",
@@ -21160,6 +21699,65 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "PMI",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PmiUnits",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Time units used to record the post-mortem interval",
+            "rdfs:label": "PmiUnits",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Hours"
+                },
+                {
+                    "@id": "bts:Minutes"
+                }
+            ],
+            "sms:displayName": "pmiUnits",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Hours",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Hours",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PmiUnits"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "hours",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Minutes",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Minutes",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:PmiUnits"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "minutes",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -28615,6 +29213,9 @@
                     "@id": "bts:PMI"
                 },
                 {
+                    "@id": "bts:PmiUnits"
+                },
+                {
                     "@id": "bts:Braak"
                 },
                 {
@@ -28660,6 +29261,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "BEAM",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:TestStudyName",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "fake study do not use",
+            "rdfs:label": "TestStudyName",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Test_study_name",
             "sms:required": "sms:false",
             "sms:validationRules": []
         }
