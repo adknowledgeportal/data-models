@@ -5,7 +5,7 @@ asset_store:
   # This is when assets are stored in a synapse project
   synapse:
     # Synapse ID of the file view listing all project data assets.
-    master_fileview_id: "syn58705738" 
+    master_fileview_id: "syn58711351" 
     # Path to the synapse config file, either absolute or relative to this file
     config: ".synapseConfig"
     # Base name that manifest files will be saved as

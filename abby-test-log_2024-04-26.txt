@@ -1,0 +1,1206 @@
+#terminal output of testing
+
+# convert data model
+(schematic-latest) ➜  data-models git:(xman-testing) ✗ schematic schema convert AD.model.csv
+Starting schematic...
+Parsing data model.
+Generating data model graph.
+Validating the data model internally.
+warning: Node: de-novo assembly contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Genome-Wide Association contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: genome-wide pleiotropy contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: anxiety-related behavior contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: FIA-MSMS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: HI-C contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: HPLC-MSMS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: LC-MS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: LC-MSMS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: LC-SRM contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: liquid chromatography-electrochemical detection contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: long-read rnaSeq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: m6A-rnaSeq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MDMS-SL contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: NOMe-Seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: oxBS-Seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Ribo-Seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: UPLC-ESI-QTOF-MS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: UPLC-MSMS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: whole-cell patch clamp contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: IE_V1-V3 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: R-loops contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Alpha-dri contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: B-lymphocytes contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: CD8+ T-Cells contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: epithelial-like contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: iPSC-derived astrocytes contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: iPSC-derived glia contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: iPSC-derived neuron contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: iPSC-derived neuronal progenitor cell contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: iPSC-derived telencephalic organoids contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: monocyte-derived microglia contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: NeuN- contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: SH-SY5Y contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: ABC-DS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: BEB-Miller contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: AMP-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: M2OVE-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Psych-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Resilience-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: AD-DS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: CS-DS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MCI-DS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.ABCA7A1527G contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.CEACAM1KO contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.Clasp2L163P contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.CR1long contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.Il1rapExon2KO contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.MthfrC677T contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.Plcg2M28L contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: LOAD1.Snx1D465N contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: NIMH-HBCC contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: UM-BTB contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: UW-CDL contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Accel-NGS 2S Plus contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Accel-NGS Methyl-Seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: CEL-seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Drop-Seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Omni-ATAC contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: sac-seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Smart-seq1 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Smart-seq2 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Smart-seq4 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Ultralow Methyl-Seq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: 3xTg-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: APPKM670-671NL-PSEN1deltaexon9 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: APPS1_Plexin-B1-KO contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: B6.Clu contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: B6.Gfap-APOE4 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Bin1.B6 contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: BRI2-AB42 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Cd2ap.B6 contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: MAPT-P301K contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Plexin-B1-KO contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: TAUPS19_Plexin-B1-KO contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: TYROBP_KO.KO contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: TYROBP_WT.KO contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Affy5.0 contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Affy6.0 contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Affymetrix Human Gene 1.0 ST Array contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: BGISEQ-500 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: ddSEQ Single-Cell Isolator contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Illumina_HumanOmni1-Quadv1.0 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: llumina Infinium General Screening Array 24-Kit v3.0 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Illumina MouseWG-6 v2.0 expression beadchip contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Illumina_Omni2.5-8 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Illumina_Omni2.5-8_v1.1 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Illumina_Omni2.5-8_v1.3 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Illumina_Omni5-Quad contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: IlluminaHumanHT-12_V3_0_R1 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: IlluminaInfiniumGSAMD-24v2-0 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Illumina_Infinium-HumanMethylation450-BeadChip contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Infinium Global Diversity Array-8 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Infinium Omni2.5Exome-8 v1.1 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Infinium Omni2.5Exome-8 v1.3 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Infinium Omni2.5Exome-8 v1.4 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Infinium Omni2.5Exome-8 v1.5 contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Q Exactive HF-X contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: quadrupole time-of-flight contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Simoa HD-1 Analyzer contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: time-of-flight contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Xevo TQ-S contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: dmel_r6.06 contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: MMUL1.0 contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: CytoTune iPS 2.0 Sendai Reprogramming Kit contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: 45% high-fat diet contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: formalin-fixed contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: AD-BXD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: ADMC_ADNI2-GO contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: AMP-AD_DiverseCohorts contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Aging-PheWAS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: APOE-TR contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: BCM-DMAS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: CMC-PEC contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: HDAC1-cKOBrain contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: iPSC-HiC contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt_APP.PS1 contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt_Levetiracetam-5XFAD contains a blacklisted character(s): .,-, they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt_MicrobiomePilot contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt_PrimaryScreen contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt.Proteomics_Metabolomics_Pilot contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt_StrainValidation contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt_APOE4.Trem2.R47H contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Jax.IU.Pitt_Verubecestat_5XFAD contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: MC-BrAD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MC-CAA contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MOA-PAD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_5XFAD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_APOE4_KI contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_Abca7_APOE4_Trem2 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_APOE4_Trem2 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_Ceacam_KO_APOE4_Trem2 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_hAbeta_KI contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_Harmonization contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_hCR1_KI_on_APOE4_Trem2 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_hTau_Trem2 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_Il1rapKO_APOE4_Trem2_exon2KO contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_Mthfr_APOE4_Trem2 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_Rat_F344 contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: MODEL-AD_Trem2_R47H contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: NHP-Macaque contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: NHP-Chimpanzee contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: NPS-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: ROSMAP-IN contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: ROSMAP-IA contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: SEA-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: SMIB-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: TS-RNAseq contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: U1-70_PrimaryCellCulture contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: UCI_3xTg-AD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: UCI_Trem2-R47H_NSS contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: UCLA-ASD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: VirusResilience_Mayo.MSBB.ROSMAP contains a blacklisted character(s): ., they will be striped if used in Synapse annotations.
+warning: Node: Yale-ASD contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+warning: Node: individual_animal_MODEL-AD_metadata_template contains a blacklisted character(s): -, they will be striped if used in Synapse annotations.
+Converting data model to JSON-LD
+By default, the JSON-LD output will be stored alongside the first input CSV or JSON-LD file. In this case, it will appear here: 'AD.model.jsonld'. You can use the `--output_jsonld` argument to specify another file path.
+The Data Model was created and saved to 'AD.model.jsonld' location.
+Execution time: 00:10 (M:S)
+
+# generate individual metadata manifest
+(schematic-latest) ➜  data-models git:(xman-testing) ✗ schematic manifest -c xman-testing-config.yml get -dt IndividualHumanMetadataTemplate -s
+Starting schematic...
+The path_to_data_model argument is being taken from configuration file, i.e., AD.model.jsonld.
+The title argument is being taken from configuration file, i.e., AD_dev_.
+Parsing data model.
+warning: JSONLD parsing is in Beta Mode. Please inspect outputs carefully and report any errors.
+Generating data model graph.
+file_cache is only supported with oauth2client<4.0.0
+file_cache is only supported with oauth2client<4.0.0
+JSON schema successfully generated from schema.org schema!
+Permission Id: anyoneWithLink
+Find the manifest template using this Google Sheet URL:
+https://docs.google.com/spreadsheets/d/14WmPVyfPixeg-6AmiDcgWPjc7PegiZ0GriooZj_Huqc
+file_cache is only supported with oauth2client<4.0.0
+file_cache is only supported with oauth2client<4.0.0
+Find the manifest template using this CSV file path: AD.IndividualHumanMetadataTemplate.manifest.csv
+(schematic-latest) ➜  data-models git:(xman-testing) ✗ schematic manifest -c xman-testing-config.yml get -dt IndividualHumanMetadataTemplate -o csv-manifests/individual.csv -oxlsx excel-manifests/individual.xlsx
+Starting schematic...
+The path_to_data_model argument is being taken from configuration file, i.e., AD.model.jsonld.
+The title argument is being taken from configuration file, i.e., AD_dev_.
+Parsing data model.
+warning: JSONLD parsing is in Beta Mode. Please inspect outputs carefully and report any errors.
+Generating data model graph.
+file_cache is only supported with oauth2client<4.0.0
+file_cache is only supported with oauth2client<4.0.0
+JSON schema successfully generated from schema.org schema!
+Permission Id: anyoneWithLink
+file_cache is only supported with oauth2client<4.0.0
+file_cache is only supported with oauth2client<4.0.0
+Find the manifest template using this Excel file path: excel-manifests/individual.xlsx
+
+# validate filled manifest
+(schematic-latest) ➜  data-models git:(xman-testing) ✗ schematic model -c xman-testing-config.yml validate -mp filled-manifests/individual_filled_pass.csv -dt IndividualHumanMetadataTemplate
+Starting schematic...
+The jsonld argument is being taken from configuration file, i.e., AD.model.jsonld.
+warning: JSONLD parsing is in Beta Mode. Please inspect outputs carefully and report any errors.
+JSON schema successfully generated from schema.org schema!
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:96: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+warning:   ).fillna(False)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+Could not find local context root directory
+Created temporary directory '/var/folders/dk/0kvw_jgs0x36k4d9nls882hc0000gq/T/tmpm_saum6j' for ephemeral docs site
+EphemeralDataContext has not implemented `_load_zep_config()` returning empty `GxConfig`
+Loading 'datasources' ->
+{}
+Loaded 'datasources' ->
+{}
+Could not find local context root directory
+EphemeralDataContext has not implemented `_load_zep_config()` returning empty `GxConfig`
+Loading 'datasources' ->
+{}
+Loaded 'datasources' ->
+{}
+        1 expectation(s) included in expectation_suite.
+Calculating Metrics: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:00<00:00, 349.81it/s]
+Your manifest has been validated successfully. There are no errors in your manifest, and it can be submitted without any modifications.
+
+# submit manifest
+(schematic-latest) ➜  data-models git:(xman-testing) ✗ schematic model -c xman-testing-config.yml submit -mp filled-manifests/individual_filled_pass.csv -d syn58710314 -mrt file_only
+Starting schematic...
+The jsonld argument is being taken from configuration file, i.e., AD.model.jsonld.
+warning: JSONLD parsing is in Beta Mode. Please inspect outputs carefully and report any errors.
+the total size of .synapseCache is: 7309 bytes
+ [####################]100.00%   1/1   Done...
+    
+Downloading  [####################]100.00%   7.0kB/7.0kB (11.4MB/s) SYNAPSE_TABLE_QUERY_139902543.csv Done...
+    
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+[WARNING] /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/store/synapse.py:1586: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+
+For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  manifest["entityId"].fillna("", inplace=True)
+
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/store/synapse.py:1586: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   manifest["entityId"].fillna("", inplace=True)
+HTTP Request: GET https://file-prod.prod.sagebase.org/file/v1/entity/syn58710314/uploadDestination "HTTP/1.1 200 "
+HTTP Request: POST https://file-prod.prod.sagebase.org/file/v1/file/multipart?forceRestart=false "HTTP/1.1 201 "
+HTTP Request: POST https://file-prod.prod.sagebase.org/file/v1/file/multipart/52632016/presigned/url/batch "HTTP/1.1 201 "
+Uploading to Synapse storage:   0%|                                                                                        | 0.00/534 [00:00<?, ?B/s, individual_filled_pass.csv]HTTP Request: PUT https://s3.amazonaws.com/proddata.sagebase.org/3420438/b562aa5f-72ad-4d03-90cd-f6dd336a2ecb/individual_filled_pass.csv/1?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEH8aCXVzLWVhc3QtMSJIMEYCIQChpmJKwaczBGldTyayvmSvwnMkNv1dW5CUKdC5M8%2FxsQIhAJxxbsxlNP%2FglltUzU6BWrTwfsKqEnxMUvM6jTi89WvrKsUFCMj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMMzI1NTY1NTg1ODM5Igwb7SkAGVsd%2FrbU5pwqmQXIct0jZ%2Bt6soQH5w%2BTL2HzqoOKssOyGX7Lv6V0jusKnSty%2B8lc7Fuq66Asb5w09fLbmVVoAHyPSq0GIKX7bAPf5Lbiil8AgKr%2F6SWEtx7hZA2Qh%2F78V1nfAEoT4UddNl8XeIBF6g1DVA2Aw%2BesmHx1YweKdlId1RqNxYpRXgkrWEFx1QULkIRbTRHr%2B17FTS7VzjNEVaTxHoIR6gS70ADBcr6aaM%2Byu6SDQlRMZlHMWsCHeTVr1TnkygBeSdpjE%2BajtIOnpHMhCdCSMk7TkeyLY280PhT%2F0lgCbP1D4WTguEs377nPjpJThis9sTQ8fsOLA5PQ1XEz9l0QOz9FqLSopjHiGRJC6Pj9wei%2BhG1MQCNcVh%2FTzgtKyYjL5eNXlVInAnYmPCJvS%2FmCb6dBqqvOHaXysd41wsm1lWIlmgxqgaTOT%2BOV2iwaFXKB7uboiyPwbEBxPG7w4Eb4dILB8NWm1KYYkeTbnVy52N458RHFk1NswK7ZXxoHHhldMINWZm3OiJtxKiJD3AhhXmwxkCWGjMi5HFt%2FkPOC96dgrNKtRjUYiXSc7yRlHuzF%2Fgp9R9NDIbUcKMFB4SLITFfTOtFhZXEzC3Y7liGrJW%2BCbW5vgt1%2B87kGR5FpeduRJM%2BpOMVgZIFAjUn9x0P2E9%2FLLr8UTuTA4%2B%2FrJdNrl7nMq4GRs7OeMJpwNlK%2F11o0hpp3f4HihUu43k2o70TIzOBhnA%2FLLCsHDmcefxiLOSA6r9IVWLHArfGl5bF6L76mm3MgkKc36zqgJJFooZH0XcE2BVsdWrgAgMXRIto0y%2B1V6f55QHc2HM6KoV%2B4lb9dPsRVVSzolU0%2BPQ2PeKrnAeiJ%2FEXbIBJdrDa%2F6RAuCB4SLA313tFbUpSZUQvhJTCM27CxBjqwAQYarWcEtk%2FhyUSNPWmVb9qb5ZRCPJ8hZIUIw6zk2yFA%2F2WguwQxB4aUg3NUcSz8T9%2FWjiGVFrGHo1KtVkA%2Bzhi05jgcHR%2B3xB6LXU2LU2MbnXyqEdLGwdH5E3Z3%2F43%2BVrJmX60eNU0U4n2HWLR0X7glVbq3Otj7fKQ82eBOsuDy%2BtPwY9mhRlZ6taOX1kcpeLE1XqdgJhkAQfKoHb2FxKjj8m3%2B4eWqKuffDJFhRJIW&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240426T230035Z&X-Amz-SignedHeaders=host&X-Amz-Expires=900&X-Amz-Credential=ASIAUXTJYTGXSDWVPCFL%2F20240426%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=3797ae1d69bb00dc247bdd417f74ea0b54e349d1f8c4b551e3af23b3d5c6a9c5 "HTTP/1.1 200 OK"
+Uploading to Synapse storage: 100%|█████████████████████████████████████████████████████████████████████████████████| 534/534 [00:00<00:00, 1.83kB/s, individual_filled_pass.csv]HTTP Request: PUT https://file-prod.prod.sagebase.org/file/v1/file/multipart/52632016/add/1?partMD5Hex=cc969ca6568a580f6000031248fccffd "HTTP/1.1 201 "
+Uploading to Synapse storage: 100%|█████████████████████████████████████████████████████████████████████████████████| 534/534 [00:00<00:00, 1.08kB/s, individual_filled_pass.csv]
+HTTP Request: PUT https://file-prod.prod.sagebase.org/file/v1/file/multipart/52632016/complete "HTTP/1.1 201 "
+HTTP Request: GET https://file-prod.prod.sagebase.org/file/v1/fileHandle/139902548 "HTTP/1.1 200 "
+Associated manifest file with dataset on Synapse.
+File at 'filled-manifests/individual_filled_pass.csv' was successfully associated with dataset 'syn58710314'.
+
+# success
+
+# filled and try validating biospecimen metadata manifest against submitted individual manifest
+(schematic-latest) ➜  data-models git:(xman-testing) ✗ schematic model -c xman-testing-config.yml validate -mp filled-manifests/biospecimen_filled_pass_1.csv -dt BiospecimenMetadataTemplate
+Starting schematic...
+The jsonld argument is being taken from configuration file, i.e., AD.model.jsonld.
+warning: JSONLD parsing is in Beta Mode. Please inspect outputs carefully and report any errors.
+JSON schema successfully generated from schema.org schema!
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:96: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+warning:   ).fillna(False)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+Could not find local context root directory
+Created temporary directory '/var/folders/dk/0kvw_jgs0x36k4d9nls882hc0000gq/T/tmpcrlx0izb' for ephemeral docs site
+EphemeralDataContext has not implemented `_load_zep_config()` returning empty `GxConfig`
+Loading 'datasources' ->
+{}
+Loaded 'datasources' ->
+{}
+Could not find local context root directory
+EphemeralDataContext has not implemented `_load_zep_config()` returning empty `GxConfig`
+Loading 'datasources' ->
+{}
+Loaded 'datasources' ->
+{}
+        0 expectation(s) included in expectation_suite.
+Calculating Metrics: 0it [00:00, ?it/s]
+the total size of .synapseCache is: 14819 bytes
+ [####################]100.00%   1/1   Done...
+    
+Downloading  [####################]100.00%   7.0kB/7.0kB (16.3MB/s) SYNAPSE_TABLE_QUERY_139902912.csv Done...
+    
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710314
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710329
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710346
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710364
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710382
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710399
+warning: Cross Manifest Validation Warning: There are no target columns to validate this manifest against for attribute: individualID, and validation rule: matchExactlyOne IndividualHumanMetadataTemplate.IndividualID value error. It is assumed this is the first manifest in a series to be submitted, so validation will pass, for now, and will run again when there are manifests uploaded to validate against.
+Your manifest has been validated successfully. There are no errors in your manifest, and it can be submitted without any modifications.
+
+# wondering if the asset view didn't update? refresh in the web UI
+# manual refresh worked -- "pass" manifest passes!
+
+(schematic-latest) ➜  data-models git:(xman-testing) ✗ schematic model -c xman-testing-config.yml validate -mp filled-manifests/biospecimen_filled_pass_1.csv -dt BiospecimenMetadataTemplate
+Starting schematic...
+The jsonld argument is being taken from configuration file, i.e., AD.model.jsonld.
+warning: JSONLD parsing is in Beta Mode. Please inspect outputs carefully and report any errors.
+JSON schema successfully generated from schema.org schema!
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:96: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+warning:   ).fillna(False)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+Could not find local context root directory
+Created temporary directory '/var/folders/dk/0kvw_jgs0x36k4d9nls882hc0000gq/T/tmpqg4nu84r' for ephemeral docs site
+EphemeralDataContext has not implemented `_load_zep_config()` returning empty `GxConfig`
+Loading 'datasources' ->
+{}
+Loaded 'datasources' ->
+{}
+Could not find local context root directory
+EphemeralDataContext has not implemented `_load_zep_config()` returning empty `GxConfig`
+Loading 'datasources' ->
+{}
+Loaded 'datasources' ->
+{}
+        0 expectation(s) included in expectation_suite.
+Calculating Metrics: 0it [00:00, ?it/s]
+the total size of .synapseCache is: 22128 bytes
+ [####################]100.00%   1/1   Done...
+    
+Downloading  [####################]100.00%   7.5kB/7.5kB (23.0MB/s) SYNAPSE_TABLE_QUERY_139903052.csv Done...
+    
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710329
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710346
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710364
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710382
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710399
+Downloading  [####################]100.00%   534.0bytes/534.0bytes (2.1MB/s) synapse_storage_manifest__individualhumanmetadatatemplate.csv Done...
+    
+Your manifest has been validated successfully. There are no errors in your manifest, and it can be submitted without any modifications.
+
+# trying the failure manifest, with an individualID that is NOT in the submitted individual metadata manifest
+(schematic-latest) ➜  data-models git:(xman-testing) ✗ schematic model -c xman-testing-config.yml validate -mp filled-manifests/biospecimen_filled_fail_1.csv -dt BiospecimenMetadataTemplate
+Starting schematic...
+The jsonld argument is being taken from configuration file, i.e., AD.model.jsonld.
+warning: JSONLD parsing is in Beta Mode. Please inspect outputs carefully and report any errors.
+JSON schema successfully generated from schema.org schema!
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:96: FutureWarning: Downcasting object dtype arrays on .fillna, .ffill, .bfill is deprecated and will change in a future version. Call result.infer_objects(copy=False) instead. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+warning:   ).fillna(False)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+warning: /Users/alinden/.pyenv/versions/schematic-latest/lib/python3.10/site-packages/schematic/utils/df_utils.py:143: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+warning: The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
+warning: 
+warning: For example, when doing 'df[col].method(value, inplace=True)', try using 'df.method({col: value}, inplace=True)' or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+warning: 
+warning: 
+warning:   float_df[col].fillna(dataframe[col][float_df[col].isna()], inplace=True)
+Could not find local context root directory
+Created temporary directory '/var/folders/dk/0kvw_jgs0x36k4d9nls882hc0000gq/T/tmpd3o2d90q' for ephemeral docs site
+EphemeralDataContext has not implemented `_load_zep_config()` returning empty `GxConfig`
+Loading 'datasources' ->
+{}
+Loaded 'datasources' ->
+{}
+Could not find local context root directory
+EphemeralDataContext has not implemented `_load_zep_config()` returning empty `GxConfig`
+Loading 'datasources' ->
+{}
+Loaded 'datasources' ->
+{}
+        0 expectation(s) included in expectation_suite.
+Calculating Metrics: 0it [00:00, ?it/s]
+the total size of .synapseCache is: 30243 bytes
+ [####################]100.00%   1/1   Done...
+    
+Downloading  [####################]100.00%   7.5kB/7.5kB (14.8MB/s) SYNAPSE_TABLE_QUERY_139903207.csv Done...
+    
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710329
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710346
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710364
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710382
+warning: Could not find a manifest that fits basename synapse_storage_manifest_ in asset view and dataset syn58710399
+error: Value(s) ['wrong_id'] from row(s) ['4'] of the attribute individualID in the source manifest are not present in only one other manifest. 
+[[['4'], 'individualID', "Value(s) ['wrong_id'] from row(s) ['4'] of the attribute individualID in the source manifest are not present in only one other manifest. ", ['wrong_id']]]
+
+# expected result!
+# I may have some work to do figuring out the 'match at least one' vs 'match exactly one' designations
