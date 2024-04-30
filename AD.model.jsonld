@@ -15845,6 +15845,9 @@
                 },
                 {
                     "@id": "bts:UltralowMethyl-Seq"
+                },
+                {
+                    "@id": "bts:IlluminaDNAPCR-FreePrepKit"
                 }
             ],
             "sms:displayName": "libraryPreparationMethod",
@@ -15916,6 +15919,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Drop-Seq",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:IlluminaDNAPCR-FreePrepKit",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Illumina DNA PCR-Free Prep Kit library preparation",
+            "rdfs:label": "IlluminaDNAPCR-FreePrepKit",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LibraryPreparationMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Illumina DNA PCR-Free Prep Kit",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
