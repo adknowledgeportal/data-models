@@ -10,8 +10,8 @@ services:
       # DCA_DCC_CONFIG: "https://raw.githubusercontent.com/Sage-Bionetworks/data_curator_config/shinyapps-io/dcc_config.csv"
       DCA_DCC_CONFIG: "https://raw.githubusercontent.com/Sage-Bionetworks/data_curator_config/prod/tenants.json"
       DCA_SYNAPSE_PROJECT_API: false
-      DCA_CLIENT_ID: 
-      DCA_CLIENT_SECRET: 
+      DCA_CLIENT_ID: ${DCA_TEST_OAUTH_CLIENT_ID}
+      DCA_CLIENT_SECRET: $(DCA_TEST_OAUTH_CLIENT_SECRET}
       DCA_APP_URL: http://127.0.0.1:3838
     networks:
       - dca
