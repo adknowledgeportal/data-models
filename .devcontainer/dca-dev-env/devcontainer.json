@@ -1,3 +1,30 @@
 {
-    "image": "ghcr.io/sage-bionetworks/data_curator:v24.2.1"
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "hostRequirements": {
+        "cpus": 4,
+        "memory": "4gb",
+        "storage": "16gb"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+    "forwardPorts": [
+        3838
+    ],
+    "portsAttributes": {
+        "3838": {
+            "label": "DCA-ui",
+            "onAutoForward": "silent"
+        }
+    },
+    "postCreateCommand": "docker compose up",
+    "customizations": {
+        "vscode": {
+          "extensions": [
+		    "mechatroner.rainbow-csv",
+		    "GrapeCity.gc-excelviewer",
+		    "ms-python.python"
+	        ]
+        }
+    }
 }
