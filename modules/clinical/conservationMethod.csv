@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-conservationMethod,The conservation method,"None, fixed tissues only, frozen tissue only, both fixed and frozen tissue, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.conservationMethod-0.0.2,string,clinical
+conservationMethod,The conservation method,"None, fixed tissues only, frozen tissue only, both fixed and frozen tissue, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.conservationMethod-0.0.2,string,,clinical
 None,Conservation method is none,,,,,conservationMethod,,CLEAR-AD,,string,clinical
 fixed tissues only,Conservation method is fixed tissues only,,,,,conservationMethod,,CLEAR-AD,,string,clinical
 frozen tissue only,Conservation method is frozen tissue only,,,,,conservationMethod,,CLEAR-AD,,string,clinical
