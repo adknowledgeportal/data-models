@@ -14,6 +14,9 @@
 ## Production data model
 **AD.model.\* ([csv](https://github.com/adknowledgeportal/data-models/blob/main/AD.model.csv) | [jsonld](https://github.com/adknowledgeportal/data-models/blob/main/AD.model.jsonld))**: this is the current, "live" version of the AD Portal data model. It is being used by both the staging and production versions of the multitenant Data Curator App.
 
+* production DCA: https://dca.app.sagebionetworks.org/
+* staging DCA (used by FAIR Data team to test updates to app infrastructure and schematic package): https://dca-staging.app.sagebionetworks.org/
+
 ## Editing data models
 
 :warning: Do **not** edit `AD.model.csv` or `AD.model.jsonld` by hand! :warning:
@@ -43,7 +46,7 @@ data-models/
         ├── readLength.csv
         └── platform.csv
 ```
-Within each module, every attribute in the data model where `Parent` = `DataProperty` has its own csv, named after that attribute (example: `organ.csv`). Any valid values of the attribute "organ" have `Parent` = `organ` and are listed as rows in the file `organ.csv`. Attributes with `Parent` = `DataProperty` are used as columns in metadata and annotation manifest templates. Attributes with `Parent` = `DataType` describe the templates themselves. At this time, any other value for `Parent` means the attribute is a valid value of some other enumerated attribute. 
+Within each module, every attribute in the data model where `Parent` = `ManifestColumn` has its own csv, named after that attribute (example: `organ.csv`). Any valid values of the attribute "organ" have `Parent` = `organ` and are listed as rows in the file `organ.csv`. Attributes with `Parent` = `ManifestColumn` are used as columns in metadata and annotation manifest templates. Attributes with `Parent` = `ManifestTemplate` describe the templates themselves. At this time, any other value for `Parent` means the attribute is a valid value of some other enumerated attribute. 
 
 Some common data model editing scenarios are:
 
@@ -55,7 +58,7 @@ Some common data model editing scenarios are:
    
 #### Adding a new column to a manifest template: 
 1. If you wanted to add the column "furColor" to the "model-ad_individual_animal_metadata" template, first decide which module the new column should belong to. In this case, "MODEL-AD" makes the most sense.
-2. W/in the `MODEL-AD` subfolder, create a new csv called `furColor.csv` with the required schematic column headers. Describe the attribute "furColor" as necessary and make sure `Parent` = `DataProperty`. Add any valid values for "furColor" as new rows to this csv as described in the previous scenario.
+2. W/in the `MODEL-AD` subfolder, create a new csv called `furColor.csv` with the required schematic column headers. Describe the attribute "furColor" as necessary and make sure `Parent` = `ManifestColumn`. Add any valid values for "furColor" as new rows to this csv as described in the previous scenario.
 3. Find the manifest template attributes in `modules/template/templates.csv`. In the "model-ad_individual_animal_metadata" row, add your new column "furColor" to the comma-separated list of attributes in the `DependsOn` column.
 4. Save your changes and write an informative commit.
 
@@ -75,7 +78,9 @@ We are exploring better solutions to this problem -- if you have ideas, tell us!
 
 When you open a PR that includes any changes to files in the `modules/` directory, a Github Action will automatically run before merging is allowed. This action:
 1. Runs the `assemble_csv_data_model.py` script to concatenate the modular attribute csvs into one data frame, sort alphabetically by `Parent` and then `Attribute`, and write the combined dataframe to `AD.model.csv`. The action then commits the changes to the master data model csv.
-2. Installs `schematic` from the develop branch and runs `schema convert` on the newly-concatenated data model csv to generate a new version of the jsonld file `AD.model.jsonld`. The action also commits the changes to the jsonld.
+2. Installs the latest version of `schematic` from PyPi and runs `schema convert` on the newly-concatenated data model csv to generate a new version of the jsonld file `AD.model.jsonld`. The action also commits the changes to the jsonld.
+3. Collects the names of any module attributes or templates changed by your PR, then uses the schematic CLI to generate Google sheet versions of those templates.
+4. Makes a new comment in the PR consisting of an Rmd report with the template generation status and link to each template, so you can physically view the new template and verify that any changes you made look as intended.  
 
 If this automated workflow fails, then the data model may be invalid and further investigation is needed. 
    
@@ -83,7 +88,7 @@ If this automated workflow fails, then the data model may be invalid and further
 
 :warning: If you are working in a Github Codespace, do NOT commit any Synapse credentials to the repository and do NOT use any real human data when testing data model function. This is not a secure environment!
 
-If you want to make changes to the data model and test them out by generating manifests with `schematic`, you can use the devcontainer in this repo with a Github Codespace. This will open a container in a remote instance of VSCode and install the latest version of schematic.
+If you want to make changes to the data model and test them out by generating manifests with `schematic`, you can use the devcontainer in this repo with a Github Codespace. This will open a container in a remote instance of VSCode and install the latest version of schematic. The devcontainer also installs the Rainbow CSV extension. You can make changes, commit them, and open a PR from the codespace. 
 
 Codespace secrets: 
 - SYNAPSE_PAT: scoped to view and download permissions on the sysbio-dcc-tasks-01 Synapse service account
