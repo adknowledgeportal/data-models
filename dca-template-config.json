@@ -129,7 +129,12 @@
         "display_name": "file_annotation_template",
         "schema_name": "FileAnnotationTemplate",
         "type": "file"
-      }
+      },
+      {
+        "display_name": "assay_neuropath_metadata_template",
+        "schema_name": "AssayNeuropathMetadataTemplate",
+        "type": "record"
+      },
     ],
     "service_version": "v23.1.1",
     "schema_version": ""
