@@ -51,6 +51,11 @@
         "type": "record"
       },
       {
+        "display_name": "assay_neuropath_metadata_template",
+        "schema_name": "AssayNeuropathMetadataTemplate",
+        "type": "record"
+      },
+      {
         "display_name": "assay_PET_metadata_template",
         "schema_name": "AssayPETMetadataTemplate",
         "type": "record"
@@ -134,7 +139,7 @@
         "display_name": "assay_neuropath_metadata_template",
         "schema_name": "AssayNeuropathMetadataTemplate",
         "type": "record"
-      },
+      }
     ],
     "service_version": "v23.1.1",
     "schema_version": ""
