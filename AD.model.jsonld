@@ -6390,7 +6390,7 @@
                 }
             ],
             "sms:displayName": "bedding",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -8695,7 +8695,7 @@
                 }
             ],
             "sms:displayName": "individualIdSource",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -14455,7 +14455,7 @@
                 }
             ],
             "sms:displayName": "materialOrigin",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -15812,7 +15812,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "ageDeath",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -15849,7 +15849,7 @@
                 }
             ],
             "sms:displayName": "ageDeathUnits",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -16189,7 +16189,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "climbID",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -16223,7 +16223,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "dateBirth",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -16558,7 +16558,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "genotype",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -16575,7 +16575,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "genotypeBackground",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -16626,7 +16626,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "individualID",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -22214,7 +22214,7 @@
                 }
             ],
             "sms:displayName": "rodentDiet",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
