@@ -29629,16 +29629,16 @@
                     "@id": "bts:ModelSystemName"
                 },
                 {
-                    "@id": "bts:OfficialName"
+                    "@id": "bts:StrainOfficialName"
                 }
             ],
             "sms:validationRules": []
         },
         {
-            "@id": "bts:OfficialName",
+            "@id": "bts:StrainOfficialName",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "OfficialName",
+            "rdfs:label": "StrainOfficialName",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Thing"
@@ -29647,7 +29647,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "officialName",
+            "sms:displayName": "strainOfficialName",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
