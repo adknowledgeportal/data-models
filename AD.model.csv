@@ -451,7 +451,7 @@ DHART SPORE,Data from the D-HART SPORE,,,,,consortium,,http://www.synapse.org/dh
 ELITE,Exceptional Longevity Translational Resources,,,,,consortium,,https://adknowledgeportal.synapse.org/Explore/Programs/DetailsPage?Program=ELITE,,string,ADKP
 GENIE,Genomics Evidence Neoplasia Information Exchange,,,,,consortium,,http://www.aacr.org/Research/Research/Pages/aacr-project-genie.aspx#.WOQS9RIrKF0,,string,ADKP
 M2OVE-AD,Molecular Mechanisms of the Vascular Etiology of Alzheimer's Disease ,,,,,consortium,,https://adknowledgeportal.synapse.org/,,string,ADKP
-MODEL-AD,Model Development and Evaluation for Late Onset AD,,,,,consortium,,https://adknowledgeportal.synapse.org/,,string,ADKP
+MODEL-AD,Model Development and Evaluation for Late Onset AD,,,,,consortium,,https://adknowledgeportal.synapse.org/Explore/Programs/DetailsPage?Program=MODEL-AD,,string,ADKP
 Not Applicable,,,,,,consortium,,,,string,ADKP
 PEC,PsychENCODE Consortium,,,,,consortium,,https://www.synapse.org/pec,,string,ADKP
 PSON,Physical Science in Oncology,,,,,consortium,,https://physics.cancer.gov/,,string,ADKP
