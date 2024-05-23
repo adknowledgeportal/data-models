@@ -14221,682 +14221,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:5XFAD",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "transgenic mice overexpressing three human APP mutations and two human PS1 FAD mutations",
-            "rdfs:label": "5XFAD",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ModelSystemName"
-                },
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "5XFAD",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:ModelSystemName",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "ModelSystemName",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ManifestColumn"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "schema:rangeIncludes": [
-                {
-                    "@id": "bts:3xTg-AD"
-                },
-                {
-                    "@id": "bts:5XFAD"
-                },
-                {
-                    "@id": "bts:AB42"
-                },
-                {
-                    "@id": "bts:Abca7A1527GAPOE4Trem2R47H"
-                },
-                {
-                    "@id": "bts:Abca7KO"
-                },
-                {
-                    "@id": "bts:Abca7V1599MRs117187003"
-                },
-                {
-                    "@id": "bts:Abi3S209FAduci"
-                },
-                {
-                    "@id": "bts:APOE2KI"
-                },
-                {
-                    "@id": "bts:APOE3KI"
-                },
-                {
-                    "@id": "bts:APOE4KI"
-                },
-                {
-                    "@id": "bts:APOE4Trem2R47H"
-                },
-                {
-                    "@id": "bts:ApoEKO"
-                },
-                {
-                    "@id": "bts:APPE693Q"
-                },
-                {
-                    "@id": "bts:AppKOAPOE4Trem2R47H"
-                },
-                {
-                    "@id": "bts:APPKM650"
-                },
-                {
-                    "@id": "bts:APPKM670"
-                },
-                {
-                    "@id": "bts:APPKM670-671NL-PSEN1deltaexon9"
-                },
-                {
-                    "@id": "bts:APPPS1"
-                },
-                {
-                    "@id": "bts:APPS1Plexin-B1-KO"
-                },
-                {
-                    "@id": "bts:B6.Clu"
-                },
-                {
-                    "@id": "bts:B6.Gfap-APOE4"
-                },
-                {
-                    "@id": "bts:Bin1.B6"
-                },
-                {
-                    "@id": "bts:Bin1K358RAduci"
-                },
-                {
-                    "@id": "bts:BRI2-AB42"
-                },
-                {
-                    "@id": "bts:Cd2ap.B6"
-                },
-                {
-                    "@id": "bts:Ceacam1KO"
-                },
-                {
-                    "@id": "bts:Clasp2L163PSNP"
-                },
-                {
-                    "@id": "bts:CRND8"
-                },
-                {
-                    "@id": "bts:C57BL6J"
-                },
-                {
-                    "@id": "bts:HAbetaKI"
-                },
-                {
-                    "@id": "bts:HAPPAPOE4Trem2R47H"
-                },
-                {
-                    "@id": "bts:HCR1KIAPOE4Trem2"
-                },
-                {
-                    "@id": "bts:HTau"
-                },
-                {
-                    "@id": "bts:HTauTrem2"
-                },
-                {
-                    "@id": "bts:Il1rapKO"
-                },
-                {
-                    "@id": "bts:Kif21bT82TSNP"
-                },
-                {
-                    "@id": "bts:MAPT-P301K"
-                },
-                {
-                    "@id": "bts:Meox2KOHET"
-                },
-                {
-                    "@id": "bts:MthfrC677TSNP"
-                },
-                {
-                    "@id": "bts:Mtmr4V297GSNP"
-                },
-                {
-                    "@id": "bts:PicalmH458R"
-                },
-                {
-                    "@id": "bts:Plcg2KO"
-                },
-                {
-                    "@id": "bts:Plcg2M28LSNP"
-                },
-                {
-                    "@id": "bts:Plexin-B1-KO"
-                },
-                {
-                    "@id": "bts:RTg4510"
-                },
-                {
-                    "@id": "bts:Snx1D465NSNP"
-                },
-                {
-                    "@id": "bts:Sorl1A528TSNP"
-                },
-                {
-                    "@id": "bts:Spi1rs1377416"
-                },
-                {
-                    "@id": "bts:TAUPS19"
-                },
-                {
-                    "@id": "bts:TAUPS19Plexin-B1-KO"
-                },
-                {
-                    "@id": "bts:TREM2"
-                },
-                {
-                    "@id": "bts:Trem2flox"
-                },
-                {
-                    "@id": "bts:Trem2KO"
-                },
-                {
-                    "@id": "bts:Trem2R47H"
-                },
-                {
-                    "@id": "bts:Trem2R47HNSS"
-                },
-                {
-                    "@id": "bts:Trem2Y38C"
-                },
-                {
-                    "@id": "bts:TYROBP"
-                },
-                {
-                    "@id": "bts:TYROBPKO.KO"
-                },
-                {
-                    "@id": "bts:TYROBPWT"
-                },
-                {
-                    "@id": "bts:TYROBPWT.KO"
-                }
-            ],
-            "sms:displayName": "modelSystemName",
-            "sms:required": "sms:true",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:5XFADTrem2R47HNSS",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "The value represents double mutant genotype of 5XFAD_Carrier; Trem2-R47H_NSS_homozygous. This genotype group was created by crossing 5XFAD (034848-JAX) and Trem2-R47H_NSS (034036). This line is on C57BL/6J coisogenic background.",
-            "rdfs:label": "5XFADTrem2R47HNSS",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "5XFADTrem2R47H_NSS",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:IndividualCommonGenotype",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Genotype of animal that includes LOAD1 or LOAD2 terminology. LOAD1 = APOE4_HOMOZYGOUS; TREM2R47H_HOMOZYGOUS and LOAD2 = APOE4_HOMOZYGOUS; TREM2R47H_HOMOZYGOUS; ABETA_HOMOZYGOUS.",
-            "rdfs:label": "IndividualCommonGenotype",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ManifestColumn"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "schema:rangeIncludes": [
-                {
-                    "@id": "bts:LOAD1"
-                },
-                {
-                    "@id": "bts:LOAD2"
-                },
-                {
-                    "@id": "bts:LOAD1.ABCA7A1527G"
-                },
-                {
-                    "@id": "bts:LOAD1.CEACAM1KO"
-                },
-                {
-                    "@id": "bts:LOAD1.Clasp2L163P"
-                },
-                {
-                    "@id": "bts:LOAD1.CR1long"
-                },
-                {
-                    "@id": "bts:LOAD1.Il1rapExon2KO"
-                },
-                {
-                    "@id": "bts:LOAD1.MthfrC677T"
-                },
-                {
-                    "@id": "bts:LOAD1.Plcg2M28L"
-                },
-                {
-                    "@id": "bts:LOAD1.Snx1D465N"
-                },
-                {
-                    "@id": "bts:5XFAD"
-                },
-                {
-                    "@id": "bts:APOE4"
-                },
-                {
-                    "@id": "bts:Trem247H"
-                },
-                {
-                    "@id": "bts:Trem2KO"
-                },
-                {
-                    "@id": "bts:C57BL6J"
-                },
-                {
-                    "@id": "bts:Trem2R47HNSS"
-                },
-                {
-                    "@id": "bts:5XFADTrem2R47HNSS"
-                },
-                {
-                    "@id": "bts:AppAbetaLoxP"
-                },
-                {
-                    "@id": "bts:PicalmH458R"
-                },
-                {
-                    "@id": "bts:Bin1K358R"
-                },
-                {
-                    "@id": "bts:Abca7V1599M"
-                },
-                {
-                    "@id": "bts:Spi1rs1377416"
-                }
-            ],
-            "sms:displayName": "individualCommonGenotype",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Abca7V1599M",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Abca7-V1599M_homozygous genotype on C57BL/6J coisogenic background. The Abca7-V1599M is carrying the V1613M mutation that corresponds to the human V1599M SNP associated with increased risk of sporadic Alzheimer's disease.",
-            "rdfs:label": "Abca7V1599M",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Abca7V1599M",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:APOE4",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "This mutant of the Apoe gene carries a humanized ApoE knock-in mutation (sequence coding for isoform E4).",
-            "rdfs:label": "APOE4",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "APOE4",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:AppAbetaLoxP",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Floxed-humanized App knock-in homozygous genotype on C57BL/6J congenic background, in which 3 point mutations were introduced into exon 14 of the mouse App gene on C57BL/6J congenic background. Exon 14 is also flanked by loxP sites.",
-            "rdfs:label": "AppAbetaLoxP",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "AppAbeta_LoxP",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Bin1K358R",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Bin1-K358R_homozygous genotype on C57BL/6J coisogenic background. The Bin1-K358R is carrying the K426R mutation that corresponds to the human K358R SNP associated with increased risk of sporadic Alzheimer's disease.",
-            "rdfs:label": "Bin1K358R",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Bin1K358R",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:C57BL6J",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "general purpose background strain",
-            "rdfs:label": "C57BL6J",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                },
-                {
-                    "@id": "bts:ModelSystemName"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "C57BL6J",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:LOAD1",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "This double mutant strain carries a humanized ApoE knock-in mutation (sequence coding for isoform E4) and a CRISPR/cas9-generated R47H point mutation of the Trem2 gene.",
-            "rdfs:label": "LOAD1",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "LOAD1",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:LOAD1.ABCA7A1527G",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "This triple mutant strain carries a humanized ApoE knock-in mutation (sequence coding for isoform E4), a CRISPR/cas9-generated rs3752246 SNP knock-in mutation of the Abca7 gene (alanine to glycine at position 1527 in exon 33) and a CRISPR/cas9-generated R47H point mutation of the Trem2 gene.",
-            "rdfs:label": "LOAD1.ABCA7A1527G",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "LOAD1.ABCA7A1527G",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:LOAD1.CEACAM1KO",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "This triple mutant strain carries a humanized ApoE knock-in mutation (sequence coding for isoform E4), a CRISPR/cas9-generated knock-out mutation, deletion of exon 1, of the Ceacam1 gene and a CRISPR/cas9-generated R47H point mutantion of the Trem2 gene.",
-            "rdfs:label": "LOAD1.CEACAM1KO",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "LOAD1.CEACAM1KO",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:LOAD1.Clasp2L163P",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "This triple mutant strain carries a humanized ApoE knock-in mutation (sequence coding for isoform E4), a CRISPR/cas9-generated L163P point mutation of the Clasp2 (CLIP associating protein 2) gene and a CRISPR/cas9-generated R47H point mutation of the Trem2 gene.",
-            "rdfs:label": "LOAD1.Clasp2L163P",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "LOAD1.Clasp2L163P",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:LOAD1.CR1long",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "This mutant strain carries a knock-in/knock-out Cr2 allele containing the human CR1 gene, the human CR2 gene and the intergenic region between the 2 genes; a humanized ApoE knock-in mutation (sequence coding for isoform E4); and a CRISPR/cas9-generated R47H point mutation of the Trem2 gene.",
-            "rdfs:label": "LOAD1.CR1long",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "LOAD1.CR1long",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:LOAD1.Il1rapExon2KO",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "This triple mutant strain carries a humanized ApoE knock-in mutation (sequence coding for isoform E4), a CRISPR/Cas9-generated 387bp deletion in the first coding exon knock-out mutation of the Il1rapgene and a CRISPR/cas9-generated R47H point mutation of the Trem2 gene.",
-            "rdfs:label": "LOAD1.Il1rapExon2KO",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "LOAD1.Il1rapExon2KO",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:LOAD1.MthfrC677T",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Mthfr677C>T/APOE4/Trem2*R47H is a triple mutant strain carrying a CRISPR/Cas9-generated A262V point mutation of the methylenetetrahydrofolate reductase gene that models the human C677T polymorphism linked to risk of Alzheimer's disease, a humanized ApoE knock-in mutation (sequence coding for isoform E4) and a CRISPR/Cas9-generated R47H point mutation of the Trem2gene.",
-            "rdfs:label": "LOAD1.MthfrC677T",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "LOAD1.MthfrC677T",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:LOAD1.Plcg2M28L",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "This triple mutant strain carries a humanized ApoE knock-in mutation (sequence coding for isoform E4), CRISPR/Cas9 generated mutant of the Plcg2 gene with the M28L mutation, and a CRISPR/cas9-generated R47H point mutation of the Trem2 gene.",
-            "rdfs:label": "LOAD1.Plcg2M28L",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "LOAD1.Plcg2M28L",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:LOAD1.Snx1D465N",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "This triple mutant strain carries a humanized ApoE knock-in mutation (sequence coding for isoform E4), a CRISPR/cas9-generated D465N point mutation of the Snx1 (sorting nexin 1) gene and a CRISPR/cas9-generated R47H point mutantion of the Trem2 gene.",
-            "rdfs:label": "LOAD1.Snx1D465N",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "LOAD1.Snx1D465N",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:LOAD2",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "hAbeta/APOE4/Trem2*R47H is a triple mutant strain carrying a humanized ApoE knock-in mutation (sequence coding for isoform E4), a CRISPR/Cas9-generated App allele with a humanized Abeta1-42 region (G601R, F606Y, R609H in the mouse gene, corresponding to amino acid positions 676, 681, 684 in the human APP locus) and a CRISPR/Cas9-generated R47H point mutation of the Trem2 gene.",
-            "rdfs:label": "LOAD2",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "LOAD2",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:PicalmH458R",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "CRISPR/Cas9 generated mutant of the phosphatidylinositol binding clathrin assembly protein gene carrying the H465R mutation that corresponds to the human H458R mutation associated with Alzheimer's Disease (AD).",
-            "rdfs:label": "PicalmH458R",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                },
-                {
-                    "@id": "bts:ModelSystemName"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "PicalmH458R",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Spi1rs1377416",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "CRISPR/Cas9-generated mutant of the spleen focus forming virus (SFFV) proviral integration oncogene (Spi1) gene carrying a missense mutation that corresponds to the human SNP rs1377416 found in human SPI1 that has been found to be a functional variant that is active in human myeloid cells and in the brain of a mouse model of Alzheimer's disease (AD).",
-            "rdfs:label": "Spi1rs1377416",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                },
-                {
-                    "@id": "bts:ModelSystemName"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Spi1rs1377416",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Trem247H",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "This CRISPR/Cas9-generated mutant of the Trem2 gene carries a R47H point mutation which has been shown to increase Alzheimer's disease risk.",
-            "rdfs:label": "Trem247H",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Trem247H",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Trem2KO",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "mutant of the Trem2 gene carries a knock out mutation",
-            "rdfs:label": "Trem2KO",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                },
-                {
-                    "@id": "bts:ModelSystemName"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Trem2KO",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Trem2R47HNSS",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "CRISPR/Cas9-generated mutant of the triggering receptor expressed on myeloid cells 2 (Trem2) gene carrying the R47H mutation that corresponds to the human R47H mutation associated with late-onset Alzheimer's Disease (AD).",
-            "rdfs:label": "Trem2R47HNSS",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualCommonGenotype"
-                },
-                {
-                    "@id": "bts:ModelSystemName"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Trem2R47H_NSS",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:ABN",
             "@type": "rdfs:Class",
             "rdfs:comment": "Autism Brain Net",
@@ -18698,6 +18022,205 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:ModelSystemName",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ModelSystemName",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:3xTg-AD"
+                },
+                {
+                    "@id": "bts:5XFAD"
+                },
+                {
+                    "@id": "bts:AB42"
+                },
+                {
+                    "@id": "bts:Abca7A1527GAPOE4Trem2R47H"
+                },
+                {
+                    "@id": "bts:Abca7KO"
+                },
+                {
+                    "@id": "bts:Abca7V1599MRs117187003"
+                },
+                {
+                    "@id": "bts:Abi3S209FAduci"
+                },
+                {
+                    "@id": "bts:APOE2KI"
+                },
+                {
+                    "@id": "bts:APOE3KI"
+                },
+                {
+                    "@id": "bts:APOE4KI"
+                },
+                {
+                    "@id": "bts:APOE4Trem2R47H"
+                },
+                {
+                    "@id": "bts:ApoEKO"
+                },
+                {
+                    "@id": "bts:APPE693Q"
+                },
+                {
+                    "@id": "bts:AppKOAPOE4Trem2R47H"
+                },
+                {
+                    "@id": "bts:APPKM650"
+                },
+                {
+                    "@id": "bts:APPKM670"
+                },
+                {
+                    "@id": "bts:APPKM670-671NL-PSEN1deltaexon9"
+                },
+                {
+                    "@id": "bts:APPPS1"
+                },
+                {
+                    "@id": "bts:APPS1Plexin-B1-KO"
+                },
+                {
+                    "@id": "bts:B6.Clu"
+                },
+                {
+                    "@id": "bts:B6.Gfap-APOE4"
+                },
+                {
+                    "@id": "bts:Bin1.B6"
+                },
+                {
+                    "@id": "bts:Bin1K358RAduci"
+                },
+                {
+                    "@id": "bts:BRI2-AB42"
+                },
+                {
+                    "@id": "bts:Cd2ap.B6"
+                },
+                {
+                    "@id": "bts:Ceacam1KO"
+                },
+                {
+                    "@id": "bts:Clasp2L163PSNP"
+                },
+                {
+                    "@id": "bts:CRND8"
+                },
+                {
+                    "@id": "bts:C57BL6J"
+                },
+                {
+                    "@id": "bts:HAbetaKI"
+                },
+                {
+                    "@id": "bts:HAPPAPOE4Trem2R47H"
+                },
+                {
+                    "@id": "bts:HCR1KIAPOE4Trem2"
+                },
+                {
+                    "@id": "bts:HTau"
+                },
+                {
+                    "@id": "bts:HTauTrem2"
+                },
+                {
+                    "@id": "bts:Il1rapKO"
+                },
+                {
+                    "@id": "bts:Kif21bT82TSNP"
+                },
+                {
+                    "@id": "bts:MAPT-P301K"
+                },
+                {
+                    "@id": "bts:Meox2KOHET"
+                },
+                {
+                    "@id": "bts:MthfrC677TSNP"
+                },
+                {
+                    "@id": "bts:Mtmr4V297GSNP"
+                },
+                {
+                    "@id": "bts:PicalmH458R"
+                },
+                {
+                    "@id": "bts:Plcg2KO"
+                },
+                {
+                    "@id": "bts:Plcg2M28LSNP"
+                },
+                {
+                    "@id": "bts:Plexin-B1-KO"
+                },
+                {
+                    "@id": "bts:RTg4510"
+                },
+                {
+                    "@id": "bts:Snx1D465NSNP"
+                },
+                {
+                    "@id": "bts:Sorl1A528TSNP"
+                },
+                {
+                    "@id": "bts:Spi1rs1377416"
+                },
+                {
+                    "@id": "bts:TAUPS19"
+                },
+                {
+                    "@id": "bts:TAUPS19Plexin-B1-KO"
+                },
+                {
+                    "@id": "bts:TREM2"
+                },
+                {
+                    "@id": "bts:Trem2flox"
+                },
+                {
+                    "@id": "bts:Trem2KO"
+                },
+                {
+                    "@id": "bts:Trem2R47H"
+                },
+                {
+                    "@id": "bts:Trem2R47HNSS"
+                },
+                {
+                    "@id": "bts:Trem2Y38C"
+                },
+                {
+                    "@id": "bts:TYROBP"
+                },
+                {
+                    "@id": "bts:TYROBPKO.KO"
+                },
+                {
+                    "@id": "bts:TYROBPWT"
+                },
+                {
+                    "@id": "bts:TYROBPWT.KO"
+                }
+            ],
+            "sms:displayName": "modelSystemName",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:3xTg-AD",
             "@type": "rdfs:Class",
             "rdfs:comment": "Triple mutant strain with mutations in APP Swedish, MAPT P301L, and PSEN1 M146V exhibiting plaque and tangle pathology associated with synaptic dysfunction",
@@ -18711,6 +18234,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "3xTg-AD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:5XFAD",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "transgenic mice overexpressing three human APP mutations and two human PS1 FAD mutations",
+            "rdfs:label": "5XFAD",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ModelSystemName"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "5XFAD",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -19157,6 +18697,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:C57BL6J",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "general purpose background strain",
+            "rdfs:label": "C57BL6J",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ModelSystemName"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "C57BL6J",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:HAbetaKI",
             "@type": "rdfs:Class",
             "rdfs:comment": "humanized App knock-in strain, in which 3 point mutations were introduced into exon 14 of the mouse App gene",
@@ -19344,6 +18901,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:PicalmH458R",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "CRISPR/Cas9 generated mutant of the phosphatidylinositol binding clathrin assembly protein gene carrying the H465R mutation that corresponds to the human H458R mutation associated with Alzheimer's Disease (AD).",
+            "rdfs:label": "PicalmH458R",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ModelSystemName"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "PicalmH458R",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Plcg2KO",
             "@type": "rdfs:Class",
             "rdfs:comment": "mutant of the Plcg2 gene carries a knock-out mutation",
@@ -19446,6 +19020,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Spi1rs1377416",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "CRISPR/Cas9-generated mutant of the spleen focus forming virus (SFFV) proviral integration oncogene (Spi1) gene carrying a missense mutation that corresponds to the human SNP rs1377416 found in human SPI1 that has been found to be a functional variant that is active in human myeloid cells and in the brain of a mouse model of Alzheimer's disease (AD).",
+            "rdfs:label": "Spi1rs1377416",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ModelSystemName"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Spi1rs1377416",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:TAUPS19",
             "@type": "rdfs:Class",
             "rdfs:comment": "The PS19 mouse model harbors the T34 isoform of microtubule-associated protein tau with one N-terminal insert and four microtubule binding repeats (1N4R) encoding the human P301S mutation, all driven by the mouse prion protein promoter.",
@@ -19514,6 +19105,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Trem2KO",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "mutant of the Trem2 gene carries a knock out mutation",
+            "rdfs:label": "Trem2KO",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ModelSystemName"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Trem2KO",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Trem2R47H",
             "@type": "rdfs:Class",
             "rdfs:comment": "mutant with an R47H point mutation of Trem2",
@@ -19527,6 +19135,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Trem2R47H",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Trem2R47HNSS",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "CRISPR/Cas9-generated mutant of the triggering receptor expressed on myeloid cells 2 (Trem2) gene carrying the R47H mutation that corresponds to the human R47H mutation associated with late-onset Alzheimer's Disease (AD).",
+            "rdfs:label": "Trem2R47HNSS",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ModelSystemName"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Trem2R47H_NSS",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -29999,9 +29624,6 @@
                 },
                 {
                     "@id": "bts:GenotypeBackground"
-                },
-                {
-                    "@id": "bts:IndividualCommonGenotype"
                 },
                 {
                     "@id": "bts:ModelSystemName"
