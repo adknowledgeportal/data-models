@@ -6445,6 +6445,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Diamonddry",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Rodent bedding made by Diamond",
+            "rdfs:label": "Diamonddry",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Bedding"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Diamond dry",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Pine",
             "@type": "rdfs:Class",
             "rdfs:comment": "Rodent bedding made from Pine",
@@ -16699,6 +16716,40 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:BrainWeightBirth",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Weight of brain in grams at birth",
+            "rdfs:label": "BrainWeightBirth",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "brainWeightBirth",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BrainWeightDeath",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Weight of brain in grams at death",
+            "rdfs:label": "BrainWeightDeath",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "brainWeightDeath",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:BrodmannArea",
             "@type": "rdfs:Class",
             "rdfs:comment": "A segmentation of the cerebral cortex on the basis of cytoarchitecture",
@@ -20067,23 +20118,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:OfficialName",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Official JAX Mouse strain nomenclature",
-            "rdfs:label": "OfficialName",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ManifestColumn"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "officialName",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:Blood",
             "@type": "rdfs:Class",
             "rdfs:comment": "A fluid that is composed of blood plasma and erythrocytes.",
@@ -23291,6 +23325,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "stockNumber",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:StrainOfficialNamefficialName",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Official JAX Mouse strain nomenclature",
+            "rdfs:label": "StrainOfficialNamefficialName",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "strainOfficialNamefficialName",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -29714,6 +29765,12 @@
                 },
                 {
                     "@id": "bts:Assay"
+                },
+                {
+                    "@id": "bts:TreatmentType"
+                },
+                {
+                    "@id": "bts:TreatmentDose"
                 }
             ],
             "sms:validationRules": []
@@ -29953,6 +30010,23 @@
                     "@id": "bts:OfficialName"
                 }
             ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:OfficialName",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "OfficialName",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "officialName",
+            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
