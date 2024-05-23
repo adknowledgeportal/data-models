@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+brainWeightDeath,Weight of brain in grams at death,,,,FALSE,ManifestColumn,,,,integer,mouse
