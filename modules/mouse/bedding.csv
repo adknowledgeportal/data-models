@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-bedding,Rodent bedding material,"Alpha-dri, aspen, aspen sanichip, corn cob, pine, sanichip",,,False,ManifestColumn,,sage.annotations-neuro.bedding-0.0.3,,string,mouse
+bedding,Rodent bedding material,"Alpha-dri, aspen, aspen sanichip, corn cob, pine, sanichip",,,True,ManifestColumn,,sage.annotations-neuro.bedding-0.0.3,,string,mouse
 Alpha-dri,Rodent bedding made from alpha cellulose,,,,,bedding,,https://www.labsupplytx.com/rodent/bedding/paper-bedding,,string,mouse
 aspen,Rodent bedding made from Aspen,,,,,bedding,,Sage Bionetworks,,string,mouse
 aspen sanichip,Rodent bedding made of corase certified aspen sanichip,,,,,bedding,,Sage Bionetworks,,string,mouse
