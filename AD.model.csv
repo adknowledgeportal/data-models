@@ -795,7 +795,7 @@ genotype,Genotype common name,,,,True,ManifestColumn,,sage.annotations-clinical.
 genotypeBackground,Genetic background of the model,,,,True,ManifestColumn,,sage.annotations-clinical.genotypeBackground-0.0.2,,string,mouse
 GQN,Illumina Genomic Quality Number (gDNA quality score),,,,False,ManifestColumn,,sage.annotations-qc.GQN-0.0.3,,number,sequencing
 grant,"Grant number including activity code, institute code, and serial number (e.g. U01MH103392)",,,,True,ManifestColumn,,sage.annotations-neuro.grant-0.0.2,,string,ADKP
-individualID,Identifying string linked to the individual or animal being studied,,,,True,ManifestColumn,,sage.annotations-experimentalData.individualID-0.0.2,,string,individual
+individualID,Identifying string linked to the individual or animal being studied,,,,False,ManifestColumn,,sage.annotations-experimentalData.individualID-0.0.2,required^^#FileAnnotationTemplate,string,individual
 individualIdSource,Database or repository to which individual ID maps,"ABN, ABR, ADNI, AIBS, BannerSun, BEB_Miller, Clotomics_PAIKEA_MSSM, DongLab, Einstein, Emory, Geschwind, HBSFRC, HBTRC, JAX, LIBD, LivingBrainProject_MSSM, MayoBrainBank, Mayo Clinic, MSSM, NDRI, Newcastle, NICHD, NIMH-HBCC, Novogenix, NYBB, Oxford, Penn, PGP, Pitt, Pritzker, Rush, Sestan, SMRI, StemExpress, TAA, UCI_TMF, UCSF, UM-BTB, UW-CDL, Vaccarino, XCell Science, Yale, IU",,,True,ManifestColumn,,sage.annotations-experimentalData.individualIdSource-0.0.17,,string,individual
 ionMode,"Ionization polarity (positive, negative, polar)",,,,False,ManifestColumn,,sage.annotations-experimentalData.ionMode-0.0.2,,string,mass spectrometry
 isModelSystem,,"TRUE, FALSE",,,True,ManifestColumn,,sage.annotations-neuro.isModelSystem-0.0.2,,boolean,ADKP
