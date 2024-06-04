@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-climbID,Identifying string linked to an animal in Climb database,,,,False,ManifestColumn,,sage.annotations-neuro.climbID-0.0.1,,string,MODEL-AD
+climbID,Identifying string linked to an animal in Climb database,,,,True,ManifestColumn,,sage.annotations-neuro.climbID-0.0.1,,string,MODEL-AD
