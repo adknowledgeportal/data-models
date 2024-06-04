@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-individualID,Identifying string linked to the individual or animal being studied,,,,True,ManifestColumn,,sage.annotations-experimentalData.individualID-0.0.2,,string,individual
+individualID,Identifying string linked to the individual or animal being studied,,,,False,ManifestColumn,,sage.annotations-experimentalData.individualID-0.0.2,required^^#FileAnnotationTemplate,string,individual
