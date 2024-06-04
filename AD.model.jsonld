@@ -16626,8 +16626,11 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "individualID",
-            "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:required": "sms:false",
+            "sms:validationRules": {
+                "FileAnnotationTemplate": "",
+                "all_other_components": "required"
+            }
         },
         {
             "@id": "bts:IonMode",
