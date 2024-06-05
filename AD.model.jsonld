@@ -8695,8 +8695,11 @@
                 }
             ],
             "sms:displayName": "individualIdSource",
-            "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:required": "sms:false",
+            "sms:validationRules": {
+                "FileAnnotationTemplate": "",
+                "all_other_components": "required"
+            }
         },
         {
             "@id": "bts:Banner",
@@ -15812,8 +15815,10 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "ageDeath",
-            "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:required": "sms:false",
+            "sms:validationRules": {
+                "all_other_components": "FileAnnotationTemplate"
+            }
         },
         {
             "@id": "bts:AgeDeathUnits",
@@ -15849,8 +15854,11 @@
                 }
             ],
             "sms:displayName": "ageDeathUnits",
-            "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:required": "sms:false",
+            "sms:validationRules": {
+                "FileAnnotationTemplate": "",
+                "all_other_components": "required"
+            }
         },
         {
             "@id": "bts:Antibody",
