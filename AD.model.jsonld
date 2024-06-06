@@ -8697,7 +8697,7 @@
             "sms:displayName": "individualIdSource",
             "sms:required": "sms:false",
             "sms:validationRules": {
-                "FileAnnotationTemplate": "",
+                "IndividualHumanMetadataTemplate": "",
                 "all_other_components": "required"
             }
         },
@@ -15817,7 +15817,7 @@
             "sms:displayName": "ageDeath",
             "sms:required": "sms:false",
             "sms:validationRules": {
-                "all_other_components": "FileAnnotationTemplate"
+                "all_other_components": "IndividualHumanMetadataTemplate"
             }
         },
         {
@@ -15856,7 +15856,7 @@
             "sms:displayName": "ageDeathUnits",
             "sms:required": "sms:false",
             "sms:validationRules": {
-                "FileAnnotationTemplate": "",
+                "IndividualHumanMetadataTemplate": "",
                 "all_other_components": "required"
             }
         },
