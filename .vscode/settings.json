@@ -1,0 +1,9 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/yamllint.json": [
+            "file:///Users/alinden/Desktop/sage-repos/adkp-org/data-models/validation_rules.yml",
+            "file:///Users/alinden/Desktop/sage-repos/adkp-org/data-models/attribute_validation_rules.yml",
+            "file:///Users/alinden/Desktop/sage-repos/adkp-org/data-models/ID_attribute_validation_rules.yml"
+        ]
+    }
+}
