@@ -1,0 +1,64 @@
+---
+attribute_rules: 
+  - attribute: 
+    - individualID
+    - rules:
+
+      ### cross-manifest validation rules
+
+      # all individualIDs in the individual metadata manifest (all types) must be in the IndividualKey manifest, and vice versa
+      # assuming no study will have more than one of: individual human, individual animal, or individual model-ad manifests
+      - \#IndividualHumanMetadataTemplate matchExactlyOne IndividualKey.individualID set error
+      - \#IndividualAnimalMetadataTemplate matchExactlyOne IndividualKey.individualID set error
+      - \#IndividualAnimalMODEL-ADMetadataTemplate matchExactlyOne IndividualKey.individualID set error
+
+      # all individualIDs in the file annotation manifest, biospecimen manifests, the imaging assay manifests must match the individual key, 
+      # but not all IDs in the key need to be in those manifests
+      - \#FileAnnotationManifest matchExactlyOne IndividualKey.individualID value error
+      - \#BiospecimenMetadataTemplate matchExactlyOne IndividualKey.individualID value error
+      - \#BiospecimenInvitroMetadataTemplate matchExactlyOne IndividualKey.individualID value error
+      - \#AssayPETMetadataTemplate matchExactlyOne IndividualKey.individualID value error
+      - \#AssayMRIMetadataTemplate matchExactlyOne IndividualKey.individualID value error
+      - \#AssayAutoradMetadataTemplate matchExactlyOne IndividualKey.individualID value error
+      
+      # no individualIDs in the individual key are repeated in an existing individual key manifest (prevent duplicates)
+      - \#IndividualKey matchNone IndividualKey.individualID value error
+
+      ### content validation and requirement rules
+
+      # all individualIDs in each of these manifests are unique
+      - \#IndividualKey unique error
+      - \#IndividualHumanMetadataTemplate unique error
+      - \#IndividualAnimalMetadataTemplate unique error
+      - \#IndividualAnimalMODEL-ADMetadataTemplate unique error
+      
+      # individualID is required in all manifests it appears in except FileAnnotation
+      - required^^#FileAnnotationManifest
+
+      # allow only letters, numbers, underscores, and hyphens in individualID 
+      # (rule is set for IndividualKey manifest only; all other manifests with individualID will be checked against this manifest)
+      - \#IndividualKey regex match ^[a-zA-Z0-9_-]+$
+
+  - attribute: 
+    - specimenID
+    - rules:
+
+      ### cross-manifest validation rules
+
+      # all specimenIDs in any biospecimen metadata, assay metadata, or file annotation metadata manifest must be in the specimen key
+      - matchExactlyOne SpecimenKey.specimenID value error
+
+      ### content validation and requirement rules
+
+      # all specimenIDs in each of these manifests are unique
+      - \#SpecimenKey unique error
+      - \#BiospecimenMetadataTemplate unique error
+      - \#BiospecimenInvitroMetadataTemplate unique error
+      
+      # specimenID is required in every manifest it appears in except File Annotation 
+      - required^^#FileAnnotationManifest
+
+      # allow only letters, numbers, underscores, hyphens, and periods in specimenID 
+      # (rule is set for SpecimenKey manifest only; all other manifests with specimenID will be checked against this manifest)
+      - \#SpecimenKey regex match ^[a-zA-Z0-9_\-.]+$
+
