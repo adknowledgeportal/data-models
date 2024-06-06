@@ -6390,7 +6390,7 @@
                 }
             ],
             "sms:displayName": "bedding",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -8696,7 +8696,10 @@
             ],
             "sms:displayName": "individualIdSource",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": {
+                "IndividualHumanMetadataTemplate": "",
+                "all_other_components": "required"
+            }
         },
         {
             "@id": "bts:Banner",
@@ -14455,7 +14458,7 @@
                 }
             ],
             "sms:displayName": "materialOrigin",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -15813,7 +15816,9 @@
             },
             "sms:displayName": "ageDeath",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": {
+                "all_other_components": "IndividualHumanMetadataTemplate"
+            }
         },
         {
             "@id": "bts:AgeDeathUnits",
@@ -15850,7 +15855,10 @@
             ],
             "sms:displayName": "ageDeathUnits",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": {
+                "IndividualHumanMetadataTemplate": "",
+                "all_other_components": "required"
+            }
         },
         {
             "@id": "bts:Antibody",
@@ -16189,7 +16197,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "climbID",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -16223,7 +16231,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "dateBirth",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -16558,7 +16566,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "genotype",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -16575,7 +16583,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "genotypeBackground",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -16627,7 +16635,10 @@
             },
             "sms:displayName": "individualID",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": {
+                "FileAnnotationTemplate": "",
+                "all_other_components": "required"
+            }
         },
         {
             "@id": "bts:IonMode",
@@ -22214,7 +22225,7 @@
                 }
             ],
             "sms:displayName": "rodentDiet",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": []
         },
         {
@@ -29629,16 +29640,16 @@
                     "@id": "bts:ModelSystemName"
                 },
                 {
-                    "@id": "bts:OfficialName"
+                    "@id": "bts:StrainOfficialName"
                 }
             ],
             "sms:validationRules": []
         },
         {
-            "@id": "bts:OfficialName",
+            "@id": "bts:StrainOfficialName",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "OfficialName",
+            "rdfs:label": "StrainOfficialName",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Thing"
@@ -29647,7 +29658,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "officialName",
+            "sms:displayName": "strainOfficialName",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },

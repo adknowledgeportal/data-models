@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-rodentDiet,Laboratory rodent diet,"4% standard, 6% standard, 7% standard, 45% high-fat diet, 5W80 western diet",,,False,ManifestColumn,,sage.annotations-neuro.rodentDiet-0.0.1,,string,mouse
+rodentDiet,Laboratory rodent diet,"4% standard, 6% standard, 7% standard, 45% high-fat diet, 5W80 western diet",,,True,ManifestColumn,,sage.annotations-neuro.rodentDiet-0.0.1,,string,mouse
 4% standard,Standard chow with 4% fat,,,,,rodentDiet,,https://www.labdiet.com,,string,mouse
 45% high-fat diet,Standard chow with 45% fat,,,,,rodentDiet,,https://www.labdiet.com,,string,mouse
 5W80 western diet,Chow with high fat and fructose content,,,,,rodentDiet,,https://www.labdiet.com,,string,mouse

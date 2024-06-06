@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-dateBirth,Individual date of birth,,,,False,ManifestColumn,,sage.annotations-demographics.dateBirth-0.0.2,,string,mouse
+dateBirth,Individual date of birth,,,,True,ManifestColumn,,sage.annotations-demographics.dateBirth-0.0.2,,string,mouse
