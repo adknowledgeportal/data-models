@@ -1,0 +1,56 @@
+"""#FileAnnotationTemplate matchAtLeastOne IndividualHumanMetadataTemplate.IndividualID value error
+^^#BiospecimenMetadataTemplate matchAtLeastOne IndividualHumanMetadataTemplate.IndividualID value error
+^^#BiospecimenMetadataTemplate matchAtLeastOne IndividualAnimalMetadataTemplate.IndividualID value error
+^^#BiospecimenMetadataTemplate matchAtLeastOne IndividualAnimalMODEL-ADMetadataTemplate value error
+^^#IndividualHumanMetadataTemplate unique required
+^^#IndividualAnimalMetadataTemplate unique required
+^^#IndividualAnimalMODEL-ADMetadataTemplate unique required
+"""
+^ this doesn't work because, if you submit a human individual template, and then a biospecimen template, it's trying to match against the human AND the mouse individual template, but you'd never have both
+we need namespaces
+
+###TODO: try component!
+
+The rule for individualID (now a dependency of individualComponent) should maybe be:
+matchAtLeastOne IndividualComponent.individualID
+
+I think that will lose us the unique and required options for just the human metadata though
+
+Nevermind, it since it's no longer component based it shouldn't have a target component
+Should just be: matchAtLeastOne
+
+Nope, needed to be: matchAtLeastOne IndividualComponent.individualID value error
+
+Nope, validation not working correctly
+
+#### TODO: a "census" component with JUST individualID that is the validation rule for all available manifests. Same with specimenID. Basically faking a primary key
+
+IndividualKey
+SpecimenKey
+
+so then the rules for attribute individualID would be:
+(still not sure if matchExactlyOne will cause conflicts but I think it's right, will have to test)
+
+#IndividualKey unique required error \\\ all individualIDs in the key must be unique and are required for every row
+^^#IndividualHumanMetadataTemplate matchExactlyOne IndividualKey.individualID set error \\\ all individualIDs in the individual metadata must match the key, and all individualIDs in the key must be in the individual metadata
+^^#IndividualAnimalMetadataTemplate matchExactlyOne IndividualKey.individualID set error
+^^#IndividualAnimalMODEL-ADTemplate matchExactlyOne IndividualKey.individualID set error
+^^#FileAnnotationTemplate matchExactlyOne IndividualKey.individualID value error \\\ all individualIDs in file annotation manifest must match the key, but not all IDs in the key need to be in the file annotation manifest
+^^#BiospecimenMetadataTemplate matchExactlyOne IndividualKey.individualID value error \\\ all individualIDs in biospecimen file match key; would be "set", but some individuals with data may not have biospecimens (e.g. for imaging)
+^^#BiospecimenInvitroMetadataTemplate matchExactlyOne IndividualKey.individualID value error
+^^#IndividualKey matchNone IndividualKey.individualID value error \\\ no individualIDs in the individual key are repeated in an existing individual key manifest (prevent duplicates)
+^^#IndividualHumanMetadataTemplate unique required \\\ required to have unique individualIDs in these manifests
+^^#IndividualAnimalMetadataTemplate unique required
+^^#IndividualAnimalMODEL-ADMetadataTemplate unique required
+^^#IndividualKey regex match ^[a-zA-Z0-9_-]+$ \\\ allow only letters, numbers, underscore, and hyphens in individualIDs 
+^^#BiospecimenMetadataTemplate required \\\ individualID is required for each row in biospecimen metadata
+^^#BiospecimenInvitroMetadataTemplate required \\\
+
+
+
+
+
+
+
+
+

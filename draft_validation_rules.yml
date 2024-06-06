@@ -1,0 +1,34 @@
+### trying out a more involved serialization structure for validation rules based on types, targets, etc
+### not used for now
+
+---
+data_model: AD.model.csv
+attribute:
+  display_name: individualID
+  validation_rules: 
+
+    - rule: matchExactlyOne
+      # one of: cross-manifest, content, list, regex, url, type, required
+      intended effect: all individualIDs in individual metadata templates much match the Individual Key
+      rule_type: cross-manifest
+      # cross manifest only: this rule is applied when the attribute is in the following manifests:
+      rule_manifest: 
+        - IndividualHumanMetadataTemplate
+        - IndividualAnimalMetadataTemplate
+        - IndividualAnimalMODEL-ADMetadataTemplate
+      # cross manifest only: the attribute in the rule manifest is validated against the following target manifests:
+      target_manifest:
+        - IndividualKey
+      # cross manifest only: the attribute in the rule manifest is validated against the following attribute in the target manifest(s)
+      target_attribute: 
+      # cross manifest only: the scope of the rule (set or value)
+      rule_scope: set
+      # level of exception to raise (error or warning)
+      level: error
+
+    - rule: unique
+      rule_type: content
+      rule_manifest: IndividualKey
+    - rule: required
+      rule_type: requirement
+
