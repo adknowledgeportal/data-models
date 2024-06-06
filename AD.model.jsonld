@@ -15817,7 +15817,8 @@
             "sms:displayName": "ageDeath",
             "sms:required": "sms:false",
             "sms:validationRules": {
-                "all_other_components": "IndividualHumanMetadataTemplate"
+                "IndividualHumanMetadataTemplate": "",
+                "all_other_components": "required"
             }
         },
         {
