@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-CERAD,A semiquantitative measure of neuritic plaques,"No AD C0, Sparse Possible C1, Moderate Probable C2, Frequent Definite C3, missing or unknown",,,True,ManifestColumn,,sage.annotations-clinical.CERAD-0.0.2,,string,clinical
+CERAD,A semiquantitative measure of neuritic plaques,"No AD C0, Sparse Possible C1, Moderate Probable C2, Frequent Definite C3, missing or unknown",,,False,ManifestColumn,,sage.annotations-clinical.CERAD-0.0.2,"#NeuropathMetadataTemplate required error",string,clinical
 No AD C0,No AD CO,,,,,CERAD,,ADSP,,string,clinical
 Sparse Possible C1,Sparse Possible C1,,,,,CERAD,,ADSP,,string,clinical
 Moderate Probable C2,Moderate Probable C2,,,,,CERAD,,ADSP,,string,clinical
