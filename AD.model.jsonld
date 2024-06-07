@@ -7808,8 +7808,10 @@
                 }
             ],
             "sms:displayName": "Braak",
-            "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "#NeuropathMetadataTemplate required error"
+            ]
         },
         {
             "@id": "bts:BRAAKStage2",
@@ -9424,8 +9426,10 @@
                 }
             ],
             "sms:displayName": "CERAD",
-            "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "#NeuropathMetadataTemplate required error"
+            ]
         },
         {
             "@id": "bts:ModerateProbableC2",
@@ -18218,8 +18222,10 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "brainWeight",
-            "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "#NeuropathMetadataTemplate required error"
+            ]
         },
         {
             "@id": "bts:BrainWeightBirth",
@@ -23873,8 +23879,10 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "PMI",
-            "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "#NeuropathMetadataTemplate required error"
+            ]
         },
         {
             "@id": "bts:PmiUnits",
@@ -23899,7 +23907,9 @@
             ],
             "sms:displayName": "pmiUnits",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "#NeuropathMetadataTemplate required error"
+            ]
         },
         {
             "@id": "bts:Hours",
@@ -30698,145 +30708,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:AssayNeuropathMetadataTemplate",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "SysBio neuropath metadata template schema",
-            "rdfs:label": "AssayNeuropathMetadataTemplate",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ManifestTemplate"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "assay_neuropath_metadata_template",
-            "sms:required": "sms:false",
-            "sms:requiresDependency": [
-                {
-                    "@id": "bts:Component"
-                },
-                {
-                    "@id": "bts:Filename"
-                },
-                {
-                    "@id": "bts:IndividualID"
-                },
-                {
-                    "@id": "bts:ConservationMethod"
-                },
-                {
-                    "@id": "bts:BrainWeight"
-                },
-                {
-                    "@id": "bts:INT"
-                },
-                {
-                    "@id": "bts:PMI"
-                },
-                {
-                    "@id": "bts:AMYTHAL"
-                },
-                {
-                    "@id": "bts:AMYA"
-                },
-                {
-                    "@id": "bts:CERAD"
-                },
-                {
-                    "@id": "bts:AMYANY"
-                },
-                {
-                    "@id": "bts:Braak"
-                },
-                {
-                    "@id": "bts:BSCORE"
-                },
-                {
-                    "@id": "bts:ADNC"
-                },
-                {
-                    "@id": "bts:REAG"
-                },
-                {
-                    "@id": "bts:MayoDx"
-                },
-                {
-                    "@id": "bts:LEWYFull"
-                },
-                {
-                    "@id": "bts:AltLEWYFull"
-                },
-                {
-                    "@id": "bts:LEWYGrp"
-                },
-                {
-                    "@id": "bts:LEWYANY"
-                },
-                {
-                    "@id": "bts:CDLB"
-                },
-                {
-                    "@id": "bts:INFA"
-                },
-                {
-                    "@id": "bts:HEMOR"
-                },
-                {
-                    "@id": "bts:MICR"
-                },
-                {
-                    "@id": "bts:WMRCAL"
-                },
-                {
-                    "@id": "bts:WMR"
-                },
-                {
-                    "@id": "bts:WBVD"
-                },
-                {
-                    "@id": "bts:HSL"
-                },
-                {
-                    "@id": "bts:HSS"
-                },
-                {
-                    "@id": "bts:AltHSS"
-                },
-                {
-                    "@id": "bts:TDP43"
-                },
-                {
-                    "@id": "bts:TDP3"
-                },
-                {
-                    "@id": "bts:TDP5"
-                },
-                {
-                    "@id": "bts:CVDS"
-                },
-                {
-                    "@id": "bts:CVDATH"
-                },
-                {
-                    "@id": "bts:CVDATHANY"
-                },
-                {
-                    "@id": "bts:CVDART"
-                },
-                {
-                    "@id": "bts:CVDARTANY"
-                },
-                {
-                    "@id": "bts:CVDCAA"
-                },
-                {
-                    "@id": "bts:CVDCAAANY"
-                }
-            ],
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:AssayPETMetadataTemplate",
             "@type": "rdfs:Class",
             "rdfs:comment": "SysBio PET metadata template schema",
@@ -31939,6 +31810,145 @@
                 },
                 {
                     "@id": "bts:PH"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NeuropathMetadataTemplate",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "SysBio neuropath metadata template schema",
+            "rdfs:label": "NeuropathMetadataTemplate",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestTemplate"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "neuropath_metadata_template",
+            "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
+                {
+                    "@id": "bts:IndividualID"
+                },
+                {
+                    "@id": "bts:ConservationMethod"
+                },
+                {
+                    "@id": "bts:BrainWeight"
+                },
+                {
+                    "@id": "bts:INT"
+                },
+                {
+                    "@id": "bts:PMI"
+                },
+                {
+                    "@id": "bts:PmiUnits"
+                },
+                {
+                    "@id": "bts:AMYTHAL"
+                },
+                {
+                    "@id": "bts:AMYA"
+                },
+                {
+                    "@id": "bts:CERAD"
+                },
+                {
+                    "@id": "bts:AMYANY"
+                },
+                {
+                    "@id": "bts:Braak"
+                },
+                {
+                    "@id": "bts:BSCORE"
+                },
+                {
+                    "@id": "bts:ADNC"
+                },
+                {
+                    "@id": "bts:REAG"
+                },
+                {
+                    "@id": "bts:MayoDx"
+                },
+                {
+                    "@id": "bts:LEWYFull"
+                },
+                {
+                    "@id": "bts:AltLEWYFull"
+                },
+                {
+                    "@id": "bts:LEWYGrp"
+                },
+                {
+                    "@id": "bts:LEWYANY"
+                },
+                {
+                    "@id": "bts:CDLB"
+                },
+                {
+                    "@id": "bts:INFA"
+                },
+                {
+                    "@id": "bts:HEMOR"
+                },
+                {
+                    "@id": "bts:MICR"
+                },
+                {
+                    "@id": "bts:WMRCAL"
+                },
+                {
+                    "@id": "bts:WMR"
+                },
+                {
+                    "@id": "bts:WBVD"
+                },
+                {
+                    "@id": "bts:HSL"
+                },
+                {
+                    "@id": "bts:HSS"
+                },
+                {
+                    "@id": "bts:AltHSS"
+                },
+                {
+                    "@id": "bts:TDP43"
+                },
+                {
+                    "@id": "bts:TDP3"
+                },
+                {
+                    "@id": "bts:TDP5"
+                },
+                {
+                    "@id": "bts:CVDS"
+                },
+                {
+                    "@id": "bts:CVDATH"
+                },
+                {
+                    "@id": "bts:CVDATHANY"
+                },
+                {
+                    "@id": "bts:CVDART"
+                },
+                {
+                    "@id": "bts:CVDARTANY"
+                },
+                {
+                    "@id": "bts:CVDCAA"
+                },
+                {
+                    "@id": "bts:CVDCAAANY"
                 }
             ],
             "sms:validationRules": []
