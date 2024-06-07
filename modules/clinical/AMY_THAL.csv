@@ -1,0 +1,9 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+AMY_THAL,Thal Phase,"No Thal Phase,Phase 1,Phase 2,Phase 3,Phase 4, Phase 5,missing or unknown",,,True,ManifestColumn,,sage-annotations-clinical.AMY_THAL-0.0.2,string,,clinical
+No Thal Phase,No Thal Phase,,,,,AMY_THAL,,ADSP,,string,clinical
+Phase 1,Phase 1,,,,,AMY_THAL,,ADSP,,string,clinical
+Phase 2,Phase 2,,,,,AMY_THAL,,ADSP,,string,clinical
+Phase 3,Phase 3,,,,,AMY_THAL,,ADSP,,string,clinical
+Phase 4,Phase 4,,,,,AMY_THAL,,ADSP,,string,clinical
+Phase 5,Phase 5,,,,,AMY_THAL,,ADSP,,string,clinical
+missing or unknown,Thal Phase is missing or unknown,,,,,AMY_THAL,,CLEAR-AD,,string,clinical
