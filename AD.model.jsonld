@@ -30750,7 +30750,7 @@
                     "@id": "bts:Braak"
                 },
                 {
-                    "@id": "bts:BScore"
+                    "@id": "bts:BSCORE"
                 },
                 {
                     "@id": "bts:ADNC"
@@ -30834,23 +30834,6 @@
                     "@id": "bts:CVDCAAANY"
                 }
             ],
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:BScore",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "BScore",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "B_Score",
-            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
