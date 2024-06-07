@@ -1,0 +1,8 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+REAG,NIA-REAGEN criteria for AD,"No AD, Low likelihood, Intermediate Likelihood, High Likelihood, Other or Does not fulfill NIA-REAGEN criteria, missing or unknown",,,True,ManifestColumn,,sage-annotations-clinical.REAG-0.0.2,string,,clinical
+No AD,No AD,,,,,REAG,,ADSP,,string,clinical
+Low Likelihood,Low Likelihood,,,,,REAG,,ADSP,,string,clinical
+Intermediate Likelihood,Intermediate Likelihood,,,,,REAG,,ADSP,,string,clinical
+High Likelihood,High Likelihood,,,,,REAG,,ADSP,,string,clinical
+Other or Does not fulfill NIA-REAGEN criteria,Other or Does not fulfill NIA-REAGEN criteria,,,,,REAG,,ADSP,,string,clinical
+missing or unknown,NIA-REAGEN criteria is missing or unknown,,,,,REAG,,CLEAR-AD,,string,clinical

@@ -1,2 +1,10 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-Braak,Braak Stage - a semiquantitative measure of serverity of neurofibrillary tangle pathology,,,,False,ManifestColumn,,sage.annotations-clinical.Braak-0.0.2,,integer,clinical
+Braak,Braak Stage - a semiquantitative measure of serverity of neurofibrillary tangle pathology,"No BRAAK stage, BRAAK Stage 1, BRAAK Stage 2, BRAAK Stage 3, BRAAK Stage 4, BRAAK Stage 5, BRAAK Stage 6, missing or unknown",,,True,ManifestColumn,,sage.annotations-clinical.Braak-0.0.2,,string,clinical
+No BRAAK Stage,No BRAAK Stage,,,,,Braak,,ADSP,,string,clinical
+BRAAK Stage 1,BRAAK Stage 1,,,,,Braak,,ADSP,,string,clinical
+BRAAK Stage 2,BRAAK Stage 2,,,,,Braak,,ADSP,,string,clinical
+BRAAK Stage 3,BRAAK Stage 3,,,,,Braak,,ADSP,,string,clinical
+BRAAK Stage 4,BRAAK Stage 4,,,,,Braak,,ADSP,,string,clinical
+BRAAK Stage 5,BRAAK Stage 5,,,,,Braak,,ADSP,,string,clinical
+BRAAK Stage 6,BRAAK Stage 6,,,,,Braak,,ADSP,,string,clinical
+missing or unknown,The Braak stage is missing or unknown,,,,,Braak,,CLEAR-AD,,string,clinical

@@ -1,0 +1,5 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+INFA,Infarcts and lacunes. Reports of anoxic ischemic injury will not be considered within the infarcts and lacunes lesions,"No, Yes, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.INFA-0.0.2,string,,clinical
+No,No infarcts and lacunes,,,,,INFA,,ADSP,,string,clinical
+Yes,Yes infarcts and lacunes,,,,,INFA,,ADSP,,string,clinical
+missing or unknown,INFA is missing or unknown,,,,,INFA,,DiverseCohorts,,string,clinical
