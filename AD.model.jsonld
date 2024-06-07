@@ -30759,7 +30759,7 @@
                     "@id": "bts:REAG"
                 },
                 {
-                    "@id": "bts:MayoDX"
+                    "@id": "bts:MayoDx"
                 },
                 {
                     "@id": "bts:LEWYFull"
@@ -30850,23 +30850,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "B_Score",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:MayoDX",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "MayoDX",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "mayoDX",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
