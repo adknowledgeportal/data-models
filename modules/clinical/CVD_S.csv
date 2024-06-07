@@ -1,0 +1,5 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+CVD_S,Cerebrovascular Disease (simplified). Composite variable indicating whether at least one of the contributing indicators (CVD_ATH_ANY CVD_ART_ANY CVD_CAA_ANY) are 1 else if at least one contributing indicator was evaluated as 0 CVD_S is 0 only missing if all indicators are missing.,"No CVD_S, Presence, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.CVD_S-0.0.2,string,,clinical
+No CVD_S,No CVD_S,,,,,CVD_S,,ADSP,,string,clinical
+Presence,Presence,,,,,CVD_S,,ADSP,,string,clinical
+missing or unknown,CVD_S is missing or unknown,,,,,CVD_S,,ADSP,,string,clinical
