@@ -1,0 +1,7 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+AMY_A,A Score,"No A Score,Thal Phase 1 or 2,Thal Phase 3,Thal Phase 4 or 5,missing or unknown",,,True,ManifestColumn,,sage-annotations-clinical.AMY_A-0.0.2,string,,clinical
+No A Score,No A Score,,,,,AMY_A,,ADSP,,string,clinical
+Phase 1 or 2,Phase 1 or 2,,,,,AMY_A,,ADSP,,string,clinical
+Phase 3,Phase 3,,,,,AMY_A,,ADSP,,string,clinical
+Phase 4 or 5,Phase 4 or 5,,,,,AMY_A,,ADSP,,string,clinical
+missing or unknown,A Score is missing or unknown,,,,,AMY_A,,CLEAR-AD,,string,clinical
