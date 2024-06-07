@@ -1,0 +1,5 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+TDP43,TDP Whole Brain (dichotomous). Calculated using the categories in TDP_3 - if any of the amygdala hippocampus entorhinal or neocortex are positive it is "yes". If assessed and negative for the above it is "no","No, Yes, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.TDP43-0.0.2,string,,clinical
+No, No TDP whole Brain,,,,,TDP43,,ADSP,,string,clinical
+Yes,positive in amygdala or hippocampus or entorhinal or neocortex,,,,,TDP43,,ADSP,,string,clinical
+missing or unknown,TDP43 is missing or unknown,,,,,TDP43,,DiverseCohorts,,string,,clinical
