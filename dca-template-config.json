@@ -76,18 +76,8 @@
         "type": "record"
       },
       {
-        "display_name": "assay_STARRSeq_metadata_template",
-        "schema_name": "AssaySTARRSeqMetadataTemplate",
-        "type": "record"
-      },
-      {
         "display_name": "assay_TMTquantitation_metadata_template",
         "schema_name": "AssayTMTquantitationMetadataTemplate",
-        "type": "record"
-      },
-      {
-        "display_name": "assay_wholeExomeSeq_metadata_template",
-        "schema_name": "AssayWholeExomeSeqMetadataTemplate",
         "type": "record"
       },
       {
