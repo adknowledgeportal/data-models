@@ -72,10 +72,11 @@ attributes:
       - manifest: IndividualKey
         level: error
         rules:
-          - matchNone IndividualKey.individualID value
+          # rule combinations with unique not available right now
+          # - matchNone IndividualKey.individualID value
           - required
           - unique
-          - regex match ^[a-zA-Z0-9_-]+$
+          #- regex match ^[a-zA-Z0-9_-]+$
 
   - attribute: specimenID
 
@@ -181,7 +182,8 @@ attributes:
       - manifest: SpecimenKey
         level: error
         rules: 
-          - matchNone SpecimenKey.specimenID value
+          # rule combinations with unique not available right now
+          #- matchNone SpecimenKey.specimenID value
           - required
           - unique
-          - regex match ^[a-zA-Z0-9_.-]+$
+          #- regex match ^[a-zA-Z0-9_.-]+$
