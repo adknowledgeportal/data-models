@@ -18,7 +18,7 @@ attributes:
         rules: 
           - matchExactlyOne IndividualKey.IndividualID set
           #- unique
-          - required
+          # - required
 
       - manifest: IndividualAnimalMetadataTemplate
         level: error
