@@ -16,7 +16,7 @@ attributes:
       - manifest: IndividualHumanMetadataTemplate
         level: error
         rules: 
-          - matchExactlyOne IndividualKey.IndividualID set
+          - matchAtLeastOne IndividualKey.IndividualID value error
           #- unique
           # - required
 
