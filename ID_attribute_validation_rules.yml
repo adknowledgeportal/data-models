@@ -95,13 +95,6 @@ attributes:
           - required
           - unique
 
-      - manifest: BiospecimenMetadataTemplate
-        level: error
-        rules: 
-          - matchExactlyOne SpecimenKey.specimenID value
-          - required
-          - unique
-
       - manifest: FileAnnotationManifest
         level: error
         rules:
