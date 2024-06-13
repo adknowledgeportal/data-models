@@ -17,7 +17,7 @@ attributes:
         level: error
         rules: 
           - matchExactlyOne IndividualKey.individualID set
-          - unique
+          #- unique
           - required
 
       - manifest: IndividualAnimalMetadataTemplate
@@ -74,8 +74,8 @@ attributes:
         rules:
           # rule combinations with unique not available right now
           # - matchNone IndividualKey.individualID value
-          - required
           - unique
+          - required
           #- regex match ^[a-zA-Z0-9_-]+$
 
   - attribute: specimenID
@@ -184,6 +184,6 @@ attributes:
         rules: 
           # rule combinations with unique not available right now
           #- matchNone SpecimenKey.specimenID value
-          - required
           - unique
+          - required
           #- regex match ^[a-zA-Z0-9_.-]+$
