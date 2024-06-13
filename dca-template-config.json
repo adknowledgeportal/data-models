@@ -116,6 +116,16 @@
         "type": "record"
       },
       {
+        "display_name": "individual_key",
+        "schema_name": "IndividualKey",
+        "type": "record"
+      },
+      {
+        "display_name": "specimen_key",
+        "schema_name": "SpecimenKey",
+        "type": "record"
+      },
+      {
         "display_name": "file_annotation_template",
         "schema_name": "FileAnnotationTemplate",
         "type": "file"
