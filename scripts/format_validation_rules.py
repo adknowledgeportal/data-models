@@ -6,7 +6,7 @@ format_validation_rules.py: Format complex validation rules for schematic
 USAGE: 
     python ./scripts/format_validation_rules.py \
     --yaml_file_path ./ID_attribute_validation_rules.yml \
-    --assembled_model ./AD.model.csv
+    --assembled_model ./AD.model.csv \
     --output_path ./AD.test.model.csv
 """
 
@@ -50,8 +50,9 @@ def transform_yaml_data(yaml_data):
             for manifest in manifests:
                 manifest_name = manifest.get('manifest')
                 rule_string = ' '.join(manifest.get('rules', []))
-                level = manifest.get('level')
-                manifest_rule = f'#{manifest_name} {rule_string} {level}^^'
+                #level = manifest.get('level')
+                #manifest_rule = f'#{manifest_name} {rule_string} {level}^^'
+                manifest_rule = f'#{manifest_name} {rule_string}^^'
                 manifest_rules.append(manifest_rule)
 
             if attribute_name:
