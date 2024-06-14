@@ -9,19 +9,19 @@ asset_store:
     # Path to the synapse config file, either absolute or relative to this file
     config: ".synapseConfig"
     # Base name that manifest files will be saved as
-    manifest_basename: "synapse_storage_manifest_"
+    manifest_basename: "synapse_storage_manifest"
 
 # This describes information about manifests as it relates to generation and validation
 manifest:
   # Location where manifests will saved to
-  manifest_folder: "manifests"
+  manifest_folder: "filled-manifests"
   # Title or title prefix given to generated manifest(s)
   title: "AD_dev_"
 
 # Describes the location of your schema
 model:
   # Location of your schema jsonld, it must be a path relative to this file or absolute
-  location: "AD.model.jsonld"
+  location: "AD.test.model.jsonld"
 
 # This section is for using google sheets with Schematic
 google_sheets:
