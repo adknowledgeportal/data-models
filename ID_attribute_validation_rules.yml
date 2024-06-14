@@ -16,63 +16,63 @@ attributes:
     rules_applied_to_manifests:
 
       - manifest: IndividualHumanMetadataTemplate
-        level: error
+        
         rules: 
           - matchExactlyOne IndividualKey.IndividualID value error
           - unique error
           - required
 
       - manifest: IndividualAnimalMetadataTemplate
-        level: error
+        
         rules: 
           - matchExactlyOne IndividualKey.IndividualID value error
           - unique error
           - required
 
       - manifest: IndividualAnimalMODEL-ADMetadataTemplate
-        level: error
+        
         rules: 
           - matchExactlyOne IndividualKey.IndividualID value error
           - unique error
           - required
 
       - manifest: FileAnnotationManifest
-        level: error
+        
         rules: 
           - matchExactlyOne IndividualKey.IndividualID value error
 
       - manifest: BiospecimenMetadataTemplate
-        level: error
+        
         rules:
           - matchExactlyOne IndividualKey.IndividualID value error
           - required
 
       - manifest: BiospecimenInvitroMetadataTemplate
-        level: error
+        
         rules:
           - matchExactlyOne IndividualKey.IndividualID value error
           - required
 
       - manifest: AssayMRIMetadataTemplate
-        level: error
+        
         rules:
           - matchExactlyOne IndividualKey.IndividualID value error
           - required
 
       - manifest: AssayPETMetadataTemplate
-        level: error
+        
         rules:
           - matchExactlyOne IndividualKey.IndividualID value error
           - required
 
       - manifest: AssayAutoradMetadataTemplate
-        level: error
+        
         rules: 
         - matchExactlyOne IndividualKey.IndividualID value error
         - required
 
       - manifest: IndividualKey
-        level: error
+        
         rules:
           - unique error
           - regex match ^[a-zA-Z0-9_-]+$ error
@@ -84,104 +84,104 @@ attributes:
     rules_applied_to_manifests:
 
       - manifest: BiospecimenMetadataTemplate
-        level: error
+        
         rules: 
           - matchExactlyOne SpecimenKey.SpecimenID value error
           - unique error
           - required
 
       - manifest: BiospecimenInvitroMetadataTemplate
-        level: error
+        
         rules: 
           - matchExactlyOne SpecimenKey.SpecimenID value
           - unique error
           - required
 
       - manifest: FileAnnotationManifest
-        level: error
+        
         rules:
           - matchExactlyOne SpecimenKey.SpecimenID value error
       
       - manifest: Assay16SrRNAseqMetadataTemplate
-        level: error
+        
         rules:
           - matchExactlyOne SpecimenKey.SpecimenID value error
           - required
       
       - manifest: AssayATACSeqMetadataTemplate
-        level: error
+        
         rules: 
         - matchExactlyOne SpecimenKey.SpecimenID value error
         - required
       
       - manifest: AssayBisulfiteSeqMetadataTemplate
-        level: error
+        
         rules: 
           - matchExactlyOne SpecimenKey.SpecimenID value error
           - required
       
       - manifest: AssayChIPSeqMetadataTemplate
-        level: error
+        
         rules: 
           - matchExactlyOne SpecimenKey.SpecimenID value error
           - required
       
       - manifest: AssayHICMetadataTemplate
-        level: error
+        
         rules: 
           - matchExactlyOne SpecimenKey.SpecimenID value error
           - required
 
       - manifest: AssayMetabolomicsMetadataTemplate
-        level: error
+        
         rules: 
           - matchExactlyOne SpecimenKey.SpecimenID value error
           - required
 
       - manifest: AssayMethylationArrayMetadataTemplate
-        level: error
+        
         rules:
           - matchExactlyOne SpecimenKey.SpecimenID value error
           - required
       
       - manifest: AssayNanostringMetadataTemplate
-        level: error
+        
         rules: 
           - matchExactlyOne SpecimenKey.SpecimenID value error
           - required
 
       - manifest: AssayRnaArrayMetadataTemplate
-        level: error
+        
         rules: 
           - matchExactlyOne SpecimenKey.SpecimenID value error
           - required
 
       - manifest: AssayRnaSeqMetadataTemplate
-        level: error
+        
         rules: 
           - matchExactlyOne SpecimenKey.SpecimenID value error
           - required
 
       - manifest: AssayScrnaSeqMetadataTemplate
-        level: error
+        
         rules: 
           - matchExactlyOne SpecimenKey.SpecimenID value error
           - required
 
       - manifest: AssayTMTquantitationMetadataTemplate
-        level: error
+        
         rules:
           - matchExactlyOne SpecimenKey.SpecimenID value error
           - required
       
       - manifest: assay_wholeGenomeSeq_metadata_template
-        level: error
+        
         rules: 
           - matchExactlyOne SpecimenKey.SpecimenID value error
           - required
 
       - manifest: SpecimenKey
-        level: error
+        
         rules: 
           - unique error
           - regex match ^[a-zA-Z0-9_.-]+$ error
