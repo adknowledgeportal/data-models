@@ -1,0 +1,4 @@
+Component,individualID,specimenID,specimenIdSource,organ,tissue,isPostMortem,BrodmannArea,nucleicAcidSource,cellType,samplingAge,samplingAgeUnits,sampleStatus,fastingState,visitNumber,assay,Id,entityId
+BiospecimenMetadataTemplate,R1234567,R1234567_DLPFC_01,,brain,dorsolateral prefrontal cortex,,,,,,,,,,rnaSeq,e225733c-f01d-4a65-91de-a3f9374b771f,
+BiospecimenMetadataTemplate,R1234567,R1234567_TCX_01,,brain,temporal cortex,,,,,,,,,,rnaSeq,081e6847-ffa5-44a2-99e7-0eae488ce059,
+BiospecimenMetadataTemplate,MC0234,MC0234_frontal_46,,brain,frontal cortex,,,,,,,,,,rnaSeq,db64f14f-0839-4f77-a80d-30c1e49996c1,

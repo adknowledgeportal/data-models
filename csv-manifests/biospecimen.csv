@@ -1,0 +1,2 @@
+Component,individualComponent,specimenID,specimenIdSource,organ,tissue,isPostMortem,BrodmannArea,nucleicAcidSource,cellType,samplingAge,samplingAgeUnits,sampleStatus,fastingState,visitNumber,assay,individualID
+BiospecimenMetadataTemplate,,,,,,,,,,,,,,,,
