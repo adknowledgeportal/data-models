@@ -1,0 +1,6 @@
+Component,individualID,note
+IndividualKey,R1234567,pass
+IndividualKey,R5555555,pass
+IndividualKey,MC0234,pass
+IndividualKey,MSSM_AMP-AD_1010,pass
+IndividualKey,R123.456!,error - disallowed characters
