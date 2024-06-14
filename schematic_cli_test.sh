@@ -114,6 +114,7 @@ schematic model -c xman-testing-config.yml validate -mp filled-manifests/individ
 #5: individual human metadata has row missing individualID, which should be required
 # failed as expected
 # "too short" is a non-intuitive error message, though
+# still works even with matchExactlyOne is combined with unique and then required -- unique not interrupting required, just not getting used
 schematic model -c xman-testing-config.yml validate -mp filled-manifests/individual_human_filled_fail_missing_required_id.csv -dt IndividualHumanMetadataTemplate
 
 # 4: individual key has non-valid ID - fail
@@ -128,5 +129,28 @@ schematic model -c xman-testing-config.yml validate -mp filled-manifests/individ
 
 #6. individual key has disallowed characters 
 # do the unique and regex match rules work in combination?
-# no trigger on the regex match
+# no trigger on the regex match, which should have failed this one
 schematic model -c xman-testing-config.yml validate -mp filled-manifests/individual_key_filled_fail_regex_match.csv -dt IndividualKey
+
+####TODO:
+
+# other individualID testing:
+# individual animal template
+# individual model ad template
+# MRI template
+# PET template
+# autorad template
+
+---
+# moving on -- biospecimen pass/fail
+
+# specimen key pass
+# biospecimen metadata against specimenkey
+# biospecimen metadata against individualkey
+# in vitro biospecimen metadata against specimenkey
+# in vitro biospecimen against individualkey
+# assay metadata against specimenkey
+
+--- 
+#other:
+# test protect ages
