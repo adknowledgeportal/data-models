@@ -7402,6 +7402,9 @@
                     "@id": "bts:UCI3xTg-AD"
                 },
                 {
+                    "@id": "bts:UCIABCA7"
+                },
+                {
                     "@id": "bts:UCIBIN1"
                 },
                 {
@@ -25209,6 +25212,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "UCI_3xTg-AD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:UCIABCA7",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The UCI_ABCA7 Study",
+            "rdfs:label": "UCIABCA7",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "UCI_ABCA7",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
