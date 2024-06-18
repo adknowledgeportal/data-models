@@ -80,6 +80,7 @@ schematic model -c xman-testing-config.yml submit -mp filled-manifests/individua
 # 1: individual metadata missing id found in individual key - 
 # would like this to fail but it won't because we're using "value" instead of "set"
 # no failure
+# still no failure even with :: formatting on "set", seems like some kind of bug
 schematic model -c xman-testing-config.yml validate -mp filled-manifests/individual_human_filled_fail_missing_id_from_key.csv -dt IndividualHumanMetadataTemplate
 
 
@@ -108,6 +109,7 @@ schematic model -c xman-testing-config.yml validate -mp filled-manifests/individ
 # no errors and should have had errors
 # didn't work -- removed test case since can't combine unique with cross-manifest validation
 # this is currently a concern because the "set" scope isn't working either
+# works -- triggering a duplicate value error
 schematic model -c xman-testing-config.yml validate -mp filled-manifests/individual_human_filled_fail_id_not_unique.csv -dt IndividualHumanMetadataTemplate
 
 
@@ -115,6 +117,7 @@ schematic model -c xman-testing-config.yml validate -mp filled-manifests/individ
 # failed as expected
 # "too short" is a non-intuitive error message, though
 # still works even with matchExactlyOne is combined with unique and then required -- unique not interrupting required, just not getting used
+# now works! triggering "too short" error
 schematic model -c xman-testing-config.yml validate -mp filled-manifests/individual_human_filled_fail_missing_required_id.csv -dt IndividualHumanMetadataTemplate
 
 # 4: individual key has non-valid ID - fail
@@ -125,6 +128,7 @@ schematic model -c xman-testing-config.yml validate -mp filled-manifests/individ
 # the human metadata is lookign for a set with this manfiest so that should help avoid duplicates in the individual metadata
 # ^update, can't rely on that
 # still triggers non-unique error
+# update: does not trigger, KeyError in validation code from schematic (can't parse the regex apart from the other rules)
 schematic model -c xman-testing-config.yml validate -mp filled-manifests/individual_key_filled_fail_not_unique.csv -dt IndividualKey
 
 #6. individual key has disallowed characters 
