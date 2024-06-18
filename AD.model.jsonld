@@ -7138,6 +7138,9 @@
                     "@id": "bts:Jax.IU.PittLevetiracetam-5XFAD"
                 },
                 {
+                    "@id": "bts:Jax.IU.PittLOAD2.PrimaryScreen"
+                },
+                {
                     "@id": "bts:Jax.IU.PittMicrobiomePilot"
                 },
                 {
@@ -23770,6 +23773,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Jax.IU.Pitt_Levetiracetam-5XFAD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Jax.IU.PittLOAD2.PrimaryScreen",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Jax.IU.Pitt LOAD2 PrimaryScreen Study",
+            "rdfs:label": "Jax.IU.PittLOAD2.PrimaryScreen",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Jax.IU.Pitt_LOAD2.PrimaryScreen",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
