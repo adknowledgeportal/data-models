@@ -16,9 +16,9 @@ attributes:
     rules_applied_to_manifests:
 
       - manifest: IndividualHumanMetadataTemplate
-        
+
         rules: 
-          - matchExactlyOne IndividualKey.IndividualID value error
+          - matchExactlyOne IndividualKey.IndividualID set error
           - unique error
           - required
 
