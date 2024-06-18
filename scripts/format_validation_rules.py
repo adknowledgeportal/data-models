@@ -49,7 +49,7 @@ def transform_yaml_data(yaml_data):
 
             for manifest in manifests:
                 manifest_name = manifest.get('manifest')
-                rule_string = ' '.join(manifest.get('rules', []))
+                rule_string = '::'.join(manifest.get('rules', []))
                 #level = manifest.get('level')
                 #manifest_rule = f'#{manifest_name} {rule_string} {level}^^'
                 manifest_rule = f'#{manifest_name} {rule_string}^^'
