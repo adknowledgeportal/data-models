@@ -7405,6 +7405,9 @@
                     "@id": "bts:UCIABCA7"
                 },
                 {
+                    "@id": "bts:UCIApoe-Ch"
+                },
+                {
                     "@id": "bts:UCIBIN1"
                 },
                 {
@@ -25229,6 +25232,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "UCI_ABCA7",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:UCIApoe-Ch",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The UCI APOE Christchurch Study",
+            "rdfs:label": "UCIApoe-Ch",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "UCI_Apoe-Ch",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
