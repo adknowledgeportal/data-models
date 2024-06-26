@@ -140,9 +140,78 @@ schematic model -c xman-testing-config.yml validate -mp filled-manifests/individ
 
 # other individualID testing:
 # individual animal template
+
 # individual model ad template
+# generate template
+schematic manifest -c xman-testing-config.yml get -dt IndividualAnimalMODEL-ADMetadataTemplate -o csv-manifests/modelad_individual.csv -oxlsx excel-manifests/modelad_individual.xlsx
+
+# This needs a new synapse project, if I try to upload it to the existing project it should fail (will validate against the human individualID key)
+# test this behavior: upload to "human test study A" project to see if there is an issue
+schematic model -c xman-testing-config.yml validate -mp filled-manifests/modelad_individual_filled_pass.csv -dt  IndividualAnimalMODEL-ADMetadataTemplate
+#^ that failed -- tried to validate against the previously submitted human key, which didn't match
+# submit a mouse individual key
+# first need to create a mouse individual key folder
+schematic model -c xman-testing-config.yml submit -mp filled-manifests/modelad_individual_key_filled.csv -d syn61463641 -mrt file_only
+# now validate -- see if it fails against the human or succeeds against the mouse
+schematic model -c xman-testing-config.yml validate -mp filled-manifests/modelad_individual_filled_pass.csv -dt  IndividualAnimalMODEL-ADMetadataTemplate
+#^ successfully validated -- must have found the mouse key. So they don't HAVE to be in separate projects to validate correctly
+
+#upload individual manifest to model ad individual study folder
+schematic model -c xman-testing-config.yml submit -mp filled-manifests/modelad_individual_filled_pass.csv -d syn61463506 -mrt file_only
+
+
+# moved to a separate project
+# now confirm specimen key and biospecimen file work
+schematic manifest -c xman-testing-config.yml get -dt SpecimenKey -oxlsx excel-manifests/specimen_key.xlsx
+# submit to dataset folder in separate project
+schematic model -c xman-testing-config.yml submit -mp filled-manifests/modelad_specimen_key_filled_pass.csv -d syn61464463 -mrt file_only
+#^ this actually should have failed -- there's a non-unique value
+# rename to "fail" and try again
+schematic model -c xman-testing-config.yml validate -mp filled-manifests/modelad_specimen_key_filled_fail_not_unique.csv -dt SpecimenKey
+# we get the expected failure -- validation rule must have been formatted incorrectly
+
+# submit corrected pass manifest
+schematic model -c xman-testing-config.yml submit -mp filled-manifests/modelad_specimen_key_filled_pass.csv -d syn61464463 -mrt file_only
+
+# testing biospecimen file -- 
+# pass: all individualIDs in individualkey, all specimenIDs in specimenkey, all specimen IDs unique
+schematic model -c xman-testing-config.yml validate -mp filled-manifests/modelad_biospecimen_filled_pass.csv -dt BiospecimenMetadataTemplate
+schematic model -c xman-testing-config.yml submit -mp filled-manifests/modelad_biospecimen_filled_pass.csv -d syn61464458 -mrt file_only
+#^ successfully submitted
+
+# biospecimen fail: individualIDs in more than one manifest
+# e.g., what happens if I mess up and there's an individualID from a different study's manifest -- matchExactlyOne should be violated
+schematic model -c xman-testing-config.yml validate -mp filled-manifests/modelad_biospecimen_filled_fail_match_more_than_one_manifest.csv -dt BiospecimenMetadataTemplate
+#^this does trigger an error that it doesn't match just one other manifest -- I think that's good! enforces no overlap between studies if we set things up correctly
+# "error: Value(s) ['234567_DLPFC_01'] from row(s) ['5'] of the attribute specimenID in the source manifest are not present in only one other manifest. "
+# ^only problem is that is impossible to distinguish from "not present at all" vs "present in more than one manifest"
+
+# biospecimen fail - specimenID not unique
+schematic model -c xman-testing-config.yml validate -mp filled-manifests/modelad_biospecimen_filled_fail_spec_not_unique.csv -dt BiospecimenMetadataTemplate
+#^ failed as expected
+
+# biospecimen fail - individualID not in individualKey
+schematic model -c xman-testing-config.yml validate -mp filled-manifests/modelad_biospecimen_filled_fail_ind_not_in_key.csv -dt BiospecimenMetadataTemplate
+# failed as expected
+
+# biospecimen fail - specimenID not provided (missing)
+schematic model -c xman-testing-config.yml validate -mp filled-manifests/modelad_biospecimen_filled_fail_missing_specID.csv -dt BiospecimenMetadataTemplate
+# failed as expected
+
+
+
 # MRI template
 # PET template
+schematic manifest -c xman-testing-config.yml get -dt AssayPETMetadataTemplate -oxlsx excel-manifests/PET_assay_metadata.xlsx
+# validate and submit the pass version
+schematic model -c xman-testing-config.yml validate -mp filled-manifests/modelad_PET_metadata_filled_pass.csv -dt AssayPETMetadataTemplate
+# all good
+schematic model -c xman-testing-config.yml submit -mp filled-manifests/modelad_PET_metadata_filled_pass.csv -d syn61464459 -mrt file_only
+
+# PET fail -- individualID not in individualKey
+schematic model -c xman-testing-config.yml validate -mp filled-manifests/modelad_PET_metadata_filled_fail_indID_not_in_key.csv -dt AssayPETMetadataTemplate
+# failed as expected
+
 # autorad template
 
 ---
@@ -156,5 +225,35 @@ schematic model -c xman-testing-config.yml validate -mp filled-manifests/individ
 # assay metadata against specimenkey
 
 --- 
+
+### testing file annotation templates
+# get template for fake RNAseq files in human study A
+schematic manifest -c xman-testing-config.yml get -dt FileAnnotationTemplate -d syn58710382 -oxlsx excel-manifests/human_study_a_rnaseq_raw_file_manifest.xlsx
+
+# need specimen key and biospecimen metadata for human study as well
+schematic model -c xman-testing-config.yml submit -mp filled-manifests/biospecimen_filled_pass.csv -d syn58710329 -mrt file_only
+# ^submitting this first, it may not have specimenIDs to match against so should get that as a message
+# did not get that as a message, maybe because I went straight to submit first? instead of validate
+schematic model -c xman-testing-config.yml submit -mp filled-manifests/specimen_key_filled_pass.csv -d syn61053095 -mrt file_only
+# ok both submitted
+
+# now try validating file annotation manifest: pass
+schematic model -c xman-testing-config.yml validate -mp filled-manifests/human_study_a_rnaseq_raw_file_filled_pass.csv -dt FileAnnotationTemplate 
+# passed as expected
+
+# file annotation: failures
+# individualID not in individualID key, specimenID not in specimen key
+schematic model -c xman-testing-config.yml validate -mp filled-manifests/human_study_a_rnaseq_raw_file_filled_fail_IDs_not_in_key.csv -dt FileAnnotationTemplate 
+# good - both failed
+
+# submit and check that annotations are applied
+
+schematic model -c xman-testing-config.yml submit -mp filled-manifests/human_study_a_rnaseq_raw_file_filled_pass.csv -d syn58710382 -mrt file_only
+
+
 #other:
 # test protect ages
+# human individual metadata only one where ageDeath is protected
+# test uncensored age over 90
+schematic model -c xman-testing-config.yml validate -mp filled-manifests/individual_human_filled_fail_age_over_90.csv -dt IndividualHumanMetadataTemplate
+# doesn't work if the contributor has already self-censored with a non-numeric character - removing for now and we will have to verify
