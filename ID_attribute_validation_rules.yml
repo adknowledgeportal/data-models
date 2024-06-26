@@ -36,7 +36,7 @@ attributes:
           - unique error
           - required
 
-      - manifest: FileAnnotationManifest
+      - manifest: FileAnnotationTemplate
         
         rules: 
           - matchExactlyOne IndividualKey.IndividualID value error
@@ -68,14 +68,15 @@ attributes:
       - manifest: AssayAutoradMetadataTemplate
         
         rules: 
-        - matchExactlyOne IndividualKey.IndividualID value error
-        - required
+          - matchExactlyOne IndividualKey.IndividualID value error
+          - required
 
       - manifest: IndividualKey
         
         rules:
+          - matchNone IndividualKey.IndividualID
           - unique error
-          - regex match ^[a-zA-Z0-9_-]+$ error
+          #- regex match ^[a-zA-Z0-9_-]+$ error
           - required
           
 
@@ -93,11 +94,11 @@ attributes:
       - manifest: BiospecimenInvitroMetadataTemplate
         
         rules: 
-          - matchExactlyOne SpecimenKey.SpecimenID value
-          - unique error
+          - matchExactlyOne SpecimenKey.SpecimenID value error
+          - unique error 
           - required
 
-      - manifest: FileAnnotationManifest
+      - manifest: FileAnnotationTemplate
         
         rules:
           - matchExactlyOne SpecimenKey.SpecimenID value error
@@ -174,8 +175,8 @@ attributes:
           - matchExactlyOne SpecimenKey.SpecimenID value error
           - required
       
-      - manifest: assay_wholeGenomeSeq_metadata_template
-        
+      - manifest: AssayWholeGenomeSeqMetadataTemplate
+
         rules: 
           - matchExactlyOne SpecimenKey.SpecimenID value error
           - required
@@ -183,6 +184,7 @@ attributes:
       - manifest: SpecimenKey
         
         rules: 
+          - matchNone SpecimenKey.SpecimenID error
           - unique error
-          - regex match ^[a-zA-Z0-9_.-]+$ error
+          #- regex match ^[a-zA-Z0-9_.-]+ error
           - required
