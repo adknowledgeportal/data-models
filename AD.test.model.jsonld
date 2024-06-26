@@ -17108,7 +17108,7 @@
                     "matchExactlyOne IndividualKey.IndividualID value error",
                     "required"
                 ],
-                "FileAnnotationManifest": "matchExactlyOne IndividualKey.IndividualID value error",
+                "FileAnnotationTemplate": "matchExactlyOne IndividualKey.IndividualID value error",
                 "IndividualAnimalMODEL-ADMetadataTemplate": [
                     "matchExactlyOne IndividualKey.IndividualID value error",
                     "unique error",
@@ -17125,8 +17125,8 @@
                     "required"
                 ],
                 "IndividualKey": [
+                    "matchNone IndividualKey.IndividualID",
                     "unique error",
-                    "regex match ^[a-zA-Z0-9_-]+$ error",
                     "required"
                 ]
             }
@@ -23167,8 +23167,12 @@
                     "matchExactlyOne SpecimenKey.SpecimenID value error",
                     "required"
                 ],
+                "AssayWholeGenomeSeqMetadataTemplate": [
+                    "matchExactlyOne SpecimenKey.SpecimenID value error",
+                    "required"
+                ],
                 "BiospecimenInvitroMetadataTemplate": [
-                    "matchExactlyOne SpecimenKey.SpecimenID value",
+                    "matchExactlyOne SpecimenKey.SpecimenID value error",
                     "unique error",
                     "required"
                 ],
@@ -23177,14 +23181,10 @@
                     "unique error",
                     "required"
                 ],
-                "FileAnnotationManifest": "matchExactlyOne SpecimenKey.SpecimenID value error",
+                "FileAnnotationTemplate": "matchExactlyOne SpecimenKey.SpecimenID value error",
                 "SpecimenKey": [
+                    "matchNone SpecimenKey.SpecimenID error",
                     "unique error",
-                    "regex match ^[a-zA-Z0-9_.-]+$ error",
-                    "required"
-                ],
-                "assay_wholeGenomeSeq_metadata_template": [
-                    "matchExactlyOne SpecimenKey.SpecimenID value error",
                     "required"
                 ]
             }
