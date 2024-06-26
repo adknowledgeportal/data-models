@@ -1,0 +1,5 @@
+Component,individualID,cohort,species,sex,race,ethnicity,yearsEducation,apoeGenotype,diagnosis,diagnosisCriteria,ageDeath,ageDeathUnits,causeDeath,mannerDeath,PMI,pmiUnits,Braak,CERAD,brainWeight,pH,Id,entityId
+IndividualHumanMetadataTemplate,R1234567,,Human,female,,,,,,,71,,,,,,,,,,954e1326-5bcd-4e00-a265-642217b02b76,
+IndividualHumanMetadataTemplate,R5555555,,Human,female,,,,,,,75,,,,,,,,,,069cfd53-5004-4fac-b8e5-b19d9854004e,
+IndividualHumanMetadataTemplate,MC0234,,Human,male,,,,,,,90+,,,,,,,,,,a18128bc-cdbf-4a05-acae-406ed80d7de5,
+IndividualHumanMetadataTemplate,MSSM_AMP-AD_1010,,Human,male,,,,,,,94,,,,,,,,,,a8bf1c3b-b68a-4b39-b15e-809acb0db236,

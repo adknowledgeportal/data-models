@@ -1,0 +1,5 @@
+Component,individualID,specimenID,specimenIdSource,organ,tissue,isPostMortem,BrodmannArea,nucleicAcidSource,cellType,samplingAge,samplingAgeUnits,sampleStatus,fastingState,visitNumber,assay,Id,entityId
+BiospecimenMetadataTemplate,mouse1,mouse1_rh,,brain,right cerebral hemisphere,,,bulk cell,,,,,,,rnaSeq,36cdfc04-ded8-457c-9eae-a7c9635b90d4,
+BiospecimenMetadataTemplate,mouse1,mouse1_lh,,brain,left cerebral hemisphere,,,bulk cell,,,,,,,rnaSeq,04e403d1-81b9-44a6-979b-35faa2551a36,
+BiospecimenMetadataTemplate,mouse2,mouse2_rh,,brain,right cerebral hemisphere,,,bulk cell,,,,,,,rnaSeq,243fa17b-e598-4f5f-b989-88011cec4641,
+BiospecimenMetadataTemplate,mouse2,mouse2_lh,,brain,left cerebral hemisphere,,,bulk cell,,,,,,,rnaSeq,f74004bc-9b7a-477c-bd3e-dbdf95130ff3,

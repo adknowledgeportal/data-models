@@ -1,0 +1,4 @@
+Component,individualID,climbID,microchipID,birthID,matingID,individualIdSource,materialOrigin,sex,species,generation,dateBirth,ageDeath,ageDeathUnits,brainWeight,rodentWeight,rodentDiet,bedding,room,waterpH,treatmentDose,treatmentType,stockNumber,genotype,genotypeBackground,individualCommonGenotype,modelSystemName,officialName,Id,entityId
+IndividualAnimalMODEL-ADMetadataTemplate,mouse1,,,,,,,female,Mouse,,,,,,,,,,,,,,,,,TAUPS19,,4c86f44b-58c5-4f99-be17-c7fb7b431ff0,
+IndividualAnimalMODEL-ADMetadataTemplate,mouse2,,,,,,,female,Mouse,,,,,,,,,,,,,,,,,5XFAD,,2e1c2133-e5e4-4d9f-aba0-d1a7c0de391c,
+IndividualAnimalMODEL-ADMetadataTemplate,mouse37,,,,,,,female,Mouse,,,,,,,,,,,,,,,,,3xTg-AD,,2c4810fb-2e42-4822-bb50-a239d270b4f4,

@@ -1,0 +1,3 @@
+Component,individualID,scanID,ligand,platform,ageAssessment,ageAssessmentUnits,Id,entityId
+AssayPETMetadataTemplate,mouse1,,,Bruker Avance III,,,c0757c72-076b-4dbb-8862-ea6ad95bfabb,
+AssayPETMetadataTemplate,mouse2,,,Bruker Avance III,,,b4e885db-a473-405c-a9cc-4489f5c1196d,
