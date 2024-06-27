@@ -8,6 +8,295 @@
     },
     "@graph": [
         {
+            "@id": "bts:High",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "High",
+            "rdfs:label": "High",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CDLB"
+                },
+                {
+                    "@id": "bts:ADNC"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "High",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CDLB",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Likelihood of Lewy Body clinical syndrome reported based on Third report of the DLB Consortium",
+            "rdfs:label": "CDLB",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:LoworNoclinicalsignificance"
+                },
+                {
+                    "@id": "bts:Intermediate"
+                },
+                {
+                    "@id": "bts:High"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "CDLB",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:Intermediate",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Intermediate",
+            "rdfs:label": "Intermediate",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CDLB"
+                },
+                {
+                    "@id": "bts:ADNC"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Intermediate",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Low",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Low",
+            "rdfs:label": "Low",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ADNC"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Low",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ADNC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "ADNC severity score",
+            "rdfs:label": "ADNC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NotAD"
+                },
+                {
+                    "@id": "bts:Low"
+                },
+                {
+                    "@id": "bts:Intermediate"
+                },
+                {
+                    "@id": "bts:High"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "ADNC",
+            "sms:required": "sms:true",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:Missingorunknown",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "WMRCAL is missing or unknown",
+            "rdfs:label": "Missingorunknown",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:WMRCAL"
+                },
+                {
+                    "@id": "bts:TDP43"
+                },
+                {
+                    "@id": "bts:AltHSS"
+                },
+                {
+                    "@id": "bts:CVDARTANY"
+                },
+                {
+                    "@id": "bts:CVDATHANY"
+                },
+                {
+                    "@id": "bts:CVDCAAANY"
+                },
+                {
+                    "@id": "bts:CVDS"
+                },
+                {
+                    "@id": "bts:HEMOR"
+                },
+                {
+                    "@id": "bts:HSS"
+                },
+                {
+                    "@id": "bts:INFA"
+                },
+                {
+                    "@id": "bts:LEWYANY"
+                },
+                {
+                    "@id": "bts:MICR"
+                },
+                {
+                    "@id": "bts:WBVD"
+                },
+                {
+                    "@id": "bts:AMYANY"
+                },
+                {
+                    "@id": "bts:CDLB"
+                },
+                {
+                    "@id": "bts:LEWYGrp"
+                },
+                {
+                    "@id": "bts:MayoDx"
+                },
+                {
+                    "@id": "bts:ADNC"
+                },
+                {
+                    "@id": "bts:AMYA"
+                },
+                {
+                    "@id": "bts:BSCORE"
+                },
+                {
+                    "@id": "bts:CERAD"
+                },
+                {
+                    "@id": "bts:ConservationMethod"
+                },
+                {
+                    "@id": "bts:CVDART"
+                },
+                {
+                    "@id": "bts:CVDATH"
+                },
+                {
+                    "@id": "bts:CVDCAA"
+                },
+                {
+                    "@id": "bts:HSL"
+                },
+                {
+                    "@id": "bts:TDP3"
+                },
+                {
+                    "@id": "bts:WMR"
+                },
+                {
+                    "@id": "bts:LEWYFull"
+                },
+                {
+                    "@id": "bts:REAG"
+                },
+                {
+                    "@id": "bts:AltLEWYFull"
+                },
+                {
+                    "@id": "bts:AMYTHAL"
+                },
+                {
+                    "@id": "bts:TDP5"
+                },
+                {
+                    "@id": "bts:Braak"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "missing or unknown",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:WMRCAL",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "White matter rarefaction (cerebral arteriosclerotic leukoencephalopathy). Simplified version to combine WMR (v10+ of NACC) and ART (LOAD Spanish cohort NACC <=v9 and more)",
+            "rdfs:label": "WMRCAL",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:No"
+                },
+                {
+                    "@id": "bts:Yes"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "WMRCAL",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:NotAD",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Not AD",
+            "rdfs:label": "NotAD",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ADNC"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Not AD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Days",
             "@type": "rdfs:Class",
             "rdfs:comment": "Age measured in days, a period of 24 hours.",
@@ -179,6 +468,627 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "years",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Absence",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Normal neuronal population or Focal/Patchy neuronal loss in all sectors of Ammon's horn or Sommer' s sector",
+            "rdfs:label": "Absence",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AltHSS"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Absence",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AltHSS",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "alternative Hippocampal sclerosis (simplified). Infarcted and minimal or focal neuronal loss in the Hippocampus is most often associated with TDP-43 so it will be not considered as presence of Hippocampal sclerosis. Neuronal loss epilepsy-related (endplate) or Lewy-related (CA2) will be not considered as presence of Hippocampal sclerosis.",
+            "rdfs:label": "AltHSS",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Absence"
+                },
+                {
+                    "@id": "bts:Presence"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "alt_HS_S",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:Presence",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Presence",
+            "rdfs:label": "Presence",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CVDS"
+                },
+                {
+                    "@id": "bts:AltHSS"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Presence",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CVDS",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Cerebrovascular Disease (simplified). Composite variable indicating whether at least one of the contributing indicators (CVD_ATH_ANY CVD_ART_ANY CVD_CAA_ANY) are 1 else if at least one contributing indicator was evaluated as 0 CVD_S is 0 only missing if all indicators are missing.",
+            "rdfs:label": "CVDS",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoCVDS"
+                },
+                {
+                    "@id": "bts:Presence"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "CVD_S",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:Amygdalaonly",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Amygdala only",
+            "rdfs:label": "Amygdalaonly",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AltLEWYFull"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Amygdala only",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AltLEWYFull",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "PD Braak staging alternate version",
+            "rdfs:label": "AltLEWYFull",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoaltLEWYFull"
+                },
+                {
+                    "@id": "bts:Olfactorybulbonly"
+                },
+                {
+                    "@id": "bts:Amygdalaonly"
+                },
+                {
+                    "@id": "bts:Brainstempredominant"
+                },
+                {
+                    "@id": "bts:Limbictransitional"
+                },
+                {
+                    "@id": "bts:Neocorticaldiffuse"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "alt_LEWY_full",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:Brainstempredominant",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Brainstem predominant",
+            "rdfs:label": "Brainstempredominant",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LEWY-full"
+                },
+                {
+                    "@id": "bts:LEWYFull"
+                },
+                {
+                    "@id": "bts:AltLEWYFull"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Brainstem predominant",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:LEWY-full",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "LEWY-full",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "LEWY-full",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Limbictransitional",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Limbic transitional",
+            "rdfs:label": "Limbictransitional",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AltLEWYFull"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Limbic transitional",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Neocorticaldiffuse",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Neocortical diffuse",
+            "rdfs:label": "Neocorticaldiffuse",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LEWYFull"
+                },
+                {
+                    "@id": "bts:AltLEWYFull"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Neocortical diffuse",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:LEWYFull",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "PD Braak Staging",
+            "rdfs:label": "LEWYFull",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoLEWYFull"
+                },
+                {
+                    "@id": "bts:Brainstempredominant"
+                },
+                {
+                    "@id": "bts:Limbicamygdalatransitional"
+                },
+                {
+                    "@id": "bts:Neocorticaldiffuse"
+                },
+                {
+                    "@id": "bts:OlfactorybulborRegionunspecified"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "LEWY_full",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:NoaltLEWYFull",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No alt_LEWY_full",
+            "rdfs:label": "NoaltLEWYFull",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AltLEWYFull"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No alt_LEWY_full",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Olfactorybulbonly",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Olfactory bulb only",
+            "rdfs:label": "Olfactorybulbonly",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AltLEWYFull"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Olfactory bulb only",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NoAScore",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No A Score",
+            "rdfs:label": "NoAScore",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AMYA"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No A Score",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AMYA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "A Score",
+            "rdfs:label": "AMYA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoAScore"
+                },
+                {
+                    "@id": "bts:ThalPhase1or2"
+                },
+                {
+                    "@id": "bts:ThalPhase3"
+                },
+                {
+                    "@id": "bts:ThalPhase4or5"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "AMY_A",
+            "sms:required": "sms:true",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:Phase1or2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Phase 1 or 2",
+            "rdfs:label": "Phase1or2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AMYA"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Phase 1 or 2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Phase3",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Phase 3",
+            "rdfs:label": "Phase3",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AMYTHAL"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Phase 3",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AMYTHAL",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Thal Phase",
+            "rdfs:label": "AMYTHAL",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoThalPhase"
+                },
+                {
+                    "@id": "bts:Phase1"
+                },
+                {
+                    "@id": "bts:Phase2"
+                },
+                {
+                    "@id": "bts:Phase3"
+                },
+                {
+                    "@id": "bts:Phase4"
+                },
+                {
+                    "@id": "bts:Phase5"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "AMY_THAL",
+            "sms:required": "sms:true",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:Phase4or5",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Phase 4 or 5",
+            "rdfs:label": "Phase4or5",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AMYA"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Phase 4 or 5",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AmyloidPresent",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Amyloid present",
+            "rdfs:label": "AmyloidPresent",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AMYANY"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Amyloid Present",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AMYANY",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Any amyloid presence",
+            "rdfs:label": "AMYANY",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Noamyloidpresence"
+                },
+                {
+                    "@id": "bts:SomeAmyloid"
+                },
+                {
+                    "@id": "bts:AmyloidPresent"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "AMY_ANY",
+            "sms:required": "sms:true",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:Noamyloidpresence",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No amyloid presence",
+            "rdfs:label": "Noamyloidpresence",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AMYANY"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No amyloid presence",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:SomeAmyloid",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Some amyloid",
+            "rdfs:label": "SomeAmyloid",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AMYANY"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Some Amyloid",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NoThalPhase",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No Thal Phase",
+            "rdfs:label": "NoThalPhase",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AMYTHAL"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No Thal Phase",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Phase1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Phase 1",
+            "rdfs:label": "Phase1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AMYTHAL"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Phase 1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Phase2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Phase 2",
+            "rdfs:label": "Phase2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AMYTHAL"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Phase 2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Phase4",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Phase 4",
+            "rdfs:label": "Phase4",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AMYTHAL"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Phase 4",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Phase5",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Phase 5",
+            "rdfs:label": "Phase5",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AMYTHAL"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Phase 5",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -6019,9 +6929,12 @@
         {
             "@id": "bts:TDP43",
             "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
+            "rdfs:comment": "TDP Whole Brain (dichotomous). Calculated using the categories in TDP_3 - if any of the amygdala hippocampus entorhinal or neocortex are positive it is yes. If assessed and negative for the above it is no",
             "rdfs:label": "TDP43",
             "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                },
                 {
                     "@id": "bts:AssayTarget"
                 }
@@ -6029,7 +6942,105 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:No"
+                },
+                {
+                    "@id": "bts:Yes"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
             "sms:displayName": "TDP43",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:No",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No WMRCAL",
+            "rdfs:label": "No",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:WMRCAL"
+                },
+                {
+                    "@id": "bts:TDP43"
+                },
+                {
+                    "@id": "bts:HEMOR"
+                },
+                {
+                    "@id": "bts:HSS"
+                },
+                {
+                    "@id": "bts:INFA"
+                },
+                {
+                    "@id": "bts:MICR"
+                },
+                {
+                    "@id": "bts:WBVD"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Yes",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Yes WMRCAL",
+            "rdfs:label": "Yes",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:WMRCAL"
+                },
+                {
+                    "@id": "bts:TDP43"
+                },
+                {
+                    "@id": "bts:HEMOR"
+                },
+                {
+                    "@id": "bts:HSS"
+                },
+                {
+                    "@id": "bts:INFA"
+                },
+                {
+                    "@id": "bts:MICR"
+                },
+                {
+                    "@id": "bts:WBVD"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Yes",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ManifestColumn",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ManifestColumn",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ManifestColumn",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -6340,6 +7351,110 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:BRAAKStage1-2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "BRAAK Stage 1-2",
+            "rdfs:label": "BRAAKStage1-2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:BSCORE"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "BRAAK Stage 1-2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BSCORE",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "B score",
+            "rdfs:label": "BSCORE",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoBscore"
+                },
+                {
+                    "@id": "bts:BRAAKStage1-2"
+                },
+                {
+                    "@id": "bts:BRAAKStage3-4"
+                },
+                {
+                    "@id": "bts:BRAAKStage5-6"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "B_SCORE",
+            "sms:required": "sms:true",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:BRAAKStage3-4",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "BRAAK Stage 3-4",
+            "rdfs:label": "BRAAKStage3-4",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:BSCORE"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "BRAAK Stage 3-4",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BRAAKStage5-6",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "BRAAK Stage 5-6",
+            "rdfs:label": "BRAAKStage5-6",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:BSCORE"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "BRAAK Stage 5-6",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NoBscore",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No B score",
+            "rdfs:label": "NoBscore",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:BSCORE"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No B score",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Alpha-dri",
             "@type": "rdfs:Class",
             "rdfs:comment": "Rodent bedding made from alpha cellulose",
@@ -6633,6 +7748,187 @@
                 }
             ],
             "sms:displayName": "bodyPart",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BRAAKStage1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "BRAAK Stage 1",
+            "rdfs:label": "BRAAKStage1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Braak"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "BRAAK Stage 1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Braak",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Braak Stage - a semiquantitative measure of serverity of neurofibrillary tangle pathology",
+            "rdfs:label": "Braak",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoBRAAKstage"
+                },
+                {
+                    "@id": "bts:BRAAKStage1"
+                },
+                {
+                    "@id": "bts:BRAAKStage2"
+                },
+                {
+                    "@id": "bts:BRAAKStage3"
+                },
+                {
+                    "@id": "bts:BRAAKStage4"
+                },
+                {
+                    "@id": "bts:BRAAKStage5"
+                },
+                {
+                    "@id": "bts:BRAAKStage6"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "Braak",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "#NeuropathMetadataTemplate required error"
+            ]
+        },
+        {
+            "@id": "bts:BRAAKStage2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "BRAAK Stage 2",
+            "rdfs:label": "BRAAKStage2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Braak"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "BRAAK Stage 2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BRAAKStage3",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "BRAAK Stage 3",
+            "rdfs:label": "BRAAKStage3",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Braak"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "BRAAK Stage 3",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BRAAKStage4",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "BRAAK Stage 4",
+            "rdfs:label": "BRAAKStage4",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Braak"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "BRAAK Stage 4",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BRAAKStage5",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "BRAAK Stage 5",
+            "rdfs:label": "BRAAKStage5",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Braak"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "BRAAK Stage 5",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BRAAKStage6",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "BRAAK Stage 6",
+            "rdfs:label": "BRAAKStage6",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Braak"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "BRAAK Stage 6",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NoBRAAKStage",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No BRAAK Stage",
+            "rdfs:label": "NoBRAAKStage",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Braak"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No BRAAK Stage",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:LoworNoclinicalsignificance",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Low or No clinical significance",
+            "rdfs:label": "LoworNoclinicalsignificance",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CDLB"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Low or No clinical significance",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -8095,6 +9391,110 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:FrequentDefiniteC3",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Frequent Definite C3",
+            "rdfs:label": "FrequentDefiniteC3",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CERAD"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Frequent Definite C3",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CERAD",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "A semiquantitative measure of neuritic plaques",
+            "rdfs:label": "CERAD",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoADC0"
+                },
+                {
+                    "@id": "bts:SparsePossibleC1"
+                },
+                {
+                    "@id": "bts:ModerateProbableC2"
+                },
+                {
+                    "@id": "bts:FrequentDefiniteC3"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "CERAD",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "#NeuropathMetadataTemplate required error"
+            ]
+        },
+        {
+            "@id": "bts:ModerateProbableC2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Moderate Probable C2",
+            "rdfs:label": "ModerateProbableC2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CERAD"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Moderate Probable C2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NoADC0",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No AD CO",
+            "rdfs:label": "NoADC0",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CERAD"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No AD C0",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:SparsePossibleC1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Sparse Possible C1",
+            "rdfs:label": "SparsePossibleC1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CERAD"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Sparse Possible C1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:1",
             "@type": "rdfs:Class",
             "rdfs:comment": "Chromosome 1",
@@ -9548,7 +10948,7 @@
                 }
             ],
             "sms:displayName": "conservationMethod",
-            "sms:required": "sms:false",
+            "sms:required": "sms:true",
             "sms:validationRules": [
                 "string"
             ]
@@ -9584,23 +10984,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "frozen tissue only",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Missingorunknown",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Conservation method is missing or unknown",
-            "rdfs:label": "Missingorunknown",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ConservationMethod"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "missing or unknown",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -10471,6 +11854,460 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "water plus Baker ISTD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Mild",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Mild",
+            "rdfs:label": "Mild",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:WMR"
+                },
+                {
+                    "@id": "bts:CVDART"
+                },
+                {
+                    "@id": "bts:CVDATH"
+                },
+                {
+                    "@id": "bts:CVDCAA"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Mild",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:WMR",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "white matter rarefaction",
+            "rdfs:label": "WMR",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Absent"
+                },
+                {
+                    "@id": "bts:Mild"
+                },
+                {
+                    "@id": "bts:Moderate"
+                },
+                {
+                    "@id": "bts:Severe"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "WMR",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:Moderate",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Moderate",
+            "rdfs:label": "Moderate",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:WMR"
+                },
+                {
+                    "@id": "bts:CVDART"
+                },
+                {
+                    "@id": "bts:CVDATH"
+                },
+                {
+                    "@id": "bts:CVDCAA"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Moderate",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NoCVDART",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No CVD_ART",
+            "rdfs:label": "NoCVDART",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CVDART"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No CVD_ART",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CVDART",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Arteriolosclerosis",
+            "rdfs:label": "CVDART",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoCVDART"
+                },
+                {
+                    "@id": "bts:Mild"
+                },
+                {
+                    "@id": "bts:Moderate"
+                },
+                {
+                    "@id": "bts:Severe"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "CVD_ART",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:Severe",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Severe",
+            "rdfs:label": "Severe",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:WMR"
+                },
+                {
+                    "@id": "bts:CVDART"
+                },
+                {
+                    "@id": "bts:CVDATH"
+                },
+                {
+                    "@id": "bts:CVDCAA"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Severe",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MildorModerateorSevere",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Mild or Moderate or Severe grouped",
+            "rdfs:label": "MildorModerateorSevere",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CVDCAAANY"
+                },
+                {
+                    "@id": "bts:CVDARTANY"
+                },
+                {
+                    "@id": "bts:CVDATHANY"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Mild or Moderate or Severe",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CVDCAAANY",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Cerebral Amyloid Angiopathy (CAA) (dichotomous)",
+            "rdfs:label": "CVDCAAANY",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoCVDCAAANY"
+                },
+                {
+                    "@id": "bts:MildorModerateorSevere"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "CVD_CAA_ANY",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:NoCVDARTANY",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No CVD_ART_ANY",
+            "rdfs:label": "NoCVDARTANY",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CVDARTANY"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No CVD_ART_ANY",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CVDARTANY",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Arteriolosclerosis (dichotomous)",
+            "rdfs:label": "CVDARTANY",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoCVDARTANY"
+                },
+                {
+                    "@id": "bts:MildorModerateorSevere"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "CVD_ART_ANY",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:NoCVDATH",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No CVD_ATH",
+            "rdfs:label": "NoCVDATH",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CVDATH"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No CVD_ATH",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CVDATH",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Atherosclerosis",
+            "rdfs:label": "CVDATH",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoCVDATH"
+                },
+                {
+                    "@id": "bts:Mild"
+                },
+                {
+                    "@id": "bts:Moderate"
+                },
+                {
+                    "@id": "bts:Severe"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "CVD_ATH",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:NoCVDATHANY",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No CVD_ATH_ANY",
+            "rdfs:label": "NoCVDATHANY",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CVDATHANY"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No CVD_ATH_ANY",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CVDATHANY",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Atherosclerosis (dichotomous)",
+            "rdfs:label": "CVDATHANY",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoCVDATHANY"
+                },
+                {
+                    "@id": "bts:MildorModerateorSevere"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "CVD_ATH_ANY",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:NoCVDCAA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No CVD_CAA",
+            "rdfs:label": "NoCVDCAA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CVDCAA"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No CVD_CAA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CVDCAA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Cerebral Amyloid Angiopathy (CAA)",
+            "rdfs:label": "CVDCAA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoCVDCAA"
+                },
+                {
+                    "@id": "bts:Mild"
+                },
+                {
+                    "@id": "bts:Moderate"
+                },
+                {
+                    "@id": "bts:Severe"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "CVD_CAA",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:NoCVDCAAANY",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No CVD_CAA_ANY",
+            "rdfs:label": "NoCVDCAAANY",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CVDCAAANY"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No CVD_CAA_ANY",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NoCVDS",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No CVD_S",
+            "rdfs:label": "NoCVDS",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CVDS"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No CVD_S",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -11886,11 +13723,14 @@
         {
             "@id": "bts:Control",
             "@type": "rdfs:Class",
-            "rdfs:comment": "A group used as a standard of comparison in a control experiment.",
+            "rdfs:comment": "Control",
             "rdfs:label": "Control",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:TreatmentType"
+                },
+                {
+                    "@id": "bts:MayoDx"
                 },
                 {
                     "@id": "bts:Diagnosis"
@@ -11899,7 +13739,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "control",
+            "sms:displayName": "Control",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -14236,6 +16076,110 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Bilateral",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Bilateral",
+            "rdfs:label": "Bilateral",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HSL"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Bilateral",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:HSL",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Hippocampal sclerosis (with laterality)",
+            "rdfs:label": "HSL",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoHSL"
+                },
+                {
+                    "@id": "bts:Unilateral"
+                },
+                {
+                    "@id": "bts:Bilateral"
+                },
+                {
+                    "@id": "bts:PresentLocationUK"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "HS_L",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:NoHSL",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No HS_L",
+            "rdfs:label": "NoHSL",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HSL"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No HS_L",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PresentLocationUK",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Present Location UK",
+            "rdfs:label": "PresentLocationUK",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HSL"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Present Location UK",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Unilateral",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Unilateral",
+            "rdfs:label": "Unilateral",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:HSL"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Unilateral",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:ABN",
             "@type": "rdfs:Class",
             "rdfs:comment": "Autism Brain Net",
@@ -14921,6 +16865,205 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Yale",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Brainstemortransitionalordiffuseorregionunspecifiedgroup",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Brainstem or transitional or diffuse or region unspecified group",
+            "rdfs:label": "Brainstemortransitionalordiffuseorregionunspecifiedgroup",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LEWYANY"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Brainstem or transitional or diffuse or region unspecified group",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:LEWYANY",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "LBD grouped and PD Braak grouped dichotomous",
+            "rdfs:label": "LEWYANY",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoLEWYANYorolfactorybulboramygdalapredominantgroup"
+                },
+                {
+                    "@id": "bts:Brainstemortransitionalordiffuseorregionunspecifiedgroup"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "LEWY_ANY",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:NoLEWYANYorolfactorybulboramygdalapredominantgroup",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No LEWY_ANY or olfactory bulb or amygdala predominant group",
+            "rdfs:label": "NoLEWYANYorolfactorybulboramygdalapredominantgroup",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LEWYANY"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No LEWY_ANY or olfactory bulb or amygdala predominant group",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Limbicamygdalatransitional",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Limbic amygdala transitional",
+            "rdfs:label": "Limbicamygdalatransitional",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LEWYFull"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Limbic amygdala transitional",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NoLEWYFull",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No LEWY_full",
+            "rdfs:label": "NoLEWYFull",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LEWYFull"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No LEWY_full",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:OlfactorybulborRegionunspecified",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Olfactory bulb or Region unspecified",
+            "rdfs:label": "OlfactorybulborRegionunspecified",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LEWYFull"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Olfactory bulb or Region unspecified",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Brainstempredominantgroup",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Brainstem predominant group",
+            "rdfs:label": "Brainstempredominantgroup",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LEWYGrp"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Brainstem predominant group",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:LEWYGrp",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Kosaka LBD subtypes grouped and PD Braak grouped",
+            "rdfs:label": "LEWYGrp",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoLEWYGrporolfactorybulboramygdalapredominantgroup"
+                },
+                {
+                    "@id": "bts:Brainstempredominantgroup"
+                },
+                {
+                    "@id": "bts:Transitionalordiffuseorregionunspecifiedgroup"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "LEWY_grp",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:NoLEWYGrporolfactorybulboramygdalapredominantgroup",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No LEWY_grp or olfactory bulb or amygdala predominant group",
+            "rdfs:label": "NoLEWYGrporolfactorybulboramygdalapredominantgroup",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LEWYGrp"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No LEWY_grp or olfactory bulb or amygdala predominant group",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Transitionalordiffuseorregionunspecifiedgroup",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Transitional or diffuse or region unspecified group",
+            "rdfs:label": "Transitionalordiffuseorregionunspecifiedgroup",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LEWYGrp"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Transitional or diffuse or region unspecified group",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -15743,23 +17886,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:ManifestColumn",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "ManifestColumn",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "ManifestColumn",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:AgeAssessmentUnits",
             "@type": "rdfs:Class",
             "rdfs:comment": "Age of assessment units.",
@@ -15872,6 +17998,57 @@
                 "IndividualHumanMetadataTemplate": "",
                 "all_other_components": "required"
             }
+        },
+        {
+            "@id": "bts:ThalPhase1or2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ThalPhase1or2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AMYA"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Thal Phase 1 or 2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ThalPhase3",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ThalPhase3",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AMYA"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Thal Phase 3",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ThalPhase4or5",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ThalPhase4or5",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AMYA"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Thal Phase 4 or 5",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
         },
         {
             "@id": "bts:Antibody",
@@ -16027,26 +18204,26 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Braak",
+            "@id": "bts:NoBRAAKstage",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Braak Stage - a semiquantitative measure of serverity of neurofibrillary tangle pathology",
-            "rdfs:label": "Braak",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "NoBRAAKstage",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:ManifestColumn"
+                    "@id": "bts:Braak"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Braak",
+            "sms:displayName": "No BRAAK stage",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "bts:BrainWeight",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Weight of brain in grams",
+            "rdfs:comment": "Weight of brain in grams. Use missing or unknown if not available",
             "rdfs:label": "BrainWeight",
             "rdfs:subClassOf": [
                 {
@@ -16058,7 +18235,9 @@
             },
             "sms:displayName": "brainWeight",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "#NeuropathMetadataTemplate required error"
+            ]
         },
         {
             "@id": "bts:BrainWeightBirth",
@@ -16142,23 +18321,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "causeDeath",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:CERAD",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "A semiquantitative measure of neuritic plaques",
-            "rdfs:label": "CERAD",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ManifestColumn"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "CERAD",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -16634,6 +18796,66 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:HEMOR",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Hemorrhages",
+            "rdfs:label": "HEMOR",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:No"
+                },
+                {
+                    "@id": "bts:Yes"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "HEMOR",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:HSS",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Hippocampal sclerosis (with simplified)",
+            "rdfs:label": "HSS",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:No"
+                },
+                {
+                    "@id": "bts:Yes"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "HS_S",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
             "@id": "bts:IndividualID",
             "@type": "rdfs:Class",
             "rdfs:comment": "Identifying string linked to the individual or animal being studied",
@@ -16652,6 +18874,55 @@
                 "FileAnnotationTemplate": "",
                 "all_other_components": "required"
             }
+        },
+        {
+            "@id": "bts:INFA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Infarcts and lacunes. Reports of anoxic ischemic injury will not be considered within the infarcts and lacunes lesions",
+            "rdfs:label": "INFA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:No"
+                },
+                {
+                    "@id": "bts:Yes"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "INFA",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:INT",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Interval between last exam and death (unit in months). Use missing or unknown if not available",
+            "rdfs:label": "INT",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "INT",
+            "sms:required": "sms:true",
+            "sms:validationRules": [
+                "string"
+            ]
         },
         {
             "@id": "bts:IonMode",
@@ -17022,6 +19293,73 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "matingID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MayoDx",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Neuropathology-based diagnosis assigned by Mayo neurologist",
+            "rdfs:label": "MayoDx",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:AD"
+                },
+                {
+                    "@id": "bts:Control"
+                },
+                {
+                    "@id": "bts:Other"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "mayoDx",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:AD",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "AD",
+            "rdfs:label": "AD",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:MayoDx"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "AD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Other",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Other",
+            "rdfs:label": "Other",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:MayoDx"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Other",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -18027,6 +20365,36 @@
             "sms:displayName": "protocol",
             "sms:required": "sms:false",
             "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MICR",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Microinfarcts",
+            "rdfs:label": "MICR",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:No"
+                },
+                {
+                    "@id": "bts:Yes"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "MICR",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
         },
         {
             "@id": "bts:MicrochipID",
@@ -21512,7 +23880,7 @@
         {
             "@id": "bts:PMI",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Post-mortem interval",
+            "rdfs:comment": "Post-mortem interval (unit in hours). Use missing or unknown if not available",
             "rdfs:label": "PMI",
             "rdfs:subClassOf": [
                 {
@@ -21524,7 +23892,9 @@
             },
             "sms:displayName": "PMI",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "#NeuropathMetadataTemplate required error"
+            ]
         },
         {
             "@id": "bts:PmiUnits",
@@ -21549,7 +23919,9 @@
             ],
             "sms:displayName": "pmiUnits",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "#NeuropathMetadataTemplate required error"
+            ]
         },
         {
             "@id": "bts:Hours",
@@ -21811,6 +24183,130 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "reverse",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:REAG",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "NIA-REAGEN criteria for AD",
+            "rdfs:label": "REAG",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoAD"
+                },
+                {
+                    "@id": "bts:Lowlikelihood"
+                },
+                {
+                    "@id": "bts:IntermediateLikelihood"
+                },
+                {
+                    "@id": "bts:HighLikelihood"
+                },
+                {
+                    "@id": "bts:OtherorDoesnotfulfillNIA-REAGENcriteria"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "REAG",
+            "sms:required": "sms:true",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:NoAD",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No AD",
+            "rdfs:label": "NoAD",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:REAG"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No AD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Lowlikelihood",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Lowlikelihood",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:REAG"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Low likelihood",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:IntermediateLikelihood",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Intermediate Likelihood",
+            "rdfs:label": "IntermediateLikelihood",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:REAG"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Intermediate Likelihood",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:HighLikelihood",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "High Likelihood",
+            "rdfs:label": "HighLikelihood",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:REAG"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "High Likelihood",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:OtherorDoesnotfulfillNIA-REAGENcriteria",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Other or Does not fulfill NIA-REAGEN criteria",
+            "rdfs:label": "OtherorDoesnotfulfillNIA-REAGENcriteria",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:REAG"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Other or Does not fulfill NIA-REAGEN criteria",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -25613,6 +28109,232 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:TDP3",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TDP-3 Component",
+            "rdfs:label": "TDP3",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoTDP3"
+                },
+                {
+                    "@id": "bts:Amygdala"
+                },
+                {
+                    "@id": "bts:HippocampusorEtorhinal"
+                },
+                {
+                    "@id": "bts:Neocortex"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "TDP_3",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:NoTDP3",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No TDP_3",
+            "rdfs:label": "NoTDP3",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TDP3"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No TDP_3",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Amygdala",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The one of the four basal ganglia in each cerebral hemisphere that is part of the limbic system and consists of an almond-shaped mass of gray matter in the anterior extremity of the temporal lobe.",
+            "rdfs:label": "Amygdala",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Tissue"
+                },
+                {
+                    "@id": "bts:TDP5"
+                },
+                {
+                    "@id": "bts:TDP3"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "amygdala",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:HippocampusorEtorhinal",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Hippocampus or Etorhinal",
+            "rdfs:label": "HippocampusorEtorhinal",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TDP3"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Hippocampus or Etorhinal",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Neocortex",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Neocortex",
+            "rdfs:label": "Neocortex",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TDP5"
+                },
+                {
+                    "@id": "bts:TDP3"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Neocortex",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:TDP5",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TDP Stage; Assumes that TDP progresses from brainstem>amygdala>hippocampus>inferior temporal cortex>neocortex",
+            "rdfs:label": "TDP5",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoTDP5"
+                },
+                {
+                    "@id": "bts:Brainstem/SpinalCord"
+                },
+                {
+                    "@id": "bts:Amygdala"
+                },
+                {
+                    "@id": "bts:Hippocampus"
+                },
+                {
+                    "@id": "bts:Entorhinal"
+                },
+                {
+                    "@id": "bts:Neocortex"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "TDP_5",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:NoTDP5",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "No TDP_5",
+            "rdfs:label": "NoTDP5",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TDP5"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "No TDP_5",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Brainstem/SpinalCord",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Brainstem/Spinal Cord",
+            "rdfs:label": "Brainstem/SpinalCord",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TDP5"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Brainstem/Spinal Cord",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Hippocampus",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "A curved elongated ridge that extends over the floor of the descending horn of each lateral ventricle of the brain and consists of gray matter covered on the ventricular surface with white matter.",
+            "rdfs:label": "Hippocampus",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TDP5"
+                },
+                {
+                    "@id": "bts:Tissue"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "hippocampus",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Entorhinal",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Entorhinal",
+            "rdfs:label": "Entorhinal",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TDP5"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Entorhinal",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Temperature",
             "@type": "rdfs:Class",
             "rdfs:comment": "Temperature in Celsius (C) relevant to specimen or experimental condition",
@@ -25643,23 +28365,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "terminalDifferentiationPoint",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Amygdala",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "The one of the four basal ganglia in each cerebral hemisphere that is part of the limbic system and consists of an almond-shaped mass of gray matter in the anterior extremity of the temporal lobe.",
-            "rdfs:label": "Amygdala",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Tissue"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "amygdala",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -26068,23 +28773,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "fusiform gyrus",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Hippocampus",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "A curved elongated ridge that extends over the floor of the descending horn of each lateral ventricle of the brain and consists of gray matter covered on the ventricular surface with white matter.",
-            "rdfs:label": "Hippocampus",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Tissue"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "hippocampus",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -27398,6 +30086,53 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:WBVD",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Whole brain vascular disease",
+            "rdfs:label": "WBVD",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:No"
+                },
+                {
+                    "@id": "bts:Yes"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "WBVD",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
+            "@id": "bts:Absent",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Absent",
+            "rdfs:label": "Absent",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:WMR"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Absent",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:YearsEducation",
             "@type": "rdfs:Class",
             "rdfs:comment": "Years of education starting with kindergarten",
@@ -28050,672 +30785,6 @@
                     "@id": "bts:BindingDensity"
                 }
             ],
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:AssayNeuropathMetadataTemplate",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "SysBio neuropath metadata template schema",
-            "rdfs:label": "AssayNeuropathMetadataTemplate",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ManifestTemplate"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "assay_neuropath_metadata_template",
-            "sms:required": "sms:false",
-            "sms:requiresDependency": [
-                {
-                    "@id": "bts:Component"
-                },
-                {
-                    "@id": "bts:Filename"
-                },
-                {
-                    "@id": "bts:IndividualID"
-                },
-                {
-                    "@id": "bts:ConservationMethod"
-                },
-                {
-                    "@id": "bts:BrainWeight"
-                },
-                {
-                    "@id": "bts:INT"
-                },
-                {
-                    "@id": "bts:PMI"
-                },
-                {
-                    "@id": "bts:AMYTHAL"
-                },
-                {
-                    "@id": "bts:AMYA"
-                },
-                {
-                    "@id": "bts:CERAD"
-                },
-                {
-                    "@id": "bts:AMYANY"
-                },
-                {
-                    "@id": "bts:Braak"
-                },
-                {
-                    "@id": "bts:BScore"
-                },
-                {
-                    "@id": "bts:ADNC"
-                },
-                {
-                    "@id": "bts:REAG"
-                },
-                {
-                    "@id": "bts:MayoDX"
-                },
-                {
-                    "@id": "bts:LEWYFull"
-                },
-                {
-                    "@id": "bts:AltLEWYFull"
-                },
-                {
-                    "@id": "bts:LEWYGrp"
-                },
-                {
-                    "@id": "bts:LEWYANY"
-                },
-                {
-                    "@id": "bts:CDLB"
-                },
-                {
-                    "@id": "bts:INFA"
-                },
-                {
-                    "@id": "bts:HEMOR"
-                },
-                {
-                    "@id": "bts:MICR"
-                },
-                {
-                    "@id": "bts:WMRCAL"
-                },
-                {
-                    "@id": "bts:WMR"
-                },
-                {
-                    "@id": "bts:WBVD"
-                },
-                {
-                    "@id": "bts:HSL"
-                },
-                {
-                    "@id": "bts:HSS"
-                },
-                {
-                    "@id": "bts:AltHSS"
-                },
-                {
-                    "@id": "bts:TDP43"
-                },
-                {
-                    "@id": "bts:TDP3"
-                },
-                {
-                    "@id": "bts:TDP5"
-                },
-                {
-                    "@id": "bts:CVDS"
-                },
-                {
-                    "@id": "bts:CVDATH"
-                },
-                {
-                    "@id": "bts:CVDATHANY"
-                },
-                {
-                    "@id": "bts:CVDART"
-                },
-                {
-                    "@id": "bts:CVDARTANY"
-                },
-                {
-                    "@id": "bts:CVDCAA"
-                },
-                {
-                    "@id": "bts:CVDCAAANY"
-                }
-            ],
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:INT",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "INT",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "INT",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:AMYTHAL",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "AMYTHAL",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "AMY_THAL",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:AMYA",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "AMYA",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "AMY_A",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:AMYANY",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "AMYANY",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "AMY_ANY",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:BScore",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "BScore",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "B_Score",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:ADNC",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "ADNC",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "ADNC",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:REAG",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "REAG",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "REAG",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:MayoDX",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "MayoDX",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "mayoDX",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:LEWYFull",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "LEWYFull",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "LEWY_full",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:AltLEWYFull",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "AltLEWYFull",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "alt_LEWY_full",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:LEWYGrp",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "LEWYGrp",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "LEWY_grp",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:LEWYANY",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "LEWYANY",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "LEWY_ANY",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:CDLB",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "CDLB",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "CDLB",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:INFA",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "INFA",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "INFA",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:HEMOR",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "HEMOR",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "HEMOR",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:MICR",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "MICR",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "MICR",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:WMRCAL",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "WMRCAL",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "WMRCAL",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:WMR",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "WMR",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "WMR",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:WBVD",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "WBVD",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "WBVD",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:HSL",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "HSL",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "HS_L",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:HSS",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "HSS",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "HS_S",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:AltHSS",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "AltHSS",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "alt_HS_S",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:TDP3",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "TDP3",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "TDP_3",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:TDP5",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "TDP5",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "TDP_5",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:CVDS",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "CVDS",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "CVD_S",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:CVDATH",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "CVDATH",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "CVD_ATH",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:CVDATHANY",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "CVDATHANY",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "CVD_ATH_ANY",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:CVDART",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "CVDART",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "CVD_ART",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:CVDARTANY",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "CVDARTANY",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "CVD_ART_ANY",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:CVDCAA",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "CVDCAA",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "CVD_CAA",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:CVDCAAANY",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "CVDCAAANY",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "CVD_CAA_ANY",
-            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
@@ -29823,6 +31892,162 @@
                     "@id": "bts:PH"
                 }
             ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NeuropathMetadataTemplate",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "SysBio neuropath metadata template schema",
+            "rdfs:label": "NeuropathMetadataTemplate",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestTemplate"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "neuropath_metadata_template",
+            "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
+                {
+                    "@id": "bts:IndividualID"
+                },
+                {
+                    "@id": "bts:ConservationMethod"
+                },
+                {
+                    "@id": "bts:BrainWeight"
+                },
+                {
+                    "@id": "bts:INT"
+                },
+                {
+                    "@id": "bts:PMI"
+                },
+                {
+                    "@id": "bts:PmiUnits"
+                },
+                {
+                    "@id": "bts:AMYTHAL"
+                },
+                {
+                    "@id": "bts:AMYA"
+                },
+                {
+                    "@id": "bts:CERAD"
+                },
+                {
+                    "@id": "bts:AMYANY"
+                },
+                {
+                    "@id": "bts:Braak"
+                },
+                {
+                    "@id": "bts:BSCORE"
+                },
+                {
+                    "@id": "bts:ADNC"
+                },
+                {
+                    "@id": "bts:REAG"
+                },
+                {
+                    "@id": "bts:MayoDx"
+                },
+                {
+                    "@id": "bts:LEWYFull"
+                },
+                {
+                    "@id": "bts:AltLEWYFull"
+                },
+                {
+                    "@id": "bts:LEWYGrp"
+                },
+                {
+                    "@id": "bts:LEWYANY"
+                },
+                {
+                    "@id": "bts:CDLB"
+                },
+                {
+                    "@id": "bts:INFA"
+                },
+                {
+                    "@id": "bts:HEMOR"
+                },
+                {
+                    "@id": "bts:MICR"
+                },
+                {
+                    "@id": "bts:WMRCAL"
+                },
+                {
+                    "@id": "bts:WMR"
+                },
+                {
+                    "@id": "bts:WBVD"
+                },
+                {
+                    "@id": "bts:HSL"
+                },
+                {
+                    "@id": "bts:HSS"
+                },
+                {
+                    "@id": "bts:AltHSS"
+                },
+                {
+                    "@id": "bts:TDP43"
+                },
+                {
+                    "@id": "bts:TDP3"
+                },
+                {
+                    "@id": "bts:TDP5"
+                },
+                {
+                    "@id": "bts:CVDS"
+                },
+                {
+                    "@id": "bts:CVDATH"
+                },
+                {
+                    "@id": "bts:CVDATHANY"
+                },
+                {
+                    "@id": "bts:CVDART"
+                },
+                {
+                    "@id": "bts:CVDARTANY"
+                },
+                {
+                    "@id": "bts:CVDCAA"
+                },
+                {
+                    "@id": "bts:CVDCAAANY"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:LowLikelihood",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Low Likelihood",
+            "rdfs:label": "LowLikelihood",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:REAG"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Low Likelihood",
+            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
