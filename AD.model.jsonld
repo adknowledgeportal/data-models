@@ -8278,22 +8278,16 @@
                     "@id": "bts:ACT"
                 },
                 {
-                    "@id": "bts:ADAMTS7"
-                },
-                {
-                    "@id": "bts:ADAtlasArchive"
+                    "@id": "bts:ADADRDExposome"
                 },
                 {
                     "@id": "bts:AD-BXD"
                 },
                 {
-                    "@id": "bts:ADADRDExposome"
+                    "@id": "bts:ADAMTS7"
                 },
                 {
-                    "@id": "bts:ADMCADNI1"
-                },
-                {
-                    "@id": "bts:ADMCADNI2-GO"
+                    "@id": "bts:ADAtlasArchive"
                 },
                 {
                     "@id": "bts:ADMCADNIBakerLipidomics"
@@ -8305,22 +8299,28 @@
                     "@id": "bts:ADMCADNIUHawaiiGutMetabolites"
                 },
                 {
+                    "@id": "bts:ADMCADNI1"
+                },
+                {
+                    "@id": "bts:ADMCADNI2-GO"
+                },
+                {
                     "@id": "bts:ADMCUPenn"
+                },
+                {
+                    "@id": "bts:Aging-PheWAS"
                 },
                 {
                     "@id": "bts:AMP-ADDiverseCohorts"
                 },
                 {
-                    "@id": "bts:Aging-PheWAS"
+                    "@id": "bts:APOE-TR"
                 },
                 {
                     "@id": "bts:APOE4Myelination"
                 },
                 {
                     "@id": "bts:APOEPSC"
-                },
-                {
-                    "@id": "bts:APOE-TR"
                 },
                 {
                     "@id": "bts:Banner"
@@ -8416,13 +8416,16 @@
                     "@id": "bts:IPSC"
                 },
                 {
-                    "@id": "bts:IPSCAstrocytes"
-                },
-                {
                     "@id": "bts:IPSC-HiC"
                 },
                 {
+                    "@id": "bts:IPSCAstrocytes"
+                },
+                {
                     "@id": "bts:IPSCMicroglia"
+                },
+                {
+                    "@id": "bts:Jax.IU.PittAPOE4.Trem2.R47H"
                 },
                 {
                     "@id": "bts:Jax.IU.PittAPP.PS1"
@@ -8431,22 +8434,22 @@
                     "@id": "bts:Jax.IU.PittLevetiracetam-5XFAD"
                 },
                 {
+                    "@id": "bts:Jax.IU.PittLOAD2.PrimaryScreen"
+                },
+                {
                     "@id": "bts:Jax.IU.PittMicrobiomePilot"
                 },
                 {
                     "@id": "bts:Jax.IU.PittPrimaryScreen"
                 },
                 {
-                    "@id": "bts:Jax.IU.Pitt.ProteomicsMetabolomicsPilot"
-                },
-                {
                     "@id": "bts:Jax.IU.PittStrainValidation"
                 },
                 {
-                    "@id": "bts:Jax.IU.PittAPOE4.Trem2.R47H"
+                    "@id": "bts:Jax.IU.PittVerubecestat5XFAD"
                 },
                 {
-                    "@id": "bts:Jax.IU.PittVerubecestat5XFAD"
+                    "@id": "bts:Jax.IU.Pitt.ProteomicsMetabolomicsPilot"
                 },
                 {
                     "@id": "bts:LBP"
@@ -8479,13 +8482,13 @@
                     "@id": "bts:MayoRNAseq"
                 },
                 {
+                    "@id": "bts:MCSnRNA"
+                },
+                {
                     "@id": "bts:MC-BrAD"
                 },
                 {
                     "@id": "bts:MC-CAA"
-                },
-                {
-                    "@id": "bts:MCSnRNA"
                 },
                 {
                     "@id": "bts:MCMPS"
@@ -8509,10 +8512,10 @@
                     "@id": "bts:MODEL-AD5XFAD"
                 },
                 {
-                    "@id": "bts:MODEL-ADAPOE4KI"
+                    "@id": "bts:MODEL-ADAbca7APOE4Trem2"
                 },
                 {
-                    "@id": "bts:MODEL-ADAbca7APOE4Trem2"
+                    "@id": "bts:MODEL-ADAPOE4KI"
                 },
                 {
                     "@id": "bts:MODEL-ADAPOE4Trem2"
@@ -8572,10 +8575,10 @@
                     "@id": "bts:NAPS"
                 },
                 {
-                    "@id": "bts:NHP-Macaque"
+                    "@id": "bts:NHP-Chimpanzee"
                 },
                 {
-                    "@id": "bts:NHP-Chimpanzee"
+                    "@id": "bts:NHP-Macaque"
                 },
                 {
                     "@id": "bts:NPS-AD"
@@ -8596,6 +8599,15 @@
                     "@id": "bts:RADEL"
                 },
                 {
+                    "@id": "bts:RNAseqHarmonization"
+                },
+                {
+                    "@id": "bts:RnaSeqReprocessing"
+                },
+                {
+                    "@id": "bts:RnaSeqSampleSwap"
+                },
+                {
                     "@id": "bts:ROSMAP"
                 },
                 {
@@ -8608,9 +8620,6 @@
                     "@id": "bts:ROSMAPCognitiveResilience"
                 },
                 {
-                    "@id": "bts:ROSMAP-IN"
-                },
-                {
                     "@id": "bts:ROSMAPLipidomicsEmory"
                 },
                 {
@@ -8620,16 +8629,10 @@
                     "@id": "bts:ROSMAPNucleusHashing"
                 },
                 {
-                    "@id": "bts:RNAseqHarmonization"
-                },
-                {
-                    "@id": "bts:RnaSeqReprocessing"
-                },
-                {
-                    "@id": "bts:RnaSeqSampleSwap"
-                },
-                {
                     "@id": "bts:ROSMAP-IA"
+                },
+                {
+                    "@id": "bts:ROSMAP-IN"
                 },
                 {
                     "@id": "bts:RRAPOE4"
@@ -8671,10 +8674,10 @@
                     "@id": "bts:TASTPM"
                 },
                 {
-                    "@id": "bts:TauD35"
+                    "@id": "bts:TAUAPPms"
                 },
                 {
-                    "@id": "bts:TAUAPPms"
+                    "@id": "bts:TauD35"
                 },
                 {
                     "@id": "bts:TS-RNAseq"
@@ -8698,16 +8701,25 @@
                     "@id": "bts:UCI3xTg-AD"
                 },
                 {
+                    "@id": "bts:UCIABCA7"
+                },
+                {
+                    "@id": "bts:UCIApoe-Ch"
+                },
+                {
                     "@id": "bts:UCIBIN1"
                 },
                 {
-                    "@id": "bts:UCIPrimaryScreen"
+                    "@id": "bts:UCICCLines"
                 },
                 {
                     "@id": "bts:UCIMicrobiome"
                 },
                 {
                     "@id": "bts:UCIMultiomics"
+                },
+                {
+                    "@id": "bts:UCIPrimaryScreen"
                 },
                 {
                     "@id": "bts:UCIStrainValidation"
@@ -8749,10 +8761,10 @@
                     "@id": "bts:WallOfTargets"
                 },
                 {
-                    "@id": "bts:WGSHarmonization"
+                    "@id": "bts:WGBSPilot"
                 },
                 {
-                    "@id": "bts:WGBSPilot"
+                    "@id": "bts:WGSHarmonization"
                 },
                 {
                     "@id": "bts:Yale-ASD"
@@ -25530,6 +25542,40 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:ADADRDExposome",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Exposome-wide association study of AD/ADRD across the UK Biobank and Framingham Heart Study cohorts (AD_ADRD_Exposome)",
+            "rdfs:label": "ADADRDExposome",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "AD_ADRD_Exposome",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AD-BXD",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The AD-BXD study",
+            "rdfs:label": "AD-BXD",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "AD-BXD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:ADAMTS7",
             "@type": "rdfs:Class",
             "rdfs:comment": "The Characterization of gene associations with aging-related traits with a genetically-predicted transcriptome-wide association study (TWAS)",
@@ -25560,74 +25606,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "ADAtlas_Archive",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:AD-BXD",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "The AD-BXD study",
-            "rdfs:label": "AD-BXD",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "AD-BXD",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:ADADRDExposome",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "The Exposome-wide association study of AD/ADRD across the UK Biobank and Framingham Heart Study cohorts (AD_ADRD_Exposome)",
-            "rdfs:label": "ADADRDExposome",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "AD_ADRD_Exposome",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:ADMCADNI1",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Metabolomics and lipidomics of the AD metabolome as well as imaging from ADNI",
-            "rdfs:label": "ADMCADNI1",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "ADMC_ADNI1",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:ADMCADNI2-GO",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Clinical, imaging, genetic, and biochemical biomarker characteristics of the entire spectrum of Alzheimer's disease (AD)",
-            "rdfs:label": "ADMCADNI2-GO",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "ADMC_ADNI2-GO",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -25683,6 +25661,40 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:ADMCADNI1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Metabolomics and lipidomics of the AD metabolome as well as imaging from ADNI",
+            "rdfs:label": "ADMCADNI1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ADMC_ADNI1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ADMCADNI2-GO",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Clinical, imaging, genetic, and biochemical biomarker characteristics of the entire spectrum of Alzheimer's disease (AD)",
+            "rdfs:label": "ADMCADNI2-GO",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ADMC_ADNI2-GO",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:ADMCUPenn",
             "@type": "rdfs:Class",
             "rdfs:comment": "Metabolomics on AD",
@@ -25696,6 +25708,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "ADMC_UPenn",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Aging-PheWAS",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Characterization of gene associations with aging-related traits with a genetically-predicted transcriptome-wide association study (TWAS)",
+            "rdfs:label": "Aging-PheWAS",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Aging-PheWAS",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -25717,10 +25746,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Aging-PheWAS",
+            "@id": "bts:APOE-TR",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Characterization of gene associations with aging-related traits with a genetically-predicted transcriptome-wide association study (TWAS)",
-            "rdfs:label": "Aging-PheWAS",
+            "rdfs:comment": "APOE Targeted Replacement",
+            "rdfs:label": "APOE-TR",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Study"
@@ -25729,7 +25758,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Aging-PheWAS",
+            "sms:displayName": "APOE-TR",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -25764,23 +25793,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "APOEPSC",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:APOE-TR",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "APOE Targeted Replacement",
-            "rdfs:label": "APOE-TR",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "APOE-TR",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -26159,23 +26171,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:IPSCAstrocytes",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "The MSSM iPSCAstrocytes study",
-            "rdfs:label": "IPSCAstrocytes",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "iPSCAstrocytes",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:IPSC-HiC",
             "@type": "rdfs:Class",
             "rdfs:comment": "Human induced pluripotent stem cells (hiPSCs).",
@@ -26193,6 +26188,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:IPSCAstrocytes",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The MSSM iPSCAstrocytes study",
+            "rdfs:label": "IPSCAstrocytes",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "iPSCAstrocytes",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:IPSCMicroglia",
             "@type": "rdfs:Class",
             "rdfs:comment": "iPSC derived microglia",
@@ -26206,6 +26218,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "iPSCMicroglia",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Jax.IU.PittAPOE4.Trem2.R47H",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Jax.IU.Pitt_APOE4.Trem2.R47H Study",
+            "rdfs:label": "Jax.IU.PittAPOE4.Trem2.R47H",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Jax.IU.Pitt_APOE4.Trem2.R47H",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -26244,6 +26273,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Jax.IU.PittLOAD2.PrimaryScreen",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Jax.IU.Pitt LOAD2 PrimaryScreen Study",
+            "rdfs:label": "Jax.IU.PittLOAD2.PrimaryScreen",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Jax.IU.Pitt_LOAD2.PrimaryScreen",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Jax.IU.PittMicrobiomePilot",
             "@type": "rdfs:Class",
             "rdfs:comment": "Jax.IU.Pitt_MicrobiomePilot",
@@ -26278,23 +26324,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Jax.IU.Pitt.ProteomicsMetabolomicsPilot",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Jax.IU.Pitt.Proteomics_Metabolomics_Pilot",
-            "rdfs:label": "Jax.IU.Pitt.ProteomicsMetabolomicsPilot",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Jax.IU.Pitt.Proteomics_Metabolomics_Pilot",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:Jax.IU.PittStrainValidation",
             "@type": "rdfs:Class",
             "rdfs:comment": "Strain validation data from the Jax.IU.Pitt MODEL-AD grant",
@@ -26312,23 +26341,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Jax.IU.PittAPOE4.Trem2.R47H",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "The Jax.IU.Pitt_APOE4.Trem2.R47H Study",
-            "rdfs:label": "Jax.IU.PittAPOE4.Trem2.R47H",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Jax.IU.Pitt_APOE4.Trem2.R47H",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:Jax.IU.PittVerubecestat5XFAD",
             "@type": "rdfs:Class",
             "rdfs:comment": "Data from 5XFAD mice treated with verubecestat from the Jax.IU.Pitt MODEL-AD grant",
@@ -26342,6 +26354,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Jax.IU.Pitt_Verubecestat_5XFAD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Jax.IU.Pitt.ProteomicsMetabolomicsPilot",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Jax.IU.Pitt.Proteomics_Metabolomics_Pilot",
+            "rdfs:label": "Jax.IU.Pitt.ProteomicsMetabolomicsPilot",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Jax.IU.Pitt.Proteomics_Metabolomics_Pilot",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -26499,6 +26528,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:MCSnRNA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Mayo Clinic Single Nucleus RNAseq Study (MC_snRNA)",
+            "rdfs:label": "MCSnRNA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "MC_snRNA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:MC-BrAD",
             "@type": "rdfs:Class",
             "rdfs:comment": "Mayo Clinic Brain Molecular Signatures of Resilience to Alzheimer's Disease",
@@ -26529,23 +26575,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "MC-CAA",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:MCSnRNA",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "The Mayo Clinic Single Nucleus RNAseq Study (MC_snRNA)",
-            "rdfs:label": "MCSnRNA",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "MC_snRNA",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -26669,23 +26698,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:MODEL-ADAPOE4KI",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "MODEL-AD APOE4 KI Study",
-            "rdfs:label": "MODEL-ADAPOE4KI",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "MODEL-AD_APOE4_KI",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:MODEL-ADAbca7APOE4Trem2",
             "@type": "rdfs:Class",
             "rdfs:comment": "MODEL-AD Abca7*A1527G/APOE4/Trem2*R47H Study",
@@ -26699,6 +26711,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "MODEL-AD_Abca7_APOE4_Trem2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MODEL-ADAPOE4KI",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "MODEL-AD APOE4 KI Study",
+            "rdfs:label": "MODEL-ADAPOE4KI",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "MODEL-AD_APOE4_KI",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -27009,23 +27038,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:NHP-Macaque",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "A transcription atlas of the rhesus monkey brain",
-            "rdfs:label": "NHP-Macaque",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "NHP-Macaque",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:NHP-Chimpanzee",
             "@type": "rdfs:Class",
             "rdfs:comment": "Chimpanzee data",
@@ -27039,6 +27051,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "NHP-Chimpanzee",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NHP-Macaque",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "A transcription atlas of the rhesus monkey brain",
+            "rdfs:label": "NHP-Macaque",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "NHP-Macaque",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -27145,6 +27174,57 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:RNAseqHarmonization",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The RNAseq Harmonization Study",
+            "rdfs:label": "RNAseqHarmonization",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "RNAseq_Harmonization",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:RnaSeqReprocessing",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Re-aligned reads from the ROSMAP, MSBB, and MayoRNAseq studies",
+            "rdfs:label": "RnaSeqReprocessing",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "rnaSeqReprocessing",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:RnaSeqSampleSwap",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "RNAseq samples sequenced at multiple sites",
+            "rdfs:label": "RnaSeqSampleSwap",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "rnaSeqSampleSwap",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:ROSMAPBsSeq",
             "@type": "rdfs:Class",
             "rdfs:comment": "Targeted BS-seq on 150 randomly selected ROSMAP samples (ROSMAP_bsSeq)",
@@ -27192,23 +27272,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "ROSMAP_CognitiveResilience",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:ROSMAP-IN",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "The ROSMAP-iPSC derived induced neurons (ROSMAP-IN) genomic data study",
-            "rdfs:label": "ROSMAP-IN",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "ROSMAP-IN",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -27264,57 +27327,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:RNAseqHarmonization",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "The RNAseq Harmonization Study",
-            "rdfs:label": "RNAseqHarmonization",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "RNAseq_Harmonization",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:RnaSeqReprocessing",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Re-aligned reads from the ROSMAP, MSBB, and MayoRNAseq studies",
-            "rdfs:label": "RnaSeqReprocessing",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "rnaSeqReprocessing",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:RnaSeqSampleSwap",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "RNAseq samples sequenced at multiple sites",
-            "rdfs:label": "RnaSeqSampleSwap",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "rnaSeqSampleSwap",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:ROSMAP-IA",
             "@type": "rdfs:Class",
             "rdfs:comment": "The ROSMAP iPSC-derived Astrocyte Study (ROSMAP-IA)",
@@ -27328,6 +27340,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "ROSMAP-IA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ROSMAP-IN",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The ROSMAP-iPSC derived induced neurons (ROSMAP-IN) genomic data study",
+            "rdfs:label": "ROSMAP-IN",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ROSMAP-IN",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -27553,23 +27582,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:TauD35",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Mouse tauopathy model",
-            "rdfs:label": "TauD35",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "TauD35",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:TAUAPPms",
             "@type": "rdfs:Class",
             "rdfs:comment": "Tau and APP mouse model",
@@ -27583,6 +27595,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "TAUAPPms",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:TauD35",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Mouse tauopathy model",
+            "rdfs:label": "TauD35",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "TauD35",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -27706,6 +27735,40 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:UCIABCA7",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The UCI_ABCA7 Study",
+            "rdfs:label": "UCIABCA7",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "UCI_ABCA7",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:UCIApoe-Ch",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The UCI APOE Christchurch Study",
+            "rdfs:label": "UCIApoe-Ch",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "UCI_Apoe-Ch",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:UCIBIN1",
             "@type": "rdfs:Class",
             "rdfs:comment": "The UCI_BIN1 Study",
@@ -27723,10 +27786,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:UCIPrimaryScreen",
+            "@id": "bts:UCICCLines",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Primary screen data from the UCI MODEL-AD grant (UCI_PrimaryScreen)",
-            "rdfs:label": "UCIPrimaryScreen",
+            "rdfs:comment": "The UCI Collaborative Cross Lines Study",
+            "rdfs:label": "UCICCLines",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Study"
@@ -27735,7 +27798,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "UCI_PrimaryScreen",
+            "sms:displayName": "UCI_CCLines",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -27770,6 +27833,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "UCI_Multiomics",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:UCIPrimaryScreen",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Primary screen data from the UCI MODEL-AD grant (UCI_PrimaryScreen)",
+            "rdfs:label": "UCIPrimaryScreen",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "UCI_PrimaryScreen",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -27978,23 +28058,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:WGSHarmonization",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "The Whole Genome Sequence Harmonization Study (WGS_Harmonization)",
-            "rdfs:label": "WGSHarmonization",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "WGS_Harmonization",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:WGBSPilot",
             "@type": "rdfs:Class",
             "rdfs:comment": "Whole Genome Bisulfite Sequencing pilot",
@@ -28008,6 +28071,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "WGBS Pilot",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:WGSHarmonization",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Whole Genome Sequence Harmonization Study (WGS_Harmonization)",
+            "rdfs:label": "WGSHarmonization",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "WGS_Harmonization",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },

@@ -1364,7 +1364,7 @@ Sus scrofa,Sus scrofa with taxonomy ID: 9823 and Genbank common name: pig,,,,,sp
 ABC-DS,The Alzheimer's Biomarkers Consortium - Down Syndrome (ABC-DS) Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn38190930,,string,ADKP
 Abeta_microglia,The differential transcriptomic responses of microglia to Ab peptide aggregates (Abeta_microglia) study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn24828089,,string,ADKP
 ACOM,The apoE effects in iPSC-derived Alzheimer's disease cerebral organoid model study,,,,,study,,https://www.synapse.org/#!Synapse:syn21680862,,string,ADKP
-ACT,Adult Changes in Thought ,,,,,study,,hhttps://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn5759376,,string,ADKP
+ACT,Adult Changes in Thought,,,,,study,,hhttps://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn5759376,,string,ADKP
 AD-BXD,The AD-BXD study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn17016211,,string,ADKP
 AD_ADRD_Exposome,The Exposome-wide association study of AD/ADRD across the UK Biobank and Framingham Heart Study cohorts (AD_ADRD_Exposome),,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn26438246,,string,ADKP
 ADAMTS7,The Characterization of gene associations with aging-related traits with a genetically-predicted transcriptome-wide association study (TWAS),,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn26969078,,string,ADKP
@@ -1380,10 +1380,10 @@ AMP-AD_DiverseCohorts,The Accelerating Medicines Partnership Alzheimer's Disease
 APOE-TR,APOE Targeted Replacement,,,,,study,,https://www.synapse.org/#!Synapse:syn8391648,,string,ADKP
 APOE4_Myelination,The APOE4 Myelination (APOE4_Myelination) Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn44424170,,string,ADKP
 APOEPSC,The impact of APOE on aging-related conditions in human iPSC models (APOEPSC) study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn25914209,,string,ADKP
-ATP6V1A_kd, The ATP6V1A knockdown in hIPSC neurons (ATP6V1A_kd) study,,,,,study,,https://www.synapse.org/#!Synapse:syn52201354,,string,ADKP
+ATP6V1A_kd,The ATP6V1A knockdown in hIPSC neurons (ATP6V1A_kd) study,,,,,study,,https://www.synapse.org/#!Synapse:syn52201354,,string,ADKP
 Banner,Banner Sun Health Research Institute's Brain and Body Donation Program,,,,,study,,https://www.synapse.org/#!Synapse:syn7170616,,string,ADKP
 BCM-DMAS,Baylor Drosophila Model Aging Study (BCM-DMAS),,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn34767207,,string,ADKP
-BEAM, Brain Energy for Amyloid transformation In Alzheimer's disease (BEAM) study,,,,,study,,https://www.synapse.org/#!Synapse:syn51104591,,string,ADKP
+BEAM,Brain Energy for Amyloid transformation In Alzheimer's disease (BEAM) study,,,,,study,,https://www.synapse.org/#!Synapse:syn51104591,,string,ADKP
 BipSeq,RNA Sequencing of the limbic system in bipolar disorder,,,,,study,,https://www.synapse.org/#!Synapse:syn5844980,,string,ADKP
 BLSA,Baltimore Longitudinal Study on Aging,,,,,study,,https://www.synapse.org/#!Synapse:syn3606086,,string,ADKP
 BPSD_AD_AnimalStudy_NU,Molecular mechanisms underlying behavioral and psychological symptoms in Alzheimer's disease (BPSD_AD_AnimalStudy_NU),,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn26234114,,string,ADKP
@@ -1401,7 +1401,7 @@ diseasePseudotime,The diseasePseudotime study,,,,,study,,https://www.synapse.org
 DukeAD_PTSD,"The Duke Study of Shared Genetic, Epigenetic, and Transcriptomic Profiles Between AD and PTSD study",,,,,study,,https://www.synapse.org/#!Synapse:syn23585917,,string,ADKP
 ELPSCRNA,Single cell transcriptomic analysis of PBMCs in Extreme Longevity,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn26067509,,string,ADKP
 Emory_ADRC,Emory Alzheimer's Disease Research Center,,,,,study,,https://www.synapse.org/#!Synapse:syn3218563,,string,ADKP
-EmoryDrosophilaTau,Emory Drosophila Tau model ,,,,,study,,https://www.synapse.org/#!Synapse:syn7274101,,string,ADKP
+EmoryDrosophilaTau,Emory Drosophila Tau model,,,,,study,,https://www.synapse.org/#!Synapse:syn7274101,,string,ADKP
 EpiGABA,GABA Epigenomes in Autism,,,,,study,,https://www.synapse.org/#!Synapse:syn4588488,,string,ADKP
 EpiMap,Epigenetic Map in neuropsychiatric control tissue,,,,,study,,https://www.synapse.org/#!Synapse:syn4566010,,string,ADKP
 eQTLmetaAnalysis,The eQTL Meta-Analysis Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn25398075,,string,ADKP
@@ -1412,7 +1412,7 @@ HDAC1-cKOBrain,HDAC1 expression in the brain,,,,,study,,https://www.synapse.org/
 HumanFC,Decoding schizophrenia-From GWAS to functional regulatory variants,,,,,study,,https://www.synapse.org/#!Synapse:syn5321694,,string,ADKP
 IL10_APPmouse,IL10 overexpression in APP mouse,,,,,study,,https://www.synapse.org/#!Synapse:syn3157175,,string,ADKP
 IntegrativePathwayAnalysis,The Integrative Metabolomics-Genomics Pathway Analysis Study (IntegrativePathwayAnalysis),,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn25474536,,string,ADKP
-iPSC,Gene regulatory elements and transcriptome in iPSCs and postmortem human cortex ,,,,,study,,https://www.synapse.org/#!Synapse:syn4590910,,string,ADKP
+iPSC,Gene regulatory elements and transcriptome in iPSCs and postmortem human cortex,,,,,study,,https://www.synapse.org/#!Synapse:syn4590910,,string,ADKP
 iPSC-HiC,Human induced pluripotent stem cells (hiPSCs).,,,,,study,,https://www.synapse.org/#!Synapse:syn12979149,,string,ADKP
 iPSCAstrocytes,The MSSM iPSCAstrocytes study,,,,,study,,https://www.synapse.org/#!Synapse:syn10344967,,string,ADKP
 iPSCMicroglia,iPSC derived microglia,,,,,study,,https://www.synapse.org/#!Synapse:syn7203233,,string,ADKP
@@ -1420,6 +1420,7 @@ Jax.IU.Pitt.Proteomics_Metabolomics_Pilot,Jax.IU.Pitt.Proteomics_Metabolomics_Pi
 Jax.IU.Pitt_APOE4.Trem2.R47H,The Jax.IU.Pitt_APOE4.Trem2.R47H Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn17095980,,string,ADKP
 Jax.IU.Pitt_APP.PS1,Jax.IU.Pitt_APP.PS1 study -- previously referred to as MODEL-AD_APPPS1 and JAX_APPPS1,,,,,study,,https://www.synapse.org/#!Synapse:syn9850001,,string,ADKP
 Jax.IU.Pitt_Levetiracetam-5XFAD,The Jax.IU.Pitt_Levetiracetam-5XFAD Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage/StudyDetails?Study=syn21784897,,string,ADKP
+Jax.IU.Pitt_LOAD2.PrimaryScreen,The Jax.IU.Pitt LOAD2 PrimaryScreen Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage/StudyDetails?Study=syn58863147,,string,ADKP
 Jax.IU.Pitt_MicrobiomePilot,Jax.IU.Pitt_MicrobiomePilot,,,,,study,,https://www.synapse.org/#!Synapse:syn22341543,,string,ADKP
 Jax.IU.Pitt_PrimaryScreen,Primary screen data from the Jax.IU.Pitt MODEL-AD grant,,,,,study,,https://www.synapse.org/#!Synapse:syn21595258,,string,ADKP
 Jax.IU.Pitt_StrainValidation,Strain validation data from the Jax.IU.Pitt MODEL-AD grant,,,,,study,,https://www.synapse.org/#!Synapse:syn21595255,,string,ADKP
@@ -1506,7 +1507,10 @@ TyrobpKO_AppPs1,TyrobpKO mice crossed with APP/PS1 tg,,,,,study,,https://www.syn
 U1-70_PrimaryCellCulture,APP.PS1 and U1-70 transduced neurons,,,,,study,,https://www.synapse.org/#!Synapse:syn5820226,,string,ADKP
 UAB_ADRC,The University of Alabama Birmingham Alzheimer Disease Research Center (UAB_ADRC) Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage/StudyDetails?Study=syn51226075,,string,ADKP
 UCI_3xTg-AD,The UCI_3xTg-AD study,,,,,study,,https://www.synapse.org/#!Synapse:syn22964685,,string,ADKP
+UCI_ABCA7,The UCI_ABCA7 Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage/StudyDetails?Study=syn27207345,,string,ADKP
+UCI_Apoe-Ch,The UCI APOE Christchurch Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage/StudyDetails?Study=syn61250684,,string,ADKP
 UCI_BIN1,The UCI_BIN1 Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn50944316,,string,ADKP
+UCI_CCLines,The UCI Collaborative Cross Lines Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage/StudyDetails?Study=syn51713891,,string,ADKP
 UCI_Microbiome,UCI_Microbiome,,,,,study,,https://www.synapse.org/#!Synapse:syn22341542,,string,ADKP
 UCI_Multiomics,The UCI ADRC Multiomics Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn26670419,,string,ADKP
 UCI_PrimaryScreen,Primary screen data from the UCI MODEL-AD grant (UCI_PrimaryScreen),,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn25316706,,string,ADKP
