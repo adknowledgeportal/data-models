@@ -7810,7 +7810,7 @@
             "sms:displayName": "Braak",
             "sms:required": "sms:false",
             "sms:validationRules": [
-                "#NeuropathMetadataTemplate required error"
+                "#NeuropathMetadataTemplate required"
             ]
         },
         {
@@ -9440,7 +9440,7 @@
             "sms:displayName": "CERAD",
             "sms:required": "sms:false",
             "sms:validationRules": [
-                "#NeuropathMetadataTemplate required error"
+                "#NeuropathMetadataTemplate required"
             ]
         },
         {
@@ -18235,9 +18235,10 @@
             },
             "sms:displayName": "brainWeight",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "#NeuropathMetadataTemplate required error"
-            ]
+            "sms:validationRules": {
+                "NeuropathMetadataTemplate": "required",
+                "all_other_components": "IndividualAnimalMODEL-ADMetadataTemplate required"
+            }
         },
         {
             "@id": "bts:BrainWeightBirth",
@@ -23893,7 +23894,7 @@
             "sms:displayName": "PMI",
             "sms:required": "sms:false",
             "sms:validationRules": [
-                "#NeuropathMetadataTemplate required error"
+                "#NeuropathMetadataTemplate required"
             ]
         },
         {
@@ -23920,7 +23921,7 @@
             "sms:displayName": "pmiUnits",
             "sms:required": "sms:false",
             "sms:validationRules": [
-                "#NeuropathMetadataTemplate required error"
+                "#NeuropathMetadataTemplate required"
             ]
         },
         {
