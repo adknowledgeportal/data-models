@@ -1,0 +1,7 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+TDP_3,TDP-3 Component,"No TDP_3, Amygdala, Hippocampus or Etorhinal, Neocortex, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.TDP_3-0.0.2,string,,clinical
+No TDP_3,No TDP_3,,,,,TDP_3,,ADSP,,string,clinical
+Amygdala,Amygdala,,,,,TDP_3,,ADSP,,string,clinical
+Hippocampus or Etorhinal,Hippocampus or Etorhinal,,,,,TDP_3,,ADSP,,string,clinical
+Neocortex,Neocortex,,,,,TDP_3,,ADSP,,string,clinical
+missing or unknown,TDP_3 is missing or unknown,,,,,TDP_3,,DiverseCohorts,,string,clinical

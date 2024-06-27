@@ -1,0 +1,6 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+CDLB,Likelihood of Lewy Body clinical syndrome reported based on Third report of the DLB Consortium,"Low or No clinical significance, Intermediate, High, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.CDLB-0.0.2,string,,clinical
+Low or No clinical significance,Low or No clinical significance,,,,,CDLB,,DiverseCohorts,,string,clinical
+Intermediate,Intermediate,,,,,CDLB,,DiverseCohorts,,string,clinical
+High,High,,,,,CDLB,,DiverseCohorts,,string,clinical
+missing or unknown,CDLB is missing or unknown,,,,,CDLB,,DiverseCohorts,,string,clinical

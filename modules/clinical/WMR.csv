@@ -1,0 +1,7 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+WMR, white matter rarefaction,"Absent, Mild, Moderate, Severe, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.WMR-0.0.2,string,,clinical
+Absent,Absent,,,,,WMR,,ADSP,,string,clinical
+Mild,Mild,,,,,WMR,,ADSP,,string,clinical
+Moderate,Moderate,,,,,WMR,,ADSP,,string,clinical
+Severe,Severe,,,,,WMR,,ADSP,,string,clinical
+missing or unknown,WMR is missing or unknown,,,,,WMR,,DiverseCohorts,,string,clinical

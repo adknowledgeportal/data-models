@@ -1,0 +1,5 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+WBVD,Whole brain vascular disease,"No, Yes, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.WBVD-0.0.2,string,,clinical
+No,No whole brain vascular disease,,,,,WBVD,,ADSP,,string,clinical
+Yes,Yes whole brain vascular disease,,,,,WBVD,,ADSP,,string,clinical
+missing or unknown,WBVD is missing or unknown,,,,,WBVD,,DiverseCohorts,,string,clinical
