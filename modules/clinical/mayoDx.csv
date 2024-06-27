@@ -1,0 +1,6 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+mayoDx,Neuropathology-based diagnosis assigned by Mayo neurologist,"AD, Control, Other, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.mayoDxY-0.0.2,string,,clinical
+AD,AD,,,,,mayoDx,,MayoClinic,,string,clinical
+Control,Control,,,,,mayoDx,,MayoClinic,,string,clinical
+Other,Other,,,,,mayoDx,,MayoClinic,,string,clinical
+missing or unknown,mayoDx is mssing or unknown,,,,,mayoDx,,MayoClinic,,string,clinical
