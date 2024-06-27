@@ -18223,7 +18223,7 @@
         {
             "@id": "bts:BrainWeight",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Weight of brain in grams. Use missing or unknown if not available",
+            "rdfs:comment": "Weight of brain in grams (g). Use missing or unknown if not available",
             "rdfs:label": "BrainWeight",
             "rdfs:subClassOf": [
                 {
