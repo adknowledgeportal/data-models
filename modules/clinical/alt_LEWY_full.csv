@@ -1,0 +1,9 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+alt_LEWY_full,PD Braak staging alternate version,"No alt_LEWY_full, Olfactory bulb only, Amygdala only, Brainstem predominant, Limbic transitional, Neocortical diffuse, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.alt_LEWY_full-0.0.2,string,,clinical
+No alt_LEWY_full,No alt_LEWY_full,,,,,alt_LEWY_full,,DiverseCohorts,,string,clinical
+Olfactory bulb only,Olfactory bulb only,,,,,alt_LEWY_full,,DiverseCohorts,,string,clinical
+Amygdala only,Amygdala only,,,,,alt_LEWY_full,,DiverseCohorts,,string,clinical
+Brainstem predominant,Brainstem predominant,,,,,alt_LEWY_full,,DiverseCohorts,,string,clinical
+Limbic transitional,Limbic transitional,,,,,alt_LEWY_full,,DiverseCohorts,,string,clinical
+Neocortical diffuse,Neocortical diffuse,,,,,alt_LEWY_full,,DiverseCohorts,,string,clinical
+missing or unknown,alt_LEWY_full is missing or unknown,,,,,alt_LEWY_full,,DiverseCohorts,,string,clinical

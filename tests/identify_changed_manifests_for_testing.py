@@ -43,11 +43,17 @@ def get_templates_with_changed_attributes(
 def compare_template_module(
     current_templates_url: str, new_templates_path: str
 ) -> list:
-    """Look at the current templates verses the existing template to find changed templates"""
+    """Look at the new templates verses the existing templates to find changed templates"""
     current_templates = pd.read_csv(current_templates_url, index_col=0)
     new_templates = pd.read_csv(new_templates_path, index_col=0)
-    comp = new_templates.compare(current_templates, align_axis=0)
-    changed_template_names = comp.index.get_level_values(0).to_list()
+
+    index_diff = new_templates.index.difference(current_templates.index)
+
+    if index_diff.empty:
+        changed_template_names = []
+
+    else:
+        changed_template_names = index_diff.to_list()
 
     return changed_template_names
 
