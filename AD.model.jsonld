@@ -7809,9 +7809,9 @@
             ],
             "sms:displayName": "Braak",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "#NeuropathMetadataTemplate required"
-            ]
+            "sms:validationRules": {
+                "NeuropathMetadataTemplate": "required"
+            }
         },
         {
             "@id": "bts:BRAAKStage2",
@@ -9439,9 +9439,9 @@
             ],
             "sms:displayName": "CERAD",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "#NeuropathMetadataTemplate required"
-            ]
+            "sms:validationRules": {
+                "NeuropathMetadataTemplate": "required"
+            }
         },
         {
             "@id": "bts:ModerateProbableC2",
@@ -23893,9 +23893,9 @@
             },
             "sms:displayName": "PMI",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "#NeuropathMetadataTemplate required"
-            ]
+            "sms:validationRules": {
+                "NeuropathMetadataTemplate": "required"
+            }
         },
         {
             "@id": "bts:PmiUnits",
@@ -23920,9 +23920,9 @@
             ],
             "sms:displayName": "pmiUnits",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "#NeuropathMetadataTemplate required"
-            ]
+            "sms:validationRules": {
+                "NeuropathMetadataTemplate": "required"
+            }
         },
         {
             "@id": "bts:Hours",
