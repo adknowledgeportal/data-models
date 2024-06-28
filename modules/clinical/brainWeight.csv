@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-brainWeight,Weight of brain in grams,,,,False,ManifestColumn,,sage.annotations-experimentalData.brainWeight-0.0.2,,number,clinical
+brainWeight,Weight of brain in grams. Use missing or unknown if not available,,,,False,ManifestColumn,,sage.annotations-experimentalData.brainWeight-0.0.2,"#NeuropathMetadataTemplate required^^#IndividualAnimalMODEL-ADMetadataTemplate required^^",number,clinical
