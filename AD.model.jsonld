@@ -18236,8 +18236,8 @@
             "sms:displayName": "brainWeight",
             "sms:required": "sms:false",
             "sms:validationRules": {
-                "NeuropathMetadataTemplate": "required",
-                "all_other_components": "IndividualAnimalMODEL-ADMetadataTemplate required"
+                "IndividualAnimalMODEL-ADMetadataTemplate": "required",
+                "NeuropathMetadataTemplate": "required"
             }
         },
         {
