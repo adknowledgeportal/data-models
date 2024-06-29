@@ -136,8 +136,8 @@
         "type": "file"
       },
       {
-        "display_name": "assay_neuropath_metadata_template",
-        "schema_name": "AssayNeuropathMetadataTemplate",
+        "display_name": "neuropath_metadata_template",
+        "schema_name": "NeuropathMetadataTemplate",
         "type": "record"
       }
     ],

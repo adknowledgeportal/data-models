@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-pmiUnits,Time units used to record the post-mortem interval,"hours, minutes",,,False,ManifestColumn,,sage.annotations-neuro.PMI-0.0.3,,string,clinical
+pmiUnits,Time units used to record the post-mortem interval,"hours, minutes",,,False,ManifestColumn,,sage.annotations-neuro.PMI-0.0.3,"#NeuropathMetadataTemplate required^^",string,clinical
