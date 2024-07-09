@@ -8410,6 +8410,9 @@
                     "@id": "bts:IL10APPmouse"
                 },
                 {
+                    "@id": "bts:INiAstshRNA"
+                },
+                {
                     "@id": "bts:IntegrativePathwayAnalysis"
                 },
                 {
@@ -8678,6 +8681,9 @@
                 },
                 {
                     "@id": "bts:TauD35"
+                },
+                {
+                    "@id": "bts:Trisomy21iN"
                 },
                 {
                     "@id": "bts:TS-RNAseq"
@@ -26155,6 +26161,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:INiAstshRNA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Targeting of LOAD candidate genes via shRNA in human neurons and astrocytes",
+            "rdfs:label": "INiAstshRNA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "iNiAstshRNA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:IntegrativePathwayAnalysis",
             "@type": "rdfs:Class",
             "rdfs:comment": "The Integrative Metabolomics-Genomics Pathway Analysis Study (IntegrativePathwayAnalysis)",
@@ -27613,6 +27636,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "TauD35",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Trisomy21iN",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Contributions of APP and DYRK1A to dysregulated neurobiology in human trisomy 21 iPSC-derived neurons",
+            "rdfs:label": "Trisomy21iN",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Trisomy21iN",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
