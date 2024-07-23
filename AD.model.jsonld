@@ -10159,7 +10159,7 @@
         {
             "@id": "bts:Cohort",
             "@type": "rdfs:Class",
-            "rdfs:comment": "A study group population where the members are human beings who meet inclusion criteria.",
+            "rdfs:comment": "A study group population or group of indiviuals identified by a common characteristic.",
             "rdfs:label": "Cohort",
             "rdfs:subClassOf": [
                 {
@@ -10186,9 +10186,6 @@
                     "@id": "bts:BEB-Miller"
                 },
                 {
-                    "@id": "bts:BiggsInstituteBrainBank"
-                },
-                {
                     "@id": "bts:BLSA"
                 },
                 {
@@ -10198,13 +10195,7 @@
                     "@id": "bts:CLINCOR"
                 },
                 {
-                    "@id": "bts:ColumbiaADRC"
-                },
-                {
                     "@id": "bts:DiCAD"
-                },
-                {
-                    "@id": "bts:EFIGA"
                 },
                 {
                     "@id": "bts:EHBS"
@@ -10213,13 +10204,7 @@
                     "@id": "bts:EmoryADRC"
                 },
                 {
-                    "@id": "bts:FBS"
-                },
-                {
                     "@id": "bts:Framingham"
-                },
-                {
-                    "@id": "bts:HBCC"
                 },
                 {
                     "@id": "bts:HBTRC"
@@ -10237,7 +10222,7 @@
                     "@id": "bts:MARS"
                 },
                 {
-                    "@id": "bts:MayoClinic"
+                    "@id": "bts:MAYO"
                 },
                 {
                     "@id": "bts:MC"
@@ -10267,9 +10252,6 @@
                     "@id": "bts:SMRI"
                 },
                 {
-                    "@id": "bts:UFL"
-                },
-                {
                     "@id": "bts:UKBiobank"
                 },
                 {
@@ -10280,9 +10262,6 @@
                 },
                 {
                     "@id": "bts:UWADRC"
-                },
-                {
-                    "@id": "bts:WHICAP"
                 }
             ],
             "sms:displayName": "cohort",
@@ -10512,10 +10491,10 @@
             "rdfs:label": "HBTRC",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:IndividualIdSource"
+                    "@id": "bts:Cohort"
                 },
                 {
-                    "@id": "bts:Cohort"
+                    "@id": "bts:IndividualIdSource"
                 },
                 {
                     "@id": "bts:Study"
@@ -10624,9 +10603,6 @@
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:IndividualIdSource"
-                },
-                {
-                    "@id": "bts:Cohort"
                 }
             ],
             "schema:isPartOf": {
@@ -10714,10 +10690,10 @@
             "rdfs:label": "NYBB",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:IndividualIdSource"
+                    "@id": "bts:Cohort"
                 },
                 {
-                    "@id": "bts:Cohort"
+                    "@id": "bts:IndividualIdSource"
                 }
             ],
             "schema:isPartOf": {
