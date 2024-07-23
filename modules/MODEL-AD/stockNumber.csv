@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-stockNumber,Official JAX Mouse stock number,,,,False,ManifestColumn,,sage.annotations-neuro.stockNumber-0.0.1,,string,MODEL-AD
+stockNumber,"Source identifier for model (JAX stock or MMRRC strain or RRID). Example: JAX stock #: 004807",,,,False,ManifestColumn,,sage.annotations-neuro.stockNumber-0.0.1,,string,MODEL-AD
