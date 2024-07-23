@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+geneticMutations,"These are strain-level genetic mutations. This should follow the format gene-allele. Example: Trem2-R47H",,,,False,ManifestColumn,,sage.annotations-neuro.geneticMutations-0.0.1,,string,MODEL-AD 
