@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-strainOfficialNamefficialName,This serves as a unique identifier for specific genetic lines or populations of model organisms used in the research. For example the official name for the common  B6J Strain#:000664  mouse is C57BL/6J,,,,False,ManifestColumn,,sage.annotations-neuro.officialName-0.0.1,,string,MODEL-AD
+strainOfficialName,"This serves as a unique identifier for specific genetic lines or populations of model organisms used in the research. For example the official name for the common  B6J Strain#:000664  mouse is C57BL/6J",,,,False,ManifestColumn,,sage.annotations-neuro.officialName-0.0.1,,string,MODEL-AD

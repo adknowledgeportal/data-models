@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-modelType,A mouse model type that is designed to exhibit characteristics resembling neuropathology and behavioral deficits associated with human Alzheimers disease (AD).,"Familial AD (FAD), Early-onset AD (EOAD), Late-onset AD (LOAD), Mixed-onset AD",,False,ManifestColumn,,sage.annotations-neuro.modelType-0.0.1,,string,MODEL-AD  
+modelType,"A mouse model type that is designed to exhibit characteristics resembling neuropathology and behavioral deficits associated with human Alzheimers disease (AD).","Familial AD (FAD), Early-onset AD (EOAD), Late-onset AD (LOAD), Mixed-onset AD",,False,ManifestColumn,,sage.annotations-neuro.modelType-0.0.1,,string,MODEL-AD  
 Familial AD (FAD),Inherited genetic mutations causing early-onset Alzheimer's disease.,,,,,modelType,,Sage Bionetworks,,string,MODEL-AD
 Early-onset AD (EOAD),Alzheimer's symptoms appearing before age 65 can be genetic or non-genetic.,,,,,modelType,,Sage Bionetworks,,string,MODEL-AD
 Late-onset AD (LOAD),The most common form of Alzheimer's symptoms after age 65 primarily non-genetic.,,,,,modelType,,Sage Bionetworks,,string,MODEL-AD
