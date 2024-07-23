@@ -422,74 +422,74 @@ Sparse Possible C1,Sparse Possible C1,,,,,CERAD,,ADSP,,string,clinical
 mitochondrial,A chromosome found in the mitochondrion of a eukaryotic cell.,,,,,chromosome,,http://purl.obolibrary.org/obo/GO_0000262,,string,sequencing
 X,Chromosome X,,,,,chromosome,,Sage Bionetworks,,string,sequencing
 Y,Chromosome Y,,,,,chromosome,,Sage Bionetworks,,string,sequencing
-ABC-DS,Alzheimer's Biomarkers Consortium - Down Syndrome,,,,,cohort,,https://www.abcds.pitt.edu/,,string,individual
 ABC-DS,Alzheimer's Biomarkers Consortium - Down Syndrome,,,,False,cohort,,https://www.abcds.pitt.edu/,,string,clinical
-ACT,Adult Changes in Thought - Kaiser Permanente Washington Health Research Institute,,,,,cohort,,https://actagingresearch.org/about,,string,individual
+ABC-DS,Alzheimer's Biomarkers Consortium - Down Syndrome,,,,,cohort,,https://www.abcds.pitt.edu/,,string,individual
 ACT,Adult Changes in Thought - Kaiser Permanente Washington Health Research Institute,,,,False,cohort,,https://actagingresearch.org/about,,string,clinical
-ADNI,Alzheimer's Disease Neuroimaging Initative,,,,,cohort,,https://adni.loni.usc.edu/,,string,individual
+ACT,Adult Changes in Thought - Kaiser Permanente Washington Health Research Institute,,,,,cohort,,https://actagingresearch.org/about,,string,individual
 ADNI,Alzheimer's Disease Neuroimaging Initative,,,,False,cohort,,https://adni.loni.usc.edu/,,string,clinical
-Banner,Banner Sun Health Research Institute's Brain and Body Donation Program.,,,,,cohort,,https://www.bannerhealth.com/research/locations/sun-health-institute/programs/body-donation,,string,individual
+ADNI,Alzheimer's Disease Neuroimaging Initative,,,,,cohort,,https://adni.loni.usc.edu/,,string,individual
 Banner,Banner Sun Health Research Institute's Brain and Body Donation Program.,,,,False,cohort,,https://www.bannerhealth.com/research/locations/sun-health-institute/programs/body-donation,,string,clinical
-BEB-Miller,University of Miami Miller School of Medicine Brain Endowment Bank,,,,,cohort,,https://med.miami.edu/programs/brain-endowment-bank,,string,individual
+Banner,Banner Sun Health Research Institute's Brain and Body Donation Program.,,,,,cohort,,https://www.bannerhealth.com/research/locations/sun-health-institute/programs/body-donation,,string,individual
 BEB-Miller,University of Miami Miller School of Medicine Brain Endowment Bank,,,,False,cohort,,https://med.miami.edu/programs/brain-endowment-bank,,string,clinical
+BEB-Miller,University of Miami Miller School of Medicine Brain Endowment Bank,,,,,cohort,,https://med.miami.edu/programs/brain-endowment-bank,,string,individual
 Biggs Institute Brain Bank,University of Texas Health San Antonio Biggs Institute Brain Bank,,,,False,cohort,,https://biggsinstitute.org/research/brain-donation/,,string,clinical
-BLSA,NIA's Baltimore Longitudinal Study of Aging,,,,,cohort,,https://www.blsa.nih.gov/,,string,individual
 BLSA,NIA's Baltimore Longitudinal Study of Aging,,,,False,cohort,,https://www.blsa.nih.gov/,,string,clinical
-CHDWB,Center for Health Discovery and Well Being cohort as part of the Emory University/Georgia Tech Predictive Health Institute,,,,,cohort,,https://med.emory.edu/departments/medicine/research/centers-institutes/predictive-health/chd.html,,string,individual
+BLSA,NIA's Baltimore Longitudinal Study of Aging,,,,,cohort,,https://www.blsa.nih.gov/,,string,individual
 CHDWB,Center for Health Discovery and Well Being cohort as part of the Emory University/Georgia Tech Predictive Health Institute,,,,False,cohort,,https://med.emory.edu/departments/medicine/research/centers-institutes/predictive-health/chd.html,,string,clinical
-CLINCOR,"The Rush Alzheimer Disease Center Clinical Core study; a longitudinal, epidemiologic clinical-pathologic cohort study of the transition from normal aging to mild cognitive impairment (MCI) to the earliest stages of dementia",,,,,cohort,,https://www.radc.rush.edu/docs/parentStudyDesigns.htm,,string,individual
+CHDWB,Center for Health Discovery and Well Being cohort as part of the Emory University/Georgia Tech Predictive Health Institute,,,,,cohort,,https://med.emory.edu/departments/medicine/research/centers-institutes/predictive-health/chd.html,,string,individual
 CLINCOR,"The Rush Alzheimer Disease Center Clinical Core study; a longitudinal, epidemiologic clinical-pathologic cohort study of the transition from normal aging to mild cognitive impairment (MCI) to the earliest stages of dementia",,,,False,cohort,,https://www.radc.rush.edu/docs/parentStudyDesigns.htm,,string,clinical
+CLINCOR,"The Rush Alzheimer Disease Center Clinical Core study; a longitudinal, epidemiologic clinical-pathologic cohort study of the transition from normal aging to mild cognitive impairment (MCI) to the earliest stages of dementia",,,,,cohort,,https://www.radc.rush.edu/docs/parentStudyDesigns.htm,,string,individual
 Columbia ADRC,Columbia University Alzheimer's Disease Research Center,,,,False,cohort,,https://www.neurology.columbia.edu/research/research-centers-and-programs/alzheimers-disease-research-center-adrc,,string,clinical
-DiCAD,"Diabetes, Cerebrovascular Disease, and Alzheimer's Disease human cohort; longitudinal cohort of 200 late middle-aged community-dwelling hispanics from Northern Manhattan",,,,,cohort,,,,string,individual
 DiCAD,"Diabetes, Cerebrovascular Disease, and Alzheimer's Disease human cohort; longitudinal cohort of 200 late middle-aged community-dwelling hispanics from Northern Manhattan",,,,False,cohort,,,,string,clinical
+DiCAD,"Diabetes, Cerebrovascular Disease, and Alzheimer's Disease human cohort; longitudinal cohort of 200 late middle-aged community-dwelling hispanics from Northern Manhattan",,,,,cohort,,,,string,individual
 EFIGA,Estudio Familiar de Influencia Genetica en Alzheimer (EFIGA) is a study based on a cohort of Caribbean Hispanics with Late-Onset Alzheimer’s Disease recruited from clinics in the Dominican Republic and New York.,,,,False,cohort,,https://www.neurology.columbia.edu/research/research-centers-and-programs/alzheimers-disease-research-center-adrc/investigators/investigator-resources,,string,clinical
-EHBS,Emory Healthy Brain Study,,,,,cohort,,https://healthyaging.emory.edu/ehbs/,,string,individual
 EHBS,Emory Healthy Brain Study,,,,False,cohort,,https://healthyaging.emory.edu/ehbs/,,string,clinical
-Emory ADRC,Emory Alzheimer's Disease Research Center Brain Bank,,,,,cohort,,https://alzheimers.emory.edu/research/for-researchers/tissue_biospecimen_banking_facility.html,,string,individual
+EHBS,Emory Healthy Brain Study,,,,,cohort,,https://healthyaging.emory.edu/ehbs/,,string,individual
 Emory ADRC,Emory Alzheimer's Disease Research Center Brain Bank,,,,False,cohort,,https://alzheimers.emory.edu/research/for-researchers/tissue_biospecimen_banking_facility.html,,string,clinical
+Emory ADRC,Emory Alzheimer's Disease Research Center Brain Bank,,,,,cohort,,https://alzheimers.emory.edu/research/for-researchers/tissue_biospecimen_banking_facility.html,,string,individual
 FBS, THe National Institute on Aging Alzheimer's Disease Family Based Study (NIA-AD FBS),,,,False,cohort,,https://www.neurology.columbia.edu/research/research-centers-and-programs/national-institute-aging-alzheimers-disease-family-based-study-nia-ad-fbs,,string,clinical
-Framingham,Framingham Heart Study,,,,,cohort,,https://www.framinghamheartstudy.org/,,string,individual
 Framingham,Framingham Heart Study,,,,False,cohort,,https://www.framinghamheartstudy.org/,,string,clinical
+Framingham,Framingham Heart Study,,,,,cohort,,https://www.framinghamheartstudy.org/,,string,individual
 HBCC,The Human Brain Collection Core (HBCC) within the National Institute of Mental Health,,,,False,cohort,,https://www.nimh.nih.gov/research/research-conducted-at-nimh/research-areas/research-support-services/hbcc,,string,clinical
-HBTRC,Harvard Brain Tissue Research Center,,,,,cohort,,https://hbtrc.mclean.harvard.edu/,,string,individual
 HBTRC,Harvard Brain Tissue Research Center,,,,False,cohort,,https://hbtrc.mclean.harvard.edu/,,string,clinical
-HPGP,Harvard Personal Genome Project,,,,,cohort,,https://pgp.med.harvard.edu/,,string,individual
+HBTRC,Harvard Brain Tissue Research Center,,,,,cohort,,https://hbtrc.mclean.harvard.edu/,,string,individual
 HPGP,Harvard Personal Genome Project,,,,False,cohort,,https://pgp.med.harvard.edu/,,string,clinical
-HUP,Hospital of the University of Pennsylvania autopsy service,,,,,cohort,,https://pathology.med.upenn.edu/clinical-services/anatomic-pathology/medical-pathology,,string,individual
+HPGP,Harvard Personal Genome Project,,,,,cohort,,https://pgp.med.harvard.edu/,,string,individual
 HUP,Hospital of the University of Pennsylvania autopsy service,,,,False,cohort,,https://pathology.med.upenn.edu/clinical-services/anatomic-pathology/medical-pathology,,string,clinical
-LBP,Living Brain Project,,,,,cohort,,https://labs.icahn.mssm.edu/minervalab/resources/data-ark/lbp/,,string,individual
+HUP,Hospital of the University of Pennsylvania autopsy service,,,,,cohort,,https://pathology.med.upenn.edu/clinical-services/anatomic-pathology/medical-pathology,,string,individual
 LBP,Living Brain Project,,,,False,cohort,,https://labs.icahn.mssm.edu/minervalab/resources/data-ark/lbp/,,string,clinical
-MARS,The Minority Aging Research Study,,,,,cohort,,https://www.rushu.rush.edu/research/departmental-research/minority-aging-research-study,,string,individual
+LBP,Living Brain Project,,,,,cohort,,https://labs.icahn.mssm.edu/minervalab/resources/data-ark/lbp/,,string,individual
 MARS,The Minority Aging Research Study,,,,False,cohort,,https://www.rushu.rush.edu/research/departmental-research/minority-aging-research-study,,string,clinical
+MARS,The Minority Aging Research Study,,,,,cohort,,https://www.rushu.rush.edu/research/departmental-research/minority-aging-research-study,,string,individual
 MAYO,Mayo Clinic Brain Bank,,,,,cohort,,https://www.mayo.edu/research/departments-divisions/department-neuroscience-florida/biorepositories/mayo-clinic-brain-bank,,string,individual
 Mayo Clinic,Mayo Clinic Brain Bank,,,,False,cohort,,https://www.mayo.edu/research/departments-divisions/department-neuroscience-florida/biorepositories/mayo-clinic-brain-bank,,string,clinical
-MC,"Mayo Clinic (NOT brain bank, living)",,,,,cohort,,https://www.mayo.edu/research/clinical-trials/cls-20308924#participating,,string,individual
 MC,"Mayo Clinic (NOT brain bank, living)",,,,False,cohort,,https://www.mayo.edu/research/clinical-trials/cls-20308924#participating,,string,clinical
-MCJ,Mayo Clinic Jacksonville,,,,,cohort,,https://www.mayo.edu/research/florida,,string,individual
+MC,"Mayo Clinic (NOT brain bank, living)",,,,,cohort,,https://www.mayo.edu/research/clinical-trials/cls-20308924#participating,,string,individual
 MCJ,Mayo Clinic Jacksonville,,,,False,cohort,,https://www.mayo.edu/research/florida,,string,clinical
-MCR,Mayo Clinic Rochester,,,,,cohort,,https://www.mayo.edu/research/minnesota,,string,individual
+MCJ,Mayo Clinic Jacksonville,,,,,cohort,,https://www.mayo.edu/research/florida,,string,individual
 MCR,Mayo Clinic Rochester,,,,False,cohort,,https://www.mayo.edu/research/minnesota,,string,clinical
-MSBB,Mount Sinai/JJ Peters VA Medical Center Brain Bank,,,,,cohort,,https://icahn.mssm.edu/research/nih-brain-tissue-repository,,string,individual
+MCR,Mayo Clinic Rochester,,,,,cohort,,https://www.mayo.edu/research/minnesota,,string,individual
 MSBB,Mount Sinai/JJ Peters VA Medical Center Brain Bank,,,,False,cohort,,https://icahn.mssm.edu/research/nih-brain-tissue-repository,,string,clinical
-NYBB,New York Brain Bank at Columbia University,,,,,cohort,,http://www.columbianeuroresearch.org/taub/res-investigation.html,,string,individual
+MSBB,Mount Sinai/JJ Peters VA Medical Center Brain Bank,,,,,cohort,,https://icahn.mssm.edu/research/nih-brain-tissue-repository,,string,individual
 NYBB,New York Brain Bank at Columbia University,,,,False,cohort,,http://www.columbianeuroresearch.org/taub/res-investigation.html,,string,clinical
-Pitt ADRC,University of PIttsburgh Alzheimer's Disease Research Center,,,,,cohort,,https://www.adrc.pitt.edu/,,string,individual
+NYBB,New York Brain Bank at Columbia University,,,,,cohort,,http://www.columbianeuroresearch.org/taub/res-investigation.html,,string,individual
 Pitt ADRC,University of PIttsburgh Alzheimer's Disease Research Center,,,,False,cohort,,https://www.adrc.pitt.edu/,,string,clinical
-RADC,Rush Alzheimer's Disease Center,,,,,cohort,,https://www.rushu.rush.edu/research/departmental-research/rush-alzheimers-disease-center,,string,individual
+Pitt ADRC,University of PIttsburgh Alzheimer's Disease Research Center,,,,,cohort,,https://www.adrc.pitt.edu/,,string,individual
 RADC,Rush Alzheimer's Disease Center,,,,False,cohort,,https://www.rushu.rush.edu/research/departmental-research/rush-alzheimers-disease-center,,string,clinical
-ROSMAP,Religious Orders Study/Memory and Aging Project from Rush University ,,,,,cohort,,"https://www.rushu.rush.edu/research/departmental-research/religious-orders-study, https://www.rushu.rush.edu/research/departmental-research/memory-and-aging-project",,string,individual
+RADC,Rush Alzheimer's Disease Center,,,,,cohort,,https://www.rushu.rush.edu/research/departmental-research/rush-alzheimers-disease-center,,string,individual
 ROSMAP,Religious Orders Study/Memory and Aging Project from Rush University ,,,,False,cohort,,"https://www.rushu.rush.edu/research/departmental-research/religious-orders-study, https://www.rushu.rush.edu/research/departmental-research/memory-and-aging-project",,string,clinical
-SMRI,Stanley Medical Research Institute,,,,,cohort,,https://www.stanleyresearch.org/,,string,individual
+ROSMAP,Religious Orders Study/Memory and Aging Project from Rush University ,,,,,cohort,,"https://www.rushu.rush.edu/research/departmental-research/religious-orders-study, https://www.rushu.rush.edu/research/departmental-research/memory-and-aging-project",,string,individual
 SMRI,Stanley Medical Research Institute,,,,False,cohort,,https://www.stanleyresearch.org/,,string,clinical
+SMRI,Stanley Medical Research Institute,,,,,cohort,,https://www.stanleyresearch.org/,,string,individual
 UFL, University of Florida Neuromedicine Human Brain and Tissue Bank (UF HBTB),,,,False,cohort,,https://ctrnd.med.ufl.edu/research/brain-bank/,,string,clinical
-UK Biobank,UK Biobank,,,,,cohort,,https://www.ukbiobank.ac.uk/,,string,individual
 UK Biobank,UK Biobank,,,,False,cohort,,https://www.ukbiobank.ac.uk/,,string,clinical
-UPBB,University of Pennsylvania School of Medicine Brain Bank,,,,,cohort,,https://www.med.upenn.edu/adrc/datasharing.html,,string,individual
+UK Biobank,UK Biobank,,,,,cohort,,https://www.ukbiobank.ac.uk/,,string,individual
 UPBB,University of Pennsylvania School of Medicine Brain Bank,,,,False,cohort,,https://www.med.upenn.edu/adrc/datasharing.html,,string,clinical
-UPenn,"The University of Pennsylvania Alzheimer's Disease Core Center (ADCC), Penn Udall Center and the Center for Neurodegenerative Disease Research (CNDR)",,,,,cohort,,"https://pathology.med.upenn.edu/research/centers-and-institutes/udall-center-for-parkinsons-research, https://www.med.upenn.edu/cndr/",,string,individual
+UPBB,University of Pennsylvania School of Medicine Brain Bank,,,,,cohort,,https://www.med.upenn.edu/adrc/datasharing.html,,string,individual
 UPenn,"The University of Pennsylvania Alzheimer's Disease Core Center (ADCC), Penn Udall Center and the Center for Neurodegenerative Disease Research (CNDR)",,,,False,cohort,,"https://pathology.med.upenn.edu/research/centers-and-institutes/udall-center-for-parkinsons-research, https://www.med.upenn.edu/cndr/",,string,clinical
-UW ADRC,University of Washington Alzheimer's Disease Research Center,,,,,cohort,,http://depts.washington.edu/mbwc/adrc,,string,individual
+UPenn,"The University of Pennsylvania Alzheimer's Disease Core Center (ADCC), Penn Udall Center and the Center for Neurodegenerative Disease Research (CNDR)",,,,,cohort,,"https://pathology.med.upenn.edu/research/centers-and-institutes/udall-center-for-parkinsons-research, https://www.med.upenn.edu/cndr/",,string,individual
 UW ADRC,University of Washington Alzheimer's Disease Research Center,,,,False,cohort,,http://depts.washington.edu/mbwc/adrc,,string,clinical
+UW ADRC,University of Washington Alzheimer's Disease Research Center,,,,,cohort,,http://depts.washington.edu/mbwc/adrc,,string,individual
 WHICAP,"The Washington-Heights/Inwood Columbia Aging Project (WHICAP) is a community-based longitudinal study, recruiting elderly subjects from Northern Manhattan. Cohorts were established in 1992, 1999, and 2009. Subjects are evaluated every two years.",,,,False,cohort,,https://www.neurology.columbia.edu/research/research-centers-and-programs/alzheimers-disease-research-center-adrc/investigators/investigator-resources,,string,clinical
 both fixed and frozen tissue,Conservation method is both fixed and frozen tissue,,,,,conservationMethod,,CLEAR-AD,,string,clinical
 fixed tissues only,Conservation method is fixed tissues only,,,,,conservationMethod,,CLEAR-AD,,string,clinical
@@ -880,8 +880,8 @@ chromatinAmount,Amount in ug of chromatin used for an assay,,,,False,ManifestCol
 chromatinAmountUnits,Units of measure for the amount of chromatin used for an assay,,,,False,ManifestColumn,,sage.annotations-immunoAssays.chromatinAmountUnits-0.0.2,,string,sequencing
 chromosome,A structure composed of a very long molecule of DNA and associated proteins (e.g. histones) that carries hereditary information; number or designation of the particular chromosome that the data is associated with.,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, X, Y, mitochondrial",,,False,ManifestColumn,,sage.annotations-experimentalData.chromosome-0.0.4,,string,sequencing
 climbID,Identifying string linked to an animal in Climb database,,,,True,ManifestColumn,,sage.annotations-neuro.climbID-0.0.1,,string,MODEL-AD
-cohort,A study group population or group of indiviuals identified by a common characteristic.,"ABC-DS, ACT, ADNI, Banner, BEB-Miller, BLSA, CHDWB, CLINCOR, DiCAD, EHBS, Emory ADRC, Framingham, HBTRC, HPGP, HUP, LBP, MARS, MAYO, MC, MCJ, MCR, MSBB, NYBB, Pitt ADRC, RADC, ROSMAP, SMRI, UK Biobank, UPBB, UPenn, UW ADRC",,,,ManifestColumn,,http://purl.obolibrary.org/obo/NCIT_C61512,,string,individual
 cohort,A study group population where the members are human beings who meet inclusion criteria.,"ABC-DS,ACT,ADNI,Banner,BEB-Miller,Biggs Institute Brain Bank,BLSA,CHDWB,CLINCOR,Columbia ADRC,DiCAD,EFIGA,EHBS,Emory ADRC,FBS,Framingham,HBCC,HBTRC,HPGP,HUP,LBP,MARS,Mayo Clinic,MC,MCJ,MCR,MSBB,NYBB,Pitt ADRC,RADC,ROSMAP,SMRI,UFL,UK Biobank,UPBB,UPenn,UW ADRC,WHICAP",,,False,ManifestColumn,,http://purl.obolibrary.org/obo/STATO_0000203,,string,clinical
+cohort,A study group population or group of indiviuals identified by a common characteristic.,"ABC-DS, ACT, ADNI, Banner, BEB-Miller, BLSA, CHDWB, CLINCOR, DiCAD, EHBS, Emory ADRC, Framingham, HBTRC, HPGP, HUP, LBP, MARS, MAYO, MC, MCJ, MCR, MSBB, NYBB, Pitt ADRC, RADC, ROSMAP, SMRI, UK Biobank, UPBB, UPenn, UW ADRC",,,,ManifestColumn,,http://purl.obolibrary.org/obo/NCIT_C61512,,string,individual
 conservationMethod,The conservation method,"noConservation, fixed tissues only, frozen tissue only, both fixed and frozen tissue, missing or unknown",,,True,ManifestColumn,,sage-annotations-clinical.conservationMethod-0.0.2,string,,clinical
 consortium,The name of the consortium,"CMC, PEC, AMP-AD, MODEL-AD, M2OVE-AD, Resilience-AD, BSMN, CSBC, PSON, GENIE, Synodos, DHART SPORE, CDCP, Psych-AD, ELITE, Not Applicable",,,True,ManifestColumn,,sage.annotations-sageCommunity.consortium-0.0.5,,string,ADKP
 contrastAgent,Substance administered during an imaging procedure that allows delineation of internal structures.,,,,False,ManifestColumn,,sage.annotations-experimentalData.contrastAgent-0.0.2,,string,imaging
