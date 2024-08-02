@@ -1,0 +1,217 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/IndividualHumanMetadataTemplate",
+  "title": "IndividualHumanMetadataTemplate",
+  "type": "object",
+  "properties": {
+    "PMI": {},
+    "ethnicity": {},
+    "pH": {},
+    "Braak": {
+      "enum": [
+        "BRAAK Stage 3",
+        "BRAAK Stage 5",
+        "No BRAAK stage",
+        "BRAAK Stage 1",
+        "missing or unknown",
+        "BRAAK Stage 4",
+        "BRAAK Stage 2",
+        "BRAAK Stage 6",
+        ""
+      ]
+    },
+    "diagnosis": {
+      "enum": [
+        "Colon Cancer",
+        "Neurofibromatosis 2",
+        "Skin Cancer",
+        "progressive supranuclear palsy",
+        "Fibrocystic Breast Disease",
+        "Pancreatic Cancer",
+        "Brain Cancer",
+        "Juvenile Myelomonocytic Leukemia",
+        "anxiety",
+        "Tourette Syndrome",
+        "multiple system atrophy",
+        "Neurofibromatosis 1",
+        "Cervical Cancer",
+        "no cognitive impairment",
+        "CS-DS",
+        "traumatic brain injury",
+        "Prostate Cancer",
+        "Substance Related Disorder",
+        "frontotemporal dementia",
+        "Autism Spectrum Disorder",
+        "MCI-DS",
+        "Ovary Cancer",
+        "vascular dementia",
+        "Williams Syndrome",
+        "dystonia",
+        "amyotrophic lateral sclerosis",
+        "Bipolar Disorder",
+        "Leukemia",
+        "Parkinson's disease",
+        "obsessive compulsive disorder",
+        "pathological aging",
+        "type 2 diabetes mellitus",
+        "Lung Cancer",
+        "corticobasal degeneration disorder",
+        "hypoxia",
+        "Major Depressive Disorder",
+        "Bladder Cancer",
+        "Control",
+        "Alzheimer Disease",
+        "essential tremor",
+        "Lewy body disease",
+        "Alzheimer disease with psychosis",
+        "obesity",
+        "Affective Disorder",
+        "gliosis",
+        "Not Applicable",
+        "dementia",
+        "Breast Cancer",
+        "mild cognitive impairment",
+        "AD-DS",
+        "Schizophrenia",
+        ""
+      ]
+    },
+    "individualID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "CERAD": {
+      "enum": [
+        "missing or unknown",
+        "Moderate Probable C2",
+        "Sparse Possible C1",
+        "No AD C0",
+        "Frequent Definite C3",
+        ""
+      ]
+    },
+    "race": {
+      "enum": [
+        "Asian",
+        "White",
+        "Black or African American",
+        "Native Hawaiian or Other Pacific Islander",
+        "American Indian or Alaska Native",
+        ""
+      ]
+    },
+    "brainWeight": {},
+    "cohort": {
+      "enum": [
+        "Banner",
+        "UPenn",
+        "ADNI",
+        "UW ADRC",
+        "RADC",
+        "Columbia ADRC",
+        "ACT",
+        "HBCC",
+        "DiCAD",
+        "MCR",
+        "CLINCOR",
+        "HUP",
+        "WHICAP",
+        "EFIGA",
+        "MSBB",
+        "HPGP",
+        "LBP",
+        "CHDWB",
+        "BLSA",
+        "NYBB",
+        "BEB-Miller",
+        "SMRI",
+        "UK Biobank",
+        "UFL",
+        "HBTRC",
+        "Pitt ADRC",
+        "MCJ",
+        "MC",
+        "FBS",
+        "UPBB",
+        "Biggs Institute Brain Bank",
+        "EHBS",
+        "Emory_ADRC",
+        "Framingham",
+        "MARS",
+        "Mayo Clinic",
+        "ABC-DS",
+        "ROSMAP",
+        ""
+      ]
+    },
+    "yearsEducation": {},
+    "Component": {},
+    "apoeGenotype": {
+      "enum": [
+        "22",
+        "24",
+        "34",
+        "33",
+        "44",
+        "23",
+        ""
+      ]
+    },
+    "ageDeathUnits": {
+      "enum": [
+        "months",
+        "weeks",
+        "PCW",
+        "days",
+        "gestational weeks",
+        "years",
+        ""
+      ]
+    },
+    "species": {
+      "enum": [
+        "Mouse",
+        "Sus scrofa",
+        "Drosophila melanogaster",
+        "Pan troglodytes",
+        "Gallus gallus",
+        "Rat",
+        "Rhesus macaque",
+        "Human"
+      ]
+    },
+    "ageDeath": {},
+    "mannerDeath": {
+      "enum": [
+        "suicide",
+        "accident",
+        "homicide",
+        "undetermined",
+        "natural causes",
+        ""
+      ]
+    },
+    "causeDeath": {},
+    "pmiUnits": {
+      "enum": [
+        "minutes",
+        "hours",
+        ""
+      ]
+    },
+    "sex": {
+      "enum": [
+        "male",
+        "female"
+      ]
+    },
+    "diagnosisCriteria": {}
+  },
+  "required": [
+    "individualID",
+    "species",
+    "sex"
+  ]
+}
