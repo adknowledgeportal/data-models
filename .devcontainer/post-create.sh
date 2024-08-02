@@ -1,4 +1,4 @@
 #!/bin/bash
 
-# install schematic
-pip install schematicpy==24.2.1
+# install schematic and other packages
+pip install -r ../requirements.txt
