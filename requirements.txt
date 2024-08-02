@@ -1,5 +1,5 @@
 numpy==1.26.4
 pandas>=2.0.0
 synapseclient>=4.3.0
-schematicpy==24.5.1
-ipython==8.18.1
+schematicpy==24.7.2
+ipython>=8.26.0
