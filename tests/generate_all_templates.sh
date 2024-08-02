@@ -11,7 +11,8 @@ CREDS_PATH=../schematic_service_account_creds.json
 CREDS=sheets_creds.json
 DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
-LOG_DIR=logs
+EXCEL_DIR=../current-excel-manifests
+JSON_DIR=../current-manifest-schemas
 SLEEP_THROTTLE=17 # API rate-limiting, need to better figure out dynamically based on # of templates
 
 # copy schematic-config.yml into tests/ 
@@ -57,11 +58,14 @@ mkdir -p $LOG_DIR
 for i in ${!TEMPLATES[@]}
 do
   echo ">>>>>>> Generating ${TEMPLATES[$i]}"
-  schematic manifest --config schematic-config-test.yml get -dt "${TEMPLATES[$i]}" --title "${TEMPLATES[$i]}" -oxlsx "../current-excel-manifests/${TEMPLATES[$i]}.xlsx" | tee $LOG_DIR/${TEMPLATES[$i]%.*}_log
+  schematic manifest --config schematic-config-test.yml get -dt "${TEMPLATES[$i]}" --title "${TEMPLATES[$i]}" -oxlsx "$EXCEL_DIR/${TEMPLATES[$i]}.xlsx" | tee $LOG_DIR/${TEMPLATES[$i]%.*}_log
   sleep $SLEEP_THROTTLE
 done
 
-#echo "Cleaning up test fixtures and intermediates..."
-#rm -f $CREDS $TEST_CONFIG $DATA_MODEL *.schema.json *.manifest.csv
+echo "Moving manifest json schemas to $JSON_DIR"
+mv *.schema.json $JSON_DIR
+
+echo "Cleaning up test directory"
+rm -f $CREDS $TEST_CONFIG $DATA_MODEL *.manifest.csv
 
 echo "✓ Done!"
