@@ -9909,169 +9909,16 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:AAAATestCohort",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "test cohort only",
-            "rdfs:label": "AAAATestCohort",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Cohort"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "AAAA_test_cohort",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Cohort",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "A study group population where the members are human beings who meet inclusion criteria.",
-            "rdfs:label": "Cohort",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ManifestColumn"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "schema:rangeIncludes": [
-                {
-                    "@id": "bts:AAAATestCohort"
-                },
-                {
-                    "@id": "bts:ABC-DS"
-                },
-                {
-                    "@id": "bts:ACT"
-                },
-                {
-                    "@id": "bts:ADNI"
-                },
-                {
-                    "@id": "bts:Banner"
-                },
-                {
-                    "@id": "bts:BEB-Miller"
-                },
-                {
-                    "@id": "bts:BiggsInstituteBrainBank"
-                },
-                {
-                    "@id": "bts:BLSA"
-                },
-                {
-                    "@id": "bts:CHDWB"
-                },
-                {
-                    "@id": "bts:CLINCOR"
-                },
-                {
-                    "@id": "bts:ColumbiaADRC"
-                },
-                {
-                    "@id": "bts:DiCAD"
-                },
-                {
-                    "@id": "bts:EFIGA"
-                },
-                {
-                    "@id": "bts:EHBS"
-                },
-                {
-                    "@id": "bts:EmoryADRC"
-                },
-                {
-                    "@id": "bts:FBS"
-                },
-                {
-                    "@id": "bts:Framingham"
-                },
-                {
-                    "@id": "bts:HBCC"
-                },
-                {
-                    "@id": "bts:HBTRC"
-                },
-                {
-                    "@id": "bts:HPGP"
-                },
-                {
-                    "@id": "bts:HUP"
-                },
-                {
-                    "@id": "bts:LBP"
-                },
-                {
-                    "@id": "bts:MARS"
-                },
-                {
-                    "@id": "bts:MayoClinic"
-                },
-                {
-                    "@id": "bts:MC"
-                },
-                {
-                    "@id": "bts:MCJ"
-                },
-                {
-                    "@id": "bts:MCR"
-                },
-                {
-                    "@id": "bts:MSBB"
-                },
-                {
-                    "@id": "bts:NYBB"
-                },
-                {
-                    "@id": "bts:PittADRC"
-                },
-                {
-                    "@id": "bts:RADC"
-                },
-                {
-                    "@id": "bts:ROSMAP"
-                },
-                {
-                    "@id": "bts:SMRI"
-                },
-                {
-                    "@id": "bts:UFL"
-                },
-                {
-                    "@id": "bts:UKBiobank"
-                },
-                {
-                    "@id": "bts:UPBB"
-                },
-                {
-                    "@id": "bts:UPenn"
-                },
-                {
-                    "@id": "bts:UWADRC"
-                },
-                {
-                    "@id": "bts:WHICAP"
-                }
-            ],
-            "sms:displayName": "cohort",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:ABC-DS",
             "@type": "rdfs:Class",
             "rdfs:comment": "The Alzheimer's Biomarkers Consortium - Down Syndrome (ABC-DS) Study",
             "rdfs:label": "ABC-DS",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Study"
+                    "@id": "bts:Cohort"
                 },
                 {
-                    "@id": "bts:Cohort"
+                    "@id": "bts:Study"
                 }
             ],
             "schema:isPartOf": {
@@ -10306,6 +10153,139 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "BEB-Miller",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Cohort",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "A study group population where the members are human beings who meet inclusion criteria.",
+            "rdfs:label": "Cohort",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:ABC-DS"
+                },
+                {
+                    "@id": "bts:ACT"
+                },
+                {
+                    "@id": "bts:ADNI"
+                },
+                {
+                    "@id": "bts:Banner"
+                },
+                {
+                    "@id": "bts:BEB-Miller"
+                },
+                {
+                    "@id": "bts:BiggsInstituteBrainBank"
+                },
+                {
+                    "@id": "bts:BLSA"
+                },
+                {
+                    "@id": "bts:CHDWB"
+                },
+                {
+                    "@id": "bts:CLINCOR"
+                },
+                {
+                    "@id": "bts:ColumbiaADRC"
+                },
+                {
+                    "@id": "bts:DiCAD"
+                },
+                {
+                    "@id": "bts:EFIGA"
+                },
+                {
+                    "@id": "bts:EHBS"
+                },
+                {
+                    "@id": "bts:EmoryADRC"
+                },
+                {
+                    "@id": "bts:FBS"
+                },
+                {
+                    "@id": "bts:Framingham"
+                },
+                {
+                    "@id": "bts:HBCC"
+                },
+                {
+                    "@id": "bts:HBTRC"
+                },
+                {
+                    "@id": "bts:HPGP"
+                },
+                {
+                    "@id": "bts:HUP"
+                },
+                {
+                    "@id": "bts:LBP"
+                },
+                {
+                    "@id": "bts:MARS"
+                },
+                {
+                    "@id": "bts:MayoClinic"
+                },
+                {
+                    "@id": "bts:MC"
+                },
+                {
+                    "@id": "bts:MCJ"
+                },
+                {
+                    "@id": "bts:MCR"
+                },
+                {
+                    "@id": "bts:MSBB"
+                },
+                {
+                    "@id": "bts:NYBB"
+                },
+                {
+                    "@id": "bts:PittADRC"
+                },
+                {
+                    "@id": "bts:RADC"
+                },
+                {
+                    "@id": "bts:ROSMAP"
+                },
+                {
+                    "@id": "bts:SMRI"
+                },
+                {
+                    "@id": "bts:UFL"
+                },
+                {
+                    "@id": "bts:UKBiobank"
+                },
+                {
+                    "@id": "bts:UPBB"
+                },
+                {
+                    "@id": "bts:UPenn"
+                },
+                {
+                    "@id": "bts:UWADRC"
+                },
+                {
+                    "@id": "bts:WHICAP"
+                }
+            ],
+            "sms:displayName": "cohort",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -10791,10 +10771,10 @@
             "rdfs:label": "SMRI",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:IndividualIdSource"
+                    "@id": "bts:Cohort"
                 },
                 {
-                    "@id": "bts:Cohort"
+                    "@id": "bts:IndividualIdSource"
                 }
             ],
             "schema:isPartOf": {
