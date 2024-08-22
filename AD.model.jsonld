@@ -10600,23 +10600,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:MAYO",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Mayo Clinic Brain Bank",
-            "rdfs:label": "MAYO",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Cohort"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "MAYO",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:MayoClinic",
             "@type": "rdfs:Class",
             "rdfs:comment": "Mayo Clinic",
@@ -18652,7 +18635,7 @@
         {
             "@id": "bts:Filename",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Name of a file",
+            "rdfs:comment": "Name of a file (Note: this is a protected schematic attribute; it will be automatically filled when generating a manifest using the FileAnnotationTemplate in a Synapse folder with files)",
             "rdfs:label": "Filename",
             "rdfs:subClassOf": [
                 {
