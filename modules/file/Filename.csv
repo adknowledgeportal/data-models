@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-Filename,Name of a file,,,,True,ManifestColumn,,,,,file
+Filename,Name of a file (Note: this is a protected schematic attribute; it will be automatically filled when generating a manifest using the FileAnnotationTemplate in a Synapse folder with files),,,,True,ManifestColumn,,,,,file
