@@ -1,6 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-cohort,A study group population where the members are human beings who meet inclusion criteria.,"AAAA_test_cohort,ABC-DS,ACT,ADNI,Banner,BEB-Miller,Biggs Institute Brain Bank,BLSA,CHDWB,CLINCOR,Columbia ADRC,DiCAD,EFIGA,EHBS,Emory ADRC,FBS,Framingham,HBCC,HBTRC,HPGP,HUP,LBP,MARS,Mayo Clinic,MC,MCJ,MCR,MSBB,NYBB,Pitt ADRC,RADC,ROSMAP,SMRI,UFL,UK Biobank,UPBB,UPenn,UW ADRC,WHICAP",,,False,ManifestColumn,,http://purl.obolibrary.org/obo/STATO_0000203,,string,clinical
-AAAA_test_cohort,test cohort only,,,,False,cohort,,fake,,string,clinical
+cohort,A study group population where the members are human beings who meet inclusion criteria.,"ABC-DS,ACT,ADNI,Banner,BEB-Miller,Biggs Institute Brain Bank,BLSA,CHDWB,CLINCOR,Columbia ADRC,DiCAD,EFIGA,EHBS,Emory ADRC,FBS,Framingham,HBCC,HBTRC,HPGP,HUP,LBP,MARS,Mayo Clinic,MC,MCJ,MCR,MSBB,NYBB,Pitt ADRC,RADC,ROSMAP,SMRI,UFL,UK Biobank,UPBB,UPenn,UW ADRC,WHICAP",,,False,ManifestColumn,,http://purl.obolibrary.org/obo/STATO_0000203,,string,clinical
 ABC-DS,Alzheimer's Biomarkers Consortium - Down Syndrome,,,,False,cohort,,https://www.abcds.pitt.edu/,,string,clinical
 ACT,Adult Changes in Thought - Kaiser Permanente Washington Health Research Institute,,,,False,cohort,,https://actagingresearch.org/about,,string,clinical
 ADNI,Alzheimer's Disease Neuroimaging Initative,,,,False,cohort,,https://adni.loni.usc.edu/,,string,clinical
