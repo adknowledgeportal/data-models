@@ -11,8 +11,7 @@
   "customizations": {
     "vscode": {
       "extensions": [
-		"mechatroner.rainbow-csv",
-		"GrapeCity.gc-excelviewer",
+		"mechatroner.rainbow-csv@3.11.0",
 		"ms-python.python"
 	]
     }

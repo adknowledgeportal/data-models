@@ -1,0 +1,46 @@
+# This workflow automatically generates all manifests currently specified by the data model
+# Outputs are excel files and json schemas
+# Runs AFTER changes to the data model have been reviewed in a PR and merged into main
+
+name: Store Current Manifests
+
+on:
+  push:
+    branches: main
+    # runs on changes to data model 
+    paths: 'AD.model.jsonld'
+
+  workflow_dispatch:
+
+jobs:
+  generate:
+    name: generate-manifests
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      SCHEMATIC_SERVICE_ACCOUNT_CREDS: ${{ secrets.SCHEMATIC_SERVICE_ACCOUNT_CREDS }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with: 
+          fetch-depth: 0
+      - uses: actions/setup-python@v4 
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install Libraries
+        shell: bash
+        run: pip install -r requirements.txt
+      
+      - name: Generate all manifests
+        working-directory: tests
+        run: ./generate_all_templates.sh
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git add --all
+          git commit -m "GitHub Action: generate latest manifests" || echo "No changes to commit"
+          git push
