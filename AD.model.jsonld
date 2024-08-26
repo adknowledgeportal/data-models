@@ -10159,7 +10159,7 @@
         {
             "@id": "bts:Cohort",
             "@type": "rdfs:Class",
-            "rdfs:comment": "A study group population where the members are human beings who meet inclusion criteria.",
+            "rdfs:comment": "A study group population or group of indiviuals identified by a common characteristic.",
             "rdfs:label": "Cohort",
             "rdfs:subClassOf": [
                 {
@@ -10186,9 +10186,6 @@
                     "@id": "bts:BEB-Miller"
                 },
                 {
-                    "@id": "bts:BiggsInstituteBrainBank"
-                },
-                {
                     "@id": "bts:BLSA"
                 },
                 {
@@ -10198,13 +10195,7 @@
                     "@id": "bts:CLINCOR"
                 },
                 {
-                    "@id": "bts:ColumbiaADRC"
-                },
-                {
                     "@id": "bts:DiCAD"
-                },
-                {
-                    "@id": "bts:EFIGA"
                 },
                 {
                     "@id": "bts:EHBS"
@@ -10213,13 +10204,7 @@
                     "@id": "bts:EmoryADRC"
                 },
                 {
-                    "@id": "bts:FBS"
-                },
-                {
                     "@id": "bts:Framingham"
-                },
-                {
-                    "@id": "bts:HBCC"
                 },
                 {
                     "@id": "bts:HBTRC"
@@ -10237,7 +10222,7 @@
                     "@id": "bts:MARS"
                 },
                 {
-                    "@id": "bts:MayoClinic"
+                    "@id": "bts:MAYO"
                 },
                 {
                     "@id": "bts:MC"
@@ -10267,9 +10252,6 @@
                     "@id": "bts:SMRI"
                 },
                 {
-                    "@id": "bts:UFL"
-                },
-                {
                     "@id": "bts:UKBiobank"
                 },
                 {
@@ -10280,9 +10262,6 @@
                 },
                 {
                     "@id": "bts:UWADRC"
-                },
-                {
-                    "@id": "bts:WHICAP"
                 }
             ],
             "sms:displayName": "cohort",
@@ -10512,10 +10491,10 @@
             "rdfs:label": "HBTRC",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:IndividualIdSource"
+                    "@id": "bts:Cohort"
                 },
                 {
-                    "@id": "bts:Cohort"
+                    "@id": "bts:IndividualIdSource"
                 },
                 {
                     "@id": "bts:Study"
@@ -10607,9 +10586,6 @@
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:IndividualIdSource"
-                },
-                {
-                    "@id": "bts:Cohort"
                 }
             ],
             "schema:isPartOf": {
@@ -10697,10 +10673,10 @@
             "rdfs:label": "NYBB",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:IndividualIdSource"
+                    "@id": "bts:Cohort"
                 },
                 {
-                    "@id": "bts:Cohort"
+                    "@id": "bts:IndividualIdSource"
                 }
             ],
             "schema:isPartOf": {
@@ -18718,6 +18694,40 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:GeneticBackground",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "This refers to the population's specific line of ancestral descent (founder individuals) and genetic makeup (genotype). Format: capitalization only and numbers. Examples: LOAD1 or CC017 or C57BL6J.",
+            "rdfs:label": "GeneticBackground",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "geneticBackground",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:GeneticMutations",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "These are strain-level genetic mutations. This should follow the format gene-allele. Example: Trem2-R47H",
+            "rdfs:label": "GeneticMutations",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "geneticMutations",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Genotype",
             "@type": "rdfs:Class",
             "rdfs:comment": "Genotype common name",
@@ -21745,6 +21755,105 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:ModelType",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "A mouse model type that is designed to exhibit characteristics resembling neuropathology and behavioral deficits associated with human Alzheimers disease (AD).",
+            "rdfs:label": "ModelType",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:FamilialAD(FAD)"
+                },
+                {
+                    "@id": "bts:Early-onsetAD(EOAD)"
+                },
+                {
+                    "@id": "bts:Late-onsetAD(LOAD)"
+                },
+                {
+                    "@id": "bts:Mixed-onsetAD"
+                }
+            ],
+            "sms:displayName": "modelType",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:FamilialAD(FAD)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Inherited genetic mutations causing early-onset Alzheimer's disease.",
+            "rdfs:label": "FamilialAD(FAD)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ModelType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Familial AD (FAD)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Early-onsetAD(EOAD)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Alzheimer's symptoms appearing before age 65 can be genetic or non-genetic.",
+            "rdfs:label": "Early-onsetAD(EOAD)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ModelType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Early-onset AD (EOAD)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Late-onsetAD(LOAD)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The most common form of Alzheimer's symptoms after age 65 primarily non-genetic.",
+            "rdfs:label": "Late-onsetAD(LOAD)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ModelType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Late-onset AD (LOAD)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Mixed-onsetAD",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Alzheimer's symptoms between 60-65 with possible genetic and non-genetic contributions.",
+            "rdfs:label": "Mixed-onsetAD",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ModelType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Mixed-onset AD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:MRItype",
             "@type": "rdfs:Class",
             "rdfs:comment": "The type of MRI assay performed.",
@@ -24460,6 +24569,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:RegistryAbbreviation",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Specify the registry. Example: JR_004807",
+            "rdfs:label": "RegistryAbbreviation",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "registryAbbreviation",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:ReprogrammingMethod",
             "@type": "rdfs:Class",
             "rdfs:comment": "The method by which source cells were reprogrammed into pluripotent stem cells.",
@@ -25449,7 +25575,7 @@
         {
             "@id": "bts:StockNumber",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Official JAX Mouse stock number",
+            "rdfs:comment": "Source identifier for model (JAX stock or MMRRC strain or RRID). Example: JAX stock #: 004807",
             "rdfs:label": "StockNumber",
             "rdfs:subClassOf": [
                 {
@@ -25464,10 +25590,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:StrainOfficialNamefficialName",
+            "@id": "bts:StrainCommonName",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Official JAX Mouse strain nomenclature",
-            "rdfs:label": "StrainOfficialNamefficialName",
+            "rdfs:comment": "This is a brief and unique and more common identifier for the strains used. This string will match the Common Name field on JAX. For example, the common name for the C57BL/6J mouse is B6.",
+            "rdfs:label": "StrainCommonName",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:ManifestColumn"
@@ -25476,7 +25602,24 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "strainOfficialNamefficialName",
+            "sms:displayName": "strainCommonName",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:StrainOfficialName",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "This serves as a unique identifier for specific genetic lines or populations of model organisms used in the research. For example the official name for the common  B6J Strain#:000664  mouse is C57BL/6J",
+            "rdfs:label": "StrainOfficialName",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "strainOfficialName",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -31820,23 +31963,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:StrainOfficialName",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "StrainOfficialName",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "strainOfficialName",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:IndividualHumanMetadataTemplate",
             "@type": "rdfs:Class",
             "rdfs:comment": "SysBio AD individual human metadata template schema",
@@ -31914,6 +32040,55 @@
                 },
                 {
                     "@id": "bts:PH"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ModeladStrainAnimalMetadataTemplate",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "SysBio modelad strain animal metadata template schema",
+            "rdfs:label": "ModeladStrainAnimalMetadataTemplate",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestTemplate"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "modelad_strain_animal_metadata_template",
+            "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:Component"
+                },
+                {
+                    "@id": "bts:IndividualID"
+                },
+                {
+                    "@id": "bts:SpecimenID"
+                },
+                {
+                    "@id": "bts:StockNumber"
+                },
+                {
+                    "@id": "bts:RegistryAbbreviation"
+                },
+                {
+                    "@id": "bts:StrainOfficialName"
+                },
+                {
+                    "@id": "bts:StrainCommonName"
+                },
+                {
+                    "@id": "bts:GeneticBackground"
+                },
+                {
+                    "@id": "bts:GeneticMutations"
+                },
+                {
+                    "@id": "bts:ModelType"
                 }
             ],
             "sms:validationRules": []
