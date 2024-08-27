@@ -76,7 +76,7 @@ attributes:
         rules:
           - matchNone IndividualKey.IndividualID
           - unique error
-          #- regex match ^[a-zA-Z0-9_-]+$ error
+          - regex match ^[a-zA-Z0-9_-]+$ error
           - required
           
 
