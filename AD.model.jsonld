@@ -8293,6 +8293,9 @@
                     "@id": "bts:ADMCADNIBakerLipidomics"
                 },
                 {
+                    "@id": "bts:ADMCADNIBiocratesMxPQ500"
+                },
+                {
                     "@id": "bts:ADMCADNINightingaleNMR"
                 },
                 {
@@ -25613,6 +25616,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "ADMC_ADNI_BakerLipidomics",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ADMCADNIBiocratesMxPQ500",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Alzheimer's Disease Metabolomics Consortium Longitudinal Alzheimer’s Disease Neuroimaging Initiative Q500 Biocrates Metabolites (ADMCLongitudinalADNIQ500Biocrates) Study",
+            "rdfs:label": "ADMCADNIBiocratesMxPQ500",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ADMC_ADNI_Biocrates_MxP_Q500",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
