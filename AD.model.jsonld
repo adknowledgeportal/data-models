@@ -10123,30 +10123,10 @@
             }
         },
         {
-            "@id": "bts:Banner",
+            "@id": "bts:ADRC",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Banner Sun Health Research Institute's Brain and Body Donation Program",
-            "rdfs:label": "Banner",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Cohort"
-                },
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Banner",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:BEB-Miller",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "University of Miami Miller School of Medicine Brain Endowment Bank",
-            "rdfs:label": "BEB-Miller",
+            "rdfs:comment": "Alzheimer Disease Research Centers",
+            "rdfs:label": "ADRC",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Cohort"
@@ -10155,7 +10135,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "BEB-Miller",
+            "sms:displayName": "ADRC",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -10183,7 +10163,13 @@
                     "@id": "bts:ADNI"
                 },
                 {
+                    "@id": "bts:ADRC"
+                },
+                {
                     "@id": "bts:Banner"
+                },
+                {
+                    "@id": "bts:BEAM"
                 },
                 {
                     "@id": "bts:BEB-Miller"
@@ -10240,6 +10226,9 @@
                     "@id": "bts:MARS"
                 },
                 {
+                    "@id": "bts:MARS-WI"
+                },
+                {
                     "@id": "bts:MayoClinic"
                 },
                 {
@@ -10252,6 +10241,9 @@
                     "@id": "bts:MCR"
                 },
                 {
+                    "@id": "bts:MIND"
+                },
+                {
                     "@id": "bts:MSBB"
                 },
                 {
@@ -10261,6 +10253,9 @@
                     "@id": "bts:PittADRC"
                 },
                 {
+                    "@id": "bts:POINTER"
+                },
+                {
                     "@id": "bts:RADC"
                 },
                 {
@@ -10268,6 +10263,9 @@
                 },
                 {
                     "@id": "bts:SMRI"
+                },
+                {
+                    "@id": "bts:TulsaLIBR-1000"
                 },
                 {
                     "@id": "bts:UFL"
@@ -10289,6 +10287,63 @@
                 }
             ],
             "sms:displayName": "cohort",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Banner",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Banner Sun Health Research Institute's Brain and Body Donation Program",
+            "rdfs:label": "Banner",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                },
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Banner",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BEAM",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Brain Energy for Amyloid transformation In Alzheimer's disease (BEAM) study",
+            "rdfs:label": "BEAM",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                },
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "BEAM",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BEB-Miller",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "University of Miami Miller School of Medicine Brain Endowment Bank",
+            "rdfs:label": "BEB-Miller",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "BEB-Miller",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -10603,6 +10658,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:MARS-WI",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The MARS: Microbiome in Alzheimer’s Risk Study at the University of Wisconsin",
+            "rdfs:label": "MARS-WI",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "MARS-WI",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:MayoClinic",
             "@type": "rdfs:Class",
             "rdfs:comment": "Mayo Clinic",
@@ -10674,6 +10746,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:MIND",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "MIND Trial to Prevent Alzheimer's",
+            "rdfs:label": "MIND",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "MIND",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:MSBB",
             "@type": "rdfs:Class",
             "rdfs:comment": "Mount Sinai Brain Bank AD Cohort",
@@ -10731,6 +10820,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:POINTER",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Protect Brain Health Through Lifestyle Intervention to Reduce Risk",
+            "rdfs:label": "POINTER",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "POINTER",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:RADC",
             "@type": "rdfs:Class",
             "rdfs:comment": "Rush Alzheimer's Disease Center",
@@ -10774,16 +10880,33 @@
             "rdfs:label": "SMRI",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Cohort"
+                    "@id": "bts:IndividualIdSource"
                 },
                 {
-                    "@id": "bts:IndividualIdSource"
+                    "@id": "bts:Cohort"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "SMRI",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:TulsaLIBR-1000",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Tulsa Univ and Laureate Institute for Brain Research",
+            "rdfs:label": "TulsaLIBR-1000",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Tulsa LIBR-1000",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -32108,23 +32231,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "ATP6V1A_kd",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:BEAM",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Brain Energy for Amyloid transformation In Alzheimer's disease (BEAM) study",
-            "rdfs:label": "BEAM",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "BEAM",
             "sms:required": "sms:false",
             "sms:validationRules": []
         }
