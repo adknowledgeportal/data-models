@@ -425,7 +425,9 @@ Y,Chromosome Y,,,,,chromosome,,Sage Bionetworks,,string,sequencing
 ABC-DS,Alzheimer's Biomarkers Consortium - Down Syndrome,,,,False,cohort,,https://www.abcds.pitt.edu/,,string,clinical
 ACT,Adult Changes in Thought - Kaiser Permanente Washington Health Research Institute,,,,False,cohort,,https://actagingresearch.org/about,,string,clinical
 ADNI,Alzheimer's Disease Neuroimaging Initative,,,,False,cohort,,https://adni.loni.usc.edu/,,string,clinical
+ADRC,Alzheimer Disease Research Centers,,,,False,cohort,,https://www.nia.nih.gov/health/clinical-trials-and-studies/alzheimers-disease-research-centers,,string,clinical
 Banner,Banner Sun Health Research Institute's Brain and Body Donation Program.,,,,False,cohort,,https://www.bannerhealth.com/research/locations/sun-health-institute/programs/body-donation,,string,clinical
+BEAM,Effect of a Modified Ketogenic-Mediterranean Diet on Alzheimer's Disease (BEAM Study),,,,False,cohort,,https://www.thelancet.com/journals/ebiom/article/PIIS2352-3964(19)30554-7/fulltext,,string,clinical
 BEB-Miller,University of Miami Miller School of Medicine Brain Endowment Bank,,,,False,cohort,,https://med.miami.edu/programs/brain-endowment-bank,,string,clinical
 Biggs Institute Brain Bank,University of Texas Health San Antonio Biggs Institute Brain Bank,,,,False,cohort,,https://biggsinstitute.org/research/brain-donation/,,string,clinical
 BLSA,NIA's Baltimore Longitudinal Study of Aging,,,,False,cohort,,https://www.blsa.nih.gov/,,string,clinical
@@ -444,16 +446,20 @@ HPGP,Harvard Personal Genome Project,,,,False,cohort,,https://pgp.med.harvard.ed
 HUP,Hospital of the University of Pennsylvania autopsy service,,,,False,cohort,,https://pathology.med.upenn.edu/clinical-services/anatomic-pathology/medical-pathology,,string,clinical
 LBP,Living Brain Project,,,,False,cohort,,https://labs.icahn.mssm.edu/minervalab/resources/data-ark/lbp/,,string,clinical
 MARS,The Minority Aging Research Study,,,,False,cohort,,https://www.rushu.rush.edu/research/departmental-research/minority-aging-research-study,,string,clinical
+MARS-WI,The MARS: Microbiome in Alzheimer’s Risk Study at the University of Wisconsin,,,,False,cohort,,https://www.adrc.wisc.edu/mars-study,,string,clinical
 Mayo Clinic,Mayo Clinic Brain Bank,,,,False,cohort,,https://www.mayo.edu/research/departments-divisions/department-neuroscience-florida/biorepositories/mayo-clinic-brain-bank,,string,clinical
 MC,"Mayo Clinic (NOT brain bank, living)",,,,False,cohort,,https://www.mayo.edu/research/clinical-trials/cls-20308924#participating,,string,clinical
 MCJ,Mayo Clinic Jacksonville,,,,False,cohort,,https://www.mayo.edu/research/florida,,string,clinical
 MCR,Mayo Clinic Rochester,,,,False,cohort,,https://www.mayo.edu/research/minnesota,,string,clinical
+MIND,MIND Trial to Prevent Alzheimer's,,,,False,cohort,,https://mind-diet-trial.org/,,string,clinical
 MSBB,Mount Sinai/JJ Peters VA Medical Center Brain Bank,,,,False,cohort,,https://icahn.mssm.edu/research/nih-brain-tissue-repository,,string,clinical
 NYBB,New York Brain Bank at Columbia University,,,,False,cohort,,http://www.columbianeuroresearch.org/taub/res-investigation.html,,string,clinical
 Pitt ADRC,University of PIttsburgh Alzheimer's Disease Research Center,,,,False,cohort,,https://www.adrc.pitt.edu/,,string,clinical
+POINTER,Protect Brain Health Through Lifestyle Intervention to Reduce Risk,,,,False,cohort,,https://www.alz.org/us-pointer/home.asp,,string,clinical
 RADC,Rush Alzheimer's Disease Center,,,,False,cohort,,https://www.rushu.rush.edu/research/departmental-research/rush-alzheimers-disease-center,,string,clinical
 ROSMAP,Religious Orders Study/Memory and Aging Project from Rush University ,,,,False,cohort,,"https://www.rushu.rush.edu/research/departmental-research/religious-orders-study, https://www.rushu.rush.edu/research/departmental-research/memory-and-aging-project",,string,clinical
 SMRI,Stanley Medical Research Institute,,,,False,cohort,,https://www.stanleyresearch.org/,,string,clinical
+Tulsa LIBR-1000, Tulsa Univ and Laureate Institute for Brain Research,,,,False,cohort,,https://utulsa.edu/news/libr-mental-health/,,string,clinical
 UFL, University of Florida Neuromedicine Human Brain and Tissue Bank (UF HBTB),,,,False,cohort,,https://ctrnd.med.ufl.edu/research/brain-bank/,,string,clinical
 UK Biobank,UK Biobank,,,,False,cohort,,https://www.ukbiobank.ac.uk/,,string,clinical
 UPBB,University of Pennsylvania School of Medicine Brain Bank,,,,False,cohort,,https://www.med.upenn.edu/adrc/datasharing.html,,string,clinical
@@ -849,7 +855,7 @@ chromatinAmount,Amount in ug of chromatin used for an assay,,,,False,ManifestCol
 chromatinAmountUnits,Units of measure for the amount of chromatin used for an assay,,,,False,ManifestColumn,,sage.annotations-immunoAssays.chromatinAmountUnits-0.0.2,,string,sequencing
 chromosome,A structure composed of a very long molecule of DNA and associated proteins (e.g. histones) that carries hereditary information; number or designation of the particular chromosome that the data is associated with.,"1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, X, Y, mitochondrial",,,False,ManifestColumn,,sage.annotations-experimentalData.chromosome-0.0.4,,string,sequencing
 climbID,Identifying string linked to an animal in Climb database,,,,True,ManifestColumn,,sage.annotations-neuro.climbID-0.0.1,,string,MODEL-AD
-cohort,A study group population where the members are human beings who meet inclusion criteria.,"ABC-DS,ACT,ADNI,Banner,BEB-Miller,Biggs Institute Brain Bank,BLSA,CHDWB,CLINCOR,Columbia ADRC,DiCAD,EFIGA,EHBS,Emory ADRC,FBS,Framingham,HBCC,HBTRC,HPGP,HUP,LBP,MARS,Mayo Clinic,MC,MCJ,MCR,MSBB,NYBB,Pitt ADRC,RADC,ROSMAP,SMRI,UFL,UK Biobank,UPBB,UPenn,UW ADRC,WHICAP",,,False,ManifestColumn,,http://purl.obolibrary.org/obo/STATO_0000203,,string,clinical
+cohort,A study group population where the members are human beings who meet inclusion criteria.,"ABC-DS,ACT,ADNI,ADRC,Banner,BEAM,BEB-Miller,Biggs Institute Brain Bank,BLSA,CHDWB,CLINCOR,Columbia ADRC,DiCAD,EFIGA,EHBS,Emory ADRC,FBS,Framingham,HBCC,HBTRC,HPGP,HUP,LBP,MARS,MARS-WI,Mayo Clinic,MC,MCJ,MCR,MIND,MSBB,NYBB,Pitt ADRC,POINTER,RADC,ROSMAP,SMRI,Tulsa LIBR-1000,UFL,UK Biobank,UPBB,UPenn,UW ADRC,WHICAP",,,False,ManifestColumn,,http://purl.obolibrary.org/obo/STATO_0000203,,string,clinical
 conservationMethod,The conservation method,"noConservation, fixed tissues only, frozen tissue only, both fixed and frozen tissue, missing or unknown",,,True,ManifestColumn,,sage-annotations-clinical.conservationMethod-0.0.2,string,,clinical
 consortium,The name of the consortium,"CMC, PEC, AMP-AD, MODEL-AD, M2OVE-AD, Resilience-AD, BSMN, CSBC, PSON, GENIE, Synodos, DHART SPORE, CDCP, Psych-AD, ELITE, Not Applicable",,,True,ManifestColumn,,sage.annotations-sageCommunity.consortium-0.0.5,,string,ADKP
 contrastAgent,Substance administered during an imaging procedure that allows delineation of internal structures.,,,,False,ManifestColumn,,sage.annotations-experimentalData.contrastAgent-0.0.2,,string,imaging
