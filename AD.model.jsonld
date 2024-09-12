@@ -8326,6 +8326,9 @@
                     "@id": "bts:APOEPSC"
                 },
                 {
+                    "@id": "bts:ASTRO"
+                },
+                {
                     "@id": "bts:Banner"
                 },
                 {
@@ -8633,9 +8636,6 @@
                 },
                 {
                     "@id": "bts:ROSMAPNucleusHashing"
-                },
-                {
-                    "@id": "bts:ROSMAP-IA"
                 },
                 {
                     "@id": "bts:ROSMAP-IN"
@@ -25930,6 +25930,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:ASTRO",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Contributions of Genetic Variation in Astrocytes to Cell and Molecular Mechanisms of Risk and Resilience to Late Onset Alzheimer’s Disease (ASTRO) Study",
+            "rdfs:label": "ASTRO",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ASTRO",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:BCM-DMAS",
             "@type": "rdfs:Class",
             "rdfs:comment": "Baylor Drosophila Model Aging Study (BCM-DMAS)",
@@ -27473,23 +27490,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "ROSMAP_nucleus_hashing",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:ROSMAP-IA",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "The ROSMAP iPSC-derived Astrocyte Study (ROSMAP-IA)",
-            "rdfs:label": "ROSMAP-IA",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "ROSMAP-IA",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
