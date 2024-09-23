@@ -970,7 +970,7 @@ scanID,"The ID of a sample, specimen, or individual in a scan or imaging file.",
 SentrixID,BeadChip ID in Illumina array-based assay,,,,False,ManifestColumn,,sage.annotations-experimentalData.SentrixID-0.0.2,,string,experimentalData
 SentrixRowColumn,Position of sample on BeadChip in Illumina array-based assay,,,,False,ManifestColumn,,sage.annotations-experimentalData.SentrixRowColumn-0.0.2,,string,experimentalData
 sequencingBatch,Batch library was sequenced in,,,,False,ManifestColumn,,sage.annotations-batch.sequencingBatch-0.0.2,,string,batch
-sex,"Sex assigned at birth, or by sequencing","male, female",,,True,ManifestColumn,,sage.annotations-experimentalData.sex-0.0.2,,string,demographics
+sex,"Sex assigned at birth, or by sequencing","male, female, missing or unknown",,,True,ManifestColumn,,sage.annotations-experimentalData.sex-0.0.2,,string,demographics
 sexChromosome,"Sex identified by SNP genotype (e.g XX, XY)",,,,False,ManifestColumn,,sage.annotations-clinical.sexChromosome-0.0.2,,string,demographics
 softwareName,,,,,False,ManifestColumn,,sage.annotations-tool.softwareName-0.0.2,,string,analysis
 sourceCell,"Initial cell type the target cell was derived from, before reprogramming or differentiation.","astrocytes, B-lymphocytes, cord blood stem cells, embryonic stem cells, fibroblast, iPSC, lymphoblast, peripheral blood mononuclear cell",,,False,ManifestColumn,,sage.annotations-experimentalData.sourceCell-0.0.3,,string,biospecimen
@@ -1318,6 +1318,7 @@ weeks,"Age measured in weeks, a period of 7 consecutive days.",,,,,samplingAgeUn
 years,Age measured in years (approximately 365 days).,,,,,samplingAgeUnits,,http://purl.obolibrary.org/obo/NCIT_C29848,,string,biospecimen
 female,,,,,,sex,,,,string,demographics
 male,,,,,,sex,,,,string,demographics
+missing or unknown,,,,,,sex,,,,string,demographics
 astrocytes,"Astrocytes (from 'star' cells) are irregularly shaped with many long processes, including those with end-feet which form the glial (limiting) membrane and directly and indirectly contribute to the blood-brain barrier.",,,,,sourceCell,,https://www.ebi.ac.uk/ols/ontologies/cl/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCL_0000127,,string,biospecimen
 B-lymphocytes,A lymphocyte of B lineage with the phenotype CD19-positive and surface immunoglobulin-positive.,,,,,sourceCell,,https://www.ebi.ac.uk/ols/ontologies/efo/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FCL_0000236,,string,biospecimen
 cord blood stem cells,Blood from the placenta and umbilical cord that are left over after birth is one source of adult stem cells.,,,,,sourceCell,,http://purl.obolibrary.org/obo/BTO_0002667,,string,biospecimen
