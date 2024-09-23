@@ -176,6 +176,9 @@
                     "@id": "bts:MICR"
                 },
                 {
+                    "@id": "bts:Sex"
+                },
+                {
                     "@id": "bts:WBVD"
                 },
                 {
@@ -25251,6 +25254,9 @@
                 },
                 {
                     "@id": "bts:Female"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
                 }
             ],
             "sms:displayName": "sex",
