@@ -19684,7 +19684,9 @@
             ],
             "sms:displayName": "metaboliteType",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "list like error"
+            ]
         },
         {
             "@id": "bts:Acylcarnitines",
