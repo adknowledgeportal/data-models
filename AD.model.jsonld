@@ -149,6 +149,9 @@
                     "@id": "bts:AltHSS"
                 },
                 {
+                    "@id": "bts:Apoe4Status"
+                },
+                {
                     "@id": "bts:CVDARTANY"
                 },
                 {
@@ -2071,6 +2074,68 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "visualization",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NoE4",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "no E4 alleles present",
+            "rdfs:label": "NoE4",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Apoe4Status"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "no E4",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Apoe4Status",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Presence of one or more E4 variant alleles at the human APOE gene; only use if untransformed APOE genotype is not available",
+            "rdfs:label": "Apoe4Status",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NoE4"
+                },
+                {
+                    "@id": "bts:OneortwoE4"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "apoe4Status",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:OneortwoE4",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "one or two E4 alleles present",
+            "rdfs:label": "OneortwoE4",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Apoe4Status"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "one or two E4",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -32029,6 +32094,9 @@
                 },
                 {
                     "@id": "bts:ApoeGenotype"
+                },
+                {
+                    "@id": "bts:Apoe4Status"
                 },
                 {
                     "@id": "bts:Diagnosis"

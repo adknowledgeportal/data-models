@@ -1,0 +1,5 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+apoe4Status,"Presence of one or more E4 variant alleles at the human APOE gene; only use if untransformed APOE genotype is not available","no E4, one or two E4, missing or unknown",,,False,ManifestColumn,,ADKP DCC,,string,clinical
+no E4,no E4 alleles present,,,,,apoe4Status,,ADKP DCC,,string,clinical
+one or two E4,one or two E4 alleles present,,,,,apoe4Status,,ADKP DCC,,string,clinical
+missing or unknown,,,,,,apoe4Status,,ADKP DCC,,string,clinical
