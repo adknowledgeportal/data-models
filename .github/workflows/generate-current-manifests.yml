@@ -28,6 +28,7 @@ jobs:
         with:
           python-version: '3.10'
           cache: 'pip'
+          token: ${{ secrets.GENERATE_MANIFESTS_ON_ACTION }}
 
       - name: Install Libraries
         shell: bash
