@@ -28,7 +28,7 @@ jobs:
         with:
           python-version: '3.10'
           cache: 'pip'
-          token: ${{ secrets.GENERATE_MANIFESTS_ON_ACTION }}
+          token: ${{ secrets.GENERATE_MANIFESTS_ON_ACTION }} # this PAT was generated w/ "Read and Write access to actions" and the default "Read access to metadata" Repo permissions
 
       - name: Install Libraries
         shell: bash
