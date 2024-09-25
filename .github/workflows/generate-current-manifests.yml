@@ -28,6 +28,7 @@ jobs:
         with:
           python-version: '3.10'
           cache: 'pip'
+          token: ${{ secrets.GENERATE_MANIFESTS_ON_ACTION }} # this Fine-grained PAT was generated to generate manifests despite branch protection, was granted "Read and Write access to actions" permissions, and has access to the adknowledgeportal/data-models repo (resource owner is adknowledgeportal) 
 
       - name: Install Libraries
         shell: bash

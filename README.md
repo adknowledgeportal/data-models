@@ -93,6 +93,7 @@ If you want to make changes to the data model and test them out by generating ma
 Codespace secrets: 
 - SYNAPSE_PAT: scoped to view and download permissions on the sysbio-dcc-tasks-01 Synapse service account
 - SERVICE_ACCOUNT_CREDS: these are creds for using the Google sheets api with schematic
+- GENERATE_MANIFESTS_ON_ACTION: this fine-grained PAT lets manifests be successfully generated despite branch protection, has read/write access to actions, and has repo access to adknowledgeportal/data-models 
 
 ## Legacy data models:
 Previous versions of the data model live in the `legacy-data-models/` folder. This include the Diverse Cohorts pilot model and the intial "legacy" model representing the AD Portal Synapse project metadata dictionary and metadata templates from August 2023. These are not being used by DCA.
