@@ -28,7 +28,7 @@ jobs:
         with:
           python-version: '3.10'
           cache: 'pip'
-          token: ${{ secrets.GENERATE_MANIFESTS_ON_ACTION }} # this Fine-grained PAT was generated to circumvent the issue with the manifest generation action hitting branch protection, has "Read and Write access to actions" and the default "Read access to metadata" Repo permissions, the resource owner is the adknowledgeportal org, it has access to the data-models repo 
+          token: ${{ secrets.GENERATE_MANIFESTS_ON_ACTION }} # this Fine-grained PAT was generated to generate manifests despite branch protection, was granted "Read and Write access to actions" permissions, and has access to the adknowledgeportal/data-models repo (resource owner is adknowledgeportal) 
 
       - name: Install Libraries
         shell: bash
