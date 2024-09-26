@@ -33,15 +33,22 @@ jobs:
       - name: Install Libraries
         shell: bash
         run: pip install -r requirements.txt
-      
+
+      - name: Switch to branch
+        shell: bash
+        run: |
+          git checkout -b new-branch
+        
       - name: Generate all manifests
         working-directory: tests
         run: ./generate_all_templates.sh
 
-      - name: Commit and push changes
+      - name: Commit and open PR
         run: |
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add --all
           git commit -m "GitHub Action: generate latest manifests" || echo "No changes to commit"
-          git push
+          gh pr create --title --body --base main --head new-branch
+        env: 
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
