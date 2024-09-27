@@ -49,6 +49,6 @@ jobs:
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add --all
           git commit -m "GitHub Action: generate latest manifests" || echo "No changes to commit"
-          gh pr create --title --body --base main --head new-branch
+          gh pr create --title "Review changes to generate-current-manifests.yml" --body "Merge if all looks well" --base main --head new-branch
         env: 
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
