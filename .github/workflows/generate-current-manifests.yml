@@ -51,4 +51,4 @@ jobs:
           git commit -m "GitHub Action: generate latest manifests" || echo "No changes to commit"
           gh pr create --title --body --base main --head new-branch
         env: 
-          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
