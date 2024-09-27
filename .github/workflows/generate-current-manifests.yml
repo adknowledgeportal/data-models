@@ -37,7 +37,7 @@ jobs:
       - name: Switch to branch
         shell: bash
         run: |
-          git checkout -b new-branch
+          git checkout -b ${{ github.head_ref }}
         
       - name: Generate all manifests
         working-directory: tests
@@ -49,6 +49,6 @@ jobs:
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add --all
           git commit -m "GitHub Action: generate latest manifests" || echo "No changes to commit"
-          gh pr create --title "Review changes to generate-current-manifests.yml" --body "Merge if all looks well" --base main --head new-branch
+          gh pr create --title "Review changes to generate-current-manifests.yml" --body "Merge if all looks well" --base main --head ${{ github.head_ref }}
         env: 
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
