@@ -34,14 +34,10 @@ jobs:
         shell: bash
         run: pip install -r requirements.txt
 
-      - name: Get branch name
-        run: |
-          echo "BRANCH_NAME=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
-
       - name: Switch to branch
         shell: bash
         run: |
-          git checkout -b ${{ env.BRANCH_NAME }}
+          git checkout -b new-branch
         
       - name: Generate all manifests
         working-directory: tests
@@ -53,6 +49,6 @@ jobs:
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add --all
           git commit -m "GitHub Action: generate latest manifests" || echo "No changes to commit"
-          gh pr create --title "Review changes to generate-current-manifests.yml" --body "Merge if all looks well" --base main --head ${{ env.BRANCH_NAME }}
+          gh pr create --title "Review changes to generate-current-manifests.yml" --body "Merge if all looks well" --base main --head new-branch
         env: 
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
