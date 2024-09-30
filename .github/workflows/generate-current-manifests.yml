@@ -33,31 +33,15 @@ jobs:
       - name: Install Libraries
         shell: bash
         run: pip install -r requirements.txt
-
-      - name: Switch to branch
-        shell: bash
-        run: |
-          git checkout -b new-branch
-        
+      
       - name: Generate all manifests
         working-directory: tests
         run: ./generate_all_templates.sh
 
-      - name: Commit changes
+      - name: Commit and push changes
         run: |
           git config --local user.name "$GITHUB_ACTOR"
           git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git add --all
           git commit -m "GitHub Action: generate latest manifests" || echo "No changes to commit"
-        env: 
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: new-branch
-          base: main
-          title: "Review changes to generate-current-manifests.yml"
-          body: "Merge if all looks well"
+          git push
