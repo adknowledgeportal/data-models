@@ -38,10 +38,20 @@ jobs:
         working-directory: tests
         run: ./generate_all_templates.sh
 
-      - name: Commit and push changes
-        run: |
-          git config --local user.name "$GITHUB_ACTOR"
-          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
-          git add --all
-          git commit -m "GitHub Action: generate latest manifests" || echo "No changes to commit"
-          git push
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "GitHub Action: generate latest manifests"
+          title: "Update manifests"
+          body: |
+            This PR updates the manifests based on the latest changes.
+            Please review and merge if everything looks correct.
+          branch: update-manifests
+          base: main
+          labels: |
+            automated pr
+            manifest update
+          reviewers: $$ {github.actor }}
+          draft: false
+          delete-branch: true
