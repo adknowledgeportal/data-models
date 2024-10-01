@@ -4,103 +4,153 @@
   "title": "IndividualHumanMetadataTemplate",
   "type": "object",
   "properties": {
-    "Braak": {
+    "sex": {
       "enum": [
-        "No BRAAK stage",
-        "BRAAK Stage 5",
-        "BRAAK Stage 3",
-        "missing or unknown",
-        "BRAAK Stage 4",
-        "BRAAK Stage 2",
-        "BRAAK Stage 1",
-        "BRAAK Stage 6",
+        "male",
+        "female",
+        "missing or unknown"
+      ]
+    },
+    "individualID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "ageDeath": {},
+    "apoeGenotype": {
+      "enum": [
+        "22",
+        "23",
+        "24",
+        "33",
+        "34",
+        "44",
         ""
+      ]
+    },
+    "CERAD": {
+      "enum": [
+        "Frequent Definite C3",
+        "missing or unknown",
+        "No AD C0",
+        "Sparse Possible C1",
+        "Moderate Probable C2",
+        ""
+      ]
+    },
+    "pH": {},
+    "species": {
+      "enum": [
+        "Rhesus macaque",
+        "Rat",
+        "Pan troglodytes",
+        "Drosophila melanogaster",
+        "Mouse",
+        "Human",
+        "Gallus gallus",
+        "Sus scrofa"
       ]
     },
     "apoe4Status": {
       "enum": [
-        "missing or unknown",
         "one or two E4",
         "no E4",
-        ""
-      ]
-    },
-    "species": {
-      "enum": [
-        "Drosophila melanogaster",
-        "Rat",
-        "Rhesus macaque",
-        "Pan troglodytes",
-        "Sus scrofa",
-        "Mouse",
-        "Human",
-        "Gallus gallus"
-      ]
-    },
-    "ethnicity": {},
-    "CERAD": {
-      "enum": [
-        "Frequent Definite C3",
-        "No AD C0",
         "missing or unknown",
-        "Moderate Probable C2",
-        "Sparse Possible C1",
         ""
       ]
     },
     "diagnosis": {
       "enum": [
-        "Bipolar Disorder",
-        "dementia",
-        "essential tremor",
-        "frontotemporal dementia",
-        "Major Depressive Disorder",
-        "MCI-DS",
-        "Parkinson's disease",
-        "Substance Related Disorder",
-        "Bladder Cancer",
-        "CS-DS",
-        "progressive supranuclear palsy",
         "Leukemia",
-        "Ovary Cancer",
-        "Lung Cancer",
-        "corticobasal degeneration disorder",
-        "Williams Syndrome",
-        "Breast Cancer",
-        "pathological aging",
-        "amyotrophic lateral sclerosis",
-        "Fibrocystic Breast Disease",
-        "type 2 diabetes mellitus",
-        "Affective Disorder",
-        "Skin Cancer",
-        "vascular dementia",
-        "Not Applicable",
-        "no cognitive impairment",
-        "obsessive compulsive disorder",
-        "obesity",
-        "Lewy body disease",
-        "hypoxia",
-        "Neurofibromatosis 2",
-        "dystonia",
-        "Brain Cancer",
-        "Tourette Syndrome",
-        "anxiety",
-        "Cervical Cancer",
         "mild cognitive impairment",
-        "Control",
-        "Schizophrenia",
-        "Alzheimer Disease",
         "Pancreatic Cancer",
-        "Neurofibromatosis 1",
-        "Alzheimer disease with psychosis",
+        "vascular dementia",
+        "Cervical Cancer",
+        "anxiety",
         "AD-DS",
         "multiple system atrophy",
-        "Colon Cancer",
+        "Ovary Cancer",
+        "Lewy body disease",
+        "obsessive compulsive disorder",
+        "Schizophrenia",
+        "dystonia",
+        "no cognitive impairment",
+        "Lung Cancer",
+        "Neurofibromatosis 2",
+        "Not Applicable",
+        "hypoxia",
+        "pathological aging",
+        "progressive supranuclear palsy",
+        "Skin Cancer",
         "Prostate Cancer",
-        "gliosis",
-        "traumatic brain injury",
-        "Autism Spectrum Disorder",
         "Juvenile Myelomonocytic Leukemia",
+        "obesity",
+        "amyotrophic lateral sclerosis",
+        "MCI-DS",
+        "Neurofibromatosis 1",
+        "Alzheimer Disease",
+        "Colon Cancer",
+        "Substance Related Disorder",
+        "traumatic brain injury",
+        "Affective Disorder",
+        "Autism Spectrum Disorder",
+        "Alzheimer disease with psychosis",
+        "dementia",
+        "gliosis",
+        "Tourette Syndrome",
+        "CS-DS",
+        "corticobasal degeneration disorder",
+        "type 2 diabetes mellitus",
+        "Fibrocystic Breast Disease",
+        "Brain Cancer",
+        "Bipolar Disorder",
+        "essential tremor",
+        "Williams Syndrome",
+        "Control",
+        "frontotemporal dementia",
+        "Breast Cancer",
+        "Bladder Cancer",
+        "Major Depressive Disorder",
+        "Parkinson's disease",
+        ""
+      ]
+    },
+    "brainWeight": {},
+    "causeDeath": {},
+    "ethnicity": {},
+    "yearsEducation": {},
+    "mannerDeath": {
+      "enum": [
+        "accident",
+        "natural causes",
+        "undetermined",
+        "suicide",
+        "homicide",
+        ""
+      ]
+    },
+    "diagnosisCriteria": {},
+    "Braak": {
+      "enum": [
+        "BRAAK Stage 3",
+        "missing or unknown",
+        "BRAAK Stage 1",
+        "BRAAK Stage 4",
+        "No BRAAK stage",
+        "BRAAK Stage 2",
+        "BRAAK Stage 6",
+        "BRAAK Stage 5",
+        ""
+      ]
+    },
+    "race": {
+      "enum": [
+        "Asian",
+        "White",
+        "American Indian or Alaska Native",
+        "Black or African American",
+        "Native Hawaiian or Other Pacific Islander",
         ""
       ]
     },
@@ -111,122 +161,72 @@
         ""
       ]
     },
-    "Component": {},
-    "individualID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "causeDeath": {},
-    "sex": {
+    "ageDeathUnits": {
       "enum": [
-        "missing or unknown",
-        "male",
-        "female"
-      ]
-    },
-    "race": {
-      "enum": [
-        "American Indian or Alaska Native",
-        "Native Hawaiian or Other Pacific Islander",
-        "Asian",
-        "White",
-        "Black or African American",
-        ""
-      ]
-    },
-    "pH": {},
-    "apoeGenotype": {
-      "enum": [
-        "22",
-        "34",
-        "24",
-        "44",
-        "23",
-        "33",
-        ""
-      ]
-    },
-    "mannerDeath": {
-      "enum": [
-        "suicide",
-        "undetermined",
-        "homicide",
-        "natural causes",
-        "accident",
+        "days",
+        "gestational weeks",
+        "weeks",
+        "years",
+        "months",
+        "PCW",
         ""
       ]
     },
     "cohort": {
       "enum": [
-        "CHDWB",
-        "EFIGA",
-        "MIND",
-        "UFL",
-        "Framingham",
-        "POINTER",
-        "ADNI",
-        "Columbia ADRC",
-        "Biggs Institute Brain Bank",
-        "ABC-DS",
-        "Banner",
-        "HBCC",
-        "Pitt ADRC",
+        "HPGP",
+        "MARS-WI",
+        "UPBB",
+        "BEAM",
         "Tulsa LIBR-1000",
-        "BLSA",
+        "Biggs Institute Brain Bank",
+        "CHDWB",
+        "ROSMAP",
+        "MCR",
+        "UFL",
+        "MIND",
         "HBTRC",
         "Emory_ADRC",
-        "MARS-WI",
-        "UK Biobank",
-        "NYBB",
-        "EHBS",
-        "MARS",
-        "ADRC",
-        "FBS",
-        "SMRI",
+        "BLSA",
         "UW ADRC",
-        "UPenn",
-        "HPGP",
-        "BEB-Miller",
-        "MCJ",
-        "UPBB",
-        "MC",
-        "HUP",
-        "BEAM",
-        "ROSMAP",
-        "MSBB",
-        "ACT",
-        "WHICAP",
-        "RADC",
         "Mayo Clinic",
-        "DiCAD",
-        "MCR",
+        "BEB-Miller",
+        "MSBB",
+        "ABC-DS",
+        "UK Biobank",
+        "WHICAP",
+        "MC",
+        "ADNI",
+        "MCJ",
+        "FBS",
+        "Framingham",
+        "POINTER",
+        "Pitt ADRC",
         "CLINCOR",
+        "DiCAD",
+        "EHBS",
+        "HUP",
+        "NYBB",
+        "SMRI",
+        "Banner",
+        "ACT",
+        "HBCC",
+        "EFIGA",
         "LBP",
+        "Columbia ADRC",
+        "MARS",
+        "RADC",
+        "UPenn",
+        "ADRC",
         ""
       ]
     },
-    "ageDeath": {},
-    "yearsEducation": {},
-    "PMI": {},
-    "diagnosisCriteria": {},
-    "brainWeight": {},
-    "ageDeathUnits": {
-      "enum": [
-        "PCW",
-        "years",
-        "months",
-        "days",
-        "gestational weeks",
-        "weeks",
-        ""
-      ]
-    }
+    "Component": {},
+    "PMI": {}
   },
   "required": [
-    "species",
+    "sex",
     "individualID",
-    "sex"
+    "species"
   ]
 }
