@@ -8436,9 +8436,6 @@
                     "@id": "bts:CNON"
                 },
                 {
-                    "@id": "bts:DELETEME"
-                },
-                {
                     "@id": "bts:DiCAD"
                 },
                 {
@@ -26155,23 +26152,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "CMC-PEC",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:DELETEME",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "\"DELETEME\"",
-            "rdfs:label": "DELETEME",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "DELETEME",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
