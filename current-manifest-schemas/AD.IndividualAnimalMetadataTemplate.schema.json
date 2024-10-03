@@ -4,54 +4,97 @@
   "title": "IndividualAnimalMetadataTemplate",
   "type": "object",
   "properties": {
+    "genotype": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
     "individualIdSource": {
       "enum": [
-        "UM-BTB",
-        "ADNI",
-        "DongLab",
-        "Newcastle",
-        "BEB_Miller",
-        "BannerSun",
-        "ABN",
-        "NIMH-HBCC",
-        "Pritzker",
-        "UCSF",
-        "Penn",
-        "IU",
-        "LivingBrainProject_MSSM",
-        "MSSM",
-        "Pitt",
-        "Emory",
-        "JAX",
-        "NYBB",
-        "MayoBrainBank",
-        "Sestan",
-        "UCI_TMF",
-        "Novogenix",
-        "HBTRC",
-        "Oxford",
-        "NDRI",
-        "Mayo Clinic",
-        "XCell Science",
         "StemExpress",
-        "Yale",
-        "HBSFRC",
-        "LIBD",
-        "PGP",
-        "Geschwind",
+        "DongLab",
         "TAA",
-        "ABR",
-        "Vaccarino",
-        "Rush",
-        "NICHD",
-        "AIBS",
-        "Einstein",
-        "SMRI",
+        "IU",
+        "HBSFRC",
+        "Pitt",
         "UW-CDL",
-        "Clotomics_PAIKEA_MSSM"
+        "ABR",
+        "Emory",
+        "Sestan",
+        "SMRI",
+        "Vaccarino",
+        "ABN",
+        "Rush",
+        "UCSF",
+        "Geschwind",
+        "Penn",
+        "Newcastle",
+        "Einstein",
+        "AIBS",
+        "HBTRC",
+        "UCI_TMF",
+        "NYBB",
+        "Clotomics_PAIKEA_MSSM",
+        "ADNI",
+        "LIBD",
+        "BannerSun",
+        "JAX",
+        "Novogenix",
+        "BEB_Miller",
+        "Mayo Clinic",
+        "Oxford",
+        "MayoBrainBank",
+        "UM-BTB",
+        "LivingBrainProject_MSSM",
+        "PGP",
+        "MSSM",
+        "Pritzker",
+        "NDRI",
+        "NICHD",
+        "NIMH-HBCC",
+        "Yale",
+        "XCell Science"
       ]
     },
-    "genotype": {
+    "matingID": {},
+    "species": {
+      "enum": [
+        "Sus scrofa",
+        "Mouse",
+        "Pan troglodytes",
+        "Rhesus macaque",
+        "Rat",
+        "Gallus gallus",
+        "Drosophila melanogaster",
+        "Human"
+      ]
+    },
+    "room": {},
+    "individualID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "sexChromosome": {},
+    "sex": {
+      "enum": [
+        "missing or unknown",
+        "male",
+        "female"
+      ]
+    },
+    "litter": {},
+    "dateDeath": {},
+    "Component": {},
+    "genotypeBackground": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "dateBirth": {
       "not": {
         "type": "null"
       },
@@ -59,121 +102,78 @@
     },
     "modelSystemName": {
       "enum": [
-        "Abca7V1599M_rs117187003",
-        "TYROBP_WT.KO",
-        "Cd2ap.B6",
-        "Plcg2KO",
-        "Snx1D465NSNP",
-        "Trem2flox",
-        "Sorl1A528TSNP",
-        "APPPS1",
-        "APPS1_Plexin-B1-KO",
-        "APOE2KI",
-        "hAbetaKI",
-        "Bin1K358R_Aduci",
-        "APPKM670-671NL-PSEN1deltaexon9",
-        "APPE693Q",
-        "CRND8",
-        "hAPPAPOE4Trem2R47H",
-        "hCR1KIAPOE4Trem2",
-        "TAUPS19_Plexin-B1-KO",
-        "APOE4Trem2R47H",
-        "hTau",
-        "PicalmH458R",
-        "TREM2",
-        "Abca7A1527GAPOE4Trem2R47H",
-        "BRI2-AB42",
-        "ApoEKO",
-        "Kif21bT82TSNP",
-        "Bin1.B6",
-        "APPKM670",
-        "rTg4510",
-        "Meox2KOHET",
-        "Plcg2M28LSNP",
-        "Abca7KO",
-        "APOE4KI",
-        "AppKOAPOE4Trem2R47H",
-        "MAPT-P301K",
-        "5XFAD",
-        "Spi1rs1377416",
-        "C57BL6J",
-        "Trem2R47H",
-        "Trem2KO",
-        "Abi3S209F_Aduci",
-        "TYROBP_KO.KO",
-        "hTauTrem2",
-        "AB42",
         "Trem2Y38C",
+        "TYROBP_KO.KO",
+        "hTau",
+        "B6.Gfap-APOE4",
+        "TYROBP_WT.KO",
+        "APOE4KI",
+        "APPE693Q",
+        "APPKM670",
+        "hAbetaKI",
+        "hCR1KIAPOE4Trem2",
         "B6.Clu",
-        "Mtmr4V297GSNP",
-        "Ceacam1KO",
-        "APPKM650",
-        "TAUPS19",
-        "TYROBP",
+        "MthfrC677TSNP",
+        "Trem2KO",
+        "Clasp2L163PSNP",
+        "APPS1_Plexin-B1-KO",
+        "Trem2flox",
+        "ApoEKO",
         "Trem2R47H_NSS",
+        "5XFAD",
+        "C57BL6J",
+        "Bin1K358R_Aduci",
+        "MAPT-P301K",
+        "Ceacam1KO",
+        "Abi3S209F_Aduci",
+        "Sorl1A528TSNP",
+        "Trem2R47H",
         "3xTg-AD",
         "TYROBP_WT",
-        "Il1rapKO",
+        "TREM2",
+        "hTauTrem2",
+        "Mtmr4V297GSNP",
         "APOE3KI",
-        "Clasp2L163PSNP",
-        "MthfrC677TSNP",
-        "B6.Gfap-APOE4",
-        "Plexin-B1-KO"
+        "Kif21bT82TSNP",
+        "Abca7A1527GAPOE4Trem2R47H",
+        "Plexin-B1-KO",
+        "Plcg2M28LSNP",
+        "Snx1D465NSNP",
+        "APOE4Trem2R47H",
+        "Bin1.B6",
+        "Abca7V1599M_rs117187003",
+        "Abca7KO",
+        "APPPS1",
+        "Spi1rs1377416",
+        "hAPPAPOE4Trem2R47H",
+        "Il1rapKO",
+        "Meox2KOHET",
+        "TAUPS19_Plexin-B1-KO",
+        "APPKM650",
+        "PicalmH458R",
+        "CRND8",
+        "BRI2-AB42",
+        "TAUPS19",
+        "APOE2KI",
+        "Plcg2KO",
+        "AB42",
+        "AppKOAPOE4Trem2R47H",
+        "Cd2ap.B6",
+        "rTg4510",
+        "TYROBP",
+        "APPKM670-671NL-PSEN1deltaexon9"
       ]
     },
-    "dateDeath": {},
-    "dateBirth": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "sexChromosome": {},
-    "genotypeBackground": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "individualID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "Component": {},
-    "sex": {
-      "enum": [
-        "male",
-        "missing or unknown",
-        "female"
-      ]
-    },
-    "treatmentDose": {},
-    "litter": {},
-    "species": {
-      "enum": [
-        "Drosophila melanogaster",
-        "Human",
-        "Mouse",
-        "Pan troglodytes",
-        "Gallus gallus",
-        "Rhesus macaque",
-        "Sus scrofa",
-        "Rat"
-      ]
-    },
-    "room": {},
-    "matingID": {}
+    "treatmentDose": {}
   },
   "required": [
-    "individualIdSource",
     "genotype",
-    "modelSystemName",
-    "dateBirth",
-    "genotypeBackground",
+    "individualIdSource",
+    "species",
     "individualID",
     "sex",
-    "species"
+    "genotypeBackground",
+    "dateBirth",
+    "modelSystemName"
   ]
 }
