@@ -18418,10 +18418,7 @@
             },
             "sms:displayName": "brainWeight",
             "sms:required": "sms:false",
-            "sms:validationRules": {
-                "IndividualAnimalMODEL-ADMetadataTemplate": "required",
-                "NeuropathMetadataTemplate": "required"
-            }
+            "sms:validationRules": []
         },
         {
             "@id": "bts:BrainWeightBirth",

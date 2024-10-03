@@ -846,7 +846,7 @@ bindingDensity,The number of optical features per square micron for each lane. (
 birthID,Identifying string linked to a particular animal,,,,False,ManifestColumn,,sage.annotations-neuro.birthID-0.0.1,,string,MODEL-AD
 bodyPart,Named areas of the body.,"brain, head",,,False,ManifestColumn,,sage.annotations-experimentalData.bodyPart-0.0.3,,string,drosophila
 Braak,Braak Stage - a semiquantitative measure of serverity of neurofibrillary tangle pathology,"No BRAAK stage, BRAAK Stage 1, BRAAK Stage 2, BRAAK Stage 3, BRAAK Stage 4, BRAAK Stage 5, BRAAK Stage 6, missing or unknown",,,False,ManifestColumn,,sage.annotations-clinical.Braak-0.0.2,#NeuropathMetadataTemplate required^^,string,clinical
-brainWeight,Weight of brain in grams. Use missing or unknown if not available,,,,False,ManifestColumn,,sage.annotations-experimentalData.brainWeight-0.0.2,#NeuropathMetadataTemplate required^^#IndividualAnimalMODEL-ADMetadataTemplate required^^,number,clinical
+brainWeight,Weight of brain in grams. Use missing or unknown if not available,,,,False,ManifestColumn,,sage.annotations-experimentalData.brainWeight-0.0.2,,number,clinical
 brainWeightBirth,Weight of brain in grams at birth,,,,False,ManifestColumn,,,,integer,mouse
 brainWeightDeath,Weight of brain in grams at death,,,,False,ManifestColumn,,,,integer,mouse
 BrodmannArea,A segmentation of the cerebral cortex on the basis of cytoarchitecture,,,,False,ManifestColumn,,sage.annotations-neuro.BrodmannArea-0.0.2,,string,biospecimen
