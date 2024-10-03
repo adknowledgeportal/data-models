@@ -13,7 +13,7 @@ DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 EXCEL_DIR=../current-excel-manifests
 JSON_DIR=../current-manifest-schemas
-SLEEP_THROTTLE=17 # API rate-limiting, need to better figure out dynamically based on # of templates
+SLEEP_THROTTLE=30 # API rate-limiting, need to better figure out dynamically based on # of templates
 
 # copy schematic-config.yml into tests/ 
 cp $SCHEMATIC_CONFIG_PATH $SCHEMATIC_CONFIG
