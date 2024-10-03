@@ -1,0 +1,179 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/IndividualAnimalMetadataTemplate",
+  "title": "IndividualAnimalMetadataTemplate",
+  "type": "object",
+  "properties": {
+    "individualIdSource": {
+      "enum": [
+        "UM-BTB",
+        "ADNI",
+        "DongLab",
+        "Newcastle",
+        "BEB_Miller",
+        "BannerSun",
+        "ABN",
+        "NIMH-HBCC",
+        "Pritzker",
+        "UCSF",
+        "Penn",
+        "IU",
+        "LivingBrainProject_MSSM",
+        "MSSM",
+        "Pitt",
+        "Emory",
+        "JAX",
+        "NYBB",
+        "MayoBrainBank",
+        "Sestan",
+        "UCI_TMF",
+        "Novogenix",
+        "HBTRC",
+        "Oxford",
+        "NDRI",
+        "Mayo Clinic",
+        "XCell Science",
+        "StemExpress",
+        "Yale",
+        "HBSFRC",
+        "LIBD",
+        "PGP",
+        "Geschwind",
+        "TAA",
+        "ABR",
+        "Vaccarino",
+        "Rush",
+        "NICHD",
+        "AIBS",
+        "Einstein",
+        "SMRI",
+        "UW-CDL",
+        "Clotomics_PAIKEA_MSSM"
+      ]
+    },
+    "genotype": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "modelSystemName": {
+      "enum": [
+        "Abca7V1599M_rs117187003",
+        "TYROBP_WT.KO",
+        "Cd2ap.B6",
+        "Plcg2KO",
+        "Snx1D465NSNP",
+        "Trem2flox",
+        "Sorl1A528TSNP",
+        "APPPS1",
+        "APPS1_Plexin-B1-KO",
+        "APOE2KI",
+        "hAbetaKI",
+        "Bin1K358R_Aduci",
+        "APPKM670-671NL-PSEN1deltaexon9",
+        "APPE693Q",
+        "CRND8",
+        "hAPPAPOE4Trem2R47H",
+        "hCR1KIAPOE4Trem2",
+        "TAUPS19_Plexin-B1-KO",
+        "APOE4Trem2R47H",
+        "hTau",
+        "PicalmH458R",
+        "TREM2",
+        "Abca7A1527GAPOE4Trem2R47H",
+        "BRI2-AB42",
+        "ApoEKO",
+        "Kif21bT82TSNP",
+        "Bin1.B6",
+        "APPKM670",
+        "rTg4510",
+        "Meox2KOHET",
+        "Plcg2M28LSNP",
+        "Abca7KO",
+        "APOE4KI",
+        "AppKOAPOE4Trem2R47H",
+        "MAPT-P301K",
+        "5XFAD",
+        "Spi1rs1377416",
+        "C57BL6J",
+        "Trem2R47H",
+        "Trem2KO",
+        "Abi3S209F_Aduci",
+        "TYROBP_KO.KO",
+        "hTauTrem2",
+        "AB42",
+        "Trem2Y38C",
+        "B6.Clu",
+        "Mtmr4V297GSNP",
+        "Ceacam1KO",
+        "APPKM650",
+        "TAUPS19",
+        "TYROBP",
+        "Trem2R47H_NSS",
+        "3xTg-AD",
+        "TYROBP_WT",
+        "Il1rapKO",
+        "APOE3KI",
+        "Clasp2L163PSNP",
+        "MthfrC677TSNP",
+        "B6.Gfap-APOE4",
+        "Plexin-B1-KO"
+      ]
+    },
+    "dateDeath": {},
+    "dateBirth": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "sexChromosome": {},
+    "genotypeBackground": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "individualID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "Component": {},
+    "sex": {
+      "enum": [
+        "male",
+        "missing or unknown",
+        "female"
+      ]
+    },
+    "treatmentDose": {},
+    "litter": {},
+    "species": {
+      "enum": [
+        "Drosophila melanogaster",
+        "Human",
+        "Mouse",
+        "Pan troglodytes",
+        "Gallus gallus",
+        "Rhesus macaque",
+        "Sus scrofa",
+        "Rat"
+      ]
+    },
+    "room": {},
+    "matingID": {}
+  },
+  "required": [
+    "individualIdSource",
+    "genotype",
+    "modelSystemName",
+    "dateBirth",
+    "genotypeBackground",
+    "individualID",
+    "sex",
+    "species"
+  ]
+}
