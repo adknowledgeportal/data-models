@@ -5,10 +5,10 @@
 name: Store Current Manifests
 
 on:
-  # push:
-  #  branches: main
-  #  # runs on changes to data model 
-  #  paths: 'AD.model.jsonld'
+  push:
+    branches: main
+    # runs on changes to data model 
+    paths: 'AD.model.jsonld'
 
   workflow_dispatch:
 
