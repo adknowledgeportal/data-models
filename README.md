@@ -80,7 +80,8 @@ When you open a PR that includes any changes to files in the `modules/` director
 1. Runs the `assemble_csv_data_model.py` script to concatenate the modular attribute csvs into one data frame, sort alphabetically by `Parent` and then `Attribute`, and write the combined dataframe to `AD.model.csv`. The action then commits the changes to the master data model csv.
 2. Installs the latest version of `schematic` from PyPi and runs `schema convert` on the newly-concatenated data model csv to generate a new version of the jsonld file `AD.model.jsonld`. The action also commits the changes to the jsonld.
 3. Collects the names of any module attributes or templates changed by your PR, then uses the schematic CLI to generate Google sheet versions of those templates.
-4. Makes a new comment in the PR consisting of an Rmd report with the template generation status and link to each template, so you can physically view the new template and verify that any changes you made look as intended.  
+4. Makes a new comment in the PR consisting of an Rmd report with the template generation status and link to each template, so you can physically view the new template and verify that any changes you made look as intended.
+5. Due to branch protection rules set on the `main` branch, a branch called `update-manifests` containing the updated manifests is created, and a PR is automatically generated for a member of the repo to review and manually merge afterwards.
 
 If this automated workflow fails, then the data model may be invalid and further investigation is needed. 
    
@@ -93,6 +94,7 @@ If you want to make changes to the data model and test them out by generating ma
 Codespace secrets: 
 - SYNAPSE_PAT: scoped to view and download permissions on the sysbio-dcc-tasks-01 Synapse service account
 - SERVICE_ACCOUNT_CREDS: these are creds for using the Google sheets api with schematic
+- GENERATE_MANIFESTS_ON_ACTION: this fine-grained PAT lets manifests be successfully generated despite branch protection, has read/write access to actions, and has repo access to adknowledgeportal/data-models 
 
 ## Legacy data models:
 Previous versions of the data model live in the `legacy-data-models/` folder. This include the Diverse Cohorts pilot model and the intial "legacy" model representing the AD Portal Synapse project metadata dictionary and metadata templates from August 2023. These are not being used by DCA.

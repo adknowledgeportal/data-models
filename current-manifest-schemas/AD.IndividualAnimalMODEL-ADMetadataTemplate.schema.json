@@ -4,38 +4,24 @@
   "title": "IndividualAnimalMODEL-ADMetadataTemplate",
   "type": "object",
   "properties": {
-    "Component": {},
-    "brainWeight": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "generation": {},
-    "rodentDiet": {
-      "enum": [
-        "6% standard",
-        "4% standard",
-        "5W80 western diet",
-        "45% high-fat diet",
-        "7% standard"
-      ]
-    },
+    "birthID": {},
     "bedding": {
       "enum": [
-        "Alpha-dri",
         "corn cob",
+        "Alpha-dri",
+        "aspen sanichip",
         "aspen",
-        "pine",
         "sanichip",
-        "aspen sanichip"
+        "pine"
       ]
     },
-    "genotypeBackground": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
+    "room": {},
+    "sex": {
+      "enum": [
+        "missing or unknown",
+        "male",
+        "female"
+      ]
     },
     "genotype": {
       "not": {
@@ -43,31 +29,190 @@
       },
       "minLength": 1
     },
-    "species": {
+    "modelSystemName": {
       "enum": [
-        "Human",
-        "Rat",
-        "Pan troglodytes",
-        "Gallus gallus",
-        "Rhesus macaque",
-        "Mouse",
-        "Sus scrofa",
-        "Drosophila melanogaster"
+        "APOE2KI",
+        "Abca7A1527GAPOE4Trem2R47H",
+        "Bin1.B6",
+        "MAPT-P301K",
+        "AppKOAPOE4Trem2R47H",
+        "APPKM650",
+        "TYROBP_WT",
+        "TYROBP_WT.KO",
+        "TAUPS19_Plexin-B1-KO",
+        "Cd2ap.B6",
+        "Trem2flox",
+        "B6.Clu",
+        "APOE3KI",
+        "5XFAD",
+        "hCR1KIAPOE4Trem2",
+        "C57BL6J",
+        "TREM2",
+        "APPE693Q",
+        "Snx1D465NSNP",
+        "APPS1_Plexin-B1-KO",
+        "Kif21bT82TSNP",
+        "Clasp2L163PSNP",
+        "APPKM670",
+        "Abi3S209F_Aduci",
+        "Il1rapKO",
+        "Abca7KO",
+        "hTauTrem2",
+        "Trem2Y38C",
+        "Plexin-B1-KO",
+        "Spi1rs1377416",
+        "TYROBP_KO.KO",
+        "APPKM670-671NL-PSEN1deltaexon9",
+        "MthfrC677TSNP",
+        "APPPS1",
+        "APOE4KI",
+        "TAUPS19",
+        "hAbetaKI",
+        "Ceacam1KO",
+        "Plcg2KO",
+        "Abca7V1599M_rs117187003",
+        "APOE4Trem2R47H",
+        "rTg4510",
+        "Trem2R47H",
+        "BRI2-AB42",
+        "B6.Gfap-APOE4",
+        "Bin1K358R_Aduci",
+        "Mtmr4V297GSNP",
+        "CRND8",
+        "Sorl1A528TSNP",
+        "Trem2R47H_NSS",
+        "Meox2KOHET",
+        "TYROBP",
+        "hTau",
+        "ApoEKO",
+        "hAPPAPOE4Trem2R47H",
+        "PicalmH458R",
+        "AB42",
+        "Trem2KO",
+        "3xTg-AD",
+        "Plcg2M28LSNP"
       ]
     },
-    "sex": {
-      "enum": [
-        "male",
-        "female"
-      ]
-    },
+    "treatmentDose": {},
+    "stockNumber": {},
     "microchipID": {},
+    "individualIdSource": {
+      "enum": [
+        "MayoBrainBank",
+        "NICHD",
+        "HBTRC",
+        "Clotomics_PAIKEA_MSSM",
+        "Emory",
+        "NDRI",
+        "UCI_TMF",
+        "ABR",
+        "Geschwind",
+        "NIMH-HBCC",
+        "Rush",
+        "Penn",
+        "MSSM",
+        "Yale",
+        "Einstein",
+        "ADNI",
+        "Vaccarino",
+        "Pitt",
+        "UW-CDL",
+        "AIBS",
+        "Sestan",
+        "XCell Science",
+        "LivingBrainProject_MSSM",
+        "Oxford",
+        "Mayo Clinic",
+        "Pritzker",
+        "SMRI",
+        "StemExpress",
+        "NYBB",
+        "DongLab",
+        "UCSF",
+        "TAA",
+        "ABN",
+        "IU",
+        "JAX",
+        "Novogenix",
+        "PGP",
+        "LIBD",
+        "BEB_Miller",
+        "BannerSun",
+        "Newcastle",
+        "HBSFRC",
+        "UM-BTB"
+      ]
+    },
     "materialOrigin": {
       "enum": [
-        "UCI_TMF",
-        "IU",
         "Pitt",
-        "JAX"
+        "IU",
+        "JAX",
+        "UCI_TMF"
+      ]
+    },
+    "generation": {},
+    "dateBirth": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "ageDeathUnits": {
+      "enum": [
+        "weeks",
+        "PCW",
+        "years",
+        "gestational weeks",
+        "days",
+        "months"
+      ]
+    },
+    "brainWeight": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "genotypeBackground": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "species": {
+      "enum": [
+        "Rhesus macaque",
+        "Gallus gallus",
+        "Drosophila melanogaster",
+        "Pan troglodytes",
+        "Sus scrofa",
+        "Mouse",
+        "Human",
+        "Rat"
+      ]
+    },
+    "rodentDiet": {
+      "enum": [
+        "4% standard",
+        "5W80 western diet",
+        "7% standard",
+        "6% standard",
+        "45% high-fat diet"
+      ]
+    },
+    "treatmentType": {
+      "enum": [
+        "placebo",
+        "Abeta42 oligomer",
+        "Control",
+        "clozapine",
+        "Abeta42 fibril",
+        "verubecestat",
+        "levetiracetam",
+        "haloperidol",
+        "cuprizone",
+        ""
       ]
     },
     "ageDeath": {
@@ -76,183 +221,39 @@
       },
       "minLength": 1
     },
-    "room": {},
-    "individualIdSource": {
-      "enum": [
-        "Mayo Clinic",
-        "XCell Science",
-        "TAA",
-        "IU",
-        "UCSF",
-        "Pritzker",
-        "UW-CDL",
-        "Emory",
-        "NDRI",
-        "NIMH-HBCC",
-        "Pitt",
-        "DongLab",
-        "StemExpress",
-        "MSSM",
-        "PGP",
-        "ADNI",
-        "LIBD",
-        "Clotomics_PAIKEA_MSSM",
-        "Oxford",
-        "BannerSun",
-        "Yale",
-        "Einstein",
-        "NYBB",
-        "BEB_Miller",
-        "Penn",
-        "MayoBrainBank",
-        "Novogenix",
-        "HBTRC",
-        "Rush",
-        "Vaccarino",
-        "NICHD",
-        "JAX",
-        "LivingBrainProject_MSSM",
-        "SMRI",
-        "Sestan",
-        "UM-BTB",
-        "UCI_TMF",
-        "Newcastle",
-        "Geschwind",
-        "HBSFRC",
-        "ABN",
-        "ABR",
-        "AIBS"
-      ]
-    },
     "climbID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "ageDeathUnits": {
-      "enum": [
-        "PCW",
-        "months",
-        "years",
-        "weeks",
-        "days",
-        "gestational weeks"
-      ]
-    },
-    "dateBirth": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "treatmentDose": {},
-    "birthID": {},
     "matingID": {},
+    "Component": {},
+    "strainOfficialName": {},
     "individualID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "treatmentType": {
-      "enum": [
-        "Abeta42 fibril",
-        "clozapine",
-        "Control",
-        "levetiracetam",
-        "cuprizone",
-        "placebo",
-        "verubecestat",
-        "Abeta42 oligomer",
-        "haloperidol",
-        ""
-      ]
-    },
-    "strainOfficialName": {},
     "rodentWeight": {},
-    "waterpH": {},
-    "stockNumber": {},
-    "modelSystemName": {
-      "enum": [
-        "Il1rapKO",
-        "TAUPS19",
-        "APPS1_Plexin-B1-KO",
-        "APOE4Trem2R47H",
-        "PicalmH458R",
-        "Clasp2L163PSNP",
-        "5XFAD",
-        "Ceacam1KO",
-        "Trem2flox",
-        "APPKM670-671NL-PSEN1deltaexon9",
-        "Abca7KO",
-        "Plcg2M28LSNP",
-        "ApoEKO",
-        "Bin1.B6",
-        "B6.Clu",
-        "hCR1KIAPOE4Trem2",
-        "TYROBP_KO.KO",
-        "Sorl1A528TSNP",
-        "Plcg2KO",
-        "Abi3S209F_Aduci",
-        "Trem2R47H",
-        "CRND8",
-        "MthfrC677TSNP",
-        "BRI2-AB42",
-        "AppKOAPOE4Trem2R47H",
-        "hAbetaKI",
-        "hTauTrem2",
-        "Plexin-B1-KO",
-        "rTg4510",
-        "Spi1rs1377416",
-        "Trem2R47H_NSS",
-        "3xTg-AD",
-        "Cd2ap.B6",
-        "Abca7A1527GAPOE4Trem2R47H",
-        "Trem2Y38C",
-        "AB42",
-        "MAPT-P301K",
-        "APPKM670",
-        "TYROBP_WT.KO",
-        "APPPS1",
-        "APPKM650",
-        "hAPPAPOE4Trem2R47H",
-        "Snx1D465NSNP",
-        "TYROBP",
-        "APOE3KI",
-        "APOE4KI",
-        "B6.Gfap-APOE4",
-        "C57BL6J",
-        "Meox2KOHET",
-        "Mtmr4V297GSNP",
-        "APPE693Q",
-        "hTau",
-        "Abca7V1599M_rs117187003",
-        "Bin1K358R_Aduci",
-        "TREM2",
-        "Kif21bT82TSNP",
-        "TYROBP_WT",
-        "APOE2KI",
-        "TAUPS19_Plexin-B1-KO",
-        "Trem2KO"
-      ]
-    }
+    "waterpH": {}
   },
   "required": [
-    "brainWeight",
-    "rodentDiet",
     "bedding",
-    "genotypeBackground",
-    "genotype",
-    "species",
     "sex",
-    "materialOrigin",
-    "ageDeath",
+    "genotype",
+    "modelSystemName",
     "individualIdSource",
-    "climbID",
-    "ageDeathUnits",
+    "materialOrigin",
     "dateBirth",
-    "individualID",
-    "modelSystemName"
+    "ageDeathUnits",
+    "brainWeight",
+    "genotypeBackground",
+    "species",
+    "rodentDiet",
+    "ageDeath",
+    "climbID",
+    "individualID"
   ]
 }
