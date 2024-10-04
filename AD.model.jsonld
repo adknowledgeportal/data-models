@@ -13130,6 +13130,9 @@
                 },
                 {
                     "@id": "bts:Pharmacology"
+                },
+                {
+                    "@id": "bts:Lipidomics"
                 }
             ],
             "sms:displayName": "dataType",
@@ -18570,6 +18573,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "contrastAgent",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Lipidomics",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Lipidomics",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "lipidomics",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
