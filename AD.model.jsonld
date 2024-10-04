@@ -32525,6 +32525,312 @@
             "sms:displayName": "ATP6V1A_kd",
             "sms:required": "sms:false",
             "sms:validationRules": []
+        },
+        {
+            "@id": "bts:FU1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Visit schedule Diet 2 Post B F/U",
+            "rdfs:label": "FU1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "FU 1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:FU1PRE2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Visit schedule Diet 1 between treatment A and treatment B",
+            "rdfs:label": "FU1PRE2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "FU 1 PRE 2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:FU2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Visit schedule Diet 1 final visit",
+            "rdfs:label": "FU2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "FU 2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:FU2PRE1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Visit schedule Diet 2 between treatment A and B",
+            "rdfs:label": "FU2PRE1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "FU 2 PRE 1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:POST1keto",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "POST 1-keto",
+            "rdfs:label": "POST1keto",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "POST 1 keto",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:POST2aha",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "POST 2-aha",
+            "rdfs:label": "POST2aha",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "POST 2 aha",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:POSTACOGAha",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Post treatment A Cog labs.  A= American Heart diet",
+            "rdfs:label": "POSTACOGAha",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "POSTA COG_aha",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:POSTACOGKeto",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Post treatment A Cog labs keto diet",
+            "rdfs:label": "POSTACOGKeto",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "POSTA COG_keto",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:POSTALPKeto",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Post treatment A Lumbar puncture",
+            "rdfs:label": "POSTALPKeto",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "POSTA LP_keto",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:POSTBCOGAha",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Post treatment B Cog labs American Heart",
+            "rdfs:label": "POSTBCOGAha",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "POSTB COG_aha",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:POSTBCOGKeto",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Post treatment B Cog labs.  B = keto diet",
+            "rdfs:label": "POSTBCOGKeto",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "POSTB COG_keto",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:POSTBFU",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Final follow up visit",
+            "rdfs:label": "POSTBFU",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "POSTB FU",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:POSTBLPAha",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Post treatment B Lumbar puncture",
+            "rdfs:label": "POSTBLPAha",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "POSTB LP_aha",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PRE1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Diet schedule 1 first visit",
+            "rdfs:label": "PRE1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "PRE 1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PRE2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Visit schedule Diet 2 first visit",
+            "rdfs:label": "PRE2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "PRE 2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PREACOG",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Pre treatment A Cog labs",
+            "rdfs:label": "PREACOG",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "PREA COG",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PREALP",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Pre treatment A Lumbar puncture",
+            "rdfs:label": "PREALP",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "PREA LP",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PREBCOG",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Pre treatment B Cog labs",
+            "rdfs:label": "PREBCOG",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TreatmentType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "PREB COG",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
         }
     ],
     "@id": "http://schema.biothings.io/#0.1"
