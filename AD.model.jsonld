@@ -2904,7 +2904,7 @@
         {
             "@id": "bts:BiocratesMxPQuant500XL",
             "@type": "rdfs:Class",
-            "rdfs:comment": "The Biocrates MxP® Quant 500 XL offers the largest combination of lipids and small molecules for quantitative metabolomics profiling in a single kit and covers more than 1,000 metabolites from various biochemical classes.  This kit profiles more than 400 quantifiable metabolism indicators, covering hundreds of metabolic pathways.",
+            "rdfs:comment": "The Biocrates MxP® Quant 500 XL combines quantitative metabolomics profiling of lipids and small molecules in a single kit and covers more than 1,000 metabolites from various biochemical classes.",
             "rdfs:label": "BiocratesMxPQuant500XL",
             "rdfs:subClassOf": [
                 {
