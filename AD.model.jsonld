@@ -8402,6 +8402,9 @@
                     "@id": "bts:Aging-PheWAS"
                 },
                 {
+                    "@id": "bts:AGMPTULSA1000LIBR"
+                },
+                {
                     "@id": "bts:AMP-ADDiverseCohorts"
                 },
                 {
@@ -26115,6 +26118,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Aging-PheWAS",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AGMPTULSA1000LIBR",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "A naturalistic study protocol for multilevel assessment and outcome prediction in a large psychiatric sample (AGMP_TULSA_1000_LIBR)",
+            "rdfs:label": "AGMPTULSA1000LIBR",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "AGMP_TULSA_1000_LIBR",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
