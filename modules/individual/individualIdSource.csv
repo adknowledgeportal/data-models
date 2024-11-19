@@ -1,11 +1,12 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-individualIdSource,Database or repository to which individual ID maps,"ABN, ABR, ADNI, AIBS, BannerSun, BEB_Miller, Clotomics_PAIKEA_MSSM, DongLab, Einstein, Emory, Geschwind, HBSFRC, HBTRC, JAX, LIBD, LivingBrainProject_MSSM, MayoBrainBank, Mayo Clinic, MSSM, NDRI, Newcastle, NICHD, NIMH-HBCC, Novogenix, NYBB, Oxford, Penn, PGP, Pitt, Pritzker, Rush, Sestan, SMRI, StemExpress, TAA, UCI_TMF, UCSF, UM-BTB, UW-CDL, Vaccarino, XCell Science, Yale, IU",,,False,ManifestColumn,,sage.annotations-experimentalData.individualIdSource-0.0.17,required^^#IndividualHumanMetadataTemplate,string,individual
+individualIdSource,Database or repository to which individual ID maps,"ABN, ABR, ADNI, AIBS, BannerSun, BEB_Miller, Caltech, Clotomics_PAIKEA_MSSM, DongLab, Einstein, Emory, Geschwind, HBSFRC, HBTRC, JAX, LIBD, LivingBrainProject_MSSM, MayoBrainBank, Mayo Clinic, MSSM, NDRI, Newcastle, NICHD, NIMH-HBCC, Novogenix, NYBB, Oxford, Penn, PGP, Pitt, Pritzker, Rush, Sestan, SMRI, StemExpress, TAA, UCI_TMF, UCSF, UM-BTB, UW-CDL, Vaccarino, XCell Science, Yale, IU",,,False,ManifestColumn,,sage.annotations-experimentalData.individualIdSource-0.0.17,required^^#IndividualHumanMetadataTemplate,string,individual
 ABN,Autism Brain Net,,,,,individualIdSource,,https://www.autismbrainnet.org/,,string,individual
 ABR,Advanced Biosciences Resources,,,,,individualIdSource,,,,string,individual
 ADNI,Alzheimer's Disease Neuroimaging Initiative,,,,,individualIdSource,,http://adni.loni.usc.edu/,,string,individual
 AIBS,Allen Institute for Brain Science,,,,,individualIdSource,,https://alleninstitute.org/what-we-do/brain-science/research/allen-institute-brain-science/,,string,individual
 BannerSun,Banner Sun Health Research Institute,,,,,individualIdSource,,https://www.bannerhealth.com/locations/sun-city/banner-sun-health-research-institute-santa-fe,,string,individual
 BEB_Miller,University of Miami Miller School of Medicine Brain Endowment Bank,,,,,individualIdSource,,https://med.miami.edu/programs/brain-endowment-bank,,string,individual
+Caltech,California Institute of Technology,,,,,individualIdSource,,https://www.caltech.edu/,,string,individual
 Clotomics_PAIKEA_MSSM,,,,,,individualIdSource,,https://icahn.mssm.edu/,,string,individual
 DongLab,Laboratory of Translational Neurobiology led by Principal Investigator Dr. Hongxin Dong MD PhD at Northwestern University.,,,,,individualIdSource,,https://sites.northwestern.edu/donglab/,,string,individual
 Einstein,Albert Einstein College of Medicine,,,,,individualIdSource,,https://www.einstein.yu.edu/,,string,individual
