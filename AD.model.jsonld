@@ -10095,6 +10095,9 @@
                     "@id": "bts:BEBMiller"
                 },
                 {
+                    "@id": "bts:Caltech"
+                },
+                {
                     "@id": "bts:ClotomicsPAIKEAMSSM"
                 },
                 {
@@ -16467,6 +16470,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "BEB_Miller",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Caltech",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "California Institute of Technology",
+            "rdfs:label": "Caltech",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualIdSource"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Caltech",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
