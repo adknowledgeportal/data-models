@@ -8402,6 +8402,9 @@
                     "@id": "bts:Aging-PheWAS"
                 },
                 {
+                    "@id": "bts:AGMPANIMALMODELS"
+                },
+                {
                     "@id": "bts:AGMPTULSA1000LIBR"
                 },
                 {
@@ -26138,6 +26141,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Aging-PheWAS",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AGMPANIMALMODELS",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Mechanistic Studies in Animal Models Study",
+            "rdfs:label": "AGMPANIMALMODELS",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "AGMP_ANIMAL_MODELS",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
