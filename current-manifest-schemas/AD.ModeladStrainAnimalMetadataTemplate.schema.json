@@ -5,17 +5,11 @@
   "type": "object",
   "properties": {
     "strainOfficialName": {},
-    "Component": {},
+    "geneticMutations": {},
+    "geneticBackground": {},
     "registryAbbreviation": {},
     "stockNumber": {},
-    "geneticBackground": {},
-    "strainCommonName": {},
-    "individualID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
+    "Component": {},
     "modelType": {
       "enum": [
         "Early-onset AD (EOAD)",
@@ -25,8 +19,14 @@
         ""
       ]
     },
-    "geneticMutations": {},
-    "specimenID": {}
+    "specimenID": {},
+    "strainCommonName": {},
+    "individualID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    }
   },
   "required": [
     "individualID"
