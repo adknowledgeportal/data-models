@@ -6,6 +6,7 @@ missing or unknown,ADNC severity score is missing or unknown,,,,,ADNC,,CLEAR-AD,
 Not AD,Not AD,,,,,ADNC,,ADSP,,string,clinical
 days,"Age measured in days, a period of 24 hours.",,,,,ageAssessmentUnits,,http://purl.obolibrary.org/obo/NCIT_C25301,,string,experimentalData
 gestational weeks,"Gestational age (written with both weeks and days, e.g. 39 weeks and 0 days) is calculated using the best obstetrical estimated due date (EDD) based on the following formula: Gestational Age = (280 - (EDD - Reference Date))/ 7. Note: Reference Date is the date on which you are trying to determine gestational age.",,,,,ageAssessmentUnits,,http://purl.obolibrary.org/obo/NCIT_C81253,,string,experimentalData
+hours,Age measured in hours (60 minutes),,,,,ageAssessmentUnits,,TBD,,string,experimentalData
 months,Age measured in calendar months (approximately 30 days or 4 weeks).,,,,,ageAssessmentUnits,,http://purl.obolibrary.org/obo/NCIT_C29846,,string,experimentalData
 PCW,Post-Conception Weeks,,,,,ageAssessmentUnits,,https://embryology.med.unsw.edu.au/embryology/index.php/Timeline_human_development,,string,experimentalData
 weeks,"Age measured in weeks, a period of 7 consecutive days.",,,,,ageAssessmentUnits,,http://purl.obolibrary.org/obo/NCIT_C29844,,string,experimentalData
@@ -821,7 +822,7 @@ LMO,Lipid-modified oligonucleotide sample barcode anchor.,,,,,libraryType,,https
 plasmid DNA,A small cellular inclusion consisting of a ring of DNA that is not in a chromosome but is capable of autonomous replication.,,,,,libraryType,,http://purl.obolibrary.org/obo/NCIT_C754,,string,sequencing
 ADNC,ADNC severity score,"Not AD, Low, Intermediate, High, missing or unknown",,,True,ManifestColumn,,sage-annotations-clinical.ADNC-0.0.2,string,,clinical
 ageAssessment,Age of clinical or behavioral assessment.,,,,False,ManifestColumn,,sage.annotations-experimentalData.ageAssessment-0.0.2,,number,experimentalData
-ageAssessmentUnits,Age of assessment units.,"days, gestational weeks, months, PCW, weeks, years",,,False,ManifestColumn,,sage.annotations-experimentalData.ageAssessmentUnits-0.0.2,,string,experimentalData
+ageAssessmentUnits,Age of assessment units.,"days, gestational weeks, months, PCW, weeks, years, hours",,,False,ManifestColumn,,sage.annotations-experimentalData.ageAssessmentUnits-0.0.2,,string,experimentalData
 ageDays,Average age in days of the Drosophila individuals in the sample,,,,False,ManifestColumn,,sage.annotations-demographics.ageDays-0.0.2,,number,drosophila
 ageDeath,"Age of death (note that ages > 89 must be censored to ""90+"")",,,,False,ManifestColumn,,sage.annotations-demographics.ageDeath-0.0.2,required^^#IndividualHumanMetadataTemplate,number,demographics
 ageDeathUnits,The death age unit of measure,"days, gestational weeks, months, PCW, weeks, years",,,False,ManifestColumn,,sage.annotations-demographics.ageDeathUnits-0.0.4,required^^#IndividualHumanMetadataTemplate,string,demographics
