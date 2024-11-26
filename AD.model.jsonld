@@ -386,6 +386,66 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Hours",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Age measured in hours (60 minutes)",
+            "rdfs:label": "Hours",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:AgeAssessmentUnits"
+                },
+                {
+                    "@id": "bts:PmiUnits"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "hours",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AgeAssessmentUnits",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Age of assessment units.",
+            "rdfs:label": "AgeAssessmentUnits",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Days"
+                },
+                {
+                    "@id": "bts:Gestationalweeks"
+                },
+                {
+                    "@id": "bts:Months"
+                },
+                {
+                    "@id": "bts:PCW"
+                },
+                {
+                    "@id": "bts:Weeks"
+                },
+                {
+                    "@id": "bts:Years"
+                },
+                {
+                    "@id": "bts:Hours"
+                }
+            ],
+            "sms:displayName": "ageAssessmentUnits",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Months",
             "@type": "rdfs:Class",
             "rdfs:comment": "Age measured in calendar months (approximately 30 days or 4 weeks).",
@@ -18115,43 +18175,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:AgeAssessmentUnits",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Age of assessment units.",
-            "rdfs:label": "AgeAssessmentUnits",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ManifestColumn"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "schema:rangeIncludes": [
-                {
-                    "@id": "bts:Days"
-                },
-                {
-                    "@id": "bts:Gestationalweeks"
-                },
-                {
-                    "@id": "bts:Months"
-                },
-                {
-                    "@id": "bts:PCW"
-                },
-                {
-                    "@id": "bts:Weeks"
-                },
-                {
-                    "@id": "bts:Years"
-                }
-            ],
-            "sms:displayName": "ageAssessmentUnits",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:AgeDays",
             "@type": "rdfs:Class",
             "rdfs:comment": "Average age in days of the Drosophila individuals in the sample",
@@ -24284,23 +24307,6 @@
             "sms:validationRules": {
                 "NeuropathMetadataTemplate": "required"
             }
-        },
-        {
-            "@id": "bts:Hours",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Hours",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:PmiUnits"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "hours",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
         },
         {
             "@id": "bts:Minutes",
