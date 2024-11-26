@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-consortium,The name of the consortium,"testvalue, CMC, PEC, AMP-AD, MODEL-AD, M2OVE-AD, Resilience-AD, BSMN, CSBC, PSON, GENIE, Synodos, DHART SPORE, CDCP, Psych-AD, ELITE, Not Applicable",,,True,ManifestColumn,,sage.annotations-sageCommunity.consortium-0.0.5,,string,ADKP
+consortium,The name of the consortium,"CMC, PEC, AMP-AD, MODEL-AD, M2OVE-AD, Resilience-AD, BSMN, CSBC, PSON, GENIE, Synodos, DHART SPORE, CDCP, Psych-AD, ELITE, Not Applicable",,,True,ManifestColumn,,sage.annotations-sageCommunity.consortium-0.0.5,,string,ADKP
 AMP-AD,Accelerating Medicines Partnership-Alzheimer's Disease,,,,,consortium,,https://adknowledgeportal.synapse.org/,,string,ADKP
 BSMN,Brain Somatic Mosaicism Network,,,,,consortium,,https://www.synapse.org/bsmn,,string,ADKP
 CDCP,Community Data Contribution Program,,,,,consortium,,https://adknowledgeportal.synapse.org/,,string,ADKP
@@ -16,4 +16,3 @@ PSON,Physical Science in Oncology,,,,,consortium,,https://physics.cancer.gov/,,s
 Psych-AD,Neuropsychiatric Symptoms in Alzheimer's Disease,,,,,consortium,,https://adknowledgeportal.synapse.org/Explore/Programs/DetailsPage?Program=Psych-AD,,string,ADKP
 Resilience-AD,Interdisciplinary Research to Understand the Complex Biology of Resilience to Alzheimer's Disease Risk,,,,,consortium,,https://adknowledgeportal.synapse.org/,,string,ADKP
 Synodos,Data derived from a CTF-Funded Synodos project,,,,,consortium,,https://www.synapse.org/ctf,,string,ADKP
-testvalue,not real,,,,,consortium,,nope,,string,ADKP
