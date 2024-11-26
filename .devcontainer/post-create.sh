@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # install schematic and other packages
-pip install -r ../requirements.txt
+pip install -r /workspaces/data-models/requirements.txt
