@@ -11248,9 +11248,6 @@
             },
             "schema:rangeIncludes": [
                 {
-                    "@id": "bts:Testvalue"
-                },
-                {
                     "@id": "bts:CMC"
                 },
                 {
@@ -11850,23 +11847,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Synodos",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Testvalue",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "not real",
-            "rdfs:label": "Testvalue",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Consortium"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "testvalue",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
