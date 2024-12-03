@@ -1,5 +1,6 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-consortium,The name of the consortium,"CMC, PEC, AMP-AD, MODEL-AD, M2OVE-AD, Resilience-AD, BSMN, CSBC, PSON, GENIE, Synodos, DHART SPORE, CDCP, Psych-AD, ELITE, Not Applicable",,,True,ManifestColumn,,sage.annotations-sageCommunity.consortium-0.0.5,,string,ADKP
+consortium,The name of the consortium,"CMC, PEC, AGMP, AMP-AD, MODEL-AD, M2OVE-AD, Resilience-AD, BSMN, CSBC, PSON, GENIE, Synodos, DHART SPORE, CDCP, Psych-AD, ELITE, Not Applicable",,,True,ManifestColumn,,sage.annotations-sageCommunity.consortium-0.0.5,,string,ADKP
+AGMP,Alzheimer Gut Microbiome Project,,,,,consortium,,https://alzheimergut.org/,,string,ADKP 
 AMP-AD,Accelerating Medicines Partnership-Alzheimer's Disease,,,,,consortium,,https://adknowledgeportal.synapse.org/,,string,ADKP
 BSMN,Brain Somatic Mosaicism Network,,,,,consortium,,https://www.synapse.org/bsmn,,string,ADKP
 CDCP,Community Data Contribution Program,,,,,consortium,,https://adknowledgeportal.synapse.org/,,string,ADKP

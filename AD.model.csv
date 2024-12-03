@@ -475,6 +475,7 @@ fixed tissues only,Conservation method is fixed tissues only,,,,,conservationMet
 frozen tissue only,Conservation method is frozen tissue only,,,,,conservationMethod,,CLEAR-AD,,string,clinical
 missing or unknown,Conservation method is missing or unknown,,,,,conservationMethod,,CLEAR-AD,,string,clinical
 noConservation,No conservation method,,,,,conservationMethod,,CLEAR-AD,,string,clinical
+AGMP,Alzheimer Gut Microbiome Project,,,,,consortium,,https://alzheimergut.org/,,string,ADKP 
 AMP-AD,Accelerating Medicines Partnership-Alzheimer's Disease,,,,,consortium,,https://adknowledgeportal.synapse.org/,,string,ADKP
 BSMN,Brain Somatic Mosaicism Network,,,,,consortium,,https://www.synapse.org/bsmn,,string,ADKP
 CDCP,Community Data Contribution Program,,,,,consortium,,https://adknowledgeportal.synapse.org/,,string,ADKP
@@ -863,7 +864,7 @@ chromosome,A structure composed of a very long molecule of DNA and associated pr
 climbID,Identifying string linked to an animal in Climb database,,,,True,ManifestColumn,,sage.annotations-neuro.climbID-0.0.1,,string,MODEL-AD
 cohort,A study group population where the members are human beings who meet inclusion criteria.,"ABC-DS,ACT,ADNI,ADRC,Banner,BEAM,BEB-Miller,Biggs Institute Brain Bank,BLSA,CHDWB,CLINCOR,Columbia ADRC,DiCAD,EFIGA,EHBS,Emory ADRC,FBS,Framingham,HBCC,HBTRC,HPGP,HUP,LBP,MARS,MARS-WI,Mayo Clinic,MC,MCJ,MCR,MIND,MSBB,NYBB,Pitt ADRC,POINTER,RADC,ROSMAP,SMRI,Tulsa LIBR-1000,UFL,UK Biobank,UPBB,UPenn,UW ADRC,WHICAP",,,False,ManifestColumn,,http://purl.obolibrary.org/obo/STATO_0000203,,string,clinical
 conservationMethod,The conservation method,"noConservation, fixed tissues only, frozen tissue only, both fixed and frozen tissue, missing or unknown",,,True,ManifestColumn,,sage-annotations-clinical.conservationMethod-0.0.2,string,,clinical
-consortium,The name of the consortium,"CMC, PEC, AMP-AD, MODEL-AD, M2OVE-AD, Resilience-AD, BSMN, CSBC, PSON, GENIE, Synodos, DHART SPORE, CDCP, Psych-AD, ELITE, Not Applicable",,,True,ManifestColumn,,sage.annotations-sageCommunity.consortium-0.0.5,,string,ADKP
+consortium,The name of the consortium,"CMC, PEC, AGMP, AMP-AD, MODEL-AD, M2OVE-AD, Resilience-AD, BSMN, CSBC, PSON, GENIE, Synodos, DHART SPORE, CDCP, Psych-AD, ELITE, Not Applicable",,,True,ManifestColumn,,sage.annotations-sageCommunity.consortium-0.0.5,,string,ADKP
 contrastAgent,Substance administered during an imaging procedure that allows delineation of internal structures.,,,,False,ManifestColumn,,sage.annotations-experimentalData.contrastAgent-0.0.2,,string,imaging
 controlType,Control samples suitable for normalization and batch correction,"AIBL pool, Baker pool, blank injection, GIS, GoldenWest, NIST SRM 1950, qc mix, Replicate, study pool, water plus Baker ISTD",,,False,ManifestColumn,,sage.annotations-experimentalData.controlType-0.0.5,,string,experimentalData
 CVD_ART,Arteriolosclerosis,"No CVD_ART, Mild, Moderate, Severe, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.CVD_ART-0.0.2,string,,clinical
