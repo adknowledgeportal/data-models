@@ -11217,10 +11217,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:AMP-AD",
+            "@id": "bts:AGMP",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Accelerating Medicines Partnership-Alzheimer's Disease",
-            "rdfs:label": "AMP-AD",
+            "rdfs:comment": "Alzheimer Gut Microbiome Project",
+            "rdfs:label": "AGMP",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Consortium"
@@ -11229,7 +11229,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "AMP-AD",
+            "sms:displayName": "AGMP",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -11252,6 +11252,9 @@
                 },
                 {
                     "@id": "bts:PEC"
+                },
+                {
+                    "@id": "bts:AGMP"
                 },
                 {
                     "@id": "bts:AMP-AD"
@@ -11298,6 +11301,23 @@
             ],
             "sms:displayName": "consortium",
             "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AMP-AD",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Accelerating Medicines Partnership-Alzheimer's Disease",
+            "rdfs:label": "AMP-AD",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Consortium"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "AMP-AD",
+            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
