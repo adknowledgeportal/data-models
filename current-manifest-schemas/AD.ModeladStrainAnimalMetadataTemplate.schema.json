@@ -5,28 +5,28 @@
   "type": "object",
   "properties": {
     "Component": {},
-    "strainCommonName": {},
+    "specimenID": {},
     "individualID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "registryAbbreviation": {},
-    "geneticBackground": {},
     "modelType": {
       "enum": [
+        "Familial AD (FAD)",
+        "Late-onset AD (LOAD)",
         "Early-onset AD (EOAD)",
         "Mixed-onset AD",
-        "Late-onset AD (LOAD)",
-        "Familial AD (FAD)",
         ""
       ]
     },
+    "strainCommonName": {},
     "strainOfficialName": {},
+    "registryAbbreviation": {},
+    "geneticMutations": {},
     "stockNumber": {},
-    "specimenID": {},
-    "geneticMutations": {}
+    "geneticBackground": {}
   },
   "required": [
     "individualID"
