@@ -8462,6 +8462,9 @@
                     "@id": "bts:CNON"
                 },
                 {
+                    "@id": "bts:DAMModelsCU"
+                },
+                {
                     "@id": "bts:DiCAD"
                 },
                 {
@@ -26416,6 +26419,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "CMC-PEC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:DAMModelsCU",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The De Jager_CUMC_Development of a Human Disease-associated Microglia Model System Study",
+            "rdfs:label": "DAMModelsCU",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "DAM Models_CU",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
