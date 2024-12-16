@@ -9,3 +9,21 @@ haloperidol,A compound composed of a central piperidine structure with hydroxy a
 levetiracetam,"A pyrrolidinone and carboxamide that is N-methylpyrrolidin-2-one in which one of the methyl hydrogens is replaced by an aminocarbonyl group, while another is replaced by an ethyl group (the S enantiomer). An anticonvulsant, it is used for the treatment of epilepsy in both human and veterinary medicine.",,,,,treatmentType,,http://purl.obolibrary.org/obo/CHEBI_6437,,string,experimentalData
 placebo,A negative reference substance is a reference role in which the substance playing the reference substance role is physically similar in appearance to the test substance,,,,,treatmentType,,http://purl.obolibrary.org/obo/OBI_0000169,,string,experimentalData
 verubecestat,Investigational oral beta-site amyloid precursor protein cleaving enzyme (BACE1 or beta secretase) inhibitor,,,,,treatmentType,,https://pubchem.ncbi.nlm.nih.gov/compound/Verubecestat,,string,experimentalData
+PREA LP,Pre treatment A Lumbar puncture,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+POSTA LP_keto,Post treatment A Lumbar puncture,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+POSTB LP_aha,Post treatment B Lumbar puncture,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+PREA COG,Pre treatment A Cog labs,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+POSTA COG_keto,Post treatment A Cog labs keto diet,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+POSTA COG_aha,Post treatment A Cog labs.  A= American Heart diet,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+PREB COG,Pre treatment B Cog labs,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+POSTB COG_aha,Post treatment B Cog labs American Heart,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+POSTB COG_keto,Post treatment B Cog labs.  B = keto diet,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+POSTB FU,Final follow up visit,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+PRE 1,Diet schedule 1 first visit,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+POST 1 keto,POST 1-keto,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+FU 1 PRE 2,Visit schedule Diet 1 between treatment A and treatment B,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+FU 1,Visit schedule Diet 2 Post B F/U,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+PRE 2,Visit schedule Diet 2 first visit,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+POST 2 aha,POST 2-aha,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+FU 2 PRE 1,Visit schedule Diet 2 between treatment A and B,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
+FU 2,Visit schedule Diet 1 final visit,,,,,treatmentType,,https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6796564/,,string,experimentalData
