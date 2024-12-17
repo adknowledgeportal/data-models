@@ -35,4 +35,4 @@ jobs:
       
       - name: Upload all manifests
         working-directory: current-excel-manifests
-        run: ./upload_templates.sh
+        run: ../../tests/upload_templates.sh
