@@ -1,0 +1,38 @@
+# This workflow automatically generates all manifests currently specified by the data model
+# Outputs are excel files and json schemas
+# Runs AFTER changes to the data model have been reviewed in a PR and merged into main
+
+name: Store Current Manifests
+
+on:
+  push:
+    branches: schematic-221-upload-manifests-to-synapse-action
+
+  workflow_dispatch:
+
+jobs:
+  upload:
+    name: upload-manifests
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      SCHEMATIC_SERVICE_ACCOUNT_CREDS: ${{ secrets.SCHEMATIC_SERVICE_ACCOUNT_CREDS }}
+      SYNAPSE_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with: 
+          fetch-depth: 0
+      - uses: actions/setup-python@v4 
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+          token: ${{ secrets.GENERATE_MANIFESTS_ON_ACTION }} # this Fine-grained PAT was generated to generate manifests despite branch protection, was granted "Read and Write access to actions" permissions, and has access to the adknowledgeportal/data-models repo (resource owner is adknowledgeportal) 
+
+      - name: Install Libraries
+        shell: bash
+        run: pip install -r requirements.txt
+      
+      - name: Upload all manifests
+        working-directory: current-excel-manifests
+        run: ./upload_templates.sh
