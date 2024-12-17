@@ -5,9 +5,9 @@
 SYNAPSE_UPLOAD_FOLDER_ID=syn64416308
 
 
-if [ -n "${SYNAPSE_TOKEN_DPE}" ]; then
+if [ -n "${SYNAPSE_TOKEN}" ]; then
   echo "Using synapse token from env var"
-  synapse login -p "${SYNAPSE_TOKEN_DPE}"
+  synapse login -p "${SYNAPSE_TOKEN}"
 else
   echo No credentials found
 fi
