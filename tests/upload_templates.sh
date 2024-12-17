@@ -4,7 +4,7 @@
 
 set -e
 
-SYNAPSE_UPLOAD_FOLDER_ID=syn64416308
+SYNAPSE_UPLOAD_FOLDER_ID=syn64416621
 
 echo Uploading manifests to "$SYNAPSE_UPLOAD_FOLDER_ID"
 
@@ -14,6 +14,7 @@ MANIFESTS=("$PWD"/*.@(xlsx|xls))
 
 for MANIFEST in ${MANIFESTS[@]};
 do
+  echo "Uploading $MANIFEST"
   synapse store --parentId "$SYNAPSE_UPLOAD_FOLDER_ID" --noForceVersion "$MANIFEST"
 done
 
