@@ -2,6 +2,7 @@
 # upload metadata templates to synapse
 # if running locally set SYNAPSE_TOKEN_DPE in your environment
 
+set -e
 
 SYNAPSE_UPLOAD_FOLDER_ID=syn64416308
 
