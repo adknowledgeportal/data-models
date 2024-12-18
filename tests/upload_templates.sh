@@ -1,6 +1,6 @@
 #!/bin/bash
 # upload metadata templates to synapse
-# if running locally set SYNAPSE_TOKEN_DPE in your environment
+# if running locally set SYNAPSE_AUTH_TOKEN in your environment
 
 set -e
 shopt -s extglob
