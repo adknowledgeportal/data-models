@@ -14,11 +14,13 @@ on:
 
 jobs:
   generate:
-    name: generate-manifests
+    name: generate-and-upload-manifests
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       SCHEMATIC_SERVICE_ACCOUNT_CREDS: ${{ secrets.SCHEMATIC_SERVICE_ACCOUNT_CREDS }}
+      SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
+      SYNAPSE_UPLOAD_FOLDER_ID: syn25878249
 
     steps:
       - uses: actions/checkout@v4
@@ -55,3 +57,7 @@ jobs:
           reviewers: $$ {github.actor }}
           draft: false
           delete-branch: true
+
+      - name: Upload all manifests
+        working-directory: current-excel-manifests
+        run: ../tests/upload_templates.sh
