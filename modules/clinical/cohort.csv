@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-cohort,A study group population where the members are human beings who meet inclusion criteria.,"ABC-DS,ACT,ADNI,ADRC,Banner,BEAM,BEB-Miller,Biggs Institute Brain Bank,BLSA,CHDWB,CLINCOR,Columbia ADRC,DiCAD,EFIGA,EHBS,Emory ADRC,FBS,Framingham,HBCC,HBTRC,HPGP,HUP,LBP,MARS,MARS-WI,Mayo Clinic,MC,MCJ,MCR,MIND,MSBB,NYBB,Pitt ADRC,POINTER,RADC,ROSMAP,SMRI,Tulsa LIBR-1000,UFL,UK Biobank,UPBB,UPenn,UW ADRC,WHICAP",,,False,ManifestColumn,,http://purl.obolibrary.org/obo/STATO_0000203,,string,clinical
+cohort,A study group population where the members are human beings who meet inclusion criteria.,"ABC-DS,ACT,ADNI,ADRC,Banner,BEAM,BEB-Miller,Biggs Institute Brain Bank,BLSA,CHDWB,CLINCOR,Columbia ADRC,DiCAD,EFIGA,EHBS,Emory ADRC,FBS,Framingham,HBCC,HBTRC,HPGP,HUP,LBP,MARS,MARS-WI,Mayo Clinic ADRC (Mayo ADRC),MC,MCJ,MCR,MIND,MSBB,NYBB,Pitt ADRC,POINTER,RADC,ROSMAP,SMRI,Tulsa LIBR-1000,UFL,UK Biobank,UPBB,UPenn,UW ADRC,WHICAP",,,False,ManifestColumn,,http://purl.obolibrary.org/obo/STATO_0000203,,string,clinical
 ABC-DS,Alzheimer's Biomarkers Consortium - Down Syndrome,,,,False,cohort,,https://www.abcds.pitt.edu/,,string,clinical
 ACT,Adult Changes in Thought - Kaiser Permanente Washington Health Research Institute,,,,False,cohort,,https://actagingresearch.org/about,,string,clinical
 ADNI,Alzheimer's Disease Neuroimaging Initative,,,,False,cohort,,https://adni.loni.usc.edu/,,string,clinical
@@ -25,7 +25,7 @@ HUP,Hospital of the University of Pennsylvania autopsy service,,,,False,cohort,,
 LBP,Living Brain Project,,,,False,cohort,,https://labs.icahn.mssm.edu/minervalab/resources/data-ark/lbp/,,string,clinical
 MARS,The Minority Aging Research Study,,,,False,cohort,,https://www.rushu.rush.edu/research/departmental-research/minority-aging-research-study,,string,clinical
 MARS-WI,The MARS: Microbiome in Alzheimer’s Risk Study at the University of Wisconsin,,,,False,cohort,,https://www.adrc.wisc.edu/mars-study,,string,clinical
-Mayo Clinic,Mayo Clinic Brain Bank,,,,False,cohort,,https://www.mayo.edu/research/departments-divisions/department-neuroscience-florida/biorepositories/mayo-clinic-brain-bank,,string,clinical
+Mayo Clinic ADRC (Mayo ADRC),Mayo Clinic Brain Bank,,,,False,cohort,,https://www.mayo.edu/research/departments-divisions/department-neuroscience-florida/biorepositories/mayo-clinic-brain-bank,,string,clinical
 MC,"Mayo Clinic (NOT brain bank, living)",,,,False,cohort,,https://www.mayo.edu/research/clinical-trials/cls-20308924#participating,,string,clinical
 MCJ,Mayo Clinic Jacksonville,,,,False,cohort,,https://www.mayo.edu/research/florida,,string,clinical
 MCR,Mayo Clinic Rochester,,,,False,cohort,,https://www.mayo.edu/research/minnesota,,string,clinical
