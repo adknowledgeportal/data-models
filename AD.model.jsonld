@@ -8462,6 +8462,9 @@
                     "@id": "bts:CNON"
                 },
                 {
+                    "@id": "bts:CUMCCompoundsMicroglia"
+                },
+                {
                     "@id": "bts:DAMModelsCU"
                 },
                 {
@@ -26830,6 +26833,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "CMC-PEC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CUMCCompoundsMicroglia",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The CUMC Study for Compounds Polarizing Human Microglial Subtypes",
+            "rdfs:label": "CUMCCompoundsMicroglia",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "CUMC_Compounds_Microglia",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
