@@ -6,26 +6,26 @@
   "properties": {
     "registryAbbreviation": {},
     "stockNumber": {},
-    "Component": {},
     "specimenID": {},
-    "geneticBackground": {},
+    "modelType": {
+      "enum": [
+        "Familial AD (FAD)",
+        "Mixed-onset AD",
+        "Early-onset AD (EOAD)",
+        "Late-onset AD (LOAD)",
+        ""
+      ]
+    },
     "geneticMutations": {},
+    "strainOfficialName": {},
+    "Component": {},
+    "strainCommonName": {},
+    "geneticBackground": {},
     "individualID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
-    },
-    "strainCommonName": {},
-    "strainOfficialName": {},
-    "modelType": {
-      "enum": [
-        "Familial AD (FAD)",
-        "Mixed-onset AD",
-        "Late-onset AD (LOAD)",
-        "Early-onset AD (EOAD)",
-        ""
-      ]
     }
   },
   "required": [
