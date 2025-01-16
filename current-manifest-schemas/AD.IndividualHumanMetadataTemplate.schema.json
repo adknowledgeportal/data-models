@@ -4,40 +4,53 @@
   "title": "IndividualHumanMetadataTemplate",
   "type": "object",
   "properties": {
-    "Component": {},
-    "ageDeath": {},
+    "apoe4Status": {
+      "enum": [
+        "missing or unknown",
+        "one or two E4",
+        "no E4",
+        ""
+      ]
+    },
     "apoeGenotype": {
       "enum": [
-        "23",
         "33",
-        "34",
         "44",
+        "23",
+        "34",
         "22",
         "24",
         ""
       ]
     },
-    "apoe4Status": {
+    "yearsEducation": {},
+    "causeDeath": {},
+    "pH": {},
+    "Component": {},
+    "Braak": {
       "enum": [
-        "one or two E4",
-        "no E4",
+        "BRAAK Stage 4",
+        "BRAAK Stage 6",
+        "BRAAK Stage 3",
+        "BRAAK Stage 2",
         "missing or unknown",
-        ""
-      ]
-    },
-    "race": {
-      "enum": [
-        "Asian",
-        "Native Hawaiian or Other Pacific Islander",
-        "White",
-        "American Indian or Alaska Native",
-        "Black or African American",
+        "BRAAK Stage 1",
+        "BRAAK Stage 5",
+        "No BRAAK stage",
         ""
       ]
     },
     "PMI": {},
-    "diagnosisCriteria": {},
-    "ethnicity": {},
+    "race": {
+      "enum": [
+        "American Indian or Alaska Native",
+        "White",
+        "Native Hawaiian or Other Pacific Islander",
+        "Black or African American",
+        "Asian",
+        ""
+      ]
+    },
     "pmiUnits": {
       "enum": [
         "hours",
@@ -47,149 +60,168 @@
     },
     "species": {
       "enum": [
-        "Rat",
-        "Drosophila melanogaster",
-        "Gallus gallus",
-        "Mouse",
-        "Human",
-        "Pan troglodytes",
         "Sus scrofa",
-        "Rhesus macaque"
+        "Pan troglodytes",
+        "Drosophila melanogaster",
+        "Mouse",
+        "Rat",
+        "Rhesus macaque",
+        "Gallus gallus",
+        "Human"
       ]
     },
-    "causeDeath": {},
-    "brainWeight": {},
-    "mannerDeath": {
+    "ageDeathUnits": {
       "enum": [
-        "accident",
-        "homicide",
-        "natural causes",
-        "suicide",
-        "undetermined",
-        ""
-      ]
-    },
-    "CERAD": {
-      "enum": [
-        "Moderate Probable C2",
-        "missing or unknown",
-        "No AD C0",
-        "Frequent Definite C3",
-        "Sparse Possible C1",
-        ""
-      ]
-    },
-    "pH": {},
-    "diagnosis": {
-      "enum": [
-        "frontotemporal dementia",
-        "Juvenile Myelomonocytic Leukemia",
-        "type 2 diabetes mellitus",
-        "obsessive compulsive disorder",
-        "Colon Cancer",
-        "Schizophrenia",
-        "AD-DS",
-        "Control",
-        "MCI-DS",
-        "Neurofibromatosis 2",
-        "Brain Cancer",
-        "CS-DS",
-        "Alzheimer disease with psychosis",
-        "Cardiovascular Disease",
-        "vascular dementia",
-        "amyotrophic lateral sclerosis",
-        "Parkinson's disease",
-        "Subjective Memory Concern",
-        "Metabolic Syndrome",
-        "Tourette Syndrome",
-        "Major Depressive Disorder",
-        "Williams Syndrome",
-        "Lewy body disease",
-        "no cognitive impairment",
-        "Prostate Cancer",
-        "Fibrocystic Breast Disease",
-        "traumatic brain injury",
-        "Dyslipidemia",
-        "Alzheimer Disease",
-        "Other",
-        "pathological aging",
-        "essential tremor",
-        "Leukemia",
-        "Cervical Cancer",
-        "Unknown",
-        "gliosis",
-        "Hypertension",
-        "Bladder Cancer",
-        "Skin Cancer",
-        "multiple system atrophy",
-        "Breast Cancer",
-        "dystonia",
-        "Autism Spectrum Disorder",
-        "Substance Related Disorder",
-        "Posterior Cortical Atrophy",
-        "Not Applicable",
-        "Ovary Cancer",
-        "Lung Cancer",
-        "Pancreatic Cancer",
-        "corticobasal degeneration disorder",
-        "Bipolar Disorder",
-        "dementia",
-        "mild cognitive impairment",
-        "obesity",
-        "progressive supranuclear palsy",
-        "anxiety",
-        "Affective Disorder",
-        "hypoxia",
-        "Neurofibromatosis 1",
+        "PCW",
+        "years",
+        "days",
+        "gestational weeks",
+        "months",
+        "weeks",
         ""
       ]
     },
     "cohort": {
       "enum": [
-        "ABC-DS",
-        "EFIGA",
-        "FBS",
-        "MC",
-        "BLSA",
-        "POINTER",
-        "ADNI",
-        "HUP",
-        "MCR",
-        "Framingham",
-        "UPBB",
-        "NYBB",
-        "BEB-Miller",
-        "MSBB",
-        "MARS",
-        "EHBS",
-        "MCJ",
-        "CLINCOR",
-        "ACT",
-        "Biggs Institute Brain Bank",
-        "Pitt ADRC",
-        "Mayo Clinic ADRC (Mayo ADRC)",
-        "UPenn",
-        "Banner",
-        "HBTRC",
-        "Tulsa LIBR-1000",
-        "BEAM",
-        "MIND",
-        "RADC",
+        "MARS-WI",
         "ADRC",
-        "CHDWB",
-        "ROSMAP",
-        "Columbia ADRC",
-        "HBCC",
-        "SMRI",
-        "WHICAP",
-        "HPGP",
-        "UFL",
+        "Biggs Institute Brain Bank",
         "LBP",
-        "UW ADRC",
+        "UFL",
+        "FBS",
+        "Framingham",
         "DiCAD",
         "Emory_ADRC",
-        "MARS-WI",
+        "UW ADRC",
+        "ROSMAP",
         "UK Biobank",
+        "HBCC",
+        "HPGP",
+        "SMRI",
+        "ABC-DS",
+        "MARS",
+        "WHICAP",
+        "MCR",
+        "Pitt ADRC",
+        "HBTRC",
+        "MC",
+        "UPenn",
+        "BLSA",
+        "BEAM",
+        "CLINCOR",
+        "BEB-Miller",
+        "ACT",
+        "ADNI",
+        "Columbia ADRC",
+        "Mayo Clinic ADRC (Mayo ADRC)",
+        "HUP",
+        "MSBB",
+        "UPBB",
+        "EHBS",
+        "POINTER",
+        "Tulsa LIBR-1000",
+        "EFIGA",
+        "Banner",
+        "MIND",
+        "NYBB",
+        "RADC",
+        "CHDWB",
+        "MCJ",
+        ""
+      ]
+    },
+    "diagnosis": {
+      "enum": [
+        "Alzheimer Disease",
+        "Bladder Cancer",
+        "Brain Cancer",
+        "Dyslipidemia",
+        "Metabolic Syndrome",
+        "Autism Spectrum Disorder",
+        "Fibrocystic Breast Disease",
+        "progressive supranuclear palsy",
+        "Ovary Cancer",
+        "type 2 diabetes mellitus",
+        "Neurofibromatosis 1",
+        "Schizophrenia",
+        "no cognitive impairment",
+        "Alzheimer disease with psychosis",
+        "vascular dementia",
+        "dementia",
+        "mild cognitive impairment",
+        "hypoxia",
+        "essential tremor",
+        "Major Depressive Disorder",
+        "Leukemia",
+        "MCI-DS",
+        "Parkinson's disease",
+        "amyotrophic lateral sclerosis",
+        "obesity",
+        "Affective Disorder",
+        "traumatic brain injury",
+        "obsessive compulsive disorder",
+        "frontotemporal dementia",
+        "Cardiovascular Disease",
+        "CS-DS",
+        "Not Applicable",
+        "gliosis",
+        "multiple system atrophy",
+        "Skin Cancer",
+        "Unknown",
+        "Breast Cancer",
+        "Bipolar Disorder",
+        "corticobasal degeneration disorder",
+        "Cervical Cancer",
+        "Williams Syndrome",
+        "Other",
+        "Juvenile Myelomonocytic Leukemia",
+        "Posterior Cortical Atrophy",
+        "Lewy body disease",
+        "Hypertension",
+        "Lung Cancer",
+        "Neurofibromatosis 2",
+        "anxiety",
+        "Prostate Cancer",
+        "Pancreatic Cancer",
+        "Subjective Memory Concern",
+        "Tourette Syndrome",
+        "pathological aging",
+        "AD-DS",
+        "dystonia",
+        "Substance Related Disorder",
+        "Control",
+        "Colon Cancer",
+        ""
+      ]
+    },
+    "sex": {
+      "enum": [
+        "missing or unknown",
+        "male",
+        "female"
+      ]
+    },
+    "ethnicity": {},
+    "CERAD": {
+      "enum": [
+        "Sparse Possible C1",
+        "missing or unknown",
+        "No AD C0",
+        "Frequent Definite C3",
+        "Moderate Probable C2",
+        ""
+      ]
+    },
+    "diagnosisCriteria": {},
+    "brainWeight": {},
+    "ageDeath": {},
+    "mannerDeath": {
+      "enum": [
+        "homicide",
+        "undetermined",
+        "accident",
+        "suicide",
+        "natural causes",
         ""
       ]
     },
@@ -198,43 +230,11 @@
         "type": "null"
       },
       "minLength": 1
-    },
-    "yearsEducation": {},
-    "Braak": {
-      "enum": [
-        "BRAAK Stage 6",
-        "BRAAK Stage 5",
-        "No BRAAK stage",
-        "BRAAK Stage 3",
-        "missing or unknown",
-        "BRAAK Stage 4",
-        "BRAAK Stage 1",
-        "BRAAK Stage 2",
-        ""
-      ]
-    },
-    "sex": {
-      "enum": [
-        "female",
-        "male",
-        "missing or unknown"
-      ]
-    },
-    "ageDeathUnits": {
-      "enum": [
-        "months",
-        "weeks",
-        "days",
-        "PCW",
-        "gestational weeks",
-        "years",
-        ""
-      ]
     }
   },
   "required": [
     "species",
-    "individualID",
-    "sex"
+    "sex",
+    "individualID"
   ]
 }
