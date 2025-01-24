@@ -4,53 +4,18 @@
   "title": "IndividualHumanMetadataTemplate",
   "type": "object",
   "properties": {
-    "apoe4Status": {
+    "mannerDeath": {
       "enum": [
-        "missing or unknown",
-        "one or two E4",
-        "no E4",
+        "accident",
+        "undetermined",
+        "homicide",
+        "natural causes",
+        "suicide",
         ""
       ]
     },
-    "apoeGenotype": {
-      "enum": [
-        "33",
-        "44",
-        "23",
-        "34",
-        "22",
-        "24",
-        ""
-      ]
-    },
-    "yearsEducation": {},
-    "causeDeath": {},
+    "diagnosisCriteria": {},
     "pH": {},
-    "Component": {},
-    "Braak": {
-      "enum": [
-        "BRAAK Stage 4",
-        "BRAAK Stage 6",
-        "BRAAK Stage 3",
-        "BRAAK Stage 2",
-        "missing or unknown",
-        "BRAAK Stage 1",
-        "BRAAK Stage 5",
-        "No BRAAK stage",
-        ""
-      ]
-    },
-    "PMI": {},
-    "race": {
-      "enum": [
-        "American Indian or Alaska Native",
-        "White",
-        "Native Hawaiian or Other Pacific Islander",
-        "Black or African American",
-        "Asian",
-        ""
-      ]
-    },
     "pmiUnits": {
       "enum": [
         "hours",
@@ -58,170 +23,107 @@
         ""
       ]
     },
-    "species": {
+    "ethnicity": {},
+    "apoeGenotype": {
       "enum": [
-        "Sus scrofa",
-        "Pan troglodytes",
-        "Drosophila melanogaster",
-        "Mouse",
-        "Rat",
-        "Rhesus macaque",
-        "Gallus gallus",
-        "Human"
-      ]
-    },
-    "ageDeathUnits": {
-      "enum": [
-        "PCW",
-        "years",
-        "days",
-        "gestational weeks",
-        "months",
-        "weeks",
+        "34",
+        "24",
+        "33",
+        "44",
+        "22",
+        "23",
         ""
       ]
     },
-    "cohort": {
+    "dataContributionGroup": {
       "enum": [
-        "MARS-WI",
-        "ADRC",
-        "Biggs Institute Brain Bank",
-        "LBP",
-        "UFL",
-        "FBS",
-        "Framingham",
-        "DiCAD",
-        "Emory_ADRC",
-        "UW ADRC",
-        "ROSMAP",
-        "UK Biobank",
-        "HBCC",
-        "HPGP",
-        "SMRI",
-        "ABC-DS",
-        "MARS",
-        "WHICAP",
-        "MCR",
-        "Pitt ADRC",
-        "HBTRC",
-        "MC",
-        "UPenn",
-        "BLSA",
-        "BEAM",
-        "CLINCOR",
-        "BEB-Miller",
-        "ACT",
+        "MC ADRC",
+        "Emory",
+        "Duke",
+        "IADRC",
+        "MCSA",
+        "Knight ADRC",
+        "Baker Heart & Diabetes Institute",
         "ADNI",
-        "Columbia ADRC",
-        "Mayo Clinic ADRC (Mayo ADRC)",
-        "HUP",
-        "MSBB",
-        "UPBB",
-        "EHBS",
-        "POINTER",
-        "Tulsa LIBR-1000",
-        "EFIGA",
-        "Banner",
-        "MIND",
-        "NYBB",
-        "RADC",
-        "CHDWB",
-        "MCJ",
+        "MCBB",
         ""
       ]
     },
     "diagnosis": {
       "enum": [
-        "Alzheimer Disease",
-        "Bladder Cancer",
-        "Brain Cancer",
-        "Dyslipidemia",
-        "Metabolic Syndrome",
-        "Autism Spectrum Disorder",
-        "Fibrocystic Breast Disease",
-        "progressive supranuclear palsy",
-        "Ovary Cancer",
-        "type 2 diabetes mellitus",
-        "Neurofibromatosis 1",
-        "Schizophrenia",
-        "no cognitive impairment",
-        "Alzheimer disease with psychosis",
-        "vascular dementia",
-        "dementia",
-        "mild cognitive impairment",
-        "hypoxia",
-        "essential tremor",
-        "Major Depressive Disorder",
-        "Leukemia",
-        "MCI-DS",
-        "Parkinson's disease",
-        "amyotrophic lateral sclerosis",
-        "obesity",
-        "Affective Disorder",
-        "traumatic brain injury",
-        "obsessive compulsive disorder",
-        "frontotemporal dementia",
-        "Cardiovascular Disease",
-        "CS-DS",
-        "Not Applicable",
-        "gliosis",
-        "multiple system atrophy",
-        "Skin Cancer",
-        "Unknown",
-        "Breast Cancer",
-        "Bipolar Disorder",
         "corticobasal degeneration disorder",
-        "Cervical Cancer",
-        "Williams Syndrome",
-        "Other",
-        "Juvenile Myelomonocytic Leukemia",
-        "Posterior Cortical Atrophy",
-        "Lewy body disease",
-        "Hypertension",
-        "Lung Cancer",
-        "Neurofibromatosis 2",
-        "anxiety",
-        "Prostate Cancer",
-        "Pancreatic Cancer",
-        "Subjective Memory Concern",
-        "Tourette Syndrome",
-        "pathological aging",
-        "AD-DS",
-        "dystonia",
-        "Substance Related Disorder",
         "Control",
+        "Fibrocystic Breast Disease",
+        "Metabolic Syndrome",
+        "unknown",
+        "obsessive compulsive disorder",
+        "Lewy body disease",
+        "Skin Cancer",
+        "Brain Cancer",
+        "Substance Related Disorder",
+        "multiple system atrophy",
+        "Leukemia",
+        "Lung Cancer",
+        "Subjective Memory Concern",
+        "traumatic brain injury",
+        "anxiety",
         "Colon Cancer",
+        "Not Applicable",
+        "Breast Cancer",
+        "Schizophrenia",
+        "obesity",
+        "pathological aging",
+        "no cognitive impairment",
+        "Cervical Cancer",
+        "Prostate Cancer",
+        "Neurofibromatosis 2",
+        "Posterior Cortical Atrophy",
+        "Autism Spectrum Disorder",
+        "frontotemporal dementia",
+        "Bladder Cancer",
+        "Alzheimer disease with psychosis",
+        "type 2 diabetes mellitus",
+        "Juvenile Myelomonocytic Leukemia",
+        "Ovary Cancer",
+        "dystonia",
+        "Neurofibromatosis 1",
+        "Cardiovascular Disease",
+        "hypoxia",
+        "other",
+        "gliosis",
+        "dementia",
+        "Pancreatic Cancer",
+        "CS-DS",
+        "MCI-DS",
+        "Dyslipidemia",
+        "mild cognitive impairment",
+        "Affective Disorder",
+        "progressive supranuclear palsy",
+        "hypertension",
+        "Tourette Syndrome",
+        "essential tremor",
+        "Alzheimer Disease",
+        "AD-DS",
+        "Bipolar Disorder",
+        "Major Depressive Disorder",
+        "Williams Syndrome",
+        "vascular dementia",
+        "amyotrophic lateral sclerosis",
+        "Parkinson's disease",
         ""
       ]
     },
-    "sex": {
+    "diabetes": {
       "enum": [
-        "missing or unknown",
-        "male",
-        "female"
-      ]
-    },
-    "ethnicity": {},
-    "CERAD": {
-      "enum": [
-        "Sparse Possible C1",
-        "missing or unknown",
-        "No AD C0",
-        "Frequent Definite C3",
-        "Moderate Probable C2",
-        ""
-      ]
-    },
-    "diagnosisCriteria": {},
-    "brainWeight": {},
-    "ageDeath": {},
-    "mannerDeath": {
-      "enum": [
-        "homicide",
-        "undetermined",
-        "accident",
-        "suicide",
-        "natural causes",
+        "other type",
+        "unknown",
+        "other",
+        "Absent",
+        "type 1",
+        "type 2",
+        "remote/inactive",
+        "recent/active",
+        "not assessed or unknown",
         ""
       ]
     },
@@ -230,11 +132,205 @@
         "type": "null"
       },
       "minLength": 1
-    }
+    },
+    "hypercholesterolemia": {},
+    "race": {
+      "enum": [
+        "Native Hawaiian or Other Pacific Islander",
+        "Black or African American",
+        "American Indian or Alaska Native",
+        "White",
+        "Asian",
+        ""
+      ]
+    },
+    "weight": {},
+    "ageDeathUnits": {
+      "enum": [
+        "months",
+        "PCW",
+        "gestational weeks",
+        "years",
+        "days",
+        "weeks",
+        ""
+      ]
+    },
+    "PMI": {},
+    "cohort": {
+      "enum": [
+        "Emory_ADRC",
+        "BEAM",
+        "Banner",
+        "POINTER",
+        "WHICAP",
+        "HBCC",
+        "BLSA",
+        "UFL",
+        "ACT",
+        "Pitt ADRC",
+        "LBP",
+        "ADNI",
+        "HPGP",
+        "MCR",
+        "EFIGA",
+        "Columbia ADRC",
+        "MCJ",
+        "BEB-Miller",
+        "SMRI",
+        "MARS-WI",
+        "Tulsa LIBR-1000",
+        "ROSMAP",
+        "UW ADRC",
+        "MC",
+        "Framingham",
+        "Mayo Clinic ADRC (Mayo ADRC)",
+        "MSBB",
+        "MARS",
+        "CHDWB",
+        "DiCAD",
+        "CLINCOR",
+        "HUP",
+        "UK Biobank",
+        "MIND",
+        "NYBB",
+        "ADRC",
+        "UPenn",
+        "EHBS",
+        "ABC-DS",
+        "RADC",
+        "Biggs Institute Brain Bank",
+        "UPBB",
+        "HBTRC",
+        "FBS",
+        ""
+      ]
+    },
+    "apoe4Status": {
+      "enum": [
+        "missing or unknown",
+        "one or two E4",
+        "no E4",
+        ""
+      ]
+    },
+    "yearsEducation": {},
+    "height": {},
+    "causeDeath": {},
+    "Component": {},
+    "sex": {
+      "enum": [
+        "missing or unknown",
+        "male",
+        "female"
+      ]
+    },
+    "hypertension": {
+      "enum": [
+        "unknown",
+        "Absent",
+        "yes",
+        "no",
+        "remote/inactive",
+        "recent/active",
+        "not assessed or unknown",
+        ""
+      ]
+    },
+    "species": {
+      "enum": [
+        "Rhesus macaque",
+        "Mouse",
+        "Human",
+        "Drosophila melanogaster",
+        "Gallus gallus",
+        "Sus scrofa",
+        "Pan troglodytes",
+        "Rat"
+      ]
+    },
+    "Braak": {
+      "enum": [
+        "BRAAK Stage 2",
+        "BRAAK Stage 6",
+        "BRAAK Stage 1",
+        "BRAAK Stage 3",
+        "BRAAK Stage 5",
+        "missing or unknown",
+        "No BRAAK stage",
+        "BRAAK Stage 4",
+        ""
+      ]
+    },
+    "CERAD": {
+      "enum": [
+        "Moderate Probable C2",
+        "Frequent Definite C3",
+        "missing or unknown",
+        "No AD C0",
+        "Sparse Possible C1",
+        ""
+      ]
+    },
+    "ageDeath": {},
+    "individualIdSource": {
+      "enum": [
+        "Yale",
+        "Rush",
+        "Pritzker",
+        "Pitt",
+        "Penn",
+        "TAA",
+        "BannerSun",
+        "UCI_TMF",
+        "NIMH-HBCC",
+        "UM-BTB",
+        "Washington University",
+        "MSSM",
+        "Emory",
+        "JAX",
+        "ADNI",
+        "NICHD",
+        "Mayo Clinic",
+        "PGP",
+        "Geschwind",
+        "ABN",
+        "AIBS",
+        "Caltech",
+        "StemExpress",
+        "Clotomics_PAIKEA_MSSM",
+        "HBSFRC",
+        "SMRI",
+        "UW-CDL",
+        "University of Florida",
+        "LIBD",
+        "BEB_Miller",
+        "Michigan University",
+        "IU",
+        "UCSF",
+        "LivingBrainProject_MSSM",
+        "Novogenix",
+        "NDRI",
+        "XCell Science",
+        "NYBB",
+        "Oxford",
+        "Sestan",
+        "ABR",
+        "Newcastle",
+        "Vaccarino",
+        "University of Miami",
+        "MayoBrainBank",
+        "DongLab",
+        "HBTRC",
+        "Einstein",
+        ""
+      ]
+    },
+    "brainWeight": {}
   },
   "required": [
-    "species",
+    "individualID",
     "sex",
-    "individualID"
+    "species"
   ]
 }
