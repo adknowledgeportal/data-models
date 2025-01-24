@@ -7048,7 +7048,7 @@
         {
             "@id": "bts:No",
             "@type": "rdfs:Class",
-            "rdfs:comment": "No WMRCAL",
+            "rdfs:comment": "TBD",
             "rdfs:label": "No",
             "rdfs:subClassOf": [
                 {
@@ -7071,19 +7071,22 @@
                 },
                 {
                     "@id": "bts:WBVD"
+                },
+                {
+                    "@id": "bts:Hypertension"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "No",
+            "sms:displayName": "no",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
             "@id": "bts:Yes",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Yes WMRCAL",
+            "rdfs:comment": "TBD",
             "rdfs:label": "Yes",
             "rdfs:subClassOf": [
                 {
@@ -7106,12 +7109,15 @@
                 },
                 {
                     "@id": "bts:WBVD"
+                },
+                {
+                    "@id": "bts:Hypertension"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Yes",
+            "sms:displayName": "yes",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -10012,6 +10018,174 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:1FloridaADRC(1FLADRC)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "1FloridaADRC(1FLADRC)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "1Florida ADRC (1FL ADRC)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Cohort",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "A study group population where the members are human beings who meet inclusion criteria.",
+            "rdfs:label": "Cohort",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:ABC-DS"
+                },
+                {
+                    "@id": "bts:ACT"
+                },
+                {
+                    "@id": "bts:ADNI"
+                },
+                {
+                    "@id": "bts:ADRC"
+                },
+                {
+                    "@id": "bts:Banner"
+                },
+                {
+                    "@id": "bts:BEAM"
+                },
+                {
+                    "@id": "bts:BEB-Miller"
+                },
+                {
+                    "@id": "bts:BiggsInstituteBrainBank"
+                },
+                {
+                    "@id": "bts:BLSA"
+                },
+                {
+                    "@id": "bts:CHDWB"
+                },
+                {
+                    "@id": "bts:CLINCOR"
+                },
+                {
+                    "@id": "bts:ColumbiaADRC"
+                },
+                {
+                    "@id": "bts:DiCAD"
+                },
+                {
+                    "@id": "bts:EFIGA"
+                },
+                {
+                    "@id": "bts:EHBS"
+                },
+                {
+                    "@id": "bts:EmoryADRC"
+                },
+                {
+                    "@id": "bts:FBS"
+                },
+                {
+                    "@id": "bts:Framingham"
+                },
+                {
+                    "@id": "bts:HBCC"
+                },
+                {
+                    "@id": "bts:HBTRC"
+                },
+                {
+                    "@id": "bts:HPGP"
+                },
+                {
+                    "@id": "bts:HUP"
+                },
+                {
+                    "@id": "bts:LBP"
+                },
+                {
+                    "@id": "bts:MARS"
+                },
+                {
+                    "@id": "bts:MARS-WI"
+                },
+                {
+                    "@id": "bts:MayoClinicADRC(MayoADRC)"
+                },
+                {
+                    "@id": "bts:MC"
+                },
+                {
+                    "@id": "bts:MCJ"
+                },
+                {
+                    "@id": "bts:MCR"
+                },
+                {
+                    "@id": "bts:MIND"
+                },
+                {
+                    "@id": "bts:MSBB"
+                },
+                {
+                    "@id": "bts:NYBB"
+                },
+                {
+                    "@id": "bts:PittADRC"
+                },
+                {
+                    "@id": "bts:POINTER"
+                },
+                {
+                    "@id": "bts:RADC"
+                },
+                {
+                    "@id": "bts:ROSMAP"
+                },
+                {
+                    "@id": "bts:SMRI"
+                },
+                {
+                    "@id": "bts:TulsaLIBR-1000"
+                },
+                {
+                    "@id": "bts:UFL"
+                },
+                {
+                    "@id": "bts:UKBiobank"
+                },
+                {
+                    "@id": "bts:UPBB"
+                },
+                {
+                    "@id": "bts:UPenn"
+                },
+                {
+                    "@id": "bts:UWADRC"
+                },
+                {
+                    "@id": "bts:WHICAP"
+                }
+            ],
+            "sms:displayName": "cohort",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:ABC-DS",
             "@type": "rdfs:Class",
             "rdfs:comment": "The Alzheimer's Biomarkers Consortium - Down Syndrome (ABC-DS) Study",
@@ -10254,157 +10428,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "ADRC",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Cohort",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "A study group population where the members are human beings who meet inclusion criteria.",
-            "rdfs:label": "Cohort",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ManifestColumn"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "schema:rangeIncludes": [
-                {
-                    "@id": "bts:ABC-DS"
-                },
-                {
-                    "@id": "bts:ACT"
-                },
-                {
-                    "@id": "bts:ADNI"
-                },
-                {
-                    "@id": "bts:ADRC"
-                },
-                {
-                    "@id": "bts:Banner"
-                },
-                {
-                    "@id": "bts:BEAM"
-                },
-                {
-                    "@id": "bts:BEB-Miller"
-                },
-                {
-                    "@id": "bts:BiggsInstituteBrainBank"
-                },
-                {
-                    "@id": "bts:BLSA"
-                },
-                {
-                    "@id": "bts:CHDWB"
-                },
-                {
-                    "@id": "bts:CLINCOR"
-                },
-                {
-                    "@id": "bts:ColumbiaADRC"
-                },
-                {
-                    "@id": "bts:DiCAD"
-                },
-                {
-                    "@id": "bts:EFIGA"
-                },
-                {
-                    "@id": "bts:EHBS"
-                },
-                {
-                    "@id": "bts:EmoryADRC"
-                },
-                {
-                    "@id": "bts:FBS"
-                },
-                {
-                    "@id": "bts:Framingham"
-                },
-                {
-                    "@id": "bts:HBCC"
-                },
-                {
-                    "@id": "bts:HBTRC"
-                },
-                {
-                    "@id": "bts:HPGP"
-                },
-                {
-                    "@id": "bts:HUP"
-                },
-                {
-                    "@id": "bts:LBP"
-                },
-                {
-                    "@id": "bts:MARS"
-                },
-                {
-                    "@id": "bts:MARS-WI"
-                },
-                {
-                    "@id": "bts:MayoClinicADRC(MayoADRC)"
-                },
-                {
-                    "@id": "bts:MC"
-                },
-                {
-                    "@id": "bts:MCJ"
-                },
-                {
-                    "@id": "bts:MCR"
-                },
-                {
-                    "@id": "bts:MIND"
-                },
-                {
-                    "@id": "bts:MSBB"
-                },
-                {
-                    "@id": "bts:NYBB"
-                },
-                {
-                    "@id": "bts:PittADRC"
-                },
-                {
-                    "@id": "bts:POINTER"
-                },
-                {
-                    "@id": "bts:RADC"
-                },
-                {
-                    "@id": "bts:ROSMAP"
-                },
-                {
-                    "@id": "bts:SMRI"
-                },
-                {
-                    "@id": "bts:TulsaLIBR-1000"
-                },
-                {
-                    "@id": "bts:UFL"
-                },
-                {
-                    "@id": "bts:UKBiobank"
-                },
-                {
-                    "@id": "bts:UPBB"
-                },
-                {
-                    "@id": "bts:UPenn"
-                },
-                {
-                    "@id": "bts:UWADRC"
-                },
-                {
-                    "@id": "bts:WHICAP"
-                }
-            ],
-            "sms:displayName": "cohort",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -10739,6 +10762,43 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:IndianaADRC(IADRC)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "IndianaADRC(IADRC)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Indiana ADRC (IADRC)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:KnightADRC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "KnightADRC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                },
+                {
+                    "@id": "bts:DataContributionGroup"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Knight ADRC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:LBP",
             "@type": "rdfs:Class",
             "rdfs:comment": "The Living Brain Project Study",
@@ -10810,6 +10870,40 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:MayoClinicBrainBank(MCBB)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "MayoClinicBrainBank(MCBB)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Mayo Clinic Brain Bank (MCBB)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MayoClinicStudyofAging(MCSA)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "MayoClinicStudyofAging(MCSA)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Mayo Clinic Study of Aging (MCSA)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:MC",
             "@type": "rdfs:Class",
             "rdfs:comment": "Mayo Clinic (NOT brain bank, living)",
@@ -10857,6 +10951,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "MCR",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MichiganADRC(MADC)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "MichiganADRC(MADC)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Michigan ADRC (MADC)",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -13563,9 +13674,12 @@
         {
             "@id": "bts:Weight",
             "@type": "rdfs:Class",
-            "rdfs:comment": "The vertical force exerted by a mass as a result of gravity.",
+            "rdfs:comment": "For CLEAR AD. UDSV3 IVP Form B1 Physical Question 2 Numeric integer XXX (pounds). Use 888 for not assessed.",
             "rdfs:label": "Weight",
             "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                },
                 {
                     "@id": "bts:DataType"
                 }
@@ -13573,7 +13687,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Weight",
+            "sms:displayName": "weight",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -13961,6 +14075,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:CardiovascularDisease",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "CardiovascularDisease",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Diagnosis"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Cardiovascular Disease",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:CervicalCancer",
             "@type": "rdfs:Class",
             "rdfs:comment": "A malignant neoplasm of the cervix, typically originating from a dysplastic or premalignant lesion previously present at the active squamocolumnar junction. The transformation from mild dysplastic to invasive carcinoma generally occurs slowly within several years, although the rate of this process varies widely.",
@@ -14115,6 +14246,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Dyslipidemia",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Dyslipidemia",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Diagnosis"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Dyslipidemia",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Dystonia",
             "@type": "rdfs:Class",
             "rdfs:comment": "A movement disease that is characterized by involuntary muscle contractions causing repetitive or twisting movements.",
@@ -14196,6 +14344,49 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "gliosis",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Hypertension",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "For CLEAR-AD. UDSV3 IVP Form A5 Subject Health History Question 5b. AND OR UDSV3 IVP Form D1 Clinician Diagnosis Question 6.",
+            "rdfs:label": "Hypertension",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                },
+                {
+                    "@id": "bts:Diagnosis"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Absent"
+                },
+                {
+                    "@id": "bts:Recent/active"
+                },
+                {
+                    "@id": "bts:Remote/inactive"
+                },
+                {
+                    "@id": "bts:Unknown"
+                },
+                {
+                    "@id": "bts:No"
+                },
+                {
+                    "@id": "bts:Yes"
+                },
+                {
+                    "@id": "bts:Notassessedorunknown"
+                }
+            ],
+            "sms:displayName": "hypertension",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -14319,6 +14510,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:MetabolicSyndrome",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "MetabolicSyndrome",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Diagnosis"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Metabolic Syndrome",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Mildcognitiveimpairment",
             "@type": "rdfs:Class",
             "rdfs:comment": "Diminished or impaired mental and/or intellectual function.",
@@ -14438,6 +14646,62 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Other",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Other",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:MayoDx"
+                },
+                {
+                    "@id": "bts:Diabetes"
+                },
+                {
+                    "@id": "bts:Diagnosis"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "other",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MayoDx",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Neuropathology-based diagnosis assigned by Mayo neurologist",
+            "rdfs:label": "MayoDx",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:AD"
+                },
+                {
+                    "@id": "bts:Control"
+                },
+                {
+                    "@id": "bts:Other"
+                },
+                {
+                    "@id": "bts:Missingorunknown"
+                }
+            ],
+            "sms:displayName": "mayoDx",
+            "sms:required": "sms:false",
+            "sms:validationRules": [
+                "string"
+            ]
+        },
+        {
             "@id": "bts:OvaryCancer",
             "@type": "rdfs:Class",
             "rdfs:comment": "An ovarian cancer that is derives_from ovarian surface epithelium.",
@@ -14502,6 +14766,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "pathological aging",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PosteriorCorticalAtrophy",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "PosteriorCorticalAtrophy",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Diagnosis"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Posterior Cortical Atrophy",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -14574,6 +14855,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:SubjectiveMemoryConcern",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "SubjectiveMemoryConcern",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Diagnosis"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Subjective Memory Concern",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:SubstanceRelatedDisorder",
             "@type": "rdfs:Class",
             "rdfs:comment": "A category of psychiatric disorders which include disorders related to the taking of a drug of abuse (including alcohol, prescribed medications and recreational drugs).",
@@ -14638,6 +14936,29 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "type 2 diabetes mellitus",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Unknown",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Unknown",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Hypertension"
+                },
+                {
+                    "@id": "bts:Diabetes"
+                },
+                {
+                    "@id": "bts:Diagnosis"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "unknown",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -18180,6 +18501,51 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Recent/active",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Recent/active",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                },
+                {
+                    "@id": "bts:Diabetes"
+                },
+                {
+                    "@id": "bts:Hypertension"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Unknown\""
+                }
+            ],
+            "sms:displayName": "recent/active",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Unknown\"",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Unknown\"",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Recent/active"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "unknown\"",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:AgeAssessment",
             "@type": "rdfs:Class",
             "rdfs:comment": "Age of clinical or behavioral assessment.",
@@ -18850,23 +19216,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:KnightADRC",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "KnightADRC",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataContributionGroup"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Knight ADRC",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:DateBirth",
             "@type": "rdfs:Class",
             "rdfs:comment": "Individual date of birth",
@@ -18901,141 +19250,162 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:SubjectiveMemoryConcern",
+            "@id": "bts:Diabetes",
             "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "SubjectiveMemoryConcern",
+            "rdfs:comment": "For CLEAR-AD. UDSV3 IVP  Form A5  Subject Health History Questions 5a-5b. AND OR UDSV3 IVP Form D1 Clinician DiagnosisQuestion 2",
+            "rdfs:label": "Diabetes",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Diagnosis"
+                    "@id": "bts:ManifestColumn"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Subjective Memory Concern",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Other",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Other",
-            "rdfs:label": "Other",
-            "rdfs:subClassOf": [
+            "schema:rangeIncludes": [
                 {
-                    "@id": "bts:MayoDx"
+                    "@id": "bts:Absent"
                 },
                 {
-                    "@id": "bts:Diagnosis"
+                    "@id": "bts:Recent/active"
+                },
+                {
+                    "@id": "bts:Remote/inactive"
+                },
+                {
+                    "@id": "bts:Type1"
+                },
+                {
+                    "@id": "bts:Type2"
+                },
+                {
+                    "@id": "bts:Other"
+                },
+                {
+                    "@id": "bts:Othertype"
+                },
+                {
+                    "@id": "bts:Unknown"
+                },
+                {
+                    "@id": "bts:Notassessedorunknown"
                 }
             ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Other",
+            "sms:displayName": "diabetes",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Unknown",
+            "@id": "bts:Absent",
             "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Unknown",
+            "rdfs:comment": "Absent",
+            "rdfs:label": "Absent",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Diagnosis"
+                    "@id": "bts:WMR"
+                },
+                {
+                    "@id": "bts:Diabetes"
+                },
+                {
+                    "@id": "bts:Hypertension"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Unknown",
+            "sms:displayName": "Absent",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Dyslipidemia",
+            "@id": "bts:Remote/inactive",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "Dyslipidemia",
+            "rdfs:label": "Remote/inactive",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Diagnosis"
+                    "@id": "bts:Diabetes"
+                },
+                {
+                    "@id": "bts:Hypertension"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Dyslipidemia",
+            "sms:displayName": "remote/inactive",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Hypertension",
+            "@id": "bts:Type1",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "Hypertension",
+            "rdfs:label": "Type1",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Diagnosis"
+                    "@id": "bts:Diabetes"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Hypertension",
+            "sms:displayName": "type 1",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
-            "@id": "bts:CardiovascularDisease",
+            "@id": "bts:Type2",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "CardiovascularDisease",
+            "rdfs:label": "Type2",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Diagnosis"
+                    "@id": "bts:Diabetes"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Cardiovascular Disease",
+            "sms:displayName": "type 2",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
-            "@id": "bts:MetabolicSyndrome",
+            "@id": "bts:Othertype",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "MetabolicSyndrome",
+            "rdfs:label": "Othertype",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Diagnosis"
+                    "@id": "bts:Diabetes"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Metabolic Syndrome",
+            "sms:displayName": "other type",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
-            "@id": "bts:PosteriorCorticalAtrophy",
+            "@id": "bts:Notassessedorunknown",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "PosteriorCorticalAtrophy",
+            "rdfs:label": "Notassessedorunknown",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Diagnosis"
+                    "@id": "bts:Hypertension"
+                },
+                {
+                    "@id": "bts:Diabetes"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Posterior Cortical Atrophy",
+            "sms:displayName": "not assessed or unknown",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -19199,7 +19569,7 @@
         {
             "@id": "bts:Ethnicity",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Ethnicity of the donor",
+            "rdfs:comment": "Ethnicity of the donor. For CLEAR AD use either Hispanic/Latino or African American",
             "rdfs:label": "Ethnicity",
             "rdfs:subClassOf": [
                 {
@@ -19440,6 +19810,23 @@
             },
             "sms:displayName": "grant",
             "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Height",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "For CLEAR AD. UDSV3 IVP Form B1 Physical Question 1 Numeric XX.X (inches). Use 888 for not assessed.",
+            "rdfs:label": "Height",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "height",
+            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
@@ -20010,39 +20397,6 @@
             "sms:displayName": "matingID",
             "sms:required": "sms:false",
             "sms:validationRules": []
-        },
-        {
-            "@id": "bts:MayoDx",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Neuropathology-based diagnosis assigned by Mayo neurologist",
-            "rdfs:label": "MayoDx",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ManifestColumn"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "schema:rangeIncludes": [
-                {
-                    "@id": "bts:AD"
-                },
-                {
-                    "@id": "bts:Control"
-                },
-                {
-                    "@id": "bts:Other"
-                },
-                {
-                    "@id": "bts:Missingorunknown"
-                }
-            ],
-            "sms:displayName": "mayoDx",
-            "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
         },
         {
             "@id": "bts:AD",
@@ -23302,7 +23656,7 @@
         {
             "@id": "bts:PH",
             "@type": "rdfs:Class",
-            "rdfs:comment": "A scale used to specify the acidity or basicity of an aqueous or other liquid solution",
+            "rdfs:comment": "A scale used to specify the acidity or basicity of an aqueous or other liquid solution. pH for intracellular tissue in the brain",
             "rdfs:label": "PH",
             "rdfs:subClassOf": [
                 {
@@ -31071,26 +31425,9 @@
             ]
         },
         {
-            "@id": "bts:Absent",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Absent",
-            "rdfs:label": "Absent",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:WMR"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Absent",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:YearsEducation",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Years of education starting with kindergarten",
+            "rdfs:comment": "Years of education starting with kindergarten. For CLEAR AD UDSV3 IVP  Form A1. Subject Demographics Question 13. The highest level of education achieved if attempted level is not completed enter number of years completed. Example value of 13 would equal high school completed one year of college.",
             "rdfs:label": "YearsEducation",
             "rdfs:subClassOf": [
                 {
@@ -32773,7 +33110,13 @@
                     "@id": "bts:IndividualID"
                 },
                 {
+                    "@id": "bts:IndividualIdSource"
+                },
+                {
                     "@id": "bts:Cohort"
+                },
+                {
+                    "@id": "bts:DataContributionGroup"
                 },
                 {
                     "@id": "bts:Species"
@@ -32831,8 +33174,40 @@
                 },
                 {
                     "@id": "bts:PH"
+                },
+                {
+                    "@id": "bts:Diabetes"
+                },
+                {
+                    "@id": "bts:Hypertension"
+                },
+                {
+                    "@id": "bts:Hypercholesterolemia"
+                },
+                {
+                    "@id": "bts:Height"
+                },
+                {
+                    "@id": "bts:Weight"
                 }
             ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Hypercholesterolemia",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Hypercholesterolemia",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "hypercholesterolemia",
+            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {

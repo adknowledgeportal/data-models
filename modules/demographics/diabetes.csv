@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+diabetes, For CLEAR-AD. UDSV3 IVP  Form A5  Subject Health History Questions 5a-5b. AND OR UDSV3 IVP Form D1 Clinician DiagnosisQuestion 2,"absent, recent/active, remote/inactive, type 1, type 2, other, other type, unknown, not assessed or unknown",,,False,ManifestColumn,,sage.annotations-demographics.diabetes-0.0.2,,string,demographics

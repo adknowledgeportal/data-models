@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+height,For CLEAR AD. UDSV3 IVP Form B1 Physical Question 1 Numeric XX.X (inches). Use 888 for not assessed.,,,,False,ManifestColumn,,sage.annotations-demographics.height-0.0.2,,string,demographics
