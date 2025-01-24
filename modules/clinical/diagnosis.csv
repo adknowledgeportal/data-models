@@ -51,3 +51,11 @@ traumatic brain injury,A form of acquired brain injury which occurs when a sudde
 type 2 diabetes mellitus,A type of diabetes mellitus that is characterized by insulin resistance or desensitization and increased blood glucose levels. This is a chronic disease that can develop gradually over the life of a patient and can be linked to both environmental factors and heredity.,,,,,diagnosis,,http://purl.obolibrary.org/obo/MONDO_0005148,,string,clinical
 vascular dementia,A dementia that involves impairments in cognitive function caused by problems in blood vessels that feed the brain.,,,,,diagnosis,,http://purl.obolibrary.org/obo/DOID_8725,,string,clinical
 Williams Syndrome,"A genetic syndrome caused by mulitple gene deletions from a region of chromosome 7, and characterized by distinctive facial appearance, mild-to-moderate developmental delay, cheerfulness, cardiovascular abnormalities, and infantile hypercalcemia",,,,,diagnosis,,https://ncim.nci.nih.gov/ncimbrowser/ConceptReport.jsp?dictionary=NCI%20Metathesaurus&code=C0175702,,string,clinical
+Subjective Memory Concern,,,,,,diagnosis,,,,string,clinical
+Other,,,,,,diagnosis,,,,string,clinical
+Unknown,,,,,,diagnosis,,,,string,clinical
+Dyslipidemia,,,,,,diagnosis,,,,string,clinical
+Hypertension,,,,,,diagnosis,,,,string,clinical
+Cardiovascular Disease,,,,,,diagnosis,,,,string,clinical
+Metabolic Syndrome,,,,,,diagnosis,,,,string,clinical
+Posterior Cortical Atrophy,,,,,,diagnosis,,,,string,clinical

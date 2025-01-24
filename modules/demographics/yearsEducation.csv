@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-yearsEducation,Years of education starting with kindergarten,,,,False,ManifestColumn,,sage.annotations-demographics.yearsEducation-0.0.2,,number,demographics
+yearsEducation,Years of education starting with kindergarten. For CLEAR AD UDSV3 IVP  Form A1. Subject Demographics Question 13. The highest level of education achieved if attempted level is not completed enter number of years completed. Example value of 13 would equal high school completed one year of college.,,,,False,ManifestColumn,,sage.annotations-demographics.yearsEducation-0.0.2,,number,demographics
