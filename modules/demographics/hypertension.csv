@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+hypertension,For CLEAR-AD. UDSV3 IVP Form A5 Subject Health History Question 5b. AND OR UDSV3 IVP Form D1 Clinician Diagnosis Question 6.,"absent, recent/active, remote/inactive, unknown, no, yes, not assessed or unknown",,,False,ManifestColumn,,sage.annotations-demographics.hypertension-0.0.2,,string,demographics

@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-ethnicity,Ethnicity of the donor,,,,False,ManifestColumn,,sage.annotations-demographics.ethnicity-0.0.2,,string,demographics
+ethnicity,Ethnicity of the donor. For CLEAR AD use either Hispanic/Latino or African American,,,,False,ManifestColumn,,sage.annotations-demographics.ethnicity-0.0.2,,string,demographics
