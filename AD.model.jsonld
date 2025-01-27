@@ -33109,6 +33109,12 @@
                     "@id": "bts:SpecimenIdSource"
                 },
                 {
+                    "@id": "bts:CollectionMethod"
+                },
+                {
+                    "@id": "bts:FreezeThawCycles"
+                },
+                {
                     "@id": "bts:Organ"
                 },
                 {
