@@ -835,7 +835,7 @@ CMO,Cholesterol-modified oligonucleotide sample barcode anchor.,,,,,libraryType,
 HTO,Hashtag oligonucelotide; oligo-tagged antibodies against ubiquitously expressed surface proteins with different barcodes are used to uniquely label cells from distinct samples.,,,,,libraryType,,https://doi.org/10.1186/s13059-018-1603-1,,string,sequencing
 LMO,Lipid-modified oligonucleotide sample barcode anchor.,,,,,libraryType,,https://doi.org/10.1038/s41592-019-0433-8,,string,sequencing
 plasmid DNA,A small cellular inclusion consisting of a ring of DNA that is not in a chromosome but is capable of autonomous replication.,,,,,libraryType,,http://purl.obolibrary.org/obo/NCIT_C754,,string,sequencing
- recent/active, remote/inactive," unknown""",,,False,ManifestColumn,,sage.annotations-demographics.hypercholesterolemia-0.0.2,,string,demographics
+ recent/active, remote/inactive," unknown""",,,False,ManifestColumn,,sage.annotations-demographics.hypercholesterolemias-0.0.2,,string,demographics
 ADNC,ADNC severity score,"Not AD, Low, Intermediate, High, missing or unknown",,,True,ManifestColumn,,sage-annotations-clinical.ADNC-0.0.2,string,,clinical
 ageAssessment,Age of clinical or behavioral assessment.,,,,False,ManifestColumn,,sage.annotations-experimentalData.ageAssessment-0.0.2,,number,experimentalData
 ageAssessmentUnits,Age of assessment units.,"days, gestational weeks, months, PCW, weeks, years",,,False,ManifestColumn,,sage.annotations-experimentalData.ageAssessmentUnits-0.0.2,,string,experimentalData
