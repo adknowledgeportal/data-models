@@ -2759,6 +2759,18 @@
                 },
                 {
                     "@id": "bts:ZenoElectronicWalkway"
+                },
+                {
+                    "@id": "bts:TotalRNAseq"
+                },
+                {
+                    "@id": "bts:MRNAseq"
+                },
+                {
+                    "@id": "bts:RRBS"
+                },
+                {
+                    "@id": "bts:IlluminaEPICArray"
                 }
             ],
             "sms:displayName": "assay",
@@ -8175,7 +8187,7 @@
                     "@id": "bts:Schwann"
                 },
                 {
-                    "@id": "bts:Schwanncellprecusor"
+                    "@id": "bts:Schwanncellprecursor"
                 },
                 {
                     "@id": "bts:Schwannoma"
@@ -9455,10 +9467,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Schwanncellprecusor",
+            "@id": "bts:Schwanncellprecursor",
             "@type": "rdfs:Class",
             "rdfs:comment": "A giioblast cell that develops from a migratory neural crest cell. The SCP is embedded among neurons (axons) with minimal extracellular spaces separating them from nerve cell membranes and has no basal lamina. In rodents SCPs are the only cells in the Schwann cell linage that expresses Cdh19.",
-            "rdfs:label": "Schwanncellprecusor",
+            "rdfs:label": "Schwanncellprecursor",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:CellType"
@@ -9467,7 +9479,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "Schwann cell precusor",
+            "sms:displayName": "Schwann cell precursor",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -10179,6 +10191,24 @@
                 },
                 {
                     "@id": "bts:WHICAP"
+                },
+                {
+                    "@id": "bts:MayoClinicStudyofAging(MCSA)"
+                },
+                {
+                    "@id": "bts:MayoClinicBrainBank(MCBB)"
+                },
+                {
+                    "@id": "bts:MichiganADRC(MADC)"
+                },
+                {
+                    "@id": "bts:KnightADRC"
+                },
+                {
+                    "@id": "bts:1FloridaADRC(1FLADRC)"
+                },
+                {
+                    "@id": "bts:IndianaADRC(IADRC)"
                 }
             ],
             "sms:displayName": "cohort",
@@ -10785,10 +10815,10 @@
             "rdfs:label": "KnightADRC",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Cohort"
+                    "@id": "bts:DataContributionGroup"
                 },
                 {
-                    "@id": "bts:DataContributionGroup"
+                    "@id": "bts:Cohort"
                 }
             ],
             "schema:isPartOf": {
@@ -11908,6 +11938,18 @@
                 },
                 {
                     "@id": "bts:Wholebrain"
+                },
+                {
+                    "@id": "bts:CerebellarHemisphere"
+                },
+                {
+                    "@id": "bts:InferiorParietalGyrus"
+                },
+                {
+                    "@id": "bts:Occipitalpole"
+                },
+                {
+                    "@id": "bts:TransentorhinalCortex"
                 }
             ],
             "sms:displayName": "tissue",
@@ -14653,6 +14695,9 @@
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:MayoDx"
+                },
+                {
+                    "@id": "bts:CollectionMethod"
                 },
                 {
                     "@id": "bts:Diabetes"
@@ -18796,6 +18841,74 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:TotalRNAseq",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "TotalRNAseq",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Assay"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "TotalRNAseq",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MRNAseq",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "MRNAseq",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Assay"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "mRNAseq",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:RRBS",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "RRBS",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Assay"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "RRBS",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:IlluminaEPICArray",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "IlluminaEPICArray",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Assay"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Illumina EPIC Array",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Batch",
             "@type": "rdfs:Class",
             "rdfs:comment": "Batch specimen was processed in",
@@ -19048,6 +19161,108 @@
             },
             "sms:displayName": "climbID",
             "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CollectionMethod",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "For CLEAR-AD.Blood samples that are collected in heparin tubes will be sent directly to NCRAD for them to extract and store PBMCs for eventual generation of iPSCs.",
+            "rdfs:label": "CollectionMethod",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:PAXgeneBloodTube"
+                },
+                {
+                    "@id": "bts:EDTAPurpleTopTube"
+                },
+                {
+                    "@id": "bts:Heparin(NaHep)GreenTopTubes"
+                },
+                {
+                    "@id": "bts:Other"
+                },
+                {
+                    "@id": "bts:Notcollected"
+                }
+            ],
+            "sms:displayName": "collectionMethod",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:PAXgeneBloodTube",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "PAXgeneBloodTube",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CollectionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "PAXgene Blood Tube",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:EDTAPurpleTopTube",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "EDTAPurpleTopTube",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CollectionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "EDTA Purple Top Tube",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Heparin(NaHep)GreenTopTubes",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Heparin(NaHep)GreenTopTubes",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CollectionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Heparin (NaHep) Green Top Tubes",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Notcollected",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Notcollected",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CollectionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "not collected",
+            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
@@ -19656,6 +19871,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "fragmentation",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:FreezeThawCycles",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The number of freeze thaw cycles of fluid samples as multiple freeze thaw cycles may compromise sample integrity",
+            "rdfs:label": "FreezeThawCycles",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "freezeThawCycles",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -31085,6 +31317,74 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "whole brain",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CerebellarHemisphere",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "CerebellarHemisphere",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Tissue"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Cerebellar Hemisphere",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:InferiorParietalGyrus",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "InferiorParietalGyrus",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Tissue"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "inferior Parietal Gyrus",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Occipitalpole",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Occipitalpole",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Tissue"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "occipital pole",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:TransentorhinalCortex",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "TransentorhinalCortex",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Tissue"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Transentorhinal Cortex",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
