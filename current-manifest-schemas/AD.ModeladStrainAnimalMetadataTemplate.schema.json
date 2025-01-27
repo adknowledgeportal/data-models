@@ -4,7 +4,17 @@
   "title": "ModeladStrainAnimalMetadataTemplate",
   "type": "object",
   "properties": {
+    "geneticMutations": {},
+    "Component": {},
+    "registryAbbreviation": {},
     "specimenID": {},
+    "individualID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "strainOfficialName": {},
     "modelType": {
       "enum": [
         "Late-onset AD (LOAD)",
@@ -14,19 +24,9 @@
         ""
       ]
     },
-    "individualID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
     "strainCommonName": {},
-    "stockNumber": {},
-    "strainOfficialName": {},
-    "registryAbbreviation": {},
-    "geneticMutations": {},
-    "Component": {},
-    "geneticBackground": {}
+    "geneticBackground": {},
+    "stockNumber": {}
   },
   "required": [
     "individualID"
