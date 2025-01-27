@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-hypercholesterolemia, For CLEAR AD. UDSV3 IVP Form A5 Subject Health History Question 5c.  AND OR UDSV3 IVP Form D1 Clinician Diagnosis Question 8., "absent, recent/active, remote/inactive, unknown",,,False,ManifestColumn,,sage.annotations-demographics.hypercholesterolemias-0.0.2,,string,demographics
+hypercholesterolemia, For CLEAR AD. UDSV3 IVP Form A5 Subject Health History Question 5c. AND OR UDSV3 IVP Form D1 Clinician Diagnosis Question 8., "absent, recent/active, remote/inactive, unknown",,,False,ManifestColumn,,sage.annotations-demographics.hypercholesterolemia-0.0.2,,string,demographics
