@@ -2467,9 +2467,6 @@
                     "@id": "bts:CUT&Tag"
                 },
                 {
-                    "@id": "bts:DELETEME"
-                },
-                {
                     "@id": "bts:DIA"
                 },
                 {
@@ -3362,23 +3359,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "CUT&Tag",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:DELETEME",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "DELETEME",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Assay"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "DELETEME",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
