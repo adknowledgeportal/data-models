@@ -10,32 +10,32 @@
       },
       "minLength": 1
     },
-    "ageDays": {},
-    "specimenID": {},
-    "nMale": {},
-    "tissueWeight": {},
-    "nIndividuals": {},
-    "temperature": {},
     "nFemale": {},
+    "nIndividuals": {},
+    "tissueWeight": {},
+    "temperature": {},
     "Component": {},
     "nucleicAcidSource": {
       "enum": [
-        "single cell",
-        "sorted cells",
-        "sorted nuclei",
-        "single nucleus",
-        "bulk cell",
-        "cfDNA",
         "bulk nuclei",
         "mitochondria",
+        "single nucleus",
+        "sorted nuclei",
+        "sorted cells",
         "not applicable",
+        "bulk cell",
+        "cfDNA",
+        "single cell",
         ""
       ]
     },
+    "ageDays": {},
+    "specimenID": {},
+    "nMale": {},
     "bodyPart": {
       "enum": [
-        "head",
         "brain",
+        "head",
         ""
       ]
     }

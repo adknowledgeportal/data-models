@@ -4,208 +4,6 @@
   "title": "IndividualHumanMetadataTemplate",
   "type": "object",
   "properties": {
-    "mannerDeath": {
-      "enum": [
-        "accident",
-        "undetermined",
-        "homicide",
-        "natural causes",
-        "suicide",
-        ""
-      ]
-    },
-    "diagnosisCriteria": {},
-    "pH": {},
-    "pmiUnits": {
-      "enum": [
-        "hours",
-        "minutes",
-        ""
-      ]
-    },
-    "ethnicity": {},
-    "apoeGenotype": {
-      "enum": [
-        "34",
-        "24",
-        "33",
-        "44",
-        "22",
-        "23",
-        ""
-      ]
-    },
-    "dataContributionGroup": {
-      "enum": [
-        "MC ADRC",
-        "Emory",
-        "Duke",
-        "IADRC",
-        "MCSA",
-        "Knight ADRC",
-        "Baker Heart & Diabetes Institute",
-        "ADNI",
-        "MCBB",
-        ""
-      ]
-    },
-    "diagnosis": {
-      "enum": [
-        "corticobasal degeneration disorder",
-        "Control",
-        "Fibrocystic Breast Disease",
-        "Metabolic Syndrome",
-        "unknown",
-        "obsessive compulsive disorder",
-        "Lewy body disease",
-        "Skin Cancer",
-        "Brain Cancer",
-        "Substance Related Disorder",
-        "multiple system atrophy",
-        "Leukemia",
-        "Lung Cancer",
-        "Subjective Memory Concern",
-        "traumatic brain injury",
-        "anxiety",
-        "Colon Cancer",
-        "Not Applicable",
-        "Breast Cancer",
-        "Schizophrenia",
-        "obesity",
-        "pathological aging",
-        "no cognitive impairment",
-        "Cervical Cancer",
-        "Prostate Cancer",
-        "Neurofibromatosis 2",
-        "Posterior Cortical Atrophy",
-        "Autism Spectrum Disorder",
-        "frontotemporal dementia",
-        "Bladder Cancer",
-        "Alzheimer disease with psychosis",
-        "type 2 diabetes mellitus",
-        "Juvenile Myelomonocytic Leukemia",
-        "Ovary Cancer",
-        "dystonia",
-        "Neurofibromatosis 1",
-        "Cardiovascular Disease",
-        "hypoxia",
-        "other",
-        "gliosis",
-        "dementia",
-        "Pancreatic Cancer",
-        "CS-DS",
-        "MCI-DS",
-        "Dyslipidemia",
-        "mild cognitive impairment",
-        "Affective Disorder",
-        "progressive supranuclear palsy",
-        "hypertension",
-        "Tourette Syndrome",
-        "essential tremor",
-        "Alzheimer Disease",
-        "AD-DS",
-        "Bipolar Disorder",
-        "Major Depressive Disorder",
-        "Williams Syndrome",
-        "vascular dementia",
-        "amyotrophic lateral sclerosis",
-        "Parkinson's disease",
-        ""
-      ]
-    },
-    "diabetes": {
-      "enum": [
-        "other type",
-        "unknown",
-        "other",
-        "Absent",
-        "type 1",
-        "type 2",
-        "remote/inactive",
-        "recent/active",
-        "not assessed or unknown",
-        ""
-      ]
-    },
-    "individualID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "hypercholesterolemia": {},
-    "race": {
-      "enum": [
-        "Native Hawaiian or Other Pacific Islander",
-        "Black or African American",
-        "American Indian or Alaska Native",
-        "White",
-        "Asian",
-        ""
-      ]
-    },
-    "weight": {},
-    "ageDeathUnits": {
-      "enum": [
-        "months",
-        "PCW",
-        "gestational weeks",
-        "years",
-        "days",
-        "weeks",
-        ""
-      ]
-    },
-    "PMI": {},
-    "cohort": {
-      "enum": [
-        "Emory_ADRC",
-        "BEAM",
-        "Banner",
-        "POINTER",
-        "WHICAP",
-        "HBCC",
-        "BLSA",
-        "UFL",
-        "ACT",
-        "Pitt ADRC",
-        "LBP",
-        "ADNI",
-        "HPGP",
-        "MCR",
-        "EFIGA",
-        "Columbia ADRC",
-        "MCJ",
-        "BEB-Miller",
-        "SMRI",
-        "MARS-WI",
-        "Tulsa LIBR-1000",
-        "ROSMAP",
-        "UW ADRC",
-        "MC",
-        "Framingham",
-        "Mayo Clinic ADRC (Mayo ADRC)",
-        "MSBB",
-        "MARS",
-        "CHDWB",
-        "DiCAD",
-        "CLINCOR",
-        "HUP",
-        "UK Biobank",
-        "MIND",
-        "NYBB",
-        "ADRC",
-        "UPenn",
-        "EHBS",
-        "ABC-DS",
-        "RADC",
-        "Biggs Institute Brain Bank",
-        "UPBB",
-        "HBTRC",
-        "FBS",
-        ""
-      ]
-    },
     "apoe4Status": {
       "enum": [
         "missing or unknown",
@@ -214,123 +12,331 @@
         ""
       ]
     },
-    "yearsEducation": {},
-    "height": {},
-    "causeDeath": {},
-    "Component": {},
-    "sex": {
+    "weight": {},
+    "ageDeath": {},
+    "cohort": {
       "enum": [
-        "missing or unknown",
-        "male",
-        "female"
+        "POINTER",
+        "ADNI",
+        "HBCC",
+        "MCJ",
+        "Indiana ADRC (IADRC)",
+        "MCR",
+        "NYBB",
+        "FBS",
+        "MARS-WI",
+        "Framingham",
+        "Pitt ADRC",
+        "BEB-Miller",
+        "Biggs Institute Brain Bank",
+        "MIND",
+        "MSBB",
+        "HUP",
+        "ROSMAP",
+        "Banner",
+        "EFIGA",
+        "UFL",
+        "SMRI",
+        "BLSA",
+        "1Florida ADRC (1FL ADRC)",
+        "ABC-DS",
+        "UPBB",
+        "LBP",
+        "Mayo Clinic Study of Aging (MCSA)",
+        "UK Biobank",
+        "ACT",
+        "UW ADRC",
+        "Emory_ADRC",
+        "Knight ADRC",
+        "DiCAD",
+        "EHBS",
+        "HPGP",
+        "RADC",
+        "Michigan ADRC (MADC)",
+        "WHICAP",
+        "Tulsa LIBR-1000",
+        "UPenn",
+        "MARS",
+        "Mayo Clinic Brain Bank (MCBB)",
+        "CLINCOR",
+        "ADRC",
+        "BEAM",
+        "Columbia ADRC",
+        "MC",
+        "Mayo Clinic ADRC (Mayo ADRC)",
+        "CHDWB",
+        "HBTRC",
+        ""
       ]
     },
-    "hypertension": {
+    "PMI": {},
+    "yearsEducation": {},
+    "brainWeight": {},
+    "individualIdSource": {
       "enum": [
+        "NICHD",
+        "ADNI",
+        "TAA",
+        "NYBB",
+        "University of Florida",
+        "LivingBrainProject_MSSM",
+        "Rush",
+        "Newcastle",
+        "ABN",
+        "StemExpress",
+        "DongLab",
+        "PGP",
+        "SMRI",
+        "Vaccarino",
+        "Geschwind",
+        "AIBS",
+        "Caltech",
+        "MayoBrainBank",
+        "Einstein",
+        "UW-CDL",
+        "HBSFRC",
+        "Sestan",
+        "Penn",
+        "ABR",
+        "Novogenix",
+        "UCSF",
+        "Oxford",
+        "Yale",
+        "MSSM",
+        "Michigan University",
+        "Clotomics_PAIKEA_MSSM",
+        "XCell Science",
+        "Washington University",
+        "Emory",
+        "University of Miami",
+        "BEB_Miller",
+        "IU",
+        "JAX",
+        "UM-BTB",
+        "UCI_TMF",
+        "BannerSun",
+        "Pritzker",
+        "LIBD",
+        "NDRI",
+        "HBTRC",
+        "Mayo Clinic",
+        "Pitt",
+        "NIMH-HBCC",
+        ""
+      ]
+    },
+    "diabetes": {
+      "enum": [
+        "not assessed or unknown",
+        "type 2",
+        "remote/inactive",
+        "other",
+        "recent/active",
+        "type 1",
+        "other type",
         "unknown",
         "Absent",
-        "yes",
-        "no",
-        "remote/inactive",
-        "recent/active",
-        "not assessed or unknown",
+        ""
+      ]
+    },
+    "pH": {},
+    "individualID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "CERAD": {
+      "enum": [
+        "missing or unknown",
+        "No AD C0",
+        "Sparse Possible C1",
+        "Moderate Probable C2",
+        "Frequent Definite C3",
+        ""
+      ]
+    },
+    "mannerDeath": {
+      "enum": [
+        "natural causes",
+        "suicide",
+        "homicide",
+        "accident",
+        "undetermined",
+        ""
+      ]
+    },
+    "race": {
+      "enum": [
+        "American Indian or Alaska Native",
+        "White",
+        "Black or African American",
+        "Native Hawaiian or Other Pacific Islander",
+        "Asian",
+        ""
+      ]
+    },
+    "pmiUnits": {
+      "enum": [
+        "minutes",
+        "hours",
         ""
       ]
     },
     "species": {
       "enum": [
-        "Rhesus macaque",
-        "Mouse",
-        "Human",
-        "Drosophila melanogaster",
-        "Gallus gallus",
         "Sus scrofa",
+        "Mouse",
+        "Drosophila melanogaster",
+        "Rhesus macaque",
+        "Human",
         "Pan troglodytes",
-        "Rat"
+        "Rat",
+        "Gallus gallus"
+      ]
+    },
+    "height": {},
+    "apoeGenotype": {
+      "enum": [
+        "22",
+        "44",
+        "33",
+        "23",
+        "34",
+        "24",
+        ""
+      ]
+    },
+    "Component": {},
+    "diagnosis": {
+      "enum": [
+        "Control",
+        "dementia",
+        "Bipolar Disorder",
+        "Parkinson's disease",
+        "Leukemia",
+        "Lewy body disease",
+        "multiple system atrophy",
+        "Not Applicable",
+        "Alzheimer Disease",
+        "Dyslipidemia",
+        "Posterior Cortical Atrophy",
+        "MCI-DS",
+        "CS-DS",
+        "AD-DS",
+        "Metabolic Syndrome",
+        "progressive supranuclear palsy",
+        "Brain Cancer",
+        "gliosis",
+        "Bladder Cancer",
+        "type 2 diabetes mellitus",
+        "Major Depressive Disorder",
+        "anxiety",
+        "Juvenile Myelomonocytic Leukemia",
+        "Cardiovascular Disease",
+        "Alzheimer disease with psychosis",
+        "Neurofibromatosis 2",
+        "corticobasal degeneration disorder",
+        "frontotemporal dementia",
+        "Affective Disorder",
+        "other",
+        "traumatic brain injury",
+        "Ovary Cancer",
+        "obsessive compulsive disorder",
+        "Breast Cancer",
+        "obesity",
+        "Colon Cancer",
+        "dystonia",
+        "Fibrocystic Breast Disease",
+        "Williams Syndrome",
+        "Neurofibromatosis 1",
+        "hypoxia",
+        "Tourette Syndrome",
+        "Skin Cancer",
+        "Subjective Memory Concern",
+        "pathological aging",
+        "Cervical Cancer",
+        "hypertension",
+        "Autism Spectrum Disorder",
+        "Pancreatic Cancer",
+        "Substance Related Disorder",
+        "amyotrophic lateral sclerosis",
+        "Lung Cancer",
+        "essential tremor",
+        "mild cognitive impairment",
+        "no cognitive impairment",
+        "Schizophrenia",
+        "unknown",
+        "vascular dementia",
+        "Prostate Cancer",
+        ""
+      ]
+    },
+    "sex": {
+      "enum": [
+        "missing or unknown",
+        "female",
+        "male"
+      ]
+    },
+    "causeDeath": {},
+    "hypertension": {
+      "enum": [
+        "not assessed or unknown",
+        "remote/inactive",
+        "no",
+        "recent/active",
+        "unknown",
+        "yes",
+        "Absent",
+        ""
+      ]
+    },
+    "hypercholesterolemia": {},
+    "dataContributionGroup": {
+      "enum": [
+        "ADNI",
+        "MC ADRC",
+        "MCSA",
+        "IADRC",
+        "Emory",
+        "Knight ADRC",
+        "Duke",
+        "MCBB",
+        "Baker Heart & Diabetes Institute",
+        ""
       ]
     },
     "Braak": {
       "enum": [
-        "BRAAK Stage 2",
-        "BRAAK Stage 6",
-        "BRAAK Stage 1",
-        "BRAAK Stage 3",
+        "missing or unknown",
         "BRAAK Stage 5",
-        "missing or unknown",
-        "No BRAAK stage",
         "BRAAK Stage 4",
+        "BRAAK Stage 3",
+        "BRAAK Stage 6",
+        "No BRAAK stage",
+        "BRAAK Stage 1",
+        "BRAAK Stage 2",
         ""
       ]
     },
-    "CERAD": {
+    "diagnosisCriteria": {},
+    "ageDeathUnits": {
       "enum": [
-        "Moderate Probable C2",
-        "Frequent Definite C3",
-        "missing or unknown",
-        "No AD C0",
-        "Sparse Possible C1",
+        "months",
+        "years",
+        "days",
+        "PCW",
+        "gestational weeks",
+        "weeks",
         ""
       ]
     },
-    "ageDeath": {},
-    "individualIdSource": {
-      "enum": [
-        "Yale",
-        "Rush",
-        "Pritzker",
-        "Pitt",
-        "Penn",
-        "TAA",
-        "BannerSun",
-        "UCI_TMF",
-        "NIMH-HBCC",
-        "UM-BTB",
-        "Washington University",
-        "MSSM",
-        "Emory",
-        "JAX",
-        "ADNI",
-        "NICHD",
-        "Mayo Clinic",
-        "PGP",
-        "Geschwind",
-        "ABN",
-        "AIBS",
-        "Caltech",
-        "StemExpress",
-        "Clotomics_PAIKEA_MSSM",
-        "HBSFRC",
-        "SMRI",
-        "UW-CDL",
-        "University of Florida",
-        "LIBD",
-        "BEB_Miller",
-        "Michigan University",
-        "IU",
-        "UCSF",
-        "LivingBrainProject_MSSM",
-        "Novogenix",
-        "NDRI",
-        "XCell Science",
-        "NYBB",
-        "Oxford",
-        "Sestan",
-        "ABR",
-        "Newcastle",
-        "Vaccarino",
-        "University of Miami",
-        "MayoBrainBank",
-        "DongLab",
-        "HBTRC",
-        "Einstein",
-        ""
-      ]
-    },
-    "brainWeight": {}
+    "ethnicity": {}
   },
   "required": [
     "individualID",
-    "sex",
-    "species"
+    "species",
+    "sex"
   ]
 }

@@ -5,17 +5,15 @@
   "type": "object",
   "properties": {
     "specimenID": {},
-    "Component": {},
     "modelType": {
       "enum": [
+        "Late-onset AD (LOAD)",
         "Early-onset AD (EOAD)",
         "Mixed-onset AD",
-        "Late-onset AD (LOAD)",
         "Familial AD (FAD)",
         ""
       ]
     },
-    "stockNumber": {},
     "individualID": {
       "not": {
         "type": "null"
@@ -23,10 +21,12 @@
       "minLength": 1
     },
     "strainCommonName": {},
-    "geneticBackground": {},
+    "stockNumber": {},
     "strainOfficialName": {},
     "registryAbbreviation": {},
-    "geneticMutations": {}
+    "geneticMutations": {},
+    "Component": {},
+    "geneticBackground": {}
   },
   "required": [
     "individualID"
