@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+collectionMethod,For CLEAR-AD.Blood samples that are collected in heparin tubes will be sent directly to NCRAD for them to extract and store PBMCs for eventual generation of iPSCs.,"PAXgene Blood Tube, EDTA Purple Top Tube, Heparin (NaHep) Green Top Tubes,other, not collected",,,False,ManifestColumn,,sage.annotations-experimentalData.collectionMethod-0.0.11,,string,biospecimen
