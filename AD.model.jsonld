@@ -8606,6 +8606,9 @@
                     "@id": "bts:MayoRNAseq"
                 },
                 {
+                    "@id": "bts:MCITE-Seq"
+                },
+                {
                     "@id": "bts:MCSnRNA"
                 },
                 {
@@ -28048,6 +28051,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "MayoRNAseq",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MCITE-Seq",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The mCITE-Seq – Columbia University Study",
+            "rdfs:label": "MCITE-Seq",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "mCITE-Seq",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
