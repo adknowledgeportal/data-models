@@ -8549,6 +8549,9 @@
                     "@id": "bts:IPSCMicroglia"
                 },
                 {
+                    "@id": "bts:ISBTanerCollagenDomain"
+                },
+                {
                     "@id": "bts:Jax.IU.PittAPOE4.Trem2.R47H"
                 },
                 {
@@ -27745,6 +27748,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "iPSCMicroglia",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ISBTanerCollagenDomain",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The A C1qTNF3 collagen domain fusion chaperones diverse secreted proteins and anti-Aβ scFvs: Applications for gene therapies Study",
+            "rdfs:label": "ISBTanerCollagenDomain",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ISB_Taner_CollagenDomain",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
