@@ -8552,6 +8552,18 @@
                     "@id": "bts:ISBTanerCollagenDomain"
                 },
                 {
+                    "@id": "bts:ISBTanerCxcl10"
+                },
+                {
+                    "@id": "bts:ISBTanerPTNMDK"
+                },
+                {
+                    "@id": "bts:ISBTanerSIL10rSIL4r"
+                },
+                {
+                    "@id": "bts:ISBTanerTGFbeta"
+                },
+                {
                     "@id": "bts:Jax.IU.PittAPOE4.Trem2.R47H"
                 },
                 {
@@ -27765,6 +27777,74 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "ISB_Taner_CollagenDomain",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ISBTanerCxcl10",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Cxcl10 overexpression in a transgenic model of Alzheimer’s disease Study",
+            "rdfs:label": "ISBTanerCxcl10",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ISB_Taner_Cxcl10",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ISBTanerPTNMDK",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Integrative proteomics identifies a conserved Aβ amyloid responsome and novel plaque proteins and pathology modifiers in Alzheimer's disease Study",
+            "rdfs:label": "ISBTanerPTNMDK",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ISB_Taner_PTN_MDK",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ISBTanerSIL10rSIL4r",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Antagonizing Il10 and Il4 signaling via intracerebral decoy receptor expression attenuates Aβ accumulation Study",
+            "rdfs:label": "ISBTanerSIL10rSIL4r",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ISB_Taner_sIL10r_sIL4r",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ISBTanerTGFbeta",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The TGFbeta overexpression in a transgenic model of Alzheimer’s disease Study",
+            "rdfs:label": "ISBTanerTGFbeta",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ISB_Taner_TGFbeta",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
