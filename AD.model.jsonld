@@ -8912,6 +8912,9 @@
                     "@id": "bts:WGSHarmonization"
                 },
                 {
+                    "@id": "bts:WHICAPImmunoprofiling"
+                },
+                {
                     "@id": "bts:Yale-ASD"
                 }
             ],
@@ -29749,6 +29752,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "WGS_Harmonization",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:WHICAPImmunoprofiling",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Immunoprofiling of PBMCs from the WHICAP cohort Study",
+            "rdfs:label": "WHICAPImmunoprofiling",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "WHICAP_Immunoprofiling",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
