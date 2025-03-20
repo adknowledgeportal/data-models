@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+visitNumberUnit,"days, months, years",,,,False,ManifestColumn,,sage.annotations-experimentalData.visitNumberUnit-0.0.2,,number,biospecimen

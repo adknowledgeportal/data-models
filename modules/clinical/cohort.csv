@@ -45,6 +45,7 @@ UPenn,"The University of Pennsylvania Alzheimer's Disease Core Center (ADCC), Pe
 UW ADRC,University of Washington Alzheimer's Disease Research Center,,,,False,cohort,,http://depts.washington.edu/mbwc/adrc,,string,clinical
 WHICAP,"The Washington-Heights/Inwood Columbia Aging Project (WHICAP) is a community-based longitudinal study, recruiting elderly subjects from Northern Manhattan. Cohorts were established in 1992, 1999, and 2009. Subjects are evaluated every two years.",,,,False,cohort,,https://www.neurology.columbia.edu/research/research-centers-and-programs/alzheimers-disease-research-center-adrc/investigators/investigator-resources,,string,clinical
 Mayo Clinic Study of Aging (MCSA),,,,,False,cohort,,,,string,clinical
+Mayo Clinic ADRC (Mayo ADRC),,,,,False,cohort,,,,string,clinical
 Mayo Clinic Brain Bank (MCBB),,,,,False,cohort,,,,string,clinical
 Michigan ADRC (MADC),,,,,False,cohort,,,,string,clinical
 Knight ADRC,,,,,False,cohort,,,,string,clinical
