@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-nucleicAcidSource,"bulk cell, single cell, bulk nuclei, single nucleus, mitochondria, sorted cells, sorted nuclei, cfDNA, not applicable",,,False,ManifestColumn,,sage.annotations-ngs.nucleicAcidSource-0.0.3,,string,biospecimen
+nucleicAcidSource,,"bulk cell, single cell, bulk nuclei, single nucleus, mitochondria, sorted cells, sorted nuclei, cfDNA, not applicable",,,False,ManifestColumn,,sage.annotations-ngs.nucleicAcidSource-0.0.3,,string,biospecimen
 bulk cell,All cells from bulk sample,,,,,nucleicAcidSource,,Sage Bionetworks,,string,biospecimen
 bulk nuclei,All nuclei from bulk sample,,,,,nucleicAcidSource,,Sage Bionetworks,,string,biospecimen
 cfDNA,Circulating cell-free DNA.,,,,,nucleicAcidSource,,http://purl.obolibrary.org/obo/NCIT_C128274,,string,biospecimen
