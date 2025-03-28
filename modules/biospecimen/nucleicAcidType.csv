@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-nucleicAcidType,"RNA, DNA, not applicable",,,False,ManifestColumn,,,,string,biospecimen
+nucleicAcidType,"RNA, DNA, not applicable",,,False,ManifestColumn,,sage.annotations-ngs.nucleicAcidSource-0.0.3,,string,biospecimen
