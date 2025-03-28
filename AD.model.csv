@@ -970,7 +970,7 @@ nFemale,Number of female individuals in a pooled Drosophila sample,,,,False,Mani
 nIndividuals,Number of individuals in a pooled Drosophila sample,,,,False,ManifestColumn,,sage.annotations-experimentalData.nIndividuals-0.0.2,,integer,drosophila
 nMale,Number of male individuals in a pooled Drosophila sample,,,,False,ManifestColumn,,sage.annotations-experimentalData.nMale-0.0.2,,integer,drosophila
 nucleicAcidSource,,"bulk cell, single cell, bulk nuclei, single nucleus, mitochondria, sorted cells, sorted nuclei, cfDNA, not applicable",,,False,ManifestColumn,,sage.annotations-ngs.nucleicAcidSource-0.0.3,,string,biospecimen
-nucleicAcidType,,"RNA, DNA, not applicable",,,False,ManifestColumn,ngs,,,string,biospecimen
+nucleicAcidType,,"RNA, DNA, not applicable",,,False,ManifestColumn,,,,string,biospecimen
 numberCells,Number of cells or nuclei sequenced,,,,False,ManifestColumn,,sage.annotations-experimentalData.numberCells-0.0.2,,integer,sequencing
 organ,A unique macroscopic (gross) anatomic structure that performs specific functions. It is composed of various tissues. An organ is part of an anatomic system or a body region.,"blood, bone marrow, brain, breast, Bursa Of Fabricius, cerebrospinal fluid, colon, kidney, large intestine, liver, lung, lymph node, mammary gland, nerves, nose, ovary, pancreas, prostate, skin, spleen",,,True,ManifestColumn,,sage.annotations-experimentalData.organ-0.0.4,,string,biospecimen
 passage,Number of times a cell culture has been subcultured,,,,False,ManifestColumn,,sage.annotations-experimentalData.passage-0.0.2,,integer,biospecimen
