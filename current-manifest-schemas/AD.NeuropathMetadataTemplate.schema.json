@@ -4,148 +4,128 @@
   "title": "NeuropathMetadataTemplate",
   "type": "object",
   "properties": {
-    "AMY_A": {
+    "HS_L": {
       "enum": [
-        "Thal Phase 4 or 5",
-        "No A Score",
-        "Thal Phase 3",
-        "Thal Phase 1 or 2",
-        "missing or unknown"
-      ]
-    },
-    "AMY_ANY": {
-      "enum": [
-        "Amyloid Present",
-        "No amyloid presence",
-        "Some Amyloid",
-        "missing or unknown"
+        "No HS_L",
+        "Present Location UK",
+        "missing or unknown",
+        "Bilateral",
+        "Unilateral",
+        ""
       ]
     },
     "AMY_THAL": {
       "enum": [
+        "No Thal Phase",
+        "Phase 4",
+        "missing or unknown",
+        "Phase 1",
         "Phase 3",
         "Phase 5",
-        "Phase 1",
-        "missing or unknown",
-        "Phase 2",
-        "No Thal Phase",
-        "Phase 4"
+        "Phase 2"
       ]
     },
-    "individualID": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "alt_LEWY_full": {
+    "HEMOR": {
       "enum": [
-        "Olfactory bulb only",
-        "Neocortical diffuse",
-        "Amygdala only",
-        "Brainstem predominant",
+        "yes",
         "missing or unknown",
-        "No alt_LEWY_full",
-        "Limbic transitional",
+        "no",
         ""
       ]
     },
-    "brainWeight": {},
-    "WMR": {
+    "CERAD": {
       "enum": [
-        "Severe",
-        "Mild",
-        "Absent",
         "missing or unknown",
-        "Moderate",
+        "Moderate Probable C2",
+        "Frequent Definite C3",
+        "Sparse Possible C1",
+        "No AD C0"
+      ]
+    },
+    "TDP43": {
+      "enum": [
+        "yes",
+        "missing or unknown",
+        "no",
         ""
       ]
     },
-    "LEWY_ANY": {
+    "ADNC": {
       "enum": [
-        "Brainstem or transitional or diffuse or region unspecified group",
-        "No LEWY_ANY or olfactory bulb or amygdala predominant group",
         "missing or unknown",
-        ""
+        "Not AD",
+        "Low",
+        "High",
+        "Intermediate"
       ]
     },
-    "conservationMethod": {
+    "alt_HS_S": {
       "enum": [
-        "fixed tissues only",
-        "both fixed and frozen tissue",
-        "missing or unknown",
-        "noConservation",
-        "frozen tissue only"
-      ]
-    },
-    "CVD_ATH": {
-      "enum": [
-        "No CVD_ATH",
-        "Severe",
-        "Mild",
-        "missing or unknown",
-        "Moderate",
-        ""
-      ]
-    },
-    "REAG": {
-      "enum": [
-        "No AD",
-        "Intermediate Likelihood",
-        "Other or Does not fulfill NIA-REAGEN criteria",
-        "missing or unknown",
-        "High Likelihood",
-        "Low likelihood"
-      ]
-    },
-    "HS_L": {
-      "enum": [
-        "Unilateral",
-        "missing or unknown",
-        "Bilateral",
-        "No HS_L",
-        "Present Location UK",
-        ""
-      ]
-    },
-    "TDP_3": {
-      "enum": [
-        "Hippocampus or Etorhinal",
-        "No TDP_3",
-        "Neocortex",
-        "missing or unknown",
-        "amygdala",
-        ""
-      ]
-    },
-    "CVD_CAA_ANY": {
-      "enum": [
-        "Mild or Moderate or Severe",
-        "No CVD_CAA_ANY",
+        "Absence",
+        "Presence",
         "missing or unknown",
         ""
       ]
     },
     "CVD_CAA": {
       "enum": [
+        "missing or unknown",
+        "No CVD_CAA",
+        "Moderate",
         "Severe",
         "Mild",
-        "No CVD_CAA",
-        "missing or unknown",
-        "Moderate",
         ""
       ]
     },
-    "TDP_5": {
+    "INFA": {
       "enum": [
-        "No TDP_5",
-        "Neocortex",
-        "Brainstem/Spinal Cord",
-        "Entorhinal",
+        "yes",
         "missing or unknown",
-        "hippocampus",
-        "amygdala",
+        "no",
         ""
+      ]
+    },
+    "AMY_ANY": {
+      "enum": [
+        "Amyloid Present",
+        "Some Amyloid",
+        "missing or unknown",
+        "No amyloid presence"
+      ]
+    },
+    "WBVD": {
+      "enum": [
+        "yes",
+        "missing or unknown",
+        "no",
+        ""
+      ]
+    },
+    "CVD_ATH_ANY": {
+      "enum": [
+        "No CVD_ATH_ANY",
+        "missing or unknown",
+        "Mild or Moderate or Severe",
+        ""
+      ]
+    },
+    "AMY_A": {
+      "enum": [
+        "Thal Phase 3",
+        "missing or unknown",
+        "No A Score",
+        "Thal Phase 1 or 2",
+        "Thal Phase 4 or 5"
+      ]
+    },
+    "REAG": {
+      "enum": [
+        "missing or unknown",
+        "Low likelihood",
+        "High Likelihood",
+        "No AD",
+        "Other or Does not fulfill NIA-REAGEN criteria",
+        "Intermediate Likelihood"
       ]
     },
     "INT": {
@@ -154,49 +134,65 @@
       },
       "minLength": 1
     },
+    "individualID": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "TDP_3": {
+      "enum": [
+        "missing or unknown",
+        "Neocortex",
+        "Hippocampus or Etorhinal",
+        "amygdala",
+        "No TDP_3",
+        ""
+      ]
+    },
+    "WMRCAL": {
+      "enum": [
+        "yes",
+        "missing or unknown",
+        "no",
+        ""
+      ]
+    },
+    "brainWeight": {},
     "CVD_S": {
       "enum": [
         "Presence",
+        "missing or unknown",
         "No CVD_S",
-        "missing or unknown",
         ""
       ]
     },
-    "LEWY_full": {
+    "CVD_ART_ANY": {
       "enum": [
-        "No LEWY_full",
-        "Limbic amygdala transitional",
-        "Neocortical diffuse",
-        "Brainstem predominant",
+        "No CVD_ART_ANY",
         "missing or unknown",
-        "Olfactory bulb or Region unspecified",
+        "Mild or Moderate or Severe",
         ""
       ]
     },
-    "ADNC": {
+    "conservationMethod": {
       "enum": [
-        "Not AD",
         "missing or unknown",
-        "High",
-        "Low",
-        "Intermediate"
+        "both fixed and frozen tissue",
+        "frozen tissue only",
+        "noConservation",
+        "fixed tissues only"
       ]
     },
-    "HS_S": {
+    "TDP_5": {
       "enum": [
-        "no",
-        "yes",
         "missing or unknown",
-        ""
-      ]
-    },
-    "CVD_ART": {
-      "enum": [
-        "Severe",
-        "Mild",
-        "No CVD_ART",
-        "missing or unknown",
-        "Moderate",
+        "Neocortex",
+        "No TDP_5",
+        "Entorhinal",
+        "amygdala",
+        "Brainstem/Spinal Cord",
+        "hippocampus",
         ""
       ]
     },
@@ -206,156 +202,160 @@
       },
       "minLength": 1
     },
-    "CVD_ATH_ANY": {
-      "enum": [
-        "Mild or Moderate or Severe",
-        "No CVD_ATH_ANY",
-        "missing or unknown",
-        ""
-      ]
-    },
-    "INFA": {
-      "enum": [
-        "no",
-        "yes",
-        "missing or unknown",
-        ""
-      ]
-    },
-    "Component": {},
-    "B_SCORE": {
-      "enum": [
-        "No B score",
-        "BRAAK Stage 5-6",
-        "missing or unknown",
-        "BRAAK Stage 1-2",
-        "BRAAK Stage 3-4"
-      ]
-    },
-    "HEMOR": {
-      "enum": [
-        "no",
-        "yes",
-        "missing or unknown",
-        ""
-      ]
-    },
-    "WMRCAL": {
-      "enum": [
-        "no",
-        "yes",
-        "missing or unknown",
-        ""
-      ]
-    },
-    "WBVD": {
-      "enum": [
-        "no",
-        "yes",
-        "missing or unknown",
-        ""
-      ]
-    },
-    "CDLB": {
-      "enum": [
-        "High",
-        "Intermediate",
-        "Low or No clinical significance",
-        "missing or unknown",
-        ""
-      ]
-    },
-    "Braak": {
-      "enum": [
-        "BRAAK Stage 1",
-        "No BRAAK stage",
-        "BRAAK Stage 6",
-        "BRAAK Stage 5",
-        "missing or unknown",
-        "BRAAK Stage 3",
-        "BRAAK Stage 4",
-        "BRAAK Stage 2"
-      ]
-    },
-    "CVD_ART_ANY": {
-      "enum": [
-        "Mild or Moderate or Severe",
-        "No CVD_ART_ANY",
-        "missing or unknown",
-        ""
-      ]
-    },
-    "MICR": {
-      "enum": [
-        "no",
-        "yes",
-        "missing or unknown",
-        ""
-      ]
-    },
     "pmiUnits": {
       "enum": [
-        "hours",
-        "minutes"
-      ]
-    },
-    "CERAD": {
-      "enum": [
-        "Moderate Probable C2",
-        "No AD C0",
-        "missing or unknown",
-        "Sparse Possible C1",
-        "Frequent Definite C3"
-      ]
-    },
-    "alt_HS_S": {
-      "enum": [
-        "Presence",
-        "Absence",
-        "missing or unknown",
-        ""
-      ]
-    },
-    "TDP43": {
-      "enum": [
-        "no",
-        "yes",
-        "missing or unknown",
-        ""
+        "minutes",
+        "hours"
       ]
     },
     "mayoDx": {
       "enum": [
         "AD",
-        "Control",
         "other",
         "missing or unknown",
+        "Control",
+        ""
+      ]
+    },
+    "Component": {},
+    "HS_S": {
+      "enum": [
+        "yes",
+        "missing or unknown",
+        "no",
+        ""
+      ]
+    },
+    "CVD_CAA_ANY": {
+      "enum": [
+        "No CVD_CAA_ANY",
+        "missing or unknown",
+        "Mild or Moderate or Severe",
+        ""
+      ]
+    },
+    "CDLB": {
+      "enum": [
+        "Intermediate",
+        "Low or No clinical significance",
+        "missing or unknown",
+        "High",
+        ""
+      ]
+    },
+    "B_SCORE": {
+      "enum": [
+        "BRAAK Stage 5-6",
+        "missing or unknown",
+        "BRAAK Stage 3-4",
+        "BRAAK Stage 1-2",
+        "No B score"
+      ]
+    },
+    "MICR": {
+      "enum": [
+        "yes",
+        "missing or unknown",
+        "no",
+        ""
+      ]
+    },
+    "CVD_ART": {
+      "enum": [
+        "missing or unknown",
+        "Moderate",
+        "No CVD_ART",
+        "Severe",
+        "Mild",
+        ""
+      ]
+    },
+    "LEWY_ANY": {
+      "enum": [
+        "Brainstem or transitional or diffuse or region unspecified group",
+        "missing or unknown",
+        "No LEWY_ANY or olfactory bulb or amygdala predominant group",
         ""
       ]
     },
     "LEWY_grp": {
       "enum": [
         "Transitional or diffuse or region unspecified group",
-        "No LEWY_grp or olfactory bulb or amygdala predominant group",
-        "Brainstem predominant group",
         "missing or unknown",
+        "Brainstem predominant group",
+        "No LEWY_grp or olfactory bulb or amygdala predominant group",
         ""
+      ]
+    },
+    "LEWY_full": {
+      "enum": [
+        "No LEWY_full",
+        "missing or unknown",
+        "Limbic amygdala transitional",
+        "Neocortical diffuse",
+        "Olfactory bulb or Region unspecified",
+        "Brainstem predominant",
+        ""
+      ]
+    },
+    "WMR": {
+      "enum": [
+        "Absent",
+        "missing or unknown",
+        "Moderate",
+        "Severe",
+        "Mild",
+        ""
+      ]
+    },
+    "CVD_ATH": {
+      "enum": [
+        "missing or unknown",
+        "No CVD_ATH",
+        "Moderate",
+        "Severe",
+        "Mild",
+        ""
+      ]
+    },
+    "alt_LEWY_full": {
+      "enum": [
+        "Limbic transitional",
+        "missing or unknown",
+        "Neocortical diffuse",
+        "Olfactory bulb only",
+        "Amygdala only",
+        "Brainstem predominant",
+        "No alt_LEWY_full",
+        ""
+      ]
+    },
+    "Braak": {
+      "enum": [
+        "BRAAK Stage 5",
+        "BRAAK Stage 6",
+        "missing or unknown",
+        "BRAAK Stage 4",
+        "BRAAK Stage 2",
+        "BRAAK Stage 1",
+        "No BRAAK stage",
+        "BRAAK Stage 3"
       ]
     }
   },
   "required": [
-    "AMY_A",
-    "AMY_ANY",
     "AMY_THAL",
-    "individualID",
-    "conservationMethod",
+    "CERAD",
+    "ADNC",
+    "AMY_ANY",
+    "AMY_A",
     "REAG",
     "INT",
-    "ADNC",
+    "individualID",
+    "conservationMethod",
     "PMI",
-    "B_SCORE",
-    "Braak",
     "pmiUnits",
-    "CERAD"
+    "B_SCORE",
+    "Braak"
   ]
 }
