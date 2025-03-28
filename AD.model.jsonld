@@ -23547,6 +23547,9 @@
             "rdfs:label": "Notapplicable",
             "rdfs:subClassOf": [
                 {
+                    "@id": "bts:NucleicAcidType"
+                },
+                {
                     "@id": "bts:NucleicAcidSource"
                 }
             ],
@@ -23554,6 +23557,90 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "not applicable",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NucleicAcidType",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "NucleicAcidType",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:RNA"
+                },
+                {
+                    "@id": "bts:DNA"
+                },
+                {
+                    "@id": "bts:Notapplicable"
+                }
+            ],
+            "sms:displayName": "nucleicAcidType",
+            "sms:required": "sms:false",
+            "sms:requiresComponent": [
+                {
+                    "@id": "bts:Ngs"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:RNA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "RNA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NucleicAcidType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "RNA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:DNA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "DNA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NucleicAcidType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "DNA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Ngs",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Ngs",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ngs",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
