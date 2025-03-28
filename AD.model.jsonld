@@ -33304,6 +33304,9 @@
                     "@id": "bts:NucleicAcidSource"
                 },
                 {
+                    "@id": "bts:NucleicAcidType"
+                },
+                {
                     "@id": "bts:CellType"
                 },
                 {
@@ -33331,6 +33334,23 @@
                     "@id": "bts:TreatmentDose"
                 }
             ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NucleicAcidType",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "NucleicAcidType",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "nucleicAcidType",
+            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
