@@ -10157,9 +10157,6 @@
                     "@id": "bts:MARS-WI"
                 },
                 {
-                    "@id": "bts:MayoClinicADRC(MayoADRC)"
-                },
-                {
                     "@id": "bts:MC"
                 },
                 {
@@ -10218,6 +10215,9 @@
                 },
                 {
                     "@id": "bts:MayoClinicBrainBank(MCBB)"
+                },
+                {
+                    "@id": "bts:MayoClinicADRC(MayoADRc)"
                 },
                 {
                     "@id": "bts:MichiganADRC(MADC)"
@@ -10906,17 +10906,34 @@
         {
             "@id": "bts:MayoClinicADRC(MayoADRC)",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Mayo Clinic Brain Bank",
+            "rdfs:comment": "TBD",
             "rdfs:label": "MayoClinicADRC(MayoADRC)",
             "rdfs:subClassOf": [
                 {
-                    "@id": "bts:Cohort"
+                    "@id": "bts:Cohorts"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Mayo Clinic ADRC (Mayo ADRC)",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Cohorts",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Cohorts",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "cohorts",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -19182,6 +19199,23 @@
             },
             "sms:displayName": "climbID",
             "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MayoClinicADRC(MayoADRc)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "MayoClinicADRC(MayoADRc)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Cohort"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Mayo Clinic ADRC (Mayo ADRc)",
+            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
