@@ -23586,11 +23586,6 @@
             ],
             "sms:displayName": "nucleicAcidType",
             "sms:required": "sms:false",
-            "sms:requiresComponent": [
-                {
-                    "@id": "bts:Ngs"
-                }
-            ],
             "sms:validationRules": []
         },
         {
@@ -23624,23 +23619,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "DNA",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Ngs",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Ngs",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "ngs",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
