@@ -10456,6 +10456,9 @@
                 },
                 {
                     "@id": "bts:MichiganUniversity"
+                },
+                {
+                    "@id": "bts:NACC"
                 }
             ],
             "sms:displayName": "individualIdSource",
@@ -14735,6 +14738,9 @@
                     "@id": "bts:MayoDx"
                 },
                 {
+                    "@id": "bts:Ethnicity"
+                },
+                {
                     "@id": "bts:CollectionMethod"
                 },
                 {
@@ -15030,6 +15036,9 @@
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Hypertension"
+                },
+                {
+                    "@id": "bts:Ethnicity"
                 },
                 {
                     "@id": "bts:Diabetes"
@@ -19311,12 +19320,15 @@
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:CollectionMethod"
+                },
+                {
+                    "@id": "bts:Ethnicity"
                 }
             ],
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "not collected",
+            "sms:displayName": "Not collected",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -19879,7 +19891,7 @@
         {
             "@id": "bts:Ethnicity",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Ethnicity of the donor. For CLEAR AD use either Hispanic/Latino or African American",
+            "rdfs:comment": "Ethnicity of the individual or donor",
             "rdfs:label": "Ethnicity",
             "rdfs:subClassOf": [
                 {
@@ -19889,7 +19901,101 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:NotHispanicorLatino"
+                },
+                {
+                    "@id": "bts:HispanicorLatino"
+                },
+                {
+                    "@id": "bts:Preferrednottoanswer"
+                },
+                {
+                    "@id": "bts:Other"
+                },
+                {
+                    "@id": "bts:Unknown"
+                },
+                {
+                    "@id": "bts:Notcollected"
+                },
+                {
+                    "@id": "bts:Notapplicable"
+                }
+            ],
             "sms:displayName": "ethnicity",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NotHispanicorLatino",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "NotHispanicorLatino",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Ethnicity"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Not Hispanic or Latino",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:HispanicorLatino",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "HispanicorLatino",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Ethnicity"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Hispanic or Latino",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Preferrednottoanswer",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Preferrednottoanswer",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Ethnicity"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Preferred not to answer",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Notapplicable",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Nucleic acid source doesn't apply to this data (e.g. not a sequencing assay).",
+            "rdfs:label": "Notapplicable",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Ethnicity"
+                },
+                {
+                    "@id": "bts:NucleicAcidSource"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "not applicable",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -20301,6 +20407,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "Michigan University",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NACC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "NACC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualIdSource"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "NACC",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -23577,23 +23700,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "cfDNA",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Notapplicable",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Nucleic acid source doesn't apply to this data (e.g. not a sequencing assay).",
-            "rdfs:label": "Notapplicable",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:NucleicAcidSource"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "not applicable",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
