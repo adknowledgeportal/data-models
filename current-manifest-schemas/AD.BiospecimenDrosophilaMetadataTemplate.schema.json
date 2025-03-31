@@ -5,6 +5,31 @@
   "type": "object",
   "properties": {
     "Component": {},
+    "nFemale": {},
+    "nIndividuals": {},
+    "nMale": {},
+    "temperature": {},
+    "genotype": {
+      "not": {
+        "type": "null"
+      },
+      "minLength": 1
+    },
+    "tissueWeight": {},
+    "nucleicAcidSource": {
+      "enum": [
+        "bulk nuclei",
+        "sorted cells",
+        "single nucleus",
+        "cfDNA",
+        "single cell",
+        "sorted nuclei",
+        "mitochondria",
+        "bulk cell",
+        "not applicable",
+        ""
+      ]
+    },
     "bodyPart": {
       "enum": [
         "head",
@@ -12,33 +37,8 @@
         ""
       ]
     },
-    "nIndividuals": {},
-    "nFemale": {},
-    "nMale": {},
     "specimenID": {},
-    "tissueWeight": {},
-    "ageDays": {},
-    "genotype": {
-      "not": {
-        "type": "null"
-      },
-      "minLength": 1
-    },
-    "temperature": {},
-    "nucleicAcidSource": {
-      "enum": [
-        "mitochondria",
-        "bulk cell",
-        "not applicable",
-        "bulk nuclei",
-        "single nucleus",
-        "sorted cells",
-        "sorted nuclei",
-        "single cell",
-        "cfDNA",
-        ""
-      ]
-    }
+    "ageDays": {}
   },
   "required": [
     "genotype"
