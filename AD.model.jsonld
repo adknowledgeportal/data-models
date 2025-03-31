@@ -19377,6 +19377,12 @@
                 },
                 {
                     "@id": "bts:KnightADRC"
+                },
+                {
+                    "@id": "bts:MADC"
+                },
+                {
+                    "@id": "bts:1FLADRC"
                 }
             ],
             "sms:displayName": "dataContributionGroup",
@@ -19482,6 +19488,40 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "IADRC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MADC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "MADC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataContributionGroup"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "MADC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:1FLADRC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "1FLADRC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataContributionGroup"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "1FL ADRC",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
