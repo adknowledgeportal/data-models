@@ -4,29 +4,29 @@
   "title": "ModeladStrainAnimalMetadataTemplate",
   "type": "object",
   "properties": {
-    "strainCommonName": {},
     "strainOfficialName": {},
+    "geneticMutations": {},
+    "geneticBackground": {},
+    "specimenID": {},
+    "stockNumber": {},
+    "Component": {},
+    "strainCommonName": {},
     "individualID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "specimenID": {},
     "modelType": {
       "enum": [
-        "Familial AD (FAD)",
-        "Late-onset AD (LOAD)",
         "Mixed-onset AD",
+        "Late-onset AD (LOAD)",
         "Early-onset AD (EOAD)",
+        "Familial AD (FAD)",
         ""
       ]
     },
-    "registryAbbreviation": {},
-    "geneticBackground": {},
-    "Component": {},
-    "stockNumber": {},
-    "geneticMutations": {}
+    "registryAbbreviation": {}
   },
   "required": [
     "individualID"
