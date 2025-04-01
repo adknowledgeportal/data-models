@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+inputTotalRNA,In nanogram before rRNA depletion and globin removal,,,,False,ManifestColumn,,sage.annotations-experimentalData.inputTotalRNA-0.0.11,,string,sequencing

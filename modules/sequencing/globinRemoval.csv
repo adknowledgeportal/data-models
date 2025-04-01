@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+globinRemoval,"true,false",,,,False,ManifestColumn,,sage.annotations-experimentalData.globinRemoval-0.0.2,,string,sequencing
