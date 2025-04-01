@@ -3091,6 +3091,12 @@
                     "@id": "bts:IlluminaNovaseq6000"
                 },
                 {
+                    "@id": "bts:IlluminaNovaSeqXplus"
+                },
+                {
+                    "@id": "bts:IlluminaNovaSeqX"
+                },
+                {
                     "@id": "bts:IlluminaWholeGenomeDASL"
                 },
                 {
@@ -18185,6 +18191,9 @@
                     "@id": "bts:Drop-Seq"
                 },
                 {
+                    "@id": "bts:IlluminaLigation"
+                },
+                {
                     "@id": "bts:NEBNext"
                 },
                 {
@@ -18216,6 +18225,9 @@
                 },
                 {
                     "@id": "bts:IlluminaDNAPCR-FreePrepKit"
+                },
+                {
+                    "@id": "bts:Enzymatics(Qiagen)"
                 }
             ],
             "sms:displayName": "libraryPreparationMethod",
@@ -20375,6 +20387,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:GlobinRemoval",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "true,false",
+            "rdfs:label": "GlobinRemoval",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "globinRemoval",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:GQN",
             "@type": "rdfs:Class",
             "rdfs:comment": "Illumina Genomic Quality Number (gDNA quality score)",
@@ -20621,6 +20650,23 @@
             ]
         },
         {
+            "@id": "bts:InputTotalRNA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "In nanogram before rRNA depletion and globin removal",
+            "rdfs:label": "InputTotalRNA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "inputTotalRNA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:INT",
             "@type": "rdfs:Class",
             "rdfs:comment": "Interval between last exam and death (unit in months). Use missing or unknown if not available",
@@ -20804,6 +20850,40 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "libraryID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:IlluminaLigation",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "IlluminaLigation",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LibraryPreparationMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Illumina Ligation",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Enzymatics(Qiagen)",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Enzymatics(Qiagen)",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:LibraryPreparationMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Enzymatics (Qiagen)",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -25026,6 +25106,40 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:IlluminaNovaSeqXplus",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "IlluminaNovaSeqXplus",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Platform"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "IlluminaNovaSeqXplus",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:IlluminaNovaSeqX",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "IlluminaNovaSeqX",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Platform"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "IlluminaNovaSeqX",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:IlluminaWholeGenomeDASL",
             "@type": "rdfs:Class",
             "rdfs:comment": "Illumina Human Whole-Genome DASL HT",
@@ -26494,6 +26608,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "tool",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:RibosomalDepletion",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "true,false",
+            "rdfs:label": "RibosomalDepletion",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ribosomalDepletion",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -33079,6 +33210,15 @@
                 },
                 {
                     "@id": "bts:DV200"
+                },
+                {
+                    "@id": "bts:InputTotalRNA"
+                },
+                {
+                    "@id": "bts:RibosomalDepletion"
+                },
+                {
+                    "@id": "bts:GlobinRemoval"
                 }
             ],
             "sms:validationRules": []
