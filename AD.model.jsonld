@@ -20146,6 +20146,9 @@
             "rdfs:label": "Notapplicable",
             "rdfs:subClassOf": [
                 {
+                    "@id": "bts:NucleicAcidType"
+                },
+                {
                     "@id": "bts:Ethnicity"
                 },
                 {
@@ -23860,6 +23863,68 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "cfDNA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NucleicAcidType",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The nucleic acid type of the biospecimen which includes DNA (deoxyribonucleic acid) and RNA (ribonucleic acid)",
+            "rdfs:label": "NucleicAcidType",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:RNA"
+                },
+                {
+                    "@id": "bts:DNA"
+                },
+                {
+                    "@id": "bts:Notapplicable"
+                }
+            ],
+            "sms:displayName": "nucleicAcidType",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:RNA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "ribonucleic acid",
+            "rdfs:label": "RNA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NucleicAcidType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "RNA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:DNA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Deoxyribonucleic acid",
+            "rdfs:label": "DNA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NucleicAcidType"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "DNA",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -33608,6 +33673,9 @@
                 },
                 {
                     "@id": "bts:NucleicAcidSource"
+                },
+                {
+                    "@id": "bts:NucleicAcidType"
                 },
                 {
                     "@id": "bts:CellType"
