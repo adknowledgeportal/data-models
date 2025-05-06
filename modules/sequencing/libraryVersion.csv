@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-libraryVersion,"Library Version: for example, rnaSeq 10x library version",,,,False,ManifestColumn,,sage.annotations-ngs.libraryVersion-0.0.2,,string,sequencing
+libraryVersion,"Library Version: for example, rnaSeq 10x library version",,,,False,ManifestColumn,,sage.annotations-ngs.libraryVersion-0.0.2,str,string,sequencing
