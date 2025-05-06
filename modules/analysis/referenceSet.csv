@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-referenceSet,"A set of references (e.g., canonical assembled contigs) which defines a common coordinate space for comparing reference-aligned experimental data.","1000 Genomes phase 3, dmel_r6.06, GRCh38, GRCh37, GRCm38, MMUL1.0, HRC",,,False,ManifestColumn,,sage.annotations-curatedData.referenceSet-0.0.5,,string,analysis
+referenceSet,"A set of references (e.g., canonical assembled contigs) which defines a common coordinate space for comparing reference-aligned experimental data.","1000 Genomes phase 3, dmel_r6.06, GRCh38, GRCh37, GRCm38, MMUL1.0, HRC",,,False,ManifestColumn,,sage.annotations-curatedData.referenceSet-0.0.5,str,string,analysis
 1000 Genomes phase 3,ISGR 1000 Genomes Project Phase 3,,,,,referenceSet,,https://genome.sph.umich.edu/wiki/Minimac4#Reference_Panels_for_Download,,string,analysis
 dmel_r6.06,"BDGP Release 6 of the D. melanogaster genome assembly, annotation set .06",,,,,referenceSet,,http://ftp.flybase.net/releases/FB2015_03/dmel_r6.06/,,string,analysis
 GRCh37,Genome Reference Consortium Human Build 37,,,,,referenceSet,,https://www.ncbi.nlm.nih.gov/assembly/GCF_000001405.13/,,string,analysis

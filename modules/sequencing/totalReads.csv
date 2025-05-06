@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-totalReads,Total number of sequencing reads from a library,,,,False,ManifestColumn,,sage.annotations-experimentalData.totalReads-0.0.2,,number,sequencing
+totalReads,Total number of sequencing reads from a library,,,,False,ManifestColumn,,sage.annotations-experimentalData.totalReads-0.0.2,num,number,sequencing
