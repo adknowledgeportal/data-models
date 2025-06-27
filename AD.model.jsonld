@@ -8507,6 +8507,9 @@
                     "@id": "bts:EmoryADRC"
                 },
                 {
+                    "@id": "bts:EmoryLevey300CSFFNIH"
+                },
+                {
                     "@id": "bts:EmoryDrosophilaTau"
                 },
                 {
@@ -28061,6 +28064,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "ELPSCRNA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:EmoryLevey300CSFFNIH",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "AD CSF Proteome in 300 Emory Individuals and Longitudinally Paired MCI Drug Trial Participants",
+            "rdfs:label": "EmoryLevey300CSFFNIH",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Emory_Levey_300_CSF_FNIH",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
