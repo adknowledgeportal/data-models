@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-numberCells,Number of cells or nuclei sequenced,,,,False,ManifestColumn,,sage.annotations-experimentalData.numberCells-0.0.2,,integer,sequencing
+numberCells,Number of cells or nuclei sequenced,,,,False,ManifestColumn,,sage.annotations-experimentalData.numberCells-0.0.2,int,integer,sequencing

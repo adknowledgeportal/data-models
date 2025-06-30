@@ -2775,7 +2775,9 @@
             ],
             "sms:displayName": "assay",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:16SrRNAseq",
@@ -3213,7 +3215,9 @@
             ],
             "sms:displayName": "platform",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:BiocratesQ500",
@@ -4859,7 +4863,9 @@
             ],
             "sms:displayName": "libraryPrep",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:TMTquantitation",
@@ -18235,7 +18241,9 @@
             ],
             "sms:displayName": "libraryPreparationMethod",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:Accel-NGS2SPlus",
@@ -18544,7 +18552,9 @@
             ],
             "sms:displayName": "libraryType",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:CDNA",
@@ -20803,7 +20813,9 @@
             ],
             "sms:displayName": "isStranded",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "bool"
+            ]
         },
         {
             "@id": "bts:LambdaDNAconc",
@@ -20837,7 +20849,9 @@
             },
             "sms:displayName": "libraryBatch",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:LibraryID",
@@ -20854,7 +20868,9 @@
             },
             "sms:displayName": "libraryID",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:IlluminaLigation",
@@ -20905,7 +20921,9 @@
             },
             "sms:displayName": "libraryVersion",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:Ligand",
@@ -21160,7 +21178,9 @@
             },
             "sms:displayName": "medianGenes",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "num"
+            ]
         },
         {
             "@id": "bts:MedianUMIs",
@@ -21177,7 +21197,9 @@
             },
             "sms:displayName": "medianUMIs",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "num"
+            ]
         },
         {
             "@id": "bts:MetaboliteType",
@@ -24026,7 +24048,9 @@
             },
             "sms:displayName": "numberCells",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "int"
+            ]
         },
         {
             "@id": "bts:Blood",
@@ -26053,7 +26077,9 @@
             },
             "sms:displayName": "readLength",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:ReadStrandOrigin",
@@ -26078,7 +26104,9 @@
             ],
             "sms:displayName": "readStrandOrigin",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:Forward",
@@ -26276,7 +26304,9 @@
             ],
             "sms:displayName": "referenceSet",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:1000Genomesphase3",
@@ -26646,7 +26676,9 @@
             },
             "sms:displayName": "RIN",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "num"
+            ]
         },
         {
             "@id": "bts:RnaBatch",
@@ -26663,7 +26695,9 @@
             },
             "sms:displayName": "rnaBatch",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:RodentDiet",
@@ -26841,7 +26875,9 @@
             ],
             "sms:displayName": "runType",
             "sms:required": "sms:true",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:SingleEnd",
@@ -26892,7 +26928,9 @@
             },
             "sms:displayName": "sampleBarcode",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:SampleStatus",
@@ -27076,7 +27114,9 @@
             },
             "sms:displayName": "sequencingBatch",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:Sex",
@@ -27385,7 +27425,9 @@
             },
             "sms:displayName": "specimenID",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "str"
+            ]
         },
         {
             "@id": "bts:SpecimenIdSource",
@@ -32133,7 +32175,9 @@
             },
             "sms:displayName": "totalReads",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "num"
+            ]
         },
         {
             "@id": "bts:TransposaseBatch",
@@ -32320,7 +32364,9 @@
             },
             "sms:displayName": "validBarcodeReads",
             "sms:required": "sms:false",
-            "sms:validationRules": []
+            "sms:validationRules": [
+                "num"
+            ]
         },
         {
             "@id": "bts:ValidHiCContacts",

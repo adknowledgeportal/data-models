@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-sequencingBatch,Batch library was sequenced in,,,,False,ManifestColumn,,sage.annotations-batch.sequencingBatch-0.0.2,,string,batch
+sequencingBatch,Batch library was sequenced in,,,,False,ManifestColumn,,sage.annotations-batch.sequencingBatch-0.0.2,str,string,batch

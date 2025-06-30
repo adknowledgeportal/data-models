@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-validBarcodeReads,Fraction of reads with cell barcodes that match the whitelist,,,,False,ManifestColumn,,sage.annotations-qc.validBarcodeReads-0.0.2,,number,sequencing
+validBarcodeReads,Fraction of reads with cell barcodes that match the whitelist,,,,False,ManifestColumn,,sage.annotations-qc.validBarcodeReads-0.0.2,num,number,sequencing

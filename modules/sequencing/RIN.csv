@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-RIN,RNA Integrity Number,,,,False,ManifestColumn,,sage.annotations-qc.RIN-0.0.2,,number,sequencing
+RIN,RNA Integrity Number,,,,False,ManifestColumn,,sage.annotations-qc.RIN-0.0.2,num,number,sequencing
