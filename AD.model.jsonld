@@ -8444,6 +8444,9 @@
                     "@id": "bts:APOEPSC"
                 },
                 {
+                    "@id": "bts:Ast10Communication"
+                },
+                {
                     "@id": "bts:Banner"
                 },
                 {
@@ -27826,6 +27829,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "APOEPSC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Ast10Communication",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Cell-cell Signaling Drives a Pathologic Astrocytic State Linked to Cognitive Decline in Alzheimer’s (Ast10_Communication) Study",
+            "rdfs:label": "Ast10Communication",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Ast10_Communication",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
