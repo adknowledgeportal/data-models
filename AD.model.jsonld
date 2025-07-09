@@ -8474,6 +8474,9 @@
                     "@id": "bts:BroadMDMi"
                 },
                 {
+                    "@id": "bts:CD74-IHC"
+                },
+                {
                     "@id": "bts:CHDWB"
                 },
                 {
@@ -27965,6 +27968,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "BroadMDMi",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CD74-IHC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "This study measures amyloid load and PHF Tau tangles in participants from the ROS and MAP cohorts using immunocytochemistry, image analysis, and stereology.",
+            "rdfs:label": "CD74-IHC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "CD74-IHC",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
