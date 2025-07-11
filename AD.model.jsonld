@@ -8492,6 +8492,9 @@
                     "@id": "bts:CNON"
                 },
                 {
+                    "@id": "bts:CUIMC2Mult"
+                },
+                {
                     "@id": "bts:CUMCCompoundsMicroglia"
                 },
                 {
@@ -28022,6 +28025,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "CMC-PEC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CUIMC2Mult",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The CUIMC2 Multiome snRNA/snATAC (CUIMC2_Mult) Study",
+            "rdfs:label": "CUIMC2Mult",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "CUIMC2_Mult",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
