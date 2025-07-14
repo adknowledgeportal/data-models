@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+reverseTranscriptionPrimer,An oligo to which new deoxyribonucleotides can be added by DNA polymerase [SO_0000112]. The type of primer used for reverse transcription e.g. oligo-dT or random primer. This allows users to identify content of the cDNA library input e.g. enriched for mRNA,"Oligo-dT, Poly-dT, Feature barcoding, Random, Other, Not Listed",,,False,ManifestColumn,,sage.annotations-qc.reverseTranscriptionPrimer-0.0.2,,string,spatial
