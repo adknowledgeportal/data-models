@@ -139,6 +139,11 @@
         "display_name": "modelad_strain_animal_metadata_template",
         "schema_name": "ModeladStrainAnimalMetadataTemplate",
         "type": "record"
+      },
+      {
+        "display_name": "assay_spatialTranscriptomics_metadata_template",
+        "schema_name": "spatialTranscriptomicsMetadataTemplate",
+        "type": "record"
       }
     ],
     "service_version": "v23.1.1",
