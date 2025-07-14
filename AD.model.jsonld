@@ -8492,6 +8492,9 @@
                     "@id": "bts:CNON"
                 },
                 {
+                    "@id": "bts:CUIMC2Mult"
+                },
+                {
                     "@id": "bts:CUMCCompoundsMicroglia"
                 },
                 {
@@ -8826,6 +8829,9 @@
                 },
                 {
                     "@id": "bts:SY5YREST"
+                },
+                {
+                    "@id": "bts:TCellAD"
                 },
                 {
                     "@id": "bts:TASTPM"
@@ -28023,6 +28029,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:CUIMC2Mult",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The CUIMC2 Multiome snRNA/snATAC (CUIMC2_Mult) Study",
+            "rdfs:label": "CUIMC2Mult",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "CUIMC2_Mult",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:CUMCCompoundsMicroglia",
             "@type": "rdfs:Class",
             "rdfs:comment": "The CUMC Study for Compounds Polarizing Human Microglial Subtypes",
@@ -29804,6 +29827,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "SY5Y_REST",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:TCellAD",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Investigation of T Cell-induced Neuroinflammation in Alzheimer's Disease (T Cell_AD) Study",
+            "rdfs:label": "TCellAD",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "T Cell_AD",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
