@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+spatialLibraryConstructionMethod,Process which results in the creation of a library from fragments of DNA using cloning vectors or oligonucleotides with the role of adaptors [OBI_0000711],"Smart-Seq1, Smart-SeqV4, 10xV1.0, 10xV1.1, 10xV2, 10xV3, 10xV3.1, CEL-seq2, Drop-seq, inDropsV2, inDropsV3, TruDrop, sci-ATAC-seq, other, Not Listed",,,False,ManifestColumn,,sage.annotations-qc.spatialLibraryConstructionMethod-0.0.2,,string,spatial
