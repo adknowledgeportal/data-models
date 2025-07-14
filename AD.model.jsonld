@@ -14783,6 +14783,9 @@
                     "@id": "bts:MayoDx"
                 },
                 {
+                    "@id": "bts:SequenceAnalysis"
+                },
+                {
                     "@id": "bts:Ethnicity"
                 },
                 {
@@ -27074,6 +27077,68 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:SequenceAnalysis",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The determination of the sequence of component residues in a macromolecule e.g. amino acids in a protein or nucleotide bases in DNA/RNA or the computational analysis performed to determine the similarities between nonidentical proteins or molecules of DNA or RNA.",
+            "rdfs:label": "SequenceAnalysis",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Unalignedsequenceread"
+                },
+                {
+                    "@id": "bts:Alignedsequenceread"
+                },
+                {
+                    "@id": "bts:Other"
+                }
+            ],
+            "sms:displayName": "sequenceAnalysis",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Unalignedsequenceread",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Unalignedsequenceread",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SequenceAnalysis"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "unaligned sequence read",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Alignedsequenceread",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Alignedsequenceread",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SequenceAnalysis"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "aligned sequence read",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:SequencingBatch",
             "@type": "rdfs:Class",
             "rdfs:comment": "Batch library was sequenced in",
@@ -33631,23 +33696,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "biospecimenID",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:SequenceAnalysis",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "SequenceAnalysis",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "sequenceAnalysis",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
