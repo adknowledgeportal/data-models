@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+readIndicator,Indicate if this is Read 1 (R1) or Read 2 (R2).,"R1, R2, R1 and R2",,,False,ManifestColumn,,sage.annotations-qc.readIndicator-0.0.2,,string,spatial

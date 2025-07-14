@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+spatialRead2,Read 2 content description.,,,,False,ManifestColumn,,sage.annotations-qc.spatialRead2-0.0.2,,string,spatial
