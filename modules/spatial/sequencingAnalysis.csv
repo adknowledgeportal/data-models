@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+sequenceAnalysis,The determination of the sequence of component residues in a macromolecule e.g. amino acids in a protein or nucleotide bases in DNA/RNA or the computational analysis performed to determine the similarities between nonidentical proteins or molecules of DNA or RNA.,"unaligned sequence read, aligned sequence read, other",,,False,ManifestColumn,,sage.annotations-qc.sequenceAnalysis-0.0.2,,string,spatial
