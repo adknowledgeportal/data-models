@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+sequencingLibraryConstructionDaysFromIndex,Number of days between sample for assay was received in lab and day of sequencing library construction,,,,False,ManifestColumn,,sage.annotations-qc.sequencingLibraryConstructionDaysFromIndex-0.0.2,,number,spatial
