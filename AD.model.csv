@@ -1007,6 +1007,7 @@ samplingAgeUnits,Age at sampling units.,"days, gestational weeks, months, PCW, w
 scanID,"The ID of a sample, specimen, or individual in a scan or imaging file.",,,,False,ManifestColumn,,sage.annotations-experimentalData.scanID-0.0.2,,string,imaging
 SentrixID,BeadChip ID in Illumina array-based assay,,,,False,ManifestColumn,,sage.annotations-experimentalData.SentrixID-0.0.2,,string,experimentalData
 SentrixRowColumn,Position of sample on BeadChip in Illumina array-based assay,,,,False,ManifestColumn,,sage.annotations-experimentalData.SentrixRowColumn-0.0.2,,string,experimentalData
+sequenceAnalysis,The determination of the sequence of component residues in a macromolecule e.g. amino acids in a protein or nucleotide bases in DNA/RNA or the computational analysis performed to determine the similarities between nonidentical proteins or molecules of DNA or RNA.,"unaligned sequence read, aligned sequence read, other",,,False,ManifestColumn,,sage.annotations-qc.sequenceAnalysis-0.0.2,,string,spatial
 sequencingBatch,Batch library was sequenced in,,,,False,ManifestColumn,,sage.annotations-batch.sequencingBatch-0.0.2,,string,batch
 sex,"Sex assigned at birth, or by sequencing","male, female, missing or unknown",,,True,ManifestColumn,,sage.annotations-experimentalData.sex-0.0.2,,string,demographics
 sexChromosome,"Sex identified by SNP genotype (e.g XX, XY)",,,,False,ManifestColumn,,sage.annotations-clinical.sexChromosome-0.0.2,,string,demographics
