@@ -142,7 +142,7 @@
       },
       {
         "display_name": "assay_spatialTranscriptomics_metadata_template",
-        "schema_name": "spatialTranscriptomicsMetadataTemplate",
+        "schema_name": "AssaySpatialTranscriptomicsMetadataTemplate",
         "type": "record"
       }
     ],
