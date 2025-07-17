@@ -32,6 +32,7 @@ fam,Sample information file accompanying a .bed binary genotype table.,,,,,fileF
 fasta,"FASTA format is a text-based format for representing either nucleotide sequences or peptide sequences, in which nucleotides or amino acids are represented using single-letter codes",,,,,fileFormat,,https://en.wikipedia.org/wiki/FASTA_format,,string,file
 fastq,FASTQ format is a text-based format for storing both a biological sequence (usually nucleotide sequence) and its corresponding quality scores. Both the sequence letter and quality score are each encoded with a single ASCII character for brevity,,,,,fileFormat,,https://en.wikipedia.org/wiki/FASTQ_format,,string,file
 fig,"Line drawing saved in the Xfig format; stored as a vector image that may include lines, shapes, arcs, splines, arrows, and text objects; may also include images, colors, and patterns.",,,,,fileFormat,,https://fileinfo.com/extension/fig,,string,file
+deletelater,delete me later please,,,,,fileFormat,,https://google.com,,string,file
 flagstat,Output of samtools flagstat tool,,,,,fileFormat,,,,string,file
 gct,"Tab-delimited text files of GenePattern that contain a column for each sample, a row for each gene, and an expression value for each gene in each sample",,,,,fileFormat,,http://edamontology.org/format_3709,,string,file
 gff3,Generic Feature Format version 3 (GFF3) of sequence features.,,,,,fileFormat,,http://edamontology.org/format_1975,,string,file
