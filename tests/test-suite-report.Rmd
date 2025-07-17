@@ -55,7 +55,7 @@ output <- list(
   service_version = "v23.1.1",
   schema_version = ""
 )
-jsonlite::write_json(output, "changed-manifests.json", pretty = TRUE, auto_unbox = TRUE)
+jsonlite::write_json(output, "../changed-manifests.json", pretty = TRUE, auto_unbox = TRUE)
 ```
 
 ## :construction: Manifest Validation - COMING SOON
