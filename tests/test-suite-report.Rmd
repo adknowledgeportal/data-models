@@ -39,7 +39,7 @@ gen_report <- data.frame(template = templates,
 knitr::kable(gen_report)
 ```
 
-```{r include = FALSE}
+```{r include = TRUE}
 # dynamically create changed_manifests.json file based on templates list
 dca_config_df <- jsonlite::read_json("https://raw.githubusercontent.com/adknowledgeportal/data-models/refs/heads/main/dca-template-config.json", simplifyVector = TRUE)
 dca_config_df = as.data.frame(dca_config_df)
