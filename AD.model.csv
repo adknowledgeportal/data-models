@@ -651,6 +651,7 @@ cram,Reference-based compression of alignment format,,,,,fileFormat,,http://edam
 csv,Tabular data represented as comma-separated values in a text file,,,,,fileFormat,,http://edamontology.org/format_3752,,string,file
 czi,"microscopy imaging file format that saves multidimensional images such as time lapse, Z-stacks, multiposition experiments and virtual slides, combined with relevant meta information",,,,,fileFormat,,https://www.zeiss.com/microscopy/int/products/microscope-software/zen/czi.html,,string,file
 dat,Format of Affymetrix data file of raw image data.,,,,,fileFormat,,http://edamontology.org/format_1637,,string,file
+deletelater,delete me later please,,,,,fileFormat,,https://google.com,,string,file
 DICOM,"A comprehensive set of standards for communications between medical imaging devices, including handling, storing and transmitting information in medical imaging. It includes a file format definition and a network communication protocol.",,,,,fileFormat,,http://purl.obolibrary.org/obo/NCIT_C49059,,string,file
 doc,Microsoft Word document format,,,,,fileFormat,,,,string,file
 dup,output of the Picard MarkDuplicates tool.,,,,,fileFormat,,https://software.broadinstitute.org/gatk/documentation/tooldocs/4.0.4.0/picard_sam_markduplicates_MarkDuplicates.php,,string,file
