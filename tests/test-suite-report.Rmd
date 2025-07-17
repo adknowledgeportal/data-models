@@ -44,8 +44,7 @@ knitr::kable(gen_report)
 dca_config_df <- jsonlite::fromJSON("dca-template-config.json", simplifyVector = TRUE)
 changed_manifests_df <- dca_config_df[!(dca_config_df$schema_name %in% templates)]
 jsonlite::write_json(changed_manifests_df, "changed-manifests.json", pretty = TRUE, auto_unbox = TRUE)
-print(dca_config_df)
-print(changed_manifests_df)
+cat(getwd()) # see what the working directory is since JSON isn't being parsed
 ```
 
 ## :construction: Manifest Validation - COMING SOON
