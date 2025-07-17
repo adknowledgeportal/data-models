@@ -15604,6 +15604,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Deletelater",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "delete me later please",
+            "rdfs:label": "Deletelater",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:FileFormat"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "deletelater",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:DICOM",
             "@type": "rdfs:Class",
             "rdfs:comment": "A comprehensive set of standards for communications between medical imaging devices, including handling, storing and transmitting information in medical imaging. It includes a file format definition and a network communication protocol.",
