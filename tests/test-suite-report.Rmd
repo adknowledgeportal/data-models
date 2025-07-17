@@ -55,7 +55,13 @@ output <- list(
   service_version = "v23.1.1",
   schema_version = ""
 )
-jsonlite::write_json(output, "../changed-manifests.json", pretty = TRUE, auto_unbox = TRUE)
+rmd_path <- normalizePath(knitr::current_input())
+rmd_dir <- dirname(rmd_path)
+
+out_path <- file.path(rmd_dir, "changed-manifests.json")
+jsonlite::write_json(output, out_path, pretty = TRUE, auto_unbox = TRUE)
+
+if (!file.exists(out_path)) stop("JSON file was not written to the given path.")
 ```
 
 ## :construction: Manifest Validation - COMING SOON
