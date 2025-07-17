@@ -44,7 +44,14 @@ knitr::kable(gen_report)
 dca_config_df <- jsonlite::read_json("https://raw.githubusercontent.com/adknowledgeportal/data-models/refs/heads/main/dca-template-config.json", simplifyVector = TRUE)
 dca_config_df = as.data.frame(dca_config_df)
 changed_manifests_df <- dca_config_df[dca_config_df[["manifest_schemas.schema_name"]] %in% templates, ]
-jsonlite::write_json(changed_manifests_df, "changed-manifests.json", pretty = TRUE, auto_unbox = TRUE)
+names(changed_manifests_df) <- sub("^manifest_schemas\\.", "", names(changed_manifests_df))
+schemas_list <- apply(changed_manifests_df, 1, as.list)
+output <- list(
+  manifest_schemas = schemas_list,
+  service_version = changed_manifests_df$service_version[1],
+  schema_version = changed_manifests_df$schema_version[1]
+)
+jsonlite::write_json(output, "changed-manifests.json", pretty = TRUE, auto_unbox = TRUE)
 ```
 
 ## :construction: Manifest Validation - COMING SOON
