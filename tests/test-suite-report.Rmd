@@ -39,6 +39,15 @@ gen_report <- data.frame(template = templates,
 knitr::kable(gen_report)
 ```
 
+```{r include = FALSE}
+# dynamically create changed_manifests.json file based on templates list
+dca_config_df <- jsonlite::read_json("https://raw.githubusercontent.com/adknowledgeportal/data-models/refs/heads/main/dca-template-config.json", simplifyVector = TRUE)
+dca_config_df = as.data.frame(dca_config_df)
+changed_manifests_df <- dca_config_df[!(dca_config_df$schema_name %in% templates)]
+jsonlite::write_json(changed_manifests_df, "changed-manifests.json", pretty = TRUE, auto_unbox = TRUE)
+cat(getwd()) # see what the working directory is since JSON isn't being parsed
+```
+
 ## :construction: Manifest Validation - COMING SOON
 
 ```{r parse-validation-logs, echo=FALSE, eval = FALSE}
