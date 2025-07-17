@@ -45,7 +45,8 @@ dca_config_df <- jsonlite::read_json("https://raw.githubusercontent.com/adknowle
 dca_config_df = as.data.frame(dca_config_df)
 changed_manifests_df <- dca_config_df[dca_config_df[["manifest_schemas.schema_name"]] %in% templates, ]
 names(changed_manifests_df) <- sub("^manifest_schemas\\.", "", names(changed_manifests_df))
-schemas_list <- apply(changed_manifests_df, 1, as.list)
+changed_manifests_df <- changed_manifests_df[ , !(names(changed_manifests_df) %in% c("service_version", "schema_version"))]
+schemas_list <- lapply(seq_len(nrow(changed_manifests_df)), function(i) as.list(changed_manifests_df[i, ]))
 output <- list(
   manifest_schemas = schemas_list,
   service_version = changed_manifests_df$service_version[1],
