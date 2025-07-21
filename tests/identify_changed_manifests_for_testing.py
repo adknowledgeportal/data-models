@@ -75,6 +75,8 @@ def write_test_template_json(
     with open(output_file_path, "w") as f:
         json.dump(filtered_templates, f)
 
+    print(filtered_templates)
+
 
 def main(args):
     """Takes arguments from the user to generate test templates that have been changed."""
