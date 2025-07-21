@@ -58,7 +58,7 @@ output <- list(
 
 # get path to file in repo root to overwrite it
 repo_root <- Sys.getenv("GITHUB_WORKSPACE", unset = getwd())
-json_path <- file.path(repo_root, "changed-manifests.json", "tests")
+json_path <- file.path(repo_root, "tests", "changed-manifests.json")
 jsonlite::write_json(output, json_path, pretty = TRUE, auto_unbox = TRUE)
 ```
 
