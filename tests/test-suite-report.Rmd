@@ -57,10 +57,12 @@ output <- list(
 )
 
 # get path to file in repo root to overwrite it
-repo_root <- Sys.getenv("GITHUB_WORKSPACE", unset = here::here())
-output_path <- paste0(repo_root, "data-models/tests/changed-manifests.json")
-jsonlite::write_json(output, output_path, pretty = TRUE, auto_unbox = TRUE)
-cat(output_path, "\n")
+repo_root <- tempdir()
+json_filename <- "changed-manifests.json"
+temp_path <- paste0(repo_root, "/", json_filename)
+jsonlite::write_json(output, temp_path, pretty = TRUE, auto_unbox = TRUE)
+cat(temp_path, "\n")
+cat(getwd())
 ```
 
 ## :construction: Manifest Validation - COMING SOON
