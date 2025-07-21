@@ -39,32 +39,6 @@ gen_report <- data.frame(template = templates,
 knitr::kable(gen_report)
 ```
 
-```{r include = TRUE}
-# dynamically create changed_manifests.json file based on templates list
-# read json into df
-dca_config_df <- jsonlite::read_json("https://raw.githubusercontent.com/adknowledgeportal/data-models/refs/heads/main/dca-template-config.json", simplifyVector = TRUE)
-dca_config_df = as.data.frame(dca_config_df)
-# filter df to include changed manifest information based on the templates list in the previous chunk
-changed_manifests_df <- dca_config_df[dca_config_df[["manifest_schemas.schema_name"]] %in% templates, ]
-# remove the manifest_schemas prefix from cols
-names(changed_manifests_df) <- sub("^manifest_schemas\\.", "", names(changed_manifests_df))
-changed_manifests_df <- changed_manifests_df[ , !(names(changed_manifests_df) %in% c("service_version", "schema_version"))]
-schemas_list <- lapply(seq_len(nrow(changed_manifests_df)), function(i) as.list(changed_manifests_df[i, ]))
-output <- list(
-  manifest_schemas = schemas_list,
-  service_version = "v23.1.1",
-  schema_version = ""
-)
-
-# get path to file in repo root to overwrite it
-repo_root <- tempdir()
-json_filename <- "changed-manifests.json"
-temp_path <- paste0(repo_root, "/", json_filename)
-jsonlite::write_json(output, temp_path, pretty = TRUE, auto_unbox = TRUE)
-cat(temp_path, "\n")
-cat(getwd())
-```
-
 ## :construction: Manifest Validation - COMING SOON
 
 ```{r parse-validation-logs, echo=FALSE, eval = FALSE}
