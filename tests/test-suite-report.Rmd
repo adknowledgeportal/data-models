@@ -55,14 +55,11 @@ output <- list(
   service_version = "v23.1.1",
   schema_version = ""
 )
-rmd_path <- normalizePath(knitr::current_input())
-rmd_dir <- dirname(rmd_path)
 
-out_path <- file.path(rmd_dir, "changed-manifests.json")
-jsonlite::write_json(output, out_path, pretty = TRUE, auto_unbox = TRUE)
-
-if (!file.exists(out_path)) stop("JSON file was not written to the given path.")
-print(getwd())
+# get path to file in repo root to overwrite it
+repo_root <- Sys.getenv("GITHUB_WORKSPACE", unset = getwd())
+json_path <- file.path(repo_root, "changed-manifests.json")
+jsonlite::write_json(output, json_path, pretty = TRUE, auto_unbox = TRUE)
 ```
 
 ## :construction: Manifest Validation - COMING SOON
