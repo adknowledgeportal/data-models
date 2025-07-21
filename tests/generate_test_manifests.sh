@@ -6,7 +6,7 @@
 # TEST_CONFIG=dca-template-config.json
 SCHEMATIC_CONFIG_PATH=../schematic-config.yml
 SCHEMATIC_CONFIG=schematic-config.yml
-CHANGED_TEMPLATE_CONFIG=changed-templates.json
+CHANGED_TEMPLATE_CONFIG=changed-manifests.json
 CREDS_PATH=../schematic_service_account_creds.json
 CREDS=sheets_creds.json
 DATA_MODEL_PATH=../AD.model.jsonld
