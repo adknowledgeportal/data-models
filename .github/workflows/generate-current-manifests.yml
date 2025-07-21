@@ -20,7 +20,7 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       SCHEMATIC_SERVICE_ACCOUNT_CREDS: ${{ secrets.SCHEMATIC_SERVICE_ACCOUNT_CREDS }}
       SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
-      SYNAPSE_UPLOAD_FOLDER_ID: syn25878249
+      SYNAPSE_UPLOAD_FOLDER_ID: syn51040197
 
     steps:
       - uses: actions/checkout@v4
@@ -35,10 +35,22 @@ jobs:
       - name: Install Libraries
         shell: bash
         run: pip install -r requirements.txt
+
+      - name: Identify changed manifests
+        working-directory: tests
+        run: ./changed_manifest_selection.sh
+
+      - name: Commit changes to tests/changed-manifests.json
+        working-directory: tests
+        run: |
+          git config --local user.name "$GITHUB_ACTOR"
+          git config --local user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          git add changed-manifests.json
+          git commit -m "GitHub Action: generate JSON template with latest manifests" || echo "New version of tests/changed-manifests has been generated"
       
       - name: Generate all manifests
         working-directory: tests
-        run: ./generate_all_templates.sh
+        run: ./generate_test_templates.sh
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
