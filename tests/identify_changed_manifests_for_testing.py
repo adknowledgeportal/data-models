@@ -123,7 +123,7 @@ def main(args):
     )
 
     # try writing to `changed-manifests.json`
-    write_changed_json_template(test_templates)
+    write_changed_json_template(changed_templates)
 
 
 if __name__ == "__main__":
