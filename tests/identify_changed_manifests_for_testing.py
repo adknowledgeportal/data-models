@@ -71,10 +71,15 @@ def write_test_template_json(
             if x["display_name"] in test_templates
         ]
 
+    output = {
+        "manifest_schemas": filtered_templates,
+        "service_version": "v23.1.1",
+        "schema_version": ""
+    }
+
     # ensures the file is closed after accessing it using a context manager
     with open(output_file_path, "w") as f:
         json.dump(filtered_templates, f)
-
 
 def main(args):
     """Takes arguments from the user to generate test templates that have been changed."""
@@ -103,7 +108,6 @@ def main(args):
     write_test_template_json(
         args.template_config_path, test_templates, args.output_file_path
     )
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
