@@ -50,7 +50,7 @@ jobs:
       
       - name: Generate all manifests
         working-directory: tests
-        run: ./generate_all_templates.sh
+        run: ./generate_test_templates.sh
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
