@@ -71,7 +71,7 @@ def write_test_template_json(
             if x["display_name"] in test_templates
         ]
 
-     output = {
+    output = {
         "manifest_schemas": filtered_templates,
         "service_version": "v23.1.1",
         "schema_version": ""
