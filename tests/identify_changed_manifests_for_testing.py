@@ -77,6 +77,22 @@ def write_test_template_json(
 
     print(filtered_templates)
 
+def write_changed_json_template(
+    changed_templates: list
+):
+    """ Writes changed templates to a JSON file
+        with the same format as ../dca-template-config.json.
+        Change 'service_version' and 'schema_version'
+        as needed according to ../dca-template-config.json. """
+    
+    output = {
+        "manifest_schemas": changed_templates,
+        "service_version": "v23.1.1",
+        "schema_version": ""
+    }
+
+    with open('changed-manifests.json', 'w') as f:
+        json.dump(output, f, indent=2)
 
 def main(args):
     """Takes arguments from the user to generate test templates that have been changed."""
@@ -105,6 +121,9 @@ def main(args):
     write_test_template_json(
         args.template_config_path, test_templates, args.output_file_path
     )
+
+    # try writing to `changed-manifests.json`
+    write_changed_json_template(test_templates)
 
 
 if __name__ == "__main__":
