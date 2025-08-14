@@ -78,9 +78,14 @@ jobs:
         shell: bash
         run: |
           # use jq to read changed-templates.json
-          CHANGED_MANIFESTS="$(jq '.' changed-templates.json)"
+          changed_manifests="$(jq '.' changed-templates.json)"
           # store json as env variable (ref https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-output-parameter)
-          echo "{changed_manifests}={$CHANGED_MANIFESTS}" >> "$GITHUB_OUTPUT"
+          {
+          ECHO 'CHANGED_MANIFESTS<<EOF'
+          changed_manifests
+          echo EOF
+          } >> "$GITHUB_OUTPUT"
+
 
           
   test:
