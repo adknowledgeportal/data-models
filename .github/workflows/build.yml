@@ -93,6 +93,17 @@ jobs:
         run:
           echo "$CHANGED_MANIFESTS"
 
+      - uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ vars.COMMIT_BOT_ID }}
+          private-key: ${{ secrets.COMMIT_BOT_KEY }}
+
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
+         
       - uses: actions/setup-python@v4 
         with:
           python-version: '3.10'
