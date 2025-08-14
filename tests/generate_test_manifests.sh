@@ -44,12 +44,8 @@ echo "✓ Set up $DATA_MODEL for test"
 # Setup logs
 mkdir -p $LOG_DIR
 
-if [ -f "changed-templates.json" ]; then
-  CHANGED_TEMPLATES=($(jq '.manifest_schemas[] | .schema_name' $TEST_CONFIG | tr -d '"'))
-  echo "✓ Using ${#CHANGED_TEMPLATES[@]} templates from config file."
-else
-  echo "✓ Using ${#CHANGED_TEMPLATES[@]} templates from environment variable."
-fi 
+echo "✓ Using ${#CHANGED_TEMPLATES[@]} templates from environment variable."
+
 
 for i in ${!CHANGED_TEMPLATES[@]}
 do
