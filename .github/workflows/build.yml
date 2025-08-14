@@ -80,7 +80,7 @@ jobs:
           # use jq to read changed-templates.json
           CHANGED_MANIFESTS="$(jq '.' changed-templates.json)"
           # store json as env variable (ref https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-output-parameter)
-          echo "changed_manifests=$CHANGED_MANIFESTS" >> "$GITHUB_OUTPUT"
+          echo "{changed_manifests}={$CHANGED_MANIFESTS}" >> "$GITHUB_OUTPUT"
 
           
   test:
