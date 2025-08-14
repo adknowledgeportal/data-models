@@ -14,6 +14,7 @@ DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 EXCEL_DIR=../current-excel-manifests
 JSON_DIR=../current-manifest-schemas
+LOG_DIR=logs
 SLEEP_THROTTLE=30 # API rate-limiting, need to better figure out dynamically based on # of templates
 CHANGED_TEMPLATES=$1
 
