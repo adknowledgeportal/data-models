@@ -82,7 +82,7 @@ jobs:
           # store json as env variable (ref https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-output-parameter)
           {
           ECHO 'CHANGED_MANIFESTS<<EOF'
-          changed_manifests
+          $changed_manifests
           echo EOF
           } >> "$GITHUB_OUTPUT"
 
