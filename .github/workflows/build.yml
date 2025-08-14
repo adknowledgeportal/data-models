@@ -3,7 +3,7 @@ name: build
 on:
   push:
     branches: 
-      - 'workflow-refactor'
+      - 'upload-test'
 
   workflow_dispatch:
 
@@ -84,7 +84,7 @@ jobs:
 
           
   test:
-    if: ${{ github.event_name == 'pull_request' }}
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     needs: [schema-convert]
     steps:
@@ -142,13 +142,13 @@ jobs:
 
   generate-and-upload-manifests:
     needs: [schema-convert]
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    if: ${{ always() }}
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       SCHEMATIC_SERVICE_ACCOUNT_CREDS: ${{ secrets.SCHEMATIC_SERVICE_ACCOUNT_CREDS }}
       SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
-      SYNAPSE_UPLOAD_FOLDER_ID: syn25878249
+      SYNAPSE_UPLOAD_FOLDER_ID: syn68890914
     steps:
       - env:
           CHANGED_MANIFESTS: ${{ needs.schema-convert.outputs.changed_manifests }}
