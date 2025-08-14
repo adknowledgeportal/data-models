@@ -3,10 +3,7 @@ name: build
 on:
   push:
     branches: 
-      - '**'
-    # runs on changes to module csvs
-    paths: 
-      - 'modules/**'
+      - 'workflow-refactor'
 
   workflow_dispatch:
 
