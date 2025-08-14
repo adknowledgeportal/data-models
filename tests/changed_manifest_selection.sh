@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 python identify_changed_manifests_for_testing.py \
     --changed_files_path changed-files.txt \
     --current_templates_url https://raw.githubusercontent.com/adknowledgeportal/data-models/main/modules/template/templates.csv \
