@@ -1,2 +1,3 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
 BrodmannArea,A segmentation of the cerebral cortex on the basis of cytoarchitecture,,,,False,ManifestColumn,,sage.annotations-neuro.BrodmannArea-0.0.2,,string,biospecimen
+BrodmannArea2,A segmentation of the cerebral cortex on the basis of cytoarchitecture,,,,False,ManifestColumn,,sage.annotations-neuro.BrodmannArea-0.0.2,,string,biospecimen
