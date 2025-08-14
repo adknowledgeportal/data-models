@@ -78,6 +78,7 @@ jobs:
           # store json as env variable (ref https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-output-parameter)
           echo "changed_manifests=$CHANGED_MANIFESTS" >> "$GITHUB_OUTPUT"
 
+          
   test:
     if: ${{ github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
