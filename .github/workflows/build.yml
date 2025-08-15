@@ -119,7 +119,6 @@ jobs:
 
       - name: Generate test manifests
         working-directory: tests
-        shell: bash
         run: ./generate_test_manifests.sh "$CHANGED_MANIFESTS"
 
       - name: Create Test Suite Report
