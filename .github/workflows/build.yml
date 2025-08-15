@@ -48,7 +48,7 @@ jobs:
           default_author: github_actions
           add: 'AD.model.csv'
           message: "assemble *.model.csv from modules directory"
-          push: false
+          push: true
 
       - name: convert .csv to .jsonld
         shell: bash
@@ -60,12 +60,6 @@ jobs:
           default_author: github_actions
           add: "AD.model.jsonld"
           message: "convert *.model.csv to *.model.jsonld" 
-          push: false
-
-      - name: Push csv and json-ld model changes
-        uses: EndBug/add-and-commit@v9
-        with:
-          default_author: github_actions
           push: true
 
       - name: Identify changed manifests
