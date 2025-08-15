@@ -47,7 +47,7 @@ echo "✓ Set up $DATA_MODEL for test"
 # Setup logs
 mkdir -p $LOG_DIR
 
-echo "✓ Using ${#CHANGED_TEMPLATES[@]} templates from environment variable."
+echo "✓ Using ${CHANGED_TEMPLATES[@]} templates from environment variable."
 
 for i in "${CHANGED_TEMPLATES_ARRAY[@]}";
 do
