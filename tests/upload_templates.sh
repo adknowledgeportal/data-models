@@ -5,11 +5,11 @@
 set -exo pipefail
 shopt -s extglob
 
+CHANGED_TEMPLATES=$1
+
 echo Uploading manifests to "${SYNAPSE_UPLOAD_FOLDER_ID}"
 
-MANIFESTS=("$PWD"/*.@(xlsx|xls))
-
-for MANIFEST in ${MANIFESTS[@]};
+for MANIFEST in ${CHANGED_TEMPLATES[@]};
 do
   echo "Uploading $MANIFEST"
   synapse store --parentId "${SYNAPSE_UPLOAD_FOLDER_ID}" --noForceVersion "$MANIFEST"
