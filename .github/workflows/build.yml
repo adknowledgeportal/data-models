@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ always() }}
     outputs:
-      changed_manifests: ${{ steps.identify-changed-manifests.outputs.changed_manifests }}
+      CHANGED_MANIFESTS: ${{ steps.identify-changed-manifests.outputs.CHANGED_MANIFESTS }}
     steps:
       - uses: actions/create-github-app-token@v2
         id: app-token
