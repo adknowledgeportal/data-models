@@ -2,7 +2,7 @@
 # upload metadata templates to synapse
 # if running locally set SYNAPSE_AUTH_TOKEN in your environment
 
-set -e
+set -exo pipefail
 shopt -s extglob
 
 echo Uploading manifests to "${SYNAPSE_UPLOAD_FOLDER_ID}"
