@@ -54,7 +54,7 @@ mkdir -p $LOG_DIR
 echo "✓ Using ${#CHANGED_TEMPLATES[@]} templates from environment variable."
 
 
-for i in ${CHANGED_TEMPLATES[@]}
+for i in ${CHANGED_TEMPLATES[@]};
 do
   echo ">>>>>>> Generating $i"
   schematic manifest --config schematic-config-test.yml get -dt $i --title $i -oxlsx "$EXCEL_DIR/$i.xlsx" | tee $LOG_DIR/${i%.*}_log
