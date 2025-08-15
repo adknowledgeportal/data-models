@@ -97,6 +97,11 @@ jobs:
         with:
           app-id: ${{ vars.COMMIT_BOT_ID }}
           private-key: ${{ secrets.COMMIT_BOT_KEY }}
+
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
          
       - uses: actions/setup-python@v4 
         with:
@@ -152,6 +157,11 @@ jobs:
         with:
           app-id: ${{ vars.COMMIT_BOT_ID }}
           private-key: ${{ secrets.COMMIT_BOT_KEY }}
+
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
 
       - uses: actions/setup-python@v4 
         with:
