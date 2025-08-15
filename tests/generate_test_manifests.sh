@@ -2,7 +2,8 @@
 # generate GoogleSheets templates
 # if using locally run with ./generate_all_manifests.sh from tests directory
 
-set -eo pipefail
+set -ex
+set -o pipefail
 
 # TEST_CONFIG_PATH=../dca-template-config.json
 # TEST_CONFIG=dca-template-config.json
