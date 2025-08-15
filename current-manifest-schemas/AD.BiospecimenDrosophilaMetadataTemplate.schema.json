@@ -4,41 +4,41 @@
   "title": "BiospecimenDrosophilaMetadataTemplate",
   "type": "object",
   "properties": {
-    "temperature": {},
     "genotype": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "ageDays": {},
-    "tissueWeight": {},
-    "specimenID": {},
+    "temperature": {},
     "bodyPart": {
       "enum": [
-        "brain",
         "head",
+        "brain",
         ""
       ]
     },
+    "nFemale": {},
+    "ageDays": {},
+    "specimenID": {},
     "Component": {},
+    "tissueWeight": {},
     "nMale": {},
-    "nIndividuals": {},
     "nucleicAcidSource": {
       "enum": [
-        "mitochondria",
-        "bulk cell",
-        "single cell",
-        "single nucleus",
-        "bulk nuclei",
         "cfDNA",
         "not applicable",
-        "sorted nuclei",
+        "bulk nuclei",
+        "single cell",
         "sorted cells",
+        "sorted nuclei",
+        "bulk cell",
+        "single nucleus",
+        "mitochondria",
         ""
       ]
     },
-    "nFemale": {}
+    "nIndividuals": {}
   },
   "required": [
     "genotype"

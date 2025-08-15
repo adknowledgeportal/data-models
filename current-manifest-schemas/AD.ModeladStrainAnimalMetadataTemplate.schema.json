@@ -4,20 +4,20 @@
   "title": "ModeladStrainAnimalMetadataTemplate",
   "type": "object",
   "properties": {
-    "strainOfficialName": {},
-    "stockNumber": {},
-    "geneticBackground": {},
-    "registryAbbreviation": {},
+    "specimenID": {},
     "Component": {},
-    "strainCommonName": {},
     "individualID": {
       "not": {
         "type": "null"
       },
       "minLength": 1
     },
-    "specimenID": {},
+    "geneticBackground": {},
+    "registryAbbreviation": {},
+    "strainOfficialName": {},
+    "stockNumber": {},
     "geneticMutations": {},
+    "strainCommonName": {},
     "modelType": {
       "enum": [
         "Early-onset AD (EOAD)",
