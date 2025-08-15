@@ -122,12 +122,10 @@ jobs:
 
       - name: Generate test manifests
         working-directory: tests
-        continue-on-error: true
         run: ./generate_test_manifests.sh "$CHANGED_MANIFESTS"
 
       - name: Create Test Suite Report
         working-directory: tests
-        continue-on-error: true
         run: docker run -v $(pwd):/tests rocker/tidyverse R -e "rmarkdown::render('tests/test-suite-report.Rmd')"
 
       - name: Report on test suite as pr comment
