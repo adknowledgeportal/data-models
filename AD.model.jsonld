@@ -8507,6 +8507,9 @@
                     "@id": "bts:DiseasePseudotime"
                 },
                 {
+                    "@id": "bts:DivCoHS"
+                },
+                {
                     "@id": "bts:DukeADPTSD"
                 },
                 {
@@ -28158,6 +28161,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "diseasePseudotime",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:DivCoHS",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Diverse Cohorts Harmonization Study",
+            "rdfs:label": "DivCoHS",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "DivCo_HS",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
