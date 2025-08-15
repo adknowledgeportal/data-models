@@ -15,7 +15,8 @@ DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 LOG_DIR=logs
 SLEEP_THROTTLE=17 # API rate-limiting, need to better figure out dynamically based on # of templates
-CHANGED_TEMPLATES=$1
+CHANGED_TEMPLATES="$1"
+IFS=' ' read -r -a CHANGED_TEMPLATES_ARRAY <<< "$CHANGED_TEMPLATES" 
 
 # copy schematic-config.yml into tests/ 
 cp $SCHEMATIC_CONFIG_PATH $SCHEMATIC_CONFIG
@@ -48,11 +49,11 @@ mkdir -p $LOG_DIR
 
 echo "✓ Using ${#CHANGED_TEMPLATES[@]} templates from environment variable."
 
-for i in ${CHANGED_TEMPLATES[@]};
+for i in ${CHANGED_TEMPLATES_ARRAY[@]};
 do
   echo ">>>>>>> Generating manifest $i"
-  schematic manifest --config schematic-config-test.yml get -dt $i --title $i -s | tee $LOG_DIR/${i%.*}_log
-  sleep $SLEEP_THROTTLE
+  schematic manifest --config schematic-config-test.yml get -dt "$i" --title "$i" -s | tee "$LOG_DIR/${i%.*}_log"
+  sleep "$SLEEP_THROTTLE"
 done
 
 echo "✓ Done!"
