@@ -119,7 +119,7 @@ jobs:
 
       - name: Generate test manifests
         working-directory: tests
-        run: ./generate_test_manifests.sh "$CHANGED_MANIFESTS"
+        run: ./generate_test_manifests.sh "${{ env.CHANGED_MANIFESTS }}"
 
       - name: Create Test Suite Report
         working-directory: tests
@@ -181,7 +181,7 @@ jobs:
 
       - name: Generate changed manifests
         working-directory: tests
-        run: ./generate_changed_templates.sh "$CHANGED_MANIFESTS"
+        run: ./generate_changed_templates.sh "${{ env.CHANGED_MANIFESTS }}"
 
       - name: Commit manifests to main
         uses: EndBug/add-and-commit@v9
@@ -193,6 +193,6 @@ jobs:
 
       - name: Upload manifests to Synapse
         working-directory: current-excel-manifests
-        run: ../tests/upload_templates.sh "$CHANGED_MANIFESTS"
+        run: ../tests/upload_templates.sh "${{ env.CHANGED_MANIFESTS }}"
 
 
