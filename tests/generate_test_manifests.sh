@@ -14,7 +14,7 @@ CREDS=sheets_creds.json
 DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 LOG_DIR=logs
-SLEEP_THROTTLE=17 # API rate-limiting, need to better figure out dynamically based on # of templates
+SLEEP_THROTTLE=5 # to avoid hitting api rate limits, lowered from 17s
 CHANGED_TEMPLATES="$1"
 IFS=' ' read -r -a CHANGED_TEMPLATES_ARRAY <<< "$CHANGED_TEMPLATES" 
 
