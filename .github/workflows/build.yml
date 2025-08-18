@@ -176,7 +176,7 @@ jobs:
 
       - name: Generate changed manifests
         working-directory: tests
-        run: ./generate_changed_templates.sh "$CHANGED_MANIFESTS"
+        run: ./generate_changed_templates.sh "${{ needs.schema-convert.outputs.CHANGED_MANIFESTS }}"
 
       - name: Commit manifests to main
         uses: EndBug/add-and-commit@v9
@@ -188,6 +188,6 @@ jobs:
 
       - name: Upload manifests to Synapse
         working-directory: current-excel-manifests
-        run: ../tests/upload_templates.sh "$CHANGED_MANIFESTS"
+        run: ../tests/upload_templates.sh "${{ needs.schema-convert.outputs.CHANGED_MANIFESTS }}"
 
 
