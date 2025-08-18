@@ -38,6 +38,7 @@ jobs:
       - name: install libraries
         shell: bash
         run: |
+          echo "Triggering Actor- ${{ github.triggering_actor }}"
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
@@ -97,6 +98,7 @@ jobs:
           CHANGED_MANIFESTS: ${{ needs.schema-convert.outputs.CHANGED_MANIFESTS }}
         run:
           echo "$CHANGED_MANIFESTS"
+          echo "Triggering Actor- ${{ github.triggering_actor }}"
 
       - uses: actions/create-github-app-token@v2
         id: app-token
@@ -157,6 +159,7 @@ jobs:
           CHANGED_MANIFESTS: ${{ needs.schema-convert.outputs.CHANGED_MANIFESTS }}
         run:
           echo "$CHANGED_MANIFESTS"
+          echo "Triggering Actor- ${{ github.triggering_actor }}"
 
       - uses: actions/create-github-app-token@v2
         id: app-token
