@@ -7,7 +7,7 @@ shopt -s extglob
 
 IFS=' ' read -r -a CHANGED_TEMPLATES_ARRAY <<< "$1" 
 
-echo Uploading manifests to "${SYNAPSE_UPLOAD_FOLDER_ID}"
+echo Uploading ${#CHANGED_TEMPLATES_ARRAY[@]} manifests to "${SYNAPSE_UPLOAD_FOLDER_ID}"
 
 for template in "${CHANGED_TEMPLATES_ARRAY[@]}";
 do
