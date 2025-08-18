@@ -46,16 +46,16 @@ echo "✓ Set up $DATA_MODEL for test"
 # Setup logs
 mkdir -p $LOG_DIR
 
-echo "✓ Using ${CHANGED_TEMPLATES_ARRAY[@]} templates from environment variable."
+echo "✓ Using ${#CHANGED_TEMPLATES_ARRAY[@]} templates from environment variable."
 
-for manifest in "${CHANGED_TEMPLATES_ARRAY[@]}";
+for template in "${CHANGED_TEMPLATES_ARRAY[@]}";
 do
-  echo ">>>>>>> Generating manifest $manifest"
-  schematic manifest --config schematic-config-test.yml get -dt "$manifest" --title "$manifest" -s | tee "$LOG_DIR/${manifest%.*}_log"
+  echo ">>>>>>> Generating manifest $template"
+  schematic manifest --config schematic-config-test.yml get -dt "$template" --title "$template" -s | tee "$LOG_DIR/${template%.*}_log"
   if  [ $? -eq 0 ]; then
-    echo "✓ Manifest $manifest successfully generated"
+    echo "✓ Manifest $template successfully generated"
   else
-    echo "✗ Manifest $manifest failed to generate"
+    echo "✗ Manifest $template failed to generate"
   fi
   sleep "$SLEEP_THROTTLE"
 done
