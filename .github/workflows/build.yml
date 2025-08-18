@@ -79,6 +79,9 @@ jobs:
           changed_manifests=$( jq -r '.[] | .schema_name' changed-templates.json )
           echo "CHANGED_MANIFESTS="$changed_manifests"" >> "$GITHUB_OUTPUT"
 
+      - name: Delay start of subsequent jobs
+        shell: bash
+        run: sleep 60
 
           
   test:
