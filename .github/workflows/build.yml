@@ -73,7 +73,7 @@ jobs:
         shell: bash
         run: |
           changed_manifests=$( jq -r '.[] | .schema_name' changed-templates.json )
-          echo "CHANGED_MANIFESTS=$changed_manifests" >> "$GITHUB_OUTPUT"
+          echo "CHANGED_MANIFESTS="$changed_manifests"" >> "$GITHUB_OUTPUT"
 
 
           
