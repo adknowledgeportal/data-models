@@ -16,7 +16,7 @@ EXCEL_DIR=../current-excel-manifests
 JSON_DIR=../current-manifest-schemas
 LOG_DIR=logs
 SLEEP_THROTTLE=30 # API rate-limiting, need to better figure out dynamically based on # of templates
-CHANGED_TEMPLATES=$1
+IFS=' ' read -r -a CHANGED_TEMPLATES_ARRAY <<< "$1" 
 
 # copy schematic-config.yml into tests/ 
 cp $SCHEMATIC_CONFIG_PATH $SCHEMATIC_CONFIG
@@ -51,14 +51,19 @@ echo "✓ Set up $DATA_MODEL for test"
 # Setup logs
 mkdir -p $LOG_DIR
 
-echo "✓ Using ${#CHANGED_TEMPLATES[@]} templates from environment variable."
+echo "✓ Using ${#CHANGED_TEMPLATES_ARRAY[@]} templates from environment variable."
 
 
-for i in ${CHANGED_TEMPLATES[@]};
+for manifest in ${CHANGED_TEMPLATES_ARRAY[@]};
 do
-  echo ">>>>>>> Generating $i"
-  schematic manifest --config schematic-config-test.yml get -dt $i --title $i -oxlsx "$EXCEL_DIR/$i.xlsx" | tee $LOG_DIR/${i%.*}_log
-  sleep $SLEEP_THROTTLE
+  echo ">>>>>>> Generating manifest $manifest"
+  schematic manifest --config schematic-config-test.yml get -dt "$manifest" --title "$manifest" -oxlsx "$EXCEL_DIR/$manifest.xlsx" | tee "$LOG_DIR/${i%.*}_log"
+  if  [ $? -eq 0 ]; then
+    echo "✓ Manifest $manifest successfully generated"
+  else
+    echo "✗ Manifest $manifest failed to generate"
+  fi
+  sleep "$SLEEP_THROTTLE"
 done
 
 echo "Moving manifest json schemas to $JSON_DIR"
