@@ -81,7 +81,9 @@ jobs:
 
       - name: Delay start of subsequent jobs
         shell: bash
-        run: sleep 60
+        run: |
+          echo "Delaying start of subsequent jobs"
+          sleep 60
 
           
   test:
