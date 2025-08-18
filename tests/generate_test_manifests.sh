@@ -57,7 +57,11 @@ do
   else
     echo "✗ Manifest $template failed to generate"
   fi
-  sleep "$SLEEP_THROTTLE"
+
+  for i in $(seq 1 $SLEEP_THROTTLE); do
+      sleep 1
+      printf "\r Waited $i of $SLEEP_THROTTLE seconds"
+  done
 done
 
 echo "✓ Done!"

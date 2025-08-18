@@ -84,8 +84,10 @@ jobs:
         shell: bash
         run: |
           echo "Delaying start of subsequent jobs"
-          sleep 60
-
+          for i in $(seq 1 60); do
+            sleep 1
+            printf "\r $i of 60 seconds"
+          done
           
   test:
     if: ( ${{ github.triggering_actor }} != 'Commit to main bot - adkp' )
