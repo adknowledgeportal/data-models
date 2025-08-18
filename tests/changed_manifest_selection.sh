@@ -1,6 +1,5 @@
 #!/bin/bash
-
-set -e
+set -exo pipefail
 
 python identify_changed_manifests_for_testing.py \
     --changed_files_path changed-files.txt \
