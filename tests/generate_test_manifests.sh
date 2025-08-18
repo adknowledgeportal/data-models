@@ -2,7 +2,7 @@
 # generate GoogleSheets templates
 # if using locally run with ./generate_all_manifests.sh from tests directory
 
-set -e
+set -eo pipefail
 
 # TEST_CONFIG_PATH=../dca-template-config.json
 # TEST_CONFIG=dca-template-config.json
@@ -14,8 +14,8 @@ CREDS=sheets_creds.json
 DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 LOG_DIR=logs
-SLEEP_THROTTLE=17 # API rate-limiting, need to better figure out dynamically based on # of templates
-CHANGED_TEMPLATES=$1
+SLEEP_THROTTLE=30 # to avoid hitting api rate limits
+IFS=' ' read -r -a CHANGED_TEMPLATES_ARRAY <<< "$1" 
 
 # copy schematic-config.yml into tests/ 
 cp $SCHEMATIC_CONFIG_PATH $SCHEMATIC_CONFIG
@@ -46,18 +46,22 @@ echo "✓ Set up $DATA_MODEL for test"
 # Setup logs
 mkdir -p $LOG_DIR
 
-if [ -f "changed-templates.json" ]; then
-  CHANGED_TEMPLATES=($(jq '.manifest_schemas[] | .schema_name' $TEST_CONFIG | tr -d '"'))
-  echo "✓ Using ${#CHANGED_TEMPLATES[@]} templates from config file."
-else
-  echo "✓ Using ${#CHANGED_TEMPLATES[@]} templates from environment variable."
-fi 
+echo "✓ Using ${#CHANGED_TEMPLATES_ARRAY[@]} templates (${CHANGED_TEMPLATES_ARRAY[@]}) from environment variable."
 
-for i in ${!CHANGED_TEMPLATES[@]}
+for template in "${CHANGED_TEMPLATES_ARRAY[@]}";
 do
-  echo ">>>>>>> Generating ${CHANGED_TEMPLATES[$i]}"
-  schematic manifest --config schematic-config-test.yml get -dt "${CHANGED_TEMPLATES[$i]}" --title "${CHANGED_TEMPLATES[$i]}" -s | tee $LOG_DIR/${CHANGED_TEMPLATES[$i]%.*}_log
-  sleep $SLEEP_THROTTLE
+  echo ">>>>>>> Generating manifest $template"
+  schematic manifest --config schematic-config-test.yml get -dt "$template" --title "$template" -s | tee "$LOG_DIR/${template%.*}_log"
+  if  [ $? -eq 0 ]; then
+    echo "✓ Manifest $template successfully generated"
+  else
+    echo "✗ Manifest $template failed to generate"
+  fi
+
+  for i in $(seq 1 $SLEEP_THROTTLE); do
+      sleep 1
+      printf "\r Waited $i of $SLEEP_THROTTLE seconds"
+  done
 done
 
 echo "✓ Done!"
