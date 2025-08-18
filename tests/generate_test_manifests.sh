@@ -15,15 +15,7 @@ DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 LOG_DIR=logs
 SLEEP_THROTTLE=5 # to avoid hitting api rate limits, lowered from 17s
-CHANGED_TEMPLATES="$1"
-IFS=' ' read -r -a CHANGED_TEMPLATES_ARRAY <<< "$CHANGED_TEMPLATES" 
-
-echo "Var passed in: $1"
-echo "Using changed templates: ${CHANGED_TEMPLATES}"
-
-for i in "${CHANGED_TEMPLATES_ARRAY[@]}"; do
-  echo "found template: $i"
-done
+IFS=' ' read -r -a CHANGED_TEMPLATES_ARRAY <<< "$1" 
 
 # copy schematic-config.yml into tests/ 
 cp $SCHEMATIC_CONFIG_PATH $SCHEMATIC_CONFIG
@@ -60,6 +52,11 @@ for i in "${CHANGED_TEMPLATES_ARRAY[@]}";
 do
   echo ">>>>>>> Generating manifest $i"
   schematic manifest --config schematic-config-test.yml get -dt "$i" --title "$i" -s | tee "$LOG_DIR/${i%.*}_log"
+  if  [ $? -eq 0 ]; then
+    echo "✓ Manifest $i successfully generated"
+  else
+    echo "✗ Manifest $i failed to generate"
+  fi
   sleep "$SLEEP_THROTTLE"
 done
 
