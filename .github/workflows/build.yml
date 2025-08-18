@@ -119,8 +119,7 @@ jobs:
 
       - name: Generate test manifests
         working-directory: tests
-        run: bash ./generate_test_manifests.sh $CHANGED_MANIFESTS
-
+        run: bash ./generate_test_manifests.sh ${{ env.CHANGED_MANIFESTS }}
       - name: Create Test Suite Report
         working-directory: tests
         run: docker run -v $(pwd):/tests rocker/tidyverse R -e "rmarkdown::render('tests/test-suite-report.Rmd')"
