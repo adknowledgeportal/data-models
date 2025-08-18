@@ -2,17 +2,22 @@
 # upload metadata templates to synapse
 # if running locally set SYNAPSE_AUTH_TOKEN in your environment
 
-set -e
+set -exo pipefail
 shopt -s extglob
 
-echo Uploading manifests to "${SYNAPSE_UPLOAD_FOLDER_ID}"
+IFS=' ' read -r -a CHANGED_TEMPLATES_ARRAY <<< "$1" 
 
-MANIFESTS=("$PWD"/*.@(xlsx|xls))
+echo "Uploading ${#CHANGED_TEMPLATES_ARRAY[@]} manifests (${CHANGED_TEMPLATES_ARRAY[@]}) to ${SYNAPSE_UPLOAD_FOLDER_ID}"
 
-for MANIFEST in ${MANIFESTS[@]};
+for template in "${CHANGED_TEMPLATES_ARRAY[@]}";
 do
-  echo "Uploading $MANIFEST"
-  synapse store --parentId "${SYNAPSE_UPLOAD_FOLDER_ID}" --noForceVersion "$MANIFEST"
+  echo "Uploading $template"
+  synapse store --parentId "${SYNAPSE_UPLOAD_FOLDER_ID}" --noForceVersion "$template.xlsx"
+  if  [ $? -eq 0 ]; then
+    echo "✓ Manifest $template successfully stored on synapse"
+  else
+    echo "✗ Manifest $template failed to be stored on synapse"
+  fi
 done
 
 echo "✓ Done!"
