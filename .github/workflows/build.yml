@@ -14,7 +14,7 @@ concurrency:
 jobs:
   schema-convert:
     runs-on: ubuntu-latest
-    if: ${{ always() }}  && ( ${{ github.triggering_actor }} != 'commit-to-main-bot-adkp' )
+    if: ${{ always() }}  && ( ${{ github.triggering_actor }} != 'Commit to main bot - adkp' )
     outputs:
       CHANGED_MANIFESTS: ${{ steps.identify-changed-manifests.outputs.changed_manifests }}
     steps:
@@ -87,7 +87,7 @@ jobs:
 
           
   test:
-    if: ${{ always() }}  && ( ${{ github.triggering_actor }} != 'commit-to-main-bot-adkp' )
+    if: ${{ always() }}  && ( ${{ github.triggering_actor }} != 'Commit to main bot - adkp' )
     runs-on: ubuntu-latest
     needs: [schema-convert]
     env:
@@ -146,7 +146,7 @@ jobs:
 
   generate-and-upload-manifests:
     needs: [schema-convert]
-    if: ${{ always() }}  && ( ${{ github.triggering_actor }} != 'commit-to-main-bot-adkp' )
+    if: ${{ always() }}  && ( ${{ github.triggering_actor }} != 'Commit to main bot - adkp' )
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
