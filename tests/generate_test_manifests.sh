@@ -48,14 +48,14 @@ mkdir -p $LOG_DIR
 
 echo "✓ Using ${CHANGED_TEMPLATES_ARRAY[@]} templates from environment variable."
 
-for i in "${CHANGED_TEMPLATES_ARRAY[@]}";
+for manifest in "${CHANGED_TEMPLATES_ARRAY[@]}";
 do
-  echo ">>>>>>> Generating manifest $i"
-  schematic manifest --config schematic-config-test.yml get -dt "$i" --title "$i" -s | tee "$LOG_DIR/${i%.*}_log"
+  echo ">>>>>>> Generating manifest $manifest"
+  schematic manifest --config schematic-config-test.yml get -dt "$manifest" --title "$manifest" -s | tee "$LOG_DIR/${manifest%.*}_log"
   if  [ $? -eq 0 ]; then
-    echo "✓ Manifest $i successfully generated"
+    echo "✓ Manifest $manifest successfully generated"
   else
-    echo "✗ Manifest $i failed to generate"
+    echo "✗ Manifest $manifest failed to generate"
   fi
   sleep "$SLEEP_THROTTLE"
 done
