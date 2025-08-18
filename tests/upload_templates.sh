@@ -12,7 +12,7 @@ echo "Uploading ${#CHANGED_TEMPLATES_ARRAY[@]} manifests (${CHANGED_TEMPLATES_AR
 for template in "${CHANGED_TEMPLATES_ARRAY[@]}";
 do
   echo "Uploading $template"
-  synapse store --parentId "${SYNAPSE_UPLOAD_FOLDER_ID}" --noForceVersion "$template"
+  synapse store --parentId "${SYNAPSE_UPLOAD_FOLDER_ID}" --noForceVersion "$template.xlsx"
   if  [ $? -eq 0 ]; then
     echo "✓ Manifest $template successfully stored on synapse"
   else
