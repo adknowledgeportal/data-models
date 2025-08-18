@@ -14,7 +14,7 @@ CREDS=sheets_creds.json
 DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 LOG_DIR=logs
-SLEEP_THROTTLE=30 # to avoid hitting api rate limits
+SLEEP_THROTTLE=17 # to avoid hitting api rate limits
 IFS=' ' read -r -a CHANGED_TEMPLATES_ARRAY <<< "$1" 
 
 # copy schematic-config.yml into tests/ 
