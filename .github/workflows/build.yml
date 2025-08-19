@@ -208,6 +208,14 @@ jobs:
           message: "add changed manifests" 
           push: true
 
+      - name: Commit schemas to main
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          add: "current-manifest-schemas"
+          message: "add changed schemas" 
+          push: true
+
       - name: Upload manifests to Synapse
         working-directory: current-excel-manifests
         run: ../tests/upload_templates.sh "${{ needs.schema-convert.outputs.CHANGED_MANIFESTS }}"
