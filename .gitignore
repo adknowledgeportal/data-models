@@ -41,3 +41,5 @@ tests/example-manifest-selection.sh
 .vscode/launch.json
 scripts/.env
 pyproject.toml
+
+sheets_creds.json
