@@ -233,7 +233,7 @@ jobs:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
           clean: false
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: 'refs/heads/main'
 
       - uses: actions/setup-python@v4 
         with:
