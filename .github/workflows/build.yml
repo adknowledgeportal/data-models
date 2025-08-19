@@ -246,6 +246,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Upload JSONSchema
+      - name: Register JSONSchema
         working-directory: current-manifest-schemas
         run: python ../scripts/upload_jsonschema.py
