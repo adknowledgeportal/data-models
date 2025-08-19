@@ -213,3 +213,39 @@ jobs:
         run: ../tests/upload_templates.sh "${{ needs.schema-convert.outputs.CHANGED_MANIFESTS }}"
 
 
+  release:
+    if: ( ${{ github.triggering_actor }} != 'commit-to-main-bot-adkp[bot]' ) && ( github.event_name == 'release' )
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
+      SYNAPSE_ORGANIZATION: "sage.schemas.v2571"
+      RELEASE_TAG: ${{ github.event.release.tag_name }}
+    steps:
+      - uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ vars.COMMIT_BOT_ID }}
+          private-key: ${{ secrets.COMMIT_BOT_KEY }}
+
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ steps.app-token.outputs.token }}
+          clean: false
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - uses: actions/setup-python@v4 
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install libraries
+        shell: bash
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Upload JSONSchema
+        working-directory: current-manifest-schemas
+        run: 
