@@ -248,4 +248,4 @@ jobs:
 
       - name: Upload JSONSchema
         working-directory: current-manifest-schemas
-        run: 
+        run: python ../scripts/upload_jsonschema.py
