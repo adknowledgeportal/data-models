@@ -1,23 +1,14 @@
 name: build
 
 on:
-  push:
-    branches:
-      - '**'
-    paths:
-      - 'modules/**'
-
   pull_request:
+    types:
+      - synchronize
+      - closed
     branches:
       - 'main'
     paths:
       - 'modules/**'
-    types:
-      - 'closed'
-
-  release:
-    types:
-      - 'released'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.triggering_actor }}
@@ -26,7 +17,7 @@ concurrency:
 jobs:
   schema-convert:
     runs-on: ubuntu-latest
-    if: ( ${{ github.triggering_actor }} != 'commit-to-main-bot-adkp[bot]' ) && ( github.event_name != 'release' )
+    if: ( ${{ github.triggering_actor }} != 'commit-to-main-bot-adkp[bot]' )
     outputs:
       CHANGED_MANIFESTS: ${{ steps.identify-changed-manifests.outputs.changed_manifests }}
     steps:
@@ -101,7 +92,7 @@ jobs:
           done
           
   test:
-    if: ( ${{ github.triggering_actor }} != 'commit-to-main-bot-adkp[bot]' ) && ( github.event.pull_request.merged == false ) && ( github.event_name != 'release' )
+    if: github.event.pull_request.merged == false
     runs-on: ubuntu-latest
     needs: [schema-convert]
     env:
@@ -159,13 +150,13 @@ jobs:
 
   generate-and-upload-manifests:
     needs: [schema-convert]
-    if: ( ${{ github.triggering_actor }} != 'commit-to-main-bot-adkp[bot]' ) && ( github.event.pull_request.merged == true ) && ( github.event_name != 'release' )
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       SCHEMATIC_SERVICE_ACCOUNT_CREDS: ${{ secrets.SCHEMATIC_SERVICE_ACCOUNT_CREDS }}
       SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
-      SYNAPSE_UPLOAD_FOLDER_ID: syn68916661
+      SYNAPSE_UPLOAD_FOLDER_ID: syn68927846
     steps:
       - env:
           CHANGED_MANIFESTS: ${{ needs.schema-convert.outputs.CHANGED_MANIFESTS }}
@@ -208,8 +199,15 @@ jobs:
           message: "add changed manifests" 
           push: true
 
+      - name: Commit schemas to main
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          add: "current-manifest-schemas"
+          message: "add changed schemas" 
+          push: true
+
       - name: Upload manifests to Synapse
         working-directory: current-excel-manifests
         run: ../tests/upload_templates.sh "${{ needs.schema-convert.outputs.CHANGED_MANIFESTS }}"
-
 
