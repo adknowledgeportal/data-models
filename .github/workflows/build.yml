@@ -1,19 +1,11 @@
 name: build
 
 on:
-  push:
-    branches:
-      - '**'
-    paths:
-      - 'modules/**'
-
   pull_request:
     branches:
       - 'test-main'
     paths:
       - 'modules/**'
-    types:
-      - 'closed'
 
   release:
     types:
