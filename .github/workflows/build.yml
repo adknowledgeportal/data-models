@@ -257,4 +257,4 @@ jobs:
       - name: Register JSONSchema
         working-directory: current-manifest-schemas
         run: |
-          echo "success!"
+          echo "success!!"
