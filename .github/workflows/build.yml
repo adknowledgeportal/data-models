@@ -7,9 +7,9 @@ on:
     paths:
       - 'modules/**'
 
-  release:
-    types:
-      - 'released'
+  push:
+    tags:
+      - v**.**.**
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.triggering_actor }}
