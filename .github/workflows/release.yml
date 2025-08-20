@@ -45,5 +45,4 @@ jobs:
 
       - name: Register JSONSchema
         working-directory: current-manifest-schemas
-        run: |
-          echo "success!!"
+        run: python ../scripts/upload_jsonschema.py
