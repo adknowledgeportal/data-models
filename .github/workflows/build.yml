@@ -165,7 +165,7 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       SCHEMATIC_SERVICE_ACCOUNT_CREDS: ${{ secrets.SCHEMATIC_SERVICE_ACCOUNT_CREDS }}
       SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
-      SYNAPSE_UPLOAD_FOLDER_ID: syn68916661
+      SYNAPSE_UPLOAD_FOLDER_ID: syn68927846
     steps:
       - env:
           CHANGED_MANIFESTS: ${{ needs.schema-convert.outputs.CHANGED_MANIFESTS }}
