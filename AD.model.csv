@@ -873,6 +873,8 @@ BrodmannArea,A segmentation of the cerebral cortex on the basis of cytoarchitect
 BrodmannArea2,A segmentation of the cerebral cortex on the basis of cytoarchitecture,,,,False,ManifestColumn,,sage.annotations-neuro.BrodmannArea-0.0.2,,string,biospecimen
 BrodmannArea3,A segmentation of the cerebral cortex on the basis of cytoarchitecture,,,,False,ManifestColumn,,sage.annotations-neuro.BrodmannArea-0.0.2,,string,biospecimen
 BrodmannArea4,A segmentation of the cerebral cortex on the basis of cytoarchitecture,,,,False,ManifestColumn,,sage.annotations-neuro.BrodmannArea-0.0.2,,string,biospecimen
+BrodmannArea5,A segmentation of the cerebral cortex on the basis of cytoarchitecture,,,,False,ManifestColumn,,sage.annotations-neuro.BrodmannArea-0.0.2,,string,biospecimen
+BrodmannArea6,A segmentation of the cerebral cortex on the basis of cytoarchitecture,,,,False,ManifestColumn,,sage.annotations-neuro.BrodmannArea-0.0.2,,string,biospecimen
 catalogNumber,"The identifier assigned to a product, usually in the list of products published by a reseller or manufacturer",,,,False,ManifestColumn,,sage.annotations-immunoAssays.catalogNumber-0.0.2,,string,immunoassay
 causeDeath,The specific injury or disease that lead to death,,,,False,ManifestColumn,,sage.annotations-clinical.causeDeath-0.0.2,,string,clinical
 CDLB,Likelihood of Lewy Body clinical syndrome reported based on Third report of the DLB Consortium,"Low or No clinical significance, Intermediate, High, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.CDLB-0.0.2,string,,clinical
