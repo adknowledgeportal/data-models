@@ -36,12 +36,11 @@ def get_org(js,) -> None:
 
     return json_schema_org
 
-def register_schema(schema: dict, filename: str, json_schema_org) -> None:
+def register_schema(schema: dict, uri: str, json_schema_org) -> None:
     """
     Register the given JsonSchema on synapse under the organization provided.
     """
 
-    uri = Path(filename).stem
     json_schema_org.create_json_schema(schema, uri, VERSION)
 
 
@@ -58,4 +57,5 @@ json_schema_org = get_org(js)
 files = glob.glob("*.json")
 for file in files:
     schema = import_json_schema(file)
-    register_schema(schema=schema, file=file, json_schema_org=json_schema_org)
+    uri = Path(file).stem
+    register_schema(schema=schema, uri=uri, json_schema_org=json_schema_org)
