@@ -6,7 +6,7 @@ on:
       - synchronize
       - closed
     branches:
-      - 'main'
+      - 'test-main-2'
     paths:
       - 'modules/**'
 
