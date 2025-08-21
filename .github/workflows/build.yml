@@ -41,6 +41,7 @@ jobs:
       - name: install libraries
         shell: bash
         run: |
+          echo "${{ github.triggering_actor }}"
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
