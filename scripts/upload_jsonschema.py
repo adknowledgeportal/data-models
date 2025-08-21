@@ -14,7 +14,7 @@ VERSION = os.environ.get("RELEASE_TAG")
 
 def import_json_schema(filename: str) -> dict:
     """
-    Load the schema as a dictionary from the generated files. Build 
+    Load the schema as a dictionary from the generated files.
     """
     with open(filename, "r") as f:
         schema = load(f)
