@@ -4,4 +4,5 @@ BrodmannArea2,A segmentation of the cerebral cortex on the basis of cytoarchitec
 BrodmannArea3,A segmentation of the cerebral cortex on the basis of cytoarchitecture,,,,False,ManifestColumn,,sage.annotations-neuro.BrodmannArea-0.0.2,,string,biospecimen
 BrodmannArea4,A segmentation of the cerebral cortex on the basis of cytoarchitecture,,,,False,ManifestColumn,,sage.annotations-neuro.BrodmannArea-0.0.2,,string,biospecimen
 BrodmannArea5,A segmentation of the cerebral cortex on the basis of cytoarchitecture,,,,False,ManifestColumn,,sage.annotations-neuro.BrodmannArea-0.0.2,,string,biospecimen
+BrodmannArea6,A segmentation of the cerebral cortex on the basis of cytoarchitecture,,,,False,ManifestColumn,,sage.annotations-neuro.BrodmannArea-0.0.2,,string,biospecimen
 
