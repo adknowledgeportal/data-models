@@ -19234,6 +19234,40 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:BrodmannArea5",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "A segmentation of the cerebral cortex on the basis of cytoarchitecture",
+            "rdfs:label": "BrodmannArea5",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "BrodmannArea5",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BrodmannArea6",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "A segmentation of the cerebral cortex on the basis of cytoarchitecture",
+            "rdfs:label": "BrodmannArea6",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "BrodmannArea6",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:CatalogNumber",
             "@type": "rdfs:Class",
             "rdfs:comment": "The identifier assigned to a product, usually in the list of products published by a reseller or manufacturer",
