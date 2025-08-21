@@ -17,7 +17,7 @@ concurrency:
 jobs:
   schema-convert:
     runs-on: ubuntu-latest
-    if: ( ${{ github.triggering_actor }} != 'commit-to-main-bot-adkp[bot]' )
+    if: ${{ github.triggering_actor }} != 'commit-to-main-bot-adkp[bot]'
     outputs:
       CHANGED_MANIFESTS: ${{ steps.identify-changed-manifests.outputs.changed_manifests }}
     steps:
