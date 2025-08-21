@@ -6,6 +6,7 @@ from importlib_metadata import files
 
 import synapseclient
 from synapseclient.core.exceptions import SynapseHTTPError
+from synapseclient.services.json_schema import JsonSchemaService, JsonSchemaOrganization
 
 # Environment Variables are set in the github workflow
 ORG_NAME = os.environ.get("SYNAPSE_ORGANIZATION")
@@ -21,7 +22,7 @@ def import_json_schema(filename: str) -> dict:
 
     return schema
 
-def get_org(js,) -> None:
+def get_org(js: JsonSchemaService) -> JsonSchemaOrganization:
     """
     Create or get the JsonSchemaOrganization for the given organization name.
     """
