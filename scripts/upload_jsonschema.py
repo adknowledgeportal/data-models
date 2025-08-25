@@ -50,5 +50,5 @@ json_schema_org = get_org(js)
 files = glob.glob("*.json")
 for file in files:
     schema = import_json_schema(file)
-    uri = Path(file).stem
-    json_schema_org.create_json_schema(schema, uri, VERSION)
+    schema_name = Path(file).stem
+    json_schema_org.create_json_schema(schema, schema_name, VERSION)
