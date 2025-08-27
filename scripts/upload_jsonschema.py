@@ -51,4 +51,8 @@ files = glob.glob("*.json")
 for file in files:
     schema = import_json_schema(file)
     schema_name = Path(file).stem
-    json_schema_org.create_json_schema(schema, schema_name, VERSION)
+    try:
+        json_schema_org.create_json_schema(schema, schema_name, VERSION)
+    except SynapseHTTPError as e:
+        print(f"Skipping the creation of schema ({schema_name}) version ({VERSION})")
+        continue
