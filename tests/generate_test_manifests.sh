@@ -2,6 +2,8 @@
 # generate GoogleSheets templates
 # if using locally run with ./generate_all_manifests.sh from tests directory
 
+set -exo pipefail
+
 # TEST_CONFIG_PATH=../dca-template-config.json
 # TEST_CONFIG=dca-template-config.json
 SCHEMATIC_CONFIG_PATH=../schematic-config.yml
@@ -12,7 +14,8 @@ CREDS=sheets_creds.json
 DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 LOG_DIR=logs
-SLEEP_THROTTLE=17 # API rate-limiting, need to better figure out dynamically based on # of templates
+SLEEP_THROTTLE=30 # to avoid hitting api rate limits
+IFS=' ' read -r -a CHANGED_TEMPLATES_ARRAY <<< "$1" 
 
 # copy schematic-config.yml into tests/ 
 cp $SCHEMATIC_CONFIG_PATH $SCHEMATIC_CONFIG
@@ -36,17 +39,6 @@ else
   exit 1
 fi
 
-# Set up templates config
-# cp $TEST_CONFIG_PATH $TEST_CONFIG
-# echo "✓ Using copy of $TEST_CONFIG_PATH for test"
-
-# TEMPLATES=($(jq '.manifest_schemas[] | .schema_name' $TEST_CONFIG | tr -d '"'))
-# #TITLES=($(jq '.manifest_schemas[] | .display_name' $TEST_CONFIG | tr -d '"'))
-# echo "✓ Using config with ${#TEMPLATES[@]} templates..."
-
-CHANGED_TEMPLATES=($(jq '.[] | .schema_name' $CHANGED_TEMPLATE_CONFIG | tr -d '"'))
-echo "✓ Using ${#CHANGED_TEMPLATES[@]} templates from $CHANGED_TEMPLATE_CONFIG..."
-
 # Setup data model
 cp $DATA_MODEL_PATH $DATA_MODEL
 echo "✓ Set up $DATA_MODEL for test"
@@ -54,14 +46,22 @@ echo "✓ Set up $DATA_MODEL for test"
 # Setup logs
 mkdir -p $LOG_DIR
 
-for i in ${!CHANGED_TEMPLATES[@]}
-do
-  echo ">>>>>>> Generating ${CHANGED_TEMPLATES[$i]}"
-  schematic manifest --config schematic-config-test.yml get -dt "${CHANGED_TEMPLATES[$i]}" --title "${CHANGED_TEMPLATES[$i]}" -s | tee $LOG_DIR/${CHANGED_TEMPLATES[$i]%.*}_log
-  sleep $SLEEP_THROTTLE
-done
+echo "✓ Using ${#CHANGED_TEMPLATES_ARRAY[@]} templates (${CHANGED_TEMPLATES_ARRAY[@]}) from environment variable."
 
-#echo "Cleaning up test fixtures and intermediates..."
-#rm -f $CREDS $TEST_CONFIG $DATA_MODEL *.schema.json *.manifest.csv
+for template in "${CHANGED_TEMPLATES_ARRAY[@]}";
+do
+  echo ">>>>>>> Generating manifest $template"
+  schematic manifest --config schematic-config-test.yml get -dt "$template" --title "$template" -s | tee "$LOG_DIR/${template%.*}_log"
+  if  [ $? -eq 0 ]; then
+    echo "✓ Manifest $template successfully generated"
+  else
+    echo "✗ Manifest $template failed to generate"
+  fi
+
+  for i in $(seq 1 $SLEEP_THROTTLE); do
+      sleep 1
+      printf "\r Waited $i of $SLEEP_THROTTLE seconds"
+  done
+done
 
 echo "✓ Done!"
