@@ -199,12 +199,16 @@ jobs:
           message: "add changed manifests" 
           push: true
 
+      - name: Generate JSONSchema
+        shell: bash
+        run: schematic schema generate-jsonschema -dms AD.model.jsonld -od current-manifest-schemas
+
       - name: Commit schemas to main
         uses: EndBug/add-and-commit@v9
         with:
           default_author: github_actions
           add: "current-manifest-schemas"
-          message: "add changed schemas" 
+          message: "add schemas" 
           push: true
 
       - name: Upload manifests to Synapse
