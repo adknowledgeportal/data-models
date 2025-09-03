@@ -44,5 +44,5 @@ jobs:
           pip install -r requirements.txt
 
       - name: Register JSONSchema
-        working-directory: current-manifest-schemas
+        working-directory: current-manifest-schemas/AD.model
         run: python ../scripts/upload_jsonschema.py
