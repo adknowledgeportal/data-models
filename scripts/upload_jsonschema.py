@@ -54,5 +54,6 @@ for file in files:
     try:
         json_schema_org.create_json_schema(schema, schema_name, VERSION)
     except SynapseHTTPError as e:
-        print(f"Skipping the creation of schema ({schema_name}) version ({VERSION})")
-        continue
+                if str(e.args[0]).endswith("already exists for this JSON schema"):
+                    continue
+                raise e
