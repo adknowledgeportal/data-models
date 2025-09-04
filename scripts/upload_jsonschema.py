@@ -27,8 +27,7 @@ def get_org(js: JsonSchemaService) -> JsonSchemaOrganization:
     Create or get the JsonSchemaOrganization for the given organization name.
     """
     try:
-        json_schema_org = js.JsonSchemaOrganization(ORG_NAME)
-        json_schema_org.create()
+        json_schema_org = js.create_organization(ORG_NAME)
     except SynapseHTTPError as e:
         if e.response.status_code == 400 and "already exists" in e.response.text:
             json_schema_org = js.JsonSchemaOrganization(ORG_NAME)
