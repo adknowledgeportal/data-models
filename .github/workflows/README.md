@@ -56,7 +56,7 @@ When a PR is merged
         F11 --> F12[Delay 60 seconds]
         F12 --> G{Is the PR closed?}
         
-        G -->|No| H[test job]
+        G --->|No| H[test job]
         G -->|Yes| G2{Was the PR merged?}
         
         G2 -->|No| Z2[Skip workflow]
