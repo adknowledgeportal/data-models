@@ -86,7 +86,7 @@ We are exploring better solutions to this problem -- if you have ideas, tell us!
 
 ## Automation
 
-For information on the automation and workflows configured for this repository, review the [workflow documentation](.github/workflows/README.md).
+For information on the automation and workflows configured for this repository, review the [CI/CD documentation](.github/workflows/README.md).
    
 ## Developing in a codespace
 

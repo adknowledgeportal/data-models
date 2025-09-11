@@ -1,19 +1,20 @@
-# Build Workflow
+# CI/CD Documentation
+## Build Workflow
 
-## Purpose
+### Purpose
 The `build` workflow is used to test and surface changes made to the data model as updated metadata templates in synapse.
 
-## Triggers
+### Triggers
 The `build` workflow runs whenever all of the following conditions are met:
 * a PR is open and targets the `main` branch
 * the PR indludes modifications to the files in the `modules` subdirectory
 * the PR is modified by either committing changes to the branch while the PR is open or by closing the PR
 
-## Necessary Actions from Contributors
+### Necessary Actions from Contributors
 The `build` workflow is designed to integrate seamlessly into the regular data model maintenance flow. When a PR targeting `main` is open and changes are committed, the changes will be tested through the creation of a google sheet of the appropriate manifest. A comment will be added to the PR discussion with a link to the sheet for inspection.
 When the pull request is merged, new excel files will be created for the modified data types and committed to `main`. These excel files will also be uploaded to the specified folder on Synapse.
 
-## Outputs
+### Outputs
 While a PR is open and under development
 * Test templates are created and linked in the PR comments
 
@@ -23,7 +24,7 @@ When a PR is merged
 * Modified excel templates are uploaded to synapse
 
 
-## Sequence Diagram
+### Sequence Diagram
 
 <details>
 
@@ -98,22 +99,22 @@ When a PR is merged
 </details>
 
 
-# Release Workflow
+## Release Workflow
 
-## Purpose
+### Purpose
 The `release` workflow is used to mint JSONSchema files for the data model as part of a release and register them on Synapse so that they may be bound to entities later.
 
-## Triggers
+### Triggers
 The `release` workflow runs whenever a relase of the data model is minted, that is, when a new version tag is pushed to the repository.
 
-## Necessary Actions from Contributors
+### Necessary Actions from Contributors
 Publish a new Release on github and specify a new tag.
 
-## Outputs
+### Outputs
 * All JSONSchema files are registered with the specified organization on Synapse under the new version tag
 
 
-## Sequence Diagram
+### Sequence Diagram
 
 <details>
 
