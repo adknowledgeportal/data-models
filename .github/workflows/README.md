@@ -36,7 +36,7 @@ When a PR is merged
     B -->|Commit Changes| C[PR synchronize trigger]
     B -->|Close PR| D[PR closed/merged trigger]
     
-    C --> E{Triggering actor != commit-to-main-bot?}
+    C --> E{Triggering actor<br>!=<br>commit-to-main-bot?}
     D --> E
     E -->|Yes| F[schema-convert job]
     E -->|No| Z1[Skip workflow]
@@ -124,7 +124,7 @@ Publish a new Release on github and specify a new tag.
     flowchart TD
     A[Create Git Tag] --> B[Push tag trigger]
     
-    B --> C{Triggering actor != commit-to-main-bot?}
+    B --> C{Triggering actor<br>!=<br>commit-to-main-bot?}
     C -->|Yes| D[release job]
     C -->|No| Z[Skip workflow]
     
