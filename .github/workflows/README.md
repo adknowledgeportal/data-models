@@ -45,7 +45,7 @@ When a PR is merged
         F --> F1[Create GitHub App Token]
         F1 --> F2[Checkout code with token]
         F2 --> F3[Setup Python 3.10]
-        F3 --> F4[Install libraries from requirements.txt]
+        F3 --> F4[Install libraries<br>from requirements.txt]
         F4 --> F5[List changed files for manifest testing]
         F5 --> F6[Assemble CSV data model]
         F6 --> F7[Commit CSV changes]
