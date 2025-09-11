@@ -33,55 +33,65 @@ When a PR is merged
 ```mermaid
 %%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff"}}}%%
     flowchart TD
-    A[Modify PR] --> B{Action Type}
-    B -->|Commit Changes| C[PR synchronize trigger]
-    B -->|Close PR| D[PR closed/merged trigger]
-    
-    C --> E{Triggering actor<br>!=<br>commit-to-main-bot?}
-    D --> E
-    E -->|Yes| F[schema-convert job]
-    E -->|No| Z1[Skip workflow]
-    
-    F --> F1[Create GitHub App Token]
-    F1 --> F2[Checkout code with token]
-    F2 --> F3[Setup Python 3.10]
-    F3 --> F4[Install libraries from requirements.txt]
-    F4 --> F5[List changed files for manifest testing]
-    F5 --> F6[Assemble CSV data model]
-    F6 --> F7[Commit CSV changes]
-    F7 --> F8[Convert CSV to JSON-LD]
-    F8 --> F9[Commit JSON-LD changes]
-    F9 --> F10[Identify changed manifests]
-    F10 --> F11[Save changed manifests to output]
-    F11 --> F12[Delay 60 seconds]
-    F12 --> G{Is the PR closed?}
-    
-    G -->|No| H[test job]
-    G -->|Yes| G2{Was the PR merged?}
-    
-    G2 -->|No| Z2[Skip workflow]
-    G2 -->|Yes| I[generate-and-upload-manifests job]
-    
-    H --> H1[Print changed manifests]
-    H1 --> H2[Create GitHub App Token]
-    H2 --> H3[Checkout code]
-    H3 --> H4[Setup Python 3.10]
-    H4 --> H5[Install libraries]
-    H5 --> H6[Generate test manifests]
-    H6 --> H7[Create Test Suite Report with Docker/R]
-    H7 --> H8[Report test suite as PR comment]
-    H8 --> H9[Upload test artifacts]
-    
-    I --> I1[Print changed manifests]
-    I1 --> I2[Create GitHub App Token]
-    I2 --> I3[Checkout main branch]
-    I3 --> I4[Setup Python 3.10]
-    I4 --> I5[Install libraries]
-    I5 --> I6[Generate changed manifests]
-    I6 --> I7[Commit manifests to main]
-    I7 --> I8[Generate JSONSchema]
-    I8 --> I9[Commit schemas to main]
-    I9 --> I10[Upload manifests to Synapse]
+        A[Modify PR] --> B{Action Type}
+        B -->|Commit Changes| C[PR synchronize trigger]
+        B -->|Close PR| D[PR closed/merged trigger]
+        
+        C --> E{Triggering actor<br>!=<br>commit-to-main-bot?}
+        D --> E
+        E -->|Yes| F[schema-convert job]
+        E -->|No| Z1[Skip workflow]
+        
+        F --> F1[Create GitHub App Token]
+        F1 --> F2[Checkout code with token]
+        F2 --> F3[Setup Python 3.10]
+        F3 --> F4[Install libraries from requirements.txt]
+        F4 --> F5[List changed files for manifest testing]
+        F5 --> F6[Assemble CSV data model]
+        F6 --> F7[Commit CSV changes]
+        F7 --> F8[Convert CSV to JSON-LD]
+        F8 --> F9[Commit JSON-LD changes]
+        F9 --> F10[Identify changed manifests]
+        F10 --> F11[Save changed manifests to output]
+        F11 --> F12[Delay 60 seconds]
+        F12 --> G{Is the PR closed?}
+        
+        G -->|No| H[test job]
+        G -->|Yes| G2{Was the PR merged?}
+        
+        G2 -->|No| Z2[Skip workflow]
+        G2 -->|Yes| I[generate-and-upload-manifests job]
+        
+        H --> H1[Print changed manifests]
+        H1 --> H2[Create GitHub App Token]
+        H2 --> H3[Checkout code]
+        H3 --> H4[Setup Python 3.10]
+        H4 --> H5[Install libraries]
+        H5 --> H6[Generate test manifests]
+        H6 --> H7[Create Test Suite Report with Docker/R]
+        H7 --> H8[Report test suite as PR comment]
+        H8 --> H9[Upload test artifacts]
+        
+        I --> I1[Print changed manifests]
+        I1 --> I2[Create GitHub App Token]
+        I2 --> I3[Checkout main branch]
+        I3 --> I4[Setup Python 3.10]
+        I4 --> I5[Install libraries]
+        I5 --> I6[Generate changed manifests]
+        I6 --> I7[Commit manifests to main]
+        I7 --> I8[Generate JSONSchema]
+        I8 --> I9[Commit schemas to main]
+        I9 --> I10[Upload manifests to Synapse]
+    subgraph Legend
+        direction TB
+        triggers[Triggers]
+        jobs[Jobs]
+        outputs[Outputs]
+        triggers ~~~ jobs ~~~ outputs
+        style triggers fill:#ffeb3b,stroke-width:0px
+        style jobs fill:#e3f2fd,stroke-width:0px
+        style outputs fill:#4caf50,stroke-width:0px
+    end
     
     style A fill:#ffeb3b
     style C fill:#ffeb3b
@@ -134,6 +144,16 @@ Publish a new Release on github and specify a new tag.
     D2 --> D3[Setup Python 3.10]
     D3 --> D4[Install libraries from requirements.txt]
     D4 --> D5[Register JSONSchema to Synapse]
+    subgraph Legend
+        direction TB
+        triggers[Triggers]
+        jobs[Jobs]
+        outputs[Outputs]
+        triggers ~~~ jobs ~~~ outputs
+        style triggers fill:#ffeb3b,stroke-width:0px
+        style jobs fill:#e3f2fd,stroke-width:0px
+        style outputs fill:#4caf50,stroke-width:0px
+    end
     
     style A fill:#ffeb3b
     style B fill:#ffeb3b
