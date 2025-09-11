@@ -101,6 +101,7 @@ When a PR is merged
     style I fill:#e3f2fd
     style F7 fill:#4caf50
     style F9 fill:#4caf50
+    style H8 fill:#4caf50
     style H9 fill:#4caf50
     style I7 fill:#4caf50
     style I9 fill:#4caf50
