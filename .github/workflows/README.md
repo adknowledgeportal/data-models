@@ -142,7 +142,7 @@ Publish a new Release on github and specify a new tag.
     D --> D1[Create GitHub App Token]
     D1 --> D2[Checkout main branch]
     D2 --> D3[Setup Python 3.10]
-    D3 --> D4[Install libraries from requirements.txt]
+    D3 --> D4[Install libraries<br>from requirements.txt]
     D4 --> D5[Register JSONSchema to Synapse]
     subgraph Legend
         direction TB
