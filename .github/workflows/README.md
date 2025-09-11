@@ -46,7 +46,7 @@ When a PR is merged
         F1 --> F2[Checkout code with token]
         F2 --> F3[Setup Python 3.10]
         F3 --> F4[Install libraries<br>from requirements.txt]
-        F4 --> F5[List changed files for manifest testing]
+        F4 --> F5[List changed files<br>for manifest testing]
         F5 --> F6[Assemble CSV data model]
         F6 --> F7[Commit CSV changes]
         F7 --> F8[Convert CSV to JSON-LD]
