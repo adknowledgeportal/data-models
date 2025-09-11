@@ -30,7 +30,7 @@ When a PR is merged
 <summary>Mermaid Chart</summary>
 
 ```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px"}}}%%
+%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff"}}}%%
     flowchart TD
     A[Modify PR] --> B{Action Type}
     B -->|Commit Changes| C[PR synchronize trigger]
@@ -120,7 +120,7 @@ Publish a new Release on github and specify a new tag.
 <summary>Mermaid Chart</summary>
 
 ```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px"}}}%%
+%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff"}}}%%
     flowchart TD
     A[Create Git Tag] --> B[Push tag trigger]
     
