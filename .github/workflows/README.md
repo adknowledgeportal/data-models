@@ -64,7 +64,7 @@ When a PR is merged
         
         H --> H1[Print changed manifests]
         H1 --> H2[Create GitHub App Token]
-        H2 --> H3[Checkout code]
+        H2 --> H3[Checkout<br>development branch]
         H3 --> H4[Setup Python 3.10]
         H4 --> H5[Install libraries]
         H5 --> H6[Generate test manifests]
