@@ -13,7 +13,7 @@ The `build` workflow runs whenever all of the following conditions are met:
 The `build` workflow is designed to integrate seamlessly into the regular data model maintenance flow. When a PR targeting `main` is open and changes are committed, the changes will be tested through the creation of a google sheet of the appropriate manifest. A comment will be added to the PR discussion with a link to the sheet for inspection.
 When the pull request is merged, new excel files will be created for the modified data types and committed to `main`. These excel files will also be uploaded to the specified folder on Synapse.
 
-## Results
+## Outputs
 While a PR is open and under development
 * Test templates are created and linked in the PR comments
 
@@ -22,12 +22,19 @@ When a PR is merged
 * All JSONSchema files are generated and committed to `main`
 * Modified excel templates are uploaded to synapse
 
+
 ## Sequence Diagram
+
+<details>
+
+<summary>Mermaid Chart</summary>
+
 ```mermaid
+%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px"}}}%%
     flowchart TD
     A[Modify PR] --> B{Action Type}
     B -->|Commit Changes| C[PR synchronize trigger]
-    B -->|Merge PR| D[PR closed/merged trigger]
+    B -->|Close PR| D[PR closed/merged trigger]
     
     C --> E{Triggering actor != commit-to-main-bot?}
     D --> E
@@ -88,6 +95,8 @@ When a PR is merged
     style I9 fill:#4caf50
     style I10 fill:#4caf50
 ```
+</details>
+
 
 # Release Workflow
 
@@ -100,14 +109,20 @@ The `release` workflow runs whenever a relase of the data model is minted, that 
 ## Necessary Actions from Contributors
 Publish a new Release on github and specify a new tag.
 
-## Results
+## Outputs
 * All JSONSchema files are registered with the specified organization on Synapse under the new version tag
 
-## Sequenc Diagram
+
+## Sequence Diagram
+
+<details>
+
+<summary>Mermaid Chart</summary>
 
 ```mermaid
+%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px"}}}%%
     flowchart TD
-    A[Create Git Tag v*.*.*] --> B[Push tag trigger]
+    A[Create Git Tag] --> B[Push tag trigger]
     
     B --> C{Triggering actor != commit-to-main-bot?}
     C -->|Yes| D[release job]
@@ -124,3 +139,4 @@ Publish a new Release on github and specify a new tag.
     style D fill:#e3f2fd
     style D5 fill:#4caf50
 ```
+</details>
