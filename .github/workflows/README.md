@@ -35,7 +35,7 @@ When a PR is merged
     flowchart TD
         A[Modify PR] --> B{Action Type}
         B -->|Commit Changes| C[PR synchronize trigger]
-        B -->|Close PR| D[PR closed/merged trigger]
+        B -->|Close PR| D[PR closed trigger]
         
         C --> E{Triggering actor<br>!=<br>commit-to-main-bot?}
         D --> E
