@@ -108,5 +108,3 @@ Codespace secrets:
 
 ## Legacy data models:
 Previous versions of the data model live in the `legacy-data-models/` folder. This include the Diverse Cohorts pilot model and the intial "legacy" model representing the AD Portal Synapse project metadata dictionary and metadata templates from August 2023. These are not being used by DCA.
-
-bloop [trivial change to test workflow, DELETE AFTER WORKFLOW TEST 9/27 15:56 EST] [ADDING AN ADDENDUM TO TRIVIAL UPDATE AT 18:00]
