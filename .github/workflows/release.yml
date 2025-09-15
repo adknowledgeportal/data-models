@@ -30,7 +30,7 @@ jobs:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
           clean: false
-          ref: 'refs/heads/test-main'
+          ref: 'refs/heads/main'
 
       - uses: actions/setup-python@v4 
         with:
