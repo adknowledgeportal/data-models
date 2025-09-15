@@ -24,11 +24,11 @@ When a PR is merged
 * Modified excel templates are uploaded to synapse
 
 
-### Sequence Diagram
+### Diagrams
 
 <details>
 
-<summary>Mermaid Chart</summary>
+<summary>Mermaid diagram for build workflow</summary>
 
 ```mermaid
 %%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff"}}}%%
@@ -125,11 +125,11 @@ Publish a new Release on github and specify a new tag.
 * All JSONSchema files are registered with the specified organization on Synapse under the new version tag
 
 
-### Sequence Diagram
+### Diagrams
 
 <details>
 
-<summary>Mermaid Chart</summary>
+<summary>Mermaid diagram for release workflow</summary>
 
 ```mermaid
 %%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff"}}}%%
