@@ -5,7 +5,7 @@ on:
     types:
       - opened
       - synchronize
-      - closed
+      - labeled
     branches:
       - 'main'
     paths:
@@ -93,7 +93,6 @@ jobs:
           done
           
   test:
-    if: github.event.pull_request.merged == false
     runs-on: ubuntu-latest
     needs: [schema-convert]
     env:
@@ -148,9 +147,22 @@ jobs:
           name: test-logs
           path: tests
 
+  merge:
+    needs: [schema-convert]
+    if: contains(github.event.pull_request.labels.*.name, 'automerge')
+    runs-on: ubuntu-latest
+    steps:
+      - id: merge-and-delete
+        uses: "pascalgn/automerge-action@v0.16.4"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_LABELS: "automerge"
+          MERGE_DELETE_BRANCH: "true"
+          MERGE_METHOD: "squash"
+          BASE_BRANCHES: "main"
 
   generate-and-upload-manifests:
-    needs: [schema-convert]
+    needs: [schema-convert, merge]
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
