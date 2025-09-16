@@ -222,7 +222,7 @@ jobs:
 
       - name: Generate JSONSchema
         shell: bash
-        run: schematic schema generate-jsonschema -dms AD.model.jsonld -od current-manifest-schemas -dml display_label
+        run: schematic schema generate-jsonschema -dms AD.model.jsonld -od current-manifest-schemas
 
       - name: Commit schemas to main
         uses: EndBug/add-and-commit@v9
