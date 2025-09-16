@@ -16,7 +16,7 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
-      SYNAPSE_ORGANIZATION: "adkp.repo.test.org"
+      SYNAPSE_ORGANIZATION: "sage.schemas.v2571"
       RELEASE_TAG: ${{ github.event.release.tag_name }}
     steps:
       - uses: actions/create-github-app-token@v2
