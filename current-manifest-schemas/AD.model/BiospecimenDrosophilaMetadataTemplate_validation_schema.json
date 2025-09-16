@@ -1,0 +1,160 @@
+{
+  "$id": "http://example.com/BiospecimenDrosophilaMetadataTemplate_validation",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "SysBio drosophila biospecimen metadata template schema",
+  "properties": {
+    "AgeDays": {
+      "description": "Average age in days of the Drosophila individuals in the sample",
+      "oneOf": [
+        {
+          "title": "number",
+          "type": "number"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "ageDays"
+    },
+    "BodyPart": {
+      "description": "Named areas of the body.",
+      "oneOf": [
+        {
+          "enum": [
+            "brain",
+            "head"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "bodyPart"
+    },
+    "Component": {
+      "description": "TBD",
+      "title": "Component"
+    },
+    "Genotype": {
+      "description": "Genotype common name",
+      "title": "genotype",
+      "type": "string"
+    },
+    "NFemale": {
+      "description": "Number of female individuals in a pooled Drosophila sample",
+      "oneOf": [
+        {
+          "title": "integer",
+          "type": "integer"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "nFemale"
+    },
+    "NIndividuals": {
+      "description": "Number of individuals in a pooled Drosophila sample",
+      "oneOf": [
+        {
+          "title": "integer",
+          "type": "integer"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "nIndividuals"
+    },
+    "NMale": {
+      "description": "Number of male individuals in a pooled Drosophila sample",
+      "oneOf": [
+        {
+          "title": "integer",
+          "type": "integer"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "nMale"
+    },
+    "NucleicAcidSource": {
+      "description": "TBD",
+      "oneOf": [
+        {
+          "enum": [
+            "bulk cell",
+            "bulk nuclei",
+            "cfDNA",
+            "mitochondria",
+            "not applicable",
+            "single cell",
+            "single nucleus",
+            "sorted cells",
+            "sorted nuclei"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "nucleicAcidSource"
+    },
+    "SpecimenID": {
+      "description": "Identifying string linked to a particular sample or specimen",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "specimenID"
+    },
+    "Temperature": {
+      "description": "Temperature in Celsius (C) relevant to specimen or experimental condition",
+      "oneOf": [
+        {
+          "title": "number",
+          "type": "number"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "temperature"
+    },
+    "TissueWeight": {
+      "description": "Mass of tissue specimen in mg",
+      "oneOf": [
+        {
+          "title": "number",
+          "type": "number"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "tissueWeight"
+    }
+  },
+  "required": [
+    "Genotype"
+  ],
+  "title": "BiospecimenDrosophilaMetadataTemplate_validation",
+  "type": "object"
+}

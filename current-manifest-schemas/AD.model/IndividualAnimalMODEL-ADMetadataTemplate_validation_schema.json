@@ -1,0 +1,466 @@
+{
+  "$id": "http://example.com/IndividualAnimalMODEL-ADMetadataTemplate_validation",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "individual animal metadata template schema for MODEL-AD Consortium",
+  "properties": {
+    "AgeDeath": {
+      "description": "Age of death (note that ages > 89 must be censored to \"90+\")",
+      "title": "ageDeath",
+      "type": "number"
+    },
+    "AgeDeathUnits": {
+      "description": "The death age unit of measure",
+      "oneOf": [
+        {
+          "enum": [
+            "PCW",
+            "days",
+            "gestational weeks",
+            "months",
+            "weeks",
+            "years"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "ageDeathUnits"
+    },
+    "Bedding": {
+      "description": "Rodent bedding material",
+      "oneOf": [
+        {
+          "enum": [
+            "Alpha-dri",
+            "aspen",
+            "aspen sanichip",
+            "corn cob",
+            "pine",
+            "sanichip"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "bedding"
+    },
+    "BirthID": {
+      "description": "Identifying string linked to a particular animal",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "birthID"
+    },
+    "BrainWeight": {
+      "description": "Weight of brain in grams. Use missing or unknown if not available",
+      "oneOf": [
+        {
+          "title": "number",
+          "type": "number"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "brainWeight"
+    },
+    "ClimbID": {
+      "description": "Identifying string linked to an animal in Climb database",
+      "title": "climbID",
+      "type": "string"
+    },
+    "Component": {
+      "description": "TBD",
+      "title": "Component"
+    },
+    "DateBirth": {
+      "description": "Individual date of birth",
+      "title": "dateBirth",
+      "type": "string"
+    },
+    "Generation": {
+      "description": "Rodent generation",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "generation"
+    },
+    "Genotype": {
+      "description": "Genotype common name",
+      "title": "genotype",
+      "type": "string"
+    },
+    "GenotypeBackground": {
+      "description": "Genetic background of the model",
+      "title": "genotypeBackground",
+      "type": "string"
+    },
+    "IndividualID": {
+      "description": "Identifying string linked to the individual or animal being studied",
+      "title": "individualID",
+      "type": "string"
+    },
+    "IndividualIdSource": {
+      "description": "Database or repository to which individual ID maps",
+      "oneOf": [
+        {
+          "enum": [
+            "ABN",
+            "ABR",
+            "ADNI",
+            "AIBS",
+            "BEB_Miller",
+            "BannerSun",
+            "Caltech",
+            "Clotomics_PAIKEA_MSSM",
+            "DongLab",
+            "Einstein",
+            "Emory",
+            "Geschwind",
+            "HBSFRC",
+            "HBTRC",
+            "IU",
+            "JAX",
+            "LIBD",
+            "LivingBrainProject_MSSM",
+            "MSSM",
+            "Mayo Clinic",
+            "MayoBrainBank",
+            "Michigan University",
+            "NACC",
+            "NDRI",
+            "NICHD",
+            "NIMH-HBCC",
+            "NYBB",
+            "Newcastle",
+            "Novogenix",
+            "Oxford",
+            "PGP",
+            "Penn",
+            "Pitt",
+            "Pritzker",
+            "Rush",
+            "SMRI",
+            "Sestan",
+            "StemExpress",
+            "TAA",
+            "UCI_TMF",
+            "UCSF",
+            "UM-BTB",
+            "UW-CDL",
+            "University of Florida",
+            "University of Miami",
+            "Vaccarino",
+            "Washington University",
+            "XCell Science",
+            "Yale"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "individualIdSource"
+    },
+    "MaterialOrigin": {
+      "description": "Facility where sample was collected",
+      "oneOf": [
+        {
+          "enum": [
+            "IU",
+            "JAX",
+            "Pitt",
+            "UCI_TMF"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "materialOrigin"
+    },
+    "MatingID": {
+      "description": "Identifies the animals that were mated to produce the animal in question",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "matingID"
+    },
+    "MicrochipID": {
+      "description": "Identifying string of p-chip implanted in the animal being studied",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "microchipID"
+    },
+    "ModelSystemName": {
+      "description": "TBD",
+      "oneOf": [
+        {
+          "enum": [
+            "3xTg-AD",
+            "5XFAD",
+            "AB42",
+            "APOE2KI",
+            "APOE3KI",
+            "APOE4KI",
+            "APOE4Trem2R47H",
+            "APPE693Q",
+            "APPKM650",
+            "APPKM670",
+            "APPKM670-671NL-PSEN1deltaexon9",
+            "APPPS1",
+            "APPS1_Plexin-B1-KO",
+            "Abca7A1527GAPOE4Trem2R47H",
+            "Abca7KO",
+            "Abca7V1599M_rs117187003",
+            "Abi3S209F_Aduci",
+            "ApoEKO",
+            "AppKOAPOE4Trem2R47H",
+            "B6.Clu",
+            "B6.Gfap-APOE4",
+            "BRI2-AB42",
+            "Bin1.B6",
+            "Bin1K358R_Aduci",
+            "C57BL6J",
+            "CRND8",
+            "Cd2ap.B6",
+            "Ceacam1KO",
+            "Clasp2L163PSNP",
+            "Il1rapKO",
+            "Kif21bT82TSNP",
+            "MAPT-P301K",
+            "Meox2KOHET",
+            "MthfrC677TSNP",
+            "Mtmr4V297GSNP",
+            "PicalmH458R",
+            "Plcg2KO",
+            "Plcg2M28LSNP",
+            "Plexin-B1-KO",
+            "Snx1D465NSNP",
+            "Sorl1A528TSNP",
+            "Spi1rs1377416",
+            "TAUPS19",
+            "TAUPS19_Plexin-B1-KO",
+            "TREM2",
+            "TYROBP",
+            "TYROBP_KO.KO",
+            "TYROBP_WT",
+            "TYROBP_WT.KO",
+            "Trem2KO",
+            "Trem2R47H",
+            "Trem2R47H_NSS",
+            "Trem2Y38C",
+            "Trem2flox",
+            "hAPPAPOE4Trem2R47H",
+            "hAbetaKI",
+            "hCR1KIAPOE4Trem2",
+            "hTau",
+            "hTauTrem2",
+            "rTg4510"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "modelSystemName"
+    },
+    "RodentDiet": {
+      "description": "Laboratory rodent diet",
+      "oneOf": [
+        {
+          "enum": [
+            "4% standard",
+            "45% high-fat diet",
+            "5W80 western diet",
+            "6% standard",
+            "7% standard"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "rodentDiet"
+    },
+    "RodentWeight": {
+      "description": "Weight of animal in grams.",
+      "oneOf": [
+        {
+          "title": "number",
+          "type": "number"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "rodentWeight"
+    },
+    "Room": {
+      "description": "Room the animal was housed in",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "room"
+    },
+    "Sex": {
+      "description": "Sex assigned at birth, or by sequencing",
+      "oneOf": [
+        {
+          "enum": [
+            "female",
+            "male",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "sex"
+    },
+    "Species": {
+      "description": "The name of a species (typically a taxonomic group) of organism.",
+      "oneOf": [
+        {
+          "enum": [
+            "Drosophila melanogaster",
+            "Gallus gallus",
+            "Human",
+            "Mouse",
+            "Pan troglodytes",
+            "Rat",
+            "Rhesus macaque",
+            "Sus scrofa"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "species"
+    },
+    "StockNumber": {
+      "description": " JAX stock #",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "stockNumber"
+    },
+    "StrainOfficialName": {
+      "description": "000664  mouse is C57BL/6J",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "strainOfficialName"
+    },
+    "TreatmentDose": {
+      "description": "Dose of treatment used, including units and timeframe",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "treatmentDose"
+    },
+    "TreatmentType": {
+      "description": "TBD",
+      "oneOf": [
+        {
+          "enum": [
+            "Abeta42 fibril",
+            "Abeta42 oligomer",
+            "Control",
+            "clozapine",
+            "cuprizone",
+            "haloperidol",
+            "levetiracetam",
+            "placebo",
+            "verubecestat"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "treatmentType"
+    },
+    "WaterpH": {
+      "description": "pH of water fed to the animal",
+      "oneOf": [
+        {
+          "title": "number",
+          "type": "number"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "waterpH"
+    }
+  },
+  "required": [
+    "AgeDeath",
+    "AgeDeathUnits",
+    "Bedding",
+    "ClimbID",
+    "DateBirth",
+    "Genotype",
+    "GenotypeBackground",
+    "IndividualID",
+    "IndividualIdSource",
+    "MaterialOrigin",
+    "ModelSystemName",
+    "RodentDiet",
+    "Sex",
+    "Species"
+  ],
+  "title": "IndividualAnimalMODEL-ADMetadataTemplate_validation",
+  "type": "object"
+}

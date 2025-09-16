@@ -1,0 +1,697 @@
+{
+  "$id": "http://example.com/NeuropathMetadataTemplate_validation",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "SysBio neuropath metadata template schema",
+  "properties": {
+    "ADNC": {
+      "description": "ADNC severity score",
+      "oneOf": [
+        {
+          "enum": [
+            "High",
+            "Intermediate",
+            "Low",
+            "Not AD",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "ADNC"
+    },
+    "AMYA": {
+      "description": "A Score",
+      "oneOf": [
+        {
+          "enum": [
+            "No A Score",
+            "Thal Phase 1 or 2",
+            "Thal Phase 3",
+            "Thal Phase 4 or 5",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "AMY_A"
+    },
+    "AMYANY": {
+      "description": "Any amyloid presence",
+      "oneOf": [
+        {
+          "enum": [
+            "Amyloid Present",
+            "No amyloid presence",
+            "Some Amyloid",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "AMY_ANY"
+    },
+    "AMYTHAL": {
+      "description": "Thal Phase",
+      "oneOf": [
+        {
+          "enum": [
+            "No Thal Phase",
+            "Phase 1",
+            "Phase 2",
+            "Phase 3",
+            "Phase 4",
+            "Phase 5",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "AMY_THAL"
+    },
+    "AltHSS": {
+      "description": "alternative Hippocampal sclerosis (simplified). Infarcted and minimal or focal neuronal loss in the Hippocampus is most often associated with TDP-43 so it will be not considered as presence of Hippocampal sclerosis. Neuronal loss epilepsy-related (endplate) or Lewy-related (CA2) will be not considered as presence of Hippocampal sclerosis.",
+      "oneOf": [
+        {
+          "enum": [
+            "Absence",
+            "Presence",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "alt_HS_S"
+    },
+    "AltLEWYFull": {
+      "description": "PD Braak staging alternate version",
+      "oneOf": [
+        {
+          "enum": [
+            "Amygdala only",
+            "Brainstem predominant",
+            "Limbic transitional",
+            "Neocortical diffuse",
+            "No alt_LEWY_full",
+            "Olfactory bulb only",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "alt_LEWY_full"
+    },
+    "BSCORE": {
+      "description": "B score",
+      "oneOf": [
+        {
+          "enum": [
+            "BRAAK Stage 1-2",
+            "BRAAK Stage 3-4",
+            "BRAAK Stage 5-6",
+            "No B score",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "B_SCORE"
+    },
+    "Braak": {
+      "description": "Braak Stage - a semiquantitative measure of serverity of neurofibrillary tangle pathology",
+      "oneOf": [
+        {
+          "enum": [
+            "BRAAK Stage 1",
+            "BRAAK Stage 2",
+            "BRAAK Stage 3",
+            "BRAAK Stage 4",
+            "BRAAK Stage 5",
+            "BRAAK Stage 6",
+            "No BRAAK stage",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "Braak"
+    },
+    "BrainWeight": {
+      "description": "Weight of brain in grams. Use missing or unknown if not available",
+      "oneOf": [
+        {
+          "title": "number",
+          "type": "number"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "brainWeight"
+    },
+    "CDLB": {
+      "description": "Likelihood of Lewy Body clinical syndrome reported based on Third report of the DLB Consortium",
+      "oneOf": [
+        {
+          "enum": [
+            "High",
+            "Intermediate",
+            "Low or No clinical significance",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "CDLB"
+    },
+    "CERAD": {
+      "description": "A semiquantitative measure of neuritic plaques",
+      "oneOf": [
+        {
+          "enum": [
+            "Frequent Definite C3",
+            "Moderate Probable C2",
+            "No AD C0",
+            "Sparse Possible C1",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "CERAD"
+    },
+    "CVDART": {
+      "description": "Arteriolosclerosis",
+      "oneOf": [
+        {
+          "enum": [
+            "Mild",
+            "Moderate",
+            "No CVD_ART",
+            "Severe",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "CVD_ART"
+    },
+    "CVDARTANY": {
+      "description": "Arteriolosclerosis (dichotomous)",
+      "oneOf": [
+        {
+          "enum": [
+            "Mild or Moderate or Severe",
+            "No CVD_ART_ANY",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "CVD_ART_ANY"
+    },
+    "CVDATH": {
+      "description": "Atherosclerosis",
+      "oneOf": [
+        {
+          "enum": [
+            "Mild",
+            "Moderate",
+            "No CVD_ATH",
+            "Severe",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "CVD_ATH"
+    },
+    "CVDATHANY": {
+      "description": "Atherosclerosis (dichotomous)",
+      "oneOf": [
+        {
+          "enum": [
+            "Mild or Moderate or Severe",
+            "No CVD_ATH_ANY",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "CVD_ATH_ANY"
+    },
+    "CVDCAA": {
+      "description": "Cerebral Amyloid Angiopathy (CAA)",
+      "oneOf": [
+        {
+          "enum": [
+            "Mild",
+            "Moderate",
+            "No CVD_CAA",
+            "Severe",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "CVD_CAA"
+    },
+    "CVDCAAANY": {
+      "description": "Cerebral Amyloid Angiopathy (CAA) (dichotomous)",
+      "oneOf": [
+        {
+          "enum": [
+            "Mild or Moderate or Severe",
+            "No CVD_CAA_ANY",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "CVD_CAA_ANY"
+    },
+    "CVDS": {
+      "description": "Cerebrovascular Disease (simplified). Composite variable indicating whether at least one of the contributing indicators (CVD_ATH_ANY CVD_ART_ANY CVD_CAA_ANY) are 1 else if at least one contributing indicator was evaluated as 0 CVD_S is 0 only missing if all indicators are missing.",
+      "oneOf": [
+        {
+          "enum": [
+            "No CVD_S",
+            "Presence",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "CVD_S"
+    },
+    "Component": {
+      "description": "TBD",
+      "title": "Component"
+    },
+    "ConservationMethod": {
+      "description": "The conservation method",
+      "oneOf": [
+        {
+          "enum": [
+            "both fixed and frozen tissue",
+            "fixed tissues only",
+            "frozen tissue only",
+            "missing or unknown",
+            "noConservation"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "conservationMethod"
+    },
+    "HEMOR": {
+      "description": "Hemorrhages",
+      "oneOf": [
+        {
+          "enum": [
+            "missing or unknown",
+            "no",
+            "yes"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "HEMOR"
+    },
+    "HSL": {
+      "description": "Hippocampal sclerosis (with laterality)",
+      "oneOf": [
+        {
+          "enum": [
+            "Bilateral",
+            "No HS_L",
+            "Present Location UK",
+            "Unilateral",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "HS_L"
+    },
+    "HSS": {
+      "description": "Hippocampal sclerosis (with simplified)",
+      "oneOf": [
+        {
+          "enum": [
+            "missing or unknown",
+            "no",
+            "yes"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "HS_S"
+    },
+    "INFA": {
+      "description": "Infarcts and lacunes. Reports of anoxic ischemic injury will not be considered within the infarcts and lacunes lesions",
+      "oneOf": [
+        {
+          "enum": [
+            "missing or unknown",
+            "no",
+            "yes"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "INFA"
+    },
+    "INT": {
+      "description": "Interval between last exam and death (unit in months). Use missing or unknown if not available",
+      "not": {
+        "type": "null"
+      },
+      "title": "INT"
+    },
+    "IndividualID": {
+      "description": "Identifying string linked to the individual or animal being studied",
+      "title": "individualID",
+      "type": "string"
+    },
+    "LEWYANY": {
+      "description": "LBD grouped and PD Braak grouped dichotomous",
+      "oneOf": [
+        {
+          "enum": [
+            "Brainstem or transitional or diffuse or region unspecified group",
+            "No LEWY_ANY or olfactory bulb or amygdala predominant group",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "LEWY_ANY"
+    },
+    "LEWYFull": {
+      "description": "PD Braak Staging",
+      "oneOf": [
+        {
+          "enum": [
+            "Brainstem predominant",
+            "Limbic amygdala transitional",
+            "Neocortical diffuse",
+            "No LEWY_full",
+            "Olfactory bulb or Region unspecified",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "LEWY_full"
+    },
+    "LEWYGrp": {
+      "description": "Kosaka LBD subtypes grouped and PD Braak grouped",
+      "oneOf": [
+        {
+          "enum": [
+            "Brainstem predominant group",
+            "No LEWY_grp or olfactory bulb or amygdala predominant group",
+            "Transitional or diffuse or region unspecified group",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "LEWY_grp"
+    },
+    "MICR": {
+      "description": "Microinfarcts",
+      "oneOf": [
+        {
+          "enum": [
+            "missing or unknown",
+            "no",
+            "yes"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "MICR"
+    },
+    "MayoDx": {
+      "description": "Neuropathology-based diagnosis assigned by Mayo neurologist",
+      "oneOf": [
+        {
+          "enum": [
+            "AD",
+            "Control",
+            "missing or unknown",
+            "other"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "mayoDx"
+    },
+    "PMI": {
+      "description": "Post-mortem interval (unit in hours). Use missing or unknown if not available",
+      "title": "PMI",
+      "type": "string"
+    },
+    "PmiUnits": {
+      "description": "Time units used to record the post-mortem interval",
+      "oneOf": [
+        {
+          "enum": [
+            "hours",
+            "minutes"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "pmiUnits"
+    },
+    "REAG": {
+      "description": "NIA-REAGEN criteria for AD",
+      "oneOf": [
+        {
+          "enum": [
+            "High Likelihood",
+            "Intermediate Likelihood",
+            "Low likelihood",
+            "No AD",
+            "Other or Does not fulfill NIA-REAGEN criteria",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "REAG"
+    },
+    "TDP3": {
+      "description": "TDP-3 Component",
+      "oneOf": [
+        {
+          "enum": [
+            "Hippocampus or Etorhinal",
+            "Neocortex",
+            "No TDP_3",
+            "amygdala",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "TDP_3"
+    },
+    "TDP43": {
+      "description": "TDP Whole Brain (dichotomous). Calculated using the categories in TDP_3 - if any of the amygdala hippocampus entorhinal or neocortex are positive it is yes. If assessed and negative for the above it is no",
+      "oneOf": [
+        {
+          "enum": [
+            "missing or unknown",
+            "no",
+            "yes"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "TDP43"
+    },
+    "TDP5": {
+      "description": "TDP Stage; Assumes that TDP progresses from brainstem>amygdala>hippocampus>inferior temporal cortex>neocortex",
+      "oneOf": [
+        {
+          "enum": [
+            "Brainstem/Spinal Cord",
+            "Entorhinal",
+            "Neocortex",
+            "No TDP_5",
+            "amygdala",
+            "hippocampus",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "TDP_5"
+    },
+    "WBVD": {
+      "description": "Whole brain vascular disease",
+      "oneOf": [
+        {
+          "enum": [
+            "missing or unknown",
+            "no",
+            "yes"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "WBVD"
+    },
+    "WMR": {
+      "description": "white matter rarefaction",
+      "oneOf": [
+        {
+          "enum": [
+            "Absent",
+            "Mild",
+            "Moderate",
+            "Severe",
+            "missing or unknown"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "WMR"
+    },
+    "WMRCAL": {
+      "description": "White matter rarefaction (cerebral arteriosclerotic leukoencephalopathy). Simplified version to combine WMR (v10+ of NACC) and ART (LOAD Spanish cohort NACC <=v9 and more)",
+      "oneOf": [
+        {
+          "enum": [
+            "missing or unknown",
+            "no",
+            "yes"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "WMRCAL"
+    }
+  },
+  "required": [
+    "ADNC",
+    "AMYA",
+    "AMYANY",
+    "AMYTHAL",
+    "BSCORE",
+    "Braak",
+    "CERAD",
+    "ConservationMethod",
+    "INT",
+    "IndividualID",
+    "PMI",
+    "PmiUnits",
+    "REAG"
+  ],
+  "title": "NeuropathMetadataTemplate_validation",
+  "type": "object"
+}

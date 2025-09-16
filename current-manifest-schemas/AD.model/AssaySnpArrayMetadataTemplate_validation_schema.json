@@ -1,0 +1,327 @@
+{
+  "$id": "http://example.com/AssaySnpArrayMetadataTemplate_validation",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "SysBio snpArray metadata template schema",
+  "properties": {
+    "ArrayBatch": {
+      "description": "The hybridization batch the sample was in",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "arrayBatch"
+    },
+    "Assay": {
+      "description": "The technology used to generate the data in this file",
+      "oneOf": [
+        {
+          "enum": [
+            "10x multiome",
+            "16SrRNAseq",
+            "ATACSeq",
+            "Baker Lipidomics",
+            "Biocrates Bile Acids",
+            "Biocrates MxP Quant500 XL",
+            "Biocrates Q500",
+            "Biocrates p180",
+            "Blood Chemistry Measurement",
+            "CITESeq",
+            "CUT&Tag",
+            "ChIPSeq",
+            "DIA",
+            "DNA optical mapping",
+            "ELISA",
+            "FIA-MSMS",
+            "FitBark",
+            "Genotyping",
+            "HI-C",
+            "HPLC",
+            "HPLC-MSMS",
+            "HiChIPseq",
+            "ISOSeq",
+            "Illumina EPIC Array",
+            "Immunocytochemistry",
+            "LC-MS",
+            "LC-MSMS",
+            "LC-SRM",
+            "LFP",
+            "LTP",
+            "Laser Speckle Imaging",
+            "Leiden Oxylipins",
+            "MDMS-SL",
+            "MIB/MS",
+            "MRI",
+            "Metabolon",
+            "MudPIT",
+            "NOMe-Seq",
+            "Nightingale NMR",
+            "Positron Emission Tomography",
+            "RPPA",
+            "RRBS",
+            "Rader Lipidomics",
+            "Real Time PCR",
+            "Ribo-Seq",
+            "STARRSeq",
+            "Sanger sequencing",
+            "SiMoA",
+            "TMT quantitation",
+            "TotalRNAseq",
+            "UC Davis GCTOF",
+            "UCSD Untargeted Metabolomics",
+            "UPLC-ESI-QTOF-MS",
+            "UPLC-MSMS",
+            "Vernier Caliper",
+            "Wishart Catecholamines",
+            "Wishart High Value Metabolites",
+            "Zeno Electronic Walkway",
+            "active avoidance learning behavior",
+            "anxiety-related behavior",
+            "atomicForceMicroscopy",
+            "autoradiography",
+            "bisulfiteSeq",
+            "brightfieldMicroscopy",
+            "cellViabilityAssay",
+            "contextual conditioning behavior",
+            "electrochemiluminescence",
+            "elevated T maze apparatus method",
+            "elevated plus maze test",
+            "errBisulfiteSeq",
+            "exomeSeq",
+            "frailty assessment",
+            "high content screen",
+            "immunofluorescence",
+            "immunohistochemistry",
+            "in vivo bioluminescence",
+            "jumpingLibrary",
+            "kinesthetic behavior",
+            "label free mass spectrometry",
+            "lentiMPRA",
+            "liquid chromatography-electrochemical detection",
+            "lncrnaSeq",
+            "locomotor activation behavior",
+            "long-read rnaSeq",
+            "m6A-rnaSeq",
+            "mRNAcounts",
+            "mRNAseq",
+            "memory behavior",
+            "methylationArray",
+            "microRNAcounts",
+            "mirnaArray",
+            "mirnaSeq",
+            "nextGenerationTargetedSequencing",
+            "novelty response behavior",
+            "open field test",
+            "oxBS-Seq",
+            "pharmacodynamics",
+            "pharmacokinetics",
+            "photograph",
+            "polymeraseChainReaction",
+            "proximity extension assay",
+            "questionnaire",
+            "rnaArray",
+            "rnaSeq",
+            "rotarod performance test",
+            "sandwich ELISA",
+            "scATACSeq",
+            "scCGIseq",
+            "scale",
+            "scirnaSeq",
+            "scrnaSeq",
+            "scwholeGenomeSeq",
+            "snATACSeq",
+            "snpArray",
+            "snrnaSeq",
+            "spontaneous alternation",
+            "tractionForceMicroscopy",
+            "von Frey test",
+            "westernBlot",
+            "wheel running",
+            "whole-cell patch clamp",
+            "wholeGenomeSeq"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "assay"
+    },
+    "Component": {
+      "description": "TBD",
+      "title": "Component"
+    },
+    "DnaBatch": {
+      "description": "DNA isolation batch",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "dnaBatch"
+    },
+    "GQN": {
+      "description": "Illumina Genomic Quality Number (gDNA quality score)",
+      "oneOf": [
+        {
+          "title": "number",
+          "type": "number"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "GQN"
+    },
+    "Platform": {
+      "description": "The specific version (manufacturer, model, etc.) of a technology that is used to carry out a laboratory or computational experiment.",
+      "oneOf": [
+        {
+          "enum": [
+            "Affy5.0",
+            "Affy6.0",
+            "Affymetrix Human Gene 1.0 ST Array",
+            "AffymetrixU133AB",
+            "AffymetrixU133Plus2",
+            "Agilent44Karray",
+            "BGISEQ-500",
+            "Biocrates p180",
+            "Biograph mCT",
+            "Bionano Irys",
+            "Bruker Avance III",
+            "DNBSEQ",
+            "GAIIx",
+            "HiSeq1000",
+            "HiSeq2000",
+            "HiSeq2500",
+            "HiSeq3000",
+            "HiSeq4000",
+            "HiSeqX",
+            "Illumina MouseWG-6 v2.0 expression beadchip",
+            "Illumina NovaSeq 6000",
+            "IlluminaHumanHT-12_V3_0_R1",
+            "IlluminaHumanHap300",
+            "IlluminaHumanHap650Yv3_A",
+            "IlluminaHumanMethylation450",
+            "IlluminaInfiniumGSAMD-24v2-0",
+            "IlluminaMethylationEPIC",
+            "IlluminaMiSeq",
+            "IlluminaNovaSeqX",
+            "IlluminaNovaSeqXplus",
+            "IlluminaNovaseq6000",
+            "IlluminaWholeGenomeDASL",
+            "Illumina_1M",
+            "Illumina_HumanOmni1-Quadv1.0",
+            "Illumina_Infinium-HumanMethylation450-BeadChip",
+            "Illumina_Omni2.5-8",
+            "Illumina_Omni2.5-8_v1.1",
+            "Illumina_Omni2.5-8_v1.3",
+            "Illumina_Omni2pt5M",
+            "Illumina_Omni5-Quad",
+            "Illumina_Omni5M",
+            "Illumina_h650",
+            "Infinium Global Diversity Array-8",
+            "Infinium HumanOmniExpressExome",
+            "Infinium Omni2.5Exome-8 v1.1",
+            "Infinium Omni2.5Exome-8 v1.3",
+            "Infinium Omni2.5Exome-8 v1.4",
+            "Infinium Omni2.5Exome-8 v1.5",
+            "InfiniumPsychArrayBeadChip",
+            "LTQOrbitrapXL",
+            "Leco Pegasus IV",
+            "MiSeq",
+            "NanostringnCounter",
+            "NanostringnCounter_MouseADPanel",
+            "NextSeq2000",
+            "NextSeq500",
+            "Olink Target 96",
+            "OrbiTrap Fusion",
+            "Orbitrap Exploris 240",
+            "Orbitrap Fusion Lumos",
+            "PacBio Sequel II",
+            "PacBio Sequel IIe",
+            "PacBioRSII",
+            "Perlegen300Karray",
+            "PsychChip",
+            "Q Exactive",
+            "Q Exactive HF",
+            "Q Exactive HF-X",
+            "Q Exactive Plus",
+            "Roche Cobas",
+            "SequenomMultiplex",
+            "Signa Premier AIR 3T",
+            "Simoa HD-1 Analyzer",
+            "Xevo G2 QTOF",
+            "Xevo TQ-S",
+            "confocalImaging",
+            "ddSEQ Single-Cell Isolator",
+            "llumina Infinium General Screening Array 24-Kit v3.0",
+            "orbitrap",
+            "quadrupole time-of-flight",
+            "time-of-flight",
+            "triple quadrupole"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "platform"
+    },
+    "Ratio260over230": {
+      "description": "Ratio of absorbance at 230 nm and 260 nm. Measures protein or other contaminants. Range up to approximately 2.2.",
+      "oneOf": [
+        {
+          "title": "number",
+          "type": "number"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "ratio260over230"
+    },
+    "Ratio260over280": {
+      "description": "Measure of DNA vs. RNA purity. Range up to approximately 2.0.",
+      "oneOf": [
+        {
+          "title": "number",
+          "type": "number"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "ratio260over280"
+    },
+    "SpecimenID": {
+      "description": "Identifying string linked to a particular sample or specimen",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "specimenID"
+    }
+  },
+  "required": [
+    "Assay",
+    "Platform"
+  ],
+  "title": "AssaySnpArrayMetadataTemplate_validation",
+  "type": "object"
+}
