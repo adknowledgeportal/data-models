@@ -48,9 +48,10 @@ json_schema_org = get_org(js)
 
 # Iterate through directory with jsonschema files and register each one
 files = glob.glob("*.json")
-for file in files:
+for i, file in enumerate(files):
     schema = import_json_schema(file)
     schema_name = Path(file).stem
+    print(f"Uploading schema {i+1}/{len(files)}: {schema_name}")
     try:
         json_schema_org.create_json_schema(schema, schema_name, VERSION)
     except SynapseHTTPError as e:
