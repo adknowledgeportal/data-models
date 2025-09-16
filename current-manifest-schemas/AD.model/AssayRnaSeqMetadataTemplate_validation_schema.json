@@ -1,0 +1,566 @@
+{
+  "$id": "http://example.com/AssayRnaSeqMetadataTemplate_validation",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "SysBio rnaSeq metadata template schema",
+  "properties": {
+    "Component": {
+      "description": "TBD",
+      "title": "Component"
+    },
+    "DV200": {
+      "description": "A method to determine the quality of RNA obtained from a sample. DV200 evaluates the percentage of fragments of greater than 200 nucleotides.",
+      "oneOf": [
+        {
+          "title": "number",
+          "type": "number"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "DV200"
+    },
+    "RIN": {
+      "description": "RNA Integrity Number",
+      "oneOf": [
+        {
+          "title": "number",
+          "type": "number"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "RIN"
+    },
+    "assay": {
+      "description": "The technology used to generate the data in this file",
+      "oneOf": [
+        {
+          "enum": [
+            "10x multiome",
+            "16SrRNAseq",
+            "ATACSeq",
+            "Baker Lipidomics",
+            "Biocrates Bile Acids",
+            "Biocrates MxP Quant500 XL",
+            "Biocrates Q500",
+            "Biocrates p180",
+            "Blood Chemistry Measurement",
+            "CITESeq",
+            "CUT&Tag",
+            "ChIPSeq",
+            "DIA",
+            "DNA optical mapping",
+            "ELISA",
+            "FIA-MSMS",
+            "FitBark",
+            "Genotyping",
+            "HI-C",
+            "HPLC",
+            "HPLC-MSMS",
+            "HiChIPseq",
+            "ISOSeq",
+            "Illumina EPIC Array",
+            "Immunocytochemistry",
+            "LC-MS",
+            "LC-MSMS",
+            "LC-SRM",
+            "LFP",
+            "LTP",
+            "Laser Speckle Imaging",
+            "Leiden Oxylipins",
+            "MDMS-SL",
+            "MIB/MS",
+            "MRI",
+            "Metabolon",
+            "MudPIT",
+            "NOMe-Seq",
+            "Nightingale NMR",
+            "Positron Emission Tomography",
+            "RPPA",
+            "RRBS",
+            "Rader Lipidomics",
+            "Real Time PCR",
+            "Ribo-Seq",
+            "STARRSeq",
+            "Sanger sequencing",
+            "SiMoA",
+            "TMT quantitation",
+            "TotalRNAseq",
+            "UC Davis GCTOF",
+            "UCSD Untargeted Metabolomics",
+            "UPLC-ESI-QTOF-MS",
+            "UPLC-MSMS",
+            "Vernier Caliper",
+            "Wishart Catecholamines",
+            "Wishart High Value Metabolites",
+            "Zeno Electronic Walkway",
+            "active avoidance learning behavior",
+            "anxiety-related behavior",
+            "atomicForceMicroscopy",
+            "autoradiography",
+            "bisulfiteSeq",
+            "brightfieldMicroscopy",
+            "cellViabilityAssay",
+            "contextual conditioning behavior",
+            "electrochemiluminescence",
+            "elevated T maze apparatus method",
+            "elevated plus maze test",
+            "errBisulfiteSeq",
+            "exomeSeq",
+            "frailty assessment",
+            "high content screen",
+            "immunofluorescence",
+            "immunohistochemistry",
+            "in vivo bioluminescence",
+            "jumpingLibrary",
+            "kinesthetic behavior",
+            "label free mass spectrometry",
+            "lentiMPRA",
+            "liquid chromatography-electrochemical detection",
+            "lncrnaSeq",
+            "locomotor activation behavior",
+            "long-read rnaSeq",
+            "m6A-rnaSeq",
+            "mRNAcounts",
+            "mRNAseq",
+            "memory behavior",
+            "methylationArray",
+            "microRNAcounts",
+            "mirnaArray",
+            "mirnaSeq",
+            "nextGenerationTargetedSequencing",
+            "novelty response behavior",
+            "open field test",
+            "oxBS-Seq",
+            "pharmacodynamics",
+            "pharmacokinetics",
+            "photograph",
+            "polymeraseChainReaction",
+            "proximity extension assay",
+            "questionnaire",
+            "rnaArray",
+            "rnaSeq",
+            "rotarod performance test",
+            "sandwich ELISA",
+            "scATACSeq",
+            "scCGIseq",
+            "scale",
+            "scirnaSeq",
+            "scrnaSeq",
+            "scwholeGenomeSeq",
+            "snATACSeq",
+            "snpArray",
+            "snrnaSeq",
+            "spontaneous alternation",
+            "tractionForceMicroscopy",
+            "von Frey test",
+            "westernBlot",
+            "wheel running",
+            "whole-cell patch clamp",
+            "wholeGenomeSeq"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "assay"
+    },
+    "globinRemoval": {
+      "description": "true,false",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "globinRemoval"
+    },
+    "inputTotalRNA": {
+      "description": "In nanogram before rRNA depletion and globin removal",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "inputTotalRNA"
+    },
+    "isStranded": {
+      "description": "Whether or not the library is stranded.",
+      "oneOf": [
+        {
+          "enum": [
+            "FALSE",
+            "TRUE"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "isStranded"
+    },
+    "libraryBatch": {
+      "description": "Batch library was prepared in",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "libraryBatch"
+    },
+    "libraryID": {
+      "description": "Library ID as provided by the lab",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "libraryID"
+    },
+    "libraryPrep": {
+      "description": "The general strategy by which the library was prepared",
+      "oneOf": [
+        {
+          "enum": [
+            "Chromium Single Cell 3'",
+            "DNALibraryConstruction",
+            "EndItDNAEndRepairKit",
+            "KapaHyperPrep",
+            "MULTIseq",
+            "PCRfree",
+            "SPLITseq",
+            "STARRSeq",
+            "SureCell",
+            "amplicon",
+            "cellHashing",
+            "lncRNAenrichment",
+            "methylSeq",
+            "miRNAenrichment",
+            "multiome",
+            "polyAselection",
+            "proximity ligation",
+            "rRNAdepletion",
+            "snIsoSeq",
+            "totalRNA"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "libraryPrep"
+    },
+    "libraryPreparationMethod": {
+      "description": "Method by which library was prepared",
+      "oneOf": [
+        {
+          "enum": [
+            "10x",
+            "Accel-NGS 2S Plus",
+            "Accel-NGS Methyl-Seq",
+            "CEL-seq",
+            "Drop-Seq",
+            "Enzymatics (Qiagen)",
+            "Illumina DNA PCR-Free Prep Kit",
+            "Illumina Ligation",
+            "NEBNext",
+            "NexteraXT",
+            "Omni-ATAC",
+            "SMRTbell",
+            "Smart-seq1",
+            "Smart-seq2",
+            "Smart-seq4",
+            "TruSeq",
+            "Ultralow Methyl-Seq",
+            "sac-seq"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "libraryPreparationMethod"
+    },
+    "libraryVersion": {
+      "description": " for example, rnaSeq 10x library version",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "libraryVersion"
+    },
+    "platform": {
+      "description": "The specific version (manufacturer, model, etc.) of a technology that is used to carry out a laboratory or computational experiment.",
+      "oneOf": [
+        {
+          "enum": [
+            "Affy5.0",
+            "Affy6.0",
+            "Affymetrix Human Gene 1.0 ST Array",
+            "AffymetrixU133AB",
+            "AffymetrixU133Plus2",
+            "Agilent44Karray",
+            "BGISEQ-500",
+            "Biocrates p180",
+            "Biograph mCT",
+            "Bionano Irys",
+            "Bruker Avance III",
+            "DNBSEQ",
+            "GAIIx",
+            "HiSeq1000",
+            "HiSeq2000",
+            "HiSeq2500",
+            "HiSeq3000",
+            "HiSeq4000",
+            "HiSeqX",
+            "Illumina MouseWG-6 v2.0 expression beadchip",
+            "Illumina NovaSeq 6000",
+            "IlluminaHumanHT-12_V3_0_R1",
+            "IlluminaHumanHap300",
+            "IlluminaHumanHap650Yv3_A",
+            "IlluminaHumanMethylation450",
+            "IlluminaInfiniumGSAMD-24v2-0",
+            "IlluminaMethylationEPIC",
+            "IlluminaMiSeq",
+            "IlluminaNovaSeqX",
+            "IlluminaNovaSeqXplus",
+            "IlluminaNovaseq6000",
+            "IlluminaWholeGenomeDASL",
+            "Illumina_1M",
+            "Illumina_HumanOmni1-Quadv1.0",
+            "Illumina_Infinium-HumanMethylation450-BeadChip",
+            "Illumina_Omni2.5-8",
+            "Illumina_Omni2.5-8_v1.1",
+            "Illumina_Omni2.5-8_v1.3",
+            "Illumina_Omni2pt5M",
+            "Illumina_Omni5-Quad",
+            "Illumina_Omni5M",
+            "Illumina_h650",
+            "Infinium Global Diversity Array-8",
+            "Infinium HumanOmniExpressExome",
+            "Infinium Omni2.5Exome-8 v1.1",
+            "Infinium Omni2.5Exome-8 v1.3",
+            "Infinium Omni2.5Exome-8 v1.4",
+            "Infinium Omni2.5Exome-8 v1.5",
+            "InfiniumPsychArrayBeadChip",
+            "LTQOrbitrapXL",
+            "Leco Pegasus IV",
+            "MiSeq",
+            "NanostringnCounter",
+            "NanostringnCounter_MouseADPanel",
+            "NextSeq2000",
+            "NextSeq500",
+            "Olink Target 96",
+            "OrbiTrap Fusion",
+            "Orbitrap Exploris 240",
+            "Orbitrap Fusion Lumos",
+            "PacBio Sequel II",
+            "PacBio Sequel IIe",
+            "PacBioRSII",
+            "Perlegen300Karray",
+            "PsychChip",
+            "Q Exactive",
+            "Q Exactive HF",
+            "Q Exactive HF-X",
+            "Q Exactive Plus",
+            "Roche Cobas",
+            "SequenomMultiplex",
+            "Signa Premier AIR 3T",
+            "Simoa HD-1 Analyzer",
+            "Xevo G2 QTOF",
+            "Xevo TQ-S",
+            "confocalImaging",
+            "ddSEQ Single-Cell Isolator",
+            "llumina Infinium General Screening Array 24-Kit v3.0",
+            "orbitrap",
+            "quadrupole time-of-flight",
+            "time-of-flight",
+            "triple quadrupole"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "platform"
+    },
+    "readLength": {
+      "description": "The length of the read",
+      "title": "readLength",
+      "type": "string"
+    },
+    "readStrandOrigin": {
+      "description": "The strand from which the read originates in a strand-specific protocol",
+      "oneOf": [
+        {
+          "enum": [
+            "forward",
+            "reverse"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "readStrandOrigin"
+    },
+    "referenceSet": {
+      "description": "A set of references (e.g., canonical assembled contigs) which defines a common coordinate space for comparing reference-aligned experimental data.",
+      "oneOf": [
+        {
+          "enum": [
+            "1000 Genomes phase 3",
+            "GRCh37",
+            "GRCh38",
+            "GRCm38",
+            "HRC",
+            "MMUL1.0",
+            "dmel_r6.06"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "referenceSet"
+    },
+    "ribosomalDepletion": {
+      "description": "true,false",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "ribosomalDepletion"
+    },
+    "rnaBatch": {
+      "description": "Batch in which RNA sample was isolated",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "rnaBatch"
+    },
+    "runType": {
+      "description": "TBD",
+      "oneOf": [
+        {
+          "enum": [
+            "pairedEnd",
+            "singleEnd"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "runType"
+    },
+    "sequencingBatch": {
+      "description": "Batch library was sequenced in",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "sequencingBatch"
+    },
+    "specimenID": {
+      "description": "Identifying string linked to a particular sample or specimen",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "specimenID"
+    },
+    "totalReads": {
+      "description": "Total number of sequencing reads from a library",
+      "oneOf": [
+        {
+          "title": "number",
+          "type": "number"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "totalReads"
+    },
+    "validBarcodeReads": {
+      "description": "Fraction of reads with cell barcodes that match the whitelist",
+      "oneOf": [
+        {
+          "title": "number",
+          "type": "number"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "validBarcodeReads"
+    }
+  },
+  "required": [
+    "assay",
+    "libraryPrep",
+    "platform",
+    "readLength",
+    "runType"
+  ],
+  "title": "AssayRnaSeqMetadataTemplate_validation",
+  "type": "object"
+}
