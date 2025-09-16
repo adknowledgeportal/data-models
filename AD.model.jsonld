@@ -8734,6 +8734,9 @@
             },
             "schema:rangeIncludes": [
                 {
+                    "@id": "bts:Test"
+                },
+                {
                     "@id": "bts:3Dchromatin"
                 },
                 {
@@ -28764,6 +28767,24 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "strainOfficialName",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Test",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Test",
+            "rdfs:label": "Test",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "Test",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
