@@ -58,10 +58,12 @@ do
     echo "✗ Manifest $template failed to generate"
   fi
 
-  for i in $(seq 1 $SLEEP_THROTTLE); do
+  if ${#CHANGED_TEMPLATES_ARRAY[@]} > 1; then
+    for i in $(seq 1 $SLEEP_THROTTLE); do
       sleep 1
       printf "\r Waited $i of $SLEEP_THROTTLE seconds"
-  done
+    done
+  fi
 done
 
 echo "✓ Done!"

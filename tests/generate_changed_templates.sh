@@ -64,10 +64,12 @@ do
     echo "✗ Manifest $template failed to generate"
   fi
 
-  for i in $(seq 1 $SLEEP_THROTTLE); do
-    sleep 1
-    printf "\r Waited $i of $SLEEP_THROTTLE seconds"
-  done
+  if ${#CHANGED_TEMPLATES_ARRAY[@]} > 1; then
+    for i in $(seq 1 $SLEEP_THROTTLE); do
+      sleep 1
+      printf "\r Waited $i of $SLEEP_THROTTLE seconds"
+    done
+  fi
 done
 
 echo "Moving manifest json schemas to $JSON_DIR"
