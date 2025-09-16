@@ -152,6 +152,9 @@ jobs:
     needs: [schema-convert]
     if: contains(github.event.pull_request.labels.*.name, 'automerge')
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
     steps:
       - id: merge-and-delete
         uses: "pascalgn/automerge-action@v0.16.4"
