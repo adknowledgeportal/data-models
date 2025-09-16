@@ -30,7 +30,8 @@ def get_org(js: JsonSchemaService) -> JsonSchemaOrganization:
         json_schema_org = js.create_organization(ORG_NAME)
     except SynapseHTTPError as e:
         if e.response.status_code == 400 and "already exists" in e.response.text:
-            json_schema_org = js.JsonSchemaOrganization(ORG_NAME)
+            print(f"Organization {ORG_NAME} already exists.")
+            json_schema_org = js.get_organization(ORG_NAME)
         else:
             raise e
 
@@ -40,8 +41,6 @@ def get_org(js: JsonSchemaService) -> JsonSchemaOrganization:
 # Log in to synapse
 syn = synapseclient.Synapse()
 syn.login()
-syn.get_available_services()
-
 
 # Get the relevant org from synapse
 js = syn.service("json_schema")
