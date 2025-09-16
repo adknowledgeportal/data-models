@@ -156,10 +156,16 @@ jobs:
       pull-requests: write
       contents: write
     steps:
+      - uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ vars.COMMIT_BOT_ID }}
+          private-key: ${{ secrets.COMMIT_BOT_KEY }}
+
       - id: merge-and-delete
         uses: "pascalgn/automerge-action@v0.16.4"
         env:
-          GITHUB_TOKEN: ${{ secrets.COMMIT_BOT_KEY }}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
           MERGE_LABELS: "automerge"
           MERGE_DELETE_BRANCH: "true"
           MERGE_METHOD: "squash"
