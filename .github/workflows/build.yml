@@ -152,9 +152,6 @@ jobs:
     needs: [schema-convert]
     if: contains(github.event.pull_request.labels.*.name, 'automerge')
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-      contents: write
     steps:
       - uses: actions/create-github-app-token@v2
         id: app-token
