@@ -1,0 +1,430 @@
+{
+  "$id": "http://example.com/BiospecimenInvitroMetadataTemplate_validation",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "SysBio in vitro biospecimen metadata template schema",
+  "properties": {
+    "Component": {
+      "description": "TBD",
+      "title": "Component"
+    },
+    "assay": {
+      "description": "The technology used to generate the data in this file",
+      "oneOf": [
+        {
+          "enum": [
+            "10x multiome",
+            "16SrRNAseq",
+            "ATACSeq",
+            "Baker Lipidomics",
+            "Biocrates Bile Acids",
+            "Biocrates MxP Quant500 XL",
+            "Biocrates Q500",
+            "Biocrates p180",
+            "Blood Chemistry Measurement",
+            "CITESeq",
+            "CUT&Tag",
+            "ChIPSeq",
+            "DIA",
+            "DNA optical mapping",
+            "ELISA",
+            "FIA-MSMS",
+            "FitBark",
+            "Genotyping",
+            "HI-C",
+            "HPLC",
+            "HPLC-MSMS",
+            "HiChIPseq",
+            "ISOSeq",
+            "Illumina EPIC Array",
+            "Immunocytochemistry",
+            "LC-MS",
+            "LC-MSMS",
+            "LC-SRM",
+            "LFP",
+            "LTP",
+            "Laser Speckle Imaging",
+            "Leiden Oxylipins",
+            "MDMS-SL",
+            "MIB/MS",
+            "MRI",
+            "Metabolon",
+            "MudPIT",
+            "NOMe-Seq",
+            "Nightingale NMR",
+            "Positron Emission Tomography",
+            "RPPA",
+            "RRBS",
+            "Rader Lipidomics",
+            "Real Time PCR",
+            "Ribo-Seq",
+            "STARRSeq",
+            "Sanger sequencing",
+            "SiMoA",
+            "TMT quantitation",
+            "TotalRNAseq",
+            "UC Davis GCTOF",
+            "UCSD Untargeted Metabolomics",
+            "UPLC-ESI-QTOF-MS",
+            "UPLC-MSMS",
+            "Vernier Caliper",
+            "Wishart Catecholamines",
+            "Wishart High Value Metabolites",
+            "Zeno Electronic Walkway",
+            "active avoidance learning behavior",
+            "anxiety-related behavior",
+            "atomicForceMicroscopy",
+            "autoradiography",
+            "bisulfiteSeq",
+            "brightfieldMicroscopy",
+            "cellViabilityAssay",
+            "contextual conditioning behavior",
+            "electrochemiluminescence",
+            "elevated T maze apparatus method",
+            "elevated plus maze test",
+            "errBisulfiteSeq",
+            "exomeSeq",
+            "frailty assessment",
+            "high content screen",
+            "immunofluorescence",
+            "immunohistochemistry",
+            "in vivo bioluminescence",
+            "jumpingLibrary",
+            "kinesthetic behavior",
+            "label free mass spectrometry",
+            "lentiMPRA",
+            "liquid chromatography-electrochemical detection",
+            "lncrnaSeq",
+            "locomotor activation behavior",
+            "long-read rnaSeq",
+            "m6A-rnaSeq",
+            "mRNAcounts",
+            "mRNAseq",
+            "memory behavior",
+            "methylationArray",
+            "microRNAcounts",
+            "mirnaArray",
+            "mirnaSeq",
+            "nextGenerationTargetedSequencing",
+            "novelty response behavior",
+            "open field test",
+            "oxBS-Seq",
+            "pharmacodynamics",
+            "pharmacokinetics",
+            "photograph",
+            "polymeraseChainReaction",
+            "proximity extension assay",
+            "questionnaire",
+            "rnaArray",
+            "rnaSeq",
+            "rotarod performance test",
+            "sandwich ELISA",
+            "scATACSeq",
+            "scCGIseq",
+            "scale",
+            "scirnaSeq",
+            "scrnaSeq",
+            "scwholeGenomeSeq",
+            "snATACSeq",
+            "snpArray",
+            "snrnaSeq",
+            "spontaneous alternation",
+            "tractionForceMicroscopy",
+            "von Frey test",
+            "westernBlot",
+            "wheel running",
+            "whole-cell patch clamp",
+            "wholeGenomeSeq"
+          ],
+          "title": "enum"
+        }
+      ],
+      "title": "assay"
+    },
+    "cellType": {
+      "description": "A cell type is a distinct morphological or functional form of cell.",
+      "oneOf": [
+        {
+          "enum": [
+            "A549",
+            "B-lymphocytes",
+            "CD138+",
+            "CD8+ T-Cells",
+            "CNON",
+            "GABAergic neurons",
+            "GLUtamatergic neurons",
+            "NCX NES",
+            "NeuN+",
+            "NeuN-",
+            "SH-SY5Y",
+            "Schwann cell precursor",
+            "arachnoid",
+            "astrocytes",
+            "dopaminergic neurons",
+            "embryonic stem cells",
+            "epithelial",
+            "epithelial-like",
+            "fibroblast",
+            "glia",
+            "iPSC",
+            "iPSC-derived astrocytes",
+            "iPSC-derived glia",
+            "iPSC-derived neuron",
+            "iPSC-derived neuronal progenitor cell",
+            "iPSC-derived telencephalic organoids",
+            "immune cell",
+            "lymphoblast",
+            "lymphoblastoid cell line",
+            "macrophages",
+            "meningioma",
+            "microglia",
+            "monocyte-derived microglia",
+            "monocytes",
+            "neural progenitor cell",
+            "neuron",
+            "oligodendrocyte",
+            "peripheral blood mononuclear cell",
+            "polygonal",
+            "round",
+            "schwann",
+            "schwannoma"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "cellType"
+    },
+    "differentiationMethod": {
+      "description": "The general strategy by which a reprogrammed or pluripotent cell is differentiated into a target cell.",
+      "oneOf": [
+        {
+          "enum": [
+            "Ngn2 induction",
+            "directed differentiation"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "differentiationMethod"
+    },
+    "individualID": {
+      "description": "Identifying string linked to the individual or animal being studied",
+      "title": "individualID",
+      "type": "string"
+    },
+    "modelSystemType": {
+      "description": "Type of model system.",
+      "oneOf": [
+        {
+          "enum": [
+            "animal",
+            "cerebral organoid",
+            "iPSC",
+            "immortalized cell line",
+            "organoid",
+            "primary cell culture"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "modelSystemType"
+    },
+    "nucleicAcidSource": {
+      "description": "TBD",
+      "oneOf": [
+        {
+          "enum": [
+            "bulk cell",
+            "bulk nuclei",
+            "cfDNA",
+            "mitochondria",
+            "not applicable",
+            "single cell",
+            "single nucleus",
+            "sorted cells",
+            "sorted nuclei"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "nucleicAcidSource"
+    },
+    "passage": {
+      "description": "Number of times a cell culture has been subcultured",
+      "oneOf": [
+        {
+          "title": "integer",
+          "type": "integer"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "passage"
+    },
+    "reprogrammingMethod": {
+      "description": "The method by which source cells were reprogrammed into pluripotent stem cells.",
+      "oneOf": [
+        {
+          "enum": [
+            "CytoTune iPS 2.0 Sendai Reprogramming Kit",
+            "Sendai virus",
+            "episomal vectors"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "reprogrammingMethod"
+    },
+    "samplingAge": {
+      "description": "Age of the individual when the sample was taken",
+      "oneOf": [
+        {
+          "title": "number",
+          "type": "number"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "samplingAge"
+    },
+    "samplingAgeUnits": {
+      "description": "Age at sampling units.",
+      "oneOf": [
+        {
+          "enum": [
+            "PCW",
+            "days",
+            "gestational weeks",
+            "months",
+            "weeks",
+            "years"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "samplingAgeUnits"
+    },
+    "sourceCell": {
+      "description": "Initial cell type the target cell was derived from, before reprogramming or differentiation.",
+      "oneOf": [
+        {
+          "enum": [
+            "B-lymphocytes",
+            "astrocytes",
+            "cord blood stem cells",
+            "embryonic stem cells",
+            "fibroblast",
+            "iPSC",
+            "lymphoblast",
+            "peripheral blood mononuclear cell"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "sourceCell"
+    },
+    "specimenID": {
+      "description": "Identifying string linked to a particular sample or specimen",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "specimenID"
+    },
+    "specimenIdSource": {
+      "description": "The repository or database to which a specimenID maps; or, the group or lab that generated the specimen. For cell culture studies, the commercial source or lab that generated the cells.",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "specimenIdSource"
+    },
+    "terminalDifferentiationPoint": {
+      "description": "The terminal differentiation point (TD) of a cell in days.",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "terminalDifferentiationPoint"
+    },
+    "treatmentType": {
+      "description": "TBD",
+      "oneOf": [
+        {
+          "enum": [
+            "Abeta42 fibril",
+            "Abeta42 oligomer",
+            "Control",
+            "clozapine",
+            "cuprizone",
+            "haloperidol",
+            "levetiracetam",
+            "placebo",
+            "verubecestat"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "treatmentType"
+    }
+  },
+  "required": [
+    "assay",
+    "individualID"
+  ],
+  "title": "BiospecimenInvitroMetadataTemplate_validation",
+  "type": "object"
+}
