@@ -167,6 +167,7 @@ jobs:
           MERGE_DELETE_BRANCH: "true"
           MERGE_METHOD: "squash"
           BASE_BRANCHES: "main"
+          MERGE_ERROR_FAIL: "true"
 
   generate-and-upload-manifests:
     needs: [schema-convert, merge]
