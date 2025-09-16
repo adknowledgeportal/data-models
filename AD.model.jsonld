@@ -14230,7 +14230,7 @@
         {
             "@id": "bts:Network",
             "@type": "rdfs:Class",
-            "rdfs:comment": "An interconnected system of things or people.",
+            "rdfs:comment": "An interconnected system of things or people testing change.",
             "rdfs:label": "Network",
             "rdfs:subClassOf": [
                 {
