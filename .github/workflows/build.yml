@@ -150,7 +150,7 @@ jobs:
 
   merge:
     needs: [schema-convert]
-    if: contains(github.event.pull_request.labels.*.name, 'automerge')
+    if: contains(github.event.pull_request.labels.*.name, 'automerge') && github.event.action != 'opened' && github.event.action != 'synchronize'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/create-github-app-token@v2
@@ -171,7 +171,7 @@ jobs:
 
   generate-and-upload-manifests:
     needs: [schema-convert, merge]
-    if: github.event.pull_request.merged == true
+    if: contains(github.event.pull_request.labels.*.name, 'automerge')
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
