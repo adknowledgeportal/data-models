@@ -15,7 +15,7 @@ DATA_MODEL=AD.model.jsonld
 EXCEL_DIR=../current-excel-manifests
 JSON_DIR=../current-manifest-schemas/Legacy-Format
 LOG_DIR=logs
-SLEEP_THROTTLE=30 # to avoid hitting api rate limit
+SLEEP_THROTTLE=2 # to avoid hitting api rate limit
 IFS=' ' read -r -a CHANGED_TEMPLATES_ARRAY <<< "$1" 
 
 # copy schematic-config.yml into tests/ 
