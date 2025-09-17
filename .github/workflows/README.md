@@ -39,7 +39,7 @@ When a PR is merged
         
         C --> E{Triggering actor<br>!=<br>commit-to-main-bot?}
         D --> E
-        E -->|Yes| F[schema-convert job]
+        E -->|Yes| F([schema-convert job])
         E -->|No| Z1[Skip workflow]
         
         F --> F1[Create GitHub App Token]
@@ -58,10 +58,10 @@ When a PR is merged
         F12 --> G{Action != labeled?}
         F12 --> H{Has automerge label?}
         
-        G --->|Yes| I[test job]
+        G --->|Yes| I([test job])
         H -->|Yes| H2{GitHub event != opened<br>and<br>GitHub event != synchronize?}
         
-        H2 -->|Yes| J[merge job]
+        H2 -->|Yes| J([merge job])
         H2 -->|No| Z2[Skip workflow]
         
         I --> I1[Print changed manifests]
@@ -78,7 +78,7 @@ When a PR is merged
         J1 --> J2[Auto-merge PR with squash]
         J2 --> J3[Delete development branch]
         
-        J3 --> K[generate-and-upload-manifests job]
+        J3 --> K([generate-and-upload-manifests job])
         
         K --> K1[Print changed manifests]
         K1 --> K2[Create GitHub App Token]
@@ -94,7 +94,7 @@ When a PR is merged
     subgraph Legend
         direction TB
         triggers[Triggers]
-        jobs[Jobs]
+        jobs([Jobs])
         outputs[Outputs]
         triggers ~~~ jobs ~~~ outputs
         style triggers fill:#ffeb3b,stroke-width:0px
@@ -149,7 +149,7 @@ Publish a new Release on github and specify a new tag.
     A[Create Git Tag] --> B[Push tag trigger]
     
     B --> C{Triggering actor<br>!=<br>commit-to-main-bot?}
-    C -->|Yes| D[release job]
+    C -->|Yes| D([release job])
     C -->|No| Z[Skip workflow]
     
     D --> D1[Create GitHub App Token]
@@ -160,7 +160,7 @@ Publish a new Release on github and specify a new tag.
     subgraph Legend
         direction TB
         triggers[Triggers]
-        jobs[Jobs]
+        jobs([Jobs])
         outputs[Outputs]
         triggers ~~~ jobs ~~~ outputs
         style triggers fill:#ffeb3b,stroke-width:0px
