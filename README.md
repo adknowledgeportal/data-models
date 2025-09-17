@@ -30,6 +30,8 @@ The main branch of this repo is protected, so you cannot push changes to main. T
 4. Once all the necessary changes have been made, the `schema-convert` and `test` jobs complete successfully, and the PR is approved, the PR is ready for merge.
 5. To merge the PR, click on the `labels` tab in the GitHub PR conversation and add the `automerge` label. One the label is applied, the `build` workflow will merge the PR as well as add the appropriate metadata templates and JSONSchema files to `main`.
 
+For more information, review the [CI/CD documentation](.github/workflows/README.md).
+
 ### Editing attributes by module:
 
 The full `AD.model.csv` file has over 1400 attributes and is unwieldy to edit and hard to review changes for. For ease of editing, the full data model is divided into "module" subfolders, like so:
