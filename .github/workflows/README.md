@@ -31,11 +31,11 @@ When a PR is merged
 <summary>Mermaid diagram for build workflow</summary>
 
 ```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff"}}}%%
+%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff", "edgeStrokeWidth": "2px", "primaryBorderColor": "#000000"}}}%%
     flowchart TD
-        A[Modify PR] --> B{Action Type}
-        B -->|Commit Changes| C[PR synchronize trigger]
-        B -->|Close PR| D[PR closed trigger]
+        A[Create/Update PR] --> B{PR Action Type}
+        B -->|opened/synchronize| C[PR trigger - paths: modules/**]
+        B -->|labeled| D[PR labeled trigger]
         
         C --> E{Triggering actor<br>!=<br>commit-to-main-bot?}
         D --> E
@@ -43,7 +43,7 @@ When a PR is merged
         E -->|No| Z1[Skip workflow]
         
         F --> F1[Create GitHub App Token]
-        F1 --> F2[Checkout code with token]
+        F1 --> F2[Checkout PR branch with token]
         F2 --> F3[Setup Python 3.10]
         F3 --> F4[Install libraries<br>from requirements.txt]
         F4 --> F5[List changed files<br>for manifest testing]
@@ -54,34 +54,43 @@ When a PR is merged
         F9 --> F10[Identify changed manifests]
         F10 --> F11[Save changed manifests to output]
         F11 --> F12[Delay 60 seconds]
-        F12 --> G{Is the PR closed?}
         
-        G --->|No| H[test job]
-        G -->|Yes| G2{Was the PR merged?}
+        F12 --> G{Action != labeled?}
+        F12 --> H{Has automerge label?}
         
-        G2 -->|No| Z2[Skip workflow]
-        G2 -->|Yes| I[generate-and-upload-manifests job]
+        G ---->|Yes| I[test job]
+        H -->|Yes| H2{GitHub event != opened<br>and<br>GitHub event != synchronize?}
         
-        H --> H1[Print changed manifests]
-        H1 --> H2[Create GitHub App Token]
-        H2 --> H3[Checkout<br>development branch]
-        H3 --> H4[Setup Python 3.10]
-        H4 --> H5[Install libraries]
-        H5 --> H6[Generate test manifests]
-        H6 --> H7[Create Test Suite Report with Docker/R]
-        H7 --> H8[Report test suite as PR comment]
-        H8 --> H9[Upload test artifacts]
+        H2 -->|Yes| J[merge job]
+        H2 -->|No| Z2[Skip workflow]
         
         I --> I1[Print changed manifests]
         I1 --> I2[Create GitHub App Token]
-        I2 --> I3[Checkout main branch]
+        I2 --> I3[Checkout PR branch]
         I3 --> I4[Setup Python 3.10]
         I4 --> I5[Install libraries]
-        I5 --> I6[Generate changed manifests]
-        I6 --> I7[Commit manifests to main]
-        I7 --> I8[Generate JSONSchema]
-        I8 --> I9[Commit schemas to main]
-        I9 --> I10[Upload manifests to Synapse]
+        I5 --> I6[Generate test manifests]
+        I6 --> I7[Create Test Suite Report with Docker/R]
+        I7 --> I8[Report test suite as PR comment]
+        I8 --> I9[Upload test artifacts]
+        
+        J --> J1[Create GitHub App Token]
+        J1 --> J2[Auto-merge PR with squash]
+        J2 --> J3[Delete development branch]
+        
+        J3 --> K[generate-and-upload-manifests job]
+        
+        K --> K1[Print changed manifests]
+        K1 --> K2[Create GitHub App Token]
+        K2 --> K3[Checkout main branch]
+        K3 --> K4[Setup Python 3.10]
+        K4 --> K5[Install libraries]
+        K5 --> K6[Generate changed manifests]
+        K6 --> K7[Commit manifests to main]
+        K7 --> K8[Generate JSONSchema]
+        K8 --> K9[Commit schemas to main]
+        K9 --> K10[Upload manifests to Synapse]
+        
     subgraph Legend
         direction TB
         triggers[Triggers]
@@ -97,15 +106,17 @@ When a PR is merged
     style C fill:#ffeb3b
     style D fill:#ffeb3b
     style F fill:#e3f2fd
-    style H fill:#e3f2fd
     style I fill:#e3f2fd
+    style J fill:#e3f2fd
+    style K fill:#e3f2fd
     style F7 fill:#4caf50
     style F9 fill:#4caf50
-    style H8 fill:#4caf50
-    style H9 fill:#4caf50
-    style I7 fill:#4caf50
+    style I8 fill:#4caf50
     style I9 fill:#4caf50
-    style I10 fill:#4caf50
+    style J2 fill:#4caf50
+    style K7 fill:#4caf50
+    style K9 fill:#4caf50
+    style K10 fill:#4caf50
 ```
 </details>
 
@@ -132,7 +143,7 @@ Publish a new Release on github and specify a new tag.
 <summary>Mermaid diagram for release workflow</summary>
 
 ```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff"}}}%%
+%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff", "edgeStrokeWidth": "2px", "primaryBorderColor": "#000000"}}}%%
     flowchart TD
     A[Create Git Tag] --> B[Push tag trigger]
     
