@@ -58,7 +58,7 @@ When a PR is merged
         F12 --> G{Action != labeled?}
         F12 --> H{Has automerge label?}
         
-        G ---->|Yes| I[test job]
+        G --->|Yes| I[test job]
         H -->|Yes| H2{GitHub event != opened<br>and<br>GitHub event != synchronize?}
         
         H2 -->|Yes| J[merge job]
