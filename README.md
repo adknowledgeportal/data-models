@@ -24,10 +24,11 @@
 ### Github branch procedure:
 
 The main branch of this repo is protected, so you cannot push changes to main. To make changes to the data model:
-1. Create a new branch in this repo and give it an informative name. The schema-convert workflow will not work from a private fork.
+1. Create a new branch in this repo and give it a descriptive name (the name will later be used to generate release notes). The CI/CD workflows will not work from a private fork.
 2. On that branch, make and commit any changes. You can do this by cloning the repo locally or by [using a Github codespace](#developing-in-a-codespace). Please write informative commit messages in case we need to track down data model inconsistencies or introduced bugs.
-3. Open a pull request and request review from someone else on the AD DCC team. The Github Action described in [Automation](#automation) will run as soon as you open the PR. If this action fails, something about the data model csv could not be converted to a json-ld and should be investigated. If this action passes, the PR can be merged with one approving review.
-4. After the PR is merged, delete your branch.
+3. Open a pull request and request review from someone else on the AD DCC team. The `schema-convert` and `test` jobs will run as soon as you open the PR. If this action fails, something about the data model csv could not be converted to a json-ld and should be investigated. 
+4. Once all the necessary changes have been made, the `schema-convert` and `test` jobs complete successfully, and the PR is approved, the PR is ready for merge.
+5. To merge the PR, click on the `labels` tab in the GitHub PR conversation and add the `automerge` label. One the label is applied, the `build` workflow will merge the PR as well as add the appropriate metadata templates and JSONSchema files to `main`.
 
 ### Editing attributes by module:
 
