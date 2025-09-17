@@ -75,7 +75,7 @@ When a PR is merged
         I8 --> I9[Upload test artifacts]
         
         J --> J1[Create GitHub App Token]
-        J1 --> J2[Auto-merge PR with squash]
+        J1 --> J2[Squash and merge PR]
         J2 --> J3[Delete development branch]
         
         J3 --> K([generate-and-upload-manifests job])
