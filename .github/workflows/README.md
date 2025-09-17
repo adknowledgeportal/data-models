@@ -102,6 +102,7 @@ When a PR is merged
         style outputs fill:#4caf50,stroke-width:0px
     end
     
+    linkStyle default stroke: gray
     style A fill:#ffeb3b
     style C fill:#ffeb3b
     style D fill:#ffeb3b
@@ -167,6 +168,7 @@ Publish a new Release on github and specify a new tag.
         style outputs fill:#4caf50,stroke-width:0px
     end
     
+    linkStyle default stroke: gray
     style A fill:#ffeb3b
     style B fill:#ffeb3b
     style D fill:#e3f2fd
