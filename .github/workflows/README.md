@@ -18,7 +18,8 @@ When the pull request is merged, new excel files will be created for the modifie
 While a PR is open and under development
 * Test templates are created and linked in the PR comments
 
-When a PR is merged
+When a PR is labeled as `automerge`
+* The Pull request is merged by a bot
 * Modified excel templates are committed to `main`
 * All JSONSchema files are generated and committed to `main`
 * Modified excel templates are uploaded to synapse
