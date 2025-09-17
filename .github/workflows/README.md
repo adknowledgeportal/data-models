@@ -31,7 +31,7 @@ When a PR is merged
 <summary>Mermaid diagram for build workflow</summary>
 
 ```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff", "edgeStrokeWidth": "2px", "primaryBorderColor": "#000000"}}}%%
+%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff"}}}%%
     flowchart TD
         A[Create/Update PR] --> B{PR Action Type}
         B -->|opened/synchronize| C[PR trigger - paths: modules/**]
@@ -143,7 +143,7 @@ Publish a new Release on github and specify a new tag.
 <summary>Mermaid diagram for release workflow</summary>
 
 ```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff", "edgeStrokeWidth": "2px", "primaryBorderColor": "#000000"}}}%%
+%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff"}}}%%
     flowchart TD
     A[Create Git Tag] --> B[Push tag trigger]
     
