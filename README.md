@@ -7,7 +7,7 @@
     + [Adding a new valid value to an existing manifest column:](#adding-a-new-valid-value-to-an-existing-manifest-column)
     + [Adding a new column to a manifest template:](#adding-a-new-column-to-a-manifest-template)
   * [Notes on collaboratively editing csvs](#notes-on-collaboratively-editing-csvs)
-- [Automation](#automation)
+- [Release Process](#release-process)
 - [Developing in a codespace](#developing-in-a-codespace)
 - [Legacy data models:](#legacy-data-models)            
 
