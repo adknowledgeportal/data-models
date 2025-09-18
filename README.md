@@ -30,7 +30,7 @@ The main branch of this repo is protected, so you cannot push changes to main. T
 4. Once all the necessary changes have been made, the `schema-convert` and `test` jobs complete successfully, and the PR is approved, the PR is ready for merge.
 5. To merge the PR, click on the `labels` tab in the GitHub PR conversation and add the `automerge` label. One the label is applied, the `build` workflow will merge the PR as well as add the appropriate metadata templates and JSONSchema files to `main`.
 
-For more information on the automated workflows, review the [CI/CD documentation](.github/workflows/README.md).
+For more information on the automated workflows, review the CI/CD documentation for the [build workflow](.github/workflows/README.md#build-workflow).
 
 ### Editing attributes by module:
 
@@ -99,7 +99,7 @@ To perform a release of the data model and trigger the registration of JSONSchem
 7. Once everything is set as appropritate, check `Set as the latest release`.
 8. Finally, click `Publish release` at the bottom of the page.
 
-This will trigger a workflow to register all of the JSONSchema files with the specified organization on Synapse, for more information see the [CI/CD documentation](.github/workflows/README.md).
+This will trigger a workflow to register all of the JSONSchema files with the specified organization on Synapse, for more information see the CI/CD documentation for the [release workflow](.github/workflows/README.md#release-workflow).
 
 ## Developing in a codespace
 
