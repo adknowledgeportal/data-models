@@ -16,7 +16,7 @@ EXCEL_DIR=../current-excel-manifests
 JSON_DIR=../current-manifest-schemas/Legacy-Format
 LOG_DIR=logs
 SLEEP_THROTTLE=30 # to avoid hitting api rate limit
-IFS=' ' read -r -a CHANGED_TEMPLATES_ARRAY <<< "$1" 
+IFS=' ' read -r -a CHANGED_TEMPLATES_ARRAY <<< "$1" # Store the string variable as an array
 
 # copy schematic-config.yml into tests/ 
 cp $SCHEMATIC_CONFIG_PATH $SCHEMATIC_CONFIG
@@ -51,6 +51,7 @@ echo "✓ Set up $DATA_MODEL for test"
 # Setup logs
 mkdir -p $LOG_DIR
 
+# Display number of templates identified and the names of each
 echo "✓ Using ${#CHANGED_TEMPLATES_ARRAY[@]} templates (${CHANGED_TEMPLATES_ARRAY[@]}) from environment variable."
 
 

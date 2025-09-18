@@ -15,7 +15,7 @@ DATA_MODEL_PATH=../AD.model.jsonld
 DATA_MODEL=AD.model.jsonld
 LOG_DIR=logs
 SLEEP_THROTTLE=30 # to avoid hitting api rate limits
-IFS=' ' read -r -a CHANGED_TEMPLATES_ARRAY <<< "$1" 
+IFS=' ' read -r -a CHANGED_TEMPLATES_ARRAY <<< "$1" # Store the string variable as an array
 
 # copy schematic-config.yml into tests/ 
 cp $SCHEMATIC_CONFIG_PATH $SCHEMATIC_CONFIG
@@ -46,6 +46,7 @@ echo "✓ Set up $DATA_MODEL for test"
 # Setup logs
 mkdir -p $LOG_DIR
 
+# Display number of templates identified and the names of each
 echo "✓ Using ${#CHANGED_TEMPLATES_ARRAY[@]} templates (${CHANGED_TEMPLATES_ARRAY[@]}) from environment variable."
 
 for template in "${CHANGED_TEMPLATES_ARRAY[@]}";

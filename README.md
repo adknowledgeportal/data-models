@@ -7,7 +7,7 @@
     + [Adding a new valid value to an existing manifest column:](#adding-a-new-valid-value-to-an-existing-manifest-column)
     + [Adding a new column to a manifest template:](#adding-a-new-column-to-a-manifest-template)
   * [Notes on collaboratively editing csvs](#notes-on-collaboratively-editing-csvs)
-- [Automation](#automation)
+- [Release Process](#release-process)
 - [Developing in a codespace](#developing-in-a-codespace)
 - [Legacy data models:](#legacy-data-models)            
 
@@ -24,10 +24,13 @@
 ### Github branch procedure:
 
 The main branch of this repo is protected, so you cannot push changes to main. To make changes to the data model:
-1. Create a new branch in this repo and give it an informative name. The schema-convert workflow will not work from a private fork.
+1. Create a new branch in this repo and give it a descriptive name (the name will later be used to generate release notes). The CI/CD workflows will not work from a private fork.
 2. On that branch, make and commit any changes. You can do this by cloning the repo locally or by [using a Github codespace](#developing-in-a-codespace). Please write informative commit messages in case we need to track down data model inconsistencies or introduced bugs.
-3. Open a pull request and request review from someone else on the AD DCC team. The Github Action described in [Automation](#automation) will run as soon as you open the PR. If this action fails, something about the data model csv could not be converted to a json-ld and should be investigated. If this action passes, the PR can be merged with one approving review.
-4. After the PR is merged, delete your branch.
+3. Open a pull request and request review from someone else on the AD DCC team. The `schema-convert` and `test` jobs will run as soon as you open the PR. If this action fails, something about the data model csv could not be converted to a json-ld and should be investigated. 
+4. Once all the necessary changes have been made, the `schema-convert` and `test` jobs complete successfully, and the PR is approved, the PR is ready for merge.
+5. To merge the PR, click on the `labels` tab in the GitHub PR conversation and add the `automerge` label. One the label is applied, the `build` workflow will merge the PR as well as add the appropriate metadata templates and JSONSchema files to `main`.
+
+For more information on the automated workflows, review the CI/CD documentation for the [build workflow](.github/workflows/README.md#build-workflow).
 
 ### Editing attributes by module:
 
@@ -84,17 +87,20 @@ A persistent issue is that manually editing csvs is challening. Some columns in 
 
 We are exploring better solutions to this problem -- if you have ideas, tell us!
 
-## Automation
+## Release Process
+To perform a release of the data model and trigger the registration of JSONSchema files with Synapse, perform the following steps
 
-When you open a PR that includes any changes to files in the `modules/` directory, a Github Action will automatically run before merging is allowed. This action:
-1. Runs the `assemble_csv_data_model.py` script to concatenate the modular attribute csvs into one data frame, sort alphabetically by `Parent` and then `Attribute`, and write the combined dataframe to `AD.model.csv`. The action then commits the changes to the master data model csv.
-2. Installs the latest version of `schematic` from PyPi and runs `schema convert` on the newly-concatenated data model csv to generate a new version of the jsonld file `AD.model.jsonld`. The action also commits the changes to the jsonld.
-3. Collects the names of any module attributes or templates changed by your PR, then uses the schematic CLI to generate Google sheet versions of those templates.
-4. Makes a new comment in the PR consisting of an Rmd report with the template generation status and link to each template, so you can physically view the new template and verify that any changes you made look as intended.
-5. Due to branch protection rules set on the `main` branch, a branch called `update-manifests` containing the updated manifests is created, and a PR is automatically generated for a member of the repo to review and manually merge afterwards.
+1. From the main repository page, click on the `Releases` tab on the right.
+2. Select `Draft a new release` at the top right of the page.
+3. click `Tag: Select Tag` and create a new tag that will be the release version. The tag should follow the convention: `v<major-version>.<minor-version>.<patch-number>`. Also ensure that the version is not one that has been previously used. After the tag is entered, selecte `Create new tag: vx.x.x on Publish`.
+4. Ensure that `Target:` is set to `main`.
+5. Under `Release Title` enter the version number.
+6. Under `Release Notes` select `Generate release notes` and review the generated release notes for accuracy.
+7. Once everything is set as appropritate, check `Set as the latest release`.
+8. Finally, click `Publish release` at the bottom of the page.
 
-If this automated workflow fails, then the data model may be invalid and further investigation is needed. 
-   
+This will trigger a workflow to register all of the JSONSchema files with the specified organization on Synapse, for more information see the CI/CD documentation for the [release workflow](.github/workflows/README.md#release-workflow).
+
 ## Developing in a codespace
 
 :warning: If you are working in a Github Codespace, do NOT commit any Synapse credentials to the repository and do NOT use any real human data when testing data model function. This is not a secure environment!
