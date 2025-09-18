@@ -91,6 +91,21 @@ We are exploring better solutions to this problem -- if you have ideas, tell us!
 
 For information on the automation and workflows configured for this repository, review the [CI/CD documentation](.github/workflows/README.md).
    
+
+## Release Process
+To perform a release of the data model and trigger the registration of JSONSchema files with Synapse, perform the following steps
+
+1. From the main repository page, click on the `Releases` tab on the right.
+2. Select `Draft a new release` at the top right of the page
+3. click `Tag: Select Tag` and create a new tag that will be the release version. The tag should follow the convention: `v<major-version>.<minor-version>.<patch-number>`. Also ensure that the version is not one that has been previously used
+4. Ensure that `Target:` is set to `main`
+5. Under `Release Title` enter the version number.
+6. Under `Release Notes` select `Generate release notes` and review the generated release notes for accuracy.
+7. Once everything is set as appropritate, check `Set as the latest release`.
+8. Finally, click `Publish release` at the bottom of the page.
+
+This will trigger a workflow to register all of the JSONSchema files with the specified organization on Synapse, for more information see the [CI/CD documentation](.github/workflows/README.md).
+
 ## Developing in a codespace
 
 :warning: If you are working in a Github Codespace, do NOT commit any Synapse credentials to the repository and do NOT use any real human data when testing data model function. This is not a secure environment!
