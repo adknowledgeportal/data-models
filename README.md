@@ -92,7 +92,7 @@ To perform a release of the data model and trigger the registration of JSONSchem
 
 1. From the main repository page, click on the `Releases` tab on the right.
 2. Select `Draft a new release` at the top right of the page.
-3. click `Tag: Select Tag` and create a new tag that will be the release version. The tag should follow the convention: `v<major-version>.<minor-version>.<patch-number>`. Also ensure that the version is not one that has been previously used.
+3. click `Tag: Select Tag` and create a new tag that will be the release version. The tag should follow the convention: `v<major-version>.<minor-version>.<patch-number>`. Also ensure that the version is not one that has been previously used. After the tag is entered, selecte `Create new tag: vx.x.x on Publish`.
 4. Ensure that `Target:` is set to `main`.
 5. Under `Release Title` enter the version number.
 6. Under `Release Notes` select `Generate release notes` and review the generated release notes for accuracy.
