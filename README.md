@@ -87,11 +87,6 @@ A persistent issue is that manually editing csvs is challening. Some columns in 
 
 We are exploring better solutions to this problem -- if you have ideas, tell us!
 
-## Automation
-
-For information on the automation and workflows configured for this repository, review the [CI/CD documentation](.github/workflows/README.md).
-   
-
 ## Release Process
 To perform a release of the data model and trigger the registration of JSONSchema files with Synapse, perform the following steps
 
