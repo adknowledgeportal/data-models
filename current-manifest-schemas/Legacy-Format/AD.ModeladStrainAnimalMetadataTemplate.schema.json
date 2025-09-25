@@ -1,34 +1,34 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://example.com/ModeladStrainAnimalMetadataTemplate",
-  "title": "ModeladStrainAnimalMetadataTemplate",
-  "type": "object",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "properties": {
-    "strainOfficialName": {},
-    "stockNumber": {},
-    "geneticBackground": {},
-    "registryAbbreviation": {},
     "Component": {},
-    "strainCommonName": {},
+    "geneticBackground": {},
+    "geneticMutations": {},
     "individualID": {
+      "minLength": 1,
       "not": {
         "type": "null"
-      },
-      "minLength": 1
+      }
     },
-    "specimenID": {},
-    "geneticMutations": {},
     "modelType": {
       "enum": [
-        "Early-onset AD (EOAD)",
-        "Mixed-onset AD",
         "Late-onset AD (LOAD)",
+        "Mixed-onset AD",
         "Familial AD (FAD)",
+        "Early-onset AD (EOAD)",
         ""
       ]
-    }
+    },
+    "registryAbbreviation": {},
+    "specimenID": {},
+    "stockNumber": {},
+    "strainCommonName": {},
+    "strainOfficialName": {}
   },
   "required": [
     "individualID"
-  ]
+  ],
+  "title": "ModeladStrainAnimalMetadataTemplate",
+  "type": "object"
 }
