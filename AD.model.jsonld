@@ -9271,9 +9271,6 @@
                     "@id": "bts:UPenn"
                 },
                 {
-                    "@id": "bts:VirusResilienceOrganoids"
-                },
-                {
                     "@id": "bts:VirusResilienceBanner"
                 },
                 {
@@ -9284,6 +9281,9 @@
                 },
                 {
                     "@id": "bts:VirusResilienceMayo.MSBB.ROSMAP"
+                },
+                {
+                    "@id": "bts:VirusResilienceOrganoids"
                 },
                 {
                     "@id": "bts:VMC"
@@ -31719,24 +31719,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:VirusResilienceOrganoids",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "The Virus Resilience Organoids Study",
-            "rdfs:label": "VirusResilienceOrganoids",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Study"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:columnType": "string",
-            "sms:displayName": "Virus_Resilience_Organoids",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:VirusResilienceBanner",
             "@type": "rdfs:Class",
             "rdfs:comment": "Virus Resilience, Banner cohort",
@@ -31805,6 +31787,24 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "VirusResilience_Mayo.MSBB.ROSMAP",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:VirusResilienceOrganoids",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Virus Resilience Organoids Study",
+            "rdfs:label": "VirusResilienceOrganoids",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "VirusResilience_Organoids",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
