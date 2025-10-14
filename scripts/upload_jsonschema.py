@@ -37,7 +37,6 @@ def get_org(js: JsonSchemaService) -> JsonSchemaOrganization:
     return json_schema_org
 
 
-print(ORG_NAME, VERSION)
 # Log in to synapse
 syn = synapseclient.Synapse()
 syn.login()
