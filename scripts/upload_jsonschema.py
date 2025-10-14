@@ -52,7 +52,7 @@ files = glob.glob("*.json")
 for i, file in enumerate(files):
     schema = import_json_schema(file)
     schema_name = Path(file).stem
-    schema_name = "ad." + schema_name.replace("_", ".").replace("-", ".")
+    schema_name = "ad." + schema_name.replace("_", ".").replace("-", ".").replace("validation.","")
     print(f"Uploading schema {i+1}/{len(files)}: {schema_name}")
 
     json_schema_org.create_json_schema(schema, schema_name, VERSION.replace("v", ""))
