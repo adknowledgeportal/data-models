@@ -42,6 +42,7 @@ syn = synapseclient.Synapse()
 syn.login()
 syn.get_available_services()
 
+print(VERSION, ORG_NAME)
 
 # Get the relevant org from synapse
 js = syn.service("json_schema")
