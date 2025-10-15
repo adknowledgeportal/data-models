@@ -55,4 +55,11 @@ for i, file in enumerate(files):
     schema_name = "ad." + schema_name.replace("_", ".").replace("-", ".").replace("validation.","")
     print(f"Uploading schema {i+1}/{len(files)}: {schema_name}")
 
-    json_schema_org.create_json_schema(schema, schema_name, VERSION.replace("v", ""))
+    try:
+        json_schema_org.create_json_schema(schema, schema_name, VERSION.replace("v", ""))
+    except SynapseHTTPError as e:
+        version_already_exists_message = f"Semantic version: '{VERSION.replace('v', '')}' already exists for this JSON schema"
+        if e.response.status_code == 400 and version_already_exists_message in e.response.text:
+            print(f"Version {VERSION} already exists for schema {schema_name}, skipping...")
+        else:
+            raise e
