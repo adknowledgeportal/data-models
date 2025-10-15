@@ -45,4 +45,6 @@ jobs:
 
       - name: Register JSONSchema
         working-directory: current-manifest-schemas/AD.model
-        run: python ../../scripts/upload_jsonschema.py
+        run: |
+          echo "Release tag is $RELEASE_TAG"
+          python ../../scripts/upload_jsonschema.py
