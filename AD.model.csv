@@ -905,6 +905,7 @@ directionalBSseqLibrary,Indicates whether or not the bisulfiteSeq library is dir
 dnaBatch,DNA isolation batch,,,,False,ManifestColumn,,sage.annotations-batch.dnaBatch-0.0.2,,string,batch
 dnaExtractionMethod,The general strategy by which the DNA was extracted,,,,False,ManifestColumn,,sage.annotations-ngs.dnaExtractionMethod-0.0.2,,string,sequencing
 DV200,A method to determine the quality of RNA obtained from a sample. DV200 evaluates the percentage of fragments of greater than 200 nucleotides.,,,,False,ManifestColumn,,sage.annotations-qc.DV200-0.0.1,,number,sequencing
+enrichmentDetails,Further details regarding the target cell-type enrichment.,,,,False,ManifestColumn,,,,string,sequencing
 ethnicity,Ethnicity of the individual or donor,"Not Hispanic or Latino, Hispanic or Latino, Preferred not to answer, Other, Unknown, Not collected, Not applicable",,,False,ManifestColumn,,sage.annotations-demographics.ethnicity-0.0.2,,string,demographics
 fastingState,Was individual fasting when sample was taken (true/false)?,"TRUE, FALSE",,,False,ManifestColumn,,sage.annotations-experimentalData.fastingState-0.0.2,,boolean,biospecimen
 fieldStrength,"The intensity of an electric, magnetic, or other field. Value should include unit of measurement.",,,,False,ManifestColumn,,sage.annotations-experimentalData.fieldStrength-0.0.2,,string,imaging
