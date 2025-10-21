@@ -15386,6 +15386,12 @@
                     "@id": "bts:MayoDx"
                 },
                 {
+                    "@id": "bts:NucleiEnrichmentProtocol"
+                },
+                {
+                    "@id": "bts:TargetCellTypeEnrichment"
+                },
+                {
                     "@id": "bts:SequenceAnalysis"
                 },
                 {
@@ -25073,6 +25079,9 @@
             "schema:rangeIncludes": [
                 {
                     "@id": "bts:Single-nucleusRNA-seqassay"
+                },
+                {
+                    "@id": "bts:Other"
                 }
             ],
             "sms:columnType": "string",
@@ -25088,6 +25097,9 @@
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:NucleiEnrichmentProtocol"
+                },
+                {
+                    "@id": "bts:TargetCellTypeEnrichment"
                 }
             ],
             "schema:isPartOf": {
@@ -31953,6 +31965,32 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "Yale-ASD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:TargetCellTypeEnrichment",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Describes the procedure by which the concentration of an entity of interest in a sample is increased. (nuclei-specific)",
+            "rdfs:label": "TargetCellTypeEnrichment",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Single-nucleusRNA-seqassay"
+                },
+                {
+                    "@id": "bts:Other"
+                }
+            ],
+            "sms:columnType": "string",
+            "sms:displayName": "targetCellTypeEnrichment",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
