@@ -25058,6 +25058,46 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:NucleiEnrichmentProtocol",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "definitionTBD",
+            "rdfs:label": "NucleiEnrichmentProtocol",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:VALIDVALSTBD"
+                }
+            ],
+            "sms:columnType": "string",
+            "sms:displayName": "nucleiEnrichmentProtocol",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:VALIDVALSTBD",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "VALIDVALSTBD",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NucleiEnrichmentProtocol"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "VALID VALS TBD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:NumberCells",
             "@type": "rdfs:Class",
             "rdfs:comment": "Number of cells or nuclei sequenced",
