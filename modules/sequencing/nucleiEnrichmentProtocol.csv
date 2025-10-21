@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-nucleiEnrichmentProtocol,Describes the procedure by which the concentration of an entity of interest in a sample is increased. (nuclei-specific),"single-nucleus RNA-seq assay",,,False,ManifestColumn,,http://www.ebi.ac.uk/efo/EFO_0009089,,string,sequencing
+nucleiEnrichmentProtocol,Describes the procedure by which the concentration of an entity of interest in a sample is increased. (nuclei-specific),"single-nucleus RNA-seq assay, Other",,,False,ManifestColumn,,http://www.ebi.ac.uk/efo/EFO_0009089,,string,sequencing
