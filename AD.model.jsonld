@@ -32004,7 +32004,7 @@
         {
             "@id": "bts:TargetCellTypeEnrichment",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Refers to the process of increasing the proportion of target cell types in a sample. (nuclei-specific)",
+            "rdfs:comment": "Refers to the process of increasing the proportion of target cell types in a sample.",
             "rdfs:label": "TargetCellTypeEnrichment",
             "rdfs:subClassOf": [
                 {
