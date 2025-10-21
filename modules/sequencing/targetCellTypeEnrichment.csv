@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-targetCellTypeEnrichment,Describes the procedure by which the concentration of an entity of interest in a sample is increased. (nuclei-specific),"single-nucleus RNA-seq assay, Other",,,False,ManifestColumn,,http://www.ebi.ac.uk/efo/EFO_0009089,,string,sequencing
+targetCellTypeEnrichment,Refers to the process of increasing the proportion of target cell types in a sample. (nuclei-specific),"vein endothelial cell, Other",,,False,ManifestColumn,,https://cytometry.mlsascp.com/cell-enrichment.html,,string,sequencing
