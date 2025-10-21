@@ -25060,7 +25060,7 @@
         {
             "@id": "bts:NucleiEnrichmentProtocol",
             "@type": "rdfs:Class",
-            "rdfs:comment": "definitionTBD",
+            "rdfs:comment": "Describes the procedure by which the concentration of an entity of interest in a sample is increased. (nuclei-specific)",
             "rdfs:label": "NucleiEnrichmentProtocol",
             "rdfs:subClassOf": [
                 {
@@ -25072,7 +25072,7 @@
             },
             "schema:rangeIncludes": [
                 {
-                    "@id": "bts:VALIDVALSTBD"
+                    "@id": "bts:Single-nucleusRNA-seqassay"
                 }
             ],
             "sms:columnType": "string",
@@ -25081,10 +25081,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:VALIDVALSTBD",
+            "@id": "bts:Single-nucleusRNA-seqassay",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
-            "rdfs:label": "VALIDVALSTBD",
+            "rdfs:label": "Single-nucleusRNA-seqassay",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:NucleiEnrichmentProtocol"
@@ -25093,7 +25093,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
-            "sms:displayName": "VALID VALS TBD",
+            "sms:displayName": "single-nucleus RNA-seq assay",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
