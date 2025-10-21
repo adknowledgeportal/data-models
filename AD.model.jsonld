@@ -25097,9 +25097,6 @@
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:NucleiEnrichmentProtocol"
-                },
-                {
-                    "@id": "bts:TargetCellTypeEnrichment"
                 }
             ],
             "schema:isPartOf": {
@@ -31971,7 +31968,7 @@
         {
             "@id": "bts:TargetCellTypeEnrichment",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Describes the procedure by which the concentration of an entity of interest in a sample is increased. (nuclei-specific)",
+            "rdfs:comment": "Refers to the process of increasing the proportion of target cell types in a sample. (nuclei-specific)",
             "rdfs:label": "TargetCellTypeEnrichment",
             "rdfs:subClassOf": [
                 {
@@ -31983,7 +31980,7 @@
             },
             "schema:rangeIncludes": [
                 {
-                    "@id": "bts:Single-nucleusRNA-seqassay"
+                    "@id": "bts:Veinendothelialcell"
                 },
                 {
                     "@id": "bts:Other"
@@ -31991,6 +31988,23 @@
             ],
             "sms:columnType": "string",
             "sms:displayName": "targetCellTypeEnrichment",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Veinendothelialcell",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Veinendothelialcell",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TargetCellTypeEnrichment"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "vein endothelial cell",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
