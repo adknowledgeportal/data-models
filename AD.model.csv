@@ -862,6 +862,7 @@ batch,Batch specimen was processed in,,,,False,ManifestColumn,,sage.annotations-
 batchChannel,TMT channel the sample is labeled with,,,,False,ManifestColumn,,sage.annotations-batch.batchChannel-0.0.2,,string,batch
 batchSize,Size of batch,,,,False,ManifestColumn,,sage.annotations-experimentalData.batchSize-0.0.2,,number,batch
 bedding,Rodent bedding material,"Alpha-dri, aspen, aspen sanichip, corn cob, pine, sanichip",,,True,ManifestColumn,,sage.annotations-neuro.bedding-0.0.3,,string,mouse
+biasNotes,Further comments on potential cell-type bias introduced by enrichment-based approaches,,,,False,ManifestColumn,,https://doi.org/10.1101/2025.08.25.672093,,string,sequencing
 bindingDensity,The number of optical features per square micron for each lane. (Definition is from https://www.nanostring.com/wp-content/uploads/2020/12/Gene_Expression_Data_Analysis_Guidelines.pdf),,,,False,ManifestColumn,,sage.annotations-experimentalData.bindingDensity-0.0.2,,string,nanostring
 birthID,Identifying string linked to a particular animal,,,,False,ManifestColumn,,sage.annotations-neuro.birthID-0.0.1,,string,MODEL-AD
 bodyPart,Named areas of the body.,"brain, head",,,False,ManifestColumn,,sage.annotations-experimentalData.bodyPart-0.0.3,,string,drosophila
