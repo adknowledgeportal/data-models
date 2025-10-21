@@ -19892,6 +19892,24 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:BiasNotes",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Further comments on potential cell-type bias introduced by enrichment-based approaches",
+            "rdfs:label": "BiasNotes",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "biasNotes",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:BindingDensity",
             "@type": "rdfs:Class",
             "rdfs:comment": "The number of optical features per square micron for each lane. (Definition is from https://www.nanostring.com/wp-content/uploads/2020/12/Gene_Expression_Data_Analysis_Guidelines.pdf)",
@@ -35123,6 +35141,18 @@
                 },
                 {
                     "@id": "bts:MedianUMIs"
+                },
+                {
+                    "@id": "bts:BiasNotes"
+                },
+                {
+                    "@id": "bts:EnrichmentDetails"
+                },
+                {
+                    "@id": "bts:NucleiEnrichmentProtocol"
+                },
+                {
+                    "@id": "bts:TargetCellTypeEnrichment"
                 }
             ],
             "sms:validationRules": []
