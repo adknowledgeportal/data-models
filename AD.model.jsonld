@@ -20932,6 +20932,24 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:EnrichmentDetails",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Further details regarding the target cell-type enrichment.",
+            "rdfs:label": "EnrichmentDetails",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "enrichmentDetails",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Ethnicity",
             "@type": "rdfs:Class",
             "rdfs:comment": "Ethnicity of the individual or donor",
