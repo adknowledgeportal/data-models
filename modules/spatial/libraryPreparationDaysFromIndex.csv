@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+libraryPreparationDaysFromIndex,Number of days between sample for assay was received in lab and the libraries were prepared for sequencing.,,,,False,ManifestColumn,,sage.annotations-qc.libraryPreparationDaysFromIndex-0.0.2,,number,spatial

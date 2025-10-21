@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+runID,RA unique identifier for this individual run (typically associated with a single slide) of the spatial transcriptomic processing workflow.,,,,False,ManifestColumn,,sage.annotations-qc.runID-0.0.2,,string,spatial

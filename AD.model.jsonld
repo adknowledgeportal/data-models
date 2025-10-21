@@ -15389,13 +15389,22 @@
                     "@id": "bts:SequenceAnalysis"
                 },
                 {
+                    "@id": "bts:EndBias"
+                },
+                {
                     "@id": "bts:Ethnicity"
                 },
                 {
                     "@id": "bts:CollectionMethod"
                 },
                 {
+                    "@id": "bts:ReverseTranscriptionPrimer"
+                },
+                {
                     "@id": "bts:Diabetes"
+                },
+                {
+                    "@id": "bts:SpatialLibraryConstructionMethod"
                 },
                 {
                     "@id": "bts:Diagnosis"
@@ -20011,6 +20020,186 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:CaptureArea",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "One of the either four or two active regions where tissue can be placed on a Visium slide. Each area is intended to contain only one tissue sample. Slide areas are named consecutively from top to bottom: A1 B1 C1 D1 for Visium slides with 6.5 mm Capture Area and A B for CytAssist slides with 11 mm Capture Area. Both CytAssist slides with 6.5 mm Capture Area and Gateway Slides contain only two slide areas A1 and D1.",
+            "rdfs:label": "CaptureArea",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:A"
+                },
+                {
+                    "@id": "bts:B"
+                },
+                {
+                    "@id": "bts:C"
+                },
+                {
+                    "@id": "bts:D"
+                },
+                {
+                    "@id": "bts:A1"
+                },
+                {
+                    "@id": "bts:B1"
+                },
+                {
+                    "@id": "bts:C1"
+                },
+                {
+                    "@id": "bts:D1"
+                }
+            ],
+            "sms:columnType": "string",
+            "sms:displayName": "captureArea",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:A",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "A",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CaptureArea"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "A",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:B",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "B",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CaptureArea"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "B",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:C",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "C",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CaptureArea"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "C",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:D",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "D",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CaptureArea"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "D",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:A1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "A1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CaptureArea"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "A1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:B1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "B1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CaptureArea"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "B1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:C1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "C1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CaptureArea"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "C1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:D1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "D1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:CaptureArea"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "D1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:CatalogNumber",
             "@type": "rdfs:Class",
             "rdfs:comment": "The identifier assigned to a product, usually in the list of products published by a reseller or manufacturer",
@@ -20926,6 +21115,109 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:EndBias",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The end of the cDNA molecule that is preferentially sequenced e.g. 3/5 prime tag/end or the full length transcript",
+            "rdfs:label": "EndBias",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:3Prime"
+                },
+                {
+                    "@id": "bts:5Prime"
+                },
+                {
+                    "@id": "bts:FullLengthTranscript"
+                },
+                {
+                    "@id": "bts:Other"
+                },
+                {
+                    "@id": "bts:Notlisted"
+                }
+            ],
+            "sms:columnType": "string",
+            "sms:displayName": "endBias",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:3Prime",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "3Prime",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:EndBias"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "3 Prime",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:5Prime",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "5Prime",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:EndBias"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "5 Prime",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:FullLengthTranscript",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "FullLengthTranscript",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:EndBias"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Full Length Transcript",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Notlisted",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Notlisted",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:EndBias"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Not listed",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Ethnicity",
             "@type": "rdfs:Class",
             "rdfs:comment": "Ethnicity of the individual or donor",
@@ -21741,6 +22033,24 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "libraryID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:LibraryPreparationDaysFromIndex",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Number of days between sample for assay was received in lab and the libraries were prepared for sequencing.",
+            "rdfs:label": "LibraryPreparationDaysFromIndex",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "number",
+            "sms:displayName": "libraryPreparationDaysFromIndex",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -27198,6 +27508,86 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:ReadIndicator",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Indicate if this is Read 1 (R1) or Read 2 (R2).",
+            "rdfs:label": "ReadIndicator",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:R1"
+                },
+                {
+                    "@id": "bts:R2"
+                },
+                {
+                    "@id": "bts:R1andR2"
+                }
+            ],
+            "sms:columnType": "string",
+            "sms:displayName": "readIndicator",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:R1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "R1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ReadIndicator"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "R1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:R2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "R2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ReadIndicator"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "R2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:R1andR2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "R1andR2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ReadIndicator"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "R1 and R2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:ReadLength",
             "@type": "rdfs:Class",
             "rdfs:comment": "The length of the read",
@@ -27801,6 +28191,132 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:ReverseTranscriptionPrimer",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "An oligo to which new deoxyribonucleotides can be added by DNA polymerase [SO_0000112]. The type of primer used for reverse transcription e.g. oligo-dT or random primer. This allows users to identify content of the cDNA library input e.g. enriched for mRNA",
+            "rdfs:label": "ReverseTranscriptionPrimer",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Oligo-dT"
+                },
+                {
+                    "@id": "bts:Poly-dT"
+                },
+                {
+                    "@id": "bts:Featurebarcoding"
+                },
+                {
+                    "@id": "bts:Random"
+                },
+                {
+                    "@id": "bts:Other"
+                },
+                {
+                    "@id": "bts:NotListed"
+                }
+            ],
+            "sms:columnType": "string",
+            "sms:displayName": "reverseTranscriptionPrimer",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Oligo-dT",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Oligo-dT",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ReverseTranscriptionPrimer"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Oligo-dT",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Poly-dT",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Poly-dT",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ReverseTranscriptionPrimer"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Poly-dT",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Featurebarcoding",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Featurebarcoding",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ReverseTranscriptionPrimer"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Feature barcoding",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Random",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Random",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ReverseTranscriptionPrimer"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Random",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NotListed",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "NotListed",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ReverseTranscriptionPrimer"
+                },
+                {
+                    "@id": "bts:SpatialLibraryConstructionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Not Listed",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:RibosomalDepletion",
             "@type": "rdfs:Class",
             "rdfs:comment": "true,false",
@@ -28012,6 +28528,24 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "room",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:RunID",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "RA unique identifier for this individual run (typically associated with a single slide) of the spatial transcriptomic processing workflow.",
+            "rdfs:label": "RunID",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "runID",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -28353,6 +28887,24 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:SequencingLibraryConstructionDaysFromIndex",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Number of days between sample for assay was received in lab and day of sequencing library construction",
+            "rdfs:label": "SequencingLibraryConstructionDaysFromIndex",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "number",
+            "sms:displayName": "sequencingLibraryConstructionDaysFromIndex",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Sex",
             "@type": "rdfs:Class",
             "rdfs:comment": "Sex assigned at birth, or by sequencing",
@@ -28468,6 +29020,328 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "cord blood stem cells",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:SpatialLibraryConstructionMethod",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Process which results in the creation of a library from fragments of DNA using cloning vectors or oligonucleotides with the role of adaptors [OBI_0000711]",
+            "rdfs:label": "SpatialLibraryConstructionMethod",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Smart-Seq1"
+                },
+                {
+                    "@id": "bts:Smart-SeqV4"
+                },
+                {
+                    "@id": "bts:10xV1.0"
+                },
+                {
+                    "@id": "bts:10xV1.1"
+                },
+                {
+                    "@id": "bts:10xV2"
+                },
+                {
+                    "@id": "bts:10xV3"
+                },
+                {
+                    "@id": "bts:10xV3.1"
+                },
+                {
+                    "@id": "bts:CEL-seq2"
+                },
+                {
+                    "@id": "bts:Drop-seq"
+                },
+                {
+                    "@id": "bts:InDropsV2"
+                },
+                {
+                    "@id": "bts:InDropsV3"
+                },
+                {
+                    "@id": "bts:TruDrop"
+                },
+                {
+                    "@id": "bts:Sci-ATAC-seq"
+                },
+                {
+                    "@id": "bts:Other"
+                },
+                {
+                    "@id": "bts:NotListed"
+                }
+            ],
+            "sms:columnType": "string",
+            "sms:displayName": "spatialLibraryConstructionMethod",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Smart-Seq1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Smart-Seq1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SpatialLibraryConstructionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Smart-Seq1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Smart-SeqV4",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Smart-SeqV4",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SpatialLibraryConstructionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Smart-SeqV4",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:10xV1.0",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "10xV1.0",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SpatialLibraryConstructionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "10xV1.0",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:10xV1.1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "10xV1.1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SpatialLibraryConstructionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "10xV1.1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:10xV2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "10xV2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SpatialLibraryConstructionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "10xV2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:10xV3",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "10xV3",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SpatialLibraryConstructionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "10xV3",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:10xV3.1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "10xV3.1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SpatialLibraryConstructionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "10xV3.1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CEL-seq2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "CEL-seq2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SpatialLibraryConstructionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "CEL-seq2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Drop-seq",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Drop-seq",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SpatialLibraryConstructionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Drop-seq",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:InDropsV2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "InDropsV2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SpatialLibraryConstructionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "inDropsV2",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:InDropsV3",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "InDropsV3",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SpatialLibraryConstructionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "inDropsV3",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:TruDrop",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "TruDrop",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SpatialLibraryConstructionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "TruDrop",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Sci-ATAC-seq",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Sci-ATAC-seq",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:SpatialLibraryConstructionMethod"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "sci-ATAC-seq",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:SpatialRead1",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Read 1 content description.",
+            "rdfs:label": "SpatialRead1",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "spatialRead1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:SpatialRead2",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Read 2 content description.",
+            "rdfs:label": "SpatialRead2",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "spatialRead2",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -35238,108 +36112,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:RunID",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "RunID",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "runID",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:CaptureArea",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "CaptureArea",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "captureArea",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:ReadIndicator",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "ReadIndicator",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "readIndicator",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:SpatialRead1",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "SpatialRead1",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "spatialRead1",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:SpatialRead2",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "SpatialRead2",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "spatialRead2",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:SpatialLibraryConstructionMethod",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "SpatialLibraryConstructionMethod",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "spatialLibraryConstructionMethod",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:SamplePreparation",
             "@type": "rdfs:Class",
             "rdfs:comment": "TBD",
@@ -35353,74 +36125,6 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "samplePreparation",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:LibraryPreparationDaysFromIndex",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "LibraryPreparationDaysFromIndex",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "libraryPreparationDaysFromIndex",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:SequencingLibraryConstructionDaysFromIndex",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "SequencingLibraryConstructionDaysFromIndex",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "sequencingLibraryConstructionDaysFromIndex",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:EndBias",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "EndBias",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "endBias",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:ReverseTranscriptionPrimer",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "ReverseTranscriptionPrimer",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:Thing"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "reverseTranscriptionPrimer",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
