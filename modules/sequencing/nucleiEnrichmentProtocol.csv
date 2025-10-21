@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+nucleiEnrichmentProtocol,definitionTBD,"VALID VALS TBD",,,False,ManifestColumn,,sourceTBD,,string,sequencing
