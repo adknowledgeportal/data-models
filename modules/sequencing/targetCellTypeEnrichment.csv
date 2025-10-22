@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-targetCellTypeEnrichment,Refers to the process of increasing the proportion of target cell types in a sample.,"vein endothelial cell, Other",,,False,ManifestColumn,,https://cytometry.mlsascp.com/cell-enrichment.html,,string,sequencing
+targetCellTypeEnrichment,Refers to the process of increasing the proportion of target cell types in a sample.,"vein endothelial cell, vascular intima nuclei, Other",,,False,ManifestColumn,,https://cytometry.mlsascp.com/cell-enrichment.html,,string,sequencing
