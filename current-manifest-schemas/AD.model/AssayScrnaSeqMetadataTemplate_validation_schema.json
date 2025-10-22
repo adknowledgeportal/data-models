@@ -154,6 +154,34 @@
       ],
       "title": "assay"
     },
+    "biasNotes": {
+      "description": "Further comments on potential cell-type bias introduced by enrichment-based approaches",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "biasNotes"
+    },
+    "enrichmentDetails": {
+      "description": "Further details regarding the target cell-type enrichment.",
+      "oneOf": [
+        {
+          "title": "string",
+          "type": "string"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "enrichmentDetails"
+    },
     "isStranded": {
       "description": "Whether or not the library is stranded.",
       "oneOf": [
@@ -325,6 +353,24 @@
         }
       ],
       "title": "medianUMIs"
+    },
+    "nucleiEnrichmentProtocol": {
+      "description": "Describes the procedure by which the concentration of an entity of interest in a sample is increased. (nuclei-specific)",
+      "oneOf": [
+        {
+          "enum": [
+            "VINE-seq",
+            "other",
+            "single-nucleus RNA-seq assay"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "nucleiEnrichmentProtocol"
     },
     "numberCells": {
       "description": "Number of cells or nuclei sequenced",
@@ -545,6 +591,24 @@
         }
       ],
       "title": "specimenID"
+    },
+    "targetCellTypeEnrichment": {
+      "description": "Refers to the process of increasing the proportion of target cell types in a sample.",
+      "oneOf": [
+        {
+          "enum": [
+            "other",
+            "vascular intima nuclei",
+            "vein endothelial cell"
+          ],
+          "title": "enum"
+        },
+        {
+          "title": "null",
+          "type": "null"
+        }
+      ],
+      "title": "targetCellTypeEnrichment"
     },
     "totalReads": {
       "description": "Total number of sequencing reads from a library",
