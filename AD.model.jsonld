@@ -15386,6 +15386,12 @@
                     "@id": "bts:MayoDx"
                 },
                 {
+                    "@id": "bts:NucleiEnrichmentProtocol"
+                },
+                {
+                    "@id": "bts:TargetCellTypeEnrichment"
+                },
+                {
                     "@id": "bts:SequenceAnalysis"
                 },
                 {
@@ -19886,6 +19892,24 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:BiasNotes",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Further comments on potential cell-type bias introduced by enrichment-based approaches",
+            "rdfs:label": "BiasNotes",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "biasNotes",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:BindingDensity",
             "@type": "rdfs:Class",
             "rdfs:comment": "The number of optical features per square micron for each lane. (Definition is from https://www.nanostring.com/wp-content/uploads/2020/12/Gene_Expression_Data_Analysis_Guidelines.pdf)",
@@ -20922,6 +20946,24 @@
             },
             "sms:columnType": "number",
             "sms:displayName": "DV200",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:EnrichmentDetails",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Further details regarding the target cell-type enrichment.",
+            "rdfs:label": "EnrichmentDetails",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "enrichmentDetails",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -25054,6 +25096,69 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "DNA",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NucleiEnrichmentProtocol",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Describes the procedure by which the concentration of an entity of interest in a sample is increased. (nuclei-specific)",
+            "rdfs:label": "NucleiEnrichmentProtocol",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Single-nucleusRNA-seqassay"
+                },
+                {
+                    "@id": "bts:VINE-seq"
+                },
+                {
+                    "@id": "bts:Other"
+                }
+            ],
+            "sms:columnType": "string",
+            "sms:displayName": "nucleiEnrichmentProtocol",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Single-nucleusRNA-seqassay",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Single-nucleusRNA-seqassay",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NucleiEnrichmentProtocol"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "single-nucleus RNA-seq assay",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:VINE-seq",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "VINE-seq",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NucleiEnrichmentProtocol"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "VINE-seq",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -31917,6 +32022,69 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:TargetCellTypeEnrichment",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Refers to the process of increasing the proportion of target cell types in a sample.",
+            "rdfs:label": "TargetCellTypeEnrichment",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Veinendothelialcell"
+                },
+                {
+                    "@id": "bts:Vascularintimanuclei"
+                },
+                {
+                    "@id": "bts:Other"
+                }
+            ],
+            "sms:columnType": "string",
+            "sms:displayName": "targetCellTypeEnrichment",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Veinendothelialcell",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Veinendothelialcell",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TargetCellTypeEnrichment"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "vein endothelial cell",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Vascularintimanuclei",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Vascularintimanuclei",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TargetCellTypeEnrichment"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "vascular intima nuclei",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:TDP3",
             "@type": "rdfs:Class",
             "rdfs:comment": "TDP-3 Component",
@@ -35013,6 +35181,18 @@
                 },
                 {
                     "@id": "bts:MedianUMIs"
+                },
+                {
+                    "@id": "bts:BiasNotes"
+                },
+                {
+                    "@id": "bts:EnrichmentDetails"
+                },
+                {
+                    "@id": "bts:NucleiEnrichmentProtocol"
+                },
+                {
+                    "@id": "bts:TargetCellTypeEnrichment"
                 }
             ],
             "sms:validationRules": []

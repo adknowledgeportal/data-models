@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+enrichmentDetails,Further details regarding the target cell-type enrichment.,,,,False,ManifestColumn,,,,string,sequencing
