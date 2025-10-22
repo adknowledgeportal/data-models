@@ -25117,6 +25117,9 @@
                     "@id": "bts:Single-nucleusRNA-seqassay"
                 },
                 {
+                    "@id": "bts:VINE-seq"
+                },
+                {
                     "@id": "bts:Other"
                 }
             ],
@@ -25139,6 +25142,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "single-nucleus RNA-seq assay",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:VINE-seq",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "VINE-seq",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:NucleiEnrichmentProtocol"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "VINE-seq",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -32019,6 +32039,9 @@
                     "@id": "bts:Veinendothelialcell"
                 },
                 {
+                    "@id": "bts:Vascularintimanuclei"
+                },
+                {
                     "@id": "bts:Other"
                 }
             ],
@@ -32041,6 +32064,23 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:displayName": "vein endothelial cell",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Vascularintimanuclei",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Vascularintimanuclei",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:TargetCellTypeEnrichment"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "vascular intima nuclei",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
