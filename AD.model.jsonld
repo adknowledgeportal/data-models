@@ -37131,6 +37131,24 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:ADMCLongitudinalADNIMetabolon",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The Alzheimer's Disease Metabolomics Consortium Longitudinal Alzheimer’s Disease Neuroimaging Initiative Metabolon (ADMCLongitudinalADNIMetabolon) Study",
+            "rdfs:label": "ADMCLongitudinalADNIMetabolon",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "ADMCLongitudinalADNIMetabolon",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:ATP6V1AKd",
             "@type": "rdfs:Class",
             "rdfs:comment": "The ATP6V1A knockdown in hIPSC neurons (ATP6V1A_kd) study",
