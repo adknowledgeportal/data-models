@@ -33,7 +33,7 @@ jobs:
           tree -a -L 4 || find . | head -1000
       - name: Generate JSON Schemas
         id: generate
-        uses: Sage-Bionetworks-Actions/generate-jsonschema@v0.0.3
+        uses: Sage-Bionetworks-Actions/generate-jsonschema@v0.0.5
         with:
           data-model-source: ./AD.model.csv
           data-model-labels: "display_label"
