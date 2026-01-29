@@ -27,7 +27,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
+      - name: List repository files as a tree
+        run: |
+          echo "Repository file tree:"
+          tree -a -L 4 || find . | head -1000
       - name: Generate JSON Schemas
         id: generate
         uses: Sage-Bionetworks-Actions/generate-jsonschema@v0.0.2
