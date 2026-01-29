@@ -30,7 +30,7 @@ jobs:
 
       - name: Generate JSON Schemas
         id: generate
-        uses: Sage-Bionetworks-Actions/generate-jsonschema@v0.0.1
+        uses: Sage-Bionetworks-Actions/generate-jsonschema@v0.0.2
         with:
           data-model-source: ./AD.model.csv
           data-model-labels: "display_label"
