@@ -13327,7 +13327,7 @@
         {
             "@id": "bts:DataSubtype",
             "@type": "rdfs:Class",
-            "rdfs:comment": "Further qualification of dataType, which may be used to indicate the state of processing of the data, aggregation of the data, or presence of metadata.",
+            "rdfs:comment": "Further qualification of DataType, which may be used to indicate the state of processing of the data, aggregation of the data, or presence of metadata.",
             "rdfs:label": "DataSubtype",
             "rdfs:subClassOf": [
                 {
@@ -13956,7 +13956,7 @@
                 }
             ],
             "sms:columnType": "string",
-            "sms:displayName": "dataType",
+            "sms:displayName": "DataType",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },

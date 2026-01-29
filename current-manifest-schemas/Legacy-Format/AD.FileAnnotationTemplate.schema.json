@@ -285,7 +285,7 @@
         ""
       ]
     },
-    "dataType": {
+    "DataType": {
       "enum": [
         "drugScreen",
         "surveyData",

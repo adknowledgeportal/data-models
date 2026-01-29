@@ -304,7 +304,7 @@
       "title": "consortium"
     },
     "dataSubtype": {
-      "description": "Further qualification of dataType, which may be used to indicate the state of processing of the data, aggregation of the data, or presence of metadata.",
+      "description": "Further qualification of DataType, which may be used to indicate the state of processing of the data, aggregation of the data, or presence of metadata.",
       "oneOf": [
         {
           "enum": [
@@ -324,7 +324,7 @@
       ],
       "title": "dataSubtype"
     },
-    "dataType": {
+    "DataType": {
       "description": "Types of input/output data in bioinformatics pipelines",
       "oneOf": [
         {
@@ -360,7 +360,7 @@
           "type": "null"
         }
       ],
-      "title": "dataType"
+      "title": "DataType"
     },
     "fileFormat": {
       "description": "Defined format of the data file, typically corresponding to extension, but sometimes indicating more general group of files produced by the same tool or software",
