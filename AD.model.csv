@@ -1015,6 +1015,7 @@ sequencingBatch,Batch library was sequenced in,,,,False,ManifestColumn,,sage.ann
 sex,"Sex assigned at birth, or by sequencing","male, female, missing or unknown",,,True,ManifestColumn,,sage.annotations-experimentalData.sex-0.0.2,,string,demographics
 sexChromosome,"Sex identified by SNP genotype (e.g XX, XY)",,,,False,ManifestColumn,,sage.annotations-clinical.sexChromosome-0.0.2,,string,demographics
 softwareName,,,,,False,ManifestColumn,,sage.annotations-tool.softwareName-0.0.2,,string,analysis
+softwareName2,,,,,False,ManifestColumn,,sage.annotations-tool.softwareName-0.0.2,,string,analysis
 sourceCell,"Initial cell type the target cell was derived from, before reprogramming or differentiation.","astrocytes, B-lymphocytes, cord blood stem cells, embryonic stem cells, fibroblast, iPSC, lymphoblast, peripheral blood mononuclear cell",,,False,ManifestColumn,,sage.annotations-experimentalData.sourceCell-0.0.3,,string,biospecimen
 species,The name of a species (typically a taxonomic group) of organism.,"Human, Mouse, Rat, Drosophila melanogaster, Rhesus macaque, Pan troglodytes, Gallus gallus, Sus scrofa",,,True,ManifestColumn,,sage.annotations-experimentalData.species-0.0.2,,string,individual
 specimenID,Identifying string linked to a particular sample or specimen,,,,False,ManifestColumn,,sage.annotations-experimentalData.specimenID-0.0.2,,string,biospecimen
