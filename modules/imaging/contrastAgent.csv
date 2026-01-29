@@ -1,2 +1,3 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
 contrastAgent,Substance administered during an imaging procedure that allows delineation of internal structures.,,,,False,ManifestColumn,,sage.annotations-experimentalData.contrastAgent-0.0.2,,string,imaging
+contrastAgent2,Substance administered during an imaging procedure that allows delineation of internal structures.,,,,False,ManifestColumn,,sage.annotations-experimentalData.contrastAgent-0.0.2,,string,imaging
