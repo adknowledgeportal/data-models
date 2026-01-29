@@ -7,11 +7,10 @@ on:
       - synchronize
       - labeled
     branches:
-      - 'main'
+      - "main"
     paths:
-      - 'modules/**'
-      - 'AD.model.csv'
-      - 'AD.model.jsonld'
+      - "modules/**"
+      - "AD.model.csv"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.triggering_actor }}
@@ -23,21 +22,26 @@ jobs:
     if: github.triggering_actor != 'commit-to-main-bot-adkp[bot]'
     permissions:
       pull-requests: write
+      contents: read
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Generate JSON Schemas
         id: generate
         uses: Sage-Bionetworks-Actions/generate-jsonschema@v0.0.1
         with:
           data-model-source: ./AD.model.csv
-          data-model-labels: 'display_label'
+          data-model-labels: "display_label"
 
       - name: Upload schemas as artifacts
         uses: actions/upload-artifact@v4
+        if: steps.generate.outputs.schemas != ''
         with:
           name: json-schemas
           path: ${{ steps.generate.outputs.schemas }}
+          if-no-files-found: warn
 
       - name: Format Schema Report
         id: format
