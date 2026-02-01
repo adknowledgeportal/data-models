@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-LEWY_grp,Kosaka LBD subtypes grouped and PD Braak grouped,"No LEWY_grp or olfactory bulb or amygdala predominant group, Brainstem predominant group, Transitional or diffuse or region unspecified group, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.LEWY_grp-0.0.2,string,,clinical
+LEWY_grp,Kosaka LBD subtypes grouped and PD Braak grouped,"No LEWY_grp or olfactory bulb or amygdala predominant group, Brainstem predominant group, Transitional or diffuse or region unspecified group, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.LEWY_grp-0.0.2,,string,clinical
 No LEWY_grp or olfactory bulb or amygdala predominant group,No LEWY_grp or olfactory bulb or amygdala predominant group,,,,,LEWY_grp,,ADSP,,string,clinical
 Brainstem predominant group,Brainstem predominant group,,,,,LEWY_grp,,ADSP,,string,clinical
 Transitional or diffuse or region unspecified group,Transitional or diffuse or region unspecified group,,,,,LEWY_grp,,ADSP,,string,clinical
