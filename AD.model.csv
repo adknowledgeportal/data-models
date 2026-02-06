@@ -537,6 +537,17 @@ No CVD_CAA_ANY,No CVD_CAA_ANY,,,,,CVD_CAA_ANY,,ADSP,,string,clinical
 missing or unknown,CVD_S is missing or unknown,,,,,CVD_S,,ADSP,,string,clinical
 No CVD_S,No CVD_S,,,,,CVD_S,,ADSP,,string,clinical
 Presence,Presence,,,,,CVD_S,,ADSP,,string,clinical
+1FL ADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
+ADNI,,,,,,dataContributionGroup,,,,string,ManifestColumn
+Baker Heart & Diabetes Institute,,,,,,dataContributionGroup,,,,string,ManifestColumn
+Duke,,,,,,dataContributionGroup,,,,string,ManifestColumn
+Emory,,,,,,dataContributionGroup,,,,string,ManifestColumn
+IADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
+Knight ADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
+MADC,,,,,,dataContributionGroup,,,,string,ManifestColumn
+MC ADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
+MCBB,,,,,,dataContributionGroup,,,,string,ManifestColumn
+MCSA,,,,,,dataContributionGroup,,,,string,ManifestColumn
 dataMatrix,A file of data containing multiple values for multiple samples.,,,,,dataSubtype,,,,string,experimentalData
 metadata,"A file of clinical, technical, or other parameters that describe a dataset.",,,,,dataSubtype,,,,string,experimentalData
 normalized,A data set that is produced as the output of a normalization data transformation.,,,,,dataSubtype,,http://purl.obolibrary.org/obo/OBI_0000451,,string,experimentalData
@@ -754,7 +765,9 @@ LIBD,Lieber Institute for Brain Development,,,,,individualIdSource,,https://www.
 LivingBrainProject_MSSM,The Living Brain Project at the Icahn School of Medicine,,,,,individualIdSource,,https://labs.icahn.mssm.edu/charneylab/,,string,individual
 Mayo Clinic,Mayo Clinic,,,,,individualIdSource,,https://www.mayo.edu/research/departments-divisions/department-neuroscience-florida,,string,individual
 MayoBrainBank,Mayo Clinic Brain Bank,,,,,individualIdSource,,https://www.mayo.edu/research/departments-divisions/department-neuroscience-florida/brain-bank,,string,individual
+Michigan University,Michigan University,,,,,individualIdSource,,https://odei.umich.edu/,,string,individual
 MSSM,Mount Sinai NIH Brain and Tissue Repository,,,,,individualIdSource,,http://icahn.mssm.edu/research/labs/neuropathology-and-brain-banking,,string,individual
+NACC,National Alzheimer's Coordinating Center,,,,,individualIdSource,,https://www.naccdata.org/,,string,individual
 NDRI,National Disease Research Interchange,,,,,individualIdSource,,https://ndriresource.org/,,string,individual
 Newcastle,"Newcastle University, UK",,,,,individualIdSource,,https://www.ncl.ac.uk/,,string,individual
 NICHD,Eunice Kennedy Shriver National Institute of Child Health and Human Development,,,,,individualIdSource,,https://www.nichd.nih.gov/,,string,individual
@@ -774,8 +787,10 @@ TAA,Tourette Association of America,,,,,individualIdSource,,https://tourette.org
 UCI_TMF,"University of California, Irvine Transgenic Mouse Facility",,,,,individualIdSource,,https://www.research.uci.edu/facilities-services/tmf/index.html,,string,individual
 UCSF,University of California - San Francisco,,,,,individualIdSource,,https://www.ucsf.edu/,,string,individual
 UM-BTB,University of Maryland Brain and Tissue Bank,,,,,individualIdSource,,https://www.medschool.umaryland.edu/btbank/,,string,individual
+University of Florida,University of Florida,,,,,individualIdSource,,https://www.ufl.edu/,,string,individual
 UW-CDL,University of Washington Congenital Defects Lab,,,,,individualIdSource,,,,string,individual
 Vaccarino,"Vaccarino Lab, Yale School of Medicine",,,,,individualIdSource,,https://medicine.yale.edu/lab/vaccarino/,,string,individual
+Washington University,Washington University in Saint Louis,,,,,individualIdSource,,https://washu.edu/,,string,individual
 XCell Science,XCell Science Inc. (XCell) is a biotechnology company that provides reagents and services to the stem cell community,,,,,individualIdSource,,http://www.xcellscience.com/,,string,individual
 Yale,Yale School of Medicine,,,,,individualIdSource,,https://medicine.yale.edu/,,string,individual
 missing or unknown,INFA is missing or unknown,,,,,INFA,,DiverseCohorts,,string,clinical
