@@ -44,3 +44,7 @@ UW-CDL,University of Washington Congenital Defects Lab,,,,,individualIdSource,,,
 Vaccarino,"Vaccarino Lab, Yale School of Medicine",,,,,individualIdSource,,https://medicine.yale.edu/lab/vaccarino/,,string,individual
 XCell Science,XCell Science Inc. (XCell) is a biotechnology company that provides reagents and services to the stem cell community,,,,,individualIdSource,,http://www.xcellscience.com/,,string,individual
 Yale,Yale School of Medicine,,,,,individualIdSource,,https://medicine.yale.edu/,,string,individual
+University of Florida,University of Florida,,,,,individualIdSource,,https://www.ufl.edu/,,string,individual
+Michigan University,Michigan University,,,,,individualIdSource,,https://odei.umich.edu/,,string,individual
+NACC,National Alzheimer's Coordinating Center,,,,,individualIdSource,,https://www.naccdata.org/,,string,individual
+Washington University,Washington University in Saint Louis,,,,,individualIdSource,,https://washu.edu/,,string,individual
