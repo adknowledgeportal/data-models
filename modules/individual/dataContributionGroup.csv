@@ -1,2 +1,13 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
 dataContributionGroup,This describes the identifier assigned to a data contributor,"ADNI,MCSA,MCBB,MC ADRC,Emory,Duke,Baker Heart & Diabetes Institute,IADRC,Knight ADRC,MADC,1FL ADRC",,,False,ManifestColumn,,,
+ADNI,,,,,,dataContributionGroup,,,,string,ManifestColumn
+MCSA,,,,,,dataContributionGroup,,,,string,ManifestColumn
+MCBB,,,,,,dataContributionGroup,,,,string,ManifestColumn
+MC ADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
+Emory,,,,,,dataContributionGroup,,,,string,ManifestColumn
+Duke,,,,,,dataContributionGroup,,,,string,ManifestColumn
+Baker Heart & Diabetes Institute,,,,,,dataContributionGroup,,,,string,ManifestColumn
+IADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
+Knight ADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
+MADC,,,,,,dataContributionGroup,,,,string,ManifestColumn
+1FL ADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
