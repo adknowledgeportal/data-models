@@ -534,17 +534,6 @@ No CVD_CAA_ANY,No CVD_CAA_ANY,,,,,CVD_CAA_ANY,,ADSP,,string,clinical
 missing or unknown,CVD_S is missing or unknown,,,,,CVD_S,,ADSP,,string,clinical
 No CVD_S,No CVD_S,,,,,CVD_S,,ADSP,,string,clinical
 Presence,Presence,,,,,CVD_S,,ADSP,,string,clinical
-1FL ADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
-ADNI,,,,,,dataContributionGroup,,,,string,ManifestColumn
-Baker Heart & Diabetes Institute,,,,,,dataContributionGroup,,,,string,ManifestColumn
-Duke,,,,,,dataContributionGroup,,,,string,ManifestColumn
-Emory,,,,,,dataContributionGroup,,,,string,ManifestColumn
-IADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
-Knight ADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
-MADC,,,,,,dataContributionGroup,,,,string,ManifestColumn
-MC ADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
-MCBB,,,,,,dataContributionGroup,,,,string,ManifestColumn
-MCSA,,,,,,dataContributionGroup,,,,string,ManifestColumn
 dataMatrix,A file of data containing multiple values for multiple samples.,,,,,dataSubtype,,,,string,experimentalData
 metadata,"A file of clinical, technical, or other parameters that describe a dataset.",,,,,dataSubtype,,,,string,experimentalData
 normalized,A data set that is produced as the output of a normalization data transformation.,,,,,dataSubtype,,http://purl.obolibrary.org/obo/OBI_0000451,,string,experimentalData
@@ -904,7 +893,7 @@ CVD_ATH,Atherosclerosis,"No CVD_ATH, Mild, Moderate, Severe, missing or unknown"
 CVD_CAA,Cerebral Amyloid Angiopathy (CAA),"No CVD_CAA, Mild, Moderate, Severe, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.CVD_CAA-0.0.2,,string,clinical
 CVD_CAA_ANY,Cerebral Amyloid Angiopathy (CAA) (dichotomous),"No CVD_CAA_ANY, Mild or Moderate or Severe, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.CVD_CAA_ANY-0.0.2,,string,clinical
 CVD_S,Cerebrovascular Disease (simplified). Composite variable indicating whether at least one of the contributing indicators (CVD_ATH_ANY CVD_ART_ANY CVD_CAA_ANY) are 1 else if at least one contributing indicator was evaluated as 0 CVD_S is 0 only missing if all indicators are missing.,"No CVD_S, Presence, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.CVD_S-0.0.2,string,,clinical
-dataContributionGroup,This describes the identifier assigned to a data contributor,"ADNI,MCSA,MCBB,MC ADRC,Emory,Duke,Baker Heart & Diabetes Institute,IADRC,Knight ADRC,MADC,1FL ADRC",,,False,ManifestColumn,,,,string,individual
+dataContributionGroup,This describes the identifier assigned to a data contributor,"ADNI,MCSA,MCBB,MC ADRC,Emory,Duke,Baker Heart & Diabetes Institute,IADRC,Knight ADRC,MADC,1FL ADRC",,,False,ManifestColumn,,,,,
 dataSubtype,"Further qualification of dataType, which may be used to indicate the state of processing of the data, aggregation of the data, or presence of metadata.","dataMatrix, metadata, normalized, processed, raw, residualized",,,False,ManifestColumn,,sage.annotations-experimentalData.dataSubtype-0.0.3,,string,experimentalData
 dataType,Types of input/output data in bioinformatics pipelines,"Volume, Weight, Pharmacokinetic Study, genomicVariants, behavior process, metabolomics, image, geneExpression, isoformExpression, proteomics, kinomics, drugScreen, drugCombinationScreen, cellularPhysiology, chromatinActivity, surveyData, network, clinical, immunoassay, electrophysiology, metagenomics, epigenetics, pharmacology",,,False,ManifestColumn,,sage.annotations-experimentalData.dataType-0.0.3,,string,experimentalData
 dateBirth,Individual date of birth,,,,True,ManifestColumn,,sage.annotations-demographics.dateBirth-0.0.2,,string,mouse
