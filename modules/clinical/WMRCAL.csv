@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-WMRCAL,White matter rarefaction (cerebral arteriosclerotic leukoencephalopathy). Simplified version to combine WMR (v10+ of NACC) and ART (LOAD Spanish cohort NACC <=v9 and more) ,"No, Yes, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.WMRCAL-0.0.2,string,,clinical
+WMRCAL,White matter rarefaction (cerebral arteriosclerotic leukoencephalopathy). Simplified version to combine WMR (v10+ of NACC) and ART (LOAD Spanish cohort NACC <=v9 and more) ,"No, Yes, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.WMRCAL-0.0.2,,string,clinical
 No,No WMRCAL,,,,,WMRCAL,,ADSP,,string,clinical
 Yes,Yes WMRCAL,,,,,WMRCAL,,ADSP,,string,clinical
 missing or unknown, WMRCAL is missing or unknown,,,,,WMRCAL,,DiverseCohorts,,string,clinical

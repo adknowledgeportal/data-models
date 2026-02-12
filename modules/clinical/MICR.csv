@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-MICR,Microinfarcts,"No, Yes, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.MICR-0.0.2,string,,clinical
+MICR,Microinfarcts,"No, Yes, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.MICR-0.0.2,,string,clinical
 No,No Microinfarcts,,,,,MICR,,ADSP,,string,clinical
 Yes,Yes Microinfarcts,,,,,MICR,,ADSP,,string,clinical
 missing or unknown,MICR is missing or unknown,,,,,MICR,,DiverseCohorts,,string,clinical

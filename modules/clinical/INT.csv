@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-INT,Interval between last exam and death (unit in months). Use missing or unknown if not available,,,,True,ManifestColumn,,sage-annotations-clinical.INT-0.0.2,string,,clinical
+INT,Interval between last exam and death (unit in months). Use missing or unknown if not available,,,,True,ManifestColumn,,sage-annotations-clinical.INT-0.0.2,,string,clinical

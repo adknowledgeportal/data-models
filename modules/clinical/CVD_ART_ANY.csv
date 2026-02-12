@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-CVD_ART_ANY,Arteriolosclerosis (dichotomous),"No CVD_ART_ANY, Mild or Moderate or Severe, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.CVD_ART_ANY-0.0.2,string,,clinical
+CVD_ART_ANY,Arteriolosclerosis (dichotomous),"No CVD_ART_ANY, Mild or Moderate or Severe, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.CVD_ART_ANY-0.0.2,,string,clinical
 No CVD_ART_ANY,No CVD_ART_ANY,,,,,CVD_ART_ANY,,ADSP,,string,clinical
 Mild or Moderate or Severe,Mild or Moderate or Severe grouped,,,,,CVD_ART_ANY,,ADSP,,string,clinical
 missing or unknown,CVD_ART_ANY is missing or unknown,,,,,CVD_ART_ANY,,DiverseCohorts,,string,clinical
