@@ -55,11 +55,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "CDLB",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:Intermediate",
@@ -130,11 +129,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "ADNC",
             "sms:required": "sms:true",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:Missingorunknown",
@@ -283,11 +281,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "WMRCAL",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:NotAD",
@@ -531,11 +528,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "alt_HS_S",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:Presence",
@@ -582,11 +578,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "CVD_S",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:Amygdalaonly",
@@ -642,11 +637,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "alt_LEWY_full",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:Brainstempredominant",
@@ -761,11 +755,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "LEWY_full",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:NoaltLEWYFull",
@@ -851,11 +844,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "AMY_A",
             "sms:required": "sms:true",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:Phase1or2",
@@ -929,11 +921,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "AMY_THAL",
             "sms:required": "sms:true",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:Phase4or5",
@@ -998,11 +989,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "AMY_ANY",
             "sms:required": "sms:true",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:Noamyloidpresence",
@@ -7835,11 +7825,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "B_SCORE",
             "sms:required": "sms:true",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:BRAAKStage3-4",
@@ -11334,6 +11323,59 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:DataContributionGroup",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "This describes the identifier assigned to a data contributor",
+            "rdfs:label": "DataContributionGroup",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:ADNI"
+                },
+                {
+                    "@id": "bts:MCSA"
+                },
+                {
+                    "@id": "bts:MCBB"
+                },
+                {
+                    "@id": "bts:MCADRC"
+                },
+                {
+                    "@id": "bts:Emory"
+                },
+                {
+                    "@id": "bts:Duke"
+                },
+                {
+                    "@id": "bts:BakerHeart&DiabetesInstitute"
+                },
+                {
+                    "@id": "bts:IADRC"
+                },
+                {
+                    "@id": "bts:KnightADRC"
+                },
+                {
+                    "@id": "bts:MADC"
+                },
+                {
+                    "@id": "bts:1FLADRC"
+                }
+            ],
+            "sms:columnType": "string",
+            "sms:displayName": "dataContributionGroup",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:LBP",
             "@type": "rdfs:Class",
             "rdfs:comment": "The Living Brain Project Study",
@@ -11866,11 +11908,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "conservationMethod",
             "sms:required": "sms:true",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:Fixedtissuesonly",
@@ -12898,11 +12939,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "WMR",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:Moderate",
@@ -12979,11 +13019,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "CVD_ART",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:Severe",
@@ -13060,11 +13099,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "CVD_CAA_ANY",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:NoCVDARTANY",
@@ -13108,11 +13146,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "CVD_ART_ANY",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:NoCVDATH",
@@ -13162,11 +13199,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "CVD_ATH",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:NoCVDATHANY",
@@ -13210,11 +13246,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "CVD_ATH_ANY",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:NoCVDCAA",
@@ -13264,11 +13299,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "CVD_CAA",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:NoCVDCAAANY",
@@ -13303,6 +13337,171 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "No CVD_S",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:1FLADRC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "1FLADRC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataContributionGroup"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "1FL ADRC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:BakerHeart&DiabetesInstitute",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "BakerHeart&DiabetesInstitute",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataContributionGroup"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "Baker Heart & Diabetes Institute",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Duke",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Duke",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataContributionGroup"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "Duke",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Emory",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Emory University",
+            "rdfs:label": "Emory",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataContributionGroup"
+                },
+                {
+                    "@id": "bts:IndividualIdSource"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "Emory",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:IADRC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "IADRC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataContributionGroup"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "IADRC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MADC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "MADC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataContributionGroup"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "MADC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MCADRC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "MCADRC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataContributionGroup"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "MC ADRC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MCBB",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "MCBB",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataContributionGroup"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "MCBB",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:MCSA",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "MCSA",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:DataContributionGroup"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "MCSA",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -15444,11 +15643,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "mayoDx",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:OvaryCancer",
@@ -17584,11 +17782,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "HS_L",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:NoHSL",
@@ -17807,27 +18004,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:Emory",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "Emory University",
-            "rdfs:label": "Emory",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataContributionGroup"
-                },
-                {
-                    "@id": "bts:IndividualIdSource"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:columnType": "string",
-            "sms:displayName": "Emory",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:Geschwind",
             "@type": "rdfs:Class",
             "rdfs:comment": "The Geschwind Lab",
@@ -18010,6 +18186,24 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:MichiganUniversity",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Michigan University",
+            "rdfs:label": "MichiganUniversity",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualIdSource"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "Michigan University",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:MSSM",
             "@type": "rdfs:Class",
             "rdfs:comment": "Mount Sinai NIH Brain and Tissue Repository",
@@ -18024,6 +18218,24 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "MSSM",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NACC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "National Alzheimer's Coordinating Center",
+            "rdfs:label": "NACC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualIdSource"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "NACC",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -18340,6 +18552,24 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:UniversityofFlorida",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "University of Florida",
+            "rdfs:label": "UniversityofFlorida",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualIdSource"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "University of Florida",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:UW-CDL",
             "@type": "rdfs:Class",
             "rdfs:comment": "University of Washington Congenital Defects Lab",
@@ -18372,6 +18602,24 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "Vaccarino",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:WashingtonUniversity",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Washington University in Saint Louis",
+            "rdfs:label": "WashingtonUniversity",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualIdSource"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "Washington University",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -18453,11 +18701,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "LEWY_ANY",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:NoLEWYANYorolfactorybulboramygdalapredominantgroup",
@@ -18576,11 +18823,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "LEWY_grp",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:NoLEWYGrporolfactorybulboramygdalapredominantgroup",
@@ -20269,194 +20515,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:DataContributionGroup",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "This describes the identifier assigned to a data contributor",
-            "rdfs:label": "DataContributionGroup",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ManifestColumn"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "schema:rangeIncludes": [
-                {
-                    "@id": "bts:ADNI"
-                },
-                {
-                    "@id": "bts:MCSA"
-                },
-                {
-                    "@id": "bts:MCBB"
-                },
-                {
-                    "@id": "bts:MCADRC"
-                },
-                {
-                    "@id": "bts:Emory"
-                },
-                {
-                    "@id": "bts:Duke"
-                },
-                {
-                    "@id": "bts:BakerHeart&DiabetesInstitute"
-                },
-                {
-                    "@id": "bts:IADRC"
-                },
-                {
-                    "@id": "bts:KnightADRC"
-                },
-                {
-                    "@id": "bts:MADC"
-                },
-                {
-                    "@id": "bts:1FLADRC"
-                }
-            ],
-            "sms:displayName": "dataContributionGroup",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:MCSA",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "MCSA",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataContributionGroup"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "MCSA",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:MCBB",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "MCBB",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataContributionGroup"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "MCBB",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:MCADRC",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "MCADRC",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataContributionGroup"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "MC ADRC",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:Duke",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "Duke",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataContributionGroup"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Duke",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:BakerHeart&DiabetesInstitute",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "BakerHeart&DiabetesInstitute",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataContributionGroup"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Baker Heart & Diabetes Institute",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:IADRC",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "IADRC",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataContributionGroup"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "IADRC",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:MADC",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "MADC",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataContributionGroup"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "MADC",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:1FLADRC",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "1FLADRC",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:DataContributionGroup"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "1FL ADRC",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:DateBirth",
             "@type": "rdfs:Class",
             "rdfs:comment": "Individual date of birth",
@@ -21081,6 +21139,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "sms:columnType": "string",
             "sms:displayName": "not applicable",
             "sms:required": "sms:false",
             "sms:validationRules": []
@@ -21142,6 +21201,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "sms:columnType": "string",
             "sms:displayName": "Filename",
             "sms:required": "sms:true",
             "sms:validationRules": []
@@ -21404,11 +21464,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "HEMOR",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:HSS",
@@ -21434,11 +21493,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "HS_S",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:IndividualID",
@@ -21479,74 +21537,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:UniversityofFlorida",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "UniversityofFlorida",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualIdSource"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "University of Florida",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:WashingtonUniversity",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "WashingtonUniversity",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualIdSource"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Washington University",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:MichiganUniversity",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "MichiganUniversity",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualIdSource"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "Michigan University",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:NACC",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "NACC",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:IndividualIdSource"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:displayName": "NACC",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:INFA",
             "@type": "rdfs:Class",
             "rdfs:comment": "Infarcts and lacunes. Reports of anoxic ischemic injury will not be considered within the infarcts and lacunes lesions",
@@ -21570,11 +21560,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "INFA",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:InputTotalRNA",
@@ -21607,11 +21596,10 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "sms:columnType": "string",
             "sms:displayName": "INT",
             "sms:required": "sms:true",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:IonMode",
@@ -23137,11 +23125,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "MICR",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:MicrochipID",
@@ -27418,11 +27405,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "REAG",
             "sms:required": "sms:true",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:NoAD",
@@ -32135,11 +32121,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "TDP_3",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:NoTDP3",
@@ -32258,11 +32243,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "TDP_5",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:NoTDP5",
@@ -34285,11 +34269,10 @@
                     "@id": "bts:Missingorunknown"
                 }
             ],
+            "sms:columnType": "string",
             "sms:displayName": "WBVD",
             "sms:required": "sms:false",
-            "sms:validationRules": [
-                "string"
-            ]
+            "sms:validationRules": []
         },
         {
             "@id": "bts:YearsEducation",
