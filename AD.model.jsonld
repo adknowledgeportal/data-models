@@ -9312,6 +9312,9 @@
                 },
                 {
                     "@id": "bts:Yale-ASD"
+                },
+                {
+                    "@id": "bts:ZhaoUSFStudy"
                 }
             ],
             "sms:columnType": "string",
@@ -32078,6 +32081,23 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "Yale-ASD",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ZhaoUSFStudy",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "ZhaoUSFStudy",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Zhao_USF_Study",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
