@@ -32087,7 +32087,7 @@
         {
             "@id": "bts:ZhaoUSFStudy",
             "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
+            "rdfs:comment": "The DNA N6-methyladenine (6mA) Methylome of Alzheimer’s disease Study",
             "rdfs:label": "ZhaoUSFStudy",
             "rdfs:subClassOf": [
                 {
@@ -32097,6 +32097,7 @@
             "schema:isPartOf": {
                 "@id": "http://schema.biothings.io"
             },
+            "sms:columnType": "string",
             "sms:displayName": "Zhao_USF_Study",
             "sms:required": "sms:false",
             "sms:validationRules": []
