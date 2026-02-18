@@ -4,7 +4,7 @@ bulk cell,All cells from bulk sample,,,,,nucleicAcidSource,,Sage Bionetworks,,st
 bulk nuclei,All nuclei from bulk sample,,,,,nucleicAcidSource,,Sage Bionetworks,,string,biospecimen
 cfDNA,Circulating cell-free DNA.,,,,,nucleicAcidSource,,http://purl.obolibrary.org/obo/NCIT_C128274,,string,biospecimen
 mitochondria,Mitochondria only,,,,,nucleicAcidSource,,Sage Bionetworks,,string,biospecimen
-not applicable, Nucleic acid source doesn't apply to this data (e.g. not a sequencing assay).,,,,,nucleicAcidSource,,,,,biospecimen
+not applicable, Nucleic acid source doesn't apply to this data (e.g. not a sequencing assay).,,,,,nucleicAcidSource,,,,string,biospecimen
 single cell,Single cell,,,,,nucleicAcidSource,,Sage Bionetworks,,string,biospecimen
 single nucleus,Single nuclei,,,,,nucleicAcidSource,,Sage Bionetworks,,string,biospecimen
 sorted cells,Sorted cells,,,,,nucleicAcidSource,,Sage Bionetworks,,string,biospecimen

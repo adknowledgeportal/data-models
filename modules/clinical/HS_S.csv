@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-HS_S,Hippocampal sclerosis (with simplified),"No, Yes, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.HS_S-0.0.2,string,,clinical
+HS_S,Hippocampal sclerosis (with simplified),"No, Yes, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.HS_S-0.0.2,,string,clinical
 No,No Hippocampal sclerosis,,,,,HS_S,,ADSP,,string,clinical
 Yes,Yes Hippocampal sclerosis,,,,,HS_S,,ADSP,,string,clinical
 missing or unknown,HS_S is missing or unknown,,,,,HS_S,,DiverseCohorts,,string,clinical
