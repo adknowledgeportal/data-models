@@ -48,10 +48,10 @@ jobs:
 
       - name: Upload schemas as artifacts
         uses: actions/upload-artifact@v6
-        if: steps.generate.outputs.schemas != ''
+        if: steps.generate.outputs.schemas-json != ''
         with:
           name: json-schemas
-          path: ${{ steps.generate.outputs.schemas }}
+          path: ${{ steps.generate.outputs.schemas-json }}
           if-no-files-found: warn
 
       # add a step to register jsonschemas
