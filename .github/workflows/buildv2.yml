@@ -96,6 +96,7 @@ jobs:
           else:
               # Create a summary table
               report += "### Summary\n\n"
+              # TODO: Remove Schema ID and may want to add jsonschema link on synapse instead
               report += "| Schema Name | Schema ID | Properties Count |\n"
               report += "|-------------|-----------|------------------|\n"
 
