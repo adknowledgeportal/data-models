@@ -7,10 +7,18 @@ on:
       - synchronize
       - labeled
     branches:
-      - "*"
+      - "main"
     paths:
       - "modules/**"
       - "AD.model.csv"
+
+  push:
+    branches:
+      - "*"
+    # paths:
+    #   - "modules/**"
+    #   - "AD.model.csv"
+
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.triggering_actor }}
@@ -45,6 +53,10 @@ jobs:
           name: json-schemas
           path: ${{ steps.generate.outputs.schemas }}
           if-no-files-found: warn
+
+      # add a step to register jsonschemas
+      # If it's not a github release event, push to test jsonschema organization,
+      # If it is a github release event, push to production jsonschema organization
 
       - name: Format Schema Report
         id: format
