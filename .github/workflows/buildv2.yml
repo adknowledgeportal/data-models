@@ -111,6 +111,7 @@ jobs:
               # Add detailed information for each schema
               for schema in schemas:
                   schema_name = schema.get('title', 'Unnamed Schema')
+                  # TODO: This is weird, we need to look into these schema ids.
                   schema_id = schema.get('$id', 'N/A')
                   schema_description = schema.get('description', 'No description available')
 
