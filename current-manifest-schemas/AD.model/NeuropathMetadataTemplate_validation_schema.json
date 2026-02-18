@@ -350,10 +350,8 @@
     },
     "INT": {
       "description": "Interval between last exam and death (unit in months). Use missing or unknown if not available",
-      "not": {
-        "type": "null"
-      },
-      "title": "INT"
+      "title": "INT",
+      "type": "string"
     },
     "LEWY_ANY": {
       "description": "LBD grouped and PD Braak grouped dichotomous",

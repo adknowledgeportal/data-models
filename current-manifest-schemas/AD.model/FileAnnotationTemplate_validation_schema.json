@@ -34,10 +34,8 @@
     },
     "Filename": {
       "description": " this is a protected schematic attribute; it will be automatically filled when generating a manifest using the FileAnnotationTemplate in a Synapse folder with files)",
-      "not": {
-        "type": "null"
-      },
-      "title": "Filename"
+      "title": "Filename",
+      "type": "string"
     },
     "analysisType": {
       "description": "Type of analysis",
@@ -771,6 +769,7 @@
             "WHICAP_Immunoprofiling",
             "WallOfTargets",
             "Yale-ASD",
+            "Zhao_USF_Study",
             "diseasePseudotime",
             "eQTLmetaAnalysis",
             "iNiAstshRNA",
