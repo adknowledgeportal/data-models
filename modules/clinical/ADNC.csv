@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-ADNC,ADNC severity score,"Not AD, Low, Intermediate, High, missing or unknown",,,True,ManifestColumn,,sage-annotations-clinical.ADNC-0.0.2,string,,clinical
+ADNC,ADNC severity score,"Not AD, Low, Intermediate, High, missing or unknown",,,True,ManifestColumn,,sage-annotations-clinical.ADNC-0.0.2,,string,clinical
 Not AD,Not AD,,,,,ADNC,,ADSP,,string,clinical
 Low,Low,,,,,ADNC,,ADSP,,string,clinical
 Intermediate,Intermediate,,,,,ADNC,,ADSP,,string,clinical
