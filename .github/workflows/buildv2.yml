@@ -24,7 +24,7 @@ jobs:
       pull-requests: write
       contents: read
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         # with:
         #   fetch-depth: 0
       # - name: List repository files as a tree
@@ -39,7 +39,7 @@ jobs:
           data-model-labels: "display_label"
 
       - name: Upload schemas as artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: steps.generate.outputs.schemas != ''
         with:
           name: json-schemas
