@@ -66,8 +66,26 @@ jobs:
           python - <<'PYTHON'
           import json
           import sys
+          import os
 
-          schemas = json.loads('''${{ steps.generate.outputs.schemas-json }}''')
+          # Get the schemas-json output
+          schemas_json = r'''${{ steps.generate.outputs.schemas-json }}'''
+
+          try:
+              # Handle empty or null output
+              if not schemas_json or schemas_json.strip() == '' or schemas_json.strip() == 'null':
+                  schemas = []
+              else:
+                  schemas = json.loads(schemas_json)
+          except json.JSONDecodeError as e:
+              print(f"Error parsing schemas JSON: {e}")
+              print(f"Raw JSON content length: {len(schemas_json)}")
+              print(f"First 500 chars: {schemas_json[:500]}")
+              print(f"Last 500 chars: {schemas_json[-500:]}")
+              schemas = []
+          except Exception as e:
+              print(f"Unexpected error: {e}")
+              schemas = []
 
           # Build markdown report with collapsible sections
           report = "## Generated JSON Schemas\n\n"
