@@ -3419,10 +3419,10 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:CITESeq",
+            "@id": "bts:CITE-seq",
             "@type": "rdfs:Class",
-            "rdfs:comment": "CITE-seq is a method that combines highly multiplexed antibody-based detection of protein markers together with unbiased transcriptome profiling for thousands of single cells in parallel.",
-            "rdfs:label": "CITESeq",
+            "rdfs:comment": "The use of CITE-seq technology with the purpose of quantifying cell surface protein expression in addition to transcriptomic readout in single cells.",
+            "rdfs:label": "CITE-seq",
             "rdfs:subClassOf": [
                 {
                     "@id": "bts:Assay"
@@ -3432,7 +3432,7 @@
                 "@id": "http://schema.biothings.io"
             },
             "sms:columnType": "string",
-            "sms:displayName": "CITESeq",
+            "sms:displayName": "CITE-seq",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -3649,6 +3649,24 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "FitBark",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Flowcytometry",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "A technique for counting examining and sorting microscopic particles (or cells) suspended in a stream of fluid.",
+            "rdfs:label": "Flowcytometry",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Assay"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "flow cytometry",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -16583,6 +16601,24 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Fcs",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Flow Cytometry Standard (FCS) is a data file standard for the reading and writing of data from flow cytometry experiments.",
+            "rdfs:label": "Fcs",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:FileFormat"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "fcs",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Fig",
             "@type": "rdfs:Class",
             "rdfs:comment": "Line drawing saved in the Xfig format; stored as a vector image that may include lines, shapes, arcs, splines, arrows, and text objects; may also include images, colors, and patterns.",
@@ -20015,6 +20051,23 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "arrayBatch",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CITESeq",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "CITESeq",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Assay"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "CITESeq",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
