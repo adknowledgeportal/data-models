@@ -44,7 +44,7 @@ jobs:
       - name: Clean schema file names
         id: clean-names
         run: |
-          mv ./schemas/IndividualAnimalMODEL-ADMetadataTemplate.json IndividualAnimalMODEL_ADMetadataTemplate.json
+          mv ./schemas/IndividualAnimalMODEL-ADMetadataTemplate.json ./schemas/IndividualAnimalMODEL_ADMetadataTemplate.json
 
       - name: Upload schemas as artifacts
         uses: actions/upload-artifact@v6
