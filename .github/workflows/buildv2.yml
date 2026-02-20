@@ -60,7 +60,7 @@ jobs:
       # If it's not a github release event, push to test jsonschema organization,
       # If it is a github release event, push to production jsonschema organization
       - name: Upload schemas as artifacts
-        uses: Sage-Bionetworks-Actions/generate-jsonschema@develop
+        uses: Sage-Bionetworks-Actions/register-jsonschema@develop
         # if: steps.generate.outputs.schemas != ''
         with:
           org-name: dpetest
