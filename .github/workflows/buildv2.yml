@@ -1,0 +1,161 @@
+name: Build v2
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - labeled
+    branches:
+      - "main"
+    paths:
+      - "modules/**"
+      - "AD.model.csv"
+  # TODO: Remove this as the push section is only for testing
+  push:
+    branches:
+      - "*"
+    # paths:
+    #   - "modules/**"
+    #   - "AD.model.csv"
+
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.triggering_actor }}
+  cancel-in-progress: true
+
+jobs:
+  generate-and-register-schemas:
+    runs-on: ubuntu-latest
+    if: github.triggering_actor != 'commit-to-main-bot-adkp[bot]'
+    permissions:
+      pull-requests: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+      - name: Generate JSON Schemas
+        id: generate
+        uses: Sage-Bionetworks-Actions/generate-jsonschema@main
+        with:
+          data-model-source: ./AD.model.csv
+          data-model-labels: "display_label"
+
+      # TODO: update or remove this hack to either make this prettier code
+      # TODO: to update schema names or do the schema name standardization
+      # TODO: elsehere
+      - name: Clean schema file names
+        id: clean-names
+        run: |
+          sudo chown -R $USER:$USER ./schemas
+          chmod -R u+rwX ./schemas
+          mv ./schemas/IndividualAnimalMODEL-ADMetadataTemplate.json ./schemas/IndividualAnimalMODEL.ADMetadataTemplate.json
+
+      - name: Upload schemas as artifacts
+        uses: actions/upload-artifact@v6
+        # if: steps.generate.outputs.schemas != ''
+        with:
+          name: json-schemas
+          path: "**/*.json"
+          # TODO: fix this output
+          # path: ${{ steps.generate.outputs.schemas-json }}
+          if-no-files-found: warn
+
+      # TODO: add a condition if it is a github release event, push to production jsonschema organization
+      # TODO: What happens when the jsonschema organization doesn't exist.
+      - name: Register schemas in Synapse
+        id: register
+        uses: Sage-Bionetworks-Actions/register-jsonschema@develop
+        # if: steps.generate.outputs.schemas != ''
+        with:
+          org-name: dpetest
+          schema-dir: ${{ steps.generate.outputs.schemas }}
+          synapse_auth_token: ${{ secrets.SYNAPSE_TOKEN_DPE }}
+
+      # TODO: need to revamp this report, perhaps after we deploy this
+      # TODO: we ask for feedback on what would be useful to report.
+      - name: Format Schema Report
+        id: format
+        run: |
+          python - <<'PYTHON'
+          import json
+          import sys
+          import os
+
+          # Get the schemas-json output
+          schemas_json = r'''${{ steps.generate.outputs.schemas-json }}'''
+          register_jsonschema = r'''${{ steps.register.outputs.uris }}'''
+          print(register_jsonschema)
+          try:
+              # Handle empty or null output
+              if not schemas_json or schemas_json.strip() == '' or schemas_json.strip() == 'null':
+                  schemas = []
+              else:
+                  schemas = json.loads(schemas_json)
+          except json.JSONDecodeError as e:
+              print(f"Error parsing schemas JSON: {e}")
+              print(f"Raw JSON content length: {len(schemas_json)}")
+              print(f"First 500 chars: {schemas_json[:500]}")
+              print(f"Last 500 chars: {schemas_json[-500:]}")
+              schemas = []
+          except Exception as e:
+              print(f"Unexpected error: {e}")
+              schemas = []
+
+          # Build markdown report with collapsible sections
+          report = "## Generated JSON Schemas\n\n"
+          report += f"**Total Schemas Generated:** {len(schemas)}\n\n"
+
+          if len(schemas) == 0:
+              report += "No schemas were generated.\n"
+          else:
+              # Create a summary table
+              report += "### Summary\n\n"
+              # TODO: Remove Schema ID and may want to add jsonschema link on synapse instead
+              report += "| Schema Name | Schema ID | Properties Count |\n"
+              report += "|-------------|-----------|------------------|\n"
+
+              for schema in schemas:
+                  schema_name = schema.get('title', 'Unnamed Schema')
+                  schema_id = schema.get('$id', 'N/A')
+                  properties = schema.get('properties', {})
+                  prop_count = len(properties)
+                  report += f"| {schema_name} | `{schema_id}` | {prop_count} |\n"
+
+              report += "\n### Detailed Schema Information\n\n"
+
+              # Add detailed information for each schema
+              for schema in schemas:
+                  schema_name = schema.get('title', 'Unnamed Schema')
+                  # TODO: This is weird, we need to look into these schema ids.
+                  schema_id = schema.get('$id', 'N/A')
+                  schema_description = schema.get('description', 'No description available')
+
+                  report += f"<details>\n<summary><strong>{schema_name}</strong></summary>\n\n"
+                  report += f"**Schema ID:** `{schema_id}`\n\n"
+                  report += f"**Description:** {schema_description}\n\n"
+
+                  # Add properties summary
+                  properties = schema.get('properties', {})
+                  required_props = schema.get('required', [])
+
+                  if properties:
+                      report += "**Properties:**\n\n"
+                      report += "| Property | Type | Required |\n"
+                      report += "|----------|------|----------|\n"
+                      for prop_name, prop_def in properties.items():
+                          prop_type = prop_def.get('type', 'any')
+                          is_required = '✓' if prop_name in required_props else ''
+                          report += f"| `{prop_name}` | {prop_type} | {is_required} |\n"
+
+                  report += "\n</details>\n\n"
+
+          # Write to file
+          with open('schema-report.md', 'w') as f:
+              f.write(report)
+          PYTHON
+
+      - name: Comment PR with Schema Summary
+        uses: mshick/add-pr-comment@v2
+        with:
+          message-path: schema-report.md
+          message-id: jsonschema-generation
