@@ -25,7 +25,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  generate-schemas:
+  generate-and-register-schemas:
     runs-on: ubuntu-latest
     if: github.triggering_actor != 'commit-to-main-bot-adkp[bot]'
     permissions:
@@ -33,18 +33,31 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v6
-        # with:
-        #   fetch-depth: 0
-      # - name: List repository files as a tree
-      #   run: |
-      #     echo "Repository file tree:"
-      #     tree -a -L 4 || find . | head -1000
       - name: Generate JSON Schemas
         id: generate
         uses: Sage-Bionetworks-Actions/generate-jsonschema@main
         with:
           data-model-source: ./AD.model.csv
           data-model-labels: "display_label"
+
+      # TODO: Remove this hack
+      - name: Clean schema file names
+        id: clean-names
+        run: |
+          echo "Cleaning schema file names by replacing inappropriate characters..."
+          find . -name "*.json" -type f | while read -r file; do
+            dir=$(dirname "$file")
+            basename=$(basename "$file")
+
+            # Replace hyphens with underscores and remove any other inappropriate characters
+            # Keep only letters, numbers, periods, and underscores
+            cleaned_name=$(echo "$basename" | sed 's/-/_/g' | sed 's/[^a-zA-Z0-9._]//g')
+
+            if [ "$basename" != "$cleaned_name" ]; then
+              echo "Renaming: $basename -> $cleaned_name"
+              mv "$file" "$dir/$cleaned_name"
+            fi
+          done
 
       - name: Upload schemas as artifacts
         uses: actions/upload-artifact@v6
@@ -59,7 +72,8 @@ jobs:
       # add a step to register jsonschemas
       # If it's not a github release event, push to test jsonschema organization,
       # If it is a github release event, push to production jsonschema organization
-      - name: Upload schemas as artifacts
+      - name: Register schemas in Synapse
+        id: register
         uses: Sage-Bionetworks-Actions/register-jsonschema@develop
         # if: steps.generate.outputs.schemas != ''
         with:
@@ -77,7 +91,8 @@ jobs:
 
           # Get the schemas-json output
           schemas_json = r'''${{ steps.generate.outputs.schemas-json }}'''
-
+          register_jsonschema = r'''${{ steps.register.outputs.schemas-json }}'''
+          print(register_jsonschema)
           try:
               # Handle empty or null output
               if not schemas_json or schemas_json.strip() == '' or schemas_json.strip() == 'null':
