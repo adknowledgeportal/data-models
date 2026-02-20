@@ -80,7 +80,7 @@ jobs:
 
           # Get the schemas-json output
           schemas_json = r'''${{ steps.generate.outputs.schemas-json }}'''
-          register_jsonschema = r'''${{ steps.register.outputs.schemas-json }}'''
+          register_jsonschema = r'''${{ steps.register.outputs.uris }}'''
           print(register_jsonschema)
           try:
               # Handle empty or null output
