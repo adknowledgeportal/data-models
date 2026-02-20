@@ -30,7 +30,7 @@ jobs:
     if: github.triggering_actor != 'commit-to-main-bot-adkp[bot]'
     permissions:
       pull-requests: write
-      contents: write
+      contents: read
     steps:
       - uses: actions/checkout@v6
       - name: Generate JSON Schemas
@@ -55,7 +55,19 @@ jobs:
 
             if [ "$basename" != "$cleaned_name" ]; then
               echo "Renaming: $basename -> $cleaned_name"
-              mv "$file" "$dir/$cleaned_name"
+              target_path="$dir/$cleaned_name"
+
+              # Ensure file is writable and handle the rename
+              chmod 644 "$file" 2>/dev/null || true
+
+              # Use cp + rm instead of mv to handle permission issues
+              if cp "$file" "$target_path"; then
+                rm -f "$file"
+                echo "Successfully renamed: $basename -> $cleaned_name"
+              else
+                echo "Error: Failed to rename $basename to $cleaned_name"
+                exit 1
+              fi
             fi
           done
 
