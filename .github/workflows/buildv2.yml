@@ -43,12 +43,14 @@ jobs:
       # TODO: Remove this hack
       - name: Clean schema file names
         id: clean-names
+        env:
+          SCHEMA_DIR: ${{ steps.generate.outputs.schemas }}
         run: |
           set -euo pipefail
           echo "Cleaning schema file names by replacing inappropriate characters..."
 
           # Use -print0 to safely handle any odd characters/spaces
-          find "$dir" -name "*.json" -type f -print0 | while IFS= read -r -d '' file; do; do
+          find "$SCHEMA_DIR" -name "*.json" -type f -print0 | while IFS= read -r -d '' file; do
             dir="$(dirname "$file")"
             base="$(basename "$file")"
 
