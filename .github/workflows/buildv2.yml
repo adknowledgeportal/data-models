@@ -11,7 +11,7 @@ on:
     paths:
       - "modules/**"
       - "AD.model.csv"
-
+  # TODO: Remove this as the push section is only for testing
   push:
     branches:
       - "*"
@@ -40,7 +40,9 @@ jobs:
           data-model-source: ./AD.model.csv
           data-model-labels: "display_label"
 
-      # TODO: Remove this hack
+      # TODO: update or remove this hack to either make this prettier code
+      # TODO: to update schema names or do the schema name standardization
+      # TODO: elsehere
       - name: Clean schema file names
         id: clean-names
         run: |
@@ -54,13 +56,12 @@ jobs:
         with:
           name: json-schemas
           path: "**/*.json"
-          # TODO: fix this output later
+          # TODO: fix this output
           # path: ${{ steps.generate.outputs.schemas-json }}
           if-no-files-found: warn
 
-      # add a step to register jsonschemas
-      # If it's not a github release event, push to test jsonschema organization,
-      # If it is a github release event, push to production jsonschema organization
+      # TODO: add a condition if it is a github release event, push to production jsonschema organization
+      # TODO: What happens when the jsonschema organization doesn't exist.
       - name: Register schemas in Synapse
         id: register
         uses: Sage-Bionetworks-Actions/register-jsonschema@develop
@@ -70,6 +71,8 @@ jobs:
           schema-dir: ${{ steps.generate.outputs.schemas }}
           synapse_auth_token: ${{ secrets.SYNAPSE_TOKEN_DPE }}
 
+      # TODO: need to revamp this report, perhaps after we deploy this
+      # TODO: we ask for feedback on what would be useful to report.
       - name: Format Schema Report
         id: format
         run: |
