@@ -46,7 +46,7 @@ jobs:
         run: |
           sudo chown -R $USER:$USER ./schemas
           chmod -R u+rwX ./schemas
-          mv ./schemas/IndividualAnimalMODEL-ADMetadataTemplate.json ./schemas/IndividualAnimalMODEL_ADMetadataTemplate.json
+          mv ./schemas/IndividualAnimalMODEL-ADMetadataTemplate.json ./schemas/IndividualAnimalMODEL.ADMetadataTemplate.json
 
       - name: Upload schemas as artifacts
         uses: actions/upload-artifact@v6
