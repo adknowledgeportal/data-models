@@ -44,6 +44,8 @@ jobs:
       - name: Clean schema file names
         id: clean-names
         run: |
+          sudo chown -R $USER:$USER ./schemas
+          chmod -R u+rwX ./schemas
           mv ./schemas/IndividualAnimalMODEL-ADMetadataTemplate.json ./schemas/IndividualAnimalMODEL_ADMetadataTemplate.json
 
       - name: Upload schemas as artifacts
