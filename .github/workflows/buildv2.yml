@@ -44,18 +44,19 @@ jobs:
       - name: Clean schema file names
         id: clean-names
         run: |
+          set -euo pipefail
           echo "Cleaning schema file names by replacing inappropriate characters..."
-          find . -name "*.json" -type f | while read -r file; do
-            dir=$(dirname "$file")
-            basename=$(basename "$file")
 
-            # Replace hyphens with underscores and remove any other inappropriate characters
-            # Keep only letters, numbers, periods, and underscores
-            cleaned_name=$(echo "$basename" | sed 's/-/_/g' | sed 's/[^a-zA-Z0-9._]//g')
+          # Use -print0 to safely handle any odd characters/spaces
+          find . -name "*.json" -type f -print0 | while IFS= read -r -d '' file; do
+            dir="$(dirname "$file")"
+            base="$(basename "$file")"
 
-            if [ "$basename" != "$cleaned_name" ]; then
-              echo "Renaming: $basename -> $cleaned_name"
-              mv "$file" "$cleaned_name"
+            cleaned="$(echo "$base" | sed 's/-/_/g' | sed 's/[^a-zA-Z0-9._]//g')"
+
+            if [[ "$base" != "$cleaned" ]]; then
+              echo "Renaming: $file -> $dir/$cleaned"
+              mv -f -- "$file" "$dir/$cleaned"
             fi
           done
 
@@ -64,7 +65,7 @@ jobs:
         # if: steps.generate.outputs.schemas != ''
         with:
           name: json-schemas
-          path: "**/*.json"
+          path: ${{ steps.generate.outputs.schemas }}/*.json
           # TODO: fix this output later
           # path: ${{ steps.generate.outputs.schemas-json }}
           if-no-files-found: warn
