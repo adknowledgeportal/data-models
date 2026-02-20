@@ -43,31 +43,15 @@ jobs:
       # TODO: Remove this hack
       - name: Clean schema file names
         id: clean-names
-        env:
-          SCHEMA_DIR: ${{ steps.generate.outputs.schemas }}
         run: |
-          set -euo pipefail
-          echo "Cleaning schema file names by replacing inappropriate characters..."
-
-          # Use -print0 to safely handle any odd characters/spaces
-          find "$SCHEMA_DIR" -name "*.json" -type f -print0 | while IFS= read -r -d '' file; do
-            dir="$(dirname "$file")"
-            base="$(basename "$file")"
-
-            cleaned="$(echo "$base" | sed 's/-/_/g' | sed 's/[^a-zA-Z0-9._]//g')"
-
-            if [[ "$base" != "$cleaned" ]]; then
-              echo "Renaming: $file -> $dir/$cleaned"
-              mv -f -- "$file" "$dir/$cleaned"
-            fi
-          done
+          mv ./schemas/IndividualAnimalMODEL-ADMetadataTemplate.json IndividualAnimalMODEL_ADMetadataTemplate.json
 
       - name: Upload schemas as artifacts
         uses: actions/upload-artifact@v6
         # if: steps.generate.outputs.schemas != ''
         with:
           name: json-schemas
-          path: ${{ steps.generate.outputs.schemas }}/*.json
+          path: "**/*.json"
           # TODO: fix this output later
           # path: ${{ steps.generate.outputs.schemas-json }}
           if-no-files-found: warn
