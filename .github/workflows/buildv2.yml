@@ -48,7 +48,7 @@ jobs:
           echo "Cleaning schema file names by replacing inappropriate characters..."
 
           # Use -print0 to safely handle any odd characters/spaces
-          find . -name "*.json" -type f -print0 | while IFS= read -r -d '' file; do
+          find "$dir" -name "*.json" -type f -print0 | while IFS= read -r -d '' file; do; do
             dir="$(dirname "$file")"
             base="$(basename "$file")"
 
