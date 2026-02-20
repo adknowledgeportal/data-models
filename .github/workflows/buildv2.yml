@@ -30,7 +30,7 @@ jobs:
     if: github.triggering_actor != 'commit-to-main-bot-adkp[bot]'
     permissions:
       pull-requests: write
-      contents: read
+      contents: write
     steps:
       - uses: actions/checkout@v6
       - name: Generate JSON Schemas
