@@ -8960,6 +8960,9 @@
                     "@id": "bts:Jax.IU.PittAPP.PS1"
                 },
                 {
+                    "@id": "bts:Jax.IU.PittB6.Klotho"
+                },
+                {
                     "@id": "bts:Jax.IU.PittLevetiracetam-5XFAD"
                 },
                 {
@@ -30030,6 +30033,24 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "Jax.IU.Pitt_APP.PS1",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Jax.IU.PittB6.Klotho",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Jax.IU.Pitt_B6.Klotho study",
+            "rdfs:label": "Jax.IU.PittB6.Klotho",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "Jax.IU.Pitt_B6.Klotho",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
