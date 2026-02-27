@@ -8975,6 +8975,9 @@
                     "@id": "bts:Jax.IU.PittStrainValidation"
                 },
                 {
+                    "@id": "bts:Jax.IU.PittTREM2.HSSvsR47H"
+                },
+                {
                     "@id": "bts:Jax.IU.PittVerubecestat5XFAD"
                 },
                 {
@@ -30120,6 +30123,24 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "Jax.IU.Pitt_StrainValidation",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Jax.IU.PittTREM2.HSSvsR47H",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Jax.IU.Pitt_TREM2.HSSvsR47H Study",
+            "rdfs:label": "Jax.IU.PittTREM2.HSSvsR47H",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "Jax.IU.Pitt_TREM2.HSSvsR47H",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
