@@ -64,11 +64,17 @@ jobs:
           echo "::error::No schemas were generated. Stopping workflow."
           exit 1
 
+      - name: Resolve schemas path on runner
+        id: resolve-schemas-path
+        env:
+          SCHEMAS: ${{ steps.generate.outputs.schemas }}
+        run: echo "path=${SCHEMAS/\/github\/workspace/$GITHUB_WORKSPACE}" >> $GITHUB_OUTPUT
+
       - name: Upload schemas as artifacts
         uses: actions/upload-artifact@v6
         with:
           name: json-schemas
-          path: "**/*.json"
+          path: "${{ steps.resolve-schemas-path.outputs.path }}"
           
       - name: Resolve schema organization
         id: resolve-org
@@ -93,6 +99,11 @@ jobs:
           synapse-auth-token: ${{ secrets.SYNAPSE_TOKEN_DPE }}
           version: ${{ github.event.release.tag_name }}
           fix-schema-name: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
 
       - name: Format Schema Report
         id: format
