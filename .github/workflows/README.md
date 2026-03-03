@@ -194,7 +194,7 @@ The recommended release process uses a two-step GitHub release flow to validate 
 
 ```mermaid
 %%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff"}}}%%
-flowchart LR
+flowchart TD
     A(["Trigger"]) --> B{"Event type?"}
     B -- "PR to main (with changes in modules or AD.model.csv)" --> C{"triggering_actor == commit-to-main-bot?"}
     B -- "release: published pre-release" --> C
