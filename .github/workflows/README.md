@@ -194,53 +194,32 @@ The recommended release process uses a two-step GitHub release flow to validate 
 
 ```mermaid
 %%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff"}}}%%
-    flowchart TD
-        A1[Open/Update PR] --> B1[pull_request trigger\nopened/synchronize/labeled]
-        A2[Publish Pre-release] --> B2[release.published trigger]
-        A3[Promote to Full Release] --> B3[release.released trigger]
-
-        B1 --> C{Triggering actor\n!=\ncommit-to-main-bot?}
-        B2 --> C
-        B3 --> C
-        C -->|Yes| D([generate-and-register-schemas job])
-        C -->|No| Z[Skip workflow]
-
-        D --> D1[Generate JSON Schemas\nfrom AD.model.csv]
-        D1 --> D2{Schemas\ngenerated?}
-        D2 -->|No| E1[Exit with error]
-        D2 -->|Yes| D3[Upload schemas\nas artifacts]
-        D3 --> D4{Event action\n== released?}
-        D4 -->|Yes| D5[Resolve org:\nsage.schemas.ad\nproduction]
-        D4 -->|No| D6[Resolve org:\ntest.ad\ntest]
-        D5 --> D7[Register schemas\nin Synapse]
-        D6 --> D7
-        D7 --> D8[Format Schema Report\nmarkdown summary]
-        D8 --> D9{pull_request\nevent?}
-        D9 -->|Yes| D10[Comment PR\nwith Schema Summary]
-        D9 -->|No| D11[Write to\nworkflow summary only]
-
-    subgraph Legend
-        direction TB
-        triggers[Triggers]
-        jobs([Jobs])
-        outputs[Outputs]
-        triggers ~~~ jobs ~~~ outputs
-        style triggers fill:#ffeb3b,stroke-width:0px
-        style jobs fill:#e3f2fd,stroke-width:0px
-        style outputs fill:#4caf50,stroke-width:0px
-    end
-
-    linkStyle default stroke: gray
-    style A1 fill:#ffeb3b
-    style A2 fill:#ffeb3b
-    style A3 fill:#ffeb3b
-    style B1 fill:#ffeb3b
-    style B2 fill:#ffeb3b
-    style B3 fill:#ffeb3b
-    style D fill:#e3f2fd
-    style D10 fill:#4caf50
-    style D11 fill:#4caf50
-    style D7 fill:#4caf50
-    style D3 fill:#4caf50
+flowchart LR
+    A(["Trigger"]) --> B{"Event type?"}
+    B -- "PR to main (with changes in modules or AD.model.csv)" --> C{"triggering_actor == commit-to-main-bot?"}
+    B -- "release: published pre-release" --> C
+    B -- release: released full release --> C
+    C -- Yes --> SKIP(["Skip — exit"])
+    C -- No --> D["Checkout"]
+    D --> E["Generate JSON Schemas from AD.model.csv"]
+    E --> F{"schemas-json == empty?"}
+    F -- Yes — no schemas generated --> FAIL(["Error — exit 1"])
+    F -- No --> G["Clean schema file names rename hyphen → dot notation"]
+    G --> H["Upload schemas as workflow artifact"]
+    H --> I{"event.action == released?"}
+    I -- Yes — full release --> J["org = prod.org 🚀"]
+    I -- "No — PR or pre-release" --> K["org = test.org 🧪 "]
+    J --> L["Register schemas in org"]
+    K --> L
+    L --> M["Create summary report"]
+    M --> N{"release_tag present?"}
+    N -- Yes — release --> O["For each schema: link to versioned URL + properties table"]
+    N -- No — PR --> P["For each schema: schema name + properties table"]
+    O --> Q["Write to Github summary"]
+    P --> Q
+    Q --> R{"event == pull_request?"}
+    R -- Yes --> S["Post schema-report.md as PR comment"]
+    R -- No --> T(["Done"])
+    S --> T
 ```
 </details>
