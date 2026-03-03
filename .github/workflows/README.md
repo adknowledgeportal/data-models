@@ -174,7 +174,15 @@ The recommended release process uses a two-step GitHub release flow to validate 
 3. Click **Update release** — this triggers `release.released` and registers schemas to `sage.schemas.ad`.
 4. Verify schemas appear in `sage.schemas.ad` on Synapse with the correct semantic version.
 
-> **Tip:** Only the `release.released` action writes to the production org. Accidental pre-release publishes will only affect `test.ad`.
+> **Note:**
+> - Only the `release.released` action writes to the production org. Accidental pre-release publishes will only affect `test.ad`.
+> - Editing the existing pre-release (not creating a new tag) is what triggers the `released` event and routes schemas to production. This triggers the workflow again and registers schemas to the production org.
+> - Do not create a new tag for promotion — editing the existing pre-release is sufficient.
+>
+> **Release tag format requirements (enforced by Synapse):**
+> - Format: `X.Y.Z` — digits only (e.g. `1.2.0` or `v1.2.0`)
+> - Must be greater than `0.0.0`
+> - No pre-release suffixes — tags like `v1.0.0-rc1`, `v1.0.0-beta`, or `v1.0.0-alpha` will cause schema registration to fail
 
 ### Required Secrets
 | Secret | Description |
