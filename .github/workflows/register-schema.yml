@@ -18,7 +18,7 @@
 # Required secrets:
 #   SYNAPSE_TOKEN_DPE - Synapse Personal Access Token with permissions to register schemas
 
-name: Build v2
+name: Generate and Register JSON Schemas
 
 on:
   pull_request:
