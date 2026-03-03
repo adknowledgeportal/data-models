@@ -32,7 +32,7 @@ When a PR is labeled as `automerge`
 <summary>Mermaid diagram for build workflow</summary>
 
 ```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff"}}}%%
+%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#000000", "edgeLabelBackground": "#ffffff"}}}%%
     flowchart TD
         A[Create/Update PR] --> B{PR Action Type}
         B -->|opened/synchronize| C[PR trigger - paths: modules/**]
@@ -193,7 +193,7 @@ The recommended release process uses a two-step GitHub release flow to validate 
 <summary>Mermaid diagram for register-schema workflow</summary>
 
 ```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff"}}}%%
+%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#000000", "edgeLabelBackground": "#ffffff"}}}%%
 flowchart TD
     A(["Trigger"]) --> B{"Event type?"}
     B -- "PR to main (with changes in modules or AD.model.csv)" --> C{"triggering_actor == commit-to-main-bot?"}
