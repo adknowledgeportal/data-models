@@ -204,8 +204,7 @@ flowchart TD
     D --> E["Generate JSON Schemas from AD.model.csv"]
     E --> F{"schemas-json == empty?"}
     F -- Yes — no schemas generated --> FAIL(["Error — exit 1"])
-    F -- No --> G["Clean schema file names rename hyphen → dot notation"]
-    G --> H["Upload schemas as workflow artifact"]
+    F -- No --> H["Upload schemas as workflow artifact"]
     H --> I{"event.action == released?"}
     I -- Yes — full release --> J["org = prod.org 🚀"]
     I -- "No — PR or pre-release" --> K["org = test.org 🧪 "]
