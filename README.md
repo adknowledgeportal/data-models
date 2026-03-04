@@ -32,6 +32,8 @@ The main branch of this repo is protected, so you cannot push changes to main. T
 
 For more information on the automated workflows, review the CI/CD documentation for the [build workflow](.github/workflows/README.md#build-workflow).
 
+> **Note on unversioned schema registration:** When a PR is open, the `register-schema` workflow registers schemas to the `test.ad` Synapse organization without a semantic version. This is safe to do across multiple concurrent PRs — Synapse assigns each registration a unique internal `version_id`, so schemas from different PRs are stored independently and do not overwrite one another.
+
 ### Editing attributes by module:
 
 The full `AD.model.csv` file has over 1400 attributes and is unwieldy to edit and hard to review changes for. For ease of editing, the full data model is divided into "module" subfolders, like so:
@@ -88,18 +90,26 @@ A persistent issue is that manually editing csvs is challening. Some columns in 
 We are exploring better solutions to this problem -- if you have ideas, tell us!
 
 ## Release Process
-To perform a release of the data model and trigger the registration of JSONSchema files with Synapse, perform the following steps
 
+> **Note:** The release process uses a two-step GitHub flow to validate schemas in a test Synapse organization before promoting them to production. Publishing a pre-release registers schemas to `test.ad`; promoting it to a full release registers to `sage.schemas.ad`.
+>
+> **Tag format:** Release tags must follow `vX.Y.Z` (e.g. `v1.2.0`). Tags with pre-release suffixes like `-rc1`, `-beta`, or `-alpha` will cause schema registration to fail.
+
+#### Step 1 — Publish a Pre-release (registers to `test.ad`)
 1. From the main repository page, click on the `Releases` tab on the right.
 2. Select `Draft a new release` at the top right of the page.
-3. click `Tag: Select Tag` and create a new tag that will be the release version. The tag should follow the convention: `v<major-version>.<minor-version>.<patch-number>`. Also ensure that the version is not one that has been previously used. After the tag is entered, selecte `Create new tag: vx.x.x on Publish`.
-4. Ensure that `Target:` is set to `main`.
-5. Under `Release Title` enter the version number.
-6. Under `Release Notes` select `Generate release notes` and review the generated release notes for accuracy.
-7. Once everything is set as appropritate, check `Set as the latest release`.
-8. Finally, click `Publish release` at the bottom of the page.
+3. Click `Tag: Select Tag` and create a new tag following the convention `v<major>.<minor>.<patch>`. Ensure the version has not been previously used.
+4. Ensure `Target` is set to `main`.
+5. Under `Release Title`, enter the version number. Under `Release Notes`, click `Generate release notes` and review for accuracy.
+6. Check **"Set as a pre-release"**.
+7. Click `Publish release`. This triggers schema registration to the `test.ad` Synapse organization. Review the workflow summary or PR comment to verify schemas were registered correctly.
 
-This will trigger a workflow to register all of the JSONSchema files with the specified organization on Synapse, for more information see the CI/CD documentation for the [release workflow](.github/workflows/README.md#release-workflow).
+#### Step 2 — Promote to Full Release (registers to `sage.schemas.ad`)
+1. Once schemas in `test.ad` are validated, return to the pre-release on GitHub.
+2. Edit the release and uncheck **"Set as a pre-release"** (or click **"Promote to full release"**).
+3. Click `Update release`. This triggers schema registration to the `sage.schemas.ad` production Synapse organization.
+
+For more information on the automated workflows, see the CI/CD documentation for the [register-schema workflow](.github/workflows/README.md#register-schema-workflow).
 
 ## Developing in a codespace
 
@@ -115,4 +125,3 @@ Codespace secrets:
 ## Legacy data models:
 Previous versions of the data model live in the `legacy-data-models/` folder. This include the Diverse Cohorts pilot model and the intial "legacy" model representing the AD Portal Synapse project metadata dictionary and metadata templates from August 2023. These are not being used by DCA.
 
-bloop [trivial change to test workflow, DELETE AFTER WORKFLOW TEST 9/27 15:56 EST] [ADDING AN ADDENDUM TO TRIVIAL UPDATE AT 18:00]
