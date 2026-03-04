@@ -91,7 +91,7 @@ We are exploring better solutions to this problem -- if you have ideas, tell us!
 
 ## Release Process
 
-> **Note:** The release process uses a two-step GitHub flow to validate schemas in a test Synapse organization before promoting them to production. Publishing a pre-release registers schemas to `test.ad`; promoting it to a full release registers to `sage.schemas.ad`.
+> **Note:** Schemas are first registered to a test Synapse organization, then promoted to production as part of a two-step GitHub release flow. Publishing a pre-release registers schemas to `test.ad`; promoting it to a full release registers to `sage.schemas.ad`.
 >
 > **Tag format:** Release tags must follow `vX.Y.Z` (e.g. `v1.2.0`). Tags with pre-release suffixes like `-rc1`, `-beta`, or `-alpha` will cause schema registration to fail.
 
