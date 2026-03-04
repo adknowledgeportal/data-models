@@ -92,7 +92,7 @@ jobs:
 
       - name: Register schemas in Synapse
         id: register
-        uses: Sage-Bionetworks-Actions/register-jsonschema@develop
+        uses: Sage-Bionetworks-Actions/register-jsonschema@0.1.0
         with:
           org-name: ${{ steps.resolve-org.outputs.org-name }}
           schema-dir: ${{ steps.generate.outputs.schemas }}
@@ -103,7 +103,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: "3.11"
 
       - name: Format Schema Report
         id: format
