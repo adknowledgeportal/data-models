@@ -1,0 +1,193 @@
+# This workflow generates JSON schemas from the AD data model CSV, registers them
+# in a Synapse organization, and posts a summary report as a PR comment.
+#
+# Triggered on:
+#   - Pull requests to main (opened/synchronize/labeled, changes in modules/ or AD.model.csv) → registers to test org
+#   - Pre-release published (release.published)                                               → registers to test org
+#   - Full release published (release.released)                                               → registers to production org
+#
+# Steps:
+#   1. Generate JSON Schemas          - converts AD.model.csv into JSON schema files
+#   2. Check schemas were generated   - exits with error if no schemas were produced
+#   3. Upload schemas                 - saves generated schemas as a workflow artifact
+#   4. Resolve schema organization    - selects test or production Synapse org based on trigger
+#   5. Register schemas in Synapse    - registers schemas in the resolved Synapse org
+#   6. Format Schema Report           - builds a markdown summary of generated/registered schemas
+#   7. Comment PR with Schema Summary - posts the report as a PR comment (pull_request events only)
+#
+# Required secrets:
+#   SYNAPSE_TOKEN_DPE - Synapse Personal Access Token with permissions to register schemas
+
+name: Generate and Register JSON Schemas
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - labeled
+    branches:
+      - "main"
+    paths:
+      - "modules/**"
+      - "AD.model.csv"
+
+  release:
+    types:
+      - published
+      - released
+      
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.triggering_actor }}
+  cancel-in-progress: true
+
+jobs:
+  generate-and-register-schemas:
+    runs-on: ubuntu-latest
+    if: github.triggering_actor != 'commit-to-main-bot-adkp[bot]'
+    permissions:
+      pull-requests: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+      - name: Generate JSON Schemas
+        id: generate
+        uses: Sage-Bionetworks-Actions/generate-jsonschema@0.1.0
+        with:
+          data-model-source: ./AD.model.csv
+          data-model-labels: "display_label"
+
+      - name: Check schemas were generated
+        if: steps.generate.outputs.schemas-json == '[]'
+
+        run: |
+          echo "::error::No schemas were generated. Stopping workflow."
+          exit 1
+
+      - name: Resolve schemas path on runner
+        id: resolve-schemas-path
+        env:
+          SCHEMAS: ${{ steps.generate.outputs.schemas }}
+        run: echo "path=${SCHEMAS/\/github\/workspace/$GITHUB_WORKSPACE}" >> $GITHUB_OUTPUT
+
+      - name: Upload schemas as artifacts
+        uses: actions/upload-artifact@v6
+        with:
+          name: json-schemas
+          path: "${{ steps.resolve-schemas-path.outputs.path }}"
+          
+      - name: Resolve schema organization
+        id: resolve-org
+        run: |
+          # released → production org (full release published, or pre-release promoted to release)
+          # published → test org (pre-release)
+          # pull_request → test org
+          if [[ "${{ github.event.action }}" == "released" ]]; then
+            echo "org-name=sage.schemas.ad" >> $GITHUB_OUTPUT
+            echo "🚀 Production: deploying to sage.schemas.ad"
+          else
+            echo "org-name=test.ad" >> $GITHUB_OUTPUT
+            echo "🧪 Test: deploying to test.ad"
+          fi
+
+      - name: Register schemas in Synapse
+        id: register
+        uses: Sage-Bionetworks-Actions/register-jsonschema@0.1.0
+        with:
+          org-name: ${{ steps.resolve-org.outputs.org-name }}
+          schema-dir: ${{ steps.generate.outputs.schemas }}
+          synapse-auth-token: ${{ secrets.SYNAPSE_TOKEN_DPE }}
+          version: ${{ github.event.release.tag_name }}
+          fix-schema-name: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Format Schema Report
+        id: format
+        env:
+          SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
+        run: |
+          pip install synapseclient -q
+          python - <<'PYTHON'
+          import json
+          import os
+          from synapseclient import Synapse
+          from synapseclient.models import SchemaOrganization
+
+          schemas_json = r'''${{ steps.generate.outputs.schemas-json }}'''
+          org_name = r'''${{ steps.resolve-org.outputs.org-name }}'''
+          release_tag = r'''${{ github.event.release.tag_name }}'''
+
+          schemas = json.loads(schemas_json)
+          # Create a mapping of schema name to its JSON definition for lookup
+          schema_by_name = {s.get('title', ''): s for s in schemas}
+
+          syn = Synapse()
+          syn.login()
+          base_url = syn.repoEndpoint
+          org = SchemaOrganization(name=org_name)
+          org.get(synapse_client=syn)
+
+          def schema_url(org_name, schema_name, semver):
+              return f"{base_url}/schema/type/registered/{org_name}-{schema_name}-{semver}"
+
+          def render_properties(schema_dict):
+              result = ""
+              properties = schema_dict.get('properties', {})
+              required_props = schema_dict.get('required', [])
+              if properties:
+                  result += "**Properties:**\n\n"
+                  result += "| Property | Type | Required |\n"
+                  result += "|----------|------|----------|\n"
+                  for prop_name, prop_def in properties.items():
+                      prop_type = prop_def.get('type', 'any')
+                      if isinstance(prop_type, list):
+                          prop_type = ', '.join(prop_type)
+                      is_required = '✓' if prop_name in required_props else ''
+                      result += f"| `{prop_name}` | {prop_type} | {is_required} |\n"
+              return result
+
+          report = "## Generated JSON Schemas\n\n"
+          report += f"**Organization:** `{org_name}`\n\n"
+          report += f"**Total Schemas Generated:** {len(schemas)}\n\n"
+
+          if release_tag:
+              # Release triggered: show schemas matching this semantic version with a link
+              semver = release_tag.lstrip('v')
+              for schema in org.get_json_schemas():
+                  for version in schema.get_versions():
+                      if version.semantic_version == semver and schema.name in schema_by_name:
+                          url = schema_url(org_name, schema.name, semver)
+                          schema_dict = schema_by_name.get(schema.name, {})
+                          report += f"<details>\n<summary><strong><a href=\"{url}\">{schema.name}</a></strong></summary>\n\n"
+                          report += render_properties(schema_dict)
+                          report += "\n</details>\n\n"
+                          break
+          else:
+              # PR triggered: show schema name and properties only
+              for schema in org.get_json_schemas():
+                  if schema.name in schema_by_name:
+                      schema_dict = schema_by_name.get(schema.name, {})
+                      report += f"<details>\n<summary><strong>{schema.name}</strong></summary>\n\n"
+                      report += render_properties(schema_dict)
+                      report += "\n</details>\n\n"
+          # Write to file
+          with open('schema-report.md', 'w') as f:
+              f.write(report)
+
+          # Write to github workflow run summary
+          github_step_summary = os.environ.get('GITHUB_STEP_SUMMARY')
+          if github_step_summary:
+              with open(github_step_summary, 'a') as f:
+                  f.write(report)
+          PYTHON
+
+      - name: Comment PR with Schema Summary
+        if: github.event_name == 'pull_request'
+        uses: mshick/add-pr-comment@v2
+        with:
+          message-path: schema-report.md
+          message-id: jsonschema-generation
