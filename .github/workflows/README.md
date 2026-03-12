@@ -142,7 +142,7 @@ When a PR is labeled as `automerge`
 ## Register Schema Workflow
 
 ### Purpose
-The `register-schema` workflow generates JSON schemas from the AD data model CSV, registers them in a Synapse organization, and posts a markdown summary report as a PR comment or workflow summary.
+The `register-schema` workflow assembles the AD data model CSV from module files, generates JSON schemas from it, registers them in a Synapse organization, and posts a markdown summary report as a PR comment or workflow run summary.
 
 This workflow handles schema registration across two Synapse organizations:
 - **Test org** (`test.ad`): used during active development and pre-release validation
@@ -197,9 +197,9 @@ The recommended release process uses a two-step GitHub release flow to validate 
 1. Go to **Releases → Draft a new release** in GitHub.
 2. Create a new tag (e.g., `v1.2.0`) targeting `main`.
 3. Check **"Set as a pre-release"**.
-4. Click **Publish release** — this triggers `release.published` and registers schemas to `test.ad`.
-5. Inspect the workflow summary or PR comment for the schema report.
-6. Verify schemas appear in `test.ad` on Synapse.
+4. Click **Publish release** — this triggers `release.published`, attaches schema `.json` files to the release, and registers schemas to `test.ad`.
+5. Inspect the workflow run summary for the schema report.
+6. Verify schemas appear in `test.ad` on Synapse and that the `.json` files are listed under the release assets.
 
 #### Step 2 — Promote to Full Release (registers to `sage.schemas.ad`)
 1. Once validated, return to the pre-release on GitHub.
@@ -224,6 +224,7 @@ The recommended release process uses a two-step GitHub release flow to validate 
 
 ### Outputs
 - JSON schema artifacts uploaded per workflow run
+- Schema `.json` files attached as downloadable assets to the GitHub release page (Pre-release and release only)
 - Schemas registered in the resolved Synapse organization (versioned when triggered by a release)
 - Markdown summary report posted as a PR comment (PR events) and written to the workflow run summary (all events)
 
