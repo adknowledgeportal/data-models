@@ -161,7 +161,7 @@ This workflow handles schema registration across two Synapse organizations:
 1. **Checkout** — checks out the PR branch (`head_ref` for pull requests, default ref for releases)
 2. **Set up Python 3.11** — installs Python and the `pandas` dependency
 3. **Assemble CSV data model** — runs `assemble_csv_data_model.py` to join all `modules/` files into `AD.model.csv`
-4. **Commit CSV changes** — commits the updated `AD.model.csv` back to the branch via [`add-and-commit`](https://github.com/EndBug/add-and-commit)
+4. **Commit CSV changes** — commits the updated `AD.model.csv` back to the branch via [`add-and-commit`](https://github.com/EndBug/add-and-commit) (pull request events only)
 5. **Generate JSON Schemas** — converts `AD.model.csv` into JSON schema files using [`generate-jsonschema`](https://github.com/Sage-Bionetworks-Actions/generate-jsonschema)
 6. **Check schemas were generated** — exits with an error if no schemas were produced
 7. **Upload schemas as artifacts** — saves generated `.json` schemas as a downloadable workflow artifact
@@ -245,8 +245,10 @@ flowchart TD
     C -- No --> D["Checkout branch"]
     D --> D1["Set up Python 3.11 + install pandas"]
     D1 --> D2["Assemble AD.model.csv from modules/"]
-    D2 --> D3["Commit AD.model.csv to branch"]
-    D3 --> E["Generate JSON Schemas from AD.model.csv"]
+    D2 --> D3{"event == pull_request?"}
+    D3 -- Yes --> D4["Commit AD.model.csv to branch"]
+    D3 -- No --> E
+    D4 --> E["Generate JSON Schemas from AD.model.csv"]
     E --> F{"schemas-json == empty?"}
     F -- Yes — no schemas generated --> FAIL(["Error — exit 1"])
     F -- No --> H["Upload schemas as workflow artifact"]

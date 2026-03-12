@@ -11,7 +11,7 @@
 #   1. Checkout                       - checks out the PR branch (uses head_ref for pull requests)
 #   2. Set up Python 3.11             - installs Python and pandas dependency
 #   3. Assemble CSV data model        - runs assemble_csv_data_model.py to join modules/ into AD.model.csv
-#   4. Commit CSV changes             - commits the updated AD.model.csv back to the branch
+#   4. Commit CSV changes             - commits the updated AD.model.csv back to the branch (pull_request events only)
 #   5. Generate JSON Schemas          - converts AD.model.csv into JSON schema files
 #   6. Check schemas were generated   - exits with error if no schemas were produced
 #   7. Upload schemas as artifacts    - saves generated schemas as a downloadable workflow artifact
@@ -70,6 +70,7 @@ jobs:
         run: python scripts/assemble_csv_data_model.py modules AD.model.csv
 
       - name: commit csv changes
+        if: github.event_name == 'pull_request'
         uses: EndBug/add-and-commit@v9
         with:
           default_author: github_actions
