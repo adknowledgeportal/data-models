@@ -205,7 +205,7 @@ The recommended release process uses a two-step GitHub release flow to validate 
 1. Once validated, return to the pre-release on GitHub.
 2. Edit the release and uncheck **"Set as a pre-release"** (or click **"Promote to full release"**).
 3. Click **Update release** — this triggers `release.released` and registers schemas to `sage.schemas.ad`.
-4. Verify schemas appear in `sage.schemas.ad` on Synapse with the correct semantic version.
+4. Verify schemas appear in `sage.schemas.ad` on Synapse with the correct semantic version and that the `.json` files are listed under the release assets.
 
 > **Note:**
 > - Only the `release.released` action writes to the production org. Accidental pre-release publishes will only affect `test.ad`.
