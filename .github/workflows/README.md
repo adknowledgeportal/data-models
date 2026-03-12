@@ -151,20 +151,24 @@ This workflow handles schema registration across two Synapse organizations:
 ### Triggers
 | Event | Condition | Target Org |
 |-------|-----------|------------|
-| Pull request opened, synchronized, or labeled | Targets `main`; changes in `modules/**` or `AD.model.csv` | `test.ad` |
+| Pull request opened, synchronized, or labeled | Targets `main`; changes in `modules/**` | `test.ad` |
 | Release published (pre-release) | `release.published` | `test.ad` |
 | Release released (full release or pre-release promoted) | `release.released` | `sage.schemas.ad` |
 
 > **Note:** The workflow is skipped if triggered by `commit-to-main-bot-adkp[bot]`.
 
 ### Steps
-1. **Generate JSON Schemas** — converts `AD.model.csv` into JSON schema files using [`generate-jsonschema`](https://github.com/Sage-Bionetworks-Actions/generate-jsonschema)
-2. **Check schemas were generated** — exits with an error if no schemas were produced
-3. **Upload schemas as artifacts** — saves generated `.json` schemas as a downloadable workflow artifact
-4. **Resolve schema organization** — selects `test.ad` or `sage.schemas.ad` based on the trigger event action
-5. **Register schemas in Synapse** — registers schemas in the resolved org via [`register-jsonschema`](https://github.com/Sage-Bionetworks-Actions/register-jsonschema); uses the release tag as the semantic version when available
-6. **Format Schema Report** — builds a markdown summary listing all generated schemas and their properties; includes Synapse links when a release tag is present
-7. **Comment PR with Schema Summary** — posts the report as a PR comment (pull request events only); also writes the report to the workflow run summary
+1. **Checkout** — checks out the PR branch (`head_ref` for pull requests, default ref for releases)
+2. **Set up Python 3.11** — installs Python and the `pandas` dependency
+3. **Assemble CSV data model** — runs `assemble_csv_data_model.py` to join all `modules/` files into `AD.model.csv`
+4. **Commit CSV changes** — commits the updated `AD.model.csv` back to the branch via [`add-and-commit`](https://github.com/EndBug/add-and-commit)
+5. **Generate JSON Schemas** — converts `AD.model.csv` into JSON schema files using [`generate-jsonschema`](https://github.com/Sage-Bionetworks-Actions/generate-jsonschema)
+6. **Check schemas were generated** — exits with an error if no schemas were produced
+7. **Upload schemas as artifacts** — saves generated `.json` schemas as a downloadable workflow artifact
+8. **Resolve schema organization** — selects `test.ad` or `sage.schemas.ad` based on the trigger event action
+9. **Register schemas in Synapse** — registers schemas in the resolved org via [`register-jsonschema`](https://github.com/Sage-Bionetworks-Actions/register-jsonschema); uses the release tag as the semantic version when available
+10. **Format Schema Report** — builds a markdown summary listing all generated schemas and their properties; includes Synapse links when a release tag is present
+11. **Comment PR with Schema Summary** — posts the report as a PR comment (pull request events only); also writes the report to the workflow run summary
 
 ### Synapse Organizations
 | Org Name | Purpose |
@@ -232,25 +236,28 @@ The recommended release process uses a two-step GitHub release flow to validate 
 %%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#000000", "edgeLabelBackground": "#ffffff"}}}%%
 flowchart TD
     A(["Trigger"]) --> B{"Event type?"}
-    B -- "PR to main (with changes in modules or AD.model.csv)" --> C{"triggering_actor == commit-to-main-bot?"}
+    B -- "PR to main (changes in modules/)" --> C{"triggering_actor == commit-to-main-bot?"}
     B -- "release: published pre-release" --> C
-    B -- release: released full release --> C
+    B -- "release: released full release" --> C
     C -- Yes --> SKIP(["Skip — exit"])
-    C -- No --> D["Checkout"]
-    D --> E["Generate JSON Schemas from AD.model.csv"]
+    C -- No --> D["Checkout branch"]
+    D --> D1["Set up Python 3.11 + install pandas"]
+    D1 --> D2["Assemble AD.model.csv from modules/"]
+    D2 --> D3["Commit AD.model.csv to branch"]
+    D3 --> E["Generate JSON Schemas from AD.model.csv"]
     E --> F{"schemas-json == empty?"}
     F -- Yes — no schemas generated --> FAIL(["Error — exit 1"])
     F -- No --> H["Upload schemas as workflow artifact"]
     H --> I{"event.action == released?"}
-    I -- Yes — full release --> J["org = prod.org 🚀"]
-    I -- "No — PR or pre-release" --> K["org = test.org 🧪 "]
+    I -- Yes — full release --> J["org = sage.schemas.ad 🚀"]
+    I -- "No — PR or pre-release" --> K["org = test.ad 🧪"]
     J --> L["Register schemas in org"]
     K --> L
-    L --> M["Create summary report"]
+    L --> M["Format schema report"]
     M --> N{"release_tag present?"}
     N -- Yes — release --> O["For each schema: link to versioned URL + properties table"]
     N -- No — PR --> P["For each schema: schema name + properties table"]
-    O --> Q["Write to Github summary"]
+    O --> Q["Write to GitHub summary"]
     P --> Q
     Q --> R{"event == pull_request?"}
     R -- Yes --> S["Post schema-report.md as PR comment"]
