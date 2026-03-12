@@ -254,7 +254,7 @@ flowchart TD
     RA -- No — PR --> I
     I2 --> I{"event.action == released?"}
     I -- Yes — full release --> J["org = sage.schemas.ad 🚀"]
-    I -- "No — pre-release" --> K["org = test.ad 🧪"]
+    I -- "No — pre-release or PR" --> K["org = test.ad 🧪"]
     J --> L["Register schemas in org"]
     K --> L
     L --> M["Format schema report"]
