@@ -142,7 +142,7 @@ When a PR is labeled as `automerge`
 ## Register Schema Workflow
 
 ### Purpose
-The `register-schema` workflow generates JSON schemas from the AD data model CSV, registers them in a Synapse organization, and posts a markdown summary report as a PR comment or workflow summary.
+The `register-schema` workflow assembles the AD data model CSV from module files, generates JSON schemas from it, registers them in a Synapse organization, and posts a markdown summary report as a PR comment or workflow run summary.
 
 This workflow handles schema registration across two Synapse organizations:
 - **Test org** (`test.ad`): used during active development and pre-release validation
@@ -165,10 +165,11 @@ This workflow handles schema registration across two Synapse organizations:
 5. **Generate JSON Schemas** — converts `AD.model.csv` into JSON schema files using [`generate-jsonschema`](https://github.com/Sage-Bionetworks-Actions/generate-jsonschema)
 6. **Check schemas were generated** — exits with an error if no schemas were produced
 7. **Upload schemas as artifacts** — saves generated `.json` schemas as a downloadable workflow artifact
-8. **Resolve schema organization** — selects `test.ad` or `sage.schemas.ad` based on the trigger event action
-9. **Register schemas in Synapse** — registers schemas in the resolved org via [`register-jsonschema`](https://github.com/Sage-Bionetworks-Actions/register-jsonschema); uses the release tag as the semantic version when available
-10. **Format Schema Report** — builds a markdown summary listing all generated schemas and their properties; includes Synapse links when a release tag is present
-11. **Comment PR with Schema Summary** — posts the report as a PR comment (pull request events only); also writes the report to the workflow run summary
+8. **Create release assets** — attaches the schema `.json` files to the GitHub release page (all release events: `release.published` and `release.released`)
+9. **Resolve schema organization** — selects `test.ad` or `sage.schemas.ad` based on the trigger event action
+10. **Register schemas in Synapse** — registers schemas in the resolved org via [`register-jsonschema`](https://github.com/Sage-Bionetworks-Actions/register-jsonschema); uses the release tag as the semantic version when available
+11. **Format Schema Report** — builds a markdown summary listing all generated schemas and their properties; includes Synapse links when a release tag is present
+12. **Comment PR with Schema Summary** — posts the report as a PR comment; also writes the report to the workflow run summary
 
 ### Synapse Organizations
 | Org Name | Purpose |
@@ -196,15 +197,15 @@ The recommended release process uses a two-step GitHub release flow to validate 
 1. Go to **Releases → Draft a new release** in GitHub.
 2. Create a new tag (e.g., `v1.2.0`) targeting `main`.
 3. Check **"Set as a pre-release"**.
-4. Click **Publish release** — this triggers `release.published` and registers schemas to `test.ad`.
-5. Inspect the workflow summary or PR comment for the schema report.
-6. Verify schemas appear in `test.ad` on Synapse.
+4. Click **Publish release** — this triggers `release.published`, attaches schema `.json` files to the release, and registers schemas to `test.ad`.
+5. Inspect the workflow run summary for the schema report.
+6. Verify schemas appear in `test.ad` on Synapse and that the `.json` files are listed under the release assets.
 
 #### Step 2 — Promote to Full Release (registers to `sage.schemas.ad`)
 1. Once validated, return to the pre-release on GitHub.
 2. Edit the release and uncheck **"Set as a pre-release"** (or click **"Promote to full release"**).
 3. Click **Update release** — this triggers `release.released` and registers schemas to `sage.schemas.ad`.
-4. Verify schemas appear in `sage.schemas.ad` on Synapse with the correct semantic version.
+4. Verify schemas appear in `sage.schemas.ad` on Synapse with the correct semantic version and that the `.json` files are listed under the release assets.
 
 > **Note:**
 > - Only the `release.released` action writes to the production org. Accidental pre-release publishes will only affect `test.ad`.
@@ -223,6 +224,7 @@ The recommended release process uses a two-step GitHub release flow to validate 
 
 ### Outputs
 - JSON schema artifacts uploaded per workflow run
+- Schema `.json` files attached as downloadable assets to the GitHub release page (Pre-release and release only)
 - Schemas registered in the resolved Synapse organization (versioned when triggered by a release)
 - Markdown summary report posted as a PR comment (PR events) and written to the workflow run summary (all events)
 
@@ -248,9 +250,12 @@ flowchart TD
     E --> F{"schemas-json == empty?"}
     F -- Yes — no schemas generated --> FAIL(["Error — exit 1"])
     F -- No --> H["Upload schemas as workflow artifact"]
-    H --> I{"event.action == released?"}
+    H --> RA{"event_name == 'release'?"}
+    RA -- Yes --> I2["Attach schema .json files to GitHub release"]
+    RA -- No — PR --> I
+    I2 --> I{"event.action == released?"}
     I -- Yes — full release --> J["org = sage.schemas.ad 🚀"]
-    I -- "No — PR or pre-release" --> K["org = test.ad 🧪"]
+    I -- "No — pre-release or PR" --> K["org = test.ad 🧪"]
     J --> L["Register schemas in org"]
     K --> L
     L --> M["Format schema report"]

@@ -15,10 +15,11 @@
 #   5. Generate JSON Schemas          - converts AD.model.csv into JSON schema files
 #   6. Check schemas were generated   - exits with error if no schemas were produced
 #   7. Upload schemas as artifacts    - saves generated schemas as a downloadable workflow artifact
-#   8. Resolve schema organization    - selects test.ad or sage.schemas.ad based on trigger event
-#   9. Register schemas in Synapse    - registers schemas in the resolved org; uses release tag as semantic version
-#  10. Format Schema Report           - builds a markdown summary of generated/registered schemas
-#  11. Comment PR with Schema Summary - posts the report as a PR comment (pull_request events only)
+#   8. Create release assets          - attaches schema JSON files to the GitHub release (pre-release and release)
+#   9. Resolve schema organization    - selects test.ad or sage.schemas.ad based on trigger event
+#  10. Register schemas in Synapse    - registers schemas in the resolved org; uses release tag as semantic version
+#  11. Format Schema Report           - builds a markdown summary of generated/registered schemas
+#  12. Comment PR with Schema Summary - posts the report as a PR comment
 #
 # Required secrets:
 #   SYNAPSE_TOKEN_DPE - Synapse Personal Access Token with permissions to register schemas
@@ -100,7 +101,13 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: json-schemas
-          path: "${{ steps.resolve-schemas-path.outputs.path }}"
+          path: "${{ steps.resolve-schemas-path.outputs.path }}/**/*.json"
+
+      - name: Create release assets
+        uses: softprops/action-gh-release@v2
+        if: github.event_name == 'release'
+        with:
+          files: ${{ steps.resolve-schemas-path.outputs.path }}/**/*.json
           
       - name: Resolve schema organization
         id: resolve-org
