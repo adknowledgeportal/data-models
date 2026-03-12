@@ -165,7 +165,7 @@ This workflow handles schema registration across two Synapse organizations:
 5. **Generate JSON Schemas** — converts `AD.model.csv` into JSON schema files using [`generate-jsonschema`](https://github.com/Sage-Bionetworks-Actions/generate-jsonschema)
 6. **Check schemas were generated** — exits with an error if no schemas were produced
 7. **Upload schemas as artifacts** — saves generated `.json` schemas as a downloadable workflow artifact
-8. **Create release assets** — attaches the schema `.json` files to the GitHub release page (all release events: `release.published` and `release.released`)
+8. **Create release assets** — attaches the schema `.json` files to the GitHub release page (for prelease and full release only)
 9. **Resolve schema organization** — selects `test.ad` or `sage.schemas.ad` based on the trigger event action
 10. **Register schemas in Synapse** — registers schemas in the resolved org via [`register-jsonschema`](https://github.com/Sage-Bionetworks-Actions/register-jsonschema); uses the release tag as the semantic version when available
 11. **Format Schema Report** — builds a markdown summary listing all generated schemas and their properties; includes Synapse links when a release tag is present
