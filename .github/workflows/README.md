@@ -165,7 +165,7 @@ This workflow handles schema registration across two Synapse organizations:
 5. **Generate JSON Schemas** — converts `AD.model.csv` into JSON schema files using [`generate-jsonschema`](https://github.com/Sage-Bionetworks-Actions/generate-jsonschema)
 6. **Check schemas were generated** — exits with an error if no schemas were produced
 7. **Upload schemas as artifacts** — saves generated `.json` schemas as a downloadable workflow artifact
-8. **Create release assets** — attaches the schema `.json` files to the GitHub release page (`release.released` events only)
+8. **Create release assets** — attaches the schema `.json` files to the GitHub release page (all release events: `release.published` and `release.released`)
 9. **Resolve schema organization** — selects `test.ad` or `sage.schemas.ad` based on the trigger event action
 10. **Register schemas in Synapse** — registers schemas in the resolved org via [`register-jsonschema`](https://github.com/Sage-Bionetworks-Actions/register-jsonschema); uses the release tag as the semantic version when available
 11. **Format Schema Report** — builds a markdown summary listing all generated schemas and their properties; includes Synapse links when a release tag is present
@@ -249,10 +249,12 @@ flowchart TD
     E --> F{"schemas-json == empty?"}
     F -- Yes — no schemas generated --> FAIL(["Error — exit 1"])
     F -- No --> H["Upload schemas as workflow artifact"]
-    H --> I{"event.action == released?"}
-    I -- Yes — full release --> I2["Attach schema .json files to GitHub release"]
-    I2 --> J["org = sage.schemas.ad 🚀"]
-    I -- "No — PR or pre-release" --> K["org = test.ad 🧪"]
+    H --> RA{"event_name == 'release'?"}
+    RA -- Yes --> I2["Attach schema .json files to GitHub release"]
+    RA -- No — PR --> I
+    I2 --> I{"event.action == released?"}
+    I -- Yes — full release --> J["org = sage.schemas.ad 🚀"]
+    I -- "No — pre-release" --> K["org = test.ad 🧪"]
     J --> L["Register schemas in org"]
     K --> L
     L --> M["Format schema report"]

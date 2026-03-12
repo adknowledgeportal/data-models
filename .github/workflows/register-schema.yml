@@ -15,7 +15,7 @@
 #   5. Generate JSON Schemas          - converts AD.model.csv into JSON schema files
 #   6. Check schemas were generated   - exits with error if no schemas were produced
 #   7. Upload schemas as artifacts    - saves generated schemas as a downloadable workflow artifact
-#   8. Create release assets          - attaches schema JSON files to the GitHub release (release.released only)
+#   8. Create release assets          - attaches schema JSON files to the GitHub release (all release events: published and released)
 #   9. Resolve schema organization    - selects test.ad or sage.schemas.ad based on trigger event
 #  10. Register schemas in Synapse    - registers schemas in the resolved org; uses release tag as semantic version
 #  11. Format Schema Report           - builds a markdown summary of generated/registered schemas
