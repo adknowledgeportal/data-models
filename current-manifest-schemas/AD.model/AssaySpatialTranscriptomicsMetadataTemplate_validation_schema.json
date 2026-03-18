@@ -149,6 +149,7 @@
             "msf",
             "mtx",
             "nirs",
+            "parquet",
             "pdf",
             "pdresult",
             "pdstudy",
@@ -181,6 +182,7 @@
             "txt",
             "vcf",
             "wiggle",
+            "xenium",
             "xml",
             "yaml",
             "zip"
