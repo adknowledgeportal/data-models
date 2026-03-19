@@ -8978,6 +8978,9 @@
                     "@id": "bts:Jax.IU.PittStrainValidation"
                 },
                 {
+                    "@id": "bts:Jax.IU.PittTREM2.HSSvsR47H"
+                },
+                {
                     "@id": "bts:Jax.IU.PittVerubecestat5XFAD"
                 },
                 {
@@ -9153,6 +9156,9 @@
                 },
                 {
                     "@id": "bts:ROSMAPCognitiveResilience"
+                },
+                {
+                    "@id": "bts:ROSMAPGAGE-seq"
                 },
                 {
                     "@id": "bts:ROSMAPLipidomicsEmory"
@@ -13927,6 +13933,9 @@
                     "@id": "bts:Nirs"
                 },
                 {
+                    "@id": "bts:Parquet"
+                },
+                {
                     "@id": "bts:Pdf"
                 },
                 {
@@ -14042,6 +14051,9 @@
                 },
                 {
                     "@id": "bts:Wiggle"
+                },
+                {
+                    "@id": "bts:Xenium"
                 },
                 {
                     "@id": "bts:Xml"
@@ -17039,6 +17051,23 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Parquet",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "An open-source column-oriented electronic data storage format developed by the Apache Software Foundation for efficient data storage and retrieval and optimized for large-scale data processing and analytics.",
+            "rdfs:label": "Parquet",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:FileFormat"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "parquet",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Pdf",
             "@type": "rdfs:Class",
             "rdfs:comment": "Portable Document Format",
@@ -17239,7 +17268,7 @@
         {
             "@id": "bts:RData",
             "@type": "rdfs:Class",
-            "rdfs:comment": "The RData format (usually with extension .rdata or .rda) is a format designed for use with R, a system for statistical computation and related graphics, for storing a complete R workspace or selected 'objects' from a workspace in a form that can be loaded back by R.",
+            "rdfs:comment": "The RData format (usually with extension .rdata, .rda, or .rds) is a format designed for use with R, a system for statistical computation and related graphics, for storing a complete R workspace or selected 'objects' from a workspace in a form that can be loaded back by R.",
             "rdfs:label": "RData",
             "rdfs:subClassOf": [
                 {
@@ -17719,6 +17748,23 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "wiggle",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Xenium",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Xenium Experiment File",
+            "rdfs:label": "Xenium",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:FileFormat"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "xenium",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
@@ -30145,6 +30191,24 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:Jax.IU.PittTREM2.HSSvsR47H",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Jax.IU.Pitt_TREM2.HSSvsR47H Study",
+            "rdfs:label": "Jax.IU.PittTREM2.HSSvsR47H",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "Jax.IU.Pitt_TREM2.HSSvsR47H",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:Jax.IU.PittVerubecestat5XFAD",
             "@type": "rdfs:Class",
             "rdfs:comment": "Data from 5XFAD mice treated with verubecestat from the Jax.IU.Pitt MODEL-AD grant",
@@ -31148,6 +31212,24 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "ROSMAP_CognitiveResilience",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ROSMAPGAGE-seq",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The ROSMAP GAGE-seq study",
+            "rdfs:label": "ROSMAPGAGE-seq",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "ROSMAP_GAGE-seq",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
