@@ -1,2 +1,2 @@
-Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-ageAssessment,Age of clinical or behavioral assessment.,,,,False,ManifestColumn,,sage.annotations-experimentalData.ageAssessment-0.0.2,,number,experimentalData
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module,Minimum,Maximum
+ageAssessment,Age of clinical or behavioral assessment.,,,,False,ManifestColumn,,sage.annotations-experimentalData.ageAssessment-0.0.2,,number,experimentalData,17,89
