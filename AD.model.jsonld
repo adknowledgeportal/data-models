@@ -9158,6 +9158,9 @@
                     "@id": "bts:ROSMAPCognitiveResilience"
                 },
                 {
+                    "@id": "bts:ROSMAPGAGE-seq"
+                },
+                {
                     "@id": "bts:ROSMAPLipidomicsEmory"
                 },
                 {
@@ -31209,6 +31212,24 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "ROSMAP_CognitiveResilience",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:ROSMAPGAGE-seq",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "The ROSMAP GAGE-seq study",
+            "rdfs:label": "ROSMAPGAGE-seq",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Study"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "string",
+            "sms:displayName": "ROSMAP_GAGE-seq",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
