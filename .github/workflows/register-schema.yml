@@ -34,6 +34,7 @@ on:
       - labeled
     branches:
       - "main"
+      - 'dpe-1557'
     paths:
       - "modules/**"
 
