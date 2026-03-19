@@ -8,6 +8,7 @@ on:
       - labeled
     branches:
       - 'main'
+      - 'add-min-max'
     paths:
       - 'modules/**'
 
