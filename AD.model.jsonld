@@ -37286,6 +37286,163 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:MARMO-ADIndividualMetadataTemplate",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "SysBio MARMO-AD individual metadata template schema",
+            "rdfs:label": "MARMO-ADIndividualMetadataTemplate",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestTemplate"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "MARMO-AD_individual_metadata_template",
+            "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:IndividualID"
+                },
+                {
+                    "@id": "bts:IndividualOrigin"
+                },
+                {
+                    "@id": "bts:Species"
+                },
+                {
+                    "@id": "bts:Sex"
+                },
+                {
+                    "@id": "bts:LineGenotype"
+                },
+                {
+                    "@id": "bts:LineGeneration"
+                },
+                {
+                    "@id": "bts:DamID"
+                },
+                {
+                    "@id": "bts:SireID"
+                },
+                {
+                    "@id": "bts:DateBirth"
+                },
+                {
+                    "@id": "bts:DateDeath"
+                },
+                {
+                    "@id": "bts:AgeMatchedID"
+                },
+                {
+                    "@id": "bts:CalHV3status"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:LineGenotype",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "LineGenotype",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "lineGenotype",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:LineGeneration",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "LineGeneration",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "lineGeneration",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:DamID",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "DamID",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "damID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:SireID",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "SireID",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "sireID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AgeMatchedID",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "AgeMatchedID",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "ageMatchedID",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:CalHV3status",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "CalHV3status",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:Thing"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "CalHV3status",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:ModeladStrainAnimalMetadataTemplate",
             "@type": "rdfs:Class",
             "rdfs:comment": "SysBio modelad strain animal metadata template schema",
