@@ -1,7 +1,9 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module,IsTemplate
 assay_nanostring_metadata_template,SysBio nanostring metadata template schema,,"Component, specimenID, assay, platform, RIN, rnaBatch, libraryBatch, nanostringBatch, libraryPrep, libraryPreparationMethod, geneRLF, bindingDensity",,False,ManifestTemplate,,sysbio.metadataTemplates-assay.nanostring,,,template,True
 specimenID,Identifying string linked to a particular sample or specimen,,,,False,ManifestColumn,,sage.annotations-experimentalData.specimenID-0.0.2,,string,biospecimen,
-assay,The technology used to generate the data in this file,,,,True,ManifestColumn,,sage.annotations-experimentalData.assay-0.0.26,,string,experimentalData,
+assay,The technology used to generate the data in this file,"mRNAcounts, microRNAcounts",,,True,ManifestColumn,,sage.annotations-experimentalData.assay-0.0.26,,string,experimentalData,
+microRNAcounts,A microRNA profiling assay using digital molecular barcoding technology to quantify target microRNA molecules without the need for amplification.,,,,,assay,,source: http://purl.obolibrary.org/obo/OBI_0002142,,string,experimentalData,
+mRNAcounts,A mRNA profiling assay using digital molecular barcoding technology to quantify target mRNA molecules without the need for amplification.,,,,,assay,,Sage Bionetworks,,string,experimentalData,
 platform,"The specific version (manufacturer, model, etc.) of a technology that is used to carry out a laboratory or computational experiment.","NanostringnCounter, NanostringnCounter_MouseADPanel",,,True,ManifestColumn,,sage.annotations-experimentalData.platform-0.0.26,,string,experimentalData,
 NanostringnCounter,Nanostring nCounter,,,,,platform,,Sage Bionetworks,,string,experimentalData,
 NanostringnCounter_MouseADPanel,770 standardized genes covering 30 clinically derived AD-associated modules discovered in the AMP-AD consortium study of human brain tissue.,,,,,platform,,https://www.nanostring.com/products/gene-expression-panels/gene-expression-panels-overview/ncounter-ad-panels,,string,experimentalData,
