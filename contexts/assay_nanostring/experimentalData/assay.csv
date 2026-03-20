@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+assay,The technology used to generate the data in this file,,,,True,ManifestColumn,,sage.annotations-experimentalData.assay-0.0.26,,string,experimentalData

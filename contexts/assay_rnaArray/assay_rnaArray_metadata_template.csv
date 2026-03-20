@@ -1,0 +1,15 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module,IsTemplate
+assay_rnaArray_metadata_template,SysBio rnaArray metadata template schema,,"Component, specimenID, assay, RIN, platform, rnaBatch, arrayBatch",,False,ManifestTemplate,,sysbio.metadataTemplates-assay.rnaArray,,,template,True
+specimenID,Identifying string linked to a particular sample or specimen,,,,False,ManifestColumn,,sage.annotations-experimentalData.specimenID-0.0.2,,string,biospecimen,
+assay,The technology used to generate the data in this file,rnaArray,,,True,ManifestColumn,,sage.annotations-experimentalData.assay-0.0.26,,string,experimentalData,
+rnaArray,RNA measurements captured by array technology,,,,,assay,,http://purl.obolibrary.org/obo/OBI_0001463,,string,experimentalData,
+platform,"The specific version (manufacturer, model, etc.) of a technology that is used to carry out a laboratory or computational experiment.","AffymetrixU133AB, AffymetrixU133Plus2, Agilent44Karray, Illumina MouseWG-6 v2.0 expression beadchip, IlluminaHumanHT-12_V3_0_R1, IlluminaWholeGenomeDASL",,,True,ManifestColumn,,sage.annotations-experimentalData.platform-0.0.26,,string,experimentalData,
+AffymetrixU133AB,Affymetrix U133 AB,,,,,platform,,Sage Bionetworks,,string,experimentalData,
+AffymetrixU133Plus2,Affymetrix Human Genome U133 Plus 2.0 Array,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL570,,string,experimentalData,
+Agilent44Karray,Agilent 44k Microarray,,,,,platform,,Sage Bionetworks,,string,experimentalData,
+Illumina MouseWG-6 v2.0 expression beadchip,Whole-genome expression profiling in the mouse,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL6887,,string,experimentalData,
+IlluminaHumanHT-12_V3_0_R1,Illumina HT-12 V3,,,,,platform,,Sage Bionetworks,,string,experimentalData,
+IlluminaWholeGenomeDASL,Illumina Human Whole-Genome DASL HT,,,,,platform,,https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL13369,,string,experimentalData,
+RIN,RNA Integrity Number,,,,False,ManifestColumn,,sage.annotations-qc.RIN-0.0.2,,number,sequencing,
+rnaBatch,Batch in which RNA sample was isolated,,,,False,ManifestColumn,,sage.annotations-batch.rnaBatch-0.0.2,,string,batch,
+arrayBatch,The hybridization batch the sample was in,,,,False,ManifestColumn,,sage.annotations-batch.arrayBatch-0.0.2,,string,batch,

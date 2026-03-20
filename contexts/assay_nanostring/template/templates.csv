@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module,IsTemplate
+assay_nanostring_metadata_template,SysBio nanostring metadata template schema,,"Component, specimenID, assay, platform, RIN, rnaBatch, libraryBatch, nanostringBatch, libraryPrep, libraryPreparationMethod, geneRLF, bindingDensity",,False,ManifestTemplate,,sysbio.metadataTemplates-assay.nanostring,,,template,True

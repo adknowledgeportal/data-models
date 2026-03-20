@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module,IsTemplate
+assay_rnaArray_metadata_template,SysBio rnaArray metadata template schema,,"Component, specimenID, assay, RIN, platform, rnaBatch, arrayBatch",,False,ManifestTemplate,,sysbio.metadataTemplates-assay.rnaArray,,,template,True
