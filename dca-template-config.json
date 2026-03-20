@@ -147,7 +147,7 @@
       },
       {
         "display_name": "MARMO-AD_individual_metadata_template",
-        "schema_name": "MARMO.AD.individualMetadataTemplate",
+        "schema_name": "MARMO-ADIndividualMetadataTemplate",
         "type": "record"
       },        
       {
