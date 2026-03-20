@@ -144,7 +144,18 @@
         "display_name": "assay_spatialTranscriptomics_metadata_template",
         "schema_name": "AssaySpatialTranscriptomicsMetadataTemplate",
         "type": "record"
-      }
+      },
+      {
+        "display_name": "MARMO-AD_individual_metadata_template",
+        "schema_name": "MARMO.AD.individualMetadataTemplate",
+        "type": "record"
+        },        
+        {
+        "display_name": "MARMO-AD_supplementalAssay_metadata_template",
+        "schema_name": "MARMO.AD.supplementalAssayMetadataTemplate",
+        "type": "record"
+        }
+
     ],
     "service_version": "v23.1.1",
     "schema_version": ""
