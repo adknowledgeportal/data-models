@@ -21642,6 +21642,186 @@
             "sms:validationRules": []
         },
         {
+            "@id": "bts:IndividualOrigin",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "Facility where animal originated from",
+            "rdfs:label": "IndividualOrigin",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:SNI/PITT"
+                },
+                {
+                    "@id": "bts:NIH"
+                },
+                {
+                    "@id": "bts:WWP"
+                },
+                {
+                    "@id": "bts:WNPRC"
+                },
+                {
+                    "@id": "bts:Holland"
+                },
+                {
+                    "@id": "bts:Germany"
+                },
+                {
+                    "@id": "bts:Florida"
+                },
+                {
+                    "@id": "bts:AlphGen"
+                }
+            ],
+            "sms:columnType": "string",
+            "sms:displayName": "individualOrigin",
+            "sms:required": "sms:true",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:SNI/PITT",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "SNI/PITT",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualOrigin"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "SNI/PITT",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NIH",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "NIH",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualOrigin"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "NIH",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:WWP",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "WWP",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualOrigin"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "WWP",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:WNPRC",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "WNPRC",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualOrigin"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "WNPRC",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Holland",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Holland",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualOrigin"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Holland",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Germany",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Germany",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualOrigin"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Germany",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:Florida",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "Florida",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualOrigin"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "Florida",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:AlphGen",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "AlphGen",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:IndividualOrigin"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:displayName": "AlphGen",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
             "@id": "bts:INFA",
             "@type": "rdfs:Class",
             "rdfs:comment": "Infarcts and lacunes. Reports of anoxic ischemic injury will not be considered within the infarcts and lacunes lesions",
