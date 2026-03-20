@@ -149,12 +149,7 @@
         "display_name": "MARMO-AD_individual_metadata_template",
         "schema_name": "MARMO-ADIndividualMetadataTemplate",
         "type": "record"
-      },        
-      {
-        "display_name": "MARMO-AD_supplementalAssay_metadata_template",
-        "schema_name": "MARMO-ADSupplementalAssayMetadataTemplate",
-        "type": "record"
-        }
+      }
     ],
     "service_version": "v23.1.1",
     "schema_version": ""
