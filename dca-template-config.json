@@ -152,7 +152,7 @@
       },        
       {
         "display_name": "MARMO-AD_supplementalAssay_metadata_template",
-        "schema_name": "MARMO-ADsupplementalAssayMetadataTemplate",
+        "schema_name": "MARMO-ADSupplementalAssayMetadataTemplate",
         "type": "record"
         }
     ],
