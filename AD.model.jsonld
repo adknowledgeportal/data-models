@@ -4694,6 +4694,79 @@
             "sms:columnType": "string",
             "sms:displayName": "rnaSeq",
             "sms:required": "sms:false",
+            "sms:requiresDependency": [
+                {
+                    "@id": "bts:RIN"
+                },
+                {
+                    "@id": "bts:NucleicAcidSource"
+                }
+            ],
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:RIN",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "RNA Integrity Number",
+            "rdfs:label": "RIN",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "sms:columnType": "number",
+            "sms:displayName": "RIN",
+            "sms:required": "sms:false",
+            "sms:validationRules": []
+        },
+        {
+            "@id": "bts:NucleicAcidSource",
+            "@type": "rdfs:Class",
+            "rdfs:comment": "TBD",
+            "rdfs:label": "NucleicAcidSource",
+            "rdfs:subClassOf": [
+                {
+                    "@id": "bts:ManifestColumn"
+                }
+            ],
+            "schema:isPartOf": {
+                "@id": "http://schema.biothings.io"
+            },
+            "schema:rangeIncludes": [
+                {
+                    "@id": "bts:Bulkcell"
+                },
+                {
+                    "@id": "bts:Singlecell"
+                },
+                {
+                    "@id": "bts:Bulknuclei"
+                },
+                {
+                    "@id": "bts:Singlenucleus"
+                },
+                {
+                    "@id": "bts:Mitochondria"
+                },
+                {
+                    "@id": "bts:Sortedcells"
+                },
+                {
+                    "@id": "bts:Sortednuclei"
+                },
+                {
+                    "@id": "bts:CfDNA"
+                },
+                {
+                    "@id": "bts:Notapplicable"
+                }
+            ],
+            "sms:columnType": "string",
+            "sms:displayName": "nucleicAcidSource",
+            "sms:required": "sms:false",
             "sms:validationRules": []
         },
         {
@@ -25119,53 +25192,6 @@
             "sms:validationRules": []
         },
         {
-            "@id": "bts:NucleicAcidSource",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "TBD",
-            "rdfs:label": "NucleicAcidSource",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ManifestColumn"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "schema:rangeIncludes": [
-                {
-                    "@id": "bts:Bulkcell"
-                },
-                {
-                    "@id": "bts:Singlecell"
-                },
-                {
-                    "@id": "bts:Bulknuclei"
-                },
-                {
-                    "@id": "bts:Singlenucleus"
-                },
-                {
-                    "@id": "bts:Mitochondria"
-                },
-                {
-                    "@id": "bts:Sortedcells"
-                },
-                {
-                    "@id": "bts:Sortednuclei"
-                },
-                {
-                    "@id": "bts:CfDNA"
-                },
-                {
-                    "@id": "bts:Notapplicable"
-                }
-            ],
-            "sms:columnType": "string",
-            "sms:displayName": "nucleicAcidSource",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
             "@id": "bts:Bulkcell",
             "@type": "rdfs:Class",
             "rdfs:comment": "All cells from bulk sample",
@@ -28194,24 +28220,6 @@
             },
             "sms:columnType": "string",
             "sms:displayName": "ribosomalDepletion",
-            "sms:required": "sms:false",
-            "sms:validationRules": []
-        },
-        {
-            "@id": "bts:RIN",
-            "@type": "rdfs:Class",
-            "rdfs:comment": "RNA Integrity Number",
-            "rdfs:label": "RIN",
-            "rdfs:subClassOf": [
-                {
-                    "@id": "bts:ManifestColumn"
-                }
-            ],
-            "schema:isPartOf": {
-                "@id": "http://schema.biothings.io"
-            },
-            "sms:columnType": "number",
-            "sms:displayName": "RIN",
             "sms:required": "sms:false",
             "sms:validationRules": []
         },
