@@ -18,8 +18,10 @@
 #   8. Create release assets          - attaches schema JSON files to the GitHub release (pre-release and release)
 #   9. Resolve schema organization    - selects test.ad or sage.schemas.ad based on trigger event
 #  10. Register schemas in Synapse    - registers schemas in the resolved org; uses release tag as semantic version
-#  11. Format Schema Report           - builds a markdown summary of generated/registered schemas
-#  12. Comment PR with Schema Summary - posts the report as a PR comment
+#  11. Create recordsets              - for each registered schema, creates a RecordSet in the Synapse project
+#                                       (versioned folder per release; single overwritten folder per PR)
+#  12. Format Schema Report           - builds a markdown summary of generated/registered schemas
+#  13. Comment PR with Schema Summary - posts the report as a PR comment
 #
 # Required secrets:
 #   SYNAPSE_TOKEN_DPE - Synapse Personal Access Token with permissions to register schemas
@@ -53,6 +55,8 @@ jobs:
     permissions:
       pull-requests: write
       contents: write
+    env: 
+      SYNAPSE_PROJECT_ID: syn74318331
     steps:
       - uses: actions/checkout@v6
         with:
@@ -134,12 +138,71 @@ jobs:
           version: ${{ github.event.release.tag_name }}
           fix-schema-name: true
 
+      - name: Create recordsets
+        env:
+          SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
+        run: |
+          pip install synapseclient -q
+          python - <<'PYTHON'
+          import os 
+          from synapseclient import Synapse
+          from synapseclient.models import Folder, RecordSet
+          from synapseclient.extensions.curator.record_based_metadata_task import extract_schema_properties_from_web
+          
+          syn = Synapse()
+          syn.login()
+          project_id = os.environ["SYNAPSE_PROJECT_ID"]
+
+          # All URIs registered in this run, one per line (e.g. "org-SchemaName" or "org-SchemaName-1.0.0")
+          json_schema_uris = r'''${{ steps.register.outputs.uris }}'''
+          org_name = r'''${{ steps.resolve-org.outputs.org-name }}'''
+          release_tag = r'''${{ github.event.release.tag_name }}'''
+
+          for schema_uri in json_schema_uris.splitlines():
+              schema_uri = schema_uri.strip()
+
+              # Strip the org prefix to get "SchemaName" (PR) or "SchemaName-1.0.0" (release),
+              # then take the first segment to isolate just the schema name.
+              data_type = schema_uri.removeprefix(f"{org_name}-").split("-")[0]
+
+              # Fetch the schema columns from Synapse to use as the RecordSet structure
+              template_df = extract_schema_properties_from_web(syn, schema_uri)
+
+              if release_tag:
+                  # For versioned releases, include the semver in the folder name so each
+                  # release gets its own folder (e.g. "individual_human_template_1.0.0")
+                  semver = release_tag.lstrip('v')
+                  tmp_path = f"/tmp/{data_type}_{semver}.csv"
+                  template_df.to_csv(tmp_path, index=False)
+                  folder = Folder(name=f"{data_type}_{semver}", parent_id=project_id).store()
+                  record_set = RecordSet(
+                      name="Template",
+                      description=f"Template for {data_type}",
+                      parent_id=folder.id,
+                      path=tmp_path,
+                      upsert_keys=[""],
+                      version_label=semver,
+                      force_version=False,
+                  ).store(synapse_client=syn)
+              else:
+                  # For PR runs, create/overwrite a single unversioned folder
+                  folder = Folder(name=f"{data_type}", parent_id=project_id).store()
+                  tmp_path = f"/tmp/{data_type}.csv"
+                  template_df.to_csv(tmp_path, index=False)
+                  record_set = RecordSet(
+                      name="Template",
+                      description=f"Template for {data_type}",
+                      parent_id=folder.id,
+                      path=tmp_path,
+                      upsert_keys=[""]
+                  ).store(synapse_client=syn)
+          PYTHON
+
       - name: Format Schema Report
         id: format
         env:
           SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
         run: |
-          pip install synapseclient -q
           python - <<'PYTHON'
           import json
           import os
