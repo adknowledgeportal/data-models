@@ -145,7 +145,6 @@ jobs:
           pip install synapseclient -q
           python - <<'PYTHON'
           import os 
-          import tempfile
           from synapseclient import Synapse
           from synapseclient.models import Folder, RecordSet
           from synapseclient.extensions.curator.record_based_metadata_task import extract_schema_properties_from_web
