@@ -138,7 +138,7 @@ jobs:
           version: ${{ github.event.release.tag_name }}
           fix-schema-name: true
 
-      - name: Create recordsets
+      - name: Create recordsets and bind schema
         env:
           SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
         run: |
@@ -196,6 +196,7 @@ jobs:
                       path=tmp_path,
                       upsert_keys=[""]
                   ).store(synapse_client=syn)
+              record_set.bind_schema(json_schema_uri=schema_uri)
           PYTHON
 
       - name: Format Schema Report
