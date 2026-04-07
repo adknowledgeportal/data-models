@@ -29,10 +29,6 @@
 name: Generate, register SON Schemas and Create RecordSets
 
 on:
-  push:  # temporary: triggers on any branch push for testing
-    branches:
-      - "*"
-
   pull_request:
     types:
       - opened
