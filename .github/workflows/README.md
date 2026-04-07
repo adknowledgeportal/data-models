@@ -168,8 +168,9 @@ This workflow handles schema registration across two Synapse organizations:
 8. **Create release assets** — attaches the schema `.json` files to the GitHub release page (for prelease and full release only)
 9. **Resolve schema organization** — selects `test.ad` or `sage.schemas.ad` based on the trigger event action
 10. **Register schemas in Synapse** — registers schemas in the resolved org via [`register-jsonschema`](https://github.com/Sage-Bionetworks-Actions/register-jsonschema); uses the release tag as the semantic version when available
-11. **Format Schema Report** — builds a markdown summary listing all generated schemas and their properties; includes Synapse links when a release tag is present
-12. **Comment PR with Schema Summary** — posts the report as a PR comment; also writes the report to the workflow run summary
+11. **Create recordsets** — for each registered schema, fetches its column structure from Synapse and creates a `RecordSet` in the configured Synapse project (`SYNAPSE_PROJECT_ID`); for releases, creates a versioned folder `{data_type}_{version}`; for PRs, creates/overwrites a single unversioned folder `{data_type}`
+12. **Format Schema Report** — builds a markdown summary listing all generated schemas and their properties; includes Synapse links when a release tag is present
+13. **Comment PR with Schema Summary** — posts the report as a PR comment; also writes the report to the workflow run summary
 
 ### Synapse Organizations
 | Org Name | Purpose |
@@ -217,15 +218,17 @@ The recommended release process uses a two-step GitHub release flow to validate 
 > - Must be greater than `0.0.0`
 > - No pre-release suffixes — tags like `v1.0.0-rc1`, `v1.0.0-beta`, or `v1.0.0-alpha` will cause schema registration to fail
 
-### Required Secrets
-| Secret | Description |
-|--------|-------------|
-| `SYNAPSE_TOKEN_DPE` | Synapse Personal Access Token with permissions to register schemas in both orgs |
+### Required Secrets and Environment Variables
+| Name | Type | Description |
+|------|------|-------------|
+| `SYNAPSE_TOKEN_DPE` | Secret | Synapse Personal Access Token with permissions to register schemas and create RecordSets |
+| `SYNAPSE_PROJECT_ID` | Env var (job-level) | Synapse project ID where RecordSets are created |
 
 ### Outputs
 - JSON schema artifacts uploaded per workflow run
-- Schema `.json` files attached as downloadable assets to the GitHub release page (Pre-release and release only)
+- Schema `.json` files attached as downloadable assets to the GitHub release page (release events only)
 - Schemas registered in the resolved Synapse organization (versioned when triggered by a release)
+- RecordSets created in the Synapse project per registered schema — versioned folders for releases (`{data_type}_{version}`), overwritten single folder for PRs (`{data_type}`)
 - Markdown summary report posted as a PR comment (PR events) and written to the workflow run summary (all events)
 
 ### Diagrams
@@ -260,7 +263,8 @@ flowchart TD
     I -- "No — pre-release or PR" --> K["org = test.ad 🧪"]
     J --> L["Register schemas in org"]
     K --> L
-    L --> M["Format schema report"]
+    L --> RS["Create RecordSets in Synapse project\n(versioned folder per release; overwritten folder per PR)"]
+    RS --> M["Format schema report"]
     M --> N{"release_tag present?"}
     N -- Yes — release --> O["For each schema: link to versioned URL + properties table"]
     N -- No — PR --> P["For each schema: schema name + properties table"]
