@@ -29,7 +29,9 @@
 name: Generate, register SON Schemas and Create RecordSets
 
 on:
-  workflow_dispatch:  # temporary: allows manual trigger from the GitHub Actions UI
+  push:  # temporary: triggers on any branch push for testing
+    branches:
+      - "*"
 
   pull_request:
     types:
