@@ -56,7 +56,7 @@ jobs:
       pull-requests: write
       contents: write
     env: 
-      SYNAPSE_PROJECT_ID: syn74318331
+      SYNAPSE_PROJECT_ID: syn25878249
     steps:
       - uses: actions/checkout@v6
         with:
