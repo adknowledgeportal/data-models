@@ -1,4 +1,20 @@
 # CI/CD Documentation
+
+## Index
+
+- [Build Workflow](#build-workflow)
+- [Register Schema Workflow](#register-schema-workflow)
+  - [Triggers](#triggers)
+  - [Steps](#steps)
+  - [Synapse Organizations](#synapse-organizations)
+  - [Versioning](#versioning)
+  - [Release Guide](#release-guide)
+  - [Required Secrets](#required-secrets)
+  - [Outputs](#outputs)
+  - [Diagrams](#diagrams-1)
+
+---
+
 ## Build Workflow
 
 ### Purpose
@@ -32,7 +48,7 @@ When a PR is labeled as `automerge`
 <summary>Mermaid diagram for build workflow</summary>
 
 ```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff"}}}%%
+%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#000000", "edgeLabelBackground": "#ffffff"}}}%%
     flowchart TD
         A[Create/Update PR] --> B{PR Action Type}
         B -->|opened/synchronize| C[PR trigger - paths: modules/**]
@@ -123,56 +139,141 @@ When a PR is labeled as `automerge`
 </details>
 
 
-## Release Workflow
+## Register Schema Workflow
 
 ### Purpose
-The `release` workflow is used to mint JSONSchema files for the data model as part of a release and register them on Synapse so that they may be bound to entities later.
+The `register-schema` workflow assembles the AD data model CSV from module files, generates JSON schemas from it, registers them in a Synapse organization, and posts a markdown summary report as a PR comment or workflow run summary.
+
+This workflow handles schema registration across two Synapse organizations:
+- **Test org** (`test.ad`): used during active development and pre-release validation
+- **Production org** (`sage.schemas.ad`): used for official versioned releases
 
 ### Triggers
-The `release` workflow runs whenever a relase of the data model is minted, that is, when a new version tag is pushed to the repository.
+| Event | Condition | Target Org |
+|-------|-----------|------------|
+| Pull request opened, synchronized, or labeled | Targets `main`; changes in `modules/**` | `test.ad` |
+| Release published (pre-release) | `release.published` | `test.ad` |
+| Release released (full release or pre-release promoted) | `release.released` | `sage.schemas.ad` |
 
-### Necessary Actions from Contributors
-Publish a new Release on github and specify a new tag.
+> **Note:** The workflow is skipped if triggered by `commit-to-main-bot-adkp[bot]`.
+
+### Steps
+1. **Checkout** — checks out the PR branch (`head_ref` for pull requests, default ref for releases)
+2. **Set up Python 3.11** — installs Python and the `pandas` dependency
+3. **Assemble CSV data model** — runs `assemble_csv_data_model.py` to join all `modules/` files into `AD.model.csv`
+4. **Commit CSV changes** — commits the updated `AD.model.csv` back to the branch via [`add-and-commit`](https://github.com/EndBug/add-and-commit) (pull request events only)
+5. **Generate JSON Schemas** — converts `AD.model.csv` into JSON schema files using [`generate-jsonschema`](https://github.com/Sage-Bionetworks-Actions/generate-jsonschema)
+6. **Check schemas were generated** — exits with an error if no schemas were produced
+7. **Upload schemas as artifacts** — saves generated `.json` schemas as a downloadable workflow artifact
+8. **Create release assets** — attaches the schema `.json` files to the GitHub release page (for prelease and full release only)
+9. **Resolve schema organization** — selects `test.ad` or `sage.schemas.ad` based on the trigger event action
+10. **Register schemas in Synapse** — registers schemas in the resolved org via [`register-jsonschema`](https://github.com/Sage-Bionetworks-Actions/register-jsonschema); uses the release tag as the semantic version when available
+11. **Create recordsets** — for each registered schema, fetches its column structure from Synapse and creates a `RecordSet` in the configured Synapse project (`SYNAPSE_PROJECT_ID`); for releases, creates a versioned folder `{data_type}_{version}`; for PRs, creates/overwrites a single unversioned folder `{data_type}`
+12. **Format Schema Report** — builds a markdown summary listing all generated schemas and their properties; includes Synapse links when a release tag is present
+13. **Comment PR with Schema Summary** — posts the report as a PR comment; also writes the report to the workflow run summary
+
+### Synapse Organizations
+| Org Name | Purpose |
+|----------|---------|
+| `test.ad` | Staging: used for PR previews and pre-release validation |
+| `sage.schemas.ad` | Production: used for official versioned releases |
+
+
+### Versioning
+
+| Trigger | Semantic Version |
+|---------|-----------------|
+| Pull request | None (auto-assigned by Synapse) |
+| Pre-release published | Release tag (e.g. `1.1.0`) |
+| Release released | Release tag (e.g. `1.1.0`) |
+
+When a PR triggers registration, no semantic version is provided. Synapse assigns each registered schema an internal `version_id`, so **schemas from different PRs do not overwrite each other** — each registration produces a distinct entry in the schema registry.
+
+
+### Release Guide
+
+The recommended release process uses a two-step GitHub release flow to validate schemas in the test org before promoting to production.
+
+#### Step 1 — Publish a Pre-release (registers to `test.ad`)
+1. Go to **Releases → Draft a new release** in GitHub.
+2. Create a new tag (e.g., `v1.2.0`) targeting `main`.
+3. Check **"Set as a pre-release"**.
+4. Click **Publish release** — this triggers `release.published`, attaches schema `.json` files to the release, and registers schemas to `test.ad`.
+5. Inspect the workflow run summary for the schema report.
+6. Verify schemas appear in `test.ad` on Synapse and that the `.json` files are listed under the release assets.
+
+#### Step 2 — Promote to Full Release (registers to `sage.schemas.ad`)
+1. Once validated, return to the pre-release on GitHub.
+2. Edit the release and uncheck **"Set as a pre-release"** (or click **"Promote to full release"**).
+3. Click **Update release** — this triggers `release.released` and registers schemas to `sage.schemas.ad`.
+4. Verify schemas appear in `sage.schemas.ad` on Synapse with the correct semantic version and that the `.json` files are listed under the release assets.
+
+> **Note:**
+> - Only the `release.released` action writes to the production org. Accidental pre-release publishes will only affect `test.ad`.
+> - Editing the existing pre-release (not creating a new tag) is what triggers the `released` event and routes schemas to production. This triggers the workflow again and registers schemas to the production org.
+> - Do not create a new tag for promotion — editing the existing pre-release is sufficient.
+>
+> **Release tag format requirements (enforced by Synapse):**
+> - Format: `X.Y.Z` — digits only (e.g. `1.2.0` or `v1.2.0`)
+> - Must be greater than `0.0.0`
+> - No pre-release suffixes — tags like `v1.0.0-rc1`, `v1.0.0-beta`, or `v1.0.0-alpha` will cause schema registration to fail
+
+### Required Secrets and Environment Variables
+| Name | Type | Description |
+|------|------|-------------|
+| `SYNAPSE_TOKEN_DPE` | Secret | Synapse Personal Access Token with permissions to register schemas and create RecordSets |
+| `SYNAPSE_PROJECT_ID` | Env var (job-level) | Synapse project ID where RecordSets are created |
 
 ### Outputs
-* All JSONSchema files are registered with the specified organization on Synapse under the new version tag
-
+- JSON schema artifacts uploaded per workflow run
+- Schema `.json` files attached as downloadable assets to the GitHub release page (release events only)
+- Schemas registered in the resolved Synapse organization (versioned when triggered by a release)
+- RecordSets created in the Synapse project per registered schema — versioned folders for releases (`{data_type}_{version}`), overwritten single folder for PRs (`{data_type}`)
+- Markdown summary report posted as a PR comment (PR events) and written to the workflow run summary (all events)
 
 ### Diagrams
 
 <details>
 
-<summary>Mermaid diagram for release workflow</summary>
+<summary>Mermaid diagram for register-schema workflow</summary>
 
 ```mermaid
-%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#ffffff", "edgeLabelBackground": "#ffffff"}}}%%
-    flowchart TD
-    A[Create Git Tag] --> B[Push tag trigger]
-    
-    B --> C{Triggering actor<br>!=<br>commit-to-main-bot?}
-    C -->|Yes| D([release job])
-    C -->|No| Z[Skip workflow]
-    
-    D --> D1[Create GitHub App Token]
-    D1 --> D2[Checkout main branch]
-    D2 --> D3[Setup Python 3.10]
-    D3 --> D4[Install libraries<br>from requirements.txt]
-    D4 --> D5[Register JSONSchema to Synapse]
-    subgraph Legend
-        direction TB
-        triggers[Triggers]
-        jobs([Jobs])
-        outputs[Outputs]
-        triggers ~~~ jobs ~~~ outputs
-        style triggers fill:#ffeb3b,stroke-width:0px
-        style jobs fill:#e3f2fd,stroke-width:0px
-        style outputs fill:#4caf50,stroke-width:0px
-    end
-    
-    linkStyle default stroke: gray
-    style A fill:#ffeb3b
-    style B fill:#ffeb3b
-    style D fill:#e3f2fd
-    style D5 fill:#4caf50
+%%{init: {"flowchart": {"defaultRenderer": "elk"}, "theme": "base", "themeVariables": {"fontSize": "12px", "lineColor": "#000000", "edgeLabelBackground": "#ffffff"}}}%%
+flowchart TD
+    A(["Trigger"]) --> B{"Event type?"}
+    B -- "PR to main (changes in modules/)" --> C{"triggering_actor == commit-to-main-bot?"}
+    B -- "release: published pre-release" --> C
+    B -- "release: released full release" --> C
+    C -- Yes --> SKIP(["Skip — exit"])
+    C -- No --> D["Checkout branch"]
+    D --> D1["Set up Python 3.11 + install pandas"]
+    D1 --> D2["Assemble AD.model.csv from modules/"]
+    D2 --> D3{"event == pull_request?"}
+    D3 -- Yes --> D4["Commit AD.model.csv to branch"]
+    D3 -- No --> E
+    D4 --> E["Generate JSON Schemas from AD.model.csv"]
+    E --> F{"schemas-json == empty?"}
+    F -- Yes — no schemas generated --> FAIL(["Error — exit 1"])
+    F -- No --> H["Upload schemas as workflow artifact"]
+    H --> RA{"event_name == 'release'?"}
+    RA -- Yes --> I2["Attach schema .json files to GitHub release"]
+    RA -- No — PR --> I
+    I2 --> I{"event.action == released?"}
+    I -- Yes — full release --> J["org = sage.schemas.ad 🚀"]
+    I -- "No — pre-release or PR" --> K["org = test.ad 🧪"]
+    J --> L["Register schemas in org"]
+    K --> L
+    L --> RS["Create RecordSets in Synapse project\n(versioned folder per release; overwritten folder per PR)"]
+    RS --> M["Format schema report"]
+    M --> N{"release_tag present?"}
+    N -- Yes — release --> O["For each schema: link to versioned URL + properties table"]
+    N -- No — PR --> P["For each schema: schema name + properties table"]
+    O --> Q["Write to GitHub summary"]
+    P --> Q
+    Q --> R{"event == pull_request?"}
+    R -- Yes --> S["Post schema-report.md as PR comment"]
+    R -- No --> T(["Done"])
+    S --> T
 ```
 </details>
+

@@ -1,0 +1,65 @@
+{
+  "$id": "http://example.com/MARMO-ADIndividualMetadataTemplate",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "CalHV3status": {},
+    "ageMatchedID": {},
+    "damID": {},
+    "dateBirth": {
+      "minLength": 1,
+      "not": {
+        "type": "null"
+      }
+    },
+    "dateDeath": {},
+    "individualID": {
+      "minLength": 1,
+      "not": {
+        "type": "null"
+      }
+    },
+    "individualOrigin": {
+      "enum": [
+        "Germany",
+        "AlphGen",
+        "WWP",
+        "WNPRC",
+        "NIH",
+        "SNI/PITT",
+        "Florida",
+        "Holland"
+      ]
+    },
+    "lineGeneration": {},
+    "lineGenotype": {},
+    "sex": {
+      "enum": [
+        "female",
+        "male",
+        "missing or unknown"
+      ]
+    },
+    "sireID": {},
+    "species": {
+      "enum": [
+        "Rat",
+        "Mouse",
+        "Gallus gallus",
+        "Sus scrofa",
+        "Drosophila melanogaster",
+        "Human",
+        "Rhesus macaque",
+        "Pan troglodytes"
+      ]
+    }
+  },
+  "required": [
+    "dateBirth",
+    "species",
+    "individualOrigin",
+    "individualID",
+    "sex"
+  ],
+  "title": "MARMO-ADIndividualMetadataTemplate",
+  "type": "object"
+}

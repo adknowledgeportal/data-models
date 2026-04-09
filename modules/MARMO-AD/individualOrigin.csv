@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+individualOrigin,Facility where animal originated from,"SNI/PITT, NIH, WWP, WNPRC, Holland, Germany, Florida, AlphGen",,,TRUE,ManifestColumn,,sage.annotations-neuro.individualOrigin-0.0.1,,string,MARMO-AD
