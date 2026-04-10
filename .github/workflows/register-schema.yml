@@ -79,7 +79,7 @@ jobs:
         with:
           default_author: github_actions
           add: 'AD.model.csv'
-          message: "Github Action: assembled AD.model.csv from modules"
+          message: "Github Action: assembled AD.model.csv from modules [skip ci]"
           push: true
 
       - name: Generate JSON Schemas
