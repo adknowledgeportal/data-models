@@ -1,0 +1,4 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+assay,The technology used to generate the data in this file,"mRNAcounts, microRNAcounts",,,True,ManifestColumn,,sage.annotations-experimentalData.assay-0.0.26,,string,experimentalData
+microRNAcounts,A microRNA profiling assay using digital molecular barcoding technology to quantify target microRNA molecules without the need for amplification.,,,,,assay,,source: http://purl.obolibrary.org/obo/OBI_0002142,,string,experimentalData
+mRNAcounts,A mRNA profiling assay using digital molecular barcoding technology to quantify target mRNA molecules without the need for amplification.,,,,,assay,,Sage Bionetworks,,string,experimentalData
