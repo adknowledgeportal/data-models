@@ -42,7 +42,6 @@ on:
   release:
     types:
       - published
-      - released
       
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.triggering_actor }}
@@ -117,10 +116,10 @@ jobs:
       - name: Resolve schema organization
         id: resolve-org
         run: |
-          # released → production org (full release published, or pre-release promoted to release)
-          # published → test org (pre-release)
+          # published (full release) → production org
+          # published (pre-release) → test org
           # pull_request → test org
-          if [[ "${{ github.event.action }}" == "released" ]]; then
+          if [[ "${{ github.event_name }}" == "release" && "${{ github.event.release.prerelease }}" != "true" ]]; then
             echo "org-name=sage.schemas.ad" >> $GITHUB_OUTPUT
             echo "🚀 Production: deploying to sage.schemas.ad"
           else
