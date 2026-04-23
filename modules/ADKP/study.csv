@@ -36,6 +36,7 @@ BrainGVEX,Genetic Variants effect on Brain Gene eXpression,,,,,study,,https://ww
 BroadAstrom109,Primary astrocytes and iPSC derived neurons,,,,,study,,https://www.synapse.org/#!Synapse:syn7204912,,string,ADKP
 BroadiPSC,iPSC derived forebrain neurons,,,,,study,,https://www.synapse.org/#!Synapse:syn3607401,,string,ADKP
 BroadMDMi,A novel human in vitro microglia-like model,,,,,study,,https://www.synapse.org/#!Synapse:syn3607404,,string,ADKP
+BU_ADRC_circPDE4B,BU ADRC circPDE4B Downregulation Associated with GEMIN5-Dependent Translational Stress and Autophagy in MAPT Pathology (BU_ADRC_circPDE4B),,,,,study,,https://www.synapse.org/#!Synapse:syn74323578,,string,ADKP
 CD74-IHC,"This study measures amyloid load and PHF Tau tangles in participants from the ROS and MAP cohorts using immunocytochemistry, image analysis, and stereology.",,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn64759724,,string,ADKP
 CHDWB,"Clinical, metabolomic, and gene expression data of controls",,,,,study,,https://www.synapse.org/#!Synapse:syn8272982,,string,ADKP
 CMC,CommonMind Consortium,,,,,study,,https://www.synapse.org/#!Synapse:syn2759792/wiki/69613,,string,ADKP
