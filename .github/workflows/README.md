@@ -2,7 +2,6 @@
 
 ## Index
 
-- [Build Workflow](#build-workflow)
 - [Register Schema Workflow](#register-schema-workflow)
   - [Triggers](#triggers)
   - [Steps](#steps)
