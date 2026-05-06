@@ -12,7 +12,7 @@
 - [Legacy data models:](#legacy-data-models)            
 
 ## Production data model
-**AD.model.\* ([csv](https://github.com/adknowledgeportal/data-models/blob/main/AD.model.csv)
+[AD.model.csv](https://github.com/adknowledgeportal/data-models/blob/main/AD.model.csv)
 
 
 ## Editing data models
