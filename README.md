@@ -69,7 +69,7 @@ Some common data model editing scenarios are:
 #### Adding a new template to the data model:
 1. If you wanted to add a new template to the data model, first add the template to the bottom of the 'template.csv' file, with the column names in the order they will appear.
       Example: 'assay_spatialTranscriptomics_metadata_template,SysBio spatial transcriptomics metadata template schema,,"Component, individualID, biospecimenID, fileFormat, sequenceAnalysis, runID, captureArea, readIndicator, spatialRead1, spatialRead2",,False,ManifestTemplate,,sysbio.metadataTemplates-assay.spatialTranscriptomics,,,template'
-1. Stage, commit, and open a PR with these two changes, requesting review by another AD data manager. Once approved and merged, a GitHub Action workflow will run that uploads the new template to the AD Metadata Dictionary site. Note: the GitHub Actions to join the modules and convert to a json-ld data model, and to generate a test template to review take a few minutes to complete. You will know when they are complete with a green check. The GitHub Action to upload the new template to the AD Metadata Dictionary site takes roughly 1.5 hours to complete.
+1. Stage, commit, and open a PR with these two changes, requesting review by another AD data manager. Once approved and merged, a GitHub Action workflow will run that generates and registers jsonschemas along with creation of recordsets for Curator. You will know when they are complete with a green check.
 
 For more advanced data modeling scenarios like adding conditional logic, creating validation rules, or creating new manifests, please consult the #ad-dcc-team slack channel.
 
