@@ -55,7 +55,7 @@ jobs:
       pull-requests: write
       contents: write
     env: 
-      SYNAPSE_PROJECT_ID: syn25878249
+      RECORDSET_FOLDER_ID: syn74847000
     steps:
       - uses: actions/checkout@v6
         with:
@@ -150,7 +150,7 @@ jobs:
           
           syn = Synapse()
           syn.login()
-          project_id = os.environ["SYNAPSE_PROJECT_ID"]
+          project_id = os.environ["RECORDSET_FOLDER_ID"]
 
           # All URIs registered in this run, one per line (e.g. "org-SchemaName" or "org-SchemaName-1.0.0")
           json_schema_uris = r'''${{ steps.register.outputs.uris }}'''
