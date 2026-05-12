@@ -136,7 +136,7 @@ flowchart TD
     I2 --> I{"event.action == released?"}
     I -- Yes — full release --> J["org = sage.schemas.ad 🚀"]
     I -- "No — pre-release or PR" --> K["org = test.ad 🧪"]
-    J --> L["Register schemas in org"]
+    J --> L["Register JSON schemas in JSON organizations on Synapse"]
     K --> L
     L --> RS["Create RecordSets in Synapse project\n(versioned folder per release; overwritten folder per PR)"]
     RS --> M["Format schema report"]
