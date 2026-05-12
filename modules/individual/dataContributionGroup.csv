@@ -1,13 +1,57 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-dataContributionGroup,This describes the identifier assigned to a data contributor,"ADNI,MCSA,MCBB,MC ADRC,Emory,Duke,Baker Heart & Diabetes Institute,IADRC,Knight ADRC,MADC,1FL ADRC",,,False,ManifestColumn,,,,string,ManifestColumn
-ADNI,,,,,,dataContributionGroup,,,,string,ManifestColumn
-MCSA,,,,,,dataContributionGroup,,,,string,ManifestColumn
-MCBB,,,,,,dataContributionGroup,,,,string,ManifestColumn
-MC ADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
-Emory,,,,,,dataContributionGroup,,,,string,ManifestColumn
-Duke,,,,,,dataContributionGroup,,,,string,ManifestColumn
-Baker Heart & Diabetes Institute,,,,,,dataContributionGroup,,,,string,ManifestColumn
-IADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
-Knight ADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
-MADC,,,,,,dataContributionGroup,,,,string,ManifestColumn
-1FL ADRC,,,,,,dataContributionGroup,,,,string,ManifestColumn
+dataContributionGroup,This describes the identifier assigned to a data contributor,"1FL ADRC,ADNI,AMP-AD Consortium,Allen Institute for Brain Science,Arizona State University,Baker Heart & Diabetes Institute,Baylor College of Medicine,Baylor University,Boston University Alzheimer's Disease Research Center,Brigham and Women's Hospital,Carnegie Mellon University,Case Western Reserve University,Columbia University,Columbia University Irving Medical Center,CommonMind Consortium,Duke,Duke University,Eli Lilly (United States),Emory,Emory University,GlaxoSmithKline (China),GlaxoSmithKline (United Kingdom),Harvard University,Helmholtz Munich,IADRC,Icahn School of Medicine at Mount Sinai,Indiana University,Institute for Systems Biology,Jackson Laboratory,Kaiser Permanente Washington Health Research Institute,Knight ADRC,MADC,MC ADRC,MCBB,MCSA,Massachusetts Institute of Technology,Mayo Clinic,Pacific Northwest National Laboratory,Rush University,SUNY Upstate Medical University,Sage Bionetworks,St. Jude Children's Research Hospital,Stanford University,The University of Queensland,University of Alabama at Birmingham,University of Arizona,University of California Irvine,University of California San Francisco,University of Chicago,University of Exeter,University of Florida,University of Pennsylvania,University of Pittsburgh,University of South Florida,University of Washington,Washington University in St. Louis,Yale University",,,False,ManifestColumn,,,,string,ManifestColumn
+1FL ADRC,1Florida Alzheimer's Disease Research Center,,,,,dataContributionGroup,,https://1floridaadrc.org/,,string,ManifestColumn
+ADNI,Alzheimer's Disease Neuroimaging Initiative,,,,,dataContributionGroup,,https://ror.org/01j20wc74,,string,ManifestColumn
+AMP-AD Consortium,,,,,,dataContributionGroup,,,,string,ManifestColumn
+Allen Institute for Brain Science,,,,,,dataContributionGroup,,https://ror.org/00dcv1019,,string,ManifestColumn
+Arizona State University,,,,,,dataContributionGroup,,https://ror.org/03efmqc40,,string,ManifestColumn
+Baker Heart & Diabetes Institute,,,,,,dataContributionGroup,,https://ror.org/03rke0285,,string,ManifestColumn
+Baylor College of Medicine,,,,,,dataContributionGroup,,https://ror.org/02pttbw34,,string,ManifestColumn
+Baylor University,,,,,,dataContributionGroup,,https://ror.org/005781934,,string,ManifestColumn
+Boston University Alzheimer's Disease Research Center,,,,,,dataContributionGroup,,,,string,ManifestColumn
+Brigham and Women's Hospital,,,,,,dataContributionGroup,,https://ror.org/04b6nzv94,,string,ManifestColumn
+Carnegie Mellon University,,,,,,dataContributionGroup,,https://ror.org/05x2bcf33,,string,ManifestColumn
+Case Western Reserve University,,,,,,dataContributionGroup,,https://ror.org/051fd9666,,string,ManifestColumn
+Columbia University,,,,,,dataContributionGroup,,https://ror.org/00hj8s172,,string,ManifestColumn
+Columbia University Irving Medical Center,,,,,,dataContributionGroup,,https://ror.org/01esghr10,,string,ManifestColumn
+CommonMind Consortium,,,,,,dataContributionGroup,,,,string,ManifestColumn
+Duke University,,,,,,dataContributionGroup,,https://ror.org/00py81415,,string,ManifestColumn
+Eli Lilly (United States),,,,,,dataContributionGroup,,https://ror.org/01qat3289,,string,ManifestColumn
+Emory University,,,,,,dataContributionGroup,,https://ror.org/03czfpz43,,string,ManifestColumn
+GlaxoSmithKline (China),,,,,,dataContributionGroup,,https://ror.org/03jrn4k58,,string,ManifestColumn
+GlaxoSmithKline (United Kingdom),,,,,,dataContributionGroup,,https://ror.org/01xsqw823,,string,ManifestColumn
+Harvard University,,,,,,dataContributionGroup,,https://ror.org/03vek6s52,,string,ManifestColumn
+Helmholtz Munich,,,,,,dataContributionGroup,,,,string,ManifestColumn
+IADRC,Indiana Alzheimer's Disease Research Center,,,,,dataContributionGroup,,https://medicine.iu.edu/research-centers/alzheimers,,string,ManifestColumn
+Icahn School of Medicine at Mount Sinai,,,,,,dataContributionGroup,,https://ror.org/04a9tmd77,,string,ManifestColumn
+Indiana University,,,,,,dataContributionGroup,,https://ror.org/01kg8sb98,,string,ManifestColumn
+Institute for Systems Biology,,,,,,dataContributionGroup,,https://ror.org/02tpgw303,,string,ManifestColumn
+Jackson Laboratory,,,,,,dataContributionGroup,,https://ror.org/021sy4w91,,string,ManifestColumn
+Kaiser Permanente Washington Health Research Institute,,,,,,dataContributionGroup,,https://ror.org/0027frf26,,string,ManifestColumn
+Knight ADRC,Knight Alzheimer's Disease Research Center,,,,,dataContributionGroup,,https://knightadrc.wustl.edu/,,string,ManifestColumn
+MADC,Michigan Alzheimer's Disease Research Center,,,,,dataContributionGroup,,https://medresearch.umich.edu/labs-departments/centers/madc,,string,ManifestColumn
+MC ADRC,Mayo Clinic Alzheimer's Disease Research Center,,,,,dataContributionGroup,,,,string,ManifestColumn
+MCBB,Mayo Clinic Brain Bank,,,,,dataContributionGroup,,https://www.mayo.edu/research/departments-divisions/department-neuroscience-florida/biorepositories/mayo-clinic-brain-bank,,string,ManifestColumn
+MCSA,Mayo Clinic Study of Aging,,,,,dataContributionGroup,,https://neurodegenerationresearch.eu/cohort/the-mayo-clinic-study-of-aging/,,string,ManifestColumn
+Massachusetts Institute of Technology,,,,,,dataContributionGroup,,https://ror.org/042nb2s44,,string,ManifestColumn
+Mayo Clinic,,,,,,dataContributionGroup,,https://ror.org/02qp3tb03,,string,ManifestColumn
+Pacific Northwest National Laboratory,,,,,,dataContributionGroup,,https://ror.org/05h992307,,string,ManifestColumn
+Rush University,,,,,,dataContributionGroup,,https://ror.org/01k9xac83,,string,ManifestColumn
+SUNY Upstate Medical University,,,,,,dataContributionGroup,,https://ror.org/040kfrw16,,string,ManifestColumn
+Sage Bionetworks,,,,,,dataContributionGroup,,https://ror.org/049ncjx51,,string,ManifestColumn
+St. Jude Children's Research Hospital,,,,,,dataContributionGroup,,https://ror.org/02r3e0967,,string,ManifestColumn
+Stanford University,,,,,,dataContributionGroup,,https://ror.org/00f54p054,,string,ManifestColumn
+The University of Queensland,,,,,,dataContributionGroup,,https://ror.org/00rqy9422,,string,ManifestColumn
+University of Alabama at Birmingham,,,,,,dataContributionGroup,,https://ror.org/008s83205,,string,ManifestColumn
+University of Arizona,,,,,,dataContributionGroup,,https://ror.org/03m2x1q45,,string,ManifestColumn
+University of California Irvine,,,,,,dataContributionGroup,,https://ror.org/04gyf1771,,string,ManifestColumn
+University of California San Francisco,,,,,,dataContributionGroup,,https://ror.org/043mz5j54,,string,ManifestColumn
+University of Chicago,,,,,,dataContributionGroup,,https://ror.org/024mw5h28,,string,ManifestColumn
+University of Exeter,,,,,,dataContributionGroup,,https://ror.org/03yghzc09,,string,ManifestColumn
+University of Florida,,,,,,dataContributionGroup,,https://ror.org/02y3ad647,,string,ManifestColumn
+University of Pennsylvania,,,,,,dataContributionGroup,,https://ror.org/00b30xv10,,string,ManifestColumn
+University of Pittsburgh,,,,,,dataContributionGroup,,https://ror.org/01an3r305,,string,ManifestColumn
+University of South Florida,,,,,,dataContributionGroup,,https://ror.org/032db5x82,,string,ManifestColumn
+University of Washington,,,,,,dataContributionGroup,,https://ror.org/00cvxb145,,string,ManifestColumn
+Washington University in St. Louis,,,,,,dataContributionGroup,,https://ror.org/01yc7t268,,string,ManifestColumn
+Yale University,,,,,,dataContributionGroup,,https://ror.org/03v76x132,,string,ManifestColumn
