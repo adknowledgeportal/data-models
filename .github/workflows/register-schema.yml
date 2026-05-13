@@ -150,7 +150,7 @@ jobs:
           
           syn = Synapse()
           syn.login()
-          project_id = os.environ["RECORDSET_FOLDER_ID"]
+          recordset_folder_id = os.environ["RECORDSET_FOLDER_ID"]
 
           # All URIs registered in this run, one per line (e.g. "org-SchemaName" or "org-SchemaName-1.0.0")
           json_schema_uris = r'''${{ steps.register.outputs.uris }}'''
@@ -173,7 +173,7 @@ jobs:
                   semver = release_tag.lstrip('v')
                   tmp_path = f"/tmp/{data_type}_{semver}.csv"
                   template_df.to_csv(tmp_path, index=False)
-                  folder = Folder(name=f"{data_type}_{semver}", parent_id=project_id).store()
+                  folder = Folder(name=f"{data_type}_{semver}", parent_id=recordset_folder_id).store()
                   record_set = RecordSet(
                       name="Template",
                       description=f"Template for {data_type}",
@@ -185,7 +185,7 @@ jobs:
                   ).store(synapse_client=syn)
               else:
                   # For PR runs, create/overwrite a single unversioned folder
-                  folder = Folder(name=f"{data_type}", parent_id=project_id).store()
+                  folder = Folder(name=f"{data_type}", parent_id=recordset_folder_id).store()
                   tmp_path = f"/tmp/{data_type}.csv"
                   template_df.to_csv(tmp_path, index=False)
                   record_set = RecordSet(
