@@ -12,36 +12,35 @@
 - [Legacy data models:](#legacy-data-models)            
 
 ## Production data model
-**AD.model.\* ([csv](https://github.com/adknowledgeportal/data-models/blob/main/AD.model.csv) | [jsonld](https://github.com/adknowledgeportal/data-models/blob/main/AD.model.jsonld))**: this is the current, "live" version of the AD Portal data model. It is being used by both the staging and production versions of the multitenant Data Curator App.
+[AD.model.csv](https://github.com/adknowledgeportal/data-models/blob/main/AD.model.csv)
 
-* production DCA: https://dca.app.sagebionetworks.org/
-* staging DCA (used by FAIR Data team to test updates to app infrastructure and schematic package): https://dca-staging.app.sagebionetworks.org/
 
 ## Editing data models
 
-:warning: Do **not** edit `AD.model.csv` or `AD.model.jsonld` by hand! :warning:
+:warning: Do **not** edit `AD.model.csv` by hand! :warning:
 
 ### Github branch procedure:
 
 The main branch of this repo is protected, so you cannot push changes to main. To make changes to the data model:
 1. Create a new branch in this repo and give it a descriptive name (the name will later be used to generate release notes). The CI/CD workflows will not work from a private fork.
 2. On that branch, make and commit any changes. You can do this by cloning the repo locally or by [using a Github codespace](#developing-in-a-codespace). Please write informative commit messages in case we need to track down data model inconsistencies or introduced bugs.
-3. Open a pull request and request review from someone else on the AD DCC team. The `schema-convert` and `test` jobs will run as soon as you open the PR. If this action fails, something about the data model csv could not be converted to a json-ld and should be investigated. 
-4. Once all the necessary changes have been made, the `schema-convert` and `test` jobs complete successfully, and the PR is approved, the PR is ready for merge.
-5. To merge the PR, click on the `labels` tab in the GitHub PR conversation and add the `automerge` label. One the label is applied, the `build` workflow will merge the PR as well as add the appropriate metadata templates and JSONSchema files to `main`.
+3. Open a pull request and request review from someone else on the AD DCC team. The `register-schema` job will run as soon as you open the PR. If this action fails, something about the data model csv could not generate and/or register JSON schemas.
+4. Once all the necessary changes have been made, the `register-schema` job completes successfully, and the PR is approved, the PR is ready for merge.
 
-For more information on the automated workflows, review the CI/CD documentation for the [build workflow](.github/workflows/README.md#build-workflow).
+For more information on the automated workflows, review the CI/CD documentation for the [build workflow](.github/workflows/README.md#register-schema-workflow).
 
 > **Note on unversioned schema registration:** When a PR is open, the `register-schema` workflow registers schemas to the `test.ad` Synapse organization without a semantic version. This is safe to do across multiple concurrent PRs — Synapse assigns each registration a unique internal `version_id`, so schemas from different PRs are stored independently and do not overwrite one another.
 
 ### Editing attributes by module:
+
+> ![NOTE]
+> For more information what is supported wthin the CSV data model, please proceed to this [documentation](https://python-docs.synapse.org/en/stable/explanations/curator_data_model/)
 
 The full `AD.model.csv` file has over 1400 attributes and is unwieldy to edit and hard to review changes for. For ease of editing, the full data model is divided into "module" subfolders, like so:
 
 ```
 data-models/
 ├── AD.model.csv (do not edit!)
-├── AD.model.jsonld (do not edit!)
 └── modules/
     ├── biospecimen/
     │   ├── specimenID.csv
@@ -57,25 +56,20 @@ Some common data model editing scenarios are:
 
 #### Adding a new valid value to an existing manifest column: 
 1. If you wanted to add a new valid value "eyeball" to our existing column attribute "organ", after making a new branch and opening the repo either locally or within a codespace, you would go to `modules/biospecimen/organ.csv`.
-2. Then, create a new row for an attribute named "eyeball", with a description and source (preferably an ontology URI). In the `Parent` column, make sure the value is "organ".
-3. Next, find the row for the attribute "organ" (should be the first row), and w/in the valid values column, add "eyeball" to the comma-separated list of valid values.
-4. Save your changes and write an informative commit. Please try to add valid values alphabetically!
+1. Then, create a new row for an attribute named "eyeball", with a description and source (preferably an ontology URI). In the `Parent` column, make sure the value is "organ".
+1. Next, find the row for the attribute "organ" (should be the first row), and w/in the valid values column, add "eyeball" to the comma-separated list of valid values.
+1. Save your changes and write an informative commit. Please try to add valid values alphabetically!
    
 #### Adding a new column to a manifest template: 
 1. If you wanted to add the column "furColor" to the "model-ad_individual_animal_metadata" template, first decide which module the new column should belong to. In this case, "MODEL-AD" makes the most sense.
-2. W/in the `MODEL-AD` subfolder, create a new csv called `furColor.csv` with the required schematic column headers. Describe the attribute "furColor" as necessary and make sure `Parent` = `ManifestColumn`. Add any valid values for "furColor" as new rows to this csv as described in the previous scenario.
-3. Find the manifest template attributes in `modules/template/templates.csv`. In the "model-ad_individual_animal_metadata" row, add your new column "furColor" to the comma-separated list of attributes in the `DependsOn` column.
-4. Save your changes and write an informative commit.
+1. W/in the `MODEL-AD` subfolder, create a new csv called `furColor.csv` with the required schematic column headers. Describe the attribute "furColor" as necessary and make sure `Parent` = `ManifestColumn`. Add any valid values for "furColor" as new rows to this csv as described in the previous scenario.
+1. Find the manifest template attributes in `modules/template/templates.csv`. In the "model-ad_individual_animal_metadata" row, add your new column "furColor" to the comma-separated list of attributes in the `DependsOn` column.
+1. Save your changes and write an informative commit.
 
 #### Adding a new template to the data model:
 1. If you wanted to add a new template to the data model, first add the template to the bottom of the 'template.csv' file, with the column names in the order they will appear.
       Example: 'assay_spatialTranscriptomics_metadata_template,SysBio spatial transcriptomics metadata template schema,,"Component, individualID, biospecimenID, fileFormat, sequenceAnalysis, runID, captureArea, readIndicator, spatialRead1, spatialRead2",,False,ManifestTemplate,,sysbio.metadataTemplates-assay.spatialTranscriptomics,,,template'
-3. Next, add the new template name to the bottom of the dca-template-config.json.
-      Example:
-        '"display_name": "assay_spatialTranscriptomics_metadata_template",
-        "schema_name": "AssaySpatialTranscriptomicsMetadataTemplate",
-        "type": "record"'
-5. Stage, commit, and open a PR with these two changes, requesting review by another AD data manager. Once approved and merged, a GitHub Action workflow will run that uploads the new template to the AD Metadata Dictionary site. Note: the GitHub Actions to join the modules and convert to a json-ld data model, and to generate a test template to review take a few minutes to complete. You will know when they are complete with a green check. The GitHub Action to upload the new template to the AD Metadata Dictionary site takes roughly 1.5 hours to complete.
+1. Stage, commit, and open a PR with these two changes, requesting review by another AD data manager. Once approved and merged, a GitHub Action workflow will run that generates and registers jsonschemas along with creation of recordsets for Curator. You will know when they are complete with a green check.
 
 For more advanced data modeling scenarios like adding conditional logic, creating validation rules, or creating new manifests, please consult the #ad-dcc-team slack channel.
 
