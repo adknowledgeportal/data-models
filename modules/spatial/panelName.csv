@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+panelName,Name of the panel used for targets,,,,FALSE,ManifestColumn,,,,string,spatial
