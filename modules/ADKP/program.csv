@@ -1,0 +1,19 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+program,Name of the program,"ACTDRx AD,ADDP,AGMP,AMP-AD,Brain CASCADE,CDCP,CLEAR-AD,ELITE,FunGen-AD,GENESIS,M2OVE-AD,MARMO-AD,MODEL-AD,Psych-AD,Resilience-AD,TOX-AD,TREAT-AD",,,True,ManifestColumn,,,,string,ADKP
+ACTDRx AD,ACTDRx AD: Advancing combination therapy and drug repurposing for AD,,,,,program,,,,string,ADKP
+ADDP,Alzheimer's Drug-Development Program,,,,,program,,,,string,ADKP
+AGMP,The Alzheimer Gut Microbiome Project ,,,,,program,,,,string,ADKP
+AMP-AD, AMP-AD: Accelerating Medicines Partnership - Alzheimer’s Disease Target Discovery and Preclinical Validation,,,,,program,,,,string,ADKP
+Brain CASCADE,Brain CASCADE: Cellular Architecture and Spatial Characterization of Aging and Dementia,,,,,program,,,,string,ADKP
+CDCP,CDCP: Community Data Contribution Program,,,,,program,,,,string,ADKP
+CLEAR-AD,CLEAR-AD: Centrally-linked longitudinal peripheral biomarkers of AD in multi-ethnic populations,,,,,program,,,,string,ADKP
+ELITE,ELITE: Exceptional Longevity Translational Resources,,,,,program,,,,string,ADKP
+FunGen-AD,FunGen-AD: Alzheimer’s Disease Sequencing Project (ADSP) Functional Genomics Consortium,,,,,program,,,,string,ADKP
+GENESIS,GENESIS: Gene Expression aNd Epigenetics Single cell Integrative Study,,,,,program,,,,string,ADKP
+M2OVE-AD,M2OVE-AD: Molecular Mechanisms of the Vascular Etiology of Alzheimer’s Disease,,,,,program,,,,string,ADKP
+MARMO-AD,"MARMO-AD: Generation, Characterization, and Validation of Marmoset Models of Alzheimer's Disease",,,,,program,,,,string,ADKP
+MODEL-AD,MODEL-AD: Translational Center for Model Development and Evaluation for Late Onset Alzheimer’s Disease,,,,,program,,,,string,ADKP
+Psych-AD,Psych-AD:  Neuropsychiatric Symptoms in Alzheimer’s Disease ,,,,,program,,,,string,ADKP
+Resilience-AD,Resilience-AD: Cognitive Resilience to Alzheimer's Disease,,,,,program,,,,string,ADKP
+TOX-AD,TOX-AD: Environmental Toxicant Exposures and Alzheimer's Disease (AD)/ AD-Related Dementias (ADRD) Outcomes,,,,,program,,,,string,ADKP
+TREAT-AD,TREAT-AD: Target Enablement to Accelerate Therapy Development for Alzheimer's Disease,,,,,program,,,,string,ADKP
