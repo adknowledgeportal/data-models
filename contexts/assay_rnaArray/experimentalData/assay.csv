@@ -1,0 +1,3 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+assay,The technology used to generate the data in this file,rnaArray,,,True,ManifestColumn,,sage.annotations-experimentalData.assay-0.0.26,,string,experimentalData
+rnaArray,RNA measurements captured by array technology,,,,,assay,,http://purl.obolibrary.org/obo/OBI_0001463,,string,experimentalData

@@ -1,0 +1,4 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+platform,"The specific version (manufacturer, model, etc.) of a technology that is used to carry out a laboratory or computational experiment.","NanostringnCounter, NanostringnCounter_MouseADPanel",,,True,ManifestColumn,,sage.annotations-experimentalData.platform-0.0.26,,string,experimentalData
+NanostringnCounter,Nanostring nCounter,,,,,platform,,Sage Bionetworks,,string,experimentalData
+NanostringnCounter_MouseADPanel,770 standardized genes covering 30 clinically derived AD-associated modules discovered in the AMP-AD consortium study of human brain tissue.,,,,,platform,,https://www.nanostring.com/products/gene-expression-panels/gene-expression-panels-overview/ncounter-ad-panels,,string,experimentalData
