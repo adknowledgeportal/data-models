@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+slideID,The slide the cell is on,,,,FALSE,ManifestColumn,,https://www.brukerspatialbiology.com/wp-content/uploads/2023/09/SMI-ReadMe-BETA_humanBrainRelease.html,,string,spatial
