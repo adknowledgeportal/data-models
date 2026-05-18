@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+fractionBinsUnderTissue8µm,Fraction of 8 µm bins covered by tissue.,,,,FALSE,ManifestColumn,,https://cf.10xgenomics.com/samples/spatial-exp/4.0.1/Visium_HD_Human_Ovarian_Cancer_FF/Visium_HD_Human_Ovarian_Cancer_FF_web_summary.html,,number,spatial

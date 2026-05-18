@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+validUMISequences,Fraction of reads with valid UMIs; i.e. UMI sequences that do not contain Ns and that are not homopolymers.,,,,FALSE,ManifestColumn,,https://cf.10xgenomics.com/samples/spatial-exp/4.0.1/Visium_HD_3prime_Zebrafish_Head/Visium_HD_3prime_Zebrafish_Head_web_summary.html,,number,spatial

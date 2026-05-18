@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+numberCellsDetected,The total number of cells with >= 1 unique molecular identifier (UMI).,,,,FALSE,ManifestColumn,,https://cf.10xgenomics.com/samples/spatial-exp/4.0.1/Visium_HD_Human_Ovarian_Cancer_FF/Visium_HD_Human_Ovarian_Cancer_FF_web_summary.html,,integer,spatial

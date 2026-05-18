@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+medianNucleusAreaSq?m,A square is assigned to a nucleus based on the centroid of the square being under the nucleus. Each nucleus area is calculated by the sum area of 2 ?m² squares within the segmented nucleus.,,,,FALSE,ManifestColumn,,https://cf.10xgenomics.com/samples/spatial-exp/4.0.1/Visium_HD_Human_Ovarian_Cancer_FF/Visium_HD_Human_Ovarian_Cancer_FF_web_summary.html,,number,spatial

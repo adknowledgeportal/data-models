@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+readsMappedConfidentlyGenome,"Fraction of reads that mapped uniquely to the genome. If a gene mapped to exonic loci from a single gene and also to non-exonic loci, it is considered uniquely mapped to one of the exonic loci.",,,,FALSE,ManifestColumn,,https://cf.10xgenomics.com/samples/spatial-exp/4.0.1/Visium_HD_3prime_Zebrafish_Head/Visium_HD_3prime_Zebrafish_Head_web_summary.html,,number,spatial

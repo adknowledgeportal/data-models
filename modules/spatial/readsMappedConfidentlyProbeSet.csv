@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+readsMappedConfidentlyProbeSet,Fraction of reads that mapped with MAPQ=255 to one unique probe in the probe set.,,,,FALSE,ManifestColumn,,https://cf.10xgenomics.com/samples/spatial-exp/4.0.1/Visium_HD_3prime_Zebrafish_Head/Visium_HD_3prime_Zebrafish_Head_web_summary.html,,number,spatial
