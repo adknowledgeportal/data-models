@@ -74,6 +74,7 @@ jobs:
         run: python scripts/assemble_csv_data_model.py modules AD.model.csv
 
       - name: commit csv changes
+        id: commit-csv  
         if: github.event_name == 'pull_request'
         uses: EndBug/add-and-commit@v9
         with:
@@ -302,5 +303,5 @@ jobs:
           fi
           gh api repos/${{ github.repository }}/statuses/$SHA \
             -f state=$STATE \
-            -f context="register-schema.yml" \
+            -f context="generate-and-register-schemas" \
             -f description="Build v2 workflow $STATE"
