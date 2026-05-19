@@ -301,5 +301,5 @@ jobs:
           fi
           gh api repos/${{ github.repository }}/statuses/$SHA \
             -f state=$STATE \
-            -f context="build2.yml" \
+            -f context="register-schema.yml" \
             -f description="Build v2 workflow $STATE"
