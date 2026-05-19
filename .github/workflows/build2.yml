@@ -41,6 +41,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  skip-bot-commit:
+    runs-on: ubuntu-latest
+    if: github.triggering_actor == 'commit_csv[bot]'
+    steps:
+      - run: echo "Bot commit — skipping."
   generate-and-register-schemas:
     runs-on: ubuntu-latest
     if: github.triggering_actor != 'commit-to-main-bot-adkp[bot]'
@@ -68,7 +73,7 @@ jobs:
       - name: commit csv changes
         uses: EndBug/add-and-commit@v9
         with:
-          default_author: github_actions
+          default_author: commit_csv
           add: 'AD.model.csv'
           message: "assemble *.model.csv from modules directory"
           push: true
