@@ -30,6 +30,7 @@ on:
       - "main"
     paths:
       - "modules/**"
+      - ".github/workflows/build2.yml"
 
   release:
     types:
@@ -47,6 +48,7 @@ jobs:
     permissions:
       pull-requests: write
       contents: write
+      statuses: write
     env:
       SYNAPSE_PROJECT_ID: syn74321426
     steps:
@@ -66,13 +68,14 @@ jobs:
         run: python scripts/assemble_csv_data_model.py modules AD.model.csv
 
       - name: commit csv changes
+        id: commit-csv
         uses: EndBug/add-and-commit@v9
         with:
           default_author: github_actions
           add: 'AD.model.csv'
-          message: "assemble *.model.csv from modules directory"
+          message: "Github Action: assembled AD.model.csv from modules [skip ci]"
           push: true
-      
+
       - name: Generate JSON Schemas
         id: generate
         uses: Sage-Bionetworks-Actions/generate-jsonschema@main
@@ -277,3 +280,23 @@ jobs:
         with:
           message-path: schema-report.md
           message-id: jsonschema-generation
+
+      - name: Report status check
+        if: always() && github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [[ "${{ steps.commit-csv.outputs.committed }}" == "true" ]]; then
+            SHA="${{ steps.commit-csv.outputs.commit_long_sha }}"
+          else
+            SHA="${{ github.event.pull_request.head.sha }}"
+          fi
+          if [[ "${{ job.status }}" == "success" ]]; then
+            STATE="success"
+          else
+            STATE="failure"
+          fi
+          gh api repos/${{ github.repository }}/statuses/$SHA \
+            -f state=$STATE \
+            -f context="build2.yml" \
+            -f description="Build v2 workflow $STATE"
