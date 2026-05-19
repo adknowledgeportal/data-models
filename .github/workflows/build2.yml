@@ -43,19 +43,13 @@ concurrency:
 jobs:
   generate-and-register-schemas:
     runs-on: ubuntu-latest
-    if: github.triggering_actor != 'commit-to-main-bot-adkp[bot]'
+    if: github.triggering_actor != 'commit-to-main-bot-adkp[bot]' && github.triggering_actor != 'github-actions[bot]'
     permissions:
       pull-requests: write
       contents: write
     env:
       SYNAPSE_PROJECT_ID: syn74321426
     steps:
-      - name: Skip bot commits              
-        if: github.triggering_actor == 'github-actions[bot]'
-        run: |
-          echo "Bot commit after assembling csv — skipping."
-          exit 0
-          
       - uses: actions/checkout@v6
         with:
           ref: ${{ github.head_ref }}
