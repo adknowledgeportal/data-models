@@ -35,7 +35,6 @@ on:
   release:
     types:
       - published
-      - released
       
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.triggering_actor }}
