@@ -66,12 +66,23 @@ jobs:
         run: python scripts/assemble_csv_data_model.py modules AD.model.csv
 
       - name: commit csv changes
+        id: commit-csv
         uses: EndBug/add-and-commit@v9
         with:
           default_author: github_actions
           add: 'AD.model.csv'
           message: "assemble *.model.csv from modules directory"
           push: true
+
+      - name: Report status on bot commit
+        if: steps.commit-csv.outputs.committed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/${{ github.repository }}/statuses/${{ steps.commit-csv.outputs.commit_long_sha }} \
+            -f state=success \
+            -f context="build2.yml" \
+            -f description="CSV assembled and committed"
       
       - name: Generate JSON Schemas
         id: generate
