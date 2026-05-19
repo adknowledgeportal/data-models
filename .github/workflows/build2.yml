@@ -43,10 +43,11 @@ concurrency:
 jobs:
   generate-and-register-schemas:
     runs-on: ubuntu-latest
-    if: github.triggering_actor != 'commit-to-main-bot-adkp[bot]' && github.triggering_actor != 'github-actions[bot]'
+    if: github.triggering_actor != 'commit-to-main-bot-adkp[bot]'
     permissions:
       pull-requests: write
       contents: write
+      statuses: write
     env:
       SYNAPSE_PROJECT_ID: syn74321426
     steps:
