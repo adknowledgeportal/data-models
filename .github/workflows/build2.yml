@@ -30,6 +30,7 @@ on:
       - "main"
     paths:
       - "modules/**"
+      - ".github/workflows/build2.yml"
 
   release:
     types:
