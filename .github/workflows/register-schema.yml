@@ -54,6 +54,7 @@ jobs:
     permissions:
       pull-requests: write
       contents: write
+      statuses: write
     env: 
       RECORDSET_FOLDER_ID: syn74847000
     steps:
