@@ -3,7 +3,7 @@
 # as a PR comment or workflow run summary.
 #
 # Triggered on:
-#   - Pull requests to main (opened/synchronize/labeled, changes in modules/) → registers to test org
+#   - Pull requests to main (opened/synchronize/labeled, changes in modules/ or this workflow file) → registers to test org
 #   - Pre-release published (release.published)                                → registers to test org
 #   - Full release published (release.released)                                → registers to production org
 #
@@ -40,6 +40,7 @@ on:
       - "main"
     paths:
       - "modules/**"
+      - ".github/workflows/register-schema.yml"
 
   release:
     types:
