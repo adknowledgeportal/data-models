@@ -75,16 +75,6 @@ jobs:
           message: "Github Action: assembled AD.model.csv from modules [skip ci]"
           push: true
 
-      - name: Report status on bot commit
-        if: steps.commit-csv.outputs.committed == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh api repos/${{ github.repository }}/statuses/${{ steps.commit-csv.outputs.commit_long_sha }} \
-            -f state=success \
-            -f context="build2.yml" \
-            -f description="CSV assembled and committed"
-      
       - name: Generate JSON Schemas
         id: generate
         uses: Sage-Bionetworks-Actions/generate-jsonschema@main
@@ -289,3 +279,23 @@ jobs:
         with:
           message-path: schema-report.md
           message-id: jsonschema-generation
+
+      - name: Report status check
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [[ "${{ steps.commit-csv.outputs.committed }}" == "true" ]]; then
+            SHA="${{ steps.commit-csv.outputs.commit_long_sha }}"
+          else
+            SHA="${{ github.sha }}"
+          fi
+          if [[ "${{ job.status }}" == "success" ]]; then
+            STATE="success"
+          else
+            STATE="failure"
+          fi
+          gh api repos/${{ github.repository }}/statuses/$SHA \
+            -f state=$STATE \
+            -f context="build2.yml" \
+            -f description="Build v2 workflow $STATE"
