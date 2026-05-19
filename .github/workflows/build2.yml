@@ -34,7 +34,8 @@ on:
 
   release:
     types:
-      - published
+      - published  # fires when a pre-release is first created
+      - released   # fires when a full release is published, or a pre-release is promoted to a release
       
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.triggering_actor }}
@@ -43,7 +44,12 @@ concurrency:
 jobs:
   generate-and-register-schemas:
     runs-on: ubuntu-latest
-    if: github.triggering_actor != 'commit-to-main-bot-adkp[bot]'
+    # Skip if triggered by the bot (avoids infinite loops on bot commits).
+    # For release events: skip 'published' on full releases because 'released' will also fire —
+    # this ensures exactly one run per release. Only run 'published' for pre-releases.
+    if: >-
+      github.triggering_actor != 'commit-to-main-bot-adkp[bot]' &&
+      (github.event.action != 'published' || github.event.release.prerelease)
     permissions:
       pull-requests: write
       contents: write
