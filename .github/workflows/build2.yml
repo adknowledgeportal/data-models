@@ -281,14 +281,14 @@ jobs:
           message-id: jsonschema-generation
 
       - name: Report status check
-        if: always()
+        if: always() && github.event_name == 'pull_request'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           if [[ "${{ steps.commit-csv.outputs.committed }}" == "true" ]]; then
             SHA="${{ steps.commit-csv.outputs.commit_long_sha }}"
           else
-            SHA="${{ github.sha }}"
+            SHA="${{ github.event.pull_request.head.sha }}"
           fi
           if [[ "${{ job.status }}" == "success" ]]; then
             STATE="success"
