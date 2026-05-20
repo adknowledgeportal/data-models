@@ -33,7 +33,7 @@ For more information on the automated workflows, review the CI/CD documentation 
 
 ### Editing attributes by module:
 
-> ![NOTE]
+> [!NOTE]
 > For more information what is supported wthin the CSV data model, please proceed to this [documentation](https://python-docs.synapse.org/en/stable/explanations/curator_data_model/)
 
 The full `AD.model.csv` file has over 1400 attributes and is unwieldy to edit and hard to review changes for. For ease of editing, the full data model is divided into "module" subfolders, like so:
