@@ -299,13 +299,18 @@ jobs:
           else
             SHA="${{ github.event.pull_request.head.sha }}"
           fi
+
           if [[ "${{ job.status }}" == "success" ]]; then
-            STATE="success"
+            CONCLUSION="success"
           else
-            STATE="failure"
+            CONCLUSION="failure"
           fi
-          gh api repos/${{ github.repository }}/statuses/$SHA \
-            -f state=$STATE \
-            -f context="generate-and-register-schemas" \
-            -f description="Schema generation and registration $STATE" \
-            -f target_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/attempts/${{ github.run_attempt}}"
+
+          gh api repos/${{ github.repository }}/check-runs \
+            -f name="generate-and-register-schemas" \
+            -f head_sha="$SHA" \
+            -f status="completed" \
+            -f conclusion="$CONCLUSION" \
+            -f details_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            -f output[title]="Schema generation and registration" \
+            -f output[summary]="Schema generation and registration $CONCLUSION"
