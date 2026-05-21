@@ -22,7 +22,7 @@
 #                                       (versioned folder per release; single overwritten folder per PR)
 #  12. Format Schema Report           - builds a markdown summary of generated/registered schemas
 #  13. Comment PR with Schema Summary - posts the report as a PR comment
-#  14. Report status check            - posts a commit status to the bot's new commit SHA (if CSV was updated)
+#  14. Report status check            - posts a check run to the bot's new commit SHA (if CSV was updated)
 #                                       or the original PR head SHA, so branch protection is never left pending
 #
 # Required secrets:
@@ -57,7 +57,7 @@ jobs:
     permissions:
       pull-requests: write
       contents: write
-      statuses: write
+      checks: write
     env: 
       RECORDSET_FOLDER_ID: syn74847000
     steps:
@@ -306,6 +306,9 @@ jobs:
             CONCLUSION="failure"
           fi
 
+          # The bot commit creates a new HEAD SHA that GitHub Actions never ran on,
+          # leaving branch protection pending with no check to satisfy it. Fix this by
+          # stamping the outcome of the already-running workflow onto the new SHA.
           gh api repos/${{ github.repository }}/check-runs \
             -f name="generate-and-register-schemas" \
             -f head_sha="$SHA" \
