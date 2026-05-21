@@ -290,11 +290,19 @@ jobs:
           message-id: jsonschema-generation
 
       - name: Report status check
-        if: always() && github.event_name == 'pull_request' && steps.commit-csv.outputs.committed == 'true'
+        if: always() && github.event_name == 'pull_request'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          SHA="${{ steps.commit-csv.outputs.commit_long_sha }}"
+          CURRENT_HEAD=$(git rev-parse HEAD)
+          PR_HEAD="${{ github.event.pull_request.head.sha }}"
+
+          # If HEAD matches the PR trigger SHA, the automatic check run from GitHub Actions
+          # already covers it — skip to avoid a duplicate entry.
+          if [[ "$CURRENT_HEAD" == "$PR_HEAD" ]]; then
+            echo "No bot commit; automatic check run covers $PR_HEAD. Skipping."
+            exit 0
+          fi
 
           if [[ "${{ job.status }}" == "success" ]]; then
             CONCLUSION="success"
@@ -307,7 +315,7 @@ jobs:
           # stamping the outcome of the already-running workflow onto the new SHA.
           gh api repos/${{ github.repository }}/check-runs \
             -f name="generate-and-register-schemas" \
-            -f head_sha="$SHA" \
+            -f head_sha="$CURRENT_HEAD" \
             -f status="completed" \
             -f conclusion="$CONCLUSION" \
             -f details_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
