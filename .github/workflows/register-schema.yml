@@ -307,4 +307,5 @@ jobs:
           gh api repos/${{ github.repository }}/statuses/$SHA \
             -f state=$STATE \
             -f context="generate-and-register-schemas" \
-            -f description="Schema generation and registration $STATE"
+            -f description="Schema generation and registration $STATE" \
+            -f target_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
