@@ -988,7 +988,7 @@ genotype,Genotype common name,,,,True,ManifestColumn,,sage.annotations-clinical.
 genotypeBackground,Genetic background of the model,,,,True,ManifestColumn,,sage.annotations-clinical.genotypeBackground-0.0.2,,string,mouse,
 globinRemoval,"true,false",,,,False,ManifestColumn,,sage.annotations-experimentalData.globinRemoval-0.0.2,,string,sequencing,
 GQN,Illumina Genomic Quality Number (gDNA quality score),,,,False,ManifestColumn,,sage.annotations-qc.GQN-0.0.3,,number,sequencing,
-grant,"Grant number including activity code, institute code, and serial number (e.g. U01MH103392) test string for testing 9",,,,True,ManifestColumn,,sage.annotations-neuro.grant-0.0.2,,string,ADKP,
+grant,"Grant number including activity code, institute code, and serial number (e.g. U01MH103392) test string for testing 11",,,,True,ManifestColumn,,sage.annotations-neuro.grant-0.0.2,,string,ADKP,
 height,For CLEAR AD. UDSV3 IVP Form B1 Physical Question 1 Numeric XX.X (inches). Use 888 for not assessed.,,,,False,ManifestColumn,,sage.annotations-demographics.height-0.0.2,,string,demographics,
 HEMOR,Hemorrhages,"No, Yes, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.HEMOR-0.0.2,,string,clinical,
 HS_L,Hippocampal sclerosis (with laterality),"No HS_L, Unilateral, Bilateral, Present Location UK, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.HS_L-0.0.2,,string,clinical,
