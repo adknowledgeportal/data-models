@@ -58,7 +58,6 @@ jobs:
       pull-requests: write
       contents: write
       statuses: write
-      statuses: write
 
     env: 
       RECORDSET_FOLDER_ID: syn74847000
