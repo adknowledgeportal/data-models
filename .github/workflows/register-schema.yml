@@ -58,6 +58,8 @@ jobs:
       pull-requests: write
       contents: write
       checks: write
+      statuses: write
+
     env: 
       RECORDSET_FOLDER_ID: syn74847000
     steps:
@@ -294,30 +296,18 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          CURRENT_HEAD=$(git rev-parse HEAD)
-          PR_HEAD="${{ github.event.pull_request.head.sha }}"
-
-          # If HEAD matches the PR trigger SHA, the automatic check run from GitHub Actions
-          # already covers it — skip to avoid a duplicate entry.
-          if [[ "$CURRENT_HEAD" == "$PR_HEAD" ]]; then
-            echo "No bot commit; automatic check run covers $PR_HEAD. Skipping."
-            exit 0
-          fi
-
-          if [[ "${{ job.status }}" == "success" ]]; then
-            CONCLUSION="success"
+          if [[ "${{ steps.commit-csv.outputs.committed }}" == "true" ]]; then
+            SHA="${{ steps.commit-csv.outputs.commit_long_sha }}"
           else
-            CONCLUSION="failure"
+            SHA="${{ github.event.pull_request.head.sha }}"
           fi
-
-          # The bot commit creates a new HEAD SHA that GitHub Actions never ran on,
-          # leaving branch protection pending with no check to satisfy it. Fix this by
-          # stamping the outcome of the already-running workflow onto the new SHA.
-          gh api repos/${{ github.repository }}/check-runs \
-            -f name="generate-and-register-schemas" \
-            -f head_sha="$CURRENT_HEAD" \
-            -f status="completed" \
-            -f conclusion="$CONCLUSION" \
-            -f details_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
-            -f output[title]="Schema generation and registration" \
-            -f output[summary]="Schema generation and registration $CONCLUSION"
+          if [[ "${{ job.status }}" == "success" ]]; then
+            STATE="success"
+          else
+            STATE="failure"
+          fi
+          gh api repos/${{ github.repository }}/statuses/$SHA \
+            -f state=$STATE \
+            -f context="register-schema.yml" \
+            -f description="Build v2 workflow $STATE" \
+            -f target_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
