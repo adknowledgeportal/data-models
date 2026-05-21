@@ -22,7 +22,7 @@
 #                                       (versioned folder per release; single overwritten folder per PR)
 #  12. Format Schema Report           - builds a markdown summary of generated/registered schemas
 #  13. Comment PR with Schema Summary - posts the report as a PR comment
-#  14. Report status check            - posts a commit status to the bot's new commit SHA (if CSV was updated)
+#  14. Report status check            - posts a check run to the bot's new commit SHA (if CSV was updated)
 #                                       or the original PR head SHA, so branch protection is never left pending
 #
 # Required secrets:
@@ -57,7 +57,7 @@ jobs:
     permissions:
       pull-requests: write
       contents: write
-      statuses: write
+      checks: write
     env: 
       RECORDSET_FOLDER_ID: syn74847000
     steps:
@@ -290,21 +290,26 @@ jobs:
           message-id: jsonschema-generation
 
       - name: Report status check
-        if: always() && github.event_name == 'pull_request'
+        if: always() && github.event_name == 'pull_request' && steps.commit-csv.outputs.committed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if [[ "${{ steps.commit-csv.outputs.committed }}" == "true" ]]; then
-            SHA="${{ steps.commit-csv.outputs.commit_long_sha }}"
-          else
-            SHA="${{ github.event.pull_request.head.sha }}"
-          fi
+          SHA="${{ steps.commit-csv.outputs.commit_long_sha }}"
+
           if [[ "${{ job.status }}" == "success" ]]; then
-            STATE="success"
+            CONCLUSION="success"
           else
-            STATE="failure"
+            CONCLUSION="failure"
           fi
-          gh api repos/${{ github.repository }}/statuses/$SHA \
-            -f state=$STATE \
-            -f context="generate-and-register-schemas" \
-            -f description="Schema generation and registration $STATE"
+
+          # The bot commit creates a new HEAD SHA that GitHub Actions never ran on,
+          # leaving branch protection pending with no check to satisfy it. Fix this by
+          # stamping the outcome of the already-running workflow onto the new SHA.
+          gh api repos/${{ github.repository }}/check-runs \
+            -f name="generate-and-register-schemas" \
+            -f head_sha="$SHA" \
+            -f status="completed" \
+            -f conclusion="$CONCLUSION" \
+            -f details_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+            -f output[title]="Schema generation and registration" \
+            -f output[summary]="Schema generation and registration $CONCLUSION"
