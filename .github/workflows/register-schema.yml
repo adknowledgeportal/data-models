@@ -308,4 +308,4 @@ jobs:
             -f state=$STATE \
             -f context="generate-and-register-schemas" \
             -f description="Schema generation and registration $STATE" \
-            -f target_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+            -f target_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/attempts/${{ github.run_attempt}}"
