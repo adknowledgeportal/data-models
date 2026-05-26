@@ -298,9 +298,7 @@ jobs:
           CURRENT_HEAD=$(git rev-parse HEAD)
           PR_HEAD="${{ github.event.pull_request.head.sha }}"
 
-          # When CURRENT_HEAD matches the PR trigger SHA, no bot commit exists on this
-          # branch — the automatic check run from GitHub Actions already covers it.
-          # Skip to avoid a duplicate status entry.
+          # No bot commit — skip to avoid duplicating the automatic check run on the original SHA.
           if [[ "$CURRENT_HEAD" == "$PR_HEAD" ]]; then
             echo "No bot commit; automatic check run covers $PR_HEAD. Skipping."
             exit 0
@@ -312,11 +310,7 @@ jobs:
             STATE="failure"
           fi
 
-          # The bot commit creates a new HEAD SHA that GitHub Actions never ran on,
-          # leaving branch protection pending with no check to satisfy it. Fix this by
-          # stamping the outcome of the already-running workflow onto the new SHA.
-          # Also corrects stale failures left by cancelled runs that committed but never
-          # finished — the next run's checkout lands on the bot SHA and overwrites it.
+          # Post status to the bot SHA so branch protection is satisfied.
           gh api repos/${{ github.repository }}/statuses/$CURRENT_HEAD \
             -f state=$STATE \
             -f context="generate-and-register-schemas" \
