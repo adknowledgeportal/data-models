@@ -3,7 +3,7 @@
 # as a PR comment or workflow run summary.
 #
 # Triggered on:
-#   - Pull requests to main (opened/synchronize/labeled, changes in modules/) → registers to test org
+#   - Pull requests to main (opened/synchronize/labeled, changes in modules/ or this workflow file) → registers to test org
 #   - Pre-release published (release.published)                                → registers to test org
 #   - Full release published (release.released)                                → registers to production org
 #
@@ -22,6 +22,8 @@
 #                                       (versioned folder per release; single overwritten folder per PR)
 #  12. Format Schema Report           - builds a markdown summary of generated/registered schemas
 #  13. Comment PR with Schema Summary - posts the report as a PR comment
+#  14. Report status check            - posts a check run to the bot's new commit SHA (if CSV was updated)
+#                                       or the original PR head SHA, so branch protection is never left pending
 #
 # Required secrets:
 #   SYNAPSE_TOKEN_DPE - Synapse Personal Access Token with permissions to register schemas
@@ -38,10 +40,13 @@ on:
       - "main"
     paths:
       - "modules/**"
+      - ".github/workflows/register-schema.yml"
 
   release:
     types:
-      - published
+      - published  # fires when a pre-release is first created
+      - released   # fires when a full release is published, or a pre-release is promoted to a release
+
       
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref_name }}-${{ github.triggering_actor }}
@@ -50,10 +55,18 @@ concurrency:
 jobs:
   generate-and-register-schemas:
     runs-on: ubuntu-latest
-    if: github.triggering_actor != 'commit-to-main-bot-adkp[bot]'
+    # Skip if triggered by the bot (avoids infinite loops on bot commits).
+    # For release events: skip 'published' on full releases because 'released' will also fire —
+    # this ensures exactly one run per release. Only run 'published' for pre-releases.
+    if: >-
+      github.triggering_actor != 'commit-to-main-bot-adkp[bot]' &&
+      (github.event.action != 'published' || github.event.release.prerelease)
+
     permissions:
       pull-requests: write
       contents: write
+      statuses: write
+
     env: 
       RECORDSET_FOLDER_ID: syn74847000
     steps:
@@ -73,6 +86,7 @@ jobs:
         run: python scripts/assemble_csv_data_model.py modules AD.model.csv
 
       - name: commit csv changes
+        id: commit-csv  
         if: github.event_name == 'pull_request'
         uses: EndBug/add-and-commit@v9
         with:
@@ -283,3 +297,30 @@ jobs:
         with:
           message-path: schema-report.md
           message-id: jsonschema-generation
+
+      - name: Report status check
+        if: always() && github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          CURRENT_HEAD=$(git rev-parse HEAD)
+          PR_HEAD="${{ github.event.pull_request.head.sha }}"
+
+          # No bot commit — skip to avoid duplicating the automatic check run on the original SHA.
+          if [[ "$CURRENT_HEAD" == "$PR_HEAD" ]]; then
+            echo "No bot commit; automatic check run covers $PR_HEAD. Skipping."
+            exit 0
+          fi
+
+          if [[ "${{ job.status }}" == "success" ]]; then
+            STATE="success"
+          else
+            STATE="failure"
+          fi
+
+          # Post status to the bot SHA so branch protection is satisfied.
+          gh api repos/${{ github.repository }}/statuses/$CURRENT_HEAD \
+            -f state=$STATE \
+            -f context="generate-and-register-schemas" \
+            -f description="Schema generation and registration $STATE" \
+            -f target_url="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
