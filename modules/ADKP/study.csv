@@ -115,7 +115,7 @@ MODEL-AD_hAbeta_KI,MODEL-AD Humanized Abeta Knock-in Study,,NA,NA,NA,study,NA,ht
 MODEL-AD_Harmonization,MODEL-AD Harmonization Study,,NA,NA,NA,study,NA,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn25882591,NA,string,ADKP
 MODEL-AD_hCR1_KI_on_APOE4_Trem2,MODEL-AD hCR1 KI on APOE4/Trem2 Study,,NA,NA,NA,study,NA,https://www.synapse.org/#!Synapse:syn21075863,NA,string,ADKP
 MODEL-AD_hTau_Trem2,MODEL-AD hTau Trem2 Study,,NA,NA,NA,study,NA,https://www.synapse.org/#!Synapse:syn18693211,NA,string,ADKP
-MODEL-AD_Il1rapKO_APOE4_Trem2_exon2KO,MODEL-AD Il1rap KO/APOE4/Trem2*R47H, exon 2 KO Study,,NA,NA,NA,study,NA,https://www.synapse.org/#!Synapse:syn21075802,NA,string,ADKP
+MODEL-AD_Il1rapKO_APOE4_Trem2_exon2KO,"MODEL-AD Il1rap KO/APOE4/Trem2*R47H, exon 2 KO Study",,NA,NA,NA,study,NA,https://www.synapse.org/#!Synapse:syn21075802,NA,string,ADKP
 MODEL-AD_Mthfr_APOE4_Trem2,MODEL-AD Mthfr*C677T/APOE4/Trem2*R47H Study,,NA,NA,NA,study,NA,https://www.synapse.org/#!Synapse:syn21075850,NA,string,ADKP
 MODEL-AD_Rat_F344,MODEL-AD Rat F344 Study,,NA,NA,NA,study,NA,https://www.synapse.org/#!Synapse:syn20730014,NA,string,ADKP
 MODEL-AD_Trem2_R47H,MODEL-AD Trem2 R47H Study,,NA,NA,NA,study,NA,https://www.synapse.org/#!Synapse:syn18634477,NA,string,ADKP
