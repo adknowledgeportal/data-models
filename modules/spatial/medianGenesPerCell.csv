@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+medianGenesPerCell,Median number of genes detected per cell. Cells with zero genes detected are excluded from the calculation.,,,,FALSE,ManifestColumn,,https://cf.10xgenomics.com/samples/xenium/4.0.0/Xenium_V1_Human_Kidney_FFPE_Protein_updated/Xenium_V1_Human_Kidney_FFPE_Protein_updated_analysis_summary.html,,number,spatial

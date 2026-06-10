@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+panelPlexity,The number of targets intended for capture by the panel ,,,,FALSE,ManifestColumn,,,,string,spatial

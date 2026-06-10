@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+probeType,Specie of probe utilized,"dsDNA, LNA, PNA, riboprobe, ssDNA",,,FALSE,ManifestColumn,,,,string,spatial

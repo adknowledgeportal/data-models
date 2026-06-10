@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+panelName,Name of the panel used for targets,"custom panel, Human 6K Discovery 6175-plex, Human Whole Transcriptome ~19,000-plex",,,FALSE,ManifestColumn,,,,string,spatial
