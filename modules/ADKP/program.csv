@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-program,Name of the program,"ACTDRx AD,ADDP,AGMP,AMP-AD,Brain CASCADE,CDCP,CLEAR-AD,ELITE,FunGen-AD,GENESIS,M2OVE-AD,MARMO-AD,MODEL-AD,Psych-AD,Resilience-AD,TOX-AD,TREAT-AD",,,True,ManifestColumn,,,,string,ADKP
+program,Name of the program,"ACTDRx AD,ADDP,AGMP,AMP-AD,Brain CASCADE,CDCP,CLEAR-AD,ELITE,FunGen-AD,GENESIS,M2OVE-AD,MARMO-AD,MODEL-AD,Psych-AD,Resilience-AD,TOX-AD,TREAT-AD",,,True,ManifestColumn,,,,stringList,ADKP
 ACTDRx AD,ACTDRx AD: Advancing combination therapy and drug repurposing for AD,,,,,program,,,,string,ADKP
 ADDP,Alzheimer's Drug-Development Program,,,,,program,,,,string,ADKP
 AGMP,The Alzheimer Gut Microbiome Project ,,,,,program,,,,string,ADKP
