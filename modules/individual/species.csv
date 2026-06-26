@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-species,The name of a species (typically a taxonomic group) of organism.,"Human, Mouse, Rat, Drosophila melanogaster, Rhesus macaque, Pan troglodytes, Gallus gallus, Sus scrofa",,,True,ManifestColumn,,sage.annotations-experimentalData.species-0.0.2,,string,individual
+species,The name of a species (typically a taxonomic group) of organism.,"Human, Mouse, Rat, Drosophila melanogaster, Rhesus macaque, Pan troglodytes, Gallus gallus, Sus scrofa",,,True,ManifestColumn,,sage.annotations-experimentalData.species-0.0.2,,string_list,individual
 Drosophila melanogaster,Drosophila melanogaster with taxonomy ID: 7227 and Genbank common name: fruit fly,,,,,species,,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=7227&lvl=3&p=has_linkout&p=blast_url&p=genome_blast&p=mapview&lin=f&keep=1&srchmode=1&unlock,,string,individual
 Gallus gallus,"The common domestic fowl, Chicken.",,,,,species,,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9031,,string,individual
 Human,Homo sapiens with taxonomy ID: 9606 and Genbank common name: human,,,,,species,,https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Info&id=9606&lvl=3&lin=f&keep=1&srchmode=1&unlock,,string,individual
