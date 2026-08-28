@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-spatialRead2,"Content and structure of Read 2, including the cDNA or probe-derived insert where applicable to the assay chemistry.",,,,FALSE,ManifestColumn,,https://www.10xgenomics.com/support/spatial-gene-expression,,string,spatial
+spatialRead2,"Content and structure of Read 2, including the cDNA or probe-derived insert where applicable to the assay chemistry.",,,,True,ManifestColumn,,https://www.10xgenomics.com/support/spatial-gene-expression,,string,spatial

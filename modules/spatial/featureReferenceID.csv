@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-featureReferenceID,Identifier for the feature-reference file used for feature barcoding or protein capture.,,,,FALSE,ManifestColumn,,https://www.10xgenomics.com/support/software/space-ranger/latest/analysis/inputs/feature-reference,,string,spatial
+featureReferenceID,Identifier for the feature-reference file used for feature barcoding or protein capture.,,,,True,ManifestColumn,,https://www.10xgenomics.com/support/software/space-ranger/latest/analysis/inputs/feature-reference,,string,spatial

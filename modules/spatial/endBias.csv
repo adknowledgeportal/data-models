@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-endBias,Portion of the transcript preferentially captured by the assay.,"3 Prime, 5 Prime, Full Length Transcript, probe-based, Other, Not Reported",,,FALSE,ManifestColumn,,https://www.10xgenomics.com/support/spatial-gene-expression,,string,spatial
+endBias,Portion of the transcript preferentially captured by the assay.,"3 Prime, 5 Prime, Full Length Transcript, probe-based, Other, Not Reported",,,True,ManifestColumn,,https://www.10xgenomics.com/support/spatial-gene-expression,,string,spatial
