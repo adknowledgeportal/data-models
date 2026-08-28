@@ -1,2 +1,0 @@
-Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-DV200,Percentage of RNA fragments longer than 200 nucleotides.,,,,FALSE,ManifestColumn,,sage.annotations-qc.DV200-0.0.1,,number,sequencing
