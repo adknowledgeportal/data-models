@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+readsMappedToTranscriptome,Fraction of reads mapped confidently to a unique gene in the transcriptome and consistent with annotated splice junctions.,,,,FALSE,ManifestColumn,,https://www.10xgenomics.com/support/software/space-ranger/latest/analysis/outputs/space-ranger-metrics-summary,,number,spatial

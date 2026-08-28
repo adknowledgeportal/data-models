@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+tissueStainingMethod,Staining method used to generate the tissue image registered to the spatial-expression data.,"H&E, immunofluorescence, none, other",,,FALSE,ManifestColumn,,https://www.10xgenomics.com/support/spatial-gene-expression,,string,spatial

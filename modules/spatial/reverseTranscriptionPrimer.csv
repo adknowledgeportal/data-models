@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+reverseTranscriptionPrimer,Primer or priming strategy used for reverse transcription.,"Oligo-dT, Poly-dT, Feature barcoding, Random, probe-based, not applicable",,,True,ManifestColumn,,http://purl.obolibrary.org/obo/SO_0000112,,string,spatial

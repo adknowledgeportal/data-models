@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+samplePreparation,Preservation or preparation state of the tissue section used for the Visium assay.,"fresh frozen, FFPE, fixed frozen, Other, Not Reported",,,FALSE,ManifestColumn,,https://www.10xgenomics.com/support/spatial-gene-expression,,string,spatial

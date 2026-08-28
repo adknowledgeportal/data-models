@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+sequencingLibraryConstructionDaysFromIndex,Number of days between receipt of the assay sample in the laboratory and construction of the sequencing-ready library.,,,,True,ManifestColumn,,Sage Bionetworks,,number,spatial

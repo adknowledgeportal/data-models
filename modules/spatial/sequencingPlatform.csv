@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+sequencingPlatform,Specific model of the sequencing instrument.,"Illumina NextSeq 500, Illumina NextSeq 550, Illumina NextSeq 2000, Illumina NovaSeq 6000, Illumina NovaSeq X, Illumina MiSeq, Other, unknown, Not Reported",,,True,ManifestColumn,,https://docs.gdc.cancer.gov/Data_Dictionary/viewer/#?view=table-definition-view&id=read_group,,string,spatial

@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+CDNAOffset,Zero-based offset at which the cDNA or read-insert segment begins.,,,,True,ManifestColumn,,https://www.10xgenomics.com/support/spatial-gene-expression,,integer,spatial
