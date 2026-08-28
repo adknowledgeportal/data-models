@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+captureArea,Capture area on the Visium slide containing the tissue section.,"A, B, A1, B1, C1, D1, Other, Not Reported",,,FALSE,ManifestColumn,,https://www.10xgenomics.com/support/spatial-gene-expression,,string,spatial

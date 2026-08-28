@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+spotsUnderTissue,Number of barcodes associated with a spatial spot under tissue.,,,,FALSE,ManifestColumn,,https://www.10xgenomics.com/support/software/space-ranger/latest/analysis/outputs/space-ranger-metrics-summary,,integer,spatial

@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+whitelistSpatialBarcodeFileLink,Resolvable URL or Synapse ID for the file containing the expected spatial-barcode inclusion list.,,,,FALSE,ManifestColumn,,https://www.10xgenomics.com/support/spatial-gene-expression,,string,spatial

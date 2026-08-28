@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+UMITag,The SAM or BAM tag containing the unique molecular identifier.,,,,FALSE,ManifestColumn,,https://samtools.github.io/hts-specs/SAMtags.pdf,,string,spatial

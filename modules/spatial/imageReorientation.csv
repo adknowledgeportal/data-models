@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+imageReorientation,Whether the tissue image was reoriented by rotation or mirroring before fiducial alignment.,"TRUE, FALSE",,,FALSE,ManifestColumn,,https://www.10xgenomics.com/support/software/space-ranger/latest/analysis/inputs/image-recommendations,,boolean,spatial

@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+workflowLink,"Resolvable link to the workflow, container, release, or command documentation.",,,,FALSE,ManifestColumn,,Sage Bionetworks,,string,spatial

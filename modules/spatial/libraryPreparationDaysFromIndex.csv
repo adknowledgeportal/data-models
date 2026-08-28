@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+libraryPreparationDaysFromIndex,Number of days between receipt of the assay sample in the laboratory and preparation of the spatial library.,,,,FALSE,ManifestColumn,,https://docs.gdc.cancer.gov/Data_Dictionary/viewer/#?view=table-definition-view&id=read_group,,number,spatial

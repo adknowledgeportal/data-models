@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+runID,"Unique identifier for one execution of the spatial-transcriptomics workflow, typically associated with a slide and capture area.",,,,FALSE,ManifestColumn,,Sage Bionetworks,,string,spatial
