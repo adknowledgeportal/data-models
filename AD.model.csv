@@ -1100,7 +1100,6 @@ resourceType,The type of resource being stored and annotated,"analysis, curatedD
 reverseTranscriptionPrimer,Primer or priming strategy used for reverse transcription.,"Oligo-dT, Poly-dT, Feature barcoding, Random, probe-based, not applicable",,,False,ManifestColumn,,http://purl.obolibrary.org/obo/SO_0000112,,string,spatial,
 ribosomalDepletion,"true,false",,,,False,ManifestColumn,,sage.annotations-experimentalData.ribosomalDepletion-0.0.2,,string,sequencing,
 RIN,"RNA Integrity Number, conventionally reported on a scale from 1 to 10.",,,,False,ManifestColumn,,sage.annotations-qc.RIN-0.0.2,,number,sequencing,
-RIN,RNA Integrity Number,,,,False,ManifestColumn,,sage.annotations-qc.RIN-0.0.2,,number,sequencing,
 rnaBatch,Batch in which RNA sample was isolated,,,,False,ManifestColumn,,sage.annotations-batch.rnaBatch-0.0.2,,string,batch,
 rodentDiet,Laboratory rodent diet,"4% standard, 6% standard, 7% standard, 45% high-fat diet, 5W80 western diet",,,True,ManifestColumn,,sage.annotations-neuro.rodentDiet-0.0.1,,string,mouse,
 rodentWeight,Weight of animal in grams.,,,,False,ManifestColumn,,sage.annotations-neuro.rodentWeight-0.0.2,,number,mouse,
