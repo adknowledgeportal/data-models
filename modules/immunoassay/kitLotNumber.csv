@@ -1,0 +1,2 @@
+attribute,description,valid values,dependsOn,properties,required,parent,dependsOn component,source,validation rules,columnType,module
+kitLotNumber,Lot number of kit used,,,,False,ManifestColumn,,MARMO-AD,,string,immunoassay
