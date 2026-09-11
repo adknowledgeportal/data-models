@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+surrogatePeptide,Peptide sequence used as a proxy for the target analyte,,,,False,ManifestColumn,,http://purl.obolibrary.org/obo/MS_1001105,,string,proteomics

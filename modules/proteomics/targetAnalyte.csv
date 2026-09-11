@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+targetAnalyte,Biological molecule being quantified,,,,False,ManifestColumn,,http://purl.obolibrary.org/obo/COB_0000013,,string,proteomics
