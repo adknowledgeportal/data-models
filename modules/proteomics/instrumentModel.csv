@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+instrumentModel,"The model of the instrument used. Provide a value OR provide one of these values - Unknown, Not collected, Not applicable, Not specified",,,,True,ManifestColumn,,http://purl.obolibrary.org/obo/MS_1000031,,string,proteomics

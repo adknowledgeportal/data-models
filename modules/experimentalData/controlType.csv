@@ -1,12 +1,16 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-controlType,Control samples suitable for normalization and batch correction,"AIBL pool, Baker pool, blank injection, GIS, GoldenWest, NIST SRM 1950, qc mix, Replicate, study pool, water plus Baker ISTD",,,False,ManifestColumn,,sage.annotations-experimentalData.controlType-0.0.5,,string,experimentalData
+controlType,Control samples suitable for normalization and batch correction. Use 'case' for non-control samples.,"AIBL pool, Baker pool, blank injection, case, control, GIS, GoldenWest, NIST SRM 1950, QC, qc mix, Replicate, reference, study pool, water plus Baker ISTD",,,False,ManifestColumn,,sage.annotations-experimentalData.controlType-0.0.5,,string,experimentalData
 AIBL pool,"The Australian Imaging, Biomarkers, and Lifestyle Flagship Study of Ageing (AIBL) reference pool.",,,,,controlType,,https://aibl.csiro.au/,,string,experimentalData
 Baker pool,The Baker Institute Metabolomics Laboratory reference pool.,,,,,controlType,,https://baker.edu.au/research/laboratories/metabolomics,,string,experimentalData
 blank injection,blank injection,,,,,controlType,,-,,string,experimentalData
+case,non-control sample for comparison against control samples,,,,,controlType,,https://www.ebi.ac.uk/ols4/ontologies/ms/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FMS_1001810?lang=en,,string,experimentalData
+control,standard used for comparison in case-control analyses,,,,,controlType,,https://www.ebi.ac.uk/ols4/ontologies/ms/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FMS_1001811?lang=en,,string,experimentalData
 GIS,A Global Internal Standard used to assess intra- and inter-batch variance.,,,,,controlType,,https://doi.org/10.1101/2020.05.19.105197,,string,experimentalData
 GoldenWest,Golden West reference pool,,,,,controlType,,https://doi.org/10.1038/sdata.2017.140,,string,experimentalData
 NIST SRM 1950,Human reference plasma from the National Institute of Standards and Technology.,,,,,controlType,,https://www-s.nist.gov/srmors/view_detail.cfm?srm=1950,,string,experimentalData
+QC,"A quality control sample used to monitor instrument performance, assess technical variability, and ensure data reproducibility across a mass spectrometry run or batch",,,,,controlType,,https://www.ebi.ac.uk/ols4/ontologies/pride/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FPRIDE_0000544?lang=en,,string,experimentalData
 qc mix,QC Mix,,,,,controlType,,-,,string,experimentalData
+reference,"A reference sample of known composition used for normalization, cross-batch comparison, or calibration across proteomics experiments",,,,,controlType,,https://www.ebi.ac.uk/ols4/ontologies/pride/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FPRIDE_0000068,,string,experimentalData
 Replicate,Replicate Sample,,,,,controlType,,-,,string,experimentalData
 study pool,Reference pool obtained from study samples.,,,,,controlType,,Sage Bionetworks,,string,experimentalData
 water plus Baker ISTD,"Water combined with Avanti Splash Mix mass spectrometry standards, plus additional standards developed internally at the Baker Institute Metabolomics Lab.",,,,,controlType,,https://baker.edu.au/research/laboratories/metabolomics,,string,experimentalData
