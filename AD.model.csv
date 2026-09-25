@@ -1117,7 +1117,7 @@ nucleiEnrichmentProtocol,Describes the procedure by which the concentration of a
 numberCells,Number of cells or nuclei sequenced,,,,False,ManifestColumn,,sage.annotations-experimentalData.numberCells-0.0.2,,integer,sequencing,
 observationID,Identifies a data point; referenced in metadata and associated data file.,,,,False,ManifestColumn,,MARMO-AD,,string,MARMO-AD,
 organ,A unique macroscopic (gross) anatomic structure that performs specific functions. It is composed of various tissues. An organ is part of an anatomic system or a body region.,"blood, bone marrow, brain, breast, Bursa Of Fabricius, cerebrospinal fluid, colon, kidney, large intestine, liver, lung, lymph node, mammary gland, nerves, nose, ovary, pancreas, prostate, skin, spleen",,,True,ManifestColumn,,sage.annotations-experimentalData.organ-0.0.4,,string_list,biospecimen,
-panelName,Name of the panel used for targets,"custom panel, Human 6K Discovery 6175-plex, 'Human Whole Transcriptome ~19,000-plex'",,,False,ManifestColumn,,,,string,spatial,
+panelName,Name of the panel used for targets,"custom panel, Human 6K Discovery 6175-plex, Human Whole Transcriptome ~19000-plex",,,False,ManifestColumn,,,,string,spatial,
 panelPlexity,The number of targets intended for capture by the panel ,,,,False,ManifestColumn,,,,string,spatial,
 panelType,Biological panel category (immunoassays),"abeta, custom, inflammation, neuro, saa, CNS",,,False,ManifestColumn,,MARMO-AD,,string,immunoassay,
 passage,Number of times a cell culture has been subcultured,,,,False,ManifestColumn,,sage.annotations-experimentalData.passage-0.0.2,,integer,biospecimen,
