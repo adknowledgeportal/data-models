@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+damID,Identifies the biological mother of the described individual. Maps to individualID in individual metadata,,,,FALSE,ManifestColumn,,MARMO-AD,,string,MARMO-AD

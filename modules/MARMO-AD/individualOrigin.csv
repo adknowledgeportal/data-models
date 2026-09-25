@@ -1,2 +1,10 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
 individualOrigin,Facility where animal originated from,"SNI/PITT, NIH, WWP, WNPRC, Holland, Germany, Florida, AlphGen",,,TRUE,ManifestColumn,,sage.annotations-neuro.individualOrigin-0.0.1,,string,MARMO-AD
+SNI/PITT,University of Pittsburgh,,,,,individualOrigin,,MARMO-AD,,string,MARMO-AD
+NIH,National Institutes of Health,,,,,individualOrigin,,MARMO-AD,,string,MARMO-AD
+WWP,"Worldwide Primates, Inc.",,,,,individualOrigin,,MARMO-AD,,string,MARMO-AD
+WNPRC,Wisconsin National Primate Research Center,,,,,individualOrigin,,MARMO-AD,,string,MARMO-AD
+Holland,,,,,,individualOrigin,,MARMO-AD,,string,MARMO-AD
+Germany,,,,,,individualOrigin,,MARMO-AD,,string,MARMO-AD
+Florida,,,,,,individualOrigin,,MARMO-AD,,string,MARMO-AD
+AlphGen,"Alpha Genesis, Inc.",,,,,individualOrigin,,MARMO-AD,,string,MARMO-AD

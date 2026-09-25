@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+biomaterialID,Identifies a sample from which a data point or another sample was derived. Maps to biomaterialID in biomaterials metadata.,,,,FALSE,ManifestColumn,,MARMO-AD,,string,MARMO-AD
