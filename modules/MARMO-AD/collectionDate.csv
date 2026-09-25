@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+collectionDate,"Date of collection; linked to collectionAge. For data derived from samples, this is the date the sample was harvested. For observational data not derived from samples, this is the date the observation was collected.",,,,FALSE,ManifestColumn,,MARMO-AD,,string,MARMO-AD

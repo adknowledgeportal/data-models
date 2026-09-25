@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+differentiationProtocol,SynID of the detailed protocol used for differentiation,,,,FALSE,ManifestColumn,,MARMO-AD,,string,MARMO-AD

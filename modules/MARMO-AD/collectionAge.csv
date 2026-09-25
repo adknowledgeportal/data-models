@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+collectionAge,"Age of animal at time of collection, calculated as (collectionDate - dateBirth)",,,,FALSE,ManifestColumn,,MARMO-AD,,number,MARMO-AD

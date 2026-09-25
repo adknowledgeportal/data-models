@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+observationID,"Identifies a data point; referenced in metadata and associated data file.",,,,FALSE,ManifestColumn,,MARMO-AD,,string,MARMO-AD

@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-genotype,Genotype common name,,,,True,ManifestColumn,,sage.annotations-clinical.genotype-0.0.2,,string,mouse
+genotype,"A description of an organism's (or cell's) genetic makeup. It can cover the entire genome or only specific genes or regions of interest. A genotype is usually written as the ways the organism differs from a standard reference, such as a reference genome or wild-type strain.",,,,True,ManifestColumn,,http://purl.obolibrary.org/obo/GENO_0000536,,string,mouse
