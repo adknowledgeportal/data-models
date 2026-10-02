@@ -130,16 +130,19 @@ jobs:
           # schema needs them as arrays of strings.
           ARRAY_PROPERTIES = ["individualID", "specimenID"]
 
+          # Warn rather than fail: a missing template or property should not block
+          # registration of every other schema.
           matches = list(Path(os.environ["SCHEMAS_PATH"]).rglob("FileAnnotationTemplate.json"))
           if not matches:
-              raise SystemExit("::error::FileAnnotationTemplate.json was not generated")
+              print("::warning::FileAnnotationTemplate.json was not generated; skipping ID array override")
 
           for schema_path in matches:
               schema = json.loads(schema_path.read_text())
               for prop_name in ARRAY_PROPERTIES:
-                  prop = schema["properties"].get(prop_name)
+                  prop = schema.get("properties", {}).get(prop_name)
                   if prop is None:
-                      raise SystemExit(f"::error::{prop_name} missing from {schema_path}")
+                      print(f"::warning::{prop_name} missing from {schema_path.name}; skipping")
+                      continue
                   schema["properties"][prop_name] = {
                       "description": prop.get("description", ""),
                       "items": {"type": "string"},
