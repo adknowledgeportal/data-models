@@ -120,6 +120,8 @@ jobs:
         env:
           SCHEMAS_PATH: ${{ steps.resolve-schemas-path.outputs.path }}
         run: |
+          # generate-jsonschema runs in a Docker container as root, so take ownership before editing
+          sudo chown -R "$(id -u):$(id -g)" "$SCHEMAS_PATH"
           python - <<'PYTHON'
           import json
           import os
