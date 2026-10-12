@@ -14,6 +14,7 @@
 #   4. Commit CSV changes             - commits the updated AD.model.csv back to the branch (pull_request events only)
 #   5. Generate JSON Schemas          - converts AD.model.csv into JSON schema files
 #   6. Check schemas were generated   - exits with error if no schemas were produced
+#  6a. Override annotation ID columns - sets individualID/specimenID to string arrays in FileAnnotationTemplate.json only
 #   7. Upload schemas as artifacts    - saves generated schemas as a downloadable workflow artifact
 #   8. Create release assets          - attaches schema JSON files to the GitHub release (pre-release and release)
 #   9. Resolve schema organization    - selects test.ad or sage.schemas.ad based on trigger event
@@ -114,6 +115,43 @@ jobs:
         env:
           SCHEMAS: ${{ steps.generate.outputs.schemas }}
         run: echo "path=${SCHEMAS/\/github\/workspace/$GITHUB_WORKSPACE}" >> $GITHUB_OUTPUT
+
+      - name: Override ID columns in file annotation schema
+        env:
+          SCHEMAS_PATH: ${{ steps.resolve-schemas-path.outputs.path }}
+        run: |
+          python - <<'PYTHON'
+          import json
+          import os
+          from pathlib import Path
+
+          # individualID and specimenID are single strings in metadata templates, but a
+          # file can be linked to multiple individuals/specimens, so the file annotation
+          # schema needs them as arrays of strings.
+          ARRAY_PROPERTIES = ["individualID", "specimenID"]
+
+          # Warn rather than fail: a missing template or property should not block
+          # registration of every other schema.
+          matches = list(Path(os.environ["SCHEMAS_PATH"]).rglob("FileAnnotationTemplate.json"))
+          if not matches:
+              print("::warning::FileAnnotationTemplate.json was not generated; skipping ID array override")
+
+          for schema_path in matches:
+              schema = json.loads(schema_path.read_text())
+              for prop_name in ARRAY_PROPERTIES:
+                  prop = schema.get("properties", {}).get(prop_name)
+                  if prop is None:
+                      print(f"::warning::{prop_name} missing from {schema_path.name}; skipping")
+                      continue
+                  schema["properties"][prop_name] = {
+                      "description": prop.get("description", ""),
+                      "items": {"type": "string"},
+                      "title": prop.get("title", prop_name),
+                      "type": "array",
+                  }
+                  print(f"{schema_path.name}: set {prop_name} to array of strings")
+              schema_path.write_text(json.dumps(schema, indent=2))
+          PYTHON
 
       - name: Upload schemas as artifacts
         uses: actions/upload-artifact@v6
@@ -223,11 +261,15 @@ jobs:
           from synapseclient import Synapse
           from synapseclient.models import SchemaOrganization
 
-          schemas_json = r'''${{ steps.generate.outputs.schemas-json }}'''
+          from pathlib import Path
+
+          schemas_path = r'''${{ steps.resolve-schemas-path.outputs.path }}'''
           org_name = r'''${{ steps.resolve-org.outputs.org-name }}'''
           release_tag = r'''${{ github.event.release.tag_name }}'''
 
-          schemas = json.loads(schemas_json)
+          # Read schemas from disk (not the generate step output) so the report
+          # reflects post-generation overrides such as the file annotation ID arrays
+          schemas = [json.loads(p.read_text()) for p in sorted(Path(schemas_path).rglob("*.json"))]
           # Create a mapping of schema name to its JSON definition for lookup
           schema_by_name = {s.get('title', ''): s for s in schemas}
 
