@@ -3,4 +3,4 @@ AMY_ANY,Any amyloid presence,"No amyloid presence, Some Amyloid, Amyloid Present
 No amyloid presence,No amyloid presence,,,,,AMY_ANY,,ADSP,,string,clinical
 Some Amyloid,Some amyloid,,,,,AMY_ANY,,ADSP,,string,clinical
 Amyloid Present,Amyloid present,,,,,AMY_ANY,,CLEAR-AD,,string,clinical
-missing or unknown, Amyloid presence is missing or unknown,,,,,AMY_ANY,,CLEAR-AD,,string,clinical
+missing or unknown,Amyloid presence is missing or unknown,,,,,AMY_ANY,,CLEAR-AD,,string,clinical
