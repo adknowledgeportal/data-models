@@ -16,7 +16,7 @@ DiCAD,"Diabetes, Cerebrovascular Disease, and Alzheimer's Disease human cohort; 
 EFIGA,Estudio Familiar de Influencia Genetica en Alzheimer (EFIGA) is a study based on a cohort of Caribbean Hispanics with Late-Onset Alzheimer’s Disease recruited from clinics in the Dominican Republic and New York.,,,,False,cohort,,https://www.neurology.columbia.edu/research/research-centers-and-programs/alzheimers-disease-research-center-adrc/investigators/investigator-resources,,string,clinical
 EHBS,Emory Healthy Brain Study,,,,False,cohort,,https://healthyaging.emory.edu/ehbs/,,string,clinical
 Emory ADRC,Emory Alzheimer's Disease Research Center Brain Bank,,,,False,cohort,,https://alzheimers.emory.edu/research/for-researchers/tissue_biospecimen_banking_facility.html,,string,clinical
-FBS, THe National Institute on Aging Alzheimer's Disease Family Based Study (NIA-AD FBS),,,,False,cohort,,https://www.neurology.columbia.edu/research/research-centers-and-programs/national-institute-aging-alzheimers-disease-family-based-study-nia-ad-fbs,,string,clinical
+FBS,THe National Institute on Aging Alzheimer's Disease Family Based Study (NIA-AD FBS),,,,False,cohort,,https://www.neurology.columbia.edu/research/research-centers-and-programs/national-institute-aging-alzheimers-disease-family-based-study-nia-ad-fbs,,string,clinical
 Framingham,Framingham Heart Study,,,,False,cohort,,https://www.framinghamheartstudy.org/,,string,clinical
 HBCC,The Human Brain Collection Core (HBCC) within the National Institute of Mental Health,,,,False,cohort,,https://www.nimh.nih.gov/research/research-conducted-at-nimh/research-areas/research-support-services/hbcc,,string,clinical
 HBTRC,Harvard Brain Tissue Research Center,,,,False,cohort,,https://hbtrc.mclean.harvard.edu/,,string,clinical
@@ -35,10 +35,10 @@ NYBB,New York Brain Bank at Columbia University,,,,False,cohort,,http://www.colu
 Pitt ADRC,University of PIttsburgh Alzheimer's Disease Research Center,,,,False,cohort,,https://www.adrc.pitt.edu/,,string,clinical
 POINTER,Protect Brain Health Through Lifestyle Intervention to Reduce Risk,,,,False,cohort,,https://www.alz.org/us-pointer/home.asp,,string,clinical
 RADC,Rush Alzheimer's Disease Center,,,,False,cohort,,https://www.rushu.rush.edu/research/departmental-research/rush-alzheimers-disease-center,,string,clinical
-ROSMAP,Religious Orders Study/Memory and Aging Project from Rush University ,,,,False,cohort,,"https://www.rushu.rush.edu/research/departmental-research/religious-orders-study, https://www.rushu.rush.edu/research/departmental-research/memory-and-aging-project",,string,clinical
+ROSMAP,Religious Orders Study/Memory and Aging Project from Rush University,,,,False,cohort,,"https://www.rushu.rush.edu/research/departmental-research/religious-orders-study, https://www.rushu.rush.edu/research/departmental-research/memory-and-aging-project",,string,clinical
 SMRI,Stanley Medical Research Institute,,,,False,cohort,,https://www.stanleyresearch.org/,,string,clinical
-Tulsa LIBR-1000, Tulsa Univ and Laureate Institute for Brain Research,,,,False,cohort,,https://utulsa.edu/news/libr-mental-health/,,string,clinical
-UFL, University of Florida Neuromedicine Human Brain and Tissue Bank (UF HBTB),,,,False,cohort,,https://ctrnd.med.ufl.edu/research/brain-bank/,,string,clinical
+Tulsa LIBR-1000,Tulsa Univ and Laureate Institute for Brain Research,,,,False,cohort,,https://utulsa.edu/news/libr-mental-health/,,string,clinical
+UFL,University of Florida Neuromedicine Human Brain and Tissue Bank (UF HBTB),,,,False,cohort,,https://ctrnd.med.ufl.edu/research/brain-bank/,,string,clinical
 UK Biobank,UK Biobank,,,,False,cohort,,https://www.ukbiobank.ac.uk/,,string,clinical
 UPBB,University of Pennsylvania School of Medicine Brain Bank,,,,False,cohort,,https://www.med.upenn.edu/adrc/datasharing.html,,string,clinical
 UPenn,"The University of Pennsylvania Alzheimer's Disease Core Center (ADCC), Penn Udall Center and the Center for Neurodegenerative Disease Research (CNDR)",,,,False,cohort,,"https://pathology.med.upenn.edu/research/centers-and-institutes/udall-center-for-parkinsons-research, https://www.med.upenn.edu/cndr/",,string,clinical

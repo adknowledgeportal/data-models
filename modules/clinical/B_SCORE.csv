@@ -4,4 +4,4 @@ No B score,No B score,,,,,B_SCORE,,ADSP,,string,clinical
 BRAAK Stage 1-2,BRAAK Stage 1-2,,,,,B_SCORE,,ADSP,,string,clinical
 BRAAK Stage 3-4,BRAAK Stage 3-4,,,,,B_SCORE,,ADSP,,string,clinical
 BRAAK Stage 5-6,BRAAK Stage 5-6,,,,,B_SCORE,,ADSP,,string,clinical
-missing or unknown, B score is missing or unknown,,,,,B_SCORE,,ADSP,,string,clinical
+missing or unknown,B score is missing or unknown,,,,,B_SCORE,,ADSP,,string,clinical
