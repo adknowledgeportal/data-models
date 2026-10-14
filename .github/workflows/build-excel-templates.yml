@@ -1,0 +1,119 @@
+# Rebuilds the ADKP Excel templates from the registered sage.schemas.ad JSON
+# schemas and uploads them to the data dictionary folder on Synapse.
+#
+# Triggered on:
+#   - workflow_run  - after the register-schema workflow completes successfully
+#                     for a full release (pre-release and pull request runs only
+#                     register to test.ad, so they're skipped)
+#   - workflow_dispatch - manual run from the Actions tab (catch-up or rebuild)
+#
+# A workflow_run event looks the same for a pre-release run and a full-release
+# run (both are event=release with the tag as head_branch), so the first step
+# asks GitHub whether that tag's release is still a pre-release.
+#
+# Steps:
+#   1. Check release              - resolves the version; skips pre-releases
+#   2. Build and upload templates - runs scripts/create_excel_templates.py, which
+#                                   builds one workbook per schema registered at
+#                                   that version and uploads each as a new version
+#                                   of the existing file (or a new file), labeled
+#                                   with modelVersion and releaseDate
+#   3. Upload workbooks           - saves the workbooks as a workflow artifact
+#
+# Required configuration:
+#   secret   SYNAPSE_TOKEN_DPE  - Synapse token with edit access to the data
+#                                 dictionary folder (shared with register-schema.yml)
+#   variable TEMPLATE_FOLDER_ID - Synapse ID of that folder
+
+name: Build Excel templates
+
+on:
+  workflow_run:
+    # Matched by the name: of register-schema.yml, not its file name. The
+    # corrected spelling is listed too so fixing the "SON" typo doesn't stop
+    # this workflow from running; any other rename must be added here.
+    workflows:
+      - "Generate, register SON Schemas and Create RecordSets"
+      - "Generate, register JSON Schemas and Create RecordSets"
+    types:
+      - completed
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Data model version, e.g. 1.0.9 (leave blank for the newest registered)"
+        required: false
+        type: string
+      dry-run:
+        description: "Build only, don't upload to Synapse"
+        required: false
+        type: boolean
+        default: false
+
+# One build at a time; don't cancel a run partway through uploading
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  build-and-upload-templates:
+    runs-on: ubuntu-latest
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event == 'release')
+    permissions:
+      contents: read
+
+    steps:
+      - name: Check release
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.workflow_run.head_branch }}
+          INPUT_VERSION: ${{ inputs.version }}
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "version=$INPUT_VERSION" >> "$GITHUB_OUTPUT"
+            echo "build=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [[ "$(gh release view "$TAG" --repo "${{ github.repository }}" --json isPrerelease --jq .isPrerelease)" == "true" ]]; then
+            echo "$TAG is a pre-release (registered to test.ad); not building templates"
+            echo "build=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "version=$TAG" >> "$GITHUB_OUTPUT"
+            echo "build=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        if: steps.release.outputs.build == 'true'
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        if: steps.release.outputs.build == 'true'
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        if: steps.release.outputs.build == 'true'
+        run: pip install "openpyxl>=3.1,<4" requests "synapseclient>=4.12,<5"
+
+      - name: Build and upload templates
+        if: steps.release.outputs.build == 'true'
+        env:
+          SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
+          TEMPLATE_FOLDER_ID: ${{ vars.TEMPLATE_FOLDER_ID }}
+          GITHUB_TOKEN: ${{ github.token }}
+          MODEL_VERSION: ${{ steps.release.outputs.version }}
+          DRY_RUN: ${{ inputs.dry-run && '--dry-run' || '' }}
+        run: python -u scripts/create_excel_templates.py ${MODEL_VERSION:+--version "$MODEL_VERSION"} $DRY_RUN
+
+      - name: Upload workbooks as artifacts
+        if: always() && steps.release.outputs.build == 'true'
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: excel-templates
+          path: output/*.xlsx
+          if-no-files-found: ignore

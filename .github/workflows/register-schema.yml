@@ -29,6 +29,8 @@
 # Required secrets:
 #   SYNAPSE_TOKEN_DPE - Synapse Personal Access Token with permissions to register schemas
 
+# build-excel-templates.yml runs after this workflow by matching this name.
+# If you rename it, add the new name to that file's workflow_run.workflows list.
 name: Generate, register SON Schemas and Create RecordSets
 
 on:
