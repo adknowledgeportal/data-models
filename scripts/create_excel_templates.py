@@ -33,7 +33,8 @@ cell for cell and in formatting):
   - lists and fetches schemas without a Synapse login; login is only needed
     to upload, which uses synapseclient instead of synapser and labels each
     file version with the model version (version comment, plus modelVersion
-    and releaseDate annotations)
+    and releaseDate annotations; the date is the GitHub release's publish
+    date, or --release-date)
   - exits with an error if any template fails to build or upload; the R
     script logs the failure and carries on
   - writes the dropdowns' warning error style directly, so there's no
@@ -373,8 +374,8 @@ def build_template_workbook(attrs, template_name, definitions, order, out_dir):
 # =========================================================
 
 def release_date(release):
-    """Publish date (YYYY-MM-DD) of the data-models GitHub release, or today's
-    date if it can't be looked up (e.g. a manual run for an untagged version)."""
+    """Publish date (YYYY-MM-DD) of the data-models GitHub release. Exits if it
+    can't be looked up, rather than labeling files with a guessed date."""
     headers = {"Accept": "application/vnd.github+json"}
     if os.environ.get("GITHUB_TOKEN"):
         headers["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
@@ -383,12 +384,11 @@ def release_date(release):
         resp.raise_for_status()
         return resp.json()["published_at"][:10]
     except Exception as e:
-        today = date.today().isoformat()
-        print(f"Couldn't look up the v{release} release date ({e}); using {today}")
-        return today
+        sys.exit(f"Couldn't look up the v{release} release date ({e}). "
+                 "Pass --release-date YYYY-MM-DD to set it.")
 
 
-def upload(paths, release, folder_id, dry_run):
+def upload(paths, release, published, folder_id, dry_run):
     if dry_run and not folder_id:
         for path in paths:
             print(f"[{path.stem}] built (no --folder-id, so not checked against Synapse)")
@@ -405,7 +405,7 @@ def upload(paths, release, folder_id, dry_run):
 
     # every file version records the model version it was built from; the
     # file names stay unversioned so each template keeps its Synapse ID
-    labels = {"modelVersion": [release], "releaseDate": [release_date(release)]}
+    labels = {"modelVersion": [release], "releaseDate": [published]}
     print(f"Labeling uploads: {ORG_NAME} {release}, " +
           ", ".join(f"{k}={v[0]}" for k, v in labels.items()))
 
@@ -441,12 +441,17 @@ def main():
                         help="Synapse folder to upload to (default: $TEMPLATE_FOLDER_ID)")
     parser.add_argument("--model-csv", default=MODEL_CSV_URL,
                         help="AD.model.csv URL or local path (default: main on GitHub)")
+    parser.add_argument("--release-date", type=date.fromisoformat,
+                        help="releaseDate annotation, YYYY-MM-DD (default: the GitHub "
+                             "release's publish date)")
     parser.add_argument("--dry-run", action="store_true", help="build, but don't upload")
     args = parser.parse_args()
     if not args.folder_id and not args.dry_run:
         parser.error("--folder-id (or TEMPLATE_FOLDER_ID) is required unless --dry-run")
 
     release, names = resolve_release(args.version and args.version.lstrip("v"), args.wait_minutes)
+    # look this up before building, so a bad date stops the run before anything is uploaded
+    published = args.release_date.isoformat() if args.release_date else release_date(release)
     definitions, order = load_model(args.model_csv)
     Path(args.out_dir).mkdir(exist_ok=True)
 
@@ -467,7 +472,7 @@ def main():
             print(f"[{name}] failed: {e}")
             not_built.append(name)
 
-    not_stored = upload(built, release, args.folder_id, args.dry_run)
+    not_stored = upload(built, release, published, args.folder_id, args.dry_run)
     if not_built or not_stored:
         sys.exit(f"{len(not_built)} template(s) not built ({', '.join(not_built)}), "
                  f"{len(not_stored)} not stored ({', '.join(not_stored)})")

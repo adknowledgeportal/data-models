@@ -31,6 +31,8 @@
 
 # build-excel-templates.yml runs after this workflow by matching this name.
 # If you rename it, add the new name to that file's workflow_run.workflows list.
+# It also reads the "Production: deploying to sage.schemas.ad" / "Test:
+# deploying to test.ad" messages logged by "Resolve schema organization" below.
 name: Generate, register SON Schemas and Create RecordSets
 
 on:
