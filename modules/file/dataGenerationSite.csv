@@ -1,0 +1,49 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+dataGenerationSite,This describes the identifier of where data was generated for a given file - where assay was run. E.g. Emory University is where proteomics data is often generated for ADKP studies.,"Allen Institute for Brain Science,Arizona State University,Baker Heart & Diabetes Institute,Baylor College of Medicine,Baylor University,Brigham and Women's Hospital,Carnegie Mellon University,Case Western Reserve University,Columbia University,Columbia University Irving Medical Center,Duke Medical Center,Duke University,Eli Lilly (United States),Emory University,GlaxoSmithKline (China),GlaxoSmithKline (United Kingdom),Harvard University,Helmholtz Munich,Icahn School of Medicine at Mount Sinai,Indiana University,Institute for Systems Biology,Jackson Laboratory,Kaiser Permanente Washington Health Research Institute,Massachusetts Institute of Technology,Mayo Clinic,Mayo Clinic Florida,Metabolon,NYGC,Pacific Northwest National Laboratory,Rush University,SUNY Upstate Medical University,St. Jude Children's Research Hospital,Stanford University,The University of Queensland,University of Alabama at Birmingham,University of Arizona,University of California Irvine,University of California San Francisco,University of Chicago,University of Exeter,University of Florida,University of Pennsylvania,University of Pittsburgh,University of South Florida,University of Washington,Washington University in St. Louis,Yale University",,,True,ManifestColumn,,,,string_list,ManifestColumn
+Allen Institute for Brain Science,,,,,,dataGenerationSite,,https://ror.org/00dcv1019,,string,ManifestColumn
+Arizona State University,,,,,,dataGenerationSite,,https://ror.org/03efmqc40,,string,ManifestColumn
+Baker Heart & Diabetes Institute,,,,,,dataGenerationSite,,https://ror.org/03rke0285,,string,ManifestColumn
+Baylor College of Medicine,,,,,,dataGenerationSite,,https://ror.org/02pttbw34,,string,ManifestColumn
+Baylor University,,,,,,dataGenerationSite,,https://ror.org/005781934,,string,ManifestColumn
+Brigham and Women's Hospital,,,,,,dataGenerationSite,,https://ror.org/04b6nzv94,,string,ManifestColumn
+Carnegie Mellon University,,,,,,dataGenerationSite,,https://ror.org/05x2bcf33,,string,ManifestColumn
+Case Western Reserve University,,,,,,dataGenerationSite,,https://ror.org/051fd9666,,string,ManifestColumn
+Columbia University,,,,,,dataGenerationSite,,https://ror.org/00hj8s172,,string,ManifestColumn
+Columbia University Irving Medical Center,,,,,,dataGenerationSite,,https://ror.org/01esghr10,,string,ManifestColumn
+Duke Medical Center,,,,,,dataGenerationSite,,https://ror.org/03njmea73,,string,ManifestColumn
+Duke University,,,,,,dataGenerationSite,,https://ror.org/00py81415,,string,ManifestColumn
+Eli Lilly (United States),,,,,,dataGenerationSite,,https://ror.org/01qat3289,,string,ManifestColumn
+Emory University,,,,,,dataGenerationSite,,https://ror.org/03czfpz43,,string,ManifestColumn
+GlaxoSmithKline (China),,,,,,dataGenerationSite,,https://ror.org/03jrn4k58,,string,ManifestColumn
+GlaxoSmithKline (United Kingdom),,,,,,dataGenerationSite,,https://ror.org/01xsqw823,,string,ManifestColumn
+Harvard University,,,,,,dataGenerationSite,,https://ror.org/03vek6s52,,string,ManifestColumn
+Helmholtz Munich,,,,,,dataGenerationSite,,https://ror.org/00cfam450,,string,ManifestColumn
+Icahn School of Medicine at Mount Sinai,,,,,,dataGenerationSite,,https://ror.org/04a9tmd77,,string,ManifestColumn
+Indiana University,,,,,,dataGenerationSite,,https://ror.org/01kg8sb98,,string,ManifestColumn
+Institute for Systems Biology,,,,,,dataGenerationSite,,https://ror.org/02tpgw303,,string,ManifestColumn
+Jackson Laboratory,,,,,,dataGenerationSite,,https://ror.org/021sy4w91,,string,ManifestColumn
+Kaiser Permanente Washington Health Research Institute,,,,,,dataGenerationSite,,https://ror.org/0027frf26,,string,ManifestColumn
+Massachusetts Institute of Technology,,,,,,dataGenerationSite,,https://ror.org/042nb2s44,,string,ManifestColumn
+Mayo Clinic,,,,,,dataGenerationSite,,https://ror.org/02qp3tb03,,string,ManifestColumn
+Mayo Clinic Florida,,,,,,dataGenerationSite,,https://ror.org/03zzw1w08,,string,ManifestColumn
+Metabolon,Metabolon (United States),,,,,dataGenerationSite,,https://ror.org/033qhvk72,,string,ManifestColumn
+NYGC,New York Genome Center,,,,,dataGenerationSite,,https://ror.org/05wf2ga96,,string,ManifestColumn
+Pacific Northwest National Laboratory,,,,,,dataGenerationSite,,https://ror.org/05h992307,,string,ManifestColumn
+Rush University,,,,,,dataGenerationSite,,https://ror.org/01k9xac83,,string,ManifestColumn
+SUNY Upstate Medical University,,,,,,dataGenerationSite,,https://ror.org/040kfrw16,,string,ManifestColumn
+St. Jude Children's Research Hospital,,,,,,dataGenerationSite,,https://ror.org/02r3e0967,,string,ManifestColumn
+Stanford University,,,,,,dataGenerationSite,,https://ror.org/00f54p054,,string,ManifestColumn
+The University of Queensland,,,,,,dataGenerationSite,,https://ror.org/00rqy9422,,string,ManifestColumn
+University of Alabama at Birmingham,,,,,,dataGenerationSite,,https://ror.org/008s83205,,string,ManifestColumn
+University of Arizona,,,,,,dataGenerationSite,,https://ror.org/03m2x1q45,,string,ManifestColumn
+University of California Irvine,,,,,,dataGenerationSite,,https://ror.org/04gyf1771,,string,ManifestColumn
+University of California San Francisco,,,,,,dataGenerationSite,,https://ror.org/043mz5j54,,string,ManifestColumn
+University of Chicago,,,,,,dataGenerationSite,,https://ror.org/024mw5h28,,string,ManifestColumn
+University of Exeter,,,,,,dataGenerationSite,,https://ror.org/03yghzc09,,string,ManifestColumn
+University of Florida,,,,,,dataGenerationSite,,https://ror.org/02y3ad647,,string,ManifestColumn
+University of Pennsylvania,,,,,,dataGenerationSite,,https://ror.org/00b30xv10,,string,ManifestColumn
+University of Pittsburgh,,,,,,dataGenerationSite,,https://ror.org/01an3r305,,string,ManifestColumn
+University of South Florida,,,,,,dataGenerationSite,,https://ror.org/032db5x82,,string,ManifestColumn
+University of Washington,,,,,,dataGenerationSite,,https://ror.org/00cvxb145,,string,ManifestColumn
+Washington University in St. Louis,,,,,,dataGenerationSite,,https://ror.org/01yc7t268,,string,ManifestColumn
+Yale University,,,,,,dataGenerationSite,,https://ror.org/03v76x132,,string,ManifestColumn
