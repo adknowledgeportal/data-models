@@ -1113,7 +1113,7 @@ individualOrigin,Facility where animal originated from,"SNI/PITT, NIH, WWP, WNPR
 INFA,Infarcts and lacunes. Reports of anoxic ischemic injury will not be considered within the infarcts and lacunes lesions,"No, Yes, missing or unknown",,,False,ManifestColumn,,sage-annotations-clinical.INFA-0.0.2,,string,clinical,
 inputTotalRNA,In nanogram before rRNA depletion and globin removal,,,,False,ManifestColumn,,sage.annotations-experimentalData.inputTotalRNA-0.0.11,,string,sequencing,
 instrumentModel,"The model of the instrument used. Provide a value OR provide one of these values - Unknown, Not collected, Not applicable, Not specified",,,,True,ManifestColumn,,http://purl.obolibrary.org/obo/MS_1000031,,string,proteomics,
-instrumentName,Name of the questionnaire or survey instrument used to collect the data.,,,,False,ManifestColumn,,sysbio.metadataTemplates-ad.manifest,,STRING,ManifestColumn,
+instrumentName,Name of the questionnaire or survey instrument used to collect the data.,,surveyData,,False,ManifestColumn,,sysbio.metadataTemplates-ad.manifest,,STRING,ManifestColumn,
 instrumentVersion,Version of the questionnaire or survey instrument used to collect the data when available.,,,,False,ManifestColumn,,sysbio.metadataTemplates-ad.manifest,,STRING,ManifestColumn,
 INT,Interval between last exam and death (unit in months). Use missing or unknown if not available,,,,True,ManifestColumn,,sage-annotations-clinical.INT-0.0.2,,string,clinical,
 ionMode,"Ionization polarity (positive, negative, polar)",,,,False,ManifestColumn,,sage.annotations-experimentalData.ionMode-0.0.2,,string,mass spectrometry,
