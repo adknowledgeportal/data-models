@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+recordLevel,"Level of granularity represented by individual records within the file, such as questionnaire-level.",,,,False,ManifestColumn,,sysbio.metadataTemplates-ad.manifest,,STRING,ManifestColumn
