@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+instrumentName,Name of a questionnaire or survey instrument used to collect the data.,,surveyData,,False,ManifestColumn,,sysbio.metadataTemplates-ad.manifest,,STRING,ManifestColumn

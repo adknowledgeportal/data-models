@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+language,"Language in which the questionnaire or survey was administered.","English, Spanish, French, German, Chinese, Japanese, Other",surveyData,,False,ManifestColumn,,sysbio.metadataTemplates-ad.manifest,,string,experimentalData

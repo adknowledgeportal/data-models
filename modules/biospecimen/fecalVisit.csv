@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+fecalVisit,"Identifier for the fecal sampling event associated with the biospecimen, such as Y1, Y2, Y3, or a study-specific collection label (e.g., KYN-T3G).",,,,False,Biospecimen,,sysbio.metadataTemplates-ad.biospecimen,,STRING,Biospecimen

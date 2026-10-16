@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+visitNum,"NACC clinical visit number associated with the biospecimen, used to align fecal sampling events with corresponding clinical visits.",,,,False,Biospecimen,,sysbio.metadataTemplates-ad.biospecimen,,STRING,Biospecimen

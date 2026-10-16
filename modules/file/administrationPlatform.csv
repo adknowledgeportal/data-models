@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+administrationPlatform,"Platform or method used to administer the questionnaire or survey.","REDCap, Viocare, Qualtrics, SurveyMonkey, LimeSurvey, Paper, Other",surveyData,,False,ManifestColumn,,sysbio.metadataTemplates-ad.manifest,,string,experimentalData
