@@ -11,6 +11,7 @@
   - [Required Secrets](#required-secrets)
   - [Outputs](#outputs)
   - [Diagrams](#diagrams-1)
+- [Build Excel Templates Workflow](#build-excel-templates-workflow)
 
 ---
 
@@ -153,3 +154,42 @@ flowchart TD
 ```
 </details>
 
+---
+
+## Build Excel Templates Workflow
+
+### Purpose
+The `build-excel-templates` workflow rebuilds the ADKP Excel metadata templates from the schemas registered in `sage.schemas.ad` and uploads them to the data dictionary folder on Synapse. It runs [`scripts/create_excel_templates.py`](../../scripts/create_excel_templates.py), a Python version of `createExcelTemplates.R` in adkp-data-ingress that produces the same workbooks.
+
+### Triggers
+| Event | Condition | Result |
+|-------|-----------|--------|
+| `workflow_run` of the register-schema workflow | Completed successfully, triggered by a release, and its log shows it registered to `sage.schemas.ad` | Builds and uploads templates for that version |
+| `workflow_dispatch` | Manual; optional `version` (blank = newest registered) and the "Build only" box (checked by default) | Builds; uploads only if the box is unchecked |
+
+Pre-release and pull request runs register to `test.ad`, so they don't rebuild the templates.
+
+### What gets built
+- One workbook per schema registered in `sage.schemas.ad` at the release version. Schemas removed from the model stay registered at their last version and are skipped, so retired templates don't get a new version.
+- Column order and value definitions come from `AD.model.csv` on `main`. An older release built with `--dry-run` reads `AD.model.csv` from that release's tag instead, so it matches that release.
+- Each workbook is uploaded as a new version of the existing file with the same name (or as a new file), so file names and Synapse IDs stay the same across releases. Each version is labeled with:
+  - version comment `sage.schemas.ad <version>`
+  - annotations `modelVersion` and `releaseDate`. `releaseDate` is the date the release's schemas were registered in `sage.schemas.ad` (the production release, even if the GitHub release started as a pre-release).
+
+  > **Note:** `releaseDate` is in UTC, so a release published after about 5 pm Pacific is labeled with the next day's date.
+- Only the newest registered release can be uploaded, since uploading an older one would replace the current templates. Older releases can be built with `--dry-run`.
+- The run fails if any template can't be built or uploaded. The workbooks are also saved as a workflow artifact.
+
+### Required Secrets and Variables
+| Name | Type | Description |
+|------|------|-------------|
+| `SYNAPSE_TOKEN_DPE` | Secret | Synapse Personal Access Token with edit access to the data dictionary folder (the same secret the register-schema workflow uses) |
+| `TEMPLATE_FOLDER_ID` | Repository variable | Synapse ID of the data dictionary folder |
+
+### Running locally
+```bash
+pip install "openpyxl>=3.1,<4" requests "synapseclient>=4.12,<5"
+python scripts/create_excel_templates.py --version 1.0.9 --dry-run                          # build only
+python scripts/create_excel_templates.py --version 1.0.9 --folder-id syn00000000            # build and upload
+```
+Workbooks are written to `output/`. Uploading needs `SYNAPSE_AUTH_TOKEN` or `authtoken` in `~/.synapseConfig`.
