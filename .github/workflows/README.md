@@ -171,7 +171,7 @@ Pre-release and pull request runs register to `test.ad`, so they don't rebuild t
 
 ### What gets built
 - One workbook per schema registered in `sage.schemas.ad` at the release version. Schemas removed from the model stay registered at their last version and are skipped, so retired templates don't get a new version.
-- Column order and value definitions come from `AD.model.csv` on `main`. An older release built with `--dry-run` reads `AD.model.csv` from that release's tag instead, so it matches that release.
+- Column order and value definitions come from `AD.model.csv` at the release's tag (e.g. `v1.0.9`), not `main`, so they match that release even if the model has changed since.
 - Each workbook is uploaded as a new version of the existing file with the same name (or as a new file), so file names and Synapse IDs stay the same across releases. Each version is labeled with:
   - version comment `sage.schemas.ad <version>`
   - annotations `modelVersion` and `releaseDate`. `releaseDate` is the date the release's schemas were registered in `sage.schemas.ad` (the production release, even if the GitHub release started as a pre-release).
