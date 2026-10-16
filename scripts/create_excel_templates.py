@@ -38,6 +38,9 @@ cell for cell and in formatting):
     registered in sage.schemas.ad, in UTC)
   - exits with an error if any template fails to build or upload; the R
     script logs the failure and carries on
+  - doesn't highlight an empty species cell on experimentalData rows: species
+    is already required (and highlighted) on every row of the templates that
+    have it
   - writes the dropdowns' warning error style directly, so there's no
     post-save XML patch
   - the DataDictionary filter covers the whole table, not just the header row
@@ -70,7 +73,6 @@ from pathlib import Path
 import requests
 from openpyxl import Workbook
 from openpyxl.comments import Comment
-from openpyxl.formatting.rule import FormulaRule
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
@@ -308,17 +310,6 @@ def build_manifest(wb, attrs):
             # anything longer than a short one-liner
             lines = max(2, -(-len(text) // 45) + 1)
             header.comment = Comment(text, "", width=3 * 64, height=lines * 20)
-
-    names = [a["attribute"] for a in attrs]
-    if "resourceType" in names and "species" in names:
-        resource_type = get_column_letter(names.index("resourceType") + 1)
-        species = get_column_letter(names.index("species") + 1)
-        ws.conditional_formatting.add(
-            f"{species}2:{species}{MANIFEST_ROWS}",
-            FormulaRule(formula=[f'AND(${resource_type}2="experimentalData",${species}2="")'],
-                        # same differential style the R script writes: solid fill, Arial 10
-                        font=Font(name="Arial", size=10, color="FF000000"), fill=fill("FFFFC7CE")),
-        )
 
 
 def build_data_dictionary(wb, attrs, definitions, template_name):
