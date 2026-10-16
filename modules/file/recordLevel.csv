@@ -1,2 +1,6 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-recordLevel,"Level of granularity represented by individual records within the file, such as questionnaire-level.",,,,False,ManifestColumn,,sysbio.metadataTemplates-ad.manifest,,STRING,ManifestColumn
+recordLevel,"Level of granularity represented by individual records within a questionnaire or survey data file.","questionnaire-level, participant-level, item-level, response-level, other",surveyData,,False,ManifestColumn,,sysbio.metadataTemplates-ad.manifest,,string,experimentalData
+questionnaire-level,Each record represents one completed questionnaire or survey instance.,,,,,recordLevel,,,,string,experimentalData
+participant-level,Each record represents an individual participant.,,,,,recordLevel,,,,string,experimentalData
+item-level,Each record represents an individual questionnaire or survey item.,,,,,recordLevel,,,,string,experimentalData
+response-level,Each record represents an individual response to a questionnaire or survey item.,,,,,recordLevel,,,,string,experimentalData
