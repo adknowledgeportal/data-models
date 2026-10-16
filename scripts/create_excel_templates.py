@@ -7,8 +7,8 @@
 #               run automatically by .github/workflows/build-excel-templates.yml
 #               after each release's schemas are registered
 #
-# Inputs:       registered sage.schemas.ad schemas; AD.model.csv (main, or the
-#               release's tag when building an older release)
+# Inputs:       registered sage.schemas.ad schemas; AD.model.csv (at the
+#               release's tag)
 # Outputs:      output/<Template>.xlsx, uploaded to the data dictionary folder
 #
 # Usage:        python scripts/create_excel_templates.py --folder-id synXXX [--version X] [--dry-run]
@@ -39,9 +39,9 @@ cell for cell and in formatting):
     registered in sage.schemas.ad, in UTC)
   - exits with an error if any template fails to build or upload; the R
     script logs the failure and carries on
-  - reads AD.model.csv from main for the newest release, and from the
-    release's tag when building an older one, so definitions and column
-    order match that release
+  - reads AD.model.csv at the release's tag rather than main, so
+    definitions and column order match that release even if main has
+    changed since
   - doesn't highlight an empty species cell on experimentalData rows: species
     is already required (and highlighted) on every row of the templates that
     have it
@@ -75,6 +75,8 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 from openpyxl import Workbook
 from openpyxl.comments import Comment
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
@@ -83,9 +85,9 @@ from openpyxl.worksheet.datavalidation import DataValidation
 
 REPO_URL = "https://repo-prod.prod.sagebase.org/repo/v1"
 ORG_NAME = "sage.schemas.ad"
-MODEL_CSV_URL = "https://raw.githubusercontent.com/adknowledgeportal/data-models/refs/heads/main/AD.model.csv"
-# an older release is built with the model as it was at that release's tag
-TAG_MODEL_CSV_URL = "https://raw.githubusercontent.com/adknowledgeportal/data-models/refs/tags/v{version}/AD.model.csv"
+# the model as it was at the release's tag, so the definitions and column
+# order match the schemas being built even after main moves on
+MODEL_CSV_URL = "https://raw.githubusercontent.com/adknowledgeportal/data-models/refs/tags/v{version}/AD.model.csv"
 
 MANIFEST_ROWS = 1000  # rows given borders, fills, and dropdowns
 
@@ -94,11 +96,29 @@ MANIFEST_ROWS = 1000  # rows given borders, fills, and dropdowns
 # 1. Registered schemas
 # =========================================================
 
+MAX_WORKERS = 5  # parallel requests to Synapse
+
+
+def _session():
+    """A requests session that retries dropped connections and busy/error
+    responses up to 5 times (at once, then after 2, 4, 8 and 16 seconds).
+    The POSTs are read-only list queries, so they're safe to retry too."""
+    retry = Retry(total=5, backoff_factor=1, status_forcelist=(429, 500, 502, 503, 504),
+                  allowed_methods=None, respect_retry_after_header=True)
+    session = requests.Session()
+    adapter = HTTPAdapter(max_retries=retry, pool_maxsize=MAX_WORKERS)
+    session.mount("https://", adapter)
+    return session
+
+
+SESSION = _session()
+
+
 def post_paginated(path, body):
     """All items from a paginated Synapse POST endpoint (public, no login)."""
     items = []
     while True:
-        resp = requests.post(REPO_URL + path, json=body, timeout=60)
+        resp = SESSION.post(REPO_URL + path, json=body, timeout=60)
         resp.raise_for_status()
         data = resp.json()
         items += data.get("page", [])
@@ -117,7 +137,7 @@ def registered_versions():
         return {v["semanticVersion"]: v["createdOn"]
                 for v in sorted(found, key=lambda v: v["createdOn"]) if v.get("semanticVersion")}
 
-    with ThreadPoolExecutor(max_workers=10) as pool:
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
         return dict(zip(names, pool.map(versions, names)))
 
 
@@ -161,7 +181,7 @@ def resolve_release(version, wait_minutes):
 
 
 def fetch_schema(name, version):
-    resp = requests.get(f"{REPO_URL}/schema/type/registered/{ORG_NAME}-{name}-{version}", timeout=60)
+    resp = SESSION.get(f"{REPO_URL}/schema/type/registered/{ORG_NAME}-{name}-{version}", timeout=60)
     resp.raise_for_status()
     return resp.json()
 
@@ -201,13 +221,13 @@ def norm_name(x):
     return re.sub(r"[^a-z0-9]", "", x.lower())
 
 
-def load_model(source=MODEL_CSV_URL):
+def load_model(source):
     """(definitions {(Property, Value): Definition}, order {template key: [attributes]})
 
     source is a URL or a local path to AD.model.csv.
     """
     if re.match(r"https?://", source):
-        resp = requests.get(source, timeout=60)
+        resp = SESSION.get(source, timeout=60)
         resp.raise_for_status()
         content = resp.content
     else:
@@ -430,8 +450,8 @@ def main():
     parser.add_argument("--folder-id", default=os.environ.get("TEMPLATE_FOLDER_ID"),
                         help="Synapse folder to upload to (default: $TEMPLATE_FOLDER_ID)")
     parser.add_argument("--model-csv",
-                        help="AD.model.csv URL or local path (default: main on GitHub for "
-                             "the newest release, the release's tag for an older one)")
+                        help="AD.model.csv URL or local path (default: the release's tag "
+                             "on GitHub)")
     parser.add_argument("--dry-run", action="store_true", help="build, but don't upload")
     args = parser.parse_args()
     if not args.folder_id and not args.dry_run:
@@ -444,8 +464,7 @@ def main():
     if release != newest and not args.dry_run:
         sys.exit(f"{release} isn't the newest registered version ({newest}); uploading it "
                  "would replace the current templates. Use --dry-run to build it locally.")
-    model_csv = args.model_csv or (MODEL_CSV_URL if release == newest
-                                   else TAG_MODEL_CSV_URL.format(version=release))
+    model_csv = args.model_csv or MODEL_CSV_URL.format(version=release)
     print(f"Reading definitions and column order from {model_csv}")
     try:
         definitions, order = load_model(model_csv)
@@ -454,7 +473,7 @@ def main():
                  "Pass --model-csv to use a different copy.")
     Path(args.out_dir).mkdir(exist_ok=True)
 
-    with ThreadPoolExecutor(max_workers=10) as pool:
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
         schemas = dict(zip(names, pool.map(lambda n: _try(fetch_schema, n, release), names)))
 
     # one bad schema shouldn't stop the rest, but the run still fails at the end
