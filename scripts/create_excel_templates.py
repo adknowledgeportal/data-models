@@ -7,7 +7,8 @@
 #               run automatically by .github/workflows/build-excel-templates.yml
 #               after each release's schemas are registered
 #
-# Inputs:       registered sage.schemas.ad schemas; AD.model.csv (main)
+# Inputs:       registered sage.schemas.ad schemas; AD.model.csv (main, or the
+#               release's tag when building an older release)
 # Outputs:      output/<Template>.xlsx, uploaded to the data dictionary folder
 #
 # Usage:        python scripts/create_excel_templates.py --folder-id synXXX [--version X] [--dry-run]
@@ -38,6 +39,9 @@ cell for cell and in formatting):
     registered in sage.schemas.ad, in UTC)
   - exits with an error if any template fails to build or upload; the R
     script logs the failure and carries on
+  - reads AD.model.csv from main for the newest release, and from the
+    release's tag when building an older one, so definitions and column
+    order match that release
   - doesn't highlight an empty species cell on experimentalData rows: species
     is already required (and highlighted) on every row of the templates that
     have it
@@ -80,6 +84,8 @@ from openpyxl.worksheet.datavalidation import DataValidation
 REPO_URL = "https://repo-prod.prod.sagebase.org/repo/v1"
 ORG_NAME = "sage.schemas.ad"
 MODEL_CSV_URL = "https://raw.githubusercontent.com/adknowledgeportal/data-models/refs/heads/main/AD.model.csv"
+# an older release is built with the model as it was at that release's tag
+TAG_MODEL_CSV_URL = "https://raw.githubusercontent.com/adknowledgeportal/data-models/refs/tags/v{version}/AD.model.csv"
 
 MANIFEST_ROWS = 1000  # rows given borders, fills, and dropdowns
 
@@ -423,8 +429,9 @@ def main():
     parser.add_argument("--out-dir", default="output")
     parser.add_argument("--folder-id", default=os.environ.get("TEMPLATE_FOLDER_ID"),
                         help="Synapse folder to upload to (default: $TEMPLATE_FOLDER_ID)")
-    parser.add_argument("--model-csv", default=MODEL_CSV_URL,
-                        help="AD.model.csv URL or local path (default: main on GitHub)")
+    parser.add_argument("--model-csv",
+                        help="AD.model.csv URL or local path (default: main on GitHub for "
+                             "the newest release, the release's tag for an older one)")
     parser.add_argument("--dry-run", action="store_true", help="build, but don't upload")
     args = parser.parse_args()
     if not args.folder_id and not args.dry_run:
@@ -437,7 +444,14 @@ def main():
     if release != newest and not args.dry_run:
         sys.exit(f"{release} isn't the newest registered version ({newest}); uploading it "
                  "would replace the current templates. Use --dry-run to build it locally.")
-    definitions, order = load_model(args.model_csv)
+    model_csv = args.model_csv or (MODEL_CSV_URL if release == newest
+                                   else TAG_MODEL_CSV_URL.format(version=release))
+    print(f"Reading definitions and column order from {model_csv}")
+    try:
+        definitions, order = load_model(model_csv)
+    except Exception as e:
+        sys.exit(f"Couldn't read AD.model.csv from {model_csv} ({e}). "
+                 "Pass --model-csv to use a different copy.")
     Path(args.out_dir).mkdir(exist_ok=True)
 
     with ThreadPoolExecutor(max_workers=10) as pool:
