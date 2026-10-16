@@ -46,10 +46,10 @@ on:
         required: false
         type: string
       dry-run:
-        description: "Build only, don't upload to Synapse"
+        description: "Build only, don't upload to Synapse (uncheck to upload)"
         required: false
         type: boolean
-        default: false
+        default: true
 
 # One build at a time; don't cancel a run partway through uploading
 concurrency:
@@ -117,8 +117,8 @@ jobs:
         env:
           SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
           TEMPLATE_FOLDER_ID: ${{ vars.TEMPLATE_FOLDER_ID }}
-          GITHUB_TOKEN: ${{ github.token }}
           MODEL_VERSION: ${{ steps.release.outputs.version }}
+          # manual runs only; workflow_run has no inputs, so automatic runs upload
           DRY_RUN: ${{ inputs.dry-run && '--dry-run' || '' }}
         run: python -u scripts/create_excel_templates.py ${MODEL_VERSION:+--version "$MODEL_VERSION"} $DRY_RUN
 

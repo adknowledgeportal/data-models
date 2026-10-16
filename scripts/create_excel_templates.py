@@ -27,14 +27,15 @@ from the model stay registered at their last version and are skipped.
 Differences from createExcelTemplates.R (the workbooks are otherwise the same,
 cell for cell and in formatting):
   - builds only schemas at the release version; the R script builds every
-    schema in the org, including ones removed from the model
+    schema in the org, including ones removed from the model. Only the newest
+    release can be uploaded; older ones can be built with --dry-run
   - fetches each schema at that exact version rather than the unversioned
     (latest) URL, and with --version waits for the release to be registered
   - lists and fetches schemas without a Synapse login; login is only needed
     to upload, which uses synapseclient instead of synapser and labels each
     file version with the model version (version comment, plus modelVersion
-    and releaseDate annotations; the date is the GitHub release's publish
-    date, or --release-date)
+    and releaseDate annotations; the date is when the release was
+    registered in sage.schemas.ad, in UTC)
   - exits with an error if any template fails to build or upload; the R
     script logs the failure and carries on
   - writes the dropdowns' warning error style directly, so there's no
@@ -64,7 +65,6 @@ import re
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
-from datetime import date
 from pathlib import Path
 
 import requests
@@ -78,7 +78,6 @@ from openpyxl.worksheet.datavalidation import DataValidation
 REPO_URL = "https://repo-prod.prod.sagebase.org/repo/v1"
 ORG_NAME = "sage.schemas.ad"
 MODEL_CSV_URL = "https://raw.githubusercontent.com/adknowledgeportal/data-models/refs/heads/main/AD.model.csv"
-RELEASE_API_URL = "https://api.github.com/repos/adknowledgeportal/data-models/releases/tags/v{version}"
 
 MANIFEST_ROWS = 1000  # rows given borders, fills, and dropdowns
 
@@ -100,19 +99,18 @@ def post_paginated(path, body):
         body = {**body, "nextPageToken": data["nextPageToken"]}
 
 
-def latest_versions():
-    """{schema name: its newest registered semantic version}"""
+def registered_versions():
+    """{schema name: {semantic version: registration time (ISO 8601, UTC)}}, oldest first"""
     names = [s["schemaName"] for s in post_paginated("/schema/list", {"organizationName": ORG_NAME})]
 
-    def latest(name):
-        versions = post_paginated("/schema/version/list",
-                                  {"organizationName": ORG_NAME, "schemaName": name})
-        if not versions:
-            return None
-        return max(versions, key=lambda v: v["createdOn"]).get("semanticVersion")
+    def versions(name):
+        found = post_paginated("/schema/version/list",
+                               {"organizationName": ORG_NAME, "schemaName": name})
+        return {v["semanticVersion"]: v["createdOn"]
+                for v in sorted(found, key=lambda v: v["createdOn"]) if v.get("semanticVersion")}
 
     with ThreadPoolExecutor(max_workers=10) as pool:
-        return dict(zip(names, pool.map(latest, names)))
+        return dict(zip(names, pool.map(versions, names)))
 
 
 def version_key(version):
@@ -123,14 +121,17 @@ def resolve_release(version, wait_minutes):
     """Pick the release version and the schemas registered at it.
 
     With no version, the newest registered one is used. With a version, polls
-    until at least one schema reports it, since this may run right after the
-    data-models release workflow registers them.
+    until at least one schema has it, since this may run right after the
+    data-models release workflow registers them. Returns the release, the
+    schemas registered at it, the newest version registered overall, and the
+    date (UTC) the release was registered in the org.
     """
     deadline = time.monotonic() + wait_minutes * 60
     while True:
-        latest = latest_versions()
-        release = version or max((v for v in latest.values() if v), key=version_key)
-        in_release = sorted(n for n, v in latest.items() if v == release)
+        registered = registered_versions()
+        newest = max((v for vs in registered.values() for v in vs), key=version_key)
+        release = version or newest
+        in_release = sorted(n for n, vs in registered.items() if release in vs)
         if in_release:
             break
         if time.monotonic() >= deadline:
@@ -138,11 +139,17 @@ def resolve_release(version, wait_minutes):
         print(f"No {ORG_NAME} schemas at {release} yet, checking again in 30s", flush=True)
         time.sleep(30)
 
-    for name, v in sorted(latest.items()):
-        if v != release:
-            print(f"[{name}] skipped: registered at {v}, not {release} (removed from the model?)")
-    print(f"Building {len(in_release)} template(s) from {ORG_NAME} {release}")
-    return release, in_release
+    for name, vs in sorted(registered.items()):
+        if release not in vs:
+            print(f"[{name}] skipped: not registered at {release} "
+                  f"(newest: {list(vs)[-1] if vs else 'none'})")
+    # when the release's schemas were registered in the production org; this
+    # is the production release date even if the GitHub release started as a
+    # pre-release. Times are UTC.
+    registered_on = min(registered[n][release] for n in in_release)[:10]
+    print(f"Building {len(in_release)} template(s) from {ORG_NAME} {release} "
+          f"(registered {registered_on} UTC)")
+    return release, in_release, newest, registered_on
 
 
 def fetch_schema(name, version):
@@ -309,7 +316,8 @@ def build_manifest(wb, attrs):
         ws.conditional_formatting.add(
             f"{species}2:{species}{MANIFEST_ROWS}",
             FormulaRule(formula=[f'AND(${resource_type}2="experimentalData",${species}2="")'],
-                        fill=PatternFill(bgColor="FFC7CE")),
+                        # same differential style the R script writes: solid fill, Arial 10
+                        font=Font(name="Arial", size=10, color="FF000000"), fill=fill("FFFFC7CE")),
         )
 
 
@@ -373,22 +381,7 @@ def build_template_workbook(attrs, template_name, definitions, order, out_dir):
 #    same name (case-insensitive), or a new file
 # =========================================================
 
-def release_date(release):
-    """Publish date (YYYY-MM-DD) of the data-models GitHub release. Exits if it
-    can't be looked up, rather than labeling files with a guessed date."""
-    headers = {"Accept": "application/vnd.github+json"}
-    if os.environ.get("GITHUB_TOKEN"):
-        headers["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
-    try:
-        resp = requests.get(RELEASE_API_URL.format(version=release), headers=headers, timeout=30)
-        resp.raise_for_status()
-        return resp.json()["published_at"][:10]
-    except Exception as e:
-        sys.exit(f"Couldn't look up the v{release} release date ({e}). "
-                 "Pass --release-date YYYY-MM-DD to set it.")
-
-
-def upload(paths, release, published, folder_id, dry_run):
+def upload(paths, release, registered_on, folder_id, dry_run):
     if dry_run and not folder_id:
         for path in paths:
             print(f"[{path.stem}] built (no --folder-id, so not checked against Synapse)")
@@ -405,7 +398,7 @@ def upload(paths, release, published, folder_id, dry_run):
 
     # every file version records the model version it was built from; the
     # file names stay unversioned so each template keeps its Synapse ID
-    labels = {"modelVersion": [release], "releaseDate": [published]}
+    labels = {"modelVersion": [release], "releaseDate": [registered_on]}
     print(f"Labeling uploads: {ORG_NAME} {release}, " +
           ", ".join(f"{k}={v[0]}" for k, v in labels.items()))
 
@@ -441,17 +434,18 @@ def main():
                         help="Synapse folder to upload to (default: $TEMPLATE_FOLDER_ID)")
     parser.add_argument("--model-csv", default=MODEL_CSV_URL,
                         help="AD.model.csv URL or local path (default: main on GitHub)")
-    parser.add_argument("--release-date", type=date.fromisoformat,
-                        help="releaseDate annotation, YYYY-MM-DD (default: the GitHub "
-                             "release's publish date)")
     parser.add_argument("--dry-run", action="store_true", help="build, but don't upload")
     args = parser.parse_args()
     if not args.folder_id and not args.dry_run:
         parser.error("--folder-id (or TEMPLATE_FOLDER_ID) is required unless --dry-run")
 
-    release, names = resolve_release(args.version and args.version.lstrip("v"), args.wait_minutes)
-    # look this up before building, so a bad date stops the run before anything is uploaded
-    published = args.release_date.isoformat() if args.release_date else release_date(release)
+    release, names, newest, registered_on = resolve_release(
+        args.version and args.version.lstrip("v"), args.wait_minutes)
+    # the folder holds one file per template, so uploading an older release
+    # would replace the current templates with older ones
+    if release != newest and not args.dry_run:
+        sys.exit(f"{release} isn't the newest registered version ({newest}); uploading it "
+                 "would replace the current templates. Use --dry-run to build it locally.")
     definitions, order = load_model(args.model_csv)
     Path(args.out_dir).mkdir(exist_ok=True)
 
@@ -472,7 +466,7 @@ def main():
             print(f"[{name}] failed: {e}")
             not_built.append(name)
 
-    not_stored = upload(built, release, published, args.folder_id, args.dry_run)
+    not_stored = upload(built, release, registered_on, args.folder_id, args.dry_run)
     if not_built or not_stored:
         sys.exit(f"{len(not_built)} template(s) not built ({', '.join(not_built)}), "
                  f"{len(not_stored)} not stored ({', '.join(not_stored)})")

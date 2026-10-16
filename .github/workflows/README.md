@@ -165,7 +165,7 @@ The `build-excel-templates` workflow rebuilds the ADKP Excel metadata templates 
 | Event | Condition | Result |
 |-------|-----------|--------|
 | `workflow_run` of the register-schema workflow | Completed successfully, triggered by a release, and its log shows it registered to `sage.schemas.ad` | Builds and uploads templates for that version |
-| `workflow_dispatch` | Manual; optional `version` (blank = newest registered) and `dry-run` | Builds (and uploads unless dry run) |
+| `workflow_dispatch` | Manual; optional `version` (blank = newest registered) and the "Build only" box (checked by default) | Builds; uploads only if the box is unchecked |
 
 Pre-release and pull request runs register to `test.ad`, so they don't rebuild the templates.
 
@@ -174,7 +174,10 @@ Pre-release and pull request runs register to `test.ad`, so they don't rebuild t
 - Column order and value definitions come from `AD.model.csv` on `main`.
 - Each workbook is uploaded as a new version of the existing file with the same name (or as a new file), so file names and Synapse IDs stay the same across releases. Each version is labeled with:
   - version comment `sage.schemas.ad <version>`
-  - annotations `modelVersion` and `releaseDate` (the GitHub release's publish date; the run stops if it can't be looked up, and `--release-date YYYY-MM-DD` sets it by hand)
+  - annotations `modelVersion` and `releaseDate`. `releaseDate` is the date the release's schemas were registered in `sage.schemas.ad` (the production release, even if the GitHub release started as a pre-release).
+
+  > **Note:** `releaseDate` is in UTC, so a release published after about 5 pm Pacific is labeled with the next day's date.
+- Only the newest registered release can be uploaded, since uploading an older one would replace the current templates. Older releases can be built with `--dry-run`.
 - The run fails if any template can't be built or uploaded. The workbooks are also saved as a workflow artifact.
 
 ### Required Secrets and Variables
