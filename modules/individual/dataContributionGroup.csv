@@ -1,5 +1,5 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-dataContributionGroup,This describes the identifier assigned to a data contributor,"1FL ADRC,ADNI,AMP-AD Consortium,Allen Institute for Brain Science,Arizona State University,Baker Heart & Diabetes Institute,Baylor College of Medicine,Baylor University,Boston University Alzheimer's Disease Research Center,Brigham and Women's Hospital,Carnegie Mellon University,Case Western Reserve University,Columbia University,Columbia University Irving Medical Center,CommonMind Consortium,Duke,Duke University,Eli Lilly (United States),Emory,Emory University,GlaxoSmithKline (China),GlaxoSmithKline (United Kingdom),Harvard University,Helmholtz Munich,IADRC,Icahn School of Medicine at Mount Sinai,Indiana University,Institute for Systems Biology,Jackson Laboratory,Kaiser Permanente Washington Health Research Institute,Knight ADRC,MADC,MC ADRC,MCBB,MCSA,Massachusetts Institute of Technology,Mayo Clinic,Pacific Northwest National Laboratory,Rush University,SUNY Upstate Medical University,Sage Bionetworks,St. Jude Children's Research Hospital,Stanford University,The University of Queensland,University of Alabama at Birmingham,University of Arizona,University of California Irvine,University of California San Francisco,University of Chicago,University of Exeter,University of Florida,University of Pennsylvania,University of Pittsburgh,University of South Florida,University of Washington,Washington University in St. Louis,Yale University",,,False,ManifestColumn,,,,string_list,ManifestColumn
+dataContributionGroup,This describes the identifier assigned to a data contributor,"1FL ADRC,ADNI,AMP-AD Consortium,Allen Institute for Brain Science,Arizona State University,Baker Heart & Diabetes Institute,Baylor College of Medicine,Baylor University,Boston University Alzheimer's Disease Research Center,Brigham and Women's Hospital,Carnegie Mellon University,Case Western Reserve University,Columbia University,Columbia University Irving Medical Center,CommonMind Consortium,Duke Medical Center,Duke University,Eli Lilly (United States),Emory University,GlaxoSmithKline (China),GlaxoSmithKline (United Kingdom),Harvard University,Helmholtz Munich,IADRC,Icahn School of Medicine at Mount Sinai,Indiana University,Institute for Systems Biology,Jackson Laboratory,Kaiser Permanente Washington Health Research Institute,Knight ADRC,MADC,MC ADRC,MCBB,MCSA,Massachusetts Institute of Technology,Mayo Clinic,Mayo Clinic Florida,Pacific Northwest National Laboratory,Rush University,SUNY Upstate Medical University,Sage Bionetworks,St. Jude Children's Research Hospital,Stanford University,The University of Queensland,University of Alabama at Birmingham,University of Arizona,University of California Irvine,University of California San Francisco,University of Chicago,University of Exeter,University of Florida,University of Pennsylvania,University of Pittsburgh,University of South Florida,University of Washington,Washington University in St. Louis,Yale University",,,True,ManifestColumn,,,,string_list,ManifestColumn
 1FL ADRC,1Florida Alzheimer's Disease Research Center,,,,,dataContributionGroup,,https://1floridaadrc.org/,,string,ManifestColumn
 ADNI,Alzheimer's Disease Neuroimaging Initiative,,,,,dataContributionGroup,,https://ror.org/01j20wc74,,string,ManifestColumn
 AMP-AD Consortium,,,,,,dataContributionGroup,,,,string,ManifestColumn
@@ -15,13 +15,14 @@ Case Western Reserve University,,,,,,dataContributionGroup,,https://ror.org/051f
 Columbia University,,,,,,dataContributionGroup,,https://ror.org/00hj8s172,,string,ManifestColumn
 Columbia University Irving Medical Center,,,,,,dataContributionGroup,,https://ror.org/01esghr10,,string,ManifestColumn
 CommonMind Consortium,,,,,,dataContributionGroup,,,,string,ManifestColumn
+Duke Medical Center,,,,,,dataContributionGroup,,https://ror.org/03njmea73,,string,ManifestColumn
 Duke University,,,,,,dataContributionGroup,,https://ror.org/00py81415,,string,ManifestColumn
 Eli Lilly (United States),,,,,,dataContributionGroup,,https://ror.org/01qat3289,,string,ManifestColumn
 Emory University,,,,,,dataContributionGroup,,https://ror.org/03czfpz43,,string,ManifestColumn
 GlaxoSmithKline (China),,,,,,dataContributionGroup,,https://ror.org/03jrn4k58,,string,ManifestColumn
 GlaxoSmithKline (United Kingdom),,,,,,dataContributionGroup,,https://ror.org/01xsqw823,,string,ManifestColumn
 Harvard University,,,,,,dataContributionGroup,,https://ror.org/03vek6s52,,string,ManifestColumn
-Helmholtz Munich,,,,,,dataContributionGroup,,,,string,ManifestColumn
+Helmholtz Munich,,,,,,dataContributionGroup,,https://ror.org/00cfam450,,string,ManifestColumn
 IADRC,Indiana Alzheimer's Disease Research Center,,,,,dataContributionGroup,,https://medicine.iu.edu/research-centers/alzheimers,,string,ManifestColumn
 Icahn School of Medicine at Mount Sinai,,,,,,dataContributionGroup,,https://ror.org/04a9tmd77,,string,ManifestColumn
 Indiana University,,,,,,dataContributionGroup,,https://ror.org/01kg8sb98,,string,ManifestColumn
@@ -35,6 +36,7 @@ MCBB,Mayo Clinic Brain Bank,,,,,dataContributionGroup,,https://www.mayo.edu/rese
 MCSA,Mayo Clinic Study of Aging,,,,,dataContributionGroup,,https://neurodegenerationresearch.eu/cohort/the-mayo-clinic-study-of-aging/,,string,ManifestColumn
 Massachusetts Institute of Technology,,,,,,dataContributionGroup,,https://ror.org/042nb2s44,,string,ManifestColumn
 Mayo Clinic,,,,,,dataContributionGroup,,https://ror.org/02qp3tb03,,string,ManifestColumn
+Mayo Clinic Florida,,,,,,dataContributionGroup,,https://ror.org/03zzw1w08,,string,ManifestColumn
 Pacific Northwest National Laboratory,,,,,,dataContributionGroup,,https://ror.org/05h992307,,string,ManifestColumn
 Rush University,,,,,,dataContributionGroup,,https://ror.org/01k9xac83,,string,ManifestColumn
 SUNY Upstate Medical University,,,,,,dataContributionGroup,,https://ror.org/040kfrw16,,string,ManifestColumn
