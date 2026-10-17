@@ -85,7 +85,7 @@ We are exploring better solutions to this problem -- if you have ideas, tell us!
 
 ## Release Process
 
-> **Note:** Schemas are first registered to a test Synapse organization, then promoted to production as part of a two-step GitHub release flow. Publishing a pre-release registers schemas to `test.ad`; promoting it to a full release registers to `sage.schemas.ad`.
+> **Note:** A release has five steps. Steps 1 and 2 are the GitHub release itself: schemas are first registered to a test Synapse organization, then promoted to production. Publishing a pre-release registers schemas to `test.ad`; promoting it to a full release registers to `sage.schemas.ad`. Registering to production automatically rebuilds the Excel templates; Step 3 checks that it worked. Step 4 updates Core Models, which needs a PR to be approved and merged by hand, and Step 5 announces the update in Slack.
 >
 > **Tag format:** Release tags must follow `vX.Y.Z` (e.g. `v1.2.0`). Tags with pre-release suffixes like `-rc1`, `-beta`, or `-alpha` will cause schema registration to fail.
 
@@ -103,7 +103,36 @@ We are exploring better solutions to this problem -- if you have ideas, tell us!
 2. Edit the release and uncheck **"Set as a pre-release"** (or click **"Promote to full release"**).
 3. Click `Update release`. This triggers schema registration to the `sage.schemas.ad` production Synapse organization.
 
-For more information on the automated workflows, see the CI/CD documentation for the [register-schema workflow](.github/workflows/README.md#register-schema-workflow).
+#### Step 3 — Check the Excel templates on the AD Dictionary site
+Registering the schemas to `sage.schemas.ad` automatically starts the **Build Excel templates** workflow, which rebuilds the Excel templates and uploads them to the [AD Metadata Dictionary folder](https://www.synapse.org/Synapse:syn25878249). It takes about 5 minutes after registration finishes.
+1. In the **Actions** tab, check that the **Build Excel templates** run for the release completed successfully.
+2. On the [AD Metadata Dictionary folder](https://www.synapse.org/Synapse:syn25878249), open a few templates and check that the newest file version has:
+    - version comment `sage.schemas.ad <version>` (e.g. `sage.schemas.ad 2.0.0`)
+    - annotation `modelVersion` matching the release version
+    - annotation `releaseDate` matching the release date. This is the date the schemas were registered, in UTC, so a release published after about 5 pm Pacific shows the next day's date.
+
+If the run didn't start or failed, it can be run manually from the **Actions** tab. See the CI/CD documentation for the [build-excel-templates workflow](.github/workflows/README.md#build-excel-templates-workflow).
+
+#### Step 4 — Update Core Models
+1. **Start the update right after the JSON schemas are generated** (or wait for the automatic run at 06:00 UTC, which is 11 pm Pacific)
+    - Go to [Sage-Bionetworks/core-models](https://github.com/Sage-Bionetworks/core-models) → **Actions** tab.
+    - In the left sidebar, click **Update Schema Data → Deploy Pages → Publish to CoreModels**.
+    - Click **Run workflow**. Leave **org_name blank**: filling it in may drop other organizations' schemas. Keep the branch on `main`, then click the green **Run workflow** button.
+    - After a few minutes it opens a pull request from `github-actions[bot]`, with a branch named like `automated/schema-update-<number>`.
+    - Set yourself as the reviewer.
+2. **Approve the PR**
+    - Open the **Pull requests** tab and click the new bot PR. If several are open, use the newest; merging it is enough.
+    - Optionally, check under **Files changed** that `public/data.json` includes AD at the new release version.
+    - Click **Review changes** (top right of Files changed), choose **Approve**, then **Submit review**.
+3. **Merge it**
+    - Back on the **Conversation** tab, click the green merge button at the bottom and confirm.
+    - Merging deploys the GitHub Pages site and publishes to the CoreModels app, which takes about 15 minutes.
+    - Check CoreModels to verify changes.
+
+#### Step 5 — Announce the update
+Post in the Slack channels **#adtr-data-model-updates** and **#adtr-data-managers** that the data model has been updated, with a link to the release (e.g. `https://github.com/adknowledgeportal/data-models/releases/tag/v2.0.0`).
+
+For more information on the automated workflows, see the CI/CD documentation for the [register-schema workflow](.github/workflows/README.md#register-schema-workflow) and the [build-excel-templates workflow](.github/workflows/README.md#build-excel-templates-workflow).
 
 ## Developing in a codespace
 
