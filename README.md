@@ -132,7 +132,7 @@ If the run didn't start or failed, it can be run manually from the **Actions** t
 #### Step 5 — Announce the update
 Post in the Slack channels **#adtr-data-model-updates** and **#adtr-data-managers** that the data model has been updated, with a link to the release (e.g. `https://github.com/adknowledgeportal/data-models/releases/tag/v2.0.0`).
 
-For more information on the automated workflows, see the CI/CD documentation for the [register-schema workflow](.github/workflows/README.md#register-schema-workflow) and the [build-excel-templates workflow](.github/workflows/README.md#build-excel-templates-workflow).
+For more information on the automated JSON and Excel workflows, see the CI/CD documentation for the [register-schema workflow](.github/workflows/README.md#register-schema-workflow) and the [build-excel-templates workflow](.github/workflows/README.md#build-excel-templates-workflow).
 
 ## Developing in a codespace
 
