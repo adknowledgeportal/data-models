@@ -552,14 +552,19 @@ def main() -> None:
                         help="AD.model.csv URL or local path (default: the release's tag "
                              "on GitHub)")
     parser.add_argument("--dry-run", action="store_true", help="build, but don't upload")
+    parser.add_argument("--resolve-only", action="store_true",
+                        help="only find the release that would be built, print it (and set "
+                             "the release step output in GitHub Actions), and stop")
     args = parser.parse_args()
-    if not args.folder_id and not args.dry_run:
+    if not args.folder_id and not (args.dry_run or args.resolve_only):
         parser.error("--folder-id (or TEMPLATE_FOLDER_ID) is required unless --dry-run")
 
     heading("Step 1 of 3: Finding the schemas registered at the release")
     release, names, newest, registered_on = resolve_release(
         args.version and args.version.lstrip("v"), args.wait_minutes)
     write_github_outputs(release=release, registered_on=registered_on)
+    if args.resolve_only:
+        return
     # the folder holds one file per template, so uploading an older release
     # would replace the current templates with older ones
     if release != newest and not args.dry_run:

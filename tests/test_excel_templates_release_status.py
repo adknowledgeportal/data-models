@@ -25,6 +25,7 @@ def test_success_status_says_what_was_uploaded_and_where():
 def test_failure_status_links_to_the_maintenance_doc():
     block = status.status_block("failure", "v1.2.3", RUN_URL, REPO_URL)
     assert "failed" in block and "not affected" in block
+    assert "not fully updated" in block and "Summary" in block  # uploads can be partial
     assert f"{REPO_URL}/blob/main/{status.MAINTENANCE_DOC}" in block
 
 

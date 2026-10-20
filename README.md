@@ -91,7 +91,7 @@ On the 1st of each month, Dependabot opens a pull request that updates the Pytho
 3. If all of its checks are green, approve it (**Files changed** → **Review changes** → **Approve** → **Submit review**), then merge it (**Squash and merge** → **Confirm squash and merge**). The next release's Excel build uses the new versions.
 4. If a check is red, don't merge it. Until an update is merged, the build keeps using the current package versions, which work. Follow the [Excel template maintenance guide](docs/excel-templates-maintenance.md#3-a-check-failed-on-a-dependabot-pull-request).
 
-> **Note:** If a merged Dependabot update breaks the Excel build, the Excel templates on Synapse will not be updated for the next release until the maintenance is complete (the update is reverted or fixed and the build is re-run). The rest of the release (schemas, Core Models) is not affected.
+> **Note:** If a merged Dependabot update breaks the Excel build, the Excel templates on Synapse will not be fully updated for the next release until the maintenance is complete (the update is reverted or fixed and the build is re-run). The rest of the release (schemas, Core Models) is not affected.
 
 For step-by-step instructions, see the [Excel template maintenance guide](docs/excel-templates-maintenance.md).
 
@@ -129,7 +129,7 @@ Follow it on the release page (refresh it): an **Excel templates** section appea
     - version comment `sage.schemas.ad <version>` (e.g. `sage.schemas.ad 2.0.0`)
     - annotation `modelVersion` matching the release version
     - annotation `releaseDate` matching the release date. This is the date the schemas were registered, in UTC, so a release published after about 5 pm Pacific shows the next day's date.
-- ❌ **Failed:** the Excel templates on Synapse were not updated for this release. The rest of the release isn't affected, so finish Steps 4 and 5 (mention in the announcement that the Excel templates will follow), and see the [maintenance guide](docs/excel-templates-maintenance.md#4-the-release-page-shows--for-the-excel-templates).
+- ❌ **Failed:** the Excel templates on Synapse were not fully updated for this release: some may have been uploaded and others not (the run's **Summary** lists the ones that were). The rest of the release isn't affected, so finish Steps 4 and 5 (mention in the announcement that the Excel templates will follow), and see the [maintenance guide](docs/excel-templates-maintenance.md#4-the-release-page-shows--for-the-excel-templates).
 
 If no Excel templates section appears within about 15 minutes of promoting the release, check the **Generate, register … Schemas** and **Build Excel templates** runs in the **Actions** tab. The build can also be run manually from there; see the [maintenance guide](docs/excel-templates-maintenance.md#4a-re-run-the-build).
 

@@ -20,16 +20,18 @@
 # maintenance (Monthly Maintenance in the README).
 #
 # Steps:
-#   1. Check release              - resolves the version; skips runs that
-#                                   registered to test.ad
-#   2. Show the build started     - "building" status on the release page
-#   3. Build and upload templates - runs scripts/create_excel_templates.py, which
+#   1. Check release              - skips runs that registered to test.ad
+#   2. Resolve the version        - the registered version to build (blank
+#                                   manual version = newest); used for the
+#                                   build and both release-page updates
+#   3. Show the build started     - "building" status on the release page
+#   4. Build and upload templates - runs scripts/create_excel_templates.py, which
 #                                   builds one workbook per schema registered at
 #                                   that version and uploads each as a new version
 #                                   of the existing file (or a new file), labeled
 #                                   with modelVersion and releaseDate
-#   4. Show the result            - ✅/❌ status on the release page
-#   5. Upload workbooks           - saves the workbooks as a workflow artifact
+#   5. Show the result            - ✅/❌ status on the release page
+#   6. Upload workbooks           - saves the workbooks as a workflow artifact
 #
 # Required configuration:
 #   secret   SYNAPSE_TOKEN_DPE  - Synapse token with edit access to the data
@@ -98,15 +100,9 @@ jobs:
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
             echo "version=$INPUT_VERSION" >> "$GITHUB_OUTPUT"
             echo "build=true" >> "$GITHUB_OUTPUT"
-            # a manual upload updates that release's status too (blank = latest release)
+            # a manual upload updates its release's status too; which release
+            # is decided in "Resolve the version to build"
             if [[ "$DRY_RUN" != "true" ]]; then
-              if [[ -n "$INPUT_VERSION" ]]; then
-                tag="v${INPUT_VERSION#v}"
-              else
-                tag=$(gh release list --repo "${{ github.repository }}" --exclude-pre-releases \
-                      --limit 1 --json tagName --jq '.[0].tagName')
-              fi
-              echo "tag=$tag" >> "$GITHUB_OUTPUT"
               echo "upload=true" >> "$GITHUB_OUTPUT"
             fi
             exit 0
@@ -134,15 +130,6 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Show the build started on the release page
-        if: steps.release.outputs.upload == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          TAG: ${{ steps.release.outputs.tag }}
-        run: |
-          echo "::notice title=Excel templates are building::While this runs (about 5 minutes), do release Step 4: start the Core Models update, then approve and merge its pull request."
-          python3 scripts/excel_templates_release_status.py --tag "$TAG" --state building --run-url "$RUN_URL"
-
       - name: Set up Python
         if: steps.release.outputs.build == 'true'
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
@@ -154,22 +141,48 @@ jobs:
         # exact versions and hashes; Dependabot opens a PR monthly to update them
         run: pip install --require-hashes -r scripts/requirements-excel-templates.txt
 
+      # Decide the version once (a blank manual version means the newest
+      # registered one) and use it for the build and both release-page
+      # updates, so the status always goes on the release that was built.
+      - name: Resolve the version to build
+        id: resolve
+        if: steps.release.outputs.build == 'true'
+        env:
+          MODEL_VERSION: ${{ steps.release.outputs.version }}
+          EVENT_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          python -u scripts/create_excel_templates.py ${MODEL_VERSION:+--version "$MODEL_VERSION"} --resolve-only
+          release=$(grep '^release=' "$GITHUB_OUTPUT" | tail -1 | cut -d= -f2)
+          echo "tag=${EVENT_TAG:-v$release}" >> "$GITHUB_OUTPUT"
+
+      - name: Show the build started on the release page
+        if: steps.release.outputs.upload == 'true' && steps.resolve.outputs.tag != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.resolve.outputs.tag }}
+        run: |
+          echo "::notice title=Excel templates are building::While this runs (about 5 minutes), do release Step 4: start the Core Models update, then approve and merge its pull request."
+          python3 scripts/excel_templates_release_status.py --tag "$TAG" --state building --run-url "$RUN_URL"
+
       - name: Build and upload templates
         id: build
         if: steps.release.outputs.build == 'true'
         env:
           SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
           TEMPLATE_FOLDER_ID: ${{ vars.TEMPLATE_FOLDER_ID }}
-          MODEL_VERSION: ${{ steps.release.outputs.version }}
+          MODEL_VERSION: ${{ steps.resolve.outputs.release }}
           # manual runs only; workflow_run has no inputs, so automatic runs upload
           DRY_RUN: ${{ inputs.dry-run && '--dry-run' || '' }}
-        run: python -u scripts/create_excel_templates.py ${MODEL_VERSION:+--version "$MODEL_VERSION"} $DRY_RUN
+        run: python -u scripts/create_excel_templates.py --version "$MODEL_VERSION" $DRY_RUN
 
       - name: Show the result on the release page
-        if: always() && steps.release.outputs.upload == 'true'
+        # automatic runs know their release even if resolving the version failed
+        if: >-
+          always() && steps.release.outputs.upload == 'true' &&
+          (steps.resolve.outputs.tag != '' || steps.release.outputs.tag != '')
         env:
           GH_TOKEN: ${{ github.token }}
-          TAG: ${{ steps.release.outputs.tag }}
+          TAG: ${{ steps.resolve.outputs.tag || steps.release.outputs.tag }}
           STATE: ${{ steps.build.outcome == 'success' && 'success' || 'failure' }}
           UPLOADED: ${{ steps.build.outputs.uploaded }}
           MODEL_VERSION: ${{ steps.build.outputs.release }}

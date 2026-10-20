@@ -71,8 +71,9 @@ def status_block(state: str, tag: str, run_url: str, repo_url: str, *, uploaded:
     else:
         lines = [
             f"❌ **The Excel template build failed for {tag}** ({run}). The Excel templates "
-            "on Synapse were not updated for this release. The rest of the release "
-            "(schemas, Core Models) is not affected.",
+            "on Synapse were not fully updated for this release: some may have been uploaded "
+            "and others not. The run's Summary lists the ones that were. The rest of the "
+            "release (schemas, Core Models) is not affected.",
             "",
             f"See [what to do when the Excel build fails]({doc}).",
         ]

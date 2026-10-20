@@ -73,6 +73,19 @@ def test_uploading_an_older_release_is_refused(monkeypatch):
         cet.main()
 
 
+def test_resolve_only_reports_the_release_without_building(monkeypatch, tmp_path):
+    # the workflow uses this to pick one version for the build and the
+    # release-page status, so they can't disagree
+    output = tmp_path / "github_output"
+    monkeypatch.setenv("GITHUB_OUTPUT", str(output))
+    monkeypatch.delenv("TEMPLATE_FOLDER_ID", raising=False)
+    monkeypatch.setattr(cet, "registered_versions", lambda: REGISTERED)
+    monkeypatch.setattr(cet, "load_model", lambda source: pytest.fail("built templates"))
+    monkeypatch.setattr("sys.argv", ["create_excel_templates.py", "--resolve-only"])
+    cet.main()
+    assert output.read_text() == "release=1.0.9\nregistered_on=2026-02-02\n"
+
+
 # ---------------------------------------------------------
 # Reading the schema and AD.model.csv
 # ---------------------------------------------------------

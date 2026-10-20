@@ -223,7 +223,7 @@ The checks run again on the pull request. When they're green, ask another BDM to
 
 ## 4. The release page shows ❌ for the Excel templates
 
-**What it means:** the Excel templates on Synapse were **not updated for this release**, and won't be until the problem is fixed and the build is re-run. **The rest of the release isn't affected:** the schemas are registered, and you can carry on with Core Models (Step 4) and the announcement (Step 5). In the announcement, mention that the Excel templates will follow.
+**What it means:** the Excel templates on Synapse were **not fully updated for this release**, and won't be until the problem is fixed and the build is re-run. Depending on the error, none of them were uploaded, or some were and others weren't; the run's **Summary** lists every template that was uploaded. Re-running the build uploads all of them again, so the folder ends up consistent. **The rest of the release isn't affected:** the schemas are registered, and you can carry on with Core Models (Step 4) and the announcement (Step 5). In the announcement, mention that the Excel templates will follow.
 
 **Find the error.** Click **workflow run** in the ❌ message. The errors are listed at the top of the run's **Summary** page. For the full log, click the job, then the red step.
 
