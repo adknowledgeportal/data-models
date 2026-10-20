@@ -43,3 +43,7 @@ scripts/.env
 pyproject.toml
 
 sheets_creds.json
+
+# Python caches
+__pycache__/
+*.pyc
