@@ -110,7 +110,8 @@ jobs:
 
       - name: Install dependencies
         if: steps.release.outputs.build == 'true'
-        run: pip install "openpyxl>=3.1,<4" requests "synapseclient>=4.12,<5"
+        # exact versions and hashes; Dependabot opens a PR monthly to update them
+        run: pip install --require-hashes -r scripts/requirements-excel-templates.txt
 
       - name: Build and upload templates
         if: steps.release.outputs.build == 'true'

@@ -12,7 +12,7 @@
 # Outputs:      output/<Template>.xlsx, uploaded to the data dictionary folder
 #
 # Usage:        python scripts/create_excel_templates.py --folder-id synXXX [--version X] [--dry-run]
-# Dependencies: openpyxl, requests, synapseclient
+# Dependencies: scripts/requirements-excel-templates.in
 # ------------------------------------------------------------------------------
 """Build the ADKP Excel templates from the registered sage.schemas.ad JSON
 schemas and upload them to the data dictionary folder on Synapse.
@@ -59,7 +59,8 @@ Usage:
 The upload folder comes from --folder-id or the TEMPLATE_FOLDER_ID environment
 variable (a repository variable in the workflow).
 
-Requires: pip install "openpyxl>=3.1,<4" requests "synapseclient>=4.12,<5"
+Requires: pip install -r scripts/requirements-excel-templates.in
+(the workflows install the exact versions in requirements-excel-templates.txt)
 
 Auth (upload only): SYNAPSE_AUTH_TOKEN, or authtoken in ~/.synapseConfig.
 """
