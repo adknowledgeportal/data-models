@@ -75,13 +75,19 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import requests
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
+import synapseclient
 from openpyxl import Workbook
 from openpyxl.comments import Comment
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
+from requests.adapters import HTTPAdapter
+from synapseclient.models import File, Folder
+from urllib3.util.retry import Retry
+
+# =========================================================
+# Settings
+# =========================================================
 
 REPO_URL = "https://repo-prod.prod.sagebase.org/repo/v1"
 ORG_NAME = "sage.schemas.ad"
@@ -90,29 +96,46 @@ ORG_NAME = "sage.schemas.ad"
 MODEL_CSV_URL = "https://raw.githubusercontent.com/adknowledgeportal/data-models/refs/tags/v{version}/AD.model.csv"
 
 MANIFEST_ROWS = 1000  # rows given borders, fills, and dropdowns
+MAX_WORKERS = 5  # parallel requests to Synapse
+
+# Schemas are read with direct REST calls rather than synapseclient's
+# JSONSchema classes: those wrap the same endpoints and are still changing
+# between releases, while the REST endpoints are Synapse's stable public API.
+# This session retries dropped connections and busy/error responses up to 5
+# times (at once, then after 2, 4, 8 and 16 seconds). The POSTs are read-only
+# list queries, so they're safe to retry too.
+SESSION = requests.Session()
+SESSION.mount("https://", HTTPAdapter(
+    max_retries=Retry(total=5, backoff_factor=1, status_forcelist=(429, 500, 502, 503, 504),
+                      allowed_methods=None, respect_retry_after_header=True),
+    pool_maxsize=MAX_WORKERS))
+
+# Workbook styles. Fonts are set on every styled cell: a cell given any style
+# starts from openpyxl's Calibri 11, not the workbook's default font.
+ARIAL = Font(name="Arial", size=10)
+ARIAL_BOLD = Font(name="Arial", size=10, bold=True)
+ARIAL_BOLD_WHITE = Font(name="Arial", size=10, bold=True, color="FFFFFF")
+MEDIUM_GREY_SIDE = Side(style="medium", color="E2E3E3")
+THIN_SIDE = Side(style="thin")
+MANIFEST_BORDER = Border(left=MEDIUM_GREY_SIDE, right=MEDIUM_GREY_SIDE,
+                         top=MEDIUM_GREY_SIDE, bottom=MEDIUM_GREY_SIDE)
+DD_BORDER = Border(left=THIN_SIDE, right=THIN_SIDE, top=THIN_SIDE, bottom=THIN_SIDE)
+REQUIRED_FILL = PatternFill(fill_type="solid", start_color="B5E3E8", end_color="B5E3E8")
+OPTIONAL_HEADER_FILL = PatternFill(fill_type="solid", start_color="E0E0E0", end_color="E0E0E0")
+DD_HEADER_FILL = PatternFill(fill_type="solid", start_color="375623", end_color="375623")
+DD_BAND_FILL = PatternFill(fill_type="solid", start_color="EBF3E8", end_color="EBF3E8")
+DD_COLUMN_WIDTHS = {"A": 29.41, "B": 41.41, "C": 33.41, "D": 61.41}
+
+VALIDATION_ERROR_TITLE = "Value not in standard list"
+VALIDATION_ERROR = "This entry isn't one of the standard values for this field. Keep it anyway?"
+MULTISELECT_NOTE = ("\nMultiple values allowed: type your selections separated by \",\" with no space "
+                    "(e.g. \"Human,Mouse\"). Excel will show a warning since it isn't a single "
+                    "listed value, but the entry is accepted.")
 
 
 # =========================================================
 # 1. Registered schemas
 # =========================================================
-
-MAX_WORKERS = 5  # parallel requests to Synapse
-
-
-def _session():
-    """A requests session that retries dropped connections and busy/error
-    responses up to 5 times (at once, then after 2, 4, 8 and 16 seconds).
-    The POSTs are read-only list queries, so they're safe to retry too."""
-    retry = Retry(total=5, backoff_factor=1, status_forcelist=(429, 500, 502, 503, 504),
-                  allowed_methods=None, respect_retry_after_header=True)
-    session = requests.Session()
-    adapter = HTTPAdapter(max_retries=retry, pool_maxsize=MAX_WORKERS)
-    session.mount("https://", adapter)
-    return session
-
-
-SESSION = _session()
-
 
 def post_paginated(path, body):
     """All items from a paginated Synapse POST endpoint (public, no login)."""
@@ -270,32 +293,6 @@ def reorder_by_dependson(attrs, template_name, order):
 # 3. Workbook
 # =========================================================
 
-def border(style, color=None):
-    side = Side(style=style, color=color)
-    return Border(left=side, right=side, top=side, bottom=side)
-
-
-def fill(color):
-    return PatternFill(fill_type="solid", start_color=color, end_color=color)
-
-
-# set on every styled cell: a cell given any style starts from openpyxl's
-# Calibri 11, not the workbook's default font
-ARIAL = Font(name="Arial", size=10)
-ARIAL_BOLD = Font(name="Arial", size=10, bold=True)
-
-MANIFEST_BORDER = border("medium", "E2E3E3")
-REQUIRED_FILL = fill("B5E3E8")
-OPTIONAL_HEADER_FILL = fill("E0E0E0")
-DD_BORDER = border("thin")
-
-VALIDATION_ERROR_TITLE = "Value not in standard list"
-VALIDATION_ERROR = "This entry isn't one of the standard values for this field. Keep it anyway?"
-MULTISELECT_NOTE = ("\nMultiple values allowed: type your selections separated by \",\" with no space "
-                    "(e.g. \"Human,Mouse\"). Excel will show a warning since it isn't a single "
-                    "listed value, but the entry is accepted.")
-
-
 def build_manifest(wb, attrs):
     ws = wb.active
     ws.title = "Manifest"
@@ -351,10 +348,9 @@ def build_data_dictionary(wb, attrs, definitions, template_name):
     for row in rows:
         ws.append(row)
 
-    header_style = dict(font=Font(name="Arial", size=10, bold=True, color="FFFFFF"),
-                        fill=fill("375623"), alignment=Alignment(horizontal="left"))
+    header_style = dict(font=ARIAL_BOLD_WHITE, fill=DD_HEADER_FILL,
+                        alignment=Alignment(horizontal="left"))
     body_alignment = Alignment(wrap_text=True, vertical="top")
-    band_fill = fill("EBF3E8")
 
     # banded shading per attribute group
     group, previous = 0, object()
@@ -367,14 +363,14 @@ def build_data_dictionary(wb, attrs, definitions, template_name):
             cell.border = DD_BORDER
             cell.alignment = body_alignment
             if group % 2 == 1:
-                cell.fill = band_fill
+                cell.fill = DD_BAND_FILL
     for c in range(1, 5):
         cell = ws.cell(row=1, column=c)
         cell.border = DD_BORDER
         for attr, value in header_style.items():
             setattr(cell, attr, value)
 
-    for letter, width in zip("ABCD", (29.41, 41.41, 33.41, 61.41)):
+    for letter, width in DD_COLUMN_WIDTHS.items():
         ws.column_dimensions[letter].width = width
     ws.freeze_panes = "A2"
     ws.auto_filter.ref = f"A1:D{len(rows) + 1}"
@@ -403,9 +399,6 @@ def upload(paths, release, registered_on, folder_id, dry_run):
         for path in paths:
             print(f"[{path.stem}] built (no --folder-id, so not checked against Synapse)")
         return []
-
-    import synapseclient
-    from synapseclient.models import File, Folder
 
     syn = synapseclient.Synapse()
     syn.login(silent=True)
@@ -439,6 +432,15 @@ def upload(paths, release, registered_on, folder_id, dry_run):
             print(f"[{path.stem}] upload failed: {e}")
             failed.append(path.stem)
     return failed
+
+
+def _try(fn, *args):
+    """fn(*args), or the exception it raised, so one failure in a parallel
+    map doesn't stop the rest."""
+    try:
+        return fn(*args)
+    except Exception as e:
+        return e
 
 
 def main():
@@ -494,13 +496,6 @@ def main():
     if not_built or not_stored:
         sys.exit(f"{len(not_built)} template(s) not built ({', '.join(not_built)}), "
                  f"{len(not_stored)} not stored ({', '.join(not_stored)})")
-
-
-def _try(fn, *args):
-    try:
-        return fn(*args)
-    except Exception as e:
-        return e
 
 
 if __name__ == "__main__":
