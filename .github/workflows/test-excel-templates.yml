@@ -22,6 +22,7 @@ on:
       - "main"
     paths:
       - "scripts/create_excel_templates.py"
+      - "scripts/excel_templates_release_status.py"
       - "scripts/requirements-excel-templates.*"
       - "tests/**"
       - ".github/workflows/build-excel-templates.yml"

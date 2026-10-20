@@ -75,6 +75,7 @@ import time
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass
 from pathlib import Path
+from typing import NoReturn
 
 import requests
 import synapseclient
@@ -196,7 +197,7 @@ def resolve_release(version: str | None,
         if in_release:
             break
         if time.monotonic() >= deadline:
-            sys.exit(f"No {ORG_NAME} schemas registered at {release} after {wait_minutes} minute(s)")
+            fail(f"No {ORG_NAME} schemas registered at {release} after {wait_minutes} minute(s)")
         print(f"No {ORG_NAME} schemas at {release} yet, checking again in 30s", flush=True)
         time.sleep(30)
 
@@ -422,12 +423,17 @@ def build_template_workbook(attrs: list[Attribute], template_name: str, definiti
 #    same name (case-insensitive), or a new file
 # =========================================================
 
+Stored = tuple[str, str, int]  # (template name, Synapse ID, file version)
+
+
 def upload(paths: list[Path], release: str, registered_on: str, folder_id: str | None,
-           dry_run: bool) -> list[str]:
+           dry_run: bool) -> tuple[list[Stored], list[str]]:
+    """Store each workbook in the folder. Returns what was stored and the
+    names of the templates that failed."""
     if dry_run and not folder_id:
         for path in paths:
             print(f"[{path.stem}] built (no --folder-id, so not checked against Synapse)")
-        return []
+        return [], []
 
     syn = synapseclient.Synapse()
     syn.login(silent=True)
@@ -441,8 +447,8 @@ def upload(paths: list[Path], release: str, registered_on: str, folder_id: str |
     print(f"Labeling uploads: {ORG_NAME} {release}, " +
           ", ".join(f"{k}={v[0]}" for k, v in labels.items()))
 
-    failed = []
-    for path in paths:
+    stored, failed = [], []
+    for n, path in enumerate(paths, start=1):
         existing_id = existing.get(path.name.lower())
         if dry_run:
             print(f"[{path.stem}] would {'update ' + existing_id if existing_id else 'create'}")
@@ -456,11 +462,73 @@ def upload(paths: list[Path], release: str, registered_on: str, folder_id: str |
             entity.version_comment = f"{ORG_NAME} {release}"
             entity.annotations = {**(entity.annotations or {}), **labels}
             entity = entity.store()
-            print(f"[{path.stem}] stored as {entity.id} (v{entity.version_number})")
+            print(f"[{path.stem}] ({n}/{len(paths)}) stored as {entity.id} (v{entity.version_number})",
+                  flush=True)
+            stored.append((path.stem, entity.id, entity.version_number))
         except Exception as e:
-            print(f"[{path.stem}] upload failed: {e}")
+            report_error(path.stem, f"upload failed: {e}")
             failed.append(path.stem)
-    return failed
+    return stored, failed
+
+
+# =========================================================
+# 5. Reporting — in GitHub Actions, failures are also shown as errors on
+#    the run page, and a summary is written to the run's Summary tab
+# =========================================================
+
+def in_github_actions() -> bool:
+    return os.environ.get("GITHUB_ACTIONS") == "true"
+
+
+def heading(text: str) -> None:
+    print(f"\n== {text} ==", flush=True)
+
+
+def report_error(template: str, message: str) -> None:
+    print(f"[{template}] {message}", flush=True)
+    if in_github_actions():
+        # workflow commands need %, CR and LF escaped
+        escaped = message.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+        print(f"::error title={template}::{escaped}", flush=True)
+
+
+def fail(message: str) -> NoReturn:
+    """Stop with an error, shown on the run page in GitHub Actions."""
+    if in_github_actions():
+        print(f"::error title=Excel templates::{message}", flush=True)
+    sys.exit(message)
+
+
+def write_github_outputs(**values: object) -> None:
+    """Step outputs for the workflow (the release-page status uses them)."""
+    path = os.environ.get("GITHUB_OUTPUT")
+    if path:
+        with open(path, "a", encoding="utf-8") as f:
+            for key, value in values.items():
+                f.write(f"{key}={value}\n")
+
+
+def write_run_summary(release: str, registered_on: str, built: list[Path], stored: list[Stored],
+                      not_built: list[str], not_stored: list[str], dry_run: bool) -> None:
+    path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if not path:
+        return
+    lines = [f"## Excel templates: {ORG_NAME} {release} (registered {registered_on} UTC)", ""]
+    if dry_run:
+        lines.append(f"Dry run: built {len(built)} template(s), nothing uploaded. "
+                     "The workbooks are in this run's **excel-templates** artifact.")
+    else:
+        lines.append(f"Uploaded {len(stored)} of {len(built) + len(not_built)} template(s), labeled "
+                     f"`modelVersion` {release} and `releaseDate` {registered_on}.")
+    if not_built or not_stored:
+        lines += ["", f"**Failed:** {', '.join(not_built + not_stored)}. "
+                      "See docs/excel-templates-maintenance.md."]
+    if stored:
+        lines += ["", "| Template | Synapse ID | Version |", "|---|---|---|"]
+        lines += [f"| {name} | [{syn_id}](https://www.synapse.org/Synapse:{syn_id}) | {version} |"
+                  for name, syn_id, version in stored]
+    with open(path, "a", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n\n")
 
 
 def _try(fn, *args):
@@ -488,22 +556,25 @@ def main() -> None:
     if not args.folder_id and not args.dry_run:
         parser.error("--folder-id (or TEMPLATE_FOLDER_ID) is required unless --dry-run")
 
+    heading("Step 1 of 3: Finding the schemas registered at the release")
     release, names, newest, registered_on = resolve_release(
         args.version and args.version.lstrip("v"), args.wait_minutes)
+    write_github_outputs(release=release, registered_on=registered_on)
     # the folder holds one file per template, so uploading an older release
     # would replace the current templates with older ones
     if release != newest and not args.dry_run:
-        sys.exit(f"{release} isn't the newest registered version ({newest}); uploading it "
-                 "would replace the current templates. Use --dry-run to build it locally.")
+        fail(f"{release} isn't the newest registered version ({newest}); uploading it "
+             "would replace the current templates. Use --dry-run to build it locally.")
     model_csv = args.model_csv or MODEL_CSV_URL.format(version=release)
     print(f"Reading definitions and column order from {model_csv}")
     try:
         definitions, order = load_model(model_csv)
     except Exception as e:
-        sys.exit(f"Couldn't read AD.model.csv from {model_csv} ({e}). "
-                 "Pass --model-csv to use a different copy.")
+        fail(f"Couldn't read AD.model.csv from {model_csv} ({e}). "
+             "Pass --model-csv to use a different copy.")
     Path(args.out_dir).mkdir(exist_ok=True)
 
+    heading(f"Step 2 of 3: Building {len(names)} workbook(s)")
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
         schemas = dict(zip(names, pool.map(lambda n: _try(fetch_schema, n, release), names)))
 
@@ -518,13 +589,21 @@ def main() -> None:
                 raise ValueError("schema has no properties")
             built.append(build_template_workbook(attrs, name, definitions, order, args.out_dir))
         except Exception as e:
-            print(f"[{name}] failed: {e}")
+            report_error(name, f"failed: {e}")
             not_built.append(name)
+    print(f"Built {len(built)} of {len(names)} workbook(s)")
 
-    not_stored = upload(built, release, registered_on, args.folder_id, args.dry_run)
+    heading("Step 3 of 3: " + ("Checking the files on Synapse (dry run, nothing uploaded)"
+                               if args.dry_run else f"Uploading {len(built)} workbook(s) to Synapse"))
+    stored, not_stored = upload(built, release, registered_on, args.folder_id, args.dry_run)
+    write_github_outputs(built=len(built), uploaded=len(stored),
+                         failed=len(not_built) + len(not_stored))
+    write_run_summary(release, registered_on, built, stored, not_built, not_stored, args.dry_run)
     if not_built or not_stored:
-        sys.exit(f"{len(not_built)} template(s) not built ({', '.join(not_built)}), "
-                 f"{len(not_stored)} not stored ({', '.join(not_stored)})")
+        fail(f"{len(not_built)} template(s) not built ({', '.join(not_built)}), "
+             f"{len(not_stored)} not stored ({', '.join(not_stored)})")
+    print(f"\nDone: {len(stored)} template(s) uploaded" if not args.dry_run
+          else f"\nDone: {len(built)} template(s) built (dry run)")
 
 
 if __name__ == "__main__":
