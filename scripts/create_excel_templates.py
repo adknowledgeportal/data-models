@@ -484,18 +484,23 @@ def heading(text: str) -> None:
     print(f"\n== {text} ==", flush=True)
 
 
+def annotate_error(title: str, message: str) -> None:
+    """Show an error on the run page in GitHub Actions. Messages can include
+    text from Synapse or HTTP errors, so %, CR and LF are escaped: a raw
+    newline would end the workflow command early."""
+    if in_github_actions():
+        escaped = message.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+        print(f"::error title={title}::{escaped}", flush=True)
+
+
 def report_error(template: str, message: str) -> None:
     print(f"[{template}] {message}", flush=True)
-    if in_github_actions():
-        # workflow commands need %, CR and LF escaped
-        escaped = message.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
-        print(f"::error title={template}::{escaped}", flush=True)
+    annotate_error(template, message)
 
 
 def fail(message: str) -> NoReturn:
     """Stop with an error, shown on the run page in GitHub Actions."""
-    if in_github_actions():
-        print(f"::error title=Excel templates::{message}", flush=True)
+    annotate_error("Excel templates", message)
     sys.exit(message)
 
 

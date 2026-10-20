@@ -86,6 +86,20 @@ def test_resolve_only_reports_the_release_without_building(monkeypatch, tmp_path
     assert output.read_text() == "release=1.0.9\nregistered_on=2026-02-02\n"
 
 
+def test_error_annotations_escape_external_text(monkeypatch, capsys):
+    # error text from Synapse or HTTP can contain newlines or %, which must not
+    # end the GitHub workflow command early or start a new one
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    with pytest.raises(SystemExit):
+        cet.fail("Couldn't read the model (100% failed\n::warning::injected)")
+    cet.report_error("IndividualTemplate", "upload failed: line one\r\nline two")
+    lines = capsys.readouterr().out.splitlines()
+    assert lines[0] == ("::error title=Excel templates::Couldn't read the model "
+                        "(100%25 failed%0A::warning::injected)")
+    assert lines[-1] == "::error title=IndividualTemplate::upload failed: line one%0D%0Aline two"
+    assert not any(line.startswith("::warning::") for line in lines)
+
+
 # ---------------------------------------------------------
 # Reading the schema and AD.model.csv
 # ---------------------------------------------------------
