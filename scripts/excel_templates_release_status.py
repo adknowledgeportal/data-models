@@ -21,11 +21,11 @@ The section sits between two hidden markers at the end of the release notes
 and is replaced on each update, so the notes above it are never changed:
 
   building  - the build has started; reminds the release manager to update
-              Core Models (release Step 5) while it runs
+              Core Models (release Step 4) while it runs
   success   - how many templates were uploaded, where, and their labels
   failure   - the build failed; links to the maintenance doc
 
-Open Dependabot PRs are listed too, as a reminder of release Step 1.
+Open Dependabot PRs are listed too, as a reminder of the monthly maintenance.
 
 This never fails the workflow: if the release can't be read or edited, it
 prints a warning and the status is still in the run's Summary tab.
@@ -57,7 +57,7 @@ def status_block(state: str, tag: str, run_url: str, repo_url: str, *, uploaded:
         lines = [
             f"⏳ **Building the Excel templates for {tag}** ({run}). This takes about 5 minutes.",
             "",
-            f"**While this runs:** do Step 5 of the {release_steps}: start the Core Models "
+            f"**While this runs:** do Step 4 of the {release_steps}: start the Core Models "
             "update, then approve and merge its pull request.",
         ]
     elif state == "success":
@@ -65,8 +65,8 @@ def status_block(state: str, tag: str, run_url: str, repo_url: str, *, uploaded:
             f"✅ **Uploaded {uploaded} Excel templates for {tag}** to the {folder}, labeled "
             f"`modelVersion` {model_version} and `releaseDate` {release_date} ({run}).",
             "",
-            f"Next: check a few templates (Step 4), make sure Core Models is merged "
-            f"(Step 5), then announce the update (Step 6). See the {release_steps}.",
+            f"Next: check a few templates (Step 3), make sure Core Models is merged "
+            f"(Step 4), then announce the update (Step 5). See the {release_steps}.",
         ]
     else:
         lines = [
@@ -81,9 +81,9 @@ def status_block(state: str, tag: str, run_url: str, repo_url: str, *, uploaded:
         links = ", ".join(f"[#{pr['number']}]({pr['url']})" for pr in dependabot_prs)
         lines += [
             "",
-            f"🔧 **Dependabot package update PR open:** {links}. These are handled at "
-            f"Step 1 of the {release_steps}; if it wasn't done for this release, do it "
-            f"once this release is finished. See the [maintenance doc]({doc}).",
+            f"🔧 **Dependabot package update PR open:** {links}. See "
+            f"[Monthly Maintenance]({repo_url}#monthly-maintenance) in the README and the "
+            f"[maintenance guide]({doc}).",
         ]
     return "### Excel templates\n\n" + "\n".join(lines)
 

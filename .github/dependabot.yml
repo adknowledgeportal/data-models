@@ -1,7 +1,8 @@
 # Dependabot opens one pull request a month that updates the packages the
 # Excel template build uses (scripts/requirements-excel-templates.txt).
-# Nobody is notified automatically: release Step 1 in the README is to check
-# for these PRs, assign yourself, and approve and merge one if its checks pass.
+# Nobody is notified automatically: checking for these PRs is the Monthly
+# Maintenance in the README (assign yourself, approve and merge if its checks
+# pass).
 # See docs/excel-templates-maintenance.md.
 
 version: 2

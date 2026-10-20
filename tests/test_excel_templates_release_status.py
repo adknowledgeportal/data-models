@@ -9,7 +9,7 @@ RUN_URL = f"{REPO_URL}/actions/runs/1"
 def test_building_status_reminds_about_core_models():
     block = status.status_block("building", "v1.2.3", RUN_URL, REPO_URL)
     assert "Building the Excel templates for v1.2.3" in block
-    assert "Core Models" in block and "Step 5" in block
+    assert "Core Models" in block and "Step 4" in block
     assert RUN_URL in block
 
 
@@ -31,7 +31,7 @@ def test_failure_status_links_to_the_maintenance_doc():
 def test_open_dependabot_prs_are_listed():
     prs = [{"number": 7, "url": f"{REPO_URL}/pull/7"}]
     block = status.status_block("success", "v1.2.3", RUN_URL, REPO_URL, dependabot_prs=prs)
-    assert f"[#7]({REPO_URL}/pull/7)" in block and "Step 1" in block
+    assert f"[#7]({REPO_URL}/pull/7)" in block and f"{REPO_URL}#monthly-maintenance" in block
     assert "Dependabot" not in status.status_block("success", "v1.2.3", RUN_URL, REPO_URL)
 
 

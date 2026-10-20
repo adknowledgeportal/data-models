@@ -16,8 +16,8 @@
 # release can follow it without opening the Actions tab: an "Excel templates"
 # section at the end of the release notes says it's building (with a reminder
 # to update Core Models meanwhile), then whether it succeeded or failed. Open
-# Dependabot PRs are listed there too: they need someone to assign
-# themselves, then approve and merge them (release Step 1 in the README).
+# Dependabot PRs are listed there too, as a reminder of the monthly
+# maintenance (Monthly Maintenance in the README).
 #
 # Steps:
 #   1. Check release              - resolves the version; skips runs that
@@ -140,7 +140,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ steps.release.outputs.tag }}
         run: |
-          echo "::notice title=Excel templates are building::While this runs (about 5 minutes), do release Step 5: start the Core Models update, then approve and merge its pull request."
+          echo "::notice title=Excel templates are building::While this runs (about 5 minutes), do release Step 4: start the Core Models update, then approve and merge its pull request."
           python3 scripts/excel_templates_release_status.py --tag "$TAG" --state building --run-url "$RUN_URL"
 
       - name: Set up Python

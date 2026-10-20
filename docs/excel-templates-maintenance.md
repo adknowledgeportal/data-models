@@ -23,7 +23,7 @@ The sections are linked in the contents below.
 
 **Contents**
 - [How the Excel build works](#how-the-excel-build-works)
-- [1. Handle a Dependabot pull request (release Step 1)](#1-handle-a-dependabot-pull-request-release-step-1)
+- [1. Handle the monthly Dependabot pull request](#1-handle-the-monthly-dependabot-pull-request)
 - [2. Set up your computer to run the tests (one time)](#2-set-up-your-computer-to-run-the-tests-one-time)
 - [3. A check failed on a Dependabot pull request](#3-a-check-failed-on-a-dependabot-pull-request)
 - [4. The release page shows ❌ for the Excel templates](#4-the-release-page-shows--for-the-excel-templates)
@@ -41,26 +41,26 @@ The sections are linked in the contents below.
 
 The build uses Python packages (mainly `openpyxl`, which writes the Excel files, and `synapseclient`, which uploads them). To keep releases predictable, the build always installs **the exact same versions**, listed in `scripts/requirements-excel-templates.txt`. Those versions only change when someone merges a pull request that changes them, usually one opened by **Dependabot**.
 
-**Dependabot** is a GitHub bot. Once a month it opens a pull request that updates those package versions. Tests run on that pull request automatically, so a package update that would break the build shows up as a red check on the pull request instead of during a release. **Nobody is notified when Dependabot opens a pull request.** Checking for one is Step 1 of every release, so any BDM doing a release takes care of it.
+**Dependabot** is a GitHub bot. On the 1st of each month it opens a pull request that updates those package versions. Tests run on that pull request automatically, so a package update that would break the build shows up as a red check on the pull request instead of during a release. **Nobody is notified when Dependabot opens a pull request,** so checking for it is a monthly task, separate from releases (see [Monthly Maintenance](../README.md#monthly-maintenance) in the README).
 
 ---
 
-## 1. Handle a Dependabot pull request (release Step 1)
+## 1. Handle the monthly Dependabot pull request
 
-**Find it.** Open the [pull requests from Dependabot](https://github.com/adknowledgeportal/data-models/pulls/app%2Fdependabot). If the list is empty, you're done with Step 1. Usually there is at most one, titled something like **Excel templates: Bump the excel-template-packages group in /scripts with 3 updates**.
+**Find it.** Open the [pull requests from Dependabot](https://github.com/adknowledgeportal/data-models/pulls/app%2Fdependabot). If the list is empty, there's nothing to do this month. Usually there is at most one, titled something like **Excel templates: Bump the excel-template-packages group in /scripts with 3 updates**.
 
 **Handle it:**
 
 1. **Assign it to yourself** so others know you have it. Open the pull request; in the right-hand column under **Assignees**, click **assign yourself**.
 2. **Look at the checks** at the bottom of the **Conversation** tab.
    - **All green ✅:** go to step 3.
-   - **Any red ❌:** don't merge. Go to [Section 3](#3-a-check-failed-on-a-dependabot-pull-request). You can carry on with the release meanwhile: until this pull request is merged, the build keeps using the current versions, which work.
+   - **Any red ❌:** don't merge. Go to [Section 3](#3-a-check-failed-on-a-dependabot-pull-request). Nothing is broken meanwhile: until this pull request is merged, the build keeps using the current versions, which work.
    - **Still running (yellow):** wait a few minutes. The tests take about 2 minutes.
 3. **Check what changed.** Click the **Files changed** tab. For the monthly Excel update, the only file changed should be `scripts/requirements-excel-templates.txt`, with version numbers and long `--hash=sha256:` lines. If anything else changed, don't merge, and ask in the team channel.
 4. **Approve it.** Still on **Files changed**, click **Review changes** (top right), choose **Approve**, then **Submit review**.
 5. **Merge it.** Go back to the **Conversation** tab, click **Squash and merge**, then **Confirm squash and merge**.
    - If the merge button is grey and says the `generate-and-register-schemas` check is **Expected — Waiting for status to be reported**, ask a repository admin to merge it (see [Section 6](#6-who-can-do-what-and-who-to-ask)).
-6. **Continue with the release** (Step 2). This release's Excel build will use the new versions. If the build fails right after a Dependabot merge, the update is the likely cause; see [Section 4](#4-the-release-page-shows--for-the-excel-templates).
+6. **That's it.** The next release's Excel build will use the new versions. If that build fails, the update is a likely cause; see [Section 4](#4-the-release-page-shows--for-the-excel-templates).
 
 **Other Dependabot pull requests.** Dependabot also opens *security* update pull requests when a package has a known vulnerability. Handle them the same way. If one changes only `requirements.txt` at the top of the repository (not in `scripts/`), it doesn't affect the Excel build; merge it if its checks are green.
 
@@ -148,7 +148,7 @@ Then find the failure below.
    @dependabot ignore openpyxl minor version
    ```
    (If only the last number of the version changed, for example `3.1.5` → `3.1.6`, use `patch version` instead of `minor version`.)
-2. Dependabot updates or replaces the pull request without the openpyxl update. When the new checks are green, handle it as in [Section 1](#1-handle-a-dependabot-pull-request-release-step-1).
+2. Dependabot updates or replaces the pull request without the openpyxl update. When the new checks are green, handle it as in [Section 1](#1-handle-the-monthly-dependabot-pull-request).
 3. Create a ticket so someone can come back to it (Option B). Include a link to the failed check.
 
 **Option B: fix the script (when someone has time).** This needs [Section 2](#2-set-up-your-computer-to-run-the-tests-one-time).
@@ -223,7 +223,7 @@ The checks run again on the pull request. When they're green, ask another BDM to
 
 ## 4. The release page shows ❌ for the Excel templates
 
-**What it means:** the Excel templates on Synapse were **not updated for this release**, and won't be until the problem is fixed and the build is re-run. **The rest of the release isn't affected:** the schemas are registered, and you can carry on with Core Models (Step 5) and the announcement (Step 6). In the announcement, mention that the Excel templates will follow.
+**What it means:** the Excel templates on Synapse were **not updated for this release**, and won't be until the problem is fixed and the build is re-run. **The rest of the release isn't affected:** the schemas are registered, and you can carry on with Core Models (Step 4) and the announcement (Step 5). In the announcement, mention that the Excel templates will follow.
 
 **Find the error.** Click **workflow run** in the ❌ message. The errors are listed at the top of the run's **Summary** page. For the full log, click the job, then the red step.
 

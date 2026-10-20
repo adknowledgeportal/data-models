@@ -47,3 +47,6 @@ sheets_creds.json
 # Python caches
 __pycache__/
 *.pyc
+
+# Excel template build output (scripts/create_excel_templates.py)
+output/
