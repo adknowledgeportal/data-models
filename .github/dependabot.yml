@@ -10,6 +10,10 @@ updates:
     directory: "/scripts"
     schedule:
       interval: "monthly"
+    # only update the exact versions in the .txt, within the ranges in
+    # requirements-excel-templates.in; a new major version (e.g. openpyxl 4)
+    # needs someone to widen the range there on purpose
+    versioning-strategy: lockfile-only
     groups:
       excel-template-packages:
         patterns:
