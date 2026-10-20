@@ -83,9 +83,26 @@ A persistent issue is that manually editing csvs is challening. Some columns in 
 
 We are exploring better solutions to this problem -- if you have ideas, tell us!
 
+## Monthly Maintenance
+
+On the 1st of each month, Dependabot opens a pull request that updates the Python packages the Excel template build uses. This is separate from releases. Nobody is notified when the pull request opens, so someone needs to check for it each month.
+1. Open the [pull requests from Dependabot](https://github.com/adknowledgeportal/data-models/pulls/app%2Fdependabot). If there are none, there's nothing to do this month.
+2. Open the pull request and assign it to yourself: in the right-hand column under **Assignees**, click **assign yourself**.
+3. If all of its checks are green, approve it (**Files changed** → **Review changes** → **Approve** → **Submit review**), then merge it (**Squash and merge** → **Confirm squash and merge**). The next release's Excel build uses the new versions.
+4. If a check is red, don't merge it. Until an update is merged, the build keeps using the current package versions, which work. Follow the [Excel template maintenance guide](docs/excel-templates-maintenance.md#3-a-check-failed-on-a-dependabot-pull-request).
+
+> **Note:** If a merged Dependabot update breaks the Excel build, the Excel templates on Synapse will not be fully updated for the next release until the maintenance is complete (the update is reverted or fixed and the build is re-run). The rest of the release (schemas, Core Models) is not affected.
+
+For step-by-step instructions, see the [Excel template maintenance guide](docs/excel-templates-maintenance.md).
+
 ## Release Process
 
-> **Note:** A release has five steps. Steps 1 and 2 are the GitHub release itself: schemas are first registered to a test Synapse organization, then promoted to production. Publishing a pre-release registers schemas to `test.ad`; promoting it to a full release registers to `sage.schemas.ad`. Registering to production automatically rebuilds the Excel templates; Step 3 checks that it worked. Step 4 updates Core Models, which needs a PR to be approved and merged by hand, and Step 5 announces the update in Slack.
+> **Note:** A release has five steps:
+> 1. **Pre-release:** registers the schemas to the test Synapse organization `test.ad`.
+> 2. **Full release:** registers them to the production organization `sage.schemas.ad`.
+> 3. **Excel templates:** rebuilt automatically after Step 2; the progress shows on the release page.
+> 4. **Core Models:** do this while the Excel templates build in Step 3. It needs a PR to be approved and merged by hand.
+> 5. **Announce** the update in Slack.
 >
 > **Tag format:** Release tags must follow `vX.Y.Z` (e.g. `v1.2.0`). Tags with pre-release suffixes like `-rc1`, `-beta`, or `-alpha` will cause schema registration to fail.
 
@@ -103,18 +120,22 @@ We are exploring better solutions to this problem -- if you have ideas, tell us!
 2. Edit the release and uncheck **"Set as a pre-release"** (or click **"Promote to full release"**).
 3. Click `Update release`. This triggers schema registration to the `sage.schemas.ad` production Synapse organization.
 
-#### Step 3 — Check the Excel templates on the AD Dictionary site
-Registering the schemas to `sage.schemas.ad` automatically starts the **Build Excel templates** workflow, which rebuilds the Excel templates and uploads them to the [AD Metadata Dictionary folder](https://www.synapse.org/Synapse:syn25878249). It takes about 5 minutes after registration finishes.
-1. In the **Actions** tab, check that the **Build Excel templates** run for the release completed successfully.
-2. On the [AD Metadata Dictionary folder](https://www.synapse.org/Synapse:syn25878249), open a few templates and check that the newest file version has:
+#### Step 3 — The Excel templates build (start Step 4 while it runs)
+When registration to `sage.schemas.ad` finishes, the **Build Excel templates** workflow starts automatically. It rebuilds the Excel templates and uploads them to the [AD Metadata Dictionary folder](https://www.synapse.org/Synapse:syn25878249), which takes about 5 minutes.
+
+Follow it on the release page (refresh it): an **Excel templates** section appears at the end of the release notes.
+- ⏳ **Building:** registration is done and the templates are being built. **Go to Step 4 and update Core Models now**; you don't need to wait for the Excel build. Come back here afterwards.
+- ✅ **Uploaded:** check a few templates. On the [AD Metadata Dictionary folder](https://www.synapse.org/Synapse:syn25878249), open a few templates and check that the newest file version has:
     - version comment `sage.schemas.ad <version>` (e.g. `sage.schemas.ad 2.0.0`)
     - annotation `modelVersion` matching the release version
     - annotation `releaseDate` matching the release date. This is the date the schemas were registered, in UTC, so a release published after about 5 pm Pacific shows the next day's date.
+- ❌ **Failed:** the Excel templates on Synapse were not fully updated for this release: some may have been uploaded and others not (the run's **Summary** lists the ones that were). The rest of the release isn't affected, so finish Steps 4 and 5 (mention in the announcement that the Excel templates will follow), and see the [maintenance guide](docs/excel-templates-maintenance.md#4-the-release-page-shows--for-the-excel-templates).
 
-If the run didn't start or failed, it can be run manually from the **Actions** tab. See the CI/CD documentation for the [build-excel-templates workflow](.github/workflows/README.md#build-excel-templates-workflow).
+If no Excel templates section appears within about 15 minutes of promoting the release, check the **Generate, register … Schemas** and **Build Excel templates** runs in the **Actions** tab. The build can also be run manually from there; see the [maintenance guide](docs/excel-templates-maintenance.md#4a-re-run-the-build).
 
-#### Step 4 — Update Core Models
-1. **Start the update right after the JSON schemas are generated** (or wait for the automatic run at 06:00 UTC, which is 11 pm Pacific)
+#### Step 4 — Update Core Models (while the Excel templates build)
+Core Models and the Excel templates don't depend on each other, so do this while the Excel build from Step 3 is running.
+1. **Start the update** as soon as the release page shows the Excel templates ⏳ **Building** (that means the schemas are registered), or wait for the automatic run at 06:00 UTC, which is 11 pm Pacific.
     - Go to [Sage-Bionetworks/core-models](https://github.com/Sage-Bionetworks/core-models) → **Actions** tab.
     - In the left sidebar, click **Update Schema Data → Deploy Pages → Publish to CoreModels**.
     - Click **Run workflow**. Leave **org_name blank**: filling it in may drop other organizations' schemas. Keep the branch on `main`, then click the green **Run workflow** button.
@@ -128,11 +149,12 @@ If the run didn't start or failed, it can be run manually from the **Actions** t
     - Back on the **Conversation** tab, click the green merge button at the bottom and confirm.
     - Merging deploys the GitHub Pages site and publishes to the CoreModels app, which takes about 15 minutes.
     - Check CoreModels to verify changes.
+4. **Go back to Step 3** and check the Excel templates, if you haven't yet.
 
 #### Step 5 — Announce the update
 Post in the Slack channels **#adtr-data-model-updates** and **#adtr-data-managers** that the data model has been updated, with a link to the release (e.g. `https://github.com/adknowledgeportal/data-models/releases/tag/v2.0.0`).
 
-For more information on the automated JSON and Excel workflows, see the CI/CD documentation for the [register-schema workflow](.github/workflows/README.md#register-schema-workflow) and the [build-excel-templates workflow](.github/workflows/README.md#build-excel-templates-workflow).
+For more information on the automated JSON and Excel workflows, see the CI/CD documentation for the [register-schema workflow](.github/workflows/README.md#register-schema-workflow) and the [build-excel-templates workflow](.github/workflows/README.md#build-excel-templates-workflow). For fixing the Excel build, see the [Excel template maintenance guide](docs/excel-templates-maintenance.md).
 
 ## Developing in a codespace
 

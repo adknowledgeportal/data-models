@@ -1,0 +1,55 @@
+# Tests the Excel template build on pull requests that change it, including
+# Dependabot's monthly package updates.
+#
+# Triggered on:
+#   - pull_request      - changes to the script, its packages, its tests or
+#                         its workflows
+#   - workflow_dispatch - manual run from the Actions tab
+#
+# Steps:
+#   1. Install the exact package versions in scripts/requirements-excel-templates.txt
+#   2. Run the tests in tests/
+#   3. Build the newest release's templates without uploading (reads the
+#      public sage.schemas.ad schemas; no Synapse login needed)
+#
+# If this fails, see docs/excel-templates-maintenance.md.
+
+name: Test Excel templates
+
+on:
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "scripts/create_excel_templates.py"
+      - "scripts/excel_templates_release_status.py"
+      - "scripts/requirements-excel-templates.*"
+      - "tests/**"
+      - ".github/workflows/build-excel-templates.yml"
+      - ".github/workflows/test-excel-templates.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-excel-templates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install --require-hashes -r scripts/requirements-excel-templates.txt
+
+      - name: Run tests
+        run: python -m pytest tests -v
+
+      - name: Build the newest release's templates (dry run)
+        run: python -u scripts/create_excel_templates.py --dry-run
