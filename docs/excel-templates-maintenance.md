@@ -278,11 +278,12 @@ There are two files:
    cd ..
    ```
    Use Python 3.11 if you have it, since that's what the build uses. If you use a different version, the pull request's **Install dependencies** step tells you if anything is missing.
-4. Install the new versions and run the tests:
+4. Run a quick check on your computer:
    ```bash
    pip install -r scripts/requirements-excel-templates.in
    python -m pytest tests -v
    ```
+   This is only a quick check. pip may keep packages you already have if they fall within the allowed ranges, so it doesn't necessarily test the exact versions you just generated. The pull request's **Test Excel templates** check installs exactly those versions, and **it must pass before the pull request is merged**.
 5. Commit, push, and open a pull request:
    ```bash
    git add scripts/requirements-excel-templates.in scripts/requirements-excel-templates.txt
