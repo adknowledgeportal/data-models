@@ -72,6 +72,7 @@ import re
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
+from dataclasses import dataclass
 from pathlib import Path
 
 import requests
@@ -81,6 +82,7 @@ from openpyxl.comments import Comment
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
+from packaging.version import Version
 from requests.adapters import HTTPAdapter
 from synapseclient.models import File, Folder
 from urllib3.util.retry import Retry
@@ -137,7 +139,17 @@ MULTISELECT_NOTE = ("\nMultiple values allowed: type your selections separated b
 # 1. Registered schemas
 # =========================================================
 
-def post_paginated(path, body):
+@dataclass(frozen=True)
+class Attribute:
+    """One template column, from a property of the registered JSON schema."""
+    name: str
+    description: str | None
+    type: str | None  # JSON schema type, e.g. "string" or "array"
+    valid_values: list[str] | None  # None when any value is allowed
+    required: bool
+
+
+def post_paginated(path: str, body: dict) -> list[dict]:
     """All items from a paginated Synapse POST endpoint (public, no login)."""
     items = []
     while True:
@@ -150,11 +162,11 @@ def post_paginated(path, body):
         body = {**body, "nextPageToken": data["nextPageToken"]}
 
 
-def registered_versions():
+def registered_versions() -> dict[str, dict[str, str]]:
     """{schema name: {semantic version: registration time (ISO 8601, UTC)}}, oldest first"""
     names = [s["schemaName"] for s in post_paginated("/schema/list", {"organizationName": ORG_NAME})]
 
-    def versions(name):
+    def versions(name: str) -> dict[str, str]:
         found = post_paginated("/schema/version/list",
                                {"organizationName": ORG_NAME, "schemaName": name})
         return {v["semanticVersion"]: v["createdOn"]
@@ -164,11 +176,8 @@ def registered_versions():
         return dict(zip(names, pool.map(versions, names)))
 
 
-def version_key(version):
-    return tuple(int(p) for p in re.findall(r"\d+", version))
-
-
-def resolve_release(version, wait_minutes):
+def resolve_release(version: str | None,
+                    wait_minutes: float) -> tuple[str, list[str], str, str]:
     """Pick the release version and the schemas registered at it.
 
     With no version, the newest registered one is used. With a version, polls
@@ -180,7 +189,7 @@ def resolve_release(version, wait_minutes):
     deadline = time.monotonic() + wait_minutes * 60
     while True:
         registered = registered_versions()
-        newest = max((v for vs in registered.values() for v in vs), key=version_key)
+        newest = max((v for vs in registered.values() for v in vs), key=Version)
         release = version or newest
         in_release = sorted(n for n, vs in registered.items() if release in vs)
         if in_release:
@@ -203,13 +212,13 @@ def resolve_release(version, wait_minutes):
     return release, in_release, newest, registered_on
 
 
-def fetch_schema(name, version):
+def fetch_schema(name: str, version: str) -> dict:
     resp = SESSION.get(f"{REPO_URL}/schema/type/registered/{ORG_NAME}-{name}-{version}", timeout=60)
     resp.raise_for_status()
     return resp.json()
 
 
-def as_text(value):
+def as_text(value: object) -> str:
     # match how R wrote enum values: TRUE/FALSE, and 1 rather than 1.0
     if isinstance(value, bool):
         return "TRUE" if value else "FALSE"
@@ -218,21 +227,21 @@ def as_text(value):
     return str(value)
 
 
-def extract_attrs(schema):
-    """One dict per property, in schema order."""
+def extract_attrs(schema: dict) -> list[Attribute]:
+    """One Attribute per property, in schema order."""
     required = set(schema.get("required", []))
     attrs = []
     for name, prop in (schema.get("properties") or {}).items():
         # array/multiselect properties carry their allowed values under items.enum,
         # not enum directly on the property -- that's where enum lives for singleselect
         enum = prop.get("enum") or (prop.get("items") or {}).get("enum")
-        attrs.append({
-            "attribute": name,
-            "description": prop.get("description"),
-            "type": prop.get("type"),
-            "valid_values": [as_text(v) for v in enum] if enum else None,
-            "required": name in required,
-        })
+        attrs.append(Attribute(
+            name=name,
+            description=prop.get("description"),
+            type=prop.get("type"),
+            valid_values=[as_text(v) for v in enum] if enum else None,
+            required=name in required,
+        ))
     return attrs
 
 
@@ -240,11 +249,15 @@ def extract_attrs(schema):
 # 2. Definitions and column order from AD.model.csv
 # =========================================================
 
-def norm_name(x):
+Definitions = dict[tuple[str | None, str | None], str | None]  # (Property, Value) -> Definition
+ColumnOrder = dict[str, list[str]]  # normalized template name -> DependsOn attributes
+
+
+def norm_name(x: str) -> str:
     return re.sub(r"[^a-z0-9]", "", x.lower())
 
 
-def load_model(source):
+def load_model(source: str) -> tuple[Definitions, ColumnOrder]:
     """(definitions {(Property, Value): Definition}, order {template key: [attributes]})
 
     source is a URL or a local path to AD.model.csv.
@@ -257,7 +270,7 @@ def load_model(source):
         content = Path(source).read_bytes()
     rows = list(csv.DictReader(io.StringIO(content.decode("utf-8-sig"))))
 
-    def cell(row, col):
+    def cell(row: dict[str, str], col: str) -> str | None:
         # blank and "NA" are missing, as they were for readr
         value = (row.get(col) or "").strip()
         return None if value in ("", "NA") else value
@@ -273,16 +286,17 @@ def load_model(source):
     return definitions, order
 
 
-def reorder_by_dependson(attrs, template_name, order):
+def reorder_by_dependson(attrs: list[Attribute], template_name: str,
+                         order: ColumnOrder) -> list[Attribute]:
     """Reorder attributes to match the template's DependsOn order."""
     ordered = order.get(norm_name(template_name))
     if ordered is None:
         print(f"[{template_name}] no DependsOn order found in data model — keeping schema order")
         return attrs
 
-    by_name = {a["attribute"]: a for a in attrs}
+    by_name = {a.name: a for a in attrs}
     matched = [a for a in ordered if a in by_name]  # in DependsOn order
-    leftover = [a["attribute"] for a in attrs if a["attribute"] not in matched]
+    leftover = [a.name for a in attrs if a.name not in matched]
     if leftover:
         print(f"[{template_name}] {len(leftover)} attribute(s) not in DependsOn, "
               f"appended at end: {', '.join(leftover)}")
@@ -293,7 +307,18 @@ def reorder_by_dependson(attrs, template_name, order):
 # 3. Workbook
 # =========================================================
 
-def build_manifest(wb, attrs):
+def set_default_font(wb: Workbook) -> None:
+    """Make Arial 10 the workbook's default font (its "Normal" style).
+
+    openpyxl has no public way to do this, so this uses its private
+    _named_styles attribute. If an openpyxl update removes or renames it,
+    test_default_font_is_arial in tests/test_create_excel_templates.py fails;
+    see docs/excel-templates-maintenance.md for what to do.
+    """
+    wb._named_styles["Normal"].font = Font(name="Arial", size=10)
+
+
+def build_manifest(wb: Workbook, attrs: list[Attribute]) -> None:
     ws = wb.active
     ws.title = "Manifest"
     values_ws = wb.create_sheet("ValidValues")
@@ -301,20 +326,20 @@ def build_manifest(wb, attrs):
 
     for col, attr in enumerate(attrs, start=1):
         letter = get_column_letter(col)
-        header = ws.cell(row=1, column=col, value=attr["attribute"])
+        header = ws.cell(row=1, column=col, value=attr.name)
         header.font = ARIAL_BOLD
-        header.fill = REQUIRED_FILL if attr["required"] else OPTIONAL_HEADER_FILL
+        header.fill = REQUIRED_FILL if attr.required else OPTIONAL_HEADER_FILL
         for row in range(1, MANIFEST_ROWS + 1):
             cell = ws.cell(row=row, column=col)
             cell.border = MANIFEST_BORDER
             if row > 1:
                 cell.font = ARIAL
-            if attr["required"]:
+            if attr.required:
                 cell.fill = REQUIRED_FILL
 
         # dropdown backed by this attribute's column in the hidden sheet; a
         # warning (not a stop) so multiselect entries and new values are allowed
-        values = attr["valid_values"]
+        values = attr.valid_values
         if values:
             for row, value in enumerate(values, start=1):
                 values_ws.cell(row=row, column=col, value=value).font = ARIAL
@@ -325,9 +350,9 @@ def build_manifest(wb, attrs):
             dv.add(f"{letter}2:{letter}{MANIFEST_ROWS}")
             ws.add_data_validation(dv)
 
-        if attr["description"]:
-            text = attr["description"]
-            if attr["type"] == "array" and values:
+        if attr.description:
+            text = attr.description
+            if attr.type == "array" and values:
                 text += MULTISELECT_NOTE
             # size the note box to fit the text -- the default truncates
             # anything longer than a short one-liner
@@ -335,10 +360,11 @@ def build_manifest(wb, attrs):
             header.comment = Comment(text, "", width=3 * 64, height=lines * 20)
 
 
-def build_data_dictionary(wb, attrs, definitions, template_name):
+def build_data_dictionary(wb: Workbook, attrs: list[Attribute], definitions: Definitions,
+                          template_name: str) -> None:
     ws = wb.create_sheet("DataDictionary")
-    rows = [(a["attribute"], a["description"], value, definitions.get((a["attribute"], value)))
-            for a in attrs for value in (a["valid_values"] or [None])]
+    rows = [(a.name, a.description, value, definitions.get((a.name, value)))
+            for a in attrs for value in (a.valid_values or [None])]
 
     unmatched = {(p, v) for p, _, v, d in rows if v is not None and d is None}
     if unmatched:
@@ -348,8 +374,7 @@ def build_data_dictionary(wb, attrs, definitions, template_name):
     for row in rows:
         ws.append(row)
 
-    header_style = dict(font=ARIAL_BOLD_WHITE, fill=DD_HEADER_FILL,
-                        alignment=Alignment(horizontal="left"))
+    header_alignment = Alignment(horizontal="left")
     body_alignment = Alignment(wrap_text=True, vertical="top")
 
     # banded shading per attribute group
@@ -367,8 +392,9 @@ def build_data_dictionary(wb, attrs, definitions, template_name):
     for c in range(1, 5):
         cell = ws.cell(row=1, column=c)
         cell.border = DD_BORDER
-        for attr, value in header_style.items():
-            setattr(cell, attr, value)
+        cell.font = ARIAL_BOLD_WHITE
+        cell.fill = DD_HEADER_FILL
+        cell.alignment = header_alignment
 
     for letter, width in DD_COLUMN_WIDTHS.items():
         ws.column_dimensions[letter].width = width
@@ -376,11 +402,12 @@ def build_data_dictionary(wb, attrs, definitions, template_name):
     ws.auto_filter.ref = f"A1:D{len(rows) + 1}"
 
 
-def build_template_workbook(attrs, template_name, definitions, order, out_dir):
+def build_template_workbook(attrs: list[Attribute], template_name: str, definitions: Definitions,
+                            order: ColumnOrder, out_dir: str | Path) -> Path:
     attrs = reorder_by_dependson(attrs, template_name, order)
 
     wb = Workbook()
-    wb._named_styles["Normal"].font = Font(name="Arial", size=10)  # workbook default font
+    set_default_font(wb)
     build_manifest(wb, attrs)
     build_data_dictionary(wb, attrs, definitions, template_name)
 
@@ -394,7 +421,8 @@ def build_template_workbook(attrs, template_name, definitions, order, out_dir):
 #    same name (case-insensitive), or a new file
 # =========================================================
 
-def upload(paths, release, registered_on, folder_id, dry_run):
+def upload(paths: list[Path], release: str, registered_on: str, folder_id: str | None,
+           dry_run: bool) -> list[str]:
     if dry_run and not folder_id:
         for path in paths:
             print(f"[{path.stem}] built (no --folder-id, so not checked against Synapse)")
@@ -443,7 +471,7 @@ def _try(fn, *args):
         return e
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--version", help="release to build, e.g. 1.0.9 (default: newest registered)")
     parser.add_argument("--wait-minutes", type=float, default=10,
