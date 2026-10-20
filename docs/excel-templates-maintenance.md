@@ -1,11 +1,25 @@
 # Excel template maintenance guide
 
-This guide is for anyone on the data management team (BDMs) who needs to keep the Excel template build working. It doesn't assume you're a developer. Every command is given for **Mac** (Terminal) and **Windows** (PowerShell), and it assumes Python 3.11 or newer is already installed.
+This guide is for anyone on the data management team (BDMs) who needs to keep the Excel template build working. It assumes Python 3.11 or newer is already installed.
 
-**Use this guide when:**
-- it's [release Step 1](../README.md#release-process) and there's a Dependabot pull request to handle → [Section 1](#1-handle-a-dependabot-pull-request-release-step-1)
-- a check failed on a Dependabot pull request → [Section 3](#3-a-check-failed-on-a-dependabot-pull-request)
-- the release page shows ❌ for the Excel templates → [Section 4](#4-the-release-page-shows--for-the-excel-templates)
+**Where to start:**
+
+```mermaid
+flowchart TD
+    start([What do you need to do?])
+    start --> dep[A Dependabot pull request is open]
+    start --> fail[The release page shows ❌ for the Excel templates]
+    start --> pin[You need to change the pinned package versions]
+    dep --> checks{Are all of its checks green?}
+    checks -- Yes --> s1[Section 1: approve and merge it]
+    checks -- No --> s3[Section 3: a check failed]
+    fail --> s4[Section 4: find the error and re-run the build]
+    pin --> s5[Section 5: change the versions by hand]
+    s3 -. to try a fix on your computer .-> s2[Section 2: one-time setup]
+    s5 -.-> s2
+```
+
+The sections are linked in the contents below.
 
 **Contents**
 - [How the Excel build works](#how-the-excel-build-works)
@@ -60,7 +74,7 @@ You only need this to investigate or fix a failure on your own computer. You can
 
 **Open a terminal:**
 - **Mac:** open **Terminal** (Applications → Utilities → Terminal).
-- **Windows:** open **PowerShell** (Start menu → type "PowerShell").
+- **Windows:** open **PowerShell**, Windows' built-in terminal (Start menu → type "PowerShell"). The Windows commands in this guide are written for PowerShell; a few of them (such as `$env:` and `Activate.ps1`) don't work in the older Command Prompt.
 
 **Download the repository and install the packages.** Copy one line at a time.
 
@@ -216,7 +230,7 @@ The checks run again on the pull request. When they're green, ask another BDM to
 | The error mentions… | Likely cause | What to do |
 |---|---|---|
 | `Connection`, `reset`, `timed out`, `500`, `502`, `503`, `504` | Synapse was busy or briefly down | Re-run the build ([4a](#4a-re-run-the-build)). Templates that already uploaded get one more version with the same labels, which is harmless. |
-| `401`, `403`, `Unauthorized`, `Forbidden`, `login` | The Synapse token (`SYNAPSE_TOKEN_DPE`) expired or lost access to the folder | Ask the DPE team, who own that token, to renew it, and a repository admin to update the secret. Then re-run ([4a](#4a-re-run-the-build)). |
+| `401`, `403`, `Unauthorized`, `Forbidden`, `login` | The Synapse token (`SYNAPSE_TOKEN_DPE`) expired or lost access to the folder | Ask the DPE team, who owns that token, to renew it, and a repository admin to update the secret. Then re-run ([4a](#4a-re-run-the-build)). |
 | `ModuleNotFoundError`, `ImportError`, `AttributeError`, or the **Install dependencies** step failed, right after a Dependabot merge | The package update broke the build | Undo the update ([4b](#4b-undo-a-dependabot-update)), then re-run ([4a](#4a-re-run-the-build)). |
 | `No sage.schemas.ad schemas registered at …` | The schemas weren't registered yet, or registration failed | Check that the **Generate, register … Schemas** run for the release succeeded, then re-run ([4a](#4a-re-run-the-build)). |
 | `Couldn't read AD.model.csv` | The release's tag is missing, or GitHub was briefly down | Check the release has a tag like `v2.0.0`, then re-run ([4a](#4a-re-run-the-build)). |
