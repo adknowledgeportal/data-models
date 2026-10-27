@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+assemblyName,Name or version of the assembled metagenomic sequence dataset.,,,,False,ManifestColumn,,sysbio.metadataTemplates-assay.metagenomics,,string,metagenomics
