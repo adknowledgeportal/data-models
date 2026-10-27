@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-libSize,Number of clones in the prepared library when applicable.,,,,False,ManifestColumn,,sysbio.metadataTemplates-assay.metagenomics,,string,metagenomics
+libSize,Number of clones in the prepared library when applicable.,,,,False,ManifestColumn,,sysbio.metadataTemplates-assay.metagenomics,,integer,metagenomics

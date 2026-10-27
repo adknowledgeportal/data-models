@@ -1,2 +1,2 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-numberContig,Number of contigs in the submitted assembly.,,,,False,ManifestColumn,,sysbio.metadataTemplates-assay.metagenomics,,string,metagenomics
+numberContig,Number of contigs in the submitted assembly.,,,,False,ManifestColumn,,sysbio.metadataTemplates-assay.metagenomics,,integer,metagenomics
