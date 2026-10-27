@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+assemblySoftware,"Software and version used to assemble sequence data, optionally including parameters.",,,,False,ManifestColumn,,sysbio.metadataTemplates-assay.metagenomics,,string,metagenomics

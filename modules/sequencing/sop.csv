@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+sop,Link or reference to a standard operating procedure used for metagenomic sequence generation or analysis.,,,,False,ManifestColumn,,sysbio.metadataTemplates-assay.metagenomics,,string,metagenomics

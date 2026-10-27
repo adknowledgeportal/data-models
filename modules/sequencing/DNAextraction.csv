@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+DNAextraction,DNA extraction method or kit used to process the sample.,,,,False,ManifestColumn,,sysbio.metadataTemplates-assay.metagenomics,,string,metagenomics
