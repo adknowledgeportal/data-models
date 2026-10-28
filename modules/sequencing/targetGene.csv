@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+targetGene,Targeted gene or marker locus for amplicon-based metagenomic sequencing.,,,,False,ManifestColumn,,sysbio.metadataTemplates-assay.metagenomics,,string,metagenomics
