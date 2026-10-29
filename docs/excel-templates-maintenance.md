@@ -39,7 +39,7 @@ The sections are linked in the contents below.
 2. That automatically starts the **Build Excel templates** workflow. It builds one Excel workbook per template and uploads each one to the [AD Metadata Dictionary folder](https://www.synapse.org/Synapse:syn25878249) on Synapse as a new version of the existing file.
 3. While it runs, the **release page** shows an **Excel templates** section at the end of the release notes: ⏳ building, then ✅ uploaded or ❌ failed. The section also lists any open Dependabot pull requests.
 
-The build uses Python packages (mainly `openpyxl`, which writes the Excel files, and `synapseclient`, which uploads them). To keep releases predictable, the build always installs **the exact same versions**, listed in `scripts/requirements-excel-templates.txt`. Those versions only change when someone merges a pull request that changes them, usually one opened by **Dependabot**.
+The build uses Python packages (mainly `openpyxl`, which writes the Excel files, and `synapseclient`, which uploads them). To keep releases predictable, the build always installs **the exact same versions**, listed in `scripts/uv.lock`. Those versions only change when someone merges a pull request that changes them, usually one opened by **Dependabot**.
 
 **Dependabot** is a GitHub bot. On the 1st of each month it opens a pull request that updates those package versions. Tests run on that pull request automatically, so a package update that would break the build shows up as a red check on the pull request instead of during a release. **Nobody is notified when Dependabot opens a pull request,** so checking for it is a monthly task, separate from releases (see [Monthly Maintenance](../README.md#monthly-maintenance) in the README).
 
@@ -56,7 +56,7 @@ The build uses Python packages (mainly `openpyxl`, which writes the Excel files,
    - **All green ✅:** go to step 3.
    - **Any red ❌:** don't merge. Go to [Section 3](#3-a-check-failed-on-a-dependabot-pull-request). Nothing is broken meanwhile: until this pull request is merged, the build keeps using the current versions, which work.
    - **Still running (yellow):** wait a few minutes. The tests take about 2 minutes.
-3. **Check what changed.** Click the **Files changed** tab. For the monthly Excel update, the only file changed should be `scripts/requirements-excel-templates.txt`, with version numbers and long `--hash=sha256:` lines. If anything else changed, don't merge, and ask in the team channel.
+3. **Check what changed.** Click the **Files changed** tab. For the monthly Excel update, the only file changed should be `scripts/uv.lock`, with version numbers and long `hash = "sha256:…"` lines. If anything else changed, don't merge, and ask in the team channel.
 4. **Approve it.** Still on **Files changed**, click **Review changes** (top right), choose **Approve**, then **Submit review**.
 5. **Merge it.** Go back to the **Conversation** tab, click **Squash and merge**, then **Confirm squash and merge**.
    - If the merge button is grey and says the `generate-and-register-schemas` check is **Expected — Waiting for status to be reported**, ask a repository admin to merge it (see [Section 6](#6-who-can-do-what-and-who-to-ask)).
@@ -70,11 +70,15 @@ The build uses Python packages (mainly `openpyxl`, which writes the Excel files,
 
 You only need this to investigate or fix a failure on your own computer. You can handle a green Dependabot pull request without it.
 
-**You need:** Python 3.11 or newer, and Git. To check, run `python3 --version` (Mac) or `python --version` (Windows), and `git --version`. If Git is missing, install it from [git-scm.com](https://git-scm.com/downloads) and use the default options.
+**You need:** Git and **uv**, a tool that installs the right version of Python and the exact package versions the build uses. You don't need to install Python yourself. To check, run `git --version` and `uv --version`. If Git is missing, install it from [git-scm.com](https://git-scm.com/downloads) and use the default options.
 
 **Open a terminal:**
 - **Mac:** open **Terminal** (Applications → Utilities → Terminal).
-- **Windows:** open **PowerShell**, Windows' built-in terminal (Start menu → type "PowerShell"). The Windows commands in this guide are written for PowerShell; a few of them (such as `$env:` and `Activate.ps1`) don't work in the older Command Prompt.
+- **Windows:** open **PowerShell**, Windows' built-in terminal (Start menu → type "PowerShell"). The Windows commands in this guide are written for PowerShell; a few of them (such as `$env:`) don't work in the older Command Prompt.
+
+**Install uv** if `uv --version` didn't work, then close the terminal and open a new one:
+- **Mac:** `brew install uv` if you use Homebrew; otherwise `curl -LsSf https://astral.sh/uv/install.sh | sh`
+- **Windows:** `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
 
 **Download the repository and install the packages.** Copy one line at a time.
 
@@ -83,9 +87,7 @@ Mac (Terminal):
 cd ~/Documents
 git clone https://github.com/adknowledgeportal/data-models.git
 cd data-models
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r scripts/requirements-excel-templates.in
+uv sync --project scripts
 ```
 
 Windows (PowerShell):
@@ -93,34 +95,31 @@ Windows (PowerShell):
 cd $HOME\Documents
 git clone https://github.com/adknowledgeportal/data-models.git
 cd data-models
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-pip install -r scripts/requirements-excel-templates.in
+uv sync --project scripts
 ```
 
-> **Windows:** if `Activate.ps1` gives an error about running scripts being disabled, run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`, answer `Y`, then run `.venv\Scripts\Activate.ps1` again.
-
-`.venv` is a private Python environment for this repository, so these packages don't affect anything else on your computer. When it's active, your prompt starts with `(.venv)`.
+`uv sync` downloads Python 3.11 if needed and installs the packages into `scripts/.venv`, a private environment for this repository, so they don't affect anything else on your computer. You never need to turn it on: every command in this guide starts with `uv run --project scripts`, which uses it, and first updates it to the exact versions in `scripts/uv.lock` if they changed.
 
 **Run the tests** (same command on Mac and Windows):
 ```bash
-python -m pytest tests -v
+uv run --project scripts python -m pytest tests -v
 ```
-Each test prints `PASSED` or `FAILED`, and the last line gives the totals, for example `20 passed`.
+Each test prints `PASSED` or `FAILED`, and the last line gives the totals, for example `22 passed`.
 
-**Next time**, you only need to go to the folder, get the latest changes and turn the environment back on:
+**Next time**, you only need to go to the folder and get the latest changes:
 
 | | Mac | Windows |
 |---|---|---|
 | Go to the folder | `cd ~/Documents/data-models` | `cd $HOME\Documents\data-models` |
 | Get the latest changes | `git switch main` then `git pull` | `git switch main` then `git pull` |
-| Turn on the environment | `source .venv/bin/activate` | `.venv\Scripts\Activate.ps1` |
 
-**Try the exact package version from a Dependabot pull request.** On the pull request's **Files changed** tab, find the package and its new version, for example `openpyxl==3.2.0`. Then run (same on Mac and Windows):
+**Try the package versions from a Dependabot pull request.** Switch to the pull request's branch (its name is shown under the pull request's title) and run the tests. `uv run` installs exactly the versions in that branch's `uv.lock`, the same ones the pull request's checks use (same on Mac and Windows):
 ```bash
-pip install "openpyxl==3.2.0"
-python -m pytest tests -v
+git fetch origin
+git switch dependabot/uv/scripts/excel-template-packages-1a2b3c
+uv run --project scripts python -m pytest tests -v
 ```
+Run `git switch main` when you're done.
 
 ---
 
@@ -152,14 +151,14 @@ Then find the failure below.
 3. Create a ticket so someone can come back to it (Option B). Include a link to the failed check.
 
 **Option B: fix the script (when someone has time).** This needs [Section 2](#2-set-up-your-computer-to-run-the-tests-one-time).
-1. Install the new openpyxl version and run the tests to see the failure on your computer (end of Section 2).
+1. Switch to the pull request's branch and run the tests to see the failure on your computer (end of Section 2).
 2. Open `scripts/create_excel_templates.py` in any text editor and find the function `set_default_font`. It has one line that does the work:
    ```python
    wb._named_styles["Normal"].font = Font(name="Arial", size=10)
    ```
 3. Look in the [openpyxl release notes](https://openpyxl.readthedocs.io/en/stable/changes.html) for a change to "named styles" and update that line to match.
 4. **If you can't find a fix, removing the line is acceptable** (see "How much it matters" above). Replace the line with `pass`. Then, in `tests/test_create_excel_templates.py`, delete the two functions `test_default_font_is_arial` and `test_set_default_font_still_works_with_this_openpyxl` (each starts with `def` and runs until the next `def`).
-5. Run `python -m pytest tests -v` until everything passes, then put the change on the pull request (see [Push a fix to a pull request](#push-a-fix-to-a-pull-request) below).
+5. Run `uv run --project scripts python -m pytest tests -v` until everything passes, then put the change on the pull request (see [Push a fix to a pull request](#push-a-fix-to-a-pull-request) below).
 6. If you used `@dependabot ignore` earlier, comment `@dependabot unignore openpyxl` so Dependabot offers the update again.
 
 ### 3b. `test_synapseclient_still_has_what_upload_uses`
@@ -176,12 +175,12 @@ Then find the failure below.
    Mac (Terminal):
    ```bash
    export SYNAPSE_AUTH_TOKEN="paste-your-token-here"
-   python scripts/create_excel_templates.py --folder-id syn00000000
+   uv run --project scripts python scripts/create_excel_templates.py --folder-id syn00000000
    ```
    Windows (PowerShell):
    ```powershell
    $env:SYNAPSE_AUTH_TOKEN = "paste-your-token-here"
-   python scripts/create_excel_templates.py --folder-id syn00000000
+   uv run --project scripts python scripts/create_excel_templates.py --folder-id syn00000000
    ```
    Replace `syn00000000` with your test folder's ID. It should end with `Done: … template(s) uploaded`, and the files should appear in your folder. Run it a second time: the same files should get version 2.
 4. Push the fix to the pull request (below).
@@ -194,7 +193,7 @@ This step builds the real templates without uploading them. Read the last red li
 
 ### 3d. The "Install dependencies" step failed
 
-If the message mentions `hashes` or `Could not find a version`, the versions file wasn't generated correctly. Regenerate it as in [Section 5](#5-change-the-pinned-package-versions-by-hand-rare). If it's on a Dependabot pull request, close that pull request instead (**Close pull request** at the bottom); Dependabot opens a new one next month.
+If the message says the lockfile `needs to be updated`, or mentions `hash` or `No solution found`, `scripts/uv.lock` doesn't match `scripts/pyproject.toml` or wasn't generated correctly. Regenerate it as in [Section 5](#5-change-the-pinned-package-versions-by-hand-rare). If it's on a Dependabot pull request, close that pull request instead (**Close pull request** at the bottom); Dependabot opens a new one next month.
 
 ### 3e. Any other test failed
 
@@ -202,11 +201,11 @@ The test's message says what's wrong. If it isn't clear, use Option A from 3a fo
 
 ### Push a fix to a pull request
 
-From your terminal, in the `data-models` folder with `.venv` turned on. The pull request's branch name is shown under its title, for example `dependabot/pip/scripts/excel-template-packages-1a2b3c`. Use your own branch name in place of that one (same commands on Mac and Windows):
+From your terminal, in the `data-models` folder. The pull request's branch name is shown under its title, for example `dependabot/uv/scripts/excel-template-packages-1a2b3c`. Use your own branch name in place of that one (same commands on Mac and Windows):
 
 ```bash
 git fetch origin
-git switch dependabot/pip/scripts/excel-template-packages-1a2b3c
+git switch dependabot/uv/scripts/excel-template-packages-1a2b3c
 ```
 
 Make and test your change, then:
@@ -257,11 +256,11 @@ The checks run again on the pull request. When they're green, ask another BDM to
 
 ## 5. Change the pinned package versions by hand (rare)
 
-You only need this to allow a new **major** version of a package (Dependabot stays within the version ranges set in the `.in` file, so for example openpyxl 4 has to be allowed on purpose), or to repair the versions file.
+You only need this to allow a new **major** version of a package (Dependabot stays within the version ranges set in `pyproject.toml`, so for example openpyxl 4 has to be allowed on purpose), or to repair the lockfile.
 
 There are two files:
-- `scripts/requirements-excel-templates.in`: the packages the script uses and the range of versions it supports, for example `openpyxl>=3.1,<4`. **Edit this one.**
-- `scripts/requirements-excel-templates.txt`: generated from the `.in`, with every package (including the ones those packages need) at an exact version, with security hashes. **Never edit this one by hand.**
+- `scripts/pyproject.toml`: the packages the script uses and the range of versions it supports, for example `"openpyxl>=3.1,<4"`. **Edit this one.**
+- `scripts/uv.lock`: generated from `pyproject.toml`, with every package (including the ones those packages need) at an exact version, with security hashes. **Never edit this one by hand.**
 
 1. Set up as in [Section 2](#2-set-up-your-computer-to-run-the-tests-one-time), then create a branch for your change (same on Mac and Windows):
    ```bash
@@ -269,24 +268,20 @@ There are two files:
    git pull
    git switch -c update-excel-template-packages
    ```
-2. Edit `scripts/requirements-excel-templates.in` if needed.
-3. Install the tool that generates the `.txt`, then generate it. Mac and Windows use the same commands; run them from the `data-models` folder:
+2. Edit the range in `scripts/pyproject.toml` if needed, for example change `"openpyxl>=3.1,<4"` to `"openpyxl>=3.1,<5"`.
+3. Regenerate the lockfile (same on Mac and Windows, from the `data-models` folder). Put the package you changed after `--upgrade-package`; without it, uv keeps the current version whenever it's still allowed:
    ```bash
-   pip install pip-tools
-   cd scripts
-   pip-compile --allow-unsafe --generate-hashes --strip-extras --output-file=requirements-excel-templates.txt requirements-excel-templates.in
-   cd ..
+   uv lock --project scripts --upgrade-package openpyxl
    ```
-   Use Python 3.11 if you have it, since that's what the build uses. If you use a different version, the pull request's **Install dependencies** step tells you if anything is missing.
-4. Run a quick check on your computer:
+   To repair the lockfile without changing any versions, run `uv lock --project scripts` instead.
+4. Run the tests:
    ```bash
-   pip install -r scripts/requirements-excel-templates.in
-   python -m pytest tests -v
+   uv run --project scripts python -m pytest tests -v
    ```
-   This is only a quick check. pip may keep packages you already have if they fall within the allowed ranges, so it doesn't necessarily test the exact versions you just generated. The pull request's **Test Excel templates** check installs exactly those versions, and **it must pass before the pull request is merged**.
+   This installs exactly the versions you just generated. The pull request's **Test Excel templates** check also runs a dry-run build, and **it must pass before the pull request is merged**.
 5. Commit, push, and open a pull request:
    ```bash
-   git add scripts/requirements-excel-templates.in scripts/requirements-excel-templates.txt
+   git add scripts/pyproject.toml scripts/uv.lock
    git commit -m "Update the Excel template build's packages"
    git push -u origin update-excel-template-packages
    ```
@@ -314,8 +309,9 @@ There are two files:
 |---|---|
 | [`scripts/create_excel_templates.py`](../scripts/create_excel_templates.py) | Builds the workbooks and uploads them |
 | [`scripts/excel_templates_release_status.py`](../scripts/excel_templates_release_status.py) | Writes the Excel templates section on the release page |
-| [`scripts/requirements-excel-templates.in`](../scripts/requirements-excel-templates.in) | Packages the build uses, and the versions it supports (edit this) |
-| [`scripts/requirements-excel-templates.txt`](../scripts/requirements-excel-templates.txt) | Exact versions the build installs (generated; don't edit) |
+| [`scripts/pyproject.toml`](../scripts/pyproject.toml) | Packages the build uses, and the versions it supports (edit this) |
+| [`scripts/uv.lock`](../scripts/uv.lock) | Exact versions the build installs (generated; don't edit) |
+| [`scripts/.python-version`](../scripts/.python-version) | The Python version the build uses (3.11) |
 | [`tests/`](../tests) | The tests |
 | [`.github/workflows/build-excel-templates.yml`](../.github/workflows/build-excel-templates.yml) | Runs the build after each release, or by hand |
 | [`.github/workflows/test-excel-templates.yml`](../.github/workflows/test-excel-templates.yml) | Runs the tests on pull requests |

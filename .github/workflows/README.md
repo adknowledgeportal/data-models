@@ -191,8 +191,8 @@ The person doing a release shouldn't have to go looking for the build:
 - **Actions tab:** runs are titled **Excel templates for vX.Y.Z** (or **Excel templates … (manual)**). Each run's **Summary** lists every template uploaded with its Synapse ID and version, and any failures are shown as errors at the top. A pre-release run finishes in seconds with a note that it didn't build, since the templates are built when the release is promoted.
 
 ### Packages, tests and Dependabot
-- The build installs exact package versions, with hashes, from [`scripts/requirements-excel-templates.txt`](../../scripts/requirements-excel-templates.txt). That file is generated from [`scripts/requirements-excel-templates.in`](../../scripts/requirements-excel-templates.in), which lists the packages the script uses and the versions it supports. Don't edit the `.txt` by hand.
-- **Dependabot** opens one pull request a month that updates the `.txt` (within the ranges in the `.in`). Nobody is notified automatically: checking for these PRs is the [Monthly Maintenance](../../README.md#monthly-maintenance) task, and open ones are also listed on the release page.
+- The build uses [uv](https://docs.astral.sh/uv/) to install Python 3.11 ([`scripts/.python-version`](../../scripts/.python-version)) and exact package versions, with hashes, from [`scripts/uv.lock`](../../scripts/uv.lock). That file is generated from [`scripts/pyproject.toml`](../../scripts/pyproject.toml), which lists the packages the script uses and the versions it supports. Don't edit `uv.lock` by hand. The release build skips the test-only packages (the `dev` group).
+- **Dependabot** opens one pull request a month that updates `uv.lock` (within the ranges in `pyproject.toml`). Nobody is notified automatically: checking for these PRs is the [Monthly Maintenance](../../README.md#monthly-maintenance) task, and open ones are also listed on the release page.
 - The **Test Excel templates** workflow ([`test-excel-templates.yml`](test-excel-templates.yml)) runs the tests in [`tests/`](../../tests) and a dry-run build of the newest release on every pull request that changes the script, its packages, its tests or these workflows, including Dependabot's. A red check there means don't merge; see the [maintenance guide](../../docs/excel-templates-maintenance.md).
 
 ### Required Secrets and Variables
@@ -203,9 +203,9 @@ The person doing a release shouldn't have to go looking for the build:
 
 ### Running locally
 ```bash
-pip install -r scripts/requirements-excel-templates.in
-python -m pytest tests -v                                                                   # run the tests
-python scripts/create_excel_templates.py --version 1.0.9 --dry-run                          # build only
-python scripts/create_excel_templates.py --version 1.0.9 --folder-id syn00000000            # build and upload
+uv run --project scripts python -m pytest tests -v                                                       # run the tests
+uv run --project scripts python scripts/create_excel_templates.py --version 1.0.9 --dry-run              # build only
+uv run --project scripts python scripts/create_excel_templates.py --version 1.0.9 --folder-id syn00000000 # build and upload
 ```
+`uv run` installs Python 3.11 and the exact versions in `scripts/uv.lock` into `scripts/.venv` first.
 Workbooks are written to `output/`. Uploading needs `SYNAPSE_AUTH_TOKEN` or `authtoken` in `~/.synapseConfig`. The [maintenance guide](../../docs/excel-templates-maintenance.md) has step-by-step setup for Mac and Windows.
