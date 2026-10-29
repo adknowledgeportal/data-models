@@ -237,6 +237,9 @@ def extract_attrs(schema: dict) -> list[Attribute]:
         # array/multiselect properties carry their allowed values under items.enum,
         # not enum directly on the property -- that's where enum lives for singleselect
         enum = prop.get("enum") or (prop.get("items") or {}).get("enum")
+        # boolean properties have no enum, but still get a TRUE/FALSE dropdown
+        if not enum and prop.get("type") == "boolean":
+            enum = [True, False]
         attrs.append(Attribute(
             name=name,
             description=prop.get("description"),

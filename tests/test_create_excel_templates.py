@@ -124,6 +124,24 @@ def test_extract_attrs_reads_properties_in_schema_order():
     assert attrs[4].valid_values is None
 
 
+@pytest.mark.parametrize("enum, expected", [
+    (None, ["TRUE", "FALSE"]),
+    ([False], ["FALSE"]),
+])
+def test_boolean_dropdown_preserves_explicit_enum(enum, expected, tmp_path):
+    prop = {"type": "boolean"}
+    if enum is not None:
+        prop["enum"] = enum
+    attrs = cet.extract_attrs({"properties": {"isStranded": prop}})
+    assert attrs[0].valid_values == expected
+
+    path = cet.build_template_workbook(attrs, "TestTemplate", {}, {}, tmp_path)
+    wb = load_workbook(path)
+    assert [row[0].value for row in wb["ValidValues"].iter_rows()] == expected
+    [validation] = wb["Manifest"].data_validations.dataValidation
+    assert validation.formula1 == f"ValidValues!$A$1:$A${len(expected)}"
+
+
 def test_load_model_reads_definitions_and_column_order(tmp_path):
     csv_path = tmp_path / "AD.model.csv"
     csv_path.write_text(
