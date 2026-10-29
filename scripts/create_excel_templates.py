@@ -12,7 +12,7 @@
 # Outputs:      output/<Template>.xlsx, uploaded to the data dictionary folder
 #
 # Usage:        python scripts/create_excel_templates.py --folder-id synXXX [--version X] [--dry-run]
-# Dependencies: openpyxl, requests, synapseclient
+# Dependencies: scripts/pyproject.toml (exact versions in scripts/uv.lock)
 # ------------------------------------------------------------------------------
 """Build the ADKP Excel templates from the registered sage.schemas.ad JSON
 schemas and upload them to the data dictionary folder on Synapse.
@@ -59,7 +59,8 @@ Usage:
 The upload folder comes from --folder-id or the TEMPLATE_FOLDER_ID environment
 variable (a repository variable in the workflow).
 
-Requires: pip install "openpyxl>=3.1,<4" requests "synapseclient>=4.12,<5"
+Run with: uv run --project scripts python scripts/create_excel_templates.py ...
+(installs the exact versions in scripts/uv.lock, as the workflows do)
 
 Auth (upload only): SYNAPSE_AUTH_TOKEN, or authtoken in ~/.synapseConfig.
 """
@@ -72,16 +73,25 @@ import re
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
+from dataclasses import dataclass
 from pathlib import Path
+from typing import NoReturn
 
 import requests
-from requests.adapters import HTTPAdapter
-from urllib3.util.retry import Retry
+import synapseclient
 from openpyxl import Workbook
 from openpyxl.comments import Comment
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
+from packaging.version import Version
+from requests.adapters import HTTPAdapter
+from synapseclient.models import File, Folder
+from urllib3.util.retry import Retry
+
+# =========================================================
+# Settings
+# =========================================================
 
 REPO_URL = "https://repo-prod.prod.sagebase.org/repo/v1"
 ORG_NAME = "sage.schemas.ad"
@@ -90,31 +100,58 @@ ORG_NAME = "sage.schemas.ad"
 MODEL_CSV_URL = "https://raw.githubusercontent.com/adknowledgeportal/data-models/refs/tags/v{version}/AD.model.csv"
 
 MANIFEST_ROWS = 1000  # rows given borders, fills, and dropdowns
+MAX_WORKERS = 5  # parallel requests to Synapse
+
+# Schemas are read with direct REST calls rather than synapseclient's
+# JSONSchema classes: those wrap the same endpoints and are still changing
+# between releases, while the REST endpoints are Synapse's stable public API.
+# This session retries dropped connections and busy/error responses up to 5
+# times (at once, then after 2, 4, 8 and 16 seconds). The POSTs are read-only
+# list queries, so they're safe to retry too.
+SESSION = requests.Session()
+SESSION.mount("https://", HTTPAdapter(
+    max_retries=Retry(total=5, backoff_factor=1, status_forcelist=(429, 500, 502, 503, 504),
+                      allowed_methods=None, respect_retry_after_header=True),
+    pool_maxsize=MAX_WORKERS))
+
+# Workbook styles. Fonts are set on every styled cell: a cell given any style
+# starts from openpyxl's Calibri 11, not the workbook's default font.
+ARIAL = Font(name="Arial", size=10)
+ARIAL_BOLD = Font(name="Arial", size=10, bold=True)
+ARIAL_BOLD_WHITE = Font(name="Arial", size=10, bold=True, color="FFFFFF")
+MEDIUM_GREY_SIDE = Side(style="medium", color="E2E3E3")
+THIN_SIDE = Side(style="thin")
+MANIFEST_BORDER = Border(left=MEDIUM_GREY_SIDE, right=MEDIUM_GREY_SIDE,
+                         top=MEDIUM_GREY_SIDE, bottom=MEDIUM_GREY_SIDE)
+DD_BORDER = Border(left=THIN_SIDE, right=THIN_SIDE, top=THIN_SIDE, bottom=THIN_SIDE)
+REQUIRED_FILL = PatternFill(fill_type="solid", start_color="B5E3E8", end_color="B5E3E8")
+OPTIONAL_HEADER_FILL = PatternFill(fill_type="solid", start_color="E0E0E0", end_color="E0E0E0")
+DD_HEADER_FILL = PatternFill(fill_type="solid", start_color="375623", end_color="375623")
+DD_BAND_FILL = PatternFill(fill_type="solid", start_color="EBF3E8", end_color="EBF3E8")
+DD_COLUMN_WIDTHS = {"A": 29.41, "B": 41.41, "C": 33.41, "D": 61.41}
+
+VALIDATION_ERROR_TITLE = "Value not in standard list"
+VALIDATION_ERROR = "This entry isn't one of the standard values for this field. Keep it anyway?"
+MULTISELECT_NOTE = ("\nMultiple values allowed: type your selections separated by \",\" with no space "
+                    "(e.g. \"Human,Mouse\"). Excel will show a warning since it isn't a single "
+                    "listed value, but the entry is accepted.")
 
 
 # =========================================================
 # 1. Registered schemas
 # =========================================================
 
-MAX_WORKERS = 5  # parallel requests to Synapse
+@dataclass(frozen=True)
+class Attribute:
+    """One template column, from a property of the registered JSON schema."""
+    name: str
+    description: str | None
+    type: str | None  # JSON schema type, e.g. "string" or "array"
+    valid_values: list[str] | None  # None when any value is allowed
+    required: bool
 
 
-def _session():
-    """A requests session that retries dropped connections and busy/error
-    responses up to 5 times (at once, then after 2, 4, 8 and 16 seconds).
-    The POSTs are read-only list queries, so they're safe to retry too."""
-    retry = Retry(total=5, backoff_factor=1, status_forcelist=(429, 500, 502, 503, 504),
-                  allowed_methods=None, respect_retry_after_header=True)
-    session = requests.Session()
-    adapter = HTTPAdapter(max_retries=retry, pool_maxsize=MAX_WORKERS)
-    session.mount("https://", adapter)
-    return session
-
-
-SESSION = _session()
-
-
-def post_paginated(path, body):
+def post_paginated(path: str, body: dict) -> list[dict]:
     """All items from a paginated Synapse POST endpoint (public, no login)."""
     items = []
     while True:
@@ -127,11 +164,11 @@ def post_paginated(path, body):
         body = {**body, "nextPageToken": data["nextPageToken"]}
 
 
-def registered_versions():
+def registered_versions() -> dict[str, dict[str, str]]:
     """{schema name: {semantic version: registration time (ISO 8601, UTC)}}, oldest first"""
     names = [s["schemaName"] for s in post_paginated("/schema/list", {"organizationName": ORG_NAME})]
 
-    def versions(name):
+    def versions(name: str) -> dict[str, str]:
         found = post_paginated("/schema/version/list",
                                {"organizationName": ORG_NAME, "schemaName": name})
         return {v["semanticVersion"]: v["createdOn"]
@@ -141,11 +178,8 @@ def registered_versions():
         return dict(zip(names, pool.map(versions, names)))
 
 
-def version_key(version):
-    return tuple(int(p) for p in re.findall(r"\d+", version))
-
-
-def resolve_release(version, wait_minutes):
+def resolve_release(version: str | None,
+                    wait_minutes: float) -> tuple[str, list[str], str, str]:
     """Pick the release version and the schemas registered at it.
 
     With no version, the newest registered one is used. With a version, polls
@@ -157,13 +191,13 @@ def resolve_release(version, wait_minutes):
     deadline = time.monotonic() + wait_minutes * 60
     while True:
         registered = registered_versions()
-        newest = max((v for vs in registered.values() for v in vs), key=version_key)
+        newest = max((v for vs in registered.values() for v in vs), key=Version)
         release = version or newest
         in_release = sorted(n for n, vs in registered.items() if release in vs)
         if in_release:
             break
         if time.monotonic() >= deadline:
-            sys.exit(f"No {ORG_NAME} schemas registered at {release} after {wait_minutes} minute(s)")
+            fail(f"No {ORG_NAME} schemas registered at {release} after {wait_minutes} minute(s)")
         print(f"No {ORG_NAME} schemas at {release} yet, checking again in 30s", flush=True)
         time.sleep(30)
 
@@ -180,13 +214,13 @@ def resolve_release(version, wait_minutes):
     return release, in_release, newest, registered_on
 
 
-def fetch_schema(name, version):
+def fetch_schema(name: str, version: str) -> dict:
     resp = SESSION.get(f"{REPO_URL}/schema/type/registered/{ORG_NAME}-{name}-{version}", timeout=60)
     resp.raise_for_status()
     return resp.json()
 
 
-def as_text(value):
+def as_text(value: object) -> str:
     # match how R wrote enum values: TRUE/FALSE, and 1 rather than 1.0
     if isinstance(value, bool):
         return "TRUE" if value else "FALSE"
@@ -195,8 +229,8 @@ def as_text(value):
     return str(value)
 
 
-def extract_attrs(schema):
-    """One dict per property, in schema order."""
+def extract_attrs(schema: dict) -> list[Attribute]:
+    """One Attribute per property, in schema order."""
     required = set(schema.get("required", []))
     attrs = []
     for name, prop in (schema.get("properties") or {}).items():
@@ -206,13 +240,13 @@ def extract_attrs(schema):
         # boolean properties have no enum, but still get a TRUE/FALSE dropdown
         if not enum and prop.get("type") == "boolean":
             enum = [True, False]
-        attrs.append({
-            "attribute": name,
-            "description": prop.get("description"),
-            "type": prop.get("type"),
-            "valid_values": [as_text(v) for v in enum] if enum else None,
-            "required": name in required,
-        })
+        attrs.append(Attribute(
+            name=name,
+            description=prop.get("description"),
+            type=prop.get("type"),
+            valid_values=[as_text(v) for v in enum] if enum else None,
+            required=name in required,
+        ))
     return attrs
 
 
@@ -220,11 +254,15 @@ def extract_attrs(schema):
 # 2. Definitions and column order from AD.model.csv
 # =========================================================
 
-def norm_name(x):
+Definitions = dict[tuple[str | None, str | None], str | None]  # (Property, Value) -> Definition
+ColumnOrder = dict[str, list[str]]  # normalized template name -> DependsOn attributes
+
+
+def norm_name(x: str) -> str:
     return re.sub(r"[^a-z0-9]", "", x.lower())
 
 
-def load_model(source):
+def load_model(source: str) -> tuple[Definitions, ColumnOrder]:
     """(definitions {(Property, Value): Definition}, order {template key: [attributes]})
 
     source is a URL or a local path to AD.model.csv.
@@ -237,7 +275,7 @@ def load_model(source):
         content = Path(source).read_bytes()
     rows = list(csv.DictReader(io.StringIO(content.decode("utf-8-sig"))))
 
-    def cell(row, col):
+    def cell(row: dict[str, str], col: str) -> str | None:
         # blank and "NA" are missing, as they were for readr
         value = (row.get(col) or "").strip()
         return None if value in ("", "NA") else value
@@ -253,16 +291,17 @@ def load_model(source):
     return definitions, order
 
 
-def reorder_by_dependson(attrs, template_name, order):
+def reorder_by_dependson(attrs: list[Attribute], template_name: str,
+                         order: ColumnOrder) -> list[Attribute]:
     """Reorder attributes to match the template's DependsOn order."""
     ordered = order.get(norm_name(template_name))
     if ordered is None:
         print(f"[{template_name}] no DependsOn order found in data model — keeping schema order")
         return attrs
 
-    by_name = {a["attribute"]: a for a in attrs}
+    by_name = {a.name: a for a in attrs}
     matched = [a for a in ordered if a in by_name]  # in DependsOn order
-    leftover = [a["attribute"] for a in attrs if a["attribute"] not in matched]
+    leftover = [a.name for a in attrs if a.name not in matched]
     if leftover:
         print(f"[{template_name}] {len(leftover)} attribute(s) not in DependsOn, "
               f"appended at end: {', '.join(leftover)}")
@@ -273,33 +312,18 @@ def reorder_by_dependson(attrs, template_name, order):
 # 3. Workbook
 # =========================================================
 
-def border(style, color=None):
-    side = Side(style=style, color=color)
-    return Border(left=side, right=side, top=side, bottom=side)
+def set_default_font(wb: Workbook) -> None:
+    """Make Arial 10 the workbook's default font (its "Normal" style).
+
+    openpyxl has no public way to do this, so this uses its private
+    _named_styles attribute. If an openpyxl update removes or renames it,
+    test_default_font_is_arial in tests/test_create_excel_templates.py fails;
+    see docs/excel-templates-maintenance.md for what to do.
+    """
+    wb._named_styles["Normal"].font = Font(name="Arial", size=10)
 
 
-def fill(color):
-    return PatternFill(fill_type="solid", start_color=color, end_color=color)
-
-
-# set on every styled cell: a cell given any style starts from openpyxl's
-# Calibri 11, not the workbook's default font
-ARIAL = Font(name="Arial", size=10)
-ARIAL_BOLD = Font(name="Arial", size=10, bold=True)
-
-MANIFEST_BORDER = border("medium", "E2E3E3")
-REQUIRED_FILL = fill("B5E3E8")
-OPTIONAL_HEADER_FILL = fill("E0E0E0")
-DD_BORDER = border("thin")
-
-VALIDATION_ERROR_TITLE = "Value not in standard list"
-VALIDATION_ERROR = "This entry isn't one of the standard values for this field. Keep it anyway?"
-MULTISELECT_NOTE = ("\nMultiple values allowed: type your selections separated by \",\" with no space "
-                    "(e.g. \"Human,Mouse\"). Excel will show a warning since it isn't a single "
-                    "listed value, but the entry is accepted.")
-
-
-def build_manifest(wb, attrs):
+def build_manifest(wb: Workbook, attrs: list[Attribute]) -> None:
     ws = wb.active
     ws.title = "Manifest"
     values_ws = wb.create_sheet("ValidValues")
@@ -307,20 +331,20 @@ def build_manifest(wb, attrs):
 
     for col, attr in enumerate(attrs, start=1):
         letter = get_column_letter(col)
-        header = ws.cell(row=1, column=col, value=attr["attribute"])
+        header = ws.cell(row=1, column=col, value=attr.name)
         header.font = ARIAL_BOLD
-        header.fill = REQUIRED_FILL if attr["required"] else OPTIONAL_HEADER_FILL
+        header.fill = REQUIRED_FILL if attr.required else OPTIONAL_HEADER_FILL
         for row in range(1, MANIFEST_ROWS + 1):
             cell = ws.cell(row=row, column=col)
             cell.border = MANIFEST_BORDER
             if row > 1:
                 cell.font = ARIAL
-            if attr["required"]:
+            if attr.required:
                 cell.fill = REQUIRED_FILL
 
         # dropdown backed by this attribute's column in the hidden sheet; a
         # warning (not a stop) so multiselect entries and new values are allowed
-        values = attr["valid_values"]
+        values = attr.valid_values
         if values:
             for row, value in enumerate(values, start=1):
                 values_ws.cell(row=row, column=col, value=value).font = ARIAL
@@ -331,9 +355,9 @@ def build_manifest(wb, attrs):
             dv.add(f"{letter}2:{letter}{MANIFEST_ROWS}")
             ws.add_data_validation(dv)
 
-        if attr["description"]:
-            text = attr["description"]
-            if attr["type"] == "array" and values:
+        if attr.description:
+            text = attr.description
+            if attr.type == "array" and values:
                 text += MULTISELECT_NOTE
             # size the note box to fit the text -- the default truncates
             # anything longer than a short one-liner
@@ -341,10 +365,11 @@ def build_manifest(wb, attrs):
             header.comment = Comment(text, "", width=3 * 64, height=lines * 20)
 
 
-def build_data_dictionary(wb, attrs, definitions, template_name):
+def build_data_dictionary(wb: Workbook, attrs: list[Attribute], definitions: Definitions,
+                          template_name: str) -> None:
     ws = wb.create_sheet("DataDictionary")
-    rows = [(a["attribute"], a["description"], value, definitions.get((a["attribute"], value)))
-            for a in attrs for value in (a["valid_values"] or [None])]
+    rows = [(a.name, a.description, value, definitions.get((a.name, value)))
+            for a in attrs for value in (a.valid_values or [None])]
 
     unmatched = {(p, v) for p, _, v, d in rows if v is not None and d is None}
     if unmatched:
@@ -354,10 +379,8 @@ def build_data_dictionary(wb, attrs, definitions, template_name):
     for row in rows:
         ws.append(row)
 
-    header_style = dict(font=Font(name="Arial", size=10, bold=True, color="FFFFFF"),
-                        fill=fill("375623"), alignment=Alignment(horizontal="left"))
+    header_alignment = Alignment(horizontal="left")
     body_alignment = Alignment(wrap_text=True, vertical="top")
-    band_fill = fill("EBF3E8")
 
     # banded shading per attribute group
     group, previous = 0, object()
@@ -370,24 +393,26 @@ def build_data_dictionary(wb, attrs, definitions, template_name):
             cell.border = DD_BORDER
             cell.alignment = body_alignment
             if group % 2 == 1:
-                cell.fill = band_fill
+                cell.fill = DD_BAND_FILL
     for c in range(1, 5):
         cell = ws.cell(row=1, column=c)
         cell.border = DD_BORDER
-        for attr, value in header_style.items():
-            setattr(cell, attr, value)
+        cell.font = ARIAL_BOLD_WHITE
+        cell.fill = DD_HEADER_FILL
+        cell.alignment = header_alignment
 
-    for letter, width in zip("ABCD", (29.41, 41.41, 33.41, 61.41)):
+    for letter, width in DD_COLUMN_WIDTHS.items():
         ws.column_dimensions[letter].width = width
     ws.freeze_panes = "A2"
     ws.auto_filter.ref = f"A1:D{len(rows) + 1}"
 
 
-def build_template_workbook(attrs, template_name, definitions, order, out_dir):
+def build_template_workbook(attrs: list[Attribute], template_name: str, definitions: Definitions,
+                            order: ColumnOrder, out_dir: str | Path) -> Path:
     attrs = reorder_by_dependson(attrs, template_name, order)
 
     wb = Workbook()
-    wb._named_styles["Normal"].font = Font(name="Arial", size=10)  # workbook default font
+    set_default_font(wb)
     build_manifest(wb, attrs)
     build_data_dictionary(wb, attrs, definitions, template_name)
 
@@ -401,14 +426,17 @@ def build_template_workbook(attrs, template_name, definitions, order, out_dir):
 #    same name (case-insensitive), or a new file
 # =========================================================
 
-def upload(paths, release, registered_on, folder_id, dry_run):
+Stored = tuple[str, str, int]  # (template name, Synapse ID, file version)
+
+
+def upload(paths: list[Path], release: str, registered_on: str, folder_id: str | None,
+           dry_run: bool) -> tuple[list[Stored], list[str]]:
+    """Store each workbook in the folder. Returns what was stored and the
+    names of the templates that failed."""
     if dry_run and not folder_id:
         for path in paths:
             print(f"[{path.stem}] built (no --folder-id, so not checked against Synapse)")
-        return []
-
-    import synapseclient
-    from synapseclient.models import File, Folder
+        return [], []
 
     syn = synapseclient.Synapse()
     syn.login(silent=True)
@@ -422,8 +450,8 @@ def upload(paths, release, registered_on, folder_id, dry_run):
     print(f"Labeling uploads: {ORG_NAME} {release}, " +
           ", ".join(f"{k}={v[0]}" for k, v in labels.items()))
 
-    failed = []
-    for path in paths:
+    stored, failed = [], []
+    for n, path in enumerate(paths, start=1):
         existing_id = existing.get(path.name.lower())
         if dry_run:
             print(f"[{path.stem}] would {'update ' + existing_id if existing_id else 'create'}")
@@ -437,14 +465,90 @@ def upload(paths, release, registered_on, folder_id, dry_run):
             entity.version_comment = f"{ORG_NAME} {release}"
             entity.annotations = {**(entity.annotations or {}), **labels}
             entity = entity.store()
-            print(f"[{path.stem}] stored as {entity.id} (v{entity.version_number})")
+            print(f"[{path.stem}] ({n}/{len(paths)}) stored as {entity.id} (v{entity.version_number})",
+                  flush=True)
+            stored.append((path.stem, entity.id, entity.version_number))
         except Exception as e:
-            print(f"[{path.stem}] upload failed: {e}")
+            report_error(path.stem, f"upload failed: {e}")
             failed.append(path.stem)
-    return failed
+    return stored, failed
 
 
-def main():
+# =========================================================
+# 5. Reporting — in GitHub Actions, failures are also shown as errors on
+#    the run page, and a summary is written to the run's Summary tab
+# =========================================================
+
+def in_github_actions() -> bool:
+    return os.environ.get("GITHUB_ACTIONS") == "true"
+
+
+def heading(text: str) -> None:
+    print(f"\n== {text} ==", flush=True)
+
+
+def annotate_error(title: str, message: str) -> None:
+    """Show an error on the run page in GitHub Actions. Messages can include
+    text from Synapse or HTTP errors, so %, CR and LF are escaped: a raw
+    newline would end the workflow command early."""
+    if in_github_actions():
+        escaped = message.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+        print(f"::error title={title}::{escaped}", flush=True)
+
+
+def report_error(template: str, message: str) -> None:
+    print(f"[{template}] {message}", flush=True)
+    annotate_error(template, message)
+
+
+def fail(message: str) -> NoReturn:
+    """Stop with an error, shown on the run page in GitHub Actions."""
+    annotate_error("Excel templates", message)
+    sys.exit(message)
+
+
+def write_github_outputs(**values: object) -> None:
+    """Step outputs for the workflow (the release-page status uses them)."""
+    path = os.environ.get("GITHUB_OUTPUT")
+    if path:
+        with open(path, "a", encoding="utf-8") as f:
+            for key, value in values.items():
+                f.write(f"{key}={value}\n")
+
+
+def write_run_summary(release: str, registered_on: str, built: list[Path], stored: list[Stored],
+                      not_built: list[str], not_stored: list[str], dry_run: bool) -> None:
+    path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if not path:
+        return
+    lines = [f"## Excel templates: {ORG_NAME} {release} (registered {registered_on} UTC)", ""]
+    if dry_run:
+        lines.append(f"Dry run: built {len(built)} template(s), nothing uploaded. "
+                     "The workbooks are in this run's **excel-templates** artifact.")
+    else:
+        lines.append(f"Uploaded {len(stored)} of {len(built) + len(not_built)} template(s), labeled "
+                     f"`modelVersion` {release} and `releaseDate` {registered_on}.")
+    if not_built or not_stored:
+        lines += ["", f"**Failed:** {', '.join(not_built + not_stored)}. "
+                      "See docs/excel-templates-maintenance.md."]
+    if stored:
+        lines += ["", "| Template | Synapse ID | Version |", "|---|---|---|"]
+        lines += [f"| {name} | [{syn_id}](https://www.synapse.org/Synapse:{syn_id}) | {version} |"
+                  for name, syn_id, version in stored]
+    with open(path, "a", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n\n")
+
+
+def _try(fn, *args):
+    """fn(*args), or the exception it raised, so one failure in a parallel
+    map doesn't stop the rest."""
+    try:
+        return fn(*args)
+    except Exception as e:
+        return e
+
+
+def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("--version", help="release to build, e.g. 1.0.9 (default: newest registered)")
     parser.add_argument("--wait-minutes", type=float, default=10,
@@ -456,26 +560,34 @@ def main():
                         help="AD.model.csv URL or local path (default: the release's tag "
                              "on GitHub)")
     parser.add_argument("--dry-run", action="store_true", help="build, but don't upload")
+    parser.add_argument("--resolve-only", action="store_true",
+                        help="only find the release that would be built, print it (and set "
+                             "the release step output in GitHub Actions), and stop")
     args = parser.parse_args()
-    if not args.folder_id and not args.dry_run:
+    if not args.folder_id and not (args.dry_run or args.resolve_only):
         parser.error("--folder-id (or TEMPLATE_FOLDER_ID) is required unless --dry-run")
 
+    heading("Step 1 of 3: Finding the schemas registered at the release")
     release, names, newest, registered_on = resolve_release(
         args.version and args.version.lstrip("v"), args.wait_minutes)
+    write_github_outputs(release=release, registered_on=registered_on)
+    if args.resolve_only:
+        return
     # the folder holds one file per template, so uploading an older release
     # would replace the current templates with older ones
     if release != newest and not args.dry_run:
-        sys.exit(f"{release} isn't the newest registered version ({newest}); uploading it "
-                 "would replace the current templates. Use --dry-run to build it locally.")
+        fail(f"{release} isn't the newest registered version ({newest}); uploading it "
+             "would replace the current templates. Use --dry-run to build it locally.")
     model_csv = args.model_csv or MODEL_CSV_URL.format(version=release)
     print(f"Reading definitions and column order from {model_csv}")
     try:
         definitions, order = load_model(model_csv)
     except Exception as e:
-        sys.exit(f"Couldn't read AD.model.csv from {model_csv} ({e}). "
-                 "Pass --model-csv to use a different copy.")
+        fail(f"Couldn't read AD.model.csv from {model_csv} ({e}). "
+             "Pass --model-csv to use a different copy.")
     Path(args.out_dir).mkdir(exist_ok=True)
 
+    heading(f"Step 2 of 3: Building {len(names)} workbook(s)")
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
         schemas = dict(zip(names, pool.map(lambda n: _try(fetch_schema, n, release), names)))
 
@@ -490,20 +602,21 @@ def main():
                 raise ValueError("schema has no properties")
             built.append(build_template_workbook(attrs, name, definitions, order, args.out_dir))
         except Exception as e:
-            print(f"[{name}] failed: {e}")
+            report_error(name, f"failed: {e}")
             not_built.append(name)
+    print(f"Built {len(built)} of {len(names)} workbook(s)")
 
-    not_stored = upload(built, release, registered_on, args.folder_id, args.dry_run)
+    heading("Step 3 of 3: " + ("Checking the files on Synapse (dry run, nothing uploaded)"
+                               if args.dry_run else f"Uploading {len(built)} workbook(s) to Synapse"))
+    stored, not_stored = upload(built, release, registered_on, args.folder_id, args.dry_run)
+    write_github_outputs(built=len(built), uploaded=len(stored),
+                         failed=len(not_built) + len(not_stored))
+    write_run_summary(release, registered_on, built, stored, not_built, not_stored, args.dry_run)
     if not_built or not_stored:
-        sys.exit(f"{len(not_built)} template(s) not built ({', '.join(not_built)}), "
-                 f"{len(not_stored)} not stored ({', '.join(not_stored)})")
-
-
-def _try(fn, *args):
-    try:
-        return fn(*args)
-    except Exception as e:
-        return e
+        fail(f"{len(not_built)} template(s) not built ({', '.join(not_built)}), "
+             f"{len(not_stored)} not stored ({', '.join(not_stored)})")
+    print(f"\nDone: {len(stored)} template(s) uploaded" if not args.dry_run
+          else f"\nDone: {len(built)} template(s) built (dry run)")
 
 
 if __name__ == "__main__":

@@ -12,22 +12,39 @@
 # reads the registration run's log for the org it registered to. Checking the
 # release itself would race with a pre-release being promoted mid-run.
 #
+# The build is shown on the GitHub release page, so the person doing the
+# release can follow it without opening the Actions tab: an "Excel templates"
+# section at the end of the release notes says it's building (with a reminder
+# to update Core Models meanwhile), then whether it succeeded or failed. Open
+# Dependabot PRs are listed there too, as a reminder of the monthly
+# maintenance (Monthly Maintenance in the README).
+#
 # Steps:
-#   1. Check release              - resolves the version; skips runs that
-#                                   registered to test.ad
-#   2. Build and upload templates - runs scripts/create_excel_templates.py, which
+#   1. Check release              - skips runs that registered to test.ad
+#   2. Resolve the version        - the registered version to build (blank
+#                                   manual version = newest); used for the
+#                                   build and both release-page updates
+#   3. Show the build started     - "building" status on the release page
+#   4. Build and upload templates - runs scripts/create_excel_templates.py, which
 #                                   builds one workbook per schema registered at
 #                                   that version and uploads each as a new version
 #                                   of the existing file (or a new file), labeled
 #                                   with modelVersion and releaseDate
-#   3. Upload workbooks           - saves the workbooks as a workflow artifact
+#   5. Show the result            - ✅/❌ status on the release page
+#   6. Upload workbooks           - saves the workbooks as a workflow artifact
 #
 # Required configuration:
 #   secret   SYNAPSE_TOKEN_DPE  - Synapse token with edit access to the data
 #                                 dictionary folder (shared with register-schema.yml)
 #   variable TEMPLATE_FOLDER_ID - Synapse ID of that folder
+#
+# If this fails, see docs/excel-templates-maintenance.md.
 
 name: Build Excel templates
+run-name: >-
+  ${{ github.event_name == 'workflow_dispatch'
+      && format('Excel templates {0} (manual{1})', inputs.version || 'newest', inputs.dry-run && ', dry run' || '')
+      || format('Excel templates for {0}', github.event.workflow_run.head_branch) }}
 
 on:
   workflow_run:
@@ -64,8 +81,16 @@ jobs:
       (github.event.workflow_run.conclusion == 'success' &&
        github.event.workflow_run.event == 'release')
     permissions:
-      contents: read
-      actions: read  # read the registration run's log
+      contents: write       # edit the release notes (build status)
+      actions: read         # read the registration run's log
+      pull-requests: read   # list open Dependabot PRs
+    env:
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      # uv commands use scripts/pyproject.toml, fail if uv.lock is out of
+      # date, and skip the test-only packages (the dev group)
+      UV_PROJECT: scripts
+      UV_LOCKED: "1"
+      UV_NO_DEV: "1"
 
     steps:
       - name: Check release
@@ -75,10 +100,16 @@ jobs:
           TAG: ${{ github.event.workflow_run.head_branch }}
           RUN_ID: ${{ github.event.workflow_run.id }}
           INPUT_VERSION: ${{ inputs.version }}
+          DRY_RUN: ${{ inputs.dry-run }}
         run: |
           if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
             echo "version=$INPUT_VERSION" >> "$GITHUB_OUTPUT"
             echo "build=true" >> "$GITHUB_OUTPUT"
+            # a manual upload updates its release's status too; which release
+            # is decided in "Resolve the version to build"
+            if [[ "$DRY_RUN" != "true" ]]; then
+              echo "upload=true" >> "$GITHUB_OUTPUT"
+            fi
             exit 0
           fi
           # The "Resolve schema organization" step of register-schema.yml logs
@@ -88,9 +119,11 @@ jobs:
           if grep -qE 'Production: deploying to sage\.schemas\.ad$' <<<"$log"; then
             echo "Run $RUN_ID registered $TAG to sage.schemas.ad; building templates"
             echo "version=$TAG" >> "$GITHUB_OUTPUT"
+            echo "tag=$TAG" >> "$GITHUB_OUTPUT"
             echo "build=true" >> "$GITHUB_OUTPUT"
+            echo "upload=true" >> "$GITHUB_OUTPUT"
           elif grep -qE 'Test: deploying to test\.ad$' <<<"$log"; then
-            echo "Run $RUN_ID registered $TAG to test.ad (pre-release); not building templates"
+            echo "::notice title=Not building::Run $RUN_ID registered $TAG to test.ad (pre-release). The Excel templates are built when the release is promoted to a full release."
             echo "build=false" >> "$GITHUB_OUTPUT"
           else
             echo "::error::Couldn't tell which org run $RUN_ID registered to; has the Resolve schema organization message in register-schema.yml changed?"
@@ -102,25 +135,74 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Set up Python
+      - name: Set up uv
         if: steps.release.outputs.build == 'true'
-        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
         with:
-          python-version: "3.11"
+          working-directory: scripts
 
       - name: Install dependencies
         if: steps.release.outputs.build == 'true'
-        run: pip install "openpyxl>=3.1,<4" requests "synapseclient>=4.12,<5"
+        # Python version from scripts/.python-version, exact package versions
+        # and hashes from scripts/uv.lock; Dependabot opens a PR monthly to
+        # update them
+        run: uv sync
+
+      # Decide the version once (a blank manual version means the newest
+      # registered one) and use it for the build and both release-page
+      # updates, so the status always goes on the release that was built.
+      - name: Resolve the version to build
+        id: resolve
+        if: steps.release.outputs.build == 'true'
+        env:
+          MODEL_VERSION: ${{ steps.release.outputs.version }}
+          EVENT_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          uv run python -u scripts/create_excel_templates.py ${MODEL_VERSION:+--version "$MODEL_VERSION"} --resolve-only
+          release=$(grep '^release=' "$GITHUB_OUTPUT" | tail -1 | cut -d= -f2)
+          echo "tag=${EVENT_TAG:-v$release}" >> "$GITHUB_OUTPUT"
+
+      - name: Show the build started on the release page
+        if: steps.release.outputs.upload == 'true' && steps.resolve.outputs.tag != ''
+        # the status is only informational: a problem here must not stop the build
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.resolve.outputs.tag }}
+        run: |
+          echo "::notice title=Excel templates are building::While this runs (about 5 minutes), do release Step 4: start the Core Models update, then approve and merge its pull request."
+          python3 scripts/excel_templates_release_status.py --tag "$TAG" --state building --run-url "$RUN_URL"
 
       - name: Build and upload templates
+        id: build
         if: steps.release.outputs.build == 'true'
         env:
           SYNAPSE_AUTH_TOKEN: ${{ secrets.SYNAPSE_TOKEN_DPE }}
           TEMPLATE_FOLDER_ID: ${{ vars.TEMPLATE_FOLDER_ID }}
-          MODEL_VERSION: ${{ steps.release.outputs.version }}
+          MODEL_VERSION: ${{ steps.resolve.outputs.release }}
           # manual runs only; workflow_run has no inputs, so automatic runs upload
           DRY_RUN: ${{ inputs.dry-run && '--dry-run' || '' }}
-        run: python -u scripts/create_excel_templates.py ${MODEL_VERSION:+--version "$MODEL_VERSION"} $DRY_RUN
+        run: uv run python -u scripts/create_excel_templates.py --version "$MODEL_VERSION" $DRY_RUN
+
+      - name: Show the result on the release page
+        # automatic runs know their release even if resolving the version failed
+        if: >-
+          always() && steps.release.outputs.upload == 'true' &&
+          (steps.resolve.outputs.tag != '' || steps.release.outputs.tag != '')
+        # as above, and so the run's result reflects the build, not the status
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.resolve.outputs.tag || steps.release.outputs.tag }}
+          STATE: ${{ steps.build.outcome == 'success' && 'success' || 'failure' }}
+          UPLOADED: ${{ steps.build.outputs.uploaded }}
+          MODEL_VERSION: ${{ steps.build.outputs.release }}
+          RELEASE_DATE: ${{ steps.build.outputs.registered_on }}
+          FOLDER_ID: ${{ vars.TEMPLATE_FOLDER_ID }}
+        run: |
+          python3 scripts/excel_templates_release_status.py --tag "$TAG" --state "$STATE" \
+            --run-url "$RUN_URL" --uploaded "$UPLOADED" --model-version "$MODEL_VERSION" \
+            --release-date "$RELEASE_DATE" --folder-id "$FOLDER_ID"
 
       - name: Upload workbooks as artifacts
         if: always() && steps.release.outputs.build == 'true'
