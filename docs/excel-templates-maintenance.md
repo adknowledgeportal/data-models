@@ -47,7 +47,9 @@ The build uses Python packages (mainly `openpyxl`, which writes the Excel files,
 
 ## 1. Handle the monthly Dependabot pull request
 
-**Find it.** Open the [pull requests from Dependabot](https://github.com/adknowledgeportal/data-models/pulls/app%2Fdependabot). If the list is empty, there's nothing to do this month. Usually there is at most one, titled something like **Excel templates: Bump the excel-template-packages group in /scripts with 3 updates**.
+**Find it.** Open the [pull requests from Dependabot](https://github.com/adknowledgeportal/data-models/pulls/app%2Fdependabot). Usually there is at most one, titled something like **Excel templates: Bump the excel-template-packages group in /scripts with 3 updates**.
+
+**If the list is empty,** there's nothing to do this month, but make sure Dependabot is still working: open [Dependabot's status page](https://github.com/adknowledgeportal/data-models/network/updates) (the repository's **Insights** tab → **Dependency graph** → **Dependabot**). `/scripts` should show **Last checked** within the past month. If it shows an error or hasn't checked in over a month, ask in the team channel.
 
 **Handle it:**
 

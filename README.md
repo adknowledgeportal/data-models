@@ -86,7 +86,7 @@ We are exploring better solutions to this problem -- if you have ideas, tell us!
 ## Monthly Maintenance
 
 On the 1st of each month, Dependabot opens a pull request that updates the Python packages the Excel template build uses. This is separate from releases. Nobody is notified when the pull request opens, so someone needs to check for it each month.
-1. Open the [pull requests from Dependabot](https://github.com/adknowledgeportal/data-models/pulls/app%2Fdependabot). If there are none, there's nothing to do this month.
+1. Open the [pull requests from Dependabot](https://github.com/adknowledgeportal/data-models/pulls/app%2Fdependabot). If there are none, there's nothing to do this month, but check that [Dependabot's status page](https://github.com/adknowledgeportal/data-models/network/updates) shows `/scripts` **Last checked** within the past month. If it shows an error or hasn't checked in over a month, ask in the team channel.
 2. Open the pull request and assign it to yourself: in the right-hand column under **Assignees**, click **assign yourself**.
 3. If all of its checks are green, approve it (**Files changed** → **Review changes** → **Approve** → **Submit review**), then merge it (**Squash and merge** → **Confirm squash and merge**). The next release's Excel build uses the new versions.
 4. If a check is red, don't merge it. Until an update is merged, the build keeps using the current package versions, which work. Follow the [Excel template maintenance guide](docs/excel-templates-maintenance.md#3-a-check-failed-on-a-dependabot-pull-request).
