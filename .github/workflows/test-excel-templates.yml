@@ -1,0 +1,63 @@
+# Tests the Excel template build on pull requests that change it, including
+# Dependabot's monthly package updates.
+#
+# Triggered on:
+#   - pull_request      - changes to the script, its packages, its tests or
+#                         its workflows
+#   - workflow_dispatch - manual run from the Actions tab
+#
+# Steps:
+#   1. Install the exact package versions in scripts/uv.lock
+#   2. Run the tests in tests/
+#   3. Build the newest release's templates without uploading (reads the
+#      public sage.schemas.ad schemas; no Synapse login needed)
+#
+# If this fails, see docs/excel-templates-maintenance.md.
+
+name: Test Excel templates
+
+on:
+  pull_request:
+    branches:
+      - "main"
+    paths:
+      - "scripts/create_excel_templates.py"
+      - "scripts/excel_templates_release_status.py"
+      - "scripts/pyproject.toml"
+      - "scripts/uv.lock"
+      - "scripts/.python-version"
+      - "tests/**"
+      - ".github/workflows/build-excel-templates.yml"
+      - ".github/workflows/test-excel-templates.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-excel-templates:
+    runs-on: ubuntu-latest
+    env:
+      # uv commands use scripts/pyproject.toml and fail if uv.lock is out of date
+      UV_PROJECT: scripts
+      UV_LOCKED: "1"
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+        with:
+          working-directory: scripts
+
+      - name: Install dependencies
+        # Python version from scripts/.python-version, packages including the
+        # tests' (the dev group)
+        run: uv sync
+
+      - name: Run tests
+        run: uv run python -m pytest tests -v
+
+      - name: Build the newest release's templates (dry run)
+        run: uv run python -u scripts/create_excel_templates.py --dry-run

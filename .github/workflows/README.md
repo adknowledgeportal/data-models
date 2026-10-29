@@ -12,6 +12,11 @@
   - [Outputs](#outputs)
   - [Diagrams](#diagrams-1)
 - [Build Excel Templates Workflow](#build-excel-templates-workflow)
+  - [Where to see it](#where-to-see-it)
+  - [Packages, tests and Dependabot](#packages-tests-and-dependabot)
+  - [Running locally](#running-locally)
+
+For fixing the Excel build when it fails, see the [Excel template maintenance guide](../../docs/excel-templates-maintenance.md).
 
 ---
 
@@ -180,6 +185,16 @@ Pre-release and pull request runs register to `test.ad`, so they don't rebuild t
 - Only the newest registered release can be uploaded, since uploading an older one would replace the current templates. Older releases can be built with `--dry-run`.
 - The run fails if any template can't be built or uploaded. The workbooks are also saved as a workflow artifact.
 
+### Where to see it
+The person doing a release shouldn't have to go looking for the build:
+- **Release page:** an **Excel templates** section is added at the end of the release notes. While the build runs, it says so and reminds you to update Core Models (release Step 4) in the meantime. When the build finishes, it shows ✅ with how many templates were uploaded and their labels, or ❌ with a link to the [maintenance guide](../../docs/excel-templates-maintenance.md). It also lists any open Dependabot PRs (see [Monthly Maintenance](../../README.md#monthly-maintenance)). Only this section is changed; the rest of the release notes stays as written. Manual uploads update their release's section too.
+- **Actions tab:** runs are titled **Excel templates for vX.Y.Z** (or **Excel templates … (manual)**). Each run's **Summary** lists every template uploaded with its Synapse ID and version, and any failures are shown as errors at the top. A pre-release run finishes in seconds with a note that it didn't build, since the templates are built when the release is promoted.
+
+### Packages, tests and Dependabot
+- The build uses [uv](https://docs.astral.sh/uv/) to install Python 3.11 ([`scripts/.python-version`](../../scripts/.python-version)) and exact package versions, with hashes, from [`scripts/uv.lock`](../../scripts/uv.lock). That file is generated from [`scripts/pyproject.toml`](../../scripts/pyproject.toml), which lists the packages the script uses and the versions it supports. Don't edit `uv.lock` by hand. The release build skips the test-only packages (the `dev` group).
+- **Dependabot** opens one pull request a month that updates `uv.lock` (within the ranges in `pyproject.toml`). Nobody is notified automatically: checking for these PRs is the [Monthly Maintenance](../../README.md#monthly-maintenance) task, and open ones are also listed on the release page.
+- The **Test Excel templates** workflow ([`test-excel-templates.yml`](test-excel-templates.yml)) runs the tests in [`tests/`](../../tests) and a dry-run build of the newest release on every pull request that changes the script, its packages, its tests or these workflows, including Dependabot's. A red check there means don't merge; see the [maintenance guide](../../docs/excel-templates-maintenance.md).
+
 ### Required Secrets and Variables
 | Name | Type | Description |
 |------|------|-------------|
@@ -188,8 +203,9 @@ Pre-release and pull request runs register to `test.ad`, so they don't rebuild t
 
 ### Running locally
 ```bash
-pip install "openpyxl>=3.1,<4" requests "synapseclient>=4.12,<5"
-python scripts/create_excel_templates.py --version 1.0.9 --dry-run                          # build only
-python scripts/create_excel_templates.py --version 1.0.9 --folder-id syn00000000            # build and upload
+uv run --project scripts python -m pytest tests -v                                                       # run the tests
+uv run --project scripts python scripts/create_excel_templates.py --version 1.0.9 --dry-run              # build only
+uv run --project scripts python scripts/create_excel_templates.py --version 1.0.9 --folder-id syn00000000 # build and upload
 ```
-Workbooks are written to `output/`. Uploading needs `SYNAPSE_AUTH_TOKEN` or `authtoken` in `~/.synapseConfig`.
+`uv run` installs Python 3.11 and the exact versions in `scripts/uv.lock` into `scripts/.venv` first.
+Workbooks are written to `output/`. Uploading needs `SYNAPSE_AUTH_TOKEN` or `authtoken` in `~/.synapseConfig`. The [maintenance guide](../../docs/excel-templates-maintenance.md) has step-by-step setup for Mac and Windows.
