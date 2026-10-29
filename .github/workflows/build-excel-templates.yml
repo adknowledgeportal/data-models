@@ -164,6 +164,8 @@ jobs:
 
       - name: Show the build started on the release page
         if: steps.release.outputs.upload == 'true' && steps.resolve.outputs.tag != ''
+        # the status is only informational: a problem here must not stop the build
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ steps.resolve.outputs.tag }}
@@ -187,6 +189,8 @@ jobs:
         if: >-
           always() && steps.release.outputs.upload == 'true' &&
           (steps.resolve.outputs.tag != '' || steps.release.outputs.tag != '')
+        # as above, and so the run's result reflects the build, not the status
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ steps.resolve.outputs.tag || steps.release.outputs.tag }}
