@@ -40,7 +40,7 @@ scripts/add_cohort_attribute.ipynb
 tests/example-manifest-selection.sh
 .vscode/launch.json
 scripts/.env
-pyproject.toml
+/pyproject.toml
 
 sheets_creds.json
 

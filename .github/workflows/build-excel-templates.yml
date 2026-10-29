@@ -86,6 +86,11 @@ jobs:
       pull-requests: read   # list open Dependabot PRs
     env:
       RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      # uv commands use scripts/pyproject.toml, fail if uv.lock is out of
+      # date, and skip the test-only packages (the dev group)
+      UV_PROJECT: scripts
+      UV_LOCKED: "1"
+      UV_NO_DEV: "1"
 
     steps:
       - name: Check release
@@ -130,16 +135,18 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Set up Python
+      - name: Set up uv
         if: steps.release.outputs.build == 'true'
-        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
         with:
-          python-version: "3.11"
+          working-directory: scripts
 
       - name: Install dependencies
         if: steps.release.outputs.build == 'true'
-        # exact versions and hashes; Dependabot opens a PR monthly to update them
-        run: pip install --require-hashes -r scripts/requirements-excel-templates.txt
+        # Python version from scripts/.python-version, exact package versions
+        # and hashes from scripts/uv.lock; Dependabot opens a PR monthly to
+        # update them
+        run: uv sync
 
       # Decide the version once (a blank manual version means the newest
       # registered one) and use it for the build and both release-page
@@ -151,7 +158,7 @@ jobs:
           MODEL_VERSION: ${{ steps.release.outputs.version }}
           EVENT_TAG: ${{ steps.release.outputs.tag }}
         run: |
-          python -u scripts/create_excel_templates.py ${MODEL_VERSION:+--version "$MODEL_VERSION"} --resolve-only
+          uv run python -u scripts/create_excel_templates.py ${MODEL_VERSION:+--version "$MODEL_VERSION"} --resolve-only
           release=$(grep '^release=' "$GITHUB_OUTPUT" | tail -1 | cut -d= -f2)
           echo "tag=${EVENT_TAG:-v$release}" >> "$GITHUB_OUTPUT"
 
@@ -173,7 +180,7 @@ jobs:
           MODEL_VERSION: ${{ steps.resolve.outputs.release }}
           # manual runs only; workflow_run has no inputs, so automatic runs upload
           DRY_RUN: ${{ inputs.dry-run && '--dry-run' || '' }}
-        run: python -u scripts/create_excel_templates.py --version "$MODEL_VERSION" $DRY_RUN
+        run: uv run python -u scripts/create_excel_templates.py --version "$MODEL_VERSION" $DRY_RUN
 
       - name: Show the result on the release page
         # automatic runs know their release even if resolving the version failed

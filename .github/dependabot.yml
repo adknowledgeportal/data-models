@@ -1,5 +1,5 @@
 # Dependabot opens one pull request a month that updates the packages the
-# Excel template build uses (scripts/requirements-excel-templates.txt).
+# Excel template build uses (scripts/uv.lock).
 # Nobody is notified automatically: checking for these PRs is the Monthly
 # Maintenance in the README (assign yourself, approve and merge if its checks
 # pass).
@@ -7,13 +7,13 @@
 
 version: 2
 updates:
-  - package-ecosystem: "pip"
+  - package-ecosystem: "uv"
     directory: "/scripts"
     schedule:
       interval: "monthly"
-    # only update the exact versions in the .txt, within the ranges in
-    # requirements-excel-templates.in; a new major version (e.g. openpyxl 4)
-    # needs someone to widen the range there on purpose
+    # only update the exact versions in uv.lock, within the ranges in
+    # pyproject.toml; a new major version (e.g. openpyxl 4) needs someone to
+    # widen the range there on purpose
     versioning-strategy: lockfile-only
     groups:
       excel-template-packages:

@@ -1,0 +1,24 @@
+# Packages used by create_excel_templates.py and its tests.
+#
+# Lists only what the scripts import directly, with the range of versions
+# they support. uv.lock is generated from this file (every dependency pinned
+# to an exact version and hash) and is what the workflows install. Don't edit
+# uv.lock by hand; see docs/excel-templates-maintenance.md.
+
+[project]
+name = "adkp-excel-templates"
+version = "0.1.0"
+description = "Builds the ADKP Excel templates from the registered schemas and uploads them to Synapse"
+requires-python = ">=3.11"
+dependencies = [
+    "openpyxl>=3.1,<4",
+    "packaging",
+    "requests",
+    "synapseclient>=4.12,<5",
+    "urllib3",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+]
