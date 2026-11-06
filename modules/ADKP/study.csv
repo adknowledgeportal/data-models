@@ -22,7 +22,7 @@ Aging-PheWAS,Characterization of gene associations with aging-related traits wit
 AGMP_ANIMAL_MODELS,The Mechanistic Studies in Animal Models Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn63660568,,string,ADKP
 AGMP_ADRC,ADRC Study to Define a Role for the Gut Microbiome and Metabolome in Alzheimer’s Disease (AGMP_ADRC),,,,,study,,https://www.synapse.org/Synapse:syn64959226,,string,ADKP
 AGMP_BEAM,Brain Energy for Amyloid transformation In Alzheimer's disease (AGMP_BEAM),,,,,study,,https://www.synapse.org/#!Synapse:syn51104591,,string,ADKP
-AGMP_MIND,The Mediterranean–DASH Intervention for Neurodegenerative Delay (AGMP_MIND) study,,,,,study,,https://www.synapse.org/Synapse:syn53239120,,string,ADKP
+AGMP_MIND,The Mediterranean–DASH Intervention for Neurodegenerative Delay (AGMP_MIND) Study,,,,,study,,https://www.synapse.org/Synapse:syn53239120,,string,ADKP
 AGMP_TULSA_1000_LIBR,A naturalistic study protocol for multilevel assessment and outcome prediction in a large psychiatric sample (AGMP_TULSA_1000_LIBR),,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn53239117,,string,ADKP
 AMP-AD_DiverseCohorts,The Accelerating Medicines Partnership Alzheimer's Disease Diverse Cohorts Study (AMP-AD_DiverseCohorts),,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn51732482,,string,ADKP
 APOE4_Myelination,The APOE4 Myelination (APOE4_Myelination) Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn44424170,,string,ADKP
@@ -49,7 +49,7 @@ BroadMDMi,A novel human in vitro microglia-like model,,,,,study,,https://www.syn
 BU_ADRC_circPDE4B,BU ADRC circPDE4B Downregulation Associated with GEMIN5-Dependent Translational Stress and Autophagy in MAPT Pathology (BU_ADRC_circPDE4B),,,,,study,,https://www.synapse.org/#!Synapse:syn74323578,,string,ADKP
 CD74-IHC,The CD74 Immunohistochemistry Study (CD74-IHC),,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage?Study=syn64759724,,string,ADKP
 CHDWB,The Center for Health Discovery and Well Being (CHDWB) Study,,,,,study,,https://www.synapse.org/#!Synapse:syn8272982,,string,ADKP
-Choroid_Plexus_APOE4,The Choroid_Plexus_APOE4 Study,,,,,study,,https://www.synapse.org/Synapse:syn77548036,,string,ADKP
+Choroid_Plexus_APOE4,The Choroid_Plexus_APOE4 (Choroid_Plexus_APOE4) Study,,,,,study,,https://www.synapse.org/Synapse:syn77548036,,string,ADKP
 CMC,CommonMind Consortium,,,,,study,,https://www.synapse.org/#!Synapse:syn2759792/wiki/69613,,string,ADKP
 CMC_HBCC,The CommonMind Consortium Human Brain Collection Core Cohort,,,,,study,,,,string,ADKP
 CLEAR-AD_P1, Discovering Centrally Linked Peripheral Molecular Signatures of Alzheimer's Disease,,,,,study,,https://www.synapse.org/Synapse:syn74929443,,string,ADKP
