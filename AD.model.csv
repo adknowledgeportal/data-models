@@ -1890,7 +1890,7 @@ TWAS,Transcriptome-Wide Association Study (TWAS) in Alzheimer's Disease,,,,,stud
 TyrobpKO,Mouse Tyrobp KO model,,,,,study,,https://www.synapse.org/#!Synapse:syn7123287,,string,ADKP,
 TyrobpKO_AppPs1,TyrobpKO mice crossed with APP/PS1 tg,,,,,study,,https://www.synapse.org/#!Synapse:syn10378730,,string,ADKP,
 U1-70_PrimaryCellCulture,APP.PS1 and U1-70 transduced neurons,,,,,study,,https://www.synapse.org/#!Synapse:syn5820226,,string,ADKP,
-UA.Tufts_hGGA3-Ins545T,The Jax.Tufts_hGGA3-Ins545 Study,,,,,study,,https://www.synapse.org/Synapse:syn78509145,,string,ADKP,
+UA.Tufts_hGGA3-Ins545T,The UA.Tufts_hGGA3-Ins545T Study,,,,,study,,https://www.synapse.org/Synapse:syn78509145,,string,ADKP,
 UAB_ADRC,The University of Alabama Birmingham Alzheimer Disease Research Center (UAB_ADRC) Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage/StudyDetails?Study=syn51226075,,string,ADKP,
 UCI_3xTg-AD,The UCI_3xTg-AD study,,,,,study,,https://www.synapse.org/#!Synapse:syn22964685,,string,ADKP,
 UCI_ABCA7,The UCI_ABCA7 Study,,,,,study,,https://adknowledgeportal.synapse.org/Explore/Studies/DetailsPage/StudyDetails?Study=syn27207345,,string,ADKP,
