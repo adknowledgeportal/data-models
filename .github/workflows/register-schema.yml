@@ -102,7 +102,7 @@ jobs:
 
       - name: Generate JSON Schemas
         id: generate
-        uses: Sage-Bionetworks-Actions/generate-jsonschema@0.1.0
+        uses: Sage-Bionetworks-Actions/generate-jsonschema@v1.0.0
         with:
           data-model-source: ./AD.model.csv
           data-model-labels: "display_label"
@@ -187,7 +187,7 @@ jobs:
 
       - name: Register schemas in Synapse
         id: register
-        uses: Sage-Bionetworks-Actions/register-jsonschema@0.1.0
+        uses: Sage-Bionetworks-Actions/register-jsonschema@v1.0.0
         with:
           org-name: ${{ steps.resolve-org.outputs.org-name }}
           schema-dir: ${{ steps.generate.outputs.schemas }}
