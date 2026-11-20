@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+modificationValidationMethod,"The method used to confirm that the intended modification(s) made at this step are present. If multiple modifications, list in the same order as geneticModificationType.",,,,False,ManifestColumn,,http://purl.obolibrary.org/obo/OBI_0000435,,string_list,biospecimen

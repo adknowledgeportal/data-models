@@ -1,0 +1,2 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+cloneID,"Name of the clone this specimen is, or was derived from. On the row where the clone was created (reprogramming, cell cloning or genetic modification), give its name; on every downstream specimen, repeat it. Expected whenever more than one clone was derived from the same reprogramming or editing event.",,,,False,ManifestColumn,,http://edamontology.org/data_1855,,string_list,biospecimen

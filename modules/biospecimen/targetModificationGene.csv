@@ -1,0 +1,3 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+targetModificationGene,"The gene(s) targeted by genetic modification at this step, expressed as the official HGNC gene symbol. If multiple modifications, list in the same order as geneticModificationType.
+Format : Use the current approved HGNC symbol (not aliases or prior symbols). Cross-check at https://www.genenames.org/ if uncertain. (Example: APOE). Required if derivationType includes genetic modification.",,,,False,ManifestColumn,,http://purl.obolibrary.org/obo/NCIT_C16612,,string_list,biospecimen

@@ -1,0 +1,4 @@
+Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
+cellCultureMethod,"Number of distinct cell types present in the culture, independent of the physical geometry.","monoculture, co-culture",,,False,ManifestColumn,,http://www.bioassayontology.org/bao#BAO_0002647,,string_list,biospecimen
+monoculture,One cell type,,,,,cellCultureMethod,,http://www.bioassayontology.org/bao#BAO_0002648,,string,biospecimen
+co-culture,Two or more cell types,,,,,cellCultureMethod,,http://www.bioassayontology.org/bao#BAO_0002649,,string,biospecimen
