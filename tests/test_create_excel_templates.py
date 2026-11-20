@@ -104,6 +104,12 @@ def test_error_annotations_escape_external_text(monkeypatch, capsys):
 # Reading the schema and AD.model.csv
 # ---------------------------------------------------------
 
+def test_model_csv_url_uses_raw_tag_path():
+    assert cet.MODEL_CSV_URL.format(version="2.1.1") == (
+        "https://raw.githubusercontent.com/adknowledgeportal/data-models/v2.1.1/AD.model.csv"
+    )
+
+
 def test_extract_attrs_reads_properties_in_schema_order():
     schema = {
         "required": ["species"],
