@@ -1,6 +1,7 @@
 Attribute,Description,Valid Values,DependsOn,Properties,Required,Parent,DependsOn Component,Source,Validation Rules,columnType,module
-geneticModificationType,"The type of genetic modification made at this step. For several modifications at once (e.g. multiplex editing), give one per modification, in the same order as in geneticModificationMethod, targetModificationGene, genomicVariant and modificationValidationMethod. Required if derivationType includes genetic modification.","correction, knock-in, knock-out, knock-down",,,False,ManifestColumn,,http://www.ebi.ac.uk/efo/EFO_0000510,,string_list,biospecimen
-correction,,,,,,geneticModificationType,,http://id.nlm.nih.gov/mesh/D052416,,string,biospecimen
-knock-in,,,,,,geneticModificationType,,http://www.ebi.ac.uk/efo/EFO_0004963,,string,biospecimen
-knock-out,,,,,,geneticModificationType,,http://www.ebi.ac.uk/efo/EFO_0000506,,string,biospecimen
-knock-down,,,,,,geneticModificationType,,http://purl.obolibrary.org/obo/OBI_0002625,,string,biospecimen
+geneticModificationType,"The type of genetic modification made at this step. For several modifications at once (e.g. multiplex editing), give one per modification, in the same order as in geneticModificationMethod, targetModificationGene, genomicVariant and modificationValidationMethod. Required if derivationType includes genetic modification.","correction, knock-in, knock-out, knock-down, overexpression",,,False,ManifestColumn,,http://www.ebi.ac.uk/efo/EFO_0000510,,string_list,biospecimen
+correction,Targeted repair of a variant back to a reference or chosen allele (e.g. an APOE4 to APOE3 correction).,,,,,geneticModificationType,,http://id.nlm.nih.gov/mesh/D052416,,string,biospecimen
+knock-in,"Targeted insertion of a sequence (e.g. a cDNA, tag or reporter) at a specific locus.",,,,,geneticModificationType,,http://www.ebi.ac.uk/efo/EFO_0004963,,string,biospecimen
+knock-out,Targeted disruption of a gene so that it no longer produces a functional product.,,,,,geneticModificationType,,http://www.ebi.ac.uk/efo/EFO_0000506,,string,biospecimen
+knock-down,Reduced expression of a specific gene or genes without removing the gene (e.g. by RNA interference or CRISPR interference).,,,,,geneticModificationType,,http://purl.obolibrary.org/obo/OBI_0002625,,string,biospecimen
+overexpression,Increased expression of a gene above its normal level.,,,,,geneticModificationType,,http://www.ebi.ac.uk/efo/EFO_0022875,,string,biospecimen
