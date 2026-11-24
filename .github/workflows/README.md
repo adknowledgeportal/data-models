@@ -43,13 +43,13 @@ This workflow handles schema registration across two Synapse organizations:
 2. **Set up Python 3.11** — installs Python and the `pandas` dependency
 3. **Assemble CSV data model** — runs `assemble_csv_data_model.py` to join all `modules/` files into `AD.model.csv`
 4. **Commit CSV changes** — commits the updated `AD.model.csv` back to the branch via [`add-and-commit`](https://github.com/EndBug/add-and-commit) (pull request events only)
-5. **Generate JSON Schemas** — converts `AD.model.csv` into JSON schema files using [`generate-jsonschema`](https://github.com/Sage-Bionetworks-Actions/generate-jsonschema)
+5. **Generate JSON Schemas** — converts `AD.model.csv` into JSON schema files using [`generate-jsonschema`](https://github.com/Sage-Bionetworks/synapse-actions/tree/main/generate-jsonschema)
 6. **Check schemas were generated** — exits with an error if no schemas were produced
 6a. **Override ID columns in file annotation schema** — in `FileAnnotationTemplate.json` only, rewrites `individualID` and `specimenID` as arrays of strings (they are single strings in every other template)
 7. **Upload schemas as artifacts** — saves generated `.json` schemas as a downloadable workflow artifact
 8. **Create release assets** — attaches the schema `.json` files to the GitHub release page (for prelease and full release only)
 9. **Resolve schema organization** — selects `test.ad` or `sage.schemas.ad` based on the trigger event action
-10. **Register schemas in Synapse** — registers schemas in the resolved org via [`register-jsonschema`](https://github.com/Sage-Bionetworks-Actions/register-jsonschema); uses the release tag as the semantic version when available
+10. **Register schemas in Synapse** — registers schemas in the resolved org via [`register-jsonschema`](https://github.com/Sage-Bionetworks/synapse-actions/tree/main/register-jsonschema); uses the release tag as the semantic version when available
 11. **Create recordsets** — for each registered schema, fetches its column structure from Synapse and creates a `RecordSet` in the configured Synapse project (`SYNAPSE_PROJECT_ID`); for releases, creates a versioned folder `{data_type}_{version}`; for PRs, creates/overwrites a single unversioned folder `{data_type}`
 12. **Format Schema Report** — builds a markdown summary listing all generated schemas and their properties; includes Synapse links when a release tag is present
 13. **Comment PR with Schema Summary** — posts the report as a PR comment; also writes the report to the workflow run summary
