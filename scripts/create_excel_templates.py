@@ -97,7 +97,7 @@ REPO_URL = "https://repo-prod.prod.sagebase.org/repo/v1"
 ORG_NAME = "sage.schemas.ad"
 # the model as it was at the release's tag, so the definitions and column
 # order match the schemas being built even after main moves on
-MODEL_CSV_URL = "https://raw.githubusercontent.com/adknowledgeportal/data-models/refs/tags/v{version}/AD.model.csv"
+MODEL_CSV_URL = "https://raw.githubusercontent.com/adknowledgeportal/data-models/v{version}/AD.model.csv"
 
 MANIFEST_ROWS = 1000  # rows given borders, fills, and dropdowns
 MAX_WORKERS = 5  # parallel requests to Synapse
